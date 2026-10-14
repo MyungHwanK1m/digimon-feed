@@ -1,5 +1,5 @@
-// Blue Card Edition v7 (with precision canon evolutions, skill translations, and mobile optimization)
-const CACHE_NAME = 'digi-feed-bluecard-v7';
+// Blue Card Edition v8 (evolution engine fix, XSS hardening, bounded cache)
+const CACHE_NAME = 'digi-feed-bluecard-v8';
 const ASSETS = [
   './',
   './index.html',
@@ -33,23 +33,25 @@ self.addEventListener('activate', (event) => {
   );
 });
 
-// Network First strategy (Always try network first to get latest Blue Card design)
+// Network First, 같은 출처 파일만 캐시 (외부 API·이미지 응답은 캐시하지 않음)
+// ?t=타임스탬프 같은 쿼리를 제거한 주소로 저장해 캐시가 무한히 늘어나지 않도록 함
 self.addEventListener('fetch', (event) => {
-  if (event.request.method !== 'GET') return;
+  const req = event.request;
+  if (req.method !== 'GET') return;
+  const url = new URL(req.url);
+  if (url.origin !== self.location.origin) return;
+
+  const cacheKey = url.origin + url.pathname;
 
   event.respondWith(
-    fetch(event.request)
+    fetch(req)
       .then((networkResponse) => {
         if (networkResponse && networkResponse.status === 200) {
           const responseClone = networkResponse.clone();
-          caches.open(CACHE_NAME).then((cache) => {
-            cache.put(event.request, responseClone);
-          });
+          caches.open(CACHE_NAME).then((cache) => cache.put(cacheKey, responseClone));
         }
         return networkResponse;
       })
-      .catch(() => {
-        return caches.match(event.request);
-      })
+      .catch(() => caches.match(cacheKey).then((hit) => hit || caches.match(req)))
   );
 });
