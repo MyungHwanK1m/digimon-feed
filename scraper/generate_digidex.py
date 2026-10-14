@@ -51,7 +51,7 @@ DIGIDEX_DATA = [
             {
                 "type": "dot",
                 "label": "👾 클래식 도트",
-                "url": "https://wikimon.net/images/7/75/Omegamon_vpet_penp.gif"
+                "url": "https://wikimon.net/images/c/c3/Omegamon_Battle_Park_dot.png"
             },
             {
                 "type": "tcg",
@@ -88,7 +88,7 @@ DIGIDEX_DATA = [
             {
                 "type": "dot",
                 "label": "👾 클래식 도트",
-                "url": "https://wikimon.net/images/b/ba/Wargreymon_vpet_pen.gif"
+                "url": "https://wikimon.net/images/c/c1/WarGreymon_Climax_dot.png"
             },
             {
                 "type": "tcg",
@@ -120,7 +120,7 @@ DIGIDEX_DATA = [
             {
                 "type": "dot",
                 "label": "👾 클래식 도트",
-                "url": "https://wikimon.net/images/3/37/Guilmon_vpet_dv.gif"
+                "url": "https://wikimon.net/images/3/3a/Guilmon_vpet_darc.gif"
             },
             {
                 "type": "tcg",
@@ -151,7 +151,7 @@ DIGIDEX_DATA = [
             {
                 "type": "dot",
                 "label": "👾 클래식 도트",
-                "url": "https://wikimon.net/images/4/4b/Dukemon_vpet_dv.gif"
+                "url": "https://wikimon.net/images/8/80/Dukemon_Battle_Park_dot.png"
             },
             {
                 "type": "tcg",
@@ -188,7 +188,7 @@ DIGIDEX_DATA = [
             {
                 "type": "dot",
                 "label": "👾 클래식 도트",
-                "url": "https://wikimon.net/images/9/9f/Agnimon_vpet_dv.gif"
+                "url": "https://wikimon.net/images/f/fb/Agnimon_vpet_dscan.gif"
             },
             {
                 "type": "tcg",
@@ -220,7 +220,7 @@ DIGIDEX_DATA = [
             {
                 "type": "dot",
                 "label": "👾 클래식 도트",
-                "url": "https://wikimon.net/images/5/52/Beelzebumon_vpet_dv.gif"
+                "url": "https://wikimon.net/images/e/e8/Beelzebumon_vpet_darc.gif"
             },
             {
                 "type": "tcg",
@@ -257,7 +257,7 @@ DIGIDEX_DATA = [
             {
                 "type": "dot",
                 "label": "👾 클래식 도트",
-                "url": "https://wikimon.net/images/4/41/Alphamon_vpet_penx.gif"
+                "url": "https://wikimon.net/images/7/72/Alphamon_Battle_Park_dot.png"
             },
             {
                 "type": "tcg",
@@ -294,7 +294,7 @@ DIGIDEX_DATA = [
             {
                 "type": "dot",
                 "label": "👾 클래식 도트",
-                "url": "https://wikimon.net/images/0/07/Vmon_vpet_d3.gif"
+                "url": "https://wikimon.net/images/e/ed/V-Mon_Goggles_Ver._dot.png"
             },
             {
                 "type": "tcg",
@@ -325,7 +325,7 @@ DIGIDEX_DATA = [
             {
                 "type": "dot",
                 "label": "👾 클래식 도트",
-                "url": "https://wikimon.net/images/2/23/Imperialdramondragon_vpet_d3.gif"
+                "url": "https://wikimon.net/images/2/2a/Imperialdramon_vpet_d3.gif"
             },
             {
                 "type": "tcg",
@@ -361,7 +361,7 @@ DIGIDEX_DATA = [
             {
                 "type": "dot",
                 "label": "👾 클래식 도트",
-                "url": "https://wikimon.net/images/3/3b/Tailmon_vpet_pen.gif"
+                "url": "https://wikimon.net/images/a/a1/Tailmon_vpet_pen.gif"
             },
             {
                 "type": "tcg",
@@ -392,7 +392,7 @@ DIGIDEX_DATA = [
             {
                 "type": "dot",
                 "label": "👾 클래식 도트",
-                "url": "https://wikimon.net/images/9/9f/Patamon_vpet_pen.gif"
+                "url": "https://wikimon.net/images/9/94/Patamon_vpet_dm.gif"
             },
             {
                 "type": "tcg",
