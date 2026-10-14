@@ -1,11 +1,12 @@
-// Blue Card Edition v4 (with Digi-Dex)
-const CACHE_NAME = 'digi-feed-bluecard-v4';
+// Blue Card Edition v5 (with 1,488 All Digimon Master Index)
+const CACHE_NAME = 'digi-feed-bluecard-v5';
 const ASSETS = [
   './',
   './index.html',
   './manifest.json',
   './digimon_feeds.json',
   './data/digidex_ko.json',
+  './data/digimon_all_index.json',
   './icon-192.png',
   './icon-512.png'
 ];
