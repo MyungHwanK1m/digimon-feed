@@ -1,0 +1,43 @@
+name: Digimon Auto Search & Scrape
+
+on:
+  schedule:
+    # 매 1시간마다 자동 실행 (UTC 기준)
+    - cron: '0 * * * *'
+  workflow_dispatch: # GitHub 웹 UI에서 수동 실행 버튼 지원
+
+permissions:
+  contents: write
+
+jobs:
+  scrape-and-commit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r scraper/requirements.txt
+
+      - name: Run Crawler
+        run: |
+          python scraper/crawl.py
+
+      - name: Commit and push if data changed
+        run: |
+          git config --global user.name "DigiBot"
+          git config --global user.email "digibot@users.noreply.github.com"
+          git add data/digimon_feeds.json public/digimon_feeds.json
+          if git diff --staged --quiet; then
+            echo "No changes in feeds data."
+          else
+            git commit -m "chore(feeds): auto update digimon feeds [skip ci]"
+            git push
+          fi
