@@ -95,9 +95,9 @@
 
   <!-- D-Ark Slash Header (블루 카드 테마) -->
   <header class="sticky top-0 z-40 bg-white/90 dark:bg-[#050b1a]/90 backdrop-blur-lg border-b border-blue-500/20 dark:border-blue-500/30 px-4 h-14 flex items-center justify-between shadow-sm">
-    <div class="flex items-center gap-3">
+    <div onclick="goHome()" class="flex items-center gap-3 cursor-pointer select-none group touch-press" title="홈으로 이동 (초기화)">
       <!-- Tamers Blue Card Realistic Emblem -->
-      <div class="w-7 h-10 rounded-md bg-[#004ce8] border border-blue-300 shadow-md shadow-blue-600/40 flex items-center justify-center relative overflow-hidden shrink-0">
+      <div class="w-7 h-10 rounded-md bg-[#004ce8] border border-blue-300 shadow-md shadow-blue-600/40 flex items-center justify-center relative overflow-hidden shrink-0 group-hover:scale-105 transition">
         <!-- Magnetic Stripe (Left) -->
         <div class="absolute left-0 top-0 bottom-0 w-1.5 bg-slate-800 border-r border-slate-900"></div>
         <!-- Dot Matrix + Wing Icon -->
@@ -116,7 +116,7 @@
       </div>
 
       <div>
-        <h1 class="font-black text-base tracking-widest text-[#004ce8] dark:text-blue-400 flex items-center gap-1.5 drop-shadow-sm">
+        <h1 class="font-black text-base tracking-widest text-[#004ce8] dark:text-blue-400 flex items-center gap-1.5 drop-shadow-sm group-hover:text-blue-600 dark:group-hover:text-blue-300 transition">
           DIGI-FEED
           <span class="text-[9px] font-black px-1.5 py-0.5 rounded bg-blue-600 text-white shadow-xs tracking-wider">BLUE CARD</span>
         </h1>
@@ -155,7 +155,7 @@
     <!-- Filter Bar: Category Chips (Blue Card Slots) -->
     <div class="flex items-center gap-1.5 overflow-x-auto pb-1 no-scrollbar text-xs font-bold">
       <button onclick="setCategory('all')" class="cat-chip touch-press px-3.5 py-2 rounded-xl transition bg-[#004ce8] text-white shrink-0 shadow-md shadow-blue-600/30 border border-blue-400/40" data-cat="all">전체</button>
-      <button onclick="setCategory('sns')" class="cat-chip touch-press px-3.5 py-2 rounded-xl transition bg-white/90 dark:bg-[#070e22]/90 text-slate-700 dark:text-slate-300 border border-blue-200 dark:border-blue-900/60 hover:border-blue-400 shrink-0 shadow-xs" data-cat="sns">📱 SNS/해외</button>
+      <button onclick="setCategory('sns')" class="cat-chip touch-press px-3.5 py-2 rounded-xl transition bg-white/90 dark:bg-[#070e22]/90 text-slate-700 dark:text-slate-300 border border-blue-200 dark:border-blue-900/60 hover:border-blue-400 shrink-0 shadow-xs" data-cat="sns">📱 SNS/영상</button>
       <button onclick="setCategory('figure')" class="cat-chip touch-press px-3.5 py-2 rounded-xl transition bg-white/90 dark:bg-[#070e22]/90 text-slate-700 dark:text-slate-300 border border-blue-200 dark:border-blue-900/60 hover:border-blue-400 shrink-0 shadow-xs" data-cat="figure">🧸 피규어/굿즈</button>
       <button onclick="setCategory('card')" class="cat-chip touch-press px-3.5 py-2 rounded-xl transition bg-white/90 dark:bg-[#070e22]/90 text-slate-700 dark:text-slate-300 border border-blue-200 dark:border-blue-900/60 hover:border-blue-400 shrink-0 shadow-xs" data-cat="card">🃏 카드게임(TCG)</button>
       <button onclick="setCategory('game')" class="cat-chip touch-press px-3.5 py-2 rounded-xl transition bg-white/90 dark:bg-[#070e22]/90 text-slate-700 dark:text-slate-300 border border-blue-200 dark:border-blue-900/60 hover:border-blue-400 shrink-0 shadow-xs" data-cat="game">🎮 게임/애니</button>
@@ -357,7 +357,7 @@
         if (currentCategory === 'all') {
           matchesCat = true;
         } else if (currentCategory === 'sns') {
-          matchesCat = ['레딧', 'X(트위터)', '유튜브', '공식/글로벌'].includes(item.source_badge);
+          matchesCat = item.category === 'sns' || ['레딧', 'X(트위터)', '유튜브', '공식/글로벌'].includes(item.source_badge);
         } else {
           matchesCat = item.category === currentCategory;
         }
@@ -494,6 +494,20 @@
       input.value = '';
       handleSearch('');
       input.focus();
+    }
+
+    // Go Home: Reset category, search, bookmark filter and scroll to top
+    function goHome() {
+      setCategory('all');
+      const input = document.getElementById('search-input');
+      if (input) {
+        input.value = '';
+        handleSearch('');
+      }
+      if (showOnlyBookmarks) {
+        toggleBookmarkFilter();
+      }
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
     function toggleBookmarkFilter() {
