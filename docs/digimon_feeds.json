@@ -1,7 +1,7 @@
 {
-  "last_updated": "2026-10-14 15:38:58",
-  "total_count": 6,
-  "retention_days": 30,
+  "last_updated": "2026-10-14 16:30:01",
+  "total_count": 9,
+  "retention_days": 90,
   "feeds": [
     {
       "id": "c2e18c08cc8afe89866a8715926b0395",
@@ -80,6 +80,45 @@
       "image": null,
       "timestamp": 1789484400,
       "created_at": "2026-09-16 00:00"
+    },
+    {
+      "id": "f3ae1fd1d47a253a807a61abae989f9b",
+      "title": "[반남코몰] 디지몬 펜들럼 COLOR 고질라 에디션 오메가몬 : “G” ...",
+      "snippet": "루리웹 피규어/프라모델 정보 게시판 등록 소식입니다.",
+      "source": "루리웹 모형정보",
+      "source_badge": "루리웹",
+      "category": "figure",
+      "category_name": "피규어/굿즈",
+      "link": "https://bbs.ruliweb.com/family/242/board/300017/read/2434642?search_type=subject&search_key=%EB%94%94%EC%A7%80%EB%AA%AC",
+      "image": null,
+      "timestamp": 1789311600,
+      "created_at": "2026-09-14 00:00"
+    },
+    {
+      "id": "7c6c7c87dee61e11e878e33ceb595bab",
+      "title": "디지몬 어드벤처 파닥몬, 가트몬 공식 무드등 출시예정",
+      "snippet": "루리웹 피규어/프라모델 정보 게시판 등록 소식입니다.",
+      "source": "루리웹 모형정보",
+      "source_badge": "루리웹",
+      "category": "figure",
+      "category_name": "피규어/굿즈",
+      "link": "https://bbs.ruliweb.com/family/242/board/300017/read/2430030?search_type=subject&search_key=%EB%94%94%EC%A7%80%EB%AA%AC",
+      "image": null,
+      "timestamp": 1785164400,
+      "created_at": "2026-07-28 00:00"
+    },
+    {
+      "id": "8edd842c9ae43754d54d74918ef4b336",
+      "title": "[반다이식완] 디지몬 디지바이스 패키지 참 & 비스킷",
+      "snippet": "루리웹 피규어/프라모델 정보 게시판 등록 소식입니다.",
+      "source": "루리웹 모형정보",
+      "source_badge": "루리웹",
+      "category": "figure",
+      "category_name": "피규어/굿즈",
+      "link": "https://bbs.ruliweb.com/family/242/board/300017/read/2428778?search_type=subject&search_key=%EB%94%94%EC%A7%80%EB%AA%AC",
+      "image": null,
+      "timestamp": 1784214000,
+      "created_at": "2026-07-17 00:00"
     }
   ]
 }

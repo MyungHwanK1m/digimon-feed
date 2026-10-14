@@ -335,8 +335,8 @@ def main():
         if not is_spam(item):
             feed_map[item["id"]] = item
 
-    # [핵심 1] 최근 30일(1달) 이내 데이터만 보관
-    cutoff_timestamp = int((datetime.now() - timedelta(days=30)).timestamp())
+    # [핵심 1] 최근 90일(약 3달) 이내 데이터 보관 (사용자가 앱에서 기간 필터 선택 가능)
+    cutoff_timestamp = int((datetime.now() - timedelta(days=90)).timestamp())
     filtered_feeds = [
         item for item in feed_map.values()
         if item.get("timestamp", 0) >= cutoff_timestamp and not is_spam(item)
@@ -348,7 +348,7 @@ def main():
     result = {
         "last_updated": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
         "total_count": len(filtered_feeds),
-        "retention_days": 30,
+        "retention_days": 90,
         "feeds": filtered_feeds
     }
 
