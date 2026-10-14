@@ -523,10 +523,20 @@
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
-    // PWA Service Worker
+    // PWA Service Worker (Blue Card v3 with auto-update)
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
-        navigator.serviceWorker.register('sw.js').catch(console.error);
+        navigator.serviceWorker.register('sw.js?v=3').then((reg) => {
+          reg.update();
+        }).catch(console.error);
+
+        let refreshing = false;
+        navigator.serviceWorker.addEventListener('controllerchange', () => {
+          if (!refreshing) {
+            refreshing = true;
+            window.location.reload();
+          }
+        });
       });
     }
 

@@ -1,16 +1,19 @@
-const CACHE_NAME = 'digi-feed-v1';
+// Blue Card Edition v3
+const CACHE_NAME = 'digi-feed-bluecard-v3';
 const ASSETS = [
   './',
   './index.html',
   './manifest.json',
-  './digimon_feeds.json'
+  './digimon_feeds.json',
+  './icon-192.png',
+  './icon-512.png'
 ];
 
 self.addEventListener('install', (event) => {
+  self.skipWaiting();
   event.waitUntil(
     caches.open(CACHE_NAME).then((cache) => cache.addAll(ASSETS))
   );
-  self.skipWaiting();
 });
 
 self.addEventListener('activate', (event) => {
@@ -19,29 +22,32 @@ self.addEventListener('activate', (event) => {
       return Promise.all(
         keys.map((key) => {
           if (key !== CACHE_NAME) {
+            console.log('[SW] Deleting old cache:', key);
             return caches.delete(key);
           }
         })
       );
-    })
+    }).then(() => self.clients.claim())
   );
-  self.clients.claim();
 });
 
-// Network first, falling back to cache
+// Network First strategy (Always try network first to get latest Blue Card design)
 self.addEventListener('fetch', (event) => {
+  if (event.request.method !== 'GET') return;
+
   event.respondWith(
     fetch(event.request)
-      .then((response) => {
-        // Clone response to cache
-        if (response.status === 200 && event.request.method === 'GET') {
-          const respClone = response.clone();
+      .then((networkResponse) => {
+        if (networkResponse && networkResponse.status === 200) {
+          const responseClone = networkResponse.clone();
           caches.open(CACHE_NAME).then((cache) => {
-            cache.put(event.request, respClone);
+            cache.put(event.request, responseClone);
           });
         }
-        return response;
+        return networkResponse;
       })
-      .catch(() => caches.match(event.request))
+      .catch(() => {
+        return caches.match(event.request);
+      })
   );
 });
