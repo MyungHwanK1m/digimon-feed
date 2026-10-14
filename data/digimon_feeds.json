@@ -1,8 +1,34 @@
 {
-  "last_updated": "2026-10-14 17:40:50",
-  "total_count": 31,
+  "last_updated": "2026-10-14 10:51:04",
+  "total_count": 33,
   "retention_days": 90,
   "feeds": [
+    {
+      "id": "3d708770c0259a6e82206cd1f8b64e11",
+      "title": "[r/digimon] Volvemon Sprite for my fangame project",
+      "snippet": "had some troubled with habakirimon so i decided to make Volvemon first not what i expected as fusion between atratusmon",
+      "source": "Reddit digimon",
+      "source_badge": "레딧",
+      "category": "sns",
+      "category_name": "SNS/해외",
+      "link": "https://www.reddit.com/r/digimon/comments/1x5ndmn/volvemon_sprite_for_my_fangame_project/",
+      "image": null,
+      "timestamp": 1791972557,
+      "created_at": "2026-10-14 10:09"
+    },
+    {
+      "id": "e3a2ee151f0ddb67deccdb4ff33bdf36",
+      "title": "[r/digimon] Official Digimon Web Poll #159- Favorite Digimon Beatbreak Ultimate Level Partner",
+      "snippet": "Another official Digimon poll. This time it asks your &quot;Favorite Digimon Beatbreak Ultimate Level Partner.&quot; Mor",
+      "source": "Reddit digimon",
+      "source_badge": "레딧",
+      "category": "figure",
+      "category_name": "피규어/굿즈",
+      "link": "https://www.reddit.com/r/digimon/comments/1x5lpu3/official_digimon_web_poll_159_favorite_digimon/",
+      "image": null,
+      "timestamp": 1791966073,
+      "created_at": "2026-10-14 08:21"
+    },
     {
       "id": "7e69a3c89f4dfe96342ace064d7248b8",
       "title": "[r/digimon] Aside from Butter-Fly (since it's obviously the best :v), what's your favorite Anime OP/ED?",
@@ -14,7 +40,7 @@
       "link": "https://www.reddit.com/r/digimon/comments/1x5i4oe/aside_from_butterfly_since_its_obviously_the_best/",
       "image": "https://preview.redd.it/9n4yuzvy2dvh1.png?width=640&crop=smart&auto=webp&s=57a8c5c0356f27f2c9bc05237d07616e622af210",
       "timestamp": 1791952560,
-      "created_at": "2026-10-14 13:36"
+      "created_at": "2026-10-14 04:36"
     },
     {
       "id": "b095f5194486dc969dedf1cdf6a34104",
@@ -27,7 +53,7 @@
       "link": "https://www.reddit.com/r/digimon/comments/1x5gm1o/renamon_fan_art_by_ヱンペータemperta/",
       "image": "https://preview.redd.it/vbb6q9m2ocvh1.jpeg?width=640&crop=smart&auto=webp&s=91a0e234ae6595b312e6bcd6c40ef17b886c275a",
       "timestamp": 1791947550,
-      "created_at": "2026-10-14 12:12"
+      "created_at": "2026-10-14 03:12"
     },
     {
       "id": "8d9a6f7abea0eb94c09c5387e41618e8",
@@ -40,7 +66,7 @@
       "link": "https://www.reddit.com/r/digimon/comments/1x5e47o/accidental_terriermon_folder_icon/",
       "image": "https://preview.redd.it/wl83djey0cvh1.jpg?width=140&height=112&auto=webp&s=a9813b5702038278401482ca994ad69e5c91d6ff",
       "timestamp": 1791939982,
-      "created_at": "2026-10-14 10:06"
+      "created_at": "2026-10-14 01:06"
     },
     {
       "id": "141a1236cb4a901361b2d72d8842c19a",
@@ -66,7 +92,7 @@
       "link": "https://www.reddit.com/r/digimon/comments/1x53a41/mugen_by_ridgeone1/",
       "image": "https://preview.redd.it/3hxdhglvt9vh1.jpeg?width=640&crop=smart&auto=webp&s=e4e09716d482f800893c8b0a22a7257621392960",
       "timestamp": 1791913199,
-      "created_at": "2026-10-14 02:39"
+      "created_at": "2026-10-13 17:39"
     },
     {
       "id": "e7781600df2bfb01f937eb3716f24ac1",
@@ -91,7 +117,7 @@
       "category_name": "피규어/굿즈",
       "link": "https://bbs.ruliweb.com/family/242/board/300017/read/2438156?search_type=subject&search_key=%EB%94%94%EC%A7%80%EB%AA%AC",
       "image": null,
-      "timestamp": 1791817200,
+      "timestamp": 1791849600,
       "created_at": "2026-10-13 00:00"
     },
     {
@@ -104,7 +130,7 @@
       "category_name": "피규어/굿즈",
       "link": "https://bbs.ruliweb.com/family/242/board/300017/read/2438156?search_type=subject&search_key=%EC%9D%B4%EC%B9%98%EB%B0%A9%EC%BF%A0%EC%A7%80+%EB%94%94%EC%A7%80%EB%AA%AC",
       "image": null,
-      "timestamp": 1791817200,
+      "timestamp": 1791849600,
       "created_at": "2026-10-13 00:00"
     },
     {
@@ -118,7 +144,7 @@
       "link": "https://www.reddit.com/r/digimon/comments/1x2kklo/digimon_worlds_best_picks_episode_2_digimon/",
       "image": "https://external-preview.redd.it/s3RUYoTi2mTSLabMHIgqWiyV6ikF1WyOyFMj87f4_x0.jpeg?width=140&height=140&auto=webp&s=a0a2f06917379c666c90ac100a97f5b1976b752b",
       "timestamp": 1791652382,
-      "created_at": "2026-10-11 02:13"
+      "created_at": "2026-10-10 17:13"
     },
     {
       "id": "b4545a9f2e9f082c3a05979b37fac85b",
@@ -131,7 +157,7 @@
       "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPZjh0VXM4eDk0ZFVqLW5LeDJaUXNUWExpXzZSWnI5NlRVWEFYZ0FNVVVrQkhYRjZWVWxjU1VuRXFuWUo4UUJrUEFjZVhFZFJXTVB2YklIS3NPVUVkWG5xdG5kckFFaWR1NUJZRDFGUmhzaU5WQmx4Z3NwTkdJQllLN1M4QzlPbC00dEdTWkZLeXVDZ1NmU0w2RTBITTlXSjBFZTdEUzFB?oc=5",
       "image": null,
       "timestamp": 1791569944,
-      "created_at": "2026-10-10 03:19"
+      "created_at": "2026-10-09 18:19"
     },
     {
       "id": "c441706e6c970d868859e249655b5419",
@@ -143,8 +169,8 @@
       "category_name": "일반/뉴스",
       "link": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE11UlJwVjZfcmx6RXd2YlpOeW02dlJwSVB1SUpCUnU5a09oX2xENEl0aTZyVmVHemRPS1lhbDZYN3VhaU1aa3V5RFBRLWFoZFpybExidU05NF9GWjBC?oc=5",
       "image": null,
-      "created_at": "2026-10-10 03:19",
-      "timestamp": 1791569944
+      "timestamp": 1791569944,
+      "created_at": "2026-10-09 18:19"
     },
     {
       "id": "20f4970585795191be02e6ed9b7de271",
@@ -156,7 +182,7 @@
       "category_name": "피규어/굿즈",
       "link": "https://bbs.ruliweb.com/family/242/board/300017/read/2437832?search_type=subject&search_key=%EB%94%94%EC%A7%80%EB%AA%AC",
       "image": null,
-      "timestamp": 1791471600,
+      "timestamp": 1791504000,
       "created_at": "2026-10-09 00:00"
     },
     {
@@ -169,7 +195,7 @@
       "category_name": "피규어/굿즈",
       "link": "https://bbs.ruliweb.com/family/242/board/300017/read/2437832?search_type=subject&search_key=%EC%9D%B4%EC%B9%98%EB%B0%A9%EC%BF%A0%EC%A7%80+%EB%94%94%EC%A7%80%EB%AA%AC",
       "image": null,
-      "timestamp": 1791471600,
+      "timestamp": 1791504000,
       "created_at": "2026-10-09 00:00"
     },
     {
@@ -183,7 +209,7 @@
       "link": "https://www.reddit.com/r/digimon/comments/1www2nn/digimon_worlds_best_picks_episode_1_digimon/",
       "image": "https://external-preview.redd.it/s3RUYoTi2mTSLabMHIgqWiyV6ikF1WyOyFMj87f4_x0.jpeg?width=140&height=140&auto=webp&s=a0a2f06917379c666c90ac100a97f5b1976b752b",
       "timestamp": 1791056586,
-      "created_at": "2026-10-04 04:43"
+      "created_at": "2026-10-03 19:43"
     },
     {
       "id": "baba50e7e725eb8a709baaa1454d985a",
@@ -196,7 +222,7 @@
       "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxPaEZBd1YwTUxrbFJlUzhKQm13LUV1ZFRHTFBuV0RmcWhSUlVsOGVQSmVibTM5MjRybWFpcnNFLVBxVHNsTWkwYzFSTjAxTm9qeHZBQXRKUkJwRGU5MEwxY2VNTk85QnBESmtfZ3Q5LXQzX3cxVDN0UXpFd1ZFUUtlc0JHV2JfQlQwY2REVGtydlRYeElRWlE2dUtGYw?oc=5",
       "image": null,
       "timestamp": 1790838000,
-      "created_at": "2026-10-01 16:00"
+      "created_at": "2026-10-01 07:00"
     },
     {
       "id": "86199b10fb1203472214eee34093fc23",
@@ -209,7 +235,7 @@
       "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE5XdXVrNnlteThtWXdvWkRhTWRqY214NXI1b3I5d01sZzZPNTlsNTVvSl9Pdm11bTlPSTg3cThNVnJTaEJqSHFsLWRRaFdNN1hndVltekJEcHE2SEVuN3dyQk5xZ20?oc=5",
       "image": null,
       "timestamp": 1790838000,
-      "created_at": "2026-10-01 16:00"
+      "created_at": "2026-10-01 07:00"
     },
     {
       "id": "91d95f16c1719a273d5ac935509af22f",
@@ -222,7 +248,7 @@
       "link": "https://news.google.com/rss/articles/CBMiYkFVX3lxTFBYVmtWM0RsQjlWSEI4QnUzQzVvS2NRYVg0QW1SRmRiRDNfLXI1d3l2UXhkRlJudGZjeTdtblhjcThGS2gxX2xaZWkwVmI1eW9OT2F2QVE4OS05enM2MGlLTW53?oc=5",
       "image": null,
       "timestamp": 1789542000,
-      "created_at": "2026-09-16 16:00"
+      "created_at": "2026-09-16 07:00"
     },
     {
       "id": "a25c460ee7337cd41872a20871caadf3",
@@ -234,7 +260,7 @@
       "category_name": "피규어/굿즈",
       "link": "https://bbs.ruliweb.com/family/242/board/300017/read/2434796?search_type=subject&search_key=%EB%94%94%EC%A7%80%EB%AA%AC",
       "image": null,
-      "timestamp": 1789484400,
+      "timestamp": 1789516800,
       "created_at": "2026-09-16 00:00"
     },
     {
@@ -247,7 +273,7 @@
       "category_name": "피규어/굿즈",
       "link": "https://bbs.ruliweb.com/family/242/board/300017/read/2434642?search_type=subject&search_key=%EB%94%94%EC%A7%80%EB%AA%AC",
       "image": null,
-      "timestamp": 1789311600,
+      "timestamp": 1789344000,
       "created_at": "2026-09-14 00:00"
     },
     {
@@ -261,7 +287,7 @@
       "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTE9GNkZHYWFRdWQtZktwNUlTbnJBakxYVUxuYVo4YlZqLXp1eFVxXzJIX2FtNC1BM1RELWxWc1RiRzltVG96SXhvc2trTllqZ001Q21JOWNuLVY3c1BsZHFVakVPemtvbldyejg4OVA3Z1c?oc=5",
       "image": null,
       "timestamp": 1789023600,
-      "created_at": "2026-09-10 16:00"
+      "created_at": "2026-09-10 07:00"
     },
     {
       "id": "89dcc511541c9850d649e6cbf34a4b28",
@@ -274,7 +300,7 @@
       "link": "https://news.google.com/rss/articles/CBMib0FVX3lxTFBGbC0xY1Y0djZ0dGxmMkxhTjk0cWZjYm9PdkZJWVdFVXBrSjQ0c2NUamFNYnFGWVZHZW96ZWdQZWtiWUdBaWNqYlZ5d3BzZDRhaDl0VjJ3OTVZTXg1eTVPRVppN0wxaHVtWDJhMnJsYw?oc=5",
       "image": null,
       "timestamp": 1788937200,
-      "created_at": "2026-09-09 16:00"
+      "created_at": "2026-09-09 07:00"
     },
     {
       "id": "9fcf12e0a782ee46ae8f2348f289a601",
@@ -287,7 +313,7 @@
       "link": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE1iQzQxQkp0aGh1S0djSGI4M3VtUnJiY3plMC1VV0pCNE95cG0yak9iemdwZ1MyWU42NTJsN3NYa2YzbTZaTGlPODhYdlBjbERuM2V6NzduRS1BTzRxSnc?oc=5",
       "image": null,
       "timestamp": 1788764400,
-      "created_at": "2026-09-07 16:00"
+      "created_at": "2026-09-07 07:00"
     },
     {
       "id": "e947e091b81a008d84726ea04c719f91",
@@ -300,7 +326,7 @@
       "link": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE5senVxcVBidGttS29zVTRQYzFtOGN3N0s5TGpqZkZ2OWFvei1oV1BLek1lOFJVUVRyRXdKdHdIdHB1OU5Nelo1YjJsWldCVmRxWlVmc0tyck12ZTVI?oc=5",
       "image": null,
       "timestamp": 1788505200,
-      "created_at": "2026-09-04 16:00"
+      "created_at": "2026-09-04 07:00"
     },
     {
       "id": "265f18013bbaa07b95f89b742e7152a4",
@@ -326,7 +352,7 @@
       "link": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE1sWkZ4WFVjbmNEVGYxbXNOTFowMFdTNTlKamdWcG1kWXpFVFMzZGZyVVJWUDV4N1dCa3E1NDZzQ1dGMXAycU44RE02V1VvMDhVd3JXVEhtLVVkNFNq?oc=5",
       "image": null,
       "timestamp": 1788418800,
-      "created_at": "2026-09-03 16:00"
+      "created_at": "2026-09-03 07:00"
     },
     {
       "id": "87d862d54c90c43c16d299a891293007",
@@ -339,7 +365,7 @@
       "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE42ODFMX3luZU0tLXhFWHRwSmlaSlpmeFoxU0FXa2t0NHItWGFIX1B2TVZveVdVZVBqMTE4UDF4UlIwMGd4U1A4cGdZdWx4eEgyY1ZsbGRSMV9CMEHSAWBBVV95cUxNY3BxREFzLUwzQVRVRlYzdDhJUWZsSFdqYkVqQ2MycHJZRFBrdFZPQzdFYjhpMFcwTlBjSVBTZHVpalNfNlNqNVY2TGJmcUlYa0dWbnhsT1o2aGpua0ZQNFg?oc=5",
       "image": null,
       "timestamp": 1788159600,
-      "created_at": "2026-08-31 16:00"
+      "created_at": "2026-08-31 07:00"
     },
     {
       "id": "03ef8f1e69c71c08f78e96c203c92f35",
@@ -352,7 +378,7 @@
       "link": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE5xMVU3NDl5Q2NHV2dqWlpDTGl5WFVUYWhiTFZaTEtZT3JJUV9HOTV3anFfYkd5cDFBdUdYTTlaYlFEdEZvYTRaYVNJLXNZbXhFc0lENFBHZURvWG15?oc=5",
       "image": null,
       "timestamp": 1785481200,
-      "created_at": "2026-07-31 16:00"
+      "created_at": "2026-07-31 07:00"
     },
     {
       "id": "7c6c7c87dee61e11e878e33ceb595bab",
@@ -364,7 +390,7 @@
       "category_name": "게임/공식애니",
       "link": "https://bbs.ruliweb.com/family/242/board/300017/read/2430030?search_type=subject&search_key=%EB%94%94%EC%A7%80%EB%AA%AC",
       "image": null,
-      "timestamp": 1785164400,
+      "timestamp": 1785196800,
       "created_at": "2026-07-28 00:00"
     },
     {
@@ -378,7 +404,7 @@
       "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE05TzdVeEQ1WGU2WTl3LXZ1Y3lSSUg4aVl1Z0tuRHdNOHRmT2F6QktzdXRjRHNMdlluenZUU1JWbHhkbm0tRkoyb0RoejFTS2VNLUN5dHpB?oc=5",
       "image": null,
       "timestamp": 1784629375,
-      "created_at": "2026-07-21 19:22"
+      "created_at": "2026-07-21 10:22"
     },
     {
       "id": "8edd842c9ae43754d54d74918ef4b336",
@@ -390,7 +416,7 @@
       "category_name": "피규어/굿즈",
       "link": "https://bbs.ruliweb.com/family/242/board/300017/read/2428778?search_type=subject&search_key=%EB%94%94%EC%A7%80%EB%AA%AC",
       "image": null,
-      "timestamp": 1784214000,
+      "timestamp": 1784246400,
       "created_at": "2026-07-17 00:00"
     },
     {
@@ -403,7 +429,7 @@
       "category_name": "피규어/굿즈",
       "link": "https://bbs.ruliweb.com/family/242/board/300017/read/2428778?search_type=subject&search_key=%EB%94%94%EC%A7%80%EB%B0%94%EC%9D%B4%EC%8A%A4",
       "image": null,
-      "timestamp": 1784214000,
+      "timestamp": 1784246400,
       "created_at": "2026-07-17 00:00"
     }
   ]
