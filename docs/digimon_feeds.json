@@ -1,8 +1,60 @@
 {
-  "last_updated": "2026-10-14 10:51:04",
-  "total_count": 33,
+  "last_updated": "2026-10-14 15:38:24",
+  "total_count": 40,
   "retention_days": 90,
   "feeds": [
+    {
+      "id": "fbccec4e03f43b4a4cf8942255877a65",
+      "title": "[트윗] [🎬] 포켓몬 vs 디지몬 https://t.co/yncmt3Kq4E #ATEEZ #에이티즈 #9트쫑 - X",
+      "snippet": "X(트위터) 디지몬 공식/굿즈 속보 트윗입니다.",
+      "source": "X(트위터)",
+      "source_badge": "X(트위터)",
+      "category": "sns",
+      "category_name": "SNS/해외",
+      "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTFBuazFQLUVRU1dTX1BXUVVxZnJ1MEloUENKcVZtcmVCek5acDM1dlMzcVFmS1h0RF9ERHEyZlJhWEpiWWU3UEdQTzJFS3VKTjVtcHpCTU5yRDFIVTExZnlXRkxrNVo?oc=5",
+      "image": null,
+      "timestamp": 1791991800,
+      "created_at": "2026-10-14 15:30"
+    },
+    {
+      "id": "eeaab0f2706ba81016c7095d44e49ae3",
+      "title": "[r/digimon] ¿What's Your Favorite Rookie From the \"Metal Empire\"?",
+      "snippet": "The Metal Empire or known as ME it's a Field for many type of Machine and Cyborg digimon as well as for the digmon",
+      "source": "Reddit digimon",
+      "source_badge": "레딧",
+      "category": "sns",
+      "category_name": "SNS/해외",
+      "link": "https://www.reddit.com/r/digimon/comments/1x5rusx/whats_your_favorite_rookie_from_the_metal_empire/",
+      "image": "https://preview.redd.it/orm6pd8nufvh1.png?width=140&height=140&auto=webp&s=d89f1f08b64b9f56d93a989b011c07a67e70298a",
+      "timestamp": 1791986081,
+      "created_at": "2026-10-14 13:54"
+    },
+    {
+      "id": "12d4f7e14d27dcc4a683467385ecca6d",
+      "title": "[r/digimon] I know some might disagree, but I love Digimon Savers PRECISELY because it \"makes no sense\". You're going to see the most nonsensical shounen bullshit in history... AND YOU'RE GOING TO LIKE IT.",
+      "snippet": "&#32; submitted by &#32;  /u/Shadow-The-Edge   [link] &#32; [comments]",
+      "source": "Reddit digimon",
+      "source_badge": "레딧",
+      "category": "sns",
+      "category_name": "SNS/영상",
+      "link": "https://www.reddit.com/r/digimon/comments/1x5rev6/i_know_some_might_disagree_but_i_love_digimon/",
+      "image": "https://external-preview.redd.it/OGJyb3MzdjdyZnZoMTk_2kYarxxQ1rpr6gt7tMgcW9MzOWdTQAWUbfI_ggq5.png?width=640&crop=smart&auto=webp&s=d5162e85a62bcc773406a0985b0b3d00b917db64",
+      "timestamp": 1791984965,
+      "created_at": "2026-10-14 13:36"
+    },
+    {
+      "id": "b669bf829df9ddcf608f3cbd61f10c91",
+      "title": "[r/digimon] Complete evolution line ✅️ /Digifakes (made by me).",
+      "snippet": "Aguaramon 》Guaramon 》Guarinmon 》Jacymon.  &#32; submitted by &#32;  /u/GeversonGevS   [link] &#32; [comments]",
+      "source": "Reddit digimon",
+      "source_badge": "레딧",
+      "category": "sns",
+      "category_name": "SNS/해외",
+      "link": "https://www.reddit.com/r/digimon/comments/1x5rcdj/complete_evolution_line_digifakes_made_by_me/",
+      "image": "https://preview.redd.it/hfj7oa2sqfvh1.png?width=640&crop=smart&auto=webp&s=59d5e09970d1852d2b8c2fd217686e6a0b16181a",
+      "timestamp": 1791984780,
+      "created_at": "2026-10-14 13:33"
+    },
     {
       "id": "3d708770c0259a6e82206cd1f8b64e11",
       "title": "[r/digimon] Volvemon Sprite for my fangame project",
@@ -15,6 +67,45 @@
       "image": null,
       "timestamp": 1791972557,
       "created_at": "2026-10-14 10:09"
+    },
+    {
+      "id": "0f5a65b5d33d368ae9269e6ed7123321",
+      "title": "[트윗] [🎬] 포켓몬 vs 디지몬 #ATEEZ #에이티즈 #CHOISAN #WOOYOUNG - X",
+      "snippet": "X(트위터) 디지몬 공식/굿즈 속보 트윗입니다.",
+      "source": "X(트위터)",
+      "source_badge": "X(트위터)",
+      "category": "sns",
+      "category_name": "SNS/해외",
+      "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE42QnM2WHg2eGVFZnBlZnN5RHJZU0hiRlphUDFXYVowQ3dYenFWUkdQMzZDbzJ0RUFoc3lSX0F6TUNnbUcwT2R1WWpibTA5dGctY0p3LUNScGFzYjBiNFdzZE1BMVM4dW96SnRXSQ?oc=5",
+      "image": null,
+      "timestamp": 1791970360,
+      "created_at": "2026-10-14 09:32"
+    },
+    {
+      "id": "978df55d7a8f8b20d39d60b3582c6a7e",
+      "title": "[트윗] [🎬] 포켓몬 vs 디지몬 #ATEEZ #에이티즈 #CHOISAN #WOOYOUNG - X",
+      "snippet": "X(트위터) 디지몬 공식/굿즈 속보 트윗입니다.",
+      "source": "X(트위터)",
+      "source_badge": "X(트위터)",
+      "category": "sns",
+      "category_name": "SNS/해외",
+      "link": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE1WNXc2aHZuR1h3OTMzVVYzaEd3SFRQaGM4dkFIU1lNMGtzZXlWNEhVNEpqZ0dGYXpJM3FsTklLZkE1VDMwakFoeEtyeVRwS3lnSUdVUXBKcVZGM0R5aVpGNDZR?oc=5",
+      "image": null,
+      "timestamp": 1791970360,
+      "created_at": "2026-10-14 09:32"
+    },
+    {
+      "id": "5127f04ab4f6d54b444de1046c8ad414",
+      "title": "[r/digimon] LadyDevimon compressed",
+      "snippet": "Art for Inktober 2026: Day 14 - Lady  &#32; submitted by &#32;  /u/Parrots_with_guns   [link] &#32; [comments]",
+      "source": "Reddit digimon",
+      "source_badge": "레딧",
+      "category": "sns",
+      "category_name": "SNS/해외",
+      "link": "https://www.reddit.com/r/digimon/comments/1x5mlno/ladydevimon_compressed/",
+      "image": "https://preview.redd.it/63xrg0cnhevh1.png?width=640&crop=smart&auto=webp&s=5adbfb0dca6901c41f4c48322b902c39968ad2fd",
+      "timestamp": 1791969602,
+      "created_at": "2026-10-14 09:20"
     },
     {
       "id": "e3a2ee151f0ddb67deccdb4ff33bdf36",
@@ -339,7 +430,7 @@
       "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOR2JfbFlHMXhCODByMEZrdmlNX2s0UklkMGE5WnZ3NVVoUmFBVno2WERNd3BUenUxeFhHMmdiS0d6ZG9jQU90Y05UbjNIT1Z6YmtqV3RnT1FiU0I0ZXR5MFRCRXpSMFY1ZDZvaE9iOGxxZ1lOdEl2NGUtQnRfaU5pdmVYVjR4ZjR0eWNlbzZFLTZCRkZaR3E5ekVPQ3I?oc=5",
       "image": null,
       "timestamp": 1788505200,
-      "created_at": "2026-09-04 16:00"
+      "created_at": "2026-09-04 07:00"
     },
     {
       "id": "712525d360d060551c41574ae2c8abba",
