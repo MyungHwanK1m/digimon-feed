@@ -52,6 +52,9 @@
       -webkit-user-select: none;
     }
     .no-scrollbar::-webkit-scrollbar { display: none; }
+    /* 브라우저 기본 검색 지우기(X) 버튼 숨김: 직접 만든 ✕ 버튼과 중복 */
+    input[type="search"]::-webkit-search-cancel-button,
+    input[type="search"]::-webkit-search-decoration { -webkit-appearance: none; appearance: none; }
     .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
     
     .touch-press:active {
@@ -165,13 +168,13 @@
   </div>
 
   <!-- Main Container -->
-  <main class="flex-1 max-w-4xl w-full mx-auto px-3 sm:px-4 py-3 space-y-3.5 pb-20">
+  <main class="flex-1 max-w-4xl w-full mx-auto px-3 sm:px-4 py-3 space-y-3.5 pb-6">
 
     <!-- 1. Live Feeds Section -->
     <div id="feed-view-section" class="space-y-3.5">
       <!-- Search Input (D-Ark Digital Search) -->
       <div class="relative">
-        <svg class="w-4 h-4 absolute left-3.5 top-1/2 -translate-y-1/2 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+        <svg class="w-4 h-4 absolute left-3.5 top-1/2 -translate-y-1/2 text-blue-500 z-10 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
         <input 
           type="search" 
           id="search-input" 
@@ -231,7 +234,7 @@
     <div id="dex-view-section" class="hidden space-y-4">
       <!-- D-Ark Dex Search Bar -->
       <div class="relative">
-        <svg class="w-4 h-4 absolute left-3.5 top-1/2 -translate-y-1/2 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+        <svg class="w-4 h-4 absolute left-3.5 top-1/2 -translate-y-1/2 text-blue-500 z-10 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
         <input 
           type="search" 
           id="dex-search-input" 
@@ -270,7 +273,7 @@
   </main>
 
   <!-- Non-commercial Fan Project Legal Disclaimer Footer -->
-  <footer class="max-w-md mx-auto px-4 py-8 text-center space-y-3 border-t border-blue-200/40 dark:border-blue-900/40 mt-8 mb-16">
+  <footer class="max-w-md mx-auto px-4 py-8 text-center space-y-3 border-t border-blue-200/40 dark:border-blue-900/40 mt-4 mb-10">
     <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 dark:bg-blue-950/60 border border-blue-200 dark:border-blue-800 text-[10px] font-bold text-blue-600 dark:text-blue-400 font-mono">
       <span>🛡️ NON-COMMERCIAL FAN PROJECT</span>
     </div>
@@ -1396,6 +1399,8 @@
       updateDexCardImageOnly();
     }
 
+    const DEX_FRAME_SIZE = 'w-full h-56 sm:h-80';
+
     function updateDexCardImageOnly() {
       const img = currentDexDigimon.images[currentDexImgIndex];
       const imgElem = document.getElementById('dex-main-img');
@@ -1406,14 +1411,14 @@
       if (!imgElem || !img) return;
 
       imgElem.src = img.url;
-      badgeElem.textContent = img.label;
+      if (badgeElem) badgeElem.textContent = img.label;
 
       if (img.type === 'dot') {
-        frameElem.className = "lcd-screen w-full aspect-square max-h-72 sm:max-h-80 rounded-2xl flex items-center justify-center p-6 relative overflow-hidden transition-all duration-300";
+        frameElem.className = "lcd-screen " + DEX_FRAME_SIZE + " rounded-2xl flex items-center justify-center p-6 relative overflow-hidden transition-all duration-300";
         imgElem.className = "w-32 h-32 sm:w-40 sm:h-40 object-contain drop-shadow-md select-none";
         imgElem.style.imageRendering = "pixelated";
       } else {
-        frameElem.className = "bg-gradient-to-b from-blue-50 to-slate-100 dark:from-[#08122c] dark:to-[#050b1a] w-full aspect-square max-h-72 sm:max-h-80 rounded-2xl flex items-center justify-center p-4 relative overflow-hidden transition-all duration-300 border border-blue-200/60 dark:border-blue-900/60 shadow-inner";
+        frameElem.className = "bg-gradient-to-b from-blue-50 to-slate-100 dark:from-[#08122c] dark:to-[#050b1a] " + DEX_FRAME_SIZE + " rounded-2xl flex items-center justify-center p-4 relative overflow-hidden transition-all duration-300 border border-blue-200/60 dark:border-blue-900/60 shadow-inner";
         imgElem.className = "max-w-full max-h-full object-contain filter drop-shadow-xl hover:scale-105 transition duration-300 select-none";
         imgElem.style.imageRendering = "auto";
       }
@@ -1435,6 +1440,10 @@
     function handleDexImgError(imgElem) {
       if (!currentDexDigimon || !currentDexDigimon.images || currentDexDigimon.images.length === 0) return;
       const fallbackUrl = currentDexDigimon.images[0].url;
+      if (!fallbackUrl || imgElem.src === fallbackUrl) {
+        imgElem.style.visibility = 'hidden';
+        return;
+      }
       if (fallbackUrl && imgElem.src !== fallbackUrl) {
         imgElem.src = fallbackUrl;
         imgElem.style.imageRendering = "auto";
@@ -1442,7 +1451,7 @@
         if (badgeElem) badgeElem.textContent = "🎨 공식 도감 (대체)";
         const frameElem = document.getElementById('dex-img-frame');
         if (frameElem) {
-          frameElem.className = "bg-gradient-to-b from-blue-50 to-slate-100 dark:from-[#08122c] dark:to-[#050b1a] w-full aspect-square max-h-72 sm:max-h-80 rounded-2xl flex items-center justify-center p-4 relative overflow-hidden transition-all duration-300 border border-blue-200/60 dark:border-blue-900/60 shadow-inner";
+          frameElem.className = "bg-gradient-to-b from-blue-50 to-slate-100 dark:from-[#08122c] dark:to-[#050b1a] " + DEX_FRAME_SIZE + " rounded-2xl flex items-center justify-center p-4 relative overflow-hidden transition-all duration-300 border border-blue-200/60 dark:border-blue-900/60 shadow-inner";
         }
       }
     }
@@ -1454,21 +1463,21 @@
       const rest = list.length - shown.length;
       return `
         <div class="space-y-1.5">
-          <p class="text-[11px] font-bold text-slate-500 dark:text-slate-400">${title} (${list.length}체):</p>
-          <div class="flex items-center gap-2 overflow-x-auto pb-1.5 no-scrollbar">
+          <p class="text-[11px] font-bold text-slate-500 dark:text-slate-400">${title} <span class="text-slate-400 font-medium">${list.length}</span></p>
+          <div class="grid grid-cols-2 sm:grid-cols-3 gap-1.5 sm:gap-2">
             ${shown.map(ev => `
               <div
                 onclick="selectDigimonById(${jsArg(ev.id ?? ev.digimon)}, ${jsArg(ev.name_ko || ev.digimon)})"
-                class="touch-press cursor-pointer shrink-0 p-1.5 sm:p-2 rounded-xl bg-slate-50 dark:bg-slate-900/80 hover:bg-blue-50 dark:hover:bg-blue-950 border border-blue-200/60 dark:border-blue-900/60 flex items-center gap-2 transition"
+                class="touch-press cursor-pointer min-w-0 p-2 rounded-xl bg-slate-50 dark:bg-slate-900/80 hover:bg-blue-50 dark:hover:bg-blue-950 border border-blue-200/60 dark:border-blue-900/60 flex items-center gap-2 transition"
               >
-                ${ev.image ? `<img src="${escapeHtml(ev.image)}" class="w-7 h-7 sm:w-8 sm:h-8 object-contain rounded" onerror="this.style.display='none'" />` : ''}
-                <div>
-                  <span class="text-xs font-bold text-slate-800 dark:text-slate-200 whitespace-nowrap block">${escapeHtml(ev.name_ko || ev.digimon)}${ev.jogress ? ' <span class="text-[9px] font-black px-1 rounded bg-amber-400/20 text-amber-600 dark:text-amber-400">조그레스</span>' : ''}</span>
-                  <span class="text-[9px] text-slate-400 font-mono block">${escapeHtml(ev.name_en || ev.digimon)}${ev.level ? ' · ' + escapeHtml(ev.level) : ''}</span>
+                ${ev.image ? `<img src="${escapeHtml(ev.image)}" class="w-8 h-8 shrink-0 object-contain rounded" onerror="this.style.visibility='hidden'" />` : '<span class="w-8 h-8 shrink-0"></span>'}
+                <div class="min-w-0">
+                  <span class="text-xs font-bold text-slate-800 dark:text-slate-200 block leading-tight break-keep">${escapeHtml(ev.name_ko || ev.digimon)}</span>
+                  <span class="text-[9px] text-slate-400 block truncate">${ev.jogress ? '<span class="font-black text-amber-600 dark:text-amber-400">조그레스</span> · ' : ''}${escapeHtml(ev.level || ev.name_en || ev.digimon)}</span>
                 </div>
               </div>
             `).join('')}
-            ${rest > 0 ? `<span class="shrink-0 text-[11px] font-bold text-slate-400 px-1">+${rest}</span>` : ''}
+            ${rest > 0 ? `<span class="col-span-full text-[11px] font-bold text-slate-400 px-1">외 ${rest}체</span>` : ''}
           </div>
         </div>
       `;
@@ -1488,7 +1497,7 @@
           <div class="absolute left-0 top-0 bottom-0 w-2 sm:w-3 bg-slate-900 border-r border-slate-950"></div>
           
           <!-- Watermark -->
-          <div class="absolute top-2 right-2 w-28 h-28 dot-matrix-watermark rounded-tr-2xl pointer-events-none"></div>
+          <div class="hidden sm:block absolute top-2 right-2 w-28 h-28 dot-matrix-watermark rounded-tr-2xl pointer-events-none"></div>
 
           <div class="pl-1.5 sm:pl-3 space-y-3.5 sm:space-y-4">
             
@@ -1515,18 +1524,11 @@
 
             <!-- Interactive Illustration / Dot Frame (Click to Switch!) -->
             <div class="space-y-2">
-              <div class="flex items-center justify-between text-xs font-bold px-1 text-slate-500 dark:text-slate-400">
-                <span class="flex items-center gap-1.5 text-blue-600 dark:text-blue-400 font-bold">
-                  <span class="animate-bounce">👆</span>
-                  <span>화면 클릭 시 비주얼 순환 전환</span>
-                </span>
-                <span id="dex-img-mode-badge" class="font-mono text-[10px] sm:text-[11px] font-black text-slate-700 dark:text-slate-200 bg-blue-50 dark:bg-blue-950 px-2 py-0.5 rounded border border-blue-200 dark:border-blue-800">${escapeHtml(currentImg.label)}</span>
-              </div>
 
               <div 
                 id="dex-img-frame" 
                 onclick="cycleDexImage()" 
-                class="${isDot ? 'lcd-screen' : 'bg-gradient-to-b from-blue-50 to-slate-100 dark:from-[#08122c] dark:to-[#050b1a] border border-blue-200/60 dark:border-blue-900/60 shadow-inner'} w-full aspect-square max-h-64 sm:max-h-80 rounded-2xl flex items-center justify-center p-4 relative overflow-hidden cursor-pointer select-none group touch-press transition-all duration-300"
+                class="${isDot ? 'lcd-screen' : 'bg-gradient-to-b from-blue-50 to-slate-100 dark:from-[#08122c] dark:to-[#050b1a] border border-blue-200/60 dark:border-blue-900/60 shadow-inner'} ${DEX_FRAME_SIZE} rounded-2xl flex items-center justify-center p-4 relative overflow-hidden cursor-pointer select-none group touch-press transition-all duration-300"
                 title="클릭하여 도트/공식일러/카드 전환"
               >
                 <img 
@@ -1537,10 +1539,11 @@
                   style="${isDot ? 'image-rendering: pixelated;' : ''}"
                   class="${isDot ? 'w-28 h-28 sm:w-40 sm:h-40 object-contain drop-shadow-md' : 'max-w-full max-h-full object-contain filter drop-shadow-xl group-hover:scale-105 transition duration-300'}" 
                 />
-                <div class="absolute bottom-2.5 right-2.5 px-2 py-1 rounded-lg bg-black/60 backdrop-blur text-[10px] text-white font-bold flex items-center gap-1 pointer-events-none opacity-80 group-hover:opacity-100 transition">
+                ${(d.images || []).length > 1 ? `
+                <div class="absolute bottom-2 right-2 px-2 py-1 rounded-lg bg-black/55 backdrop-blur text-[10px] text-white font-bold flex items-center gap-1 pointer-events-none">
                   <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
-                  <span>터치 시 전환</span>
-                </div>
+                  <span id="dex-img-mode-badge">${escapeHtml(currentImg.label)}</span>
+                </div>` : ''}
               </div>
 
               <!-- Quick Image Buttons -->
@@ -1559,9 +1562,9 @@
             <!-- Special Moves / Skills -->
             ${d.skills && d.skills.length > 0 ? `
               <div class="space-y-2 pt-2 border-t border-blue-200/60 dark:border-blue-900/60">
-                <h3 class="text-xs font-black tracking-wider text-blue-600 dark:text-blue-400 uppercase font-mono flex items-center gap-1.5">
-                  <span>⚡</span>
-                  <span>SPECIAL MOVES (대표 필살기)</span>
+                <h3 class="flex items-baseline gap-2">
+                  <span class="text-sm font-black text-slate-900 dark:text-white">⚡ 필살기</span>
+                  <span class="text-[10px] font-bold tracking-widest text-blue-600/70 dark:text-blue-400/70 font-mono">SPECIAL MOVES</span>
                 </h3>
                 <div class="grid grid-cols-1 gap-1.5 sm:gap-2">
                   ${d.skills.map((s, idx) => `
@@ -1576,11 +1579,11 @@
 
             <!-- Official Lore / Archive Profile -->
             <div class="space-y-2 pt-2 border-t border-blue-200/60 dark:border-blue-900/60">
-              <h3 class="text-xs font-black tracking-wider text-blue-600 dark:text-blue-400 uppercase font-mono flex items-center gap-1.5">
-                <span>📖</span>
-                <span>OFFICIAL LORE (도감 설정)</span>
-                <span id="dex-profile-mt" class="${d.profileIsMachine ? '' : 'hidden'} text-[10px] font-normal text-slate-400 normal-case">· 자동 번역</span>
-              </h3>
+              <h3 class="flex items-baseline gap-2">
+                  <span class="text-sm font-black text-slate-900 dark:text-white">📖 도감 설정</span>
+                  <span class="text-[10px] font-bold tracking-widest text-blue-600/70 dark:text-blue-400/70 font-mono">PROFILE</span>
+                  <span id="dex-profile-mt" class="${d.profileIsMachine ? '' : 'hidden'} ml-auto text-[10px] font-medium text-slate-400">자동 번역</span>
+                </h3>
               <div class="p-3.5 sm:p-4 rounded-2xl bg-slate-900/95 text-slate-200 border border-blue-500/40 shadow-inner font-sans text-xs sm:text-[13px] leading-relaxed relative overflow-hidden">
                 <div class="absolute -right-6 -bottom-6 w-24 h-24 bg-blue-600/10 rounded-full blur-xl pointer-events-none"></div>
                 <p id="dex-profile-text" class="relative z-10 whitespace-pre-line text-slate-300 font-medium">${escapeHtml(d.profile)}</p>
@@ -1590,12 +1593,10 @@
             <!-- Evolution Chain (진화 체계 및 연관 디지몬) -->
             ${d.isTerminal || (d.priorEvolutions && d.priorEvolutions.length > 0) || (d.nextEvolutions && d.nextEvolutions.length > 0) ? `
               <div class="space-y-3 pt-3 border-t border-blue-200/60 dark:border-blue-900/60">
-                <h3 class="text-xs font-black tracking-wider text-blue-600 dark:text-blue-400 uppercase font-mono flex items-center justify-between">
-                  <span class="flex items-center gap-1.5">
-                    <span>🔗</span>
-                    <span>EVOLUTION CHAIN (진화 체계)</span>
-                  </span>
-                  <span class="text-[10px] text-slate-400 font-normal">탭하여 도감 이동</span>
+                <h3 class="flex items-baseline gap-2">
+                  <span class="text-sm font-black text-slate-900 dark:text-white">🔗 진화 체계</span>
+                  <span class="text-[10px] font-bold tracking-widest text-blue-600/70 dark:text-blue-400/70 font-mono">EVOLUTION</span>
+                  <span class="ml-auto text-[10px] font-medium text-slate-400">탭하면 이동</span>
                 </h3>
 
                 ${d.isTerminal ? `
