@@ -4,8 +4,8 @@
   "description": "디지몬 최신 뉴스, 피규어 굿즈, 카드게임(TCG), 커뮤니티 인기글 자동 수집기",
   "start_url": "./index.html",
   "display": "standalone",
-  "background_color": "#0f172a",
-  "theme_color": "#f97316",
+  "background_color": "#020617",
+  "theme_color": "#0052ff",
   "icons": [
     {
       "src": "icon-192.png",
