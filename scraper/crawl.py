@@ -66,6 +66,48 @@ def format_display_date(timestamp: int) -> str:
     """화면 표시용 YYYY-MM-DD HH:MM 포맷"""
     return datetime.fromtimestamp(timestamp).strftime("%Y-%m-%d %H:%M")
 
+SPAM_KEYWORDS = [
+    "릴", "슬롯", "스핀", "카지노", "바카라", "토토", "베팅", "환전", "먹튀",
+    "꽁머니", "룰렛", "홀덤", "파워볼", "사설", "배팅", "spinkr", "프리스핀", "잭팟"
+]
+
+BLOCKED_SOURCES = [
+    "calgary", "roughnecks", "spinkr", "casino", "slot", "toto", "bet"
+]
+
+TRUSTED_NEWS_SOURCES = [
+    "인벤", "게임메카", "디스이즈게임", "지디넷", "아이뉴스24", "연합뉴스",
+    "kbs", "sbs", "mbc", "jtbc", "ytn", "한국경제", "매일경제", "전자신문",
+    "경향신문", "한겨레", "조선일보", "중앙일보", "동아일보", "뉴시스", "뉴스1",
+    "스포츠조선", "스포츠서울", "데일리스포츠", "게임포커스", "게임샷", "게임톡",
+    "스마트pc사랑", "반다이", "youtube", "유튜브", "포모스", "경향게임스",
+    "디지몬", "haveagood-holiday"
+]
+
+def is_spam(item: dict) -> bool:
+    """불법 도박/스팸 사이트 및 이상한 출처 판별"""
+    title = (item.get("title") or "").lower()
+    snippet = (item.get("snippet") or "").lower()
+    source = (item.get("source") or "").lower()
+    link = (item.get("link") or "").lower()
+
+    # 1. 차단 소스 / 도메인 체크
+    if any(b in source or b in link for b in BLOCKED_SOURCES):
+        return True
+
+    # 2. 스팸 키워드 포함 여부 체크
+    for kw in SPAM_KEYWORDS:
+        if kw in title or kw in snippet:
+            return True
+
+    # 3. 구글 뉴스 출처 검증 (검증된 언론사/공식 채널만 허용)
+    if item.get("source_badge") == "뉴스":
+        matched_trusted = any(t in source for t in TRUSTED_NEWS_SOURCES)
+        if not matched_trusted:
+            return True
+
+    return False
+
 def get_hash_id(url: str) -> str:
     return hashlib.md5(url.strip().encode("utf-8")).hexdigest()
 
@@ -131,19 +173,21 @@ def crawl_ruliweb_hobby():
         if res.status_code == 200:
             soup = BeautifulSoup(res.text, "html.parser")
             rows = soup.select("tr.table_body")
-            for row in rows[:15]:
-                title_elem = row.select_one("a.subject_text")
+            for row in rows[:20]:
+                title_elem = row.select_one("td.subject a.text_over") or row.select_one("td.subject a")
                 if not title_elem:
                     continue
                 title = title_elem.get_text(strip=True)
                 link = title_elem.get("href", "")
+                
+                # 공지사항이나 댓글 앵커 건너뛰기
+                if not link or "read/169" in link or "#cmt" in link:
+                    continue
                 if link and not link.startswith("http"):
                     link = "https://bbs.ruliweb.com" + link
 
-                # 댓글 수 텍스트 제거
-                reply_elem = row.select_one("a.num_reply")
-                if reply_elem:
-                    title = title.replace(reply_elem.get_text(strip=True), "").strip()
+                # 댓글 수 분리: (5) 등 제거
+                title = re.sub(r'\(\d+\)$', '', title).strip()
 
                 img_elem = row.select_one("img.thumb")
                 img_src = img_elem.get("src") if img_elem else None
@@ -286,18 +330,19 @@ def main():
             item["created_at"] = format_display_date(item["timestamp"])
 
     # ID 기준 중복 제거 및 최신 데이터 우선 병합
-    feed_map = {item["id"]: item for item in existing_items}
+    feed_map = {item["id"]: item for item in existing_items if not is_spam(item)}
     for item in all_new_items:
-        feed_map[item["id"]] = item
+        if not is_spam(item):
+            feed_map[item["id"]] = item
 
-    # [핵심] 최근 30일(1달) 이내 데이터만 보관
+    # [핵심 1] 최근 30일(1달) 이내 데이터만 보관
     cutoff_timestamp = int((datetime.now() - timedelta(days=30)).timestamp())
     filtered_feeds = [
         item for item in feed_map.values()
-        if item.get("timestamp", 0) >= cutoff_timestamp
+        if item.get("timestamp", 0) >= cutoff_timestamp and not is_spam(item)
     ]
 
-    # [핵심] 최신순 내림차순 정렬 (가장 최신글이 index 0)
+    # [핵심 2] 최신순 내림차순 정렬 (가장 최신글이 index 0)
     filtered_feeds.sort(key=lambda x: x.get("timestamp", 0), reverse=True)
 
     result = {
