@@ -98,10 +98,11 @@
     <!-- Filter Bar: Category Chips -->
     <div class="flex items-center gap-1.5 overflow-x-auto pb-1 no-scrollbar text-xs font-medium">
       <button onclick="setCategory('all')" class="cat-chip touch-press px-3.5 py-2 rounded-xl transition bg-orange-500 text-white font-bold shrink-0 shadow-sm" data-cat="all">전체</button>
+      <button onclick="setCategory('sns')" class="cat-chip touch-press px-3.5 py-2 rounded-xl transition bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-700 shrink-0" data-cat="sns">📱 SNS/해외</button>
       <button onclick="setCategory('figure')" class="cat-chip touch-press px-3.5 py-2 rounded-xl transition bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-700 shrink-0" data-cat="figure">🧸 피규어/굿즈</button>
       <button onclick="setCategory('card')" class="cat-chip touch-press px-3.5 py-2 rounded-xl transition bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-700 shrink-0" data-cat="card">🃏 카드게임(TCG)</button>
       <button onclick="setCategory('game')" class="cat-chip touch-press px-3.5 py-2 rounded-xl transition bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-700 shrink-0" data-cat="game">🎮 게임/애니</button>
-      <button onclick="setCategory('community')" class="cat-chip touch-press px-3.5 py-2 rounded-xl transition bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-700 shrink-0" data-cat="community">🔥 커뮤니티 인기</button>
+      <button onclick="setCategory('community')" class="cat-chip touch-press px-3.5 py-2 rounded-xl transition bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-700 shrink-0" data-cat="community">🔥 커뮤니티</button>
       <button onclick="toggleBookmarkFilter()" id="bookmark-filter-btn" class="cat-chip touch-press px-3.5 py-2 rounded-xl transition bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-800 shrink-0 flex items-center gap-1 ml-auto">
         <span>⭐ 스크랩</span>
       </button>
@@ -284,7 +285,14 @@
         }
 
         // 2. 카테고리 필터
-        const matchesCat = currentCategory === 'all' || item.category === currentCategory;
+        let matchesCat = false;
+        if (currentCategory === 'all') {
+          matchesCat = true;
+        } else if (currentCategory === 'sns') {
+          matchesCat = ['레딧', 'X(트위터)', '유튜브', '공식/글로벌'].includes(item.source_badge);
+        } else {
+          matchesCat = item.category === currentCategory;
+        }
 
         // 3. 검색어 필터
         const matchesSearch = !searchQuery || 
@@ -319,6 +327,12 @@
           ? 'bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border-emerald-500/30'
           : item.source_badge === '디시'
           ? 'bg-purple-500/10 text-purple-600 dark:text-purple-400 border-purple-500/30'
+          : item.source_badge === '레딧'
+          ? 'bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 border-cyan-500/30'
+          : item.source_badge === 'X(트위터)'
+          ? 'bg-sky-500/10 text-sky-600 dark:text-sky-400 border-sky-500/30'
+          : item.source_badge === '유튜브'
+          ? 'bg-rose-500/10 text-rose-600 dark:text-rose-400 border-rose-500/30'
           : item.source_badge === '공식/글로벌'
           ? 'bg-blue-500/10 text-blue-600 dark:text-blue-400 border-blue-500/30'
           : 'bg-amber-500/10 text-amber-600 dark:text-amber-400 border-amber-500/30';

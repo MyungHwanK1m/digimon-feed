@@ -1,8 +1,86 @@
 {
-  "last_updated": "2026-10-14 16:30:01",
-  "total_count": 9,
+  "last_updated": "2026-10-14 16:50:54",
+  "total_count": 22,
   "retention_days": 90,
   "feeds": [
+    {
+      "id": "7e69a3c89f4dfe96342ace064d7248b8",
+      "title": "[r/digimon] Aside from Butter-Fly (since it's obviously the best :v), what's your favorite Anime OP/ED?",
+      "snippet": "Cuz gahdamn dude, Butter-Fly is legendary but Stand Up by Twill is a real damn close second. I love this song to b",
+      "source": "Reddit digimon",
+      "source_badge": "레딧",
+      "category": "community",
+      "category_name": "커뮤니티",
+      "link": "https://www.reddit.com/r/digimon/comments/1x5i4oe/aside_from_butterfly_since_its_obviously_the_best/",
+      "image": "https://preview.redd.it/9n4yuzvy2dvh1.png?width=640&crop=smart&auto=webp&s=57a8c5c0356f27f2c9bc05237d07616e622af210",
+      "timestamp": 1791952560,
+      "created_at": "2026-10-14 13:36"
+    },
+    {
+      "id": "b095f5194486dc969dedf1cdf6a34104",
+      "title": "[r/digimon] Renamon fan art by ヱンペータ/Emperta",
+      "snippet": "https://www.pixiv.net/en/artworks/150835507 https://x.com/gendoempertags/status/2109798795995488259  &#32; submitt",
+      "source": "Reddit digimon",
+      "source_badge": "레딧",
+      "category": "community",
+      "category_name": "커뮤니티",
+      "link": "https://www.reddit.com/r/digimon/comments/1x5gm1o/renamon_fan_art_by_ヱンペータemperta/",
+      "image": "https://preview.redd.it/vbb6q9m2ocvh1.jpeg?width=640&crop=smart&auto=webp&s=91a0e234ae6595b312e6bcd6c40ef17b886c275a",
+      "timestamp": 1791947550,
+      "created_at": "2026-10-14 12:12"
+    },
+    {
+      "id": "8d9a6f7abea0eb94c09c5387e41618e8",
+      "title": "[r/digimon] accidental Terriermon folder icon",
+      "snippet": "had a picture of Terriermon in a folder on my pc and the standard preview made it toally look like it's supposed t",
+      "source": "Reddit digimon",
+      "source_badge": "레딧",
+      "category": "community",
+      "category_name": "커뮤니티",
+      "link": "https://www.reddit.com/r/digimon/comments/1x5e47o/accidental_terriermon_folder_icon/",
+      "image": "https://preview.redd.it/wl83djey0cvh1.jpg?width=140&height=112&auto=webp&s=a9813b5702038278401482ca994ad69e5c91d6ff",
+      "timestamp": 1791939982,
+      "created_at": "2026-10-14 10:06"
+    },
+    {
+      "id": "141a1236cb4a901361b2d72d8842c19a",
+      "title": "[r/digimon] Day 13 DigiPOPs",
+      "snippet": "&#32; submitted by &#32;  /u/ChalkQ   [link] &#32; [comments]",
+      "source": "Reddit digimon",
+      "source_badge": "레딧",
+      "category": "community",
+      "category_name": "커뮤니티",
+      "link": "https://www.reddit.com/r/digimon/comments/1x58ybt/day_13_digipops/",
+      "image": "https://preview.redd.it/q8xznt83wavh1.jpeg?width=640&crop=smart&auto=webp&s=a5370a0df222e132a9ffb3ecbe05db333c519473",
+      "timestamp": 1791926030,
+      "created_at": "2026-10-14 06:13"
+    },
+    {
+      "id": "ee0a605e66054f81c6859edde67b60a7",
+      "title": "[r/digimon] MUGEN by Ridgeone1",
+      "snippet": "SOURCE I am not the artist. If you like this art and want to see more like this please support the artist on their",
+      "source": "Reddit digimon",
+      "source_badge": "레딧",
+      "category": "community",
+      "category_name": "커뮤니티",
+      "link": "https://www.reddit.com/r/digimon/comments/1x53a41/mugen_by_ridgeone1/",
+      "image": "https://preview.redd.it/3hxdhglvt9vh1.jpeg?width=640&crop=smart&auto=webp&s=e4e09716d482f800893c8b0a22a7257621392960",
+      "timestamp": 1791913199,
+      "created_at": "2026-10-14 02:39"
+    },
+    {
+      "id": "e7781600df2bfb01f937eb3716f24ac1",
+      "title": "[r/digimon] Has any Digimon game ever put you through a worse emotional rollercoaster than this?",
+      "snippet": "honestly don't think I've ever experienced a wide set of emotions than what these screenshots show. Going through",
+      "source": "Reddit digimon",
+      "source_badge": "레딧",
+      "category": "community",
+      "category_name": "커뮤니티",
+      "link": "https://www.reddit.com/r/digimon/comments/1x4ufyf/has_any_digimon_game_ever_put_you_through_a_worse/",
+      "image": "https://preview.redd.it/gbstf22r28vh1.jpeg?width=640&crop=smart&auto=webp&s=7ebdc7f2a6442ea9d3539c8de062b99611675ab4",
+      "timestamp": 1791891951,
+      "created_at": "2026-10-13 20:45"
+    },
     {
       "id": "c2e18c08cc8afe89866a8715926b0395",
       "title": "[반프레스토] 이치방쿠지 디지몬 시리즈 매트릭스 에볼루션",
@@ -15,6 +93,19 @@
       "image": null,
       "timestamp": 1791817200,
       "created_at": "2026-10-13 00:00"
+    },
+    {
+      "id": "b1354fd1a6d46303bc7edc40403dcf9c",
+      "title": "[r/digimon] Digimon: World’s Best Picks: Episode 2, Digimon Adventure: Episode 10- Centarumon the Protector!, Discussion Thread",
+      "snippet": "https://preview.redd.it/690gy9pa1bth1.jpg?width=2160&amp;format=pjpg&amp;auto=webp&amp;s=076bc9fb69b4bd5920e08a063",
+      "source": "Reddit digimon",
+      "source_badge": "레딧",
+      "category": "community",
+      "category_name": "커뮤니티",
+      "link": "https://www.reddit.com/r/digimon/comments/1x2kklo/digimon_worlds_best_picks_episode_2_digimon/",
+      "image": "https://external-preview.redd.it/s3RUYoTi2mTSLabMHIgqWiyV6ikF1WyOyFMj87f4_x0.jpeg?width=140&height=140&auto=webp&s=a0a2f06917379c666c90ac100a97f5b1976b752b",
+      "timestamp": 1791652382,
+      "created_at": "2026-10-11 02:13"
     },
     {
       "id": "b4545a9f2e9f082c3a05979b37fac85b",
@@ -56,6 +147,19 @@
       "created_at": "2026-10-09 00:00"
     },
     {
+      "id": "b3f6e4bcb11d57b0ca00f7c8c9a3c44e",
+      "title": "[r/digimon] Digimon: World’s Best Picks: Episode 1, Digimon Adventure: Episode 1- Adrift? The Island of Adventure!, Discussion Thread",
+      "snippet": "https://preview.redd.it/690gy9pa1bth1.jpg?width=2160&amp;format=pjpg&amp;auto=webp&amp;s=076bc9fb69b4bd5920e08a063",
+      "source": "Reddit digimon",
+      "source_badge": "레딧",
+      "category": "community",
+      "category_name": "커뮤니티",
+      "link": "https://www.reddit.com/r/digimon/comments/1www2nn/digimon_worlds_best_picks_episode_1_digimon/",
+      "image": "https://external-preview.redd.it/s3RUYoTi2mTSLabMHIgqWiyV6ikF1WyOyFMj87f4_x0.jpeg?width=140&height=140&auto=webp&s=a0a2f06917379c666c90ac100a97f5b1976b752b",
+      "timestamp": 1791056586,
+      "created_at": "2026-10-04 04:43"
+    },
+    {
       "id": "baba50e7e725eb8a709baaa1454d985a",
       "title": "디지몬 테이머즈 25주년 기념 상품 예약 판매 개시",
       "snippet": "디지몬 테이머즈 25주년 기념 상품 예약 판매 개시&nbsp;&nbsp;haveagood-holiday.com",
@@ -67,6 +171,32 @@
       "image": null,
       "timestamp": 1790838000,
       "created_at": "2026-10-01 16:00"
+    },
+    {
+      "id": "86199b10fb1203472214eee34093fc23",
+      "title": "[트윗] 【입고소식🆕/#피규어】 #디지몬_어드벤처 #디지몬 신규 피규어가 입고 되었습니다📢 🪽디지바이스 스탠드 파닥몬 #잠실롯데 #애니메이트 에서 만나요 ദ്ദി◍•ᴗ•◍) - X",
+      "snippet": "X(트위터) 디지몬 공식/속보 트윗입니다.",
+      "source": "X(트위터)",
+      "source_badge": "X(트위터)",
+      "category": "figure",
+      "category_name": "공식/속보",
+      "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE5XdXVrNnlteThtWXdvWkRhTWRqY214NXI1b3I5d01sZzZPNTlsNTVvSl9Pdm11bTlPSTg3cThNVnJTaEJqSHFsLWRRaFdNN1hndVltekJEcHE2SEVuN3dyQk5xZ20?oc=5",
+      "image": null,
+      "timestamp": 1790838000,
+      "created_at": "2026-10-01 16:00"
+    },
+    {
+      "id": "91d95f16c1719a273d5ac935509af22f",
+      "title": "[트윗] 많은 관심과 성원에 힘입어, 디지몬 어드벤처 프레임이 재출시 되었습니다! 26.09.18부터 26.10.31까지 포토이즘에서 만나보세요:) - X",
+      "snippet": "X(트위터) 디지몬 공식/속보 트윗입니다.",
+      "source": "X(트위터)",
+      "source_badge": "X(트위터)",
+      "category": "general",
+      "category_name": "공식/속보",
+      "link": "https://news.google.com/rss/articles/CBMiYkFVX3lxTFBYVmtWM0RsQjlWSEI4QnUzQzVvS2NRYVg0QW1SRmRiRDNfLXI1d3l2UXhkRlJudGZjeTdtblhjcThGS2gxX2xaZWkwVmI1eW9OT2F2QVE4OS05enM2MGlLTW53?oc=5",
+      "image": null,
+      "timestamp": 1789542000,
+      "created_at": "2026-09-16 16:00"
     },
     {
       "id": "a25c460ee7337cd41872a20871caadf3",
@@ -95,6 +225,32 @@
       "created_at": "2026-09-14 00:00"
     },
     {
+      "id": "9cafb7a0853994ea7bda7e66acf542ea",
+      "title": "[트윗] 🎶이 전주에 심장 뛰는 디지몬 팬 손!🙋 〈볼레로〉가 울리면 모험이 시작되고 〈Butter-Fly〉가 들리면 선택받은 아이가 되는 우리 이번엔 극장에서 꼭 들어보세요🔊✨ 👾9월 16일 메가박스 단독 개봉!👾 - X",
+      "snippet": "X(트위터) 디지몬 공식/속보 트윗입니다.",
+      "source": "X(트위터)",
+      "source_badge": "X(트위터)",
+      "category": "general",
+      "category_name": "공식/속보",
+      "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTE9GNkZHYWFRdWQtZktwNUlTbnJBakxYVUxuYVo4YlZqLXp1eFVxXzJIX2FtNC1BM1RELWxWc1RiRzltVG96SXhvc2trTllqZ001Q21JOWNuLVY3c1BsZHFVakVPemtvbldyejg4OVA3Z1c?oc=5",
+      "image": null,
+      "timestamp": 1789023600,
+      "created_at": "2026-09-10 16:00"
+    },
+    {
+      "id": "89dcc511541c9850d649e6cbf34a4b28",
+      "title": "[트윗] MEGA EGG FIGURE 《디지몬 어드벤처》 잘 자요 디지몬 컬렉션! 8개 BOX https://t.co/BiATvPbbNv 제작 : 메가 하우스(MegaHouse) ✅9월 10일 자정부터 예약 시작 2027년 5월 발매예정 #디지몬 #아구몬 #파피몬 #파닥몬 - X",
+      "snippet": "X(트위터) 디지몬 공식/속보 트윗입니다.",
+      "source": "X(트위터)",
+      "source_badge": "X(트위터)",
+      "category": "figure",
+      "category_name": "공식/속보",
+      "link": "https://news.google.com/rss/articles/CBMib0FVX3lxTFBGbC0xY1Y0djZ0dGxmMkxhTjk0cWZjYm9PdkZJWVdFVXBrSjQ0c2NUamFNYnFGWVZHZW96ZWdQZWtiWUdBaWNqYlZ5d3BzZDRhaDl0VjJ3OTVZTXg1eTVPRVppN0wxaHVtWDJhMnJsYw?oc=5",
+      "image": null,
+      "timestamp": 1788937200,
+      "created_at": "2026-09-09 16:00"
+    },
+    {
       "id": "7c6c7c87dee61e11e878e33ceb595bab",
       "title": "디지몬 어드벤처 파닥몬, 가트몬 공식 무드등 출시예정",
       "snippet": "루리웹 피규어/프라모델 정보 게시판 등록 소식입니다.",
@@ -106,6 +262,19 @@
       "image": null,
       "timestamp": 1785164400,
       "created_at": "2026-07-28 00:00"
+    },
+    {
+      "id": "be09fe0225d543d691e2594772819f30",
+      "title": "[영상] FTISLAND (FT아일랜드) - Butter-Fly (디지몬 어드벤처) | Cover | Original Song : 전영호",
+      "snippet": "YouTube 최신 디지몬 공식/인기 영상입니다.",
+      "source": "YouTube",
+      "source_badge": "유튜브",
+      "category": "game",
+      "category_name": "게임/영상",
+      "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE05TzdVeEQ1WGU2WTl3LXZ1Y3lSSUg4aVl1Z0tuRHdNOHRmT2F6QktzdXRjRHNMdlluenZUU1JWbHhkbm0tRkoyb0RoejFTS2VNLUN5dHpB?oc=5",
+      "image": null,
+      "timestamp": 1784629375,
+      "created_at": "2026-07-21 19:22"
     },
     {
       "id": "8edd842c9ae43754d54d74918ef4b336",

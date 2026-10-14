@@ -81,7 +81,7 @@ TRUSTED_NEWS_SOURCES = [
     "경향신문", "한겨레", "조선일보", "중앙일보", "동아일보", "뉴시스", "뉴스1",
     "스포츠조선", "스포츠서울", "데일리스포츠", "게임포커스", "게임샷", "게임톡",
     "스마트pc사랑", "반다이", "youtube", "유튜브", "포모스", "경향게임스",
-    "디지몬", "haveagood-holiday"
+    "디지몬", "haveagood-holiday", "x.com", "twitter", "트위터", "reddit", "레딧", "toei", "토에이"
 ]
 
 def is_spam(item: dict) -> bool:
@@ -292,6 +292,117 @@ def crawl_withthewill_news():
         print(f"[Error] WithTheWill crawling failed: {e}")
     return items
 
+def crawl_reddit_digimon():
+    items = []
+    subreddits = [
+        ("digimon", "r/digimon", "community"),
+        ("DigimonCardGame2020", "r/디지카", "card")
+    ]
+    reddit_headers = {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) DigimonTracker/1.0"
+    }
+    for sub, badge, def_cat in subreddits:
+        url = f"https://www.reddit.com/r/{sub}/hot.rss"
+        try:
+            feed = feedparser.parse(url, request_headers=reddit_headers)
+            for entry in feed.entries[:8]:
+                title = entry.title
+                link = entry.link
+                published = getattr(entry, "published", "")
+                ts = parse_to_timestamp(published)
+                cat = classify_category(title, def_cat)
+
+                # 썸네일 이미지 추출
+                img_url = None
+                if "media_thumbnail" in entry and entry.media_thumbnail:
+                    img_url = entry.media_thumbnail[0].get("url")
+                elif "content" in entry and entry.content:
+                    m = re.search(r'https://preview\.redd\.it/[^\"&? ]+', entry.content[0].value)
+                    if m:
+                        img_url = m.group(0)
+
+                summary = re.sub(r'<[^>]+>', '', getattr(entry, "summary", ""))[:120].strip()
+
+                items.append({
+                    "id": get_hash_id(link),
+                    "title": f"[{badge}] {title}",
+                    "snippet": summary or f"Reddit {badge} 인기 게시글입니다.",
+                    "source": f"Reddit {sub}",
+                    "source_badge": "레딧",
+                    "category": cat,
+                    "category_name": "커뮤니티" if cat == "community" else "카드게임(TCG)",
+                    "link": link,
+                    "image": img_url,
+                    "timestamp": ts,
+                    "created_at": format_display_date(ts)
+                })
+        except Exception as e:
+            print(f"[Error] Reddit {sub} crawling failed: {e}")
+    return items
+
+def crawl_youtube_digimon():
+    items = []
+    feed_url = "https://news.google.com/rss/search?q=site:youtube.com+%22%EB%94%94%EC%A7%80%EB%AA%AC%22&hl=ko&gl=KR&ceid=KR:ko"
+    try:
+        feed = feedparser.parse(feed_url)
+        for entry in feed.entries[:10]:
+            title = entry.title.replace(" - YouTube", "").strip()
+            link = entry.link
+            published = getattr(entry, "published", "")
+            ts = parse_to_timestamp(published)
+            cat = classify_category(title, "game")
+
+            items.append({
+                "id": get_hash_id(link),
+                "title": f"[영상] {title}",
+                "snippet": "YouTube 최신 디지몬 공식/인기 영상입니다.",
+                "source": "YouTube",
+                "source_badge": "유튜브",
+                "category": cat,
+                "category_name": "게임/영상",
+                "link": link,
+                "image": None,
+                "timestamp": ts,
+                "created_at": format_display_date(ts)
+            })
+    except Exception as e:
+        print(f"[Error] YouTube crawling failed: {e}")
+    return items
+
+def crawl_twitter_digimon():
+    items = []
+    feed_url = 'https://news.google.com/rss/search?q=site:x.com+OR+site:twitter.com+(%22digimonweb_net%22+OR+%22digimon_tcg%22+OR+%22%EB%94%94%EC%A7%80%EB%AA%AC%22)&hl=ko&gl=KR&ceid=KR:ko'
+    try:
+        feed = feedparser.parse(feed_url)
+        for entry in feed.entries[:10]:
+            title = entry.title
+            if " on X: " in title:
+                parts = title.split(" on X: ", 1)
+                author = parts[0]
+                text = parts[1].replace('"', "").strip()
+                title = f"@{author}: {text}"
+            link = entry.link
+            published = getattr(entry, "published", "")
+            ts = parse_to_timestamp(published)
+            cat = classify_category(title, "general")
+
+            items.append({
+                "id": get_hash_id(link),
+                "title": f"[트윗] {title}",
+                "snippet": "X(트위터) 디지몬 공식/속보 트윗입니다.",
+                "source": "X(트위터)",
+                "source_badge": "X(트위터)",
+                "category": cat,
+                "category_name": "공식/속보",
+                "link": link,
+                "image": None,
+                "timestamp": ts,
+                "created_at": format_display_date(ts)
+            })
+    except Exception as e:
+        print(f"[Error] Twitter crawling failed: {e}")
+    return items
+
 def main():
     print(f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] Starting Digimon feeds crawl...")
     all_new_items = []
@@ -310,6 +421,15 @@ def main():
 
     print("5. Crawling WithTheWill...")
     all_new_items.extend(crawl_withthewill_news())
+
+    print("6. Crawling Reddit...")
+    all_new_items.extend(crawl_reddit_digimon())
+
+    print("7. Crawling YouTube...")
+    all_new_items.extend(crawl_youtube_digimon())
+
+    print("8. Crawling Twitter (X)...")
+    all_new_items.extend(crawl_twitter_digimon())
 
     print(f"Total fetched: {len(all_new_items)} items")
 
