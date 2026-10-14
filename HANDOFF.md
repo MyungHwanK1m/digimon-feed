@@ -5,7 +5,7 @@ PC(로컬)에서는 인터넷이 열려 있으므로 아래 순서대로 이어�
 
 ## 1. 현재 상태
 
-- 작업 브랜치: `claude/tender-davinci-dcqvn9` (main 기준 + 수정 커밋 1개, 아직 PR 없음)
+- 작업 브랜치: `claude/tender-davinci-dcqvn9` (아직 PR 없음)
 - 수정 완료 내용 (커밋 `6ad0b80`)
   - 진화 엔진 재작성: 대표 진화 라인(`CANONICAL_LINES`)을 영문명 기준으로 정리, ID·한글명은 인덱스에서 조회
   - 단계 번역: Digi-API 일본식 표기 기준 (Ultimate = 궁극체, Baby II = 유년기 II)
@@ -38,26 +38,17 @@ git checkout claude/tender-davinci-dcqvn9
 git pull
 ```
 
-### 3-2. 인덱스에 레벨 데이터 채우기 (Digi-API 필요)
-```bash
-pip install -r scraper/requirements.txt
-python scraper/generate_digidex.py        # 1,488종 상세 조회, 수 분 소요
-```
-- 이 단계가 끝나야 진화 목록의 "역진화 필터"와 카드의 단계 표시가 동작합니다.
-- 또는 GitHub Actions 탭 → `Build Digi-Dex Index` → Run workflow (단, 이 워크플로는 브랜치가 main에 머지된 뒤에 목록에 나타남)
+### 3-2. ✅ 인덱스 레벨 데이터 (완료)
+- GitHub Actions에서 실행해 커밋 `642fe93`으로 반영됨 (1,488종 중 1,347종 레벨 확보, 나머지는 API에 레벨 없음)
+- 이후 갱신: main 머지 후 Actions → `Build Digi-Dex Index` → Run workflow (또는 매주 자동)
 
-### 3-3. 실제 API 응답으로 검증
-```bash
-curl -s https://digi-api.com/api/v1/digimon/Omegamon | python -m json.tool | head -80
-curl -s "https://digi-api.com/api/v1/level?pageSize=50"
-curl -s "https://digi-api.com/api/v1/type?pageSize=300"
-```
-확인할 것:
-- [ ] `levels` 값이 `Baby I / Baby II / Child / Adult / Perfect / Ultimate / Armor / Hybrid / Unknown` 인지
-      (다르면 `index.html`의 `LEVEL_KO` 수정)
-- [ ] 조그레스 진화의 `condition` 형식 (예: `with Metal Garurumon`)
-      → `isJogressCondition()`이 올바르게 잡는지
-- [ ] 타입 목록 중 `DIGI_TYPES_KO`에 없는 것 추가 (현재 없는 타입은 영어 그대로 표시됨)
+### 3-3. ✅ 실제 API 응답 형식 확인 (완료, Actions 로그 기준)
+- 단계: `Baby I / Baby II / Child / Adult / Perfect / Ultimate / Armor / Hybrid / Unknown` → `LEVEL_KO`와 일치
+- 조그레스 조건: `with Garurumon`(조그레스), `with or without ...`(선택), `with X Eraser`·`with the Human Spirit of Fire`(아이템/스피릿), `Warp Evolution`
+  → `isJogressCondition()`을 이 형식에 맞게 수정
+- 진화 목록에 역방향 항목 포함 확인 (아구몬 진화 전에 그레이몬·스카몬) → 레벨 필터로 제거됨
+- 그레이몬 다음 진화가 175개 → 같은 계열 이름·조건 없는 진화를 앞쪽에 정렬
+- 유형 `Lesser`(레서형) 추가. 유형 전체 목록은 API 페이지 제한으로 일부만 확인됨 → 화면에 영어로 나오는 유형이 보이면 `DIGI_TYPES_KO`에 추가
 
 ### 3-4. 앱 실행해서 눈으로 확인
 ```bash

@@ -1050,6 +1050,7 @@
       'puppet': '퍼펫형 (돌형)',
       'mutant': '돌연변이형',
       'larva': '유충형',
+      'lesser': '레서형',
       'smoke': '연기형',
       'slime': '슬라임형',
       'amphibian': '양서류형',
@@ -1125,9 +1126,24 @@
     };
     const CANONICAL_BY_NORM = Object.fromEntries(Object.entries(CANONICAL_LINES).map(([k, v]) => [normName(k), v]));
 
+    // Digi-API condition 예: "with Garurumon"(조그레스), "with or without ..."(선택), "with X Eraser"(아이템),
+    // "with the Human Spirit of Fire", "Warp Evolution" → 조그레스는 "with <디지몬>" 형태만 인정
+    const NON_JOGRESS_HINTS = ['evolution', 'spirit', 'eraser', 'digitron', 'blade', 'proud', 'antibody', 'crest', 'item'];
     function isJogressCondition(cond) {
       const c = String(cond || '').toLowerCase().trim();
-      return (c.startsWith('with ') && !c.startsWith('with or without')) || c.includes('jogress') || c.includes('dna');
+      if (c.includes('jogress')) return true;
+      if (!c.startsWith('with ') || c.startsWith('with or without')) return false;
+      return !NON_JOGRESS_HINTS.some(h => c.includes(h));
+    }
+
+    // 같은 계열(이름 공유) → 조건 없는 일반 진화 → 나머지 순으로 정렬 (그레이몬 다음 진화가 175개라 앞쪽이 중요)
+    function evoSortScore(ev, currentName) {
+      const words = String(currentName || '').toLowerCase().replace(/\(.*?\)/g, ' ').split(/[^a-z]+/).filter(w => w.length >= 4);
+      const name = String(ev.digimon || '').toLowerCase();
+      let score = 0;
+      if (words.some(w => name.includes(w))) score += 2;
+      if (!String(ev.condition || '').trim()) score += 1;
+      return score;
     }
 
     function toEvoCard(ev) {
@@ -1160,10 +1176,15 @@
       const apiNext = (rawNext || [])
         .filter(n => { const r = rankOf(n); return !curRank || !r || r >= curRank; });
 
+      const bySort = list => list
+        .map((ev, i) => ({ ev, i, sc: evoSortScore(ev, currentName) }))
+        .sort((x, y) => y.sc - x.sc || x.i - y.i)
+        .map(x => x.ev);
+
       const prior = canon.prior
         ? canon.prior.map(name => ({ digimon: name, jogress: !!canon.jogress }))
-        : apiPrior;
-      const next = canon.next ? canon.next.map(name => ({ digimon: name })) : apiNext;
+        : bySort(apiPrior);
+      const next = canon.next ? canon.next.map(name => ({ digimon: name })) : bySort(apiNext);
 
       const dedupe = list => {
         const seen = new Set();

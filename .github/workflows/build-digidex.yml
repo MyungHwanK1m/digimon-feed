@@ -2,9 +2,6 @@ name: Build Digi-Dex Index
 
 on:
   workflow_dispatch: # Actions 탭에서 수동 실행
-  push: # (임시) 작업 브랜치에서 인덱스 생성·API 점검 실행
-    branches: [claude/tender-davinci-dcqvn9]
-    paths: ['.github/workflows/build-digidex.yml', 'scraper/generate_digidex.py', 'scraper/inspect_digiapi.py']
   schedule:
     # 매주 월요일 03:17 UTC (신규 디지몬·레벨 정보 갱신)
     - cron: '17 3 * * 1'
@@ -28,9 +25,6 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r scraper/requirements.txt
-
-      - name: Inspect Digi-API response format
-        run: python scraper/inspect_digiapi.py
 
       - name: Build master index (names + levels from Digi-API)
         run: python scraper/generate_digidex.py
