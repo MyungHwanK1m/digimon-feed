@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-10-14 19:50:45",
-  "total_count": 43,
+  "last_updated": "2026-10-14 22:50:36",
+  "total_count": 44,
   "retention_days": 90,
   "feeds": [
     {
@@ -301,6 +301,19 @@
       "image": null,
       "timestamp": 1791569944,
       "created_at": "2026-10-09 18:19"
+    },
+    {
+      "id": "5dd892f4a5f3ad69597d761ea541443f",
+      "title": "[트윗] 【한정 판매】 《디지몬 테이머즈》 레나몬&은세나(마키노 루키) 완성품 피규어 https://t.co/4qQGWfdMV6 제작 : 메가하우스 2027년 6월 발매 예정🦊 #디지몬테이머즈 #디지몬 #DigimonTamers #Digimon - X",
+      "snippet": "X(트위터) 디지몬 공식/굿즈 속보 트윗입니다.",
+      "source": "X(트위터)",
+      "source_badge": "X(트위터)",
+      "category": "figure",
+      "category_name": "피규어/굿즈",
+      "link": "https://news.google.com/rss/articles/CBMib0FVX3lxTE5IakZFNERpejJ4ZmNjWkd5VkQta3JVcGF4T3pqS1F0aW1QYXhYajF6LUc3Q3pSNG1GTmU1V0RkaTF5SS1raHktMVhCVWFwaDEyR2JKR25YR09CNkhpYjRPOHdaYlBJWVNVdE9oNnJUVQ?oc=5",
+      "image": null,
+      "timestamp": 1791522509,
+      "created_at": "2026-10-09 05:08"
     },
     {
       "id": "20f4970585795191be02e6ed9b7de271",
