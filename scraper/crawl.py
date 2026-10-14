@@ -14,6 +14,7 @@ HEADERS = {
 
 DATA_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "data"))
 FEEDS_FILE = os.path.join(DATA_DIR, "digimon_feeds.json")
+DOCS_DATA_FILE = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "docs", "digimon_feeds.json"))
 PUBLIC_DATA_FILE = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "public", "digimon_feeds.json"))
 
 def get_hash_id(url: str) -> str:
@@ -241,12 +242,13 @@ def main():
     with open(FEEDS_FILE, "w", encoding="utf-8") as f:
         json.dump(result, f, ensure_ascii=False, indent=2)
 
-    # public 폴더에도 복사하여 웹 프론트엔드가 바로 서빙할 수 있도록 함
-    os.makedirs(os.path.dirname(PUBLIC_DATA_FILE), exist_ok=True)
-    with open(PUBLIC_DATA_FILE, "w", encoding="utf-8") as f:
-        json.dump(result, f, ensure_ascii=False, indent=2)
+    # public 및 docs 폴더에도 복사하여 GitHub Pages와 웹 프론트엔드가 바로 서빙할 수 있도록 함
+    for target in [PUBLIC_DATA_FILE, DOCS_DATA_FILE]:
+        os.makedirs(os.path.dirname(target), exist_ok=True)
+        with open(target, "w", encoding="utf-8") as f:
+            json.dump(result, f, ensure_ascii=False, indent=2)
 
-    print(f"Successfully saved {len(final_feeds)} items to {FEEDS_FILE} & {PUBLIC_DATA_FILE}")
+    print(f"Successfully saved {len(final_feeds)} items to data, docs, and public folders.")
 
 if __name__ == "__main__":
     main()

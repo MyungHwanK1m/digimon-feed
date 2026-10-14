@@ -1,0 +1,21 @@
+{
+  "name": "DIGI-FEED: 디지몬 자동 모니터",
+  "short_name": "디지피드",
+  "description": "디지몬 최신 뉴스, 피규어 굿즈, 카드게임(TCG), 커뮤니티 인기글 자동 수집기",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#f97316",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
