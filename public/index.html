@@ -633,7 +633,7 @@
     // PWA Service Worker (Blue Card v6 with auto-update)
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
-        navigator.serviceWorker.register('sw.js?v=6').then((reg) => {
+        navigator.serviceWorker.register('sw.js?v=7').then((reg) => {
           reg.update();
         }).catch(console.error);
 
@@ -813,7 +813,6 @@
                 >
                   ${m.image ? `<img src="${m.image}" class="w-4 h-4 object-contain" onerror="this.style.display='none'" />` : '👾'}
                   <span>${m.name_ko}</span>
-                  ${m.name_ja_ko && m.name_ja_ko !== m.name_ko ? `<span class="text-[10px] text-blue-500/80 dark:text-blue-300">(${m.name_ja_ko})</span>` : ''}
                 </button>
               `).join('')}
             </div>
@@ -843,7 +842,7 @@
                   </div>
                   <div class="min-w-0 flex-1">
                     <p class="font-extrabold text-xs text-slate-900 dark:text-slate-100 truncate">${m.name_ko}</p>
-                    <p class="text-[10px] text-slate-500 font-mono truncate">${m.name_ja_ko ? `${m.name_ja_ko} · ` : ''}${m.name}</p>
+                    <p class="text-[10px] text-slate-400 font-mono truncate">${m.name}</p>
                   </div>
                 </div>
               `).join('')}
@@ -873,10 +872,7 @@
                     <img src="${m.image || ''}" alt="${m.name_ko}" class="max-w-full max-h-full object-contain" onerror="this.style.display='none'" />
                   </div>
                   <div class="min-w-0">
-                    <p class="font-black text-xs text-slate-900 dark:text-slate-100 truncate">
-                      ${m.name_ko}
-                      ${m.name_ja_ko && m.name_ja_ko !== m.name_ko ? `<span class="text-[11px] font-semibold text-blue-600 dark:text-blue-400 ml-1">(${m.name_ja_ko})</span>` : ''}
-                    </p>
+                    <p class="font-black text-xs text-slate-900 dark:text-slate-100 truncate">${m.name_ko}</p>
                     <p class="text-[10px] text-slate-400 font-mono truncate">${m.name}</p>
                   </div>
                 </div>
@@ -1021,11 +1017,138 @@
       return typ;
     }
 
+    // Flagship Official Anime & Reference Book Canonical Lines
+    const CANONICAL_DIRECT_LINES = {
+      'omegamon(merciful mode)': {
+        prior: [{ id: 183, digimon: 'Omegamon', name_ko: '오메가몬' }],
+        next: []
+      },
+      'omegamon (merciful mode)': {
+        prior: [{ id: 183, digimon: 'Omegamon', name_ko: '오메가몬' }],
+        next: []
+      },
+      'omegamon': {
+        prior: [
+          { id: 202, digimon: 'War Greymon', name_ko: '워그레이몬' },
+          { id: 168, digimon: 'Metal Garurumon', name_ko: '메탈가루루몬' }
+        ],
+        next: [
+          { id: 1235, digimon: 'Omegamon(Merciful Mode)', name_ko: '오메가몬 (머시풀 모드)' },
+          { id: 686, digimon: 'Omegamon (X-Antibody)', name_ko: '오메가몬 (X항체)' }
+        ]
+      },
+      'agumon': {
+        prior: [
+          { id: 36, digimon: 'Koromon', name_ko: '코로몬' },
+          { id: 257, digimon: 'Botamon', name_ko: '깜몬' }
+        ],
+        next: [
+          { id: 34, digimon: 'Greymon', name_ko: '그레이몬' },
+          { id: 818, digimon: 'Geo Greymon', name_ko: '지오그레이몬' },
+          { id: 166, digimon: 'Tyranomon', name_ko: '티라노몬' }
+        ]
+      },
+      'agumon (black)': {
+        prior: [
+          { id: 80, digimon: 'Pagumon', name_ko: '파구몬' },
+          { id: 36, digimon: 'Koromon', name_ko: '코로몬' }
+        ],
+        next: [
+          { id: 264, digimon: 'Greymon (Blue)', name_ko: '그레이몬 (청)' },
+          { id: 265, digimon: 'Dark Tyranomon', name_ko: '다크티라노몬' }
+        ]
+      },
+      'gabumon': {
+        prior: [{ id: 345, digimon: 'Tsunomon', name_ko: '뿔몬' }],
+        next: [{ id: 96, digimon: 'Garurumon', name_ko: '가루루몬' }]
+      },
+      'guilmon': {
+        prior: [{ id: 472, digimon: 'Gigimon', name_ko: '기기몬' }],
+        next: [{ id: 473, digimon: 'Growmon', name_ko: '그라우몬' }]
+      },
+      'v-mon': {
+        prior: [{ id: 261, digimon: 'Chibimon', name_ko: '꼬마몬' }],
+        next: [
+          { id: 262, digimon: 'XV-mon', name_ko: '엑스브이몬' },
+          { id: 267, digimon: 'Fladramon', name_ko: '플라드라몬' },
+          { id: 268, digimon: 'Lighdramon', name_ko: '라이드라몬' }
+        ]
+      },
+      'patamon': {
+        prior: [{ id: 247, digimon: 'Tokomon', name_ko: '토코몬' }],
+        next: [{ id: 3, digimon: 'Angemon', name_ko: '엔젤몬' }]
+      },
+      'tailmon': {
+        prior: [
+          { id: 260, digimon: 'Plotmon', name_ko: '플롯트몬' },
+          { id: 181, digimon: 'Nyaromon', name_ko: '야옹몬' }
+        ],
+        next: [{ id: 4, digimon: 'Angewomon', name_ko: '엔젤우몬' }]
+      },
+      'tentomon': {
+        prior: [{ id: 174, digimon: 'Motimon', name_ko: '모티몬' }],
+        next: [{ id: 37, digimon: 'Kabuterimon', name_ko: '캅테리몬' }]
+      },
+      'palmon': {
+        prior: [{ id: 191, digimon: 'Tanemon', name_ko: '시드몬' }],
+        next: [{ id: 195, digimon: 'Togemon', name_ko: '니드몬' }]
+      },
+      'gomamon': {
+        prior: [{ id: 188, digimon: 'Pukamon', name_ko: '둥실몬' }],
+        next: [{ id: 128, digimon: 'Ikkakumon', name_ko: '원뿔몬' }]
+      },
+      'piyomon': {
+        prior: [{ id: 189, digimon: 'Pyocomon', name_ko: '어니언몬' }],
+        next: [{ id: 5, digimon: 'Birdramon', name_ko: '버드라몬' }]
+      },
+      'dukemon': {
+        prior: [{ id: 474, digimon: 'Megalo Growmon', name_ko: '메가로그라우몬' }],
+        next: [
+          { id: 504, digimon: 'Dukemon (Crimson Mode)', name_ko: '듀크몬 (크림슨 모드)' },
+          { id: 645, digimon: 'Dukemon (X-Antibody)', name_ko: '듀크몬 (X항체)' }
+        ]
+      },
+      'dukemon (crimson mode)': {
+        prior: [{ id: 475, digimon: 'Dukemon', name_ko: '듀크몬' }],
+        next: []
+      },
+      'imperialdramon (paladin mode)': {
+        prior: [{ id: 300, digimon: 'Imperialdramon (Fighter Mode)', name_ko: '황제드라몬 (파이터 모드)' }],
+        next: []
+      },
+      'beelzebumon (blast mode)': {
+        prior: [{ id: 486, digimon: 'Beelzebumon', name_ko: '베르제브몬' }],
+        next: []
+      }
+    };
+
     // 1,488 All Digimon Evolution Sanitation & Canonical Prioritization
     function cleanAndPrioritizeEvolutions(currentName, currentLevel, rawPrior, rawNext) {
       const nameLower = (currentName || '').toLowerCase().trim();
 
-      // 1. Terminal Form Check (더 이상 진화가 없는 최종 형태 전수 판별)
+      // 1. Direct Canonical Flagship check
+      if (CANONICAL_DIRECT_LINES[nameLower]) {
+        const c = CANONICAL_DIRECT_LINES[nameLower];
+        return {
+          isTerminal: c.next.length === 0,
+          prior: c.prior.map(p => ({
+            id: p.id,
+            digimon: p.digimon,
+            name_ko: p.name_ko,
+            name_en: p.digimon,
+            image: `https://digi-api.com/images/digimon/w/${p.digimon.replace(/ /g, '_')}.png`
+          })),
+          next: c.next.map(n => ({
+            id: n.id,
+            digimon: n.digimon,
+            name_ko: n.name_ko,
+            name_en: n.digimon,
+            image: `https://digi-api.com/images/digimon/w/${n.digimon.replace(/ /g, '_')}.png`
+          }))
+        };
+      }
+
+      // 2. Terminal Form Check (더 이상 진화가 없는 최종 형태 전수 판별)
       const isTerminal = 
         nameLower.includes('merciful mode') ||
         nameLower.includes('burst mode') ||
@@ -1038,7 +1161,7 @@
 
       let cleanedNext = isTerminal ? [] : (rawNext ? [...rawNext] : []);
 
-      // 2. Prior Evolution Filter: 조그레스 보조/제물 디지몬 배제 (e.g. 'with Omegamon...' 배제)
+      // 3. Prior Evolution Filter: 조그레스 보조/제물 디지몬 배제 (e.g. 'with Omegamon...' 배제)
       let cleanedPrior = (rawPrior ? [...rawPrior] : []).filter(p => {
         const cond = (p.condition || '').toLowerCase().trim();
         if (!cond) return true;
@@ -1049,7 +1172,7 @@
         return true;
       });
 
-      // 3. Level Consistency Check (성장기 진화 전에 성숙기/스카몬 등 역진화 데이터 배제)
+      // 4. Level Consistency Check (성장기 진화 전에 성숙기/스카몬 등 역진화 데이터 배제)
       const curLvlKo = translateLevel(currentLevel);
       if (curLvlKo === '성장기') {
         cleanedPrior = cleanedPrior.filter(p => {
@@ -1058,25 +1181,11 @@
         });
       }
 
-      // 4. Lineage / Canonical affinity sort for ALL Digimon
+      // 5. Lineage / Canonical affinity sort for ALL Digimon
       function getAffinityScore(candidateName, targetName) {
         const c = (candidateName || '').toLowerCase();
         const t = (targetName || '').toLowerCase();
         
-        // 원작 대표 플래그십 진화쌍 가중치
-        if (t.includes('merciful') && c === 'omegamon') return 3000;
-        if (t === 'omegamon' && (c === 'wargreymon' || c === 'metalgarurumon')) return 3000;
-        if (t === 'agumon' && (c === 'koromon' || c === 'greymon')) return 3000;
-        if (t === 'greymon' && (c === 'agumon' || c === 'metalgreymon')) return 3000;
-        if (t === 'metalgreymon' && (c === 'greymon' || c === 'wargreymon')) return 3000;
-        if (t === 'gabumon' && (c === 'tsunomon' || c === 'garurumon')) return 3000;
-        if (t === 'garurumon' && (c === 'gabumon' || c === 'weregarurumon')) return 3000;
-        if (t === 'guilmon' && (c === 'gigimon' || c === 'growmon')) return 3000;
-        if ((t === 'v-mon' || t === 'veemon') && (c === 'chibimon' || c.includes('xv-mon'))) return 3000;
-        if (t.includes('tentomon') && c.includes('kabuterimon')) return 3000;
-        if (t.includes('patamon') && (c.includes('angemon') || c.includes('tokomon'))) return 3000;
-        if ((t.includes('tailmon') || t.includes('gatomon')) && (c.includes('angewomon') || c.includes('plotmon'))) return 3000;
-
         // 패밀리 이름 일치 가중치 (e.g. Greymon -> GeoGreymon, RizeGreymon 등)
         const baseClean = t.replace(/\(.*?\)/g, '').replace(/mode/g, '').replace(/x-antibody/g, '').trim();
         const baseWords = baseClean.split(' ').filter(w => w.length >= 4);
@@ -1089,15 +1198,15 @@
       cleanedPrior.sort((a, b) => getAffinityScore(b.digimon, currentName) - getAffinityScore(a.digimon, currentName));
       cleanedNext.sort((a, b) => getAffinityScore(b.digimon, currentName) - getAffinityScore(a.digimon, currentName));
 
-      // 5. Korean Name Lookup for each evolution
+      // 6. Korean Name Lookup for each evolution
       function enrichWithKorean(evList) {
-        return evList.map(ev => {
+        return evList.slice(0, 8).map(ev => {
           const m = masterIndex.find(idx => idx.id === ev.id || idx.name.toLowerCase() === (ev.digimon || '').toLowerCase());
           return {
             id: ev.id,
             digimon: ev.digimon,
             name_ko: m ? m.name_ko : (ev.digimon.endsWith('mon') ? ev.digimon.slice(0, -3) + '몬' : ev.digimon),
-            name_ja_ko: m ? m.name_ja_ko : '',
+            name_en: ev.digimon,
             image: ev.image || (m ? m.image : 'https://digi-api.com/images/digimon/w/Agumon.png')
           };
         });
@@ -1241,15 +1350,34 @@
 
         renderDexDetail(fullDigimon);
 
-        // 백그라운드 공식 도감 설명 한글 번역
+        // 백그라운드 공식 도감 설명 및 기술(Skills) 한글 번역
         if (fullDigimon.profile && /[a-zA-Z]/.test(fullDigimon.profile)) {
           translateTextToKo(fullDigimon.profile).then(translated => {
             if (currentDexDigimon && currentDexDigimon.id === fullDigimon.id && translated !== fullDigimon.profile) {
               currentDexDigimon.profile = translated;
               const profileEl = document.getElementById('dex-profile-text');
-              const statusEl = document.getElementById('dex-translation-status');
               if (profileEl) profileEl.textContent = translated;
-              if (statusEl) statusEl.innerHTML = `<span class="px-1.5 py-0.5 rounded bg-blue-100 dark:bg-blue-900/60 text-blue-700 dark:text-blue-300 font-bold">🇰🇷 한국어 번역 완료</span>`;
+            }
+          });
+        }
+
+        // 백그라운드 기술(Skills) 번역
+        if (fullDigimon.skills && fullDigimon.skills.length > 0) {
+          fullDigimon.skills.forEach(async (sk, idx) => {
+            if (sk.desc && /[a-zA-Z]/.test(sk.desc) && sk.desc !== '공식 필살기입니다.') {
+              const translatedDesc = await translateTextToKo(sk.desc);
+              if (translatedDesc && currentDexDigimon && currentDexDigimon.id === fullDigimon.id) {
+                sk.desc = translatedDesc;
+                const descEl = document.getElementById(`dex-skill-desc-${idx}`);
+                if (descEl) descEl.textContent = translatedDesc;
+              }
+            }
+            if (sk.name && /[a-zA-Z]/.test(sk.name)) {
+              const translatedName = await translateTextToKo(sk.name);
+              if (translatedName && currentDexDigimon && currentDexDigimon.id === fullDigimon.id && translatedName !== sk.name) {
+                const nameEl = document.getElementById(`dex-skill-name-${idx}`);
+                if (nameEl) nameEl.textContent = `${translatedName} (${sk.name})`;
+              }
             }
           });
         }
@@ -1344,33 +1472,33 @@
       const isDot = currentImg.type === 'dot';
 
       container.innerHTML = `
-        <article class="blue-card-item bg-white/95 dark:bg-[#070e22]/95 border-2 border-blue-400 dark:border-blue-600 rounded-3xl p-4 sm:p-6 shadow-xl relative overflow-hidden">
+        <article class="blue-card-item bg-white/95 dark:bg-[#070e22]/95 border-2 border-blue-400 dark:border-blue-600 rounded-2xl sm:rounded-3xl p-3 sm:p-6 shadow-xl relative overflow-hidden">
           <!-- Blue Card Left Stripe -->
-          <div class="absolute left-0 top-0 bottom-0 w-2.5 sm:w-3 bg-slate-900 border-r border-slate-950"></div>
+          <div class="absolute left-0 top-0 bottom-0 w-2 sm:w-3 bg-slate-900 border-r border-slate-950"></div>
           
           <!-- Watermark -->
           <div class="absolute top-2 right-2 w-28 h-28 dot-matrix-watermark rounded-tr-2xl pointer-events-none"></div>
 
-          <div class="pl-2 sm:pl-3 space-y-4">
+          <div class="pl-1.5 sm:pl-3 space-y-3.5 sm:space-y-4">
             
-            <!-- Header: Title & Badges (한국 더빙명 + 일본 원칭 병기) -->
-            <div class="flex items-start justify-between gap-3 flex-wrap border-b border-blue-200/60 dark:border-blue-900/60 pb-3">
+            <!-- Header: Title & Badges -->
+            <div class="flex items-start justify-between gap-2.5 flex-wrap border-b border-blue-200/60 dark:border-blue-900/60 pb-3">
               <div>
                 <div class="flex items-center gap-2">
-                  <span class="text-[10px] font-black px-2 py-0.5 rounded bg-blue-600 text-white font-mono tracking-wider shadow-xs">DIGI-DEX ARCHIVE</span>
-                  <span class="text-xs font-bold text-slate-400 font-mono">${d.name_en}</span>
+                  <span class="text-[9px] sm:text-[10px] font-black px-1.5 py-0.5 rounded bg-blue-600 text-white font-mono tracking-wider shadow-xs">DIGI-DEX ARCHIVE</span>
+                  <span class="text-[11px] sm:text-xs font-bold text-slate-400 font-mono">${d.name_en}</span>
                 </div>
-                <h2 class="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white tracking-tight mt-1 flex items-baseline gap-2 flex-wrap">
+                <h2 class="text-xl sm:text-2xl font-black text-slate-900 dark:text-white tracking-tight mt-1 flex items-baseline gap-2 flex-wrap">
                   <span>${d.name_ko}</span>
-                  ${d.name_ja_ko && d.name_ja_ko !== d.name_ko ? `<span class="text-sm sm:text-base font-bold text-blue-600 dark:text-blue-400">(${d.name_ja_ko} / ${d.name_en})</span>` : `<span class="text-xs font-bold text-slate-400 font-mono">(${d.name_en})</span>`}
+                  <span class="text-xs font-bold text-slate-400 font-mono">(${d.name_en})</span>
                 </h2>
               </div>
 
               <!-- Spec Badges -->
-              <div class="flex items-center gap-1.5 flex-wrap">
-                <span class="text-xs font-black px-2.5 py-1 rounded-xl bg-blue-500/15 text-blue-600 dark:text-blue-400 border border-blue-500/30">${d.level}</span>
-                <span class="text-xs font-black px-2.5 py-1 rounded-xl bg-purple-500/15 text-purple-600 dark:text-purple-400 border border-purple-500/30">${d.attribute}</span>
-                <span class="text-xs font-black px-2.5 py-1 rounded-xl bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 border border-emerald-500/30">${d.type}</span>
+              <div class="flex items-center gap-1 sm:gap-1.5 flex-wrap">
+                <span class="text-[11px] sm:text-xs font-black px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-xl bg-blue-500/15 text-blue-600 dark:text-blue-400 border border-blue-500/30">${d.level}</span>
+                <span class="text-[11px] sm:text-xs font-black px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-xl bg-purple-500/15 text-purple-600 dark:text-purple-400 border border-purple-500/30">${d.attribute}</span>
+                <span class="text-[11px] sm:text-xs font-black px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-xl bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 border border-emerald-500/30">${d.type}</span>
               </div>
             </div>
 
@@ -1381,13 +1509,13 @@
                   <span class="animate-bounce">👆</span>
                   <span>화면 클릭 시 비주얼 순환 전환</span>
                 </span>
-                <span id="dex-img-mode-badge" class="font-mono text-[11px] font-black text-slate-700 dark:text-slate-200 bg-blue-50 dark:bg-blue-950 px-2 py-0.5 rounded border border-blue-200 dark:border-blue-800">${currentImg.label}</span>
+                <span id="dex-img-mode-badge" class="font-mono text-[10px] sm:text-[11px] font-black text-slate-700 dark:text-slate-200 bg-blue-50 dark:bg-blue-950 px-2 py-0.5 rounded border border-blue-200 dark:border-blue-800">${currentImg.label}</span>
               </div>
 
               <div 
                 id="dex-img-frame" 
                 onclick="cycleDexImage()" 
-                class="${isDot ? 'lcd-screen' : 'bg-gradient-to-b from-blue-50 to-slate-100 dark:from-[#08122c] dark:to-[#050b1a] border border-blue-200/60 dark:border-blue-900/60 shadow-inner'} w-full aspect-square max-h-72 sm:max-h-80 rounded-2xl flex items-center justify-center p-4 relative overflow-hidden cursor-pointer select-none group touch-press transition-all duration-300"
+                class="${isDot ? 'lcd-screen' : 'bg-gradient-to-b from-blue-50 to-slate-100 dark:from-[#08122c] dark:to-[#050b1a] border border-blue-200/60 dark:border-blue-900/60 shadow-inner'} w-full aspect-square max-h-64 sm:max-h-80 rounded-2xl flex items-center justify-center p-4 relative overflow-hidden cursor-pointer select-none group touch-press transition-all duration-300"
                 title="클릭하여 도트/공식일러/카드 전환"
               >
                 <img 
@@ -1396,7 +1524,7 @@
                   alt="${d.name_ko}" 
                   onerror="handleDexImgError(this)"
                   style="${isDot ? 'image-rendering: pixelated;' : ''}"
-                  class="${isDot ? 'w-32 h-32 sm:w-40 sm:h-40 object-contain drop-shadow-md' : 'max-w-full max-h-full object-contain filter drop-shadow-xl group-hover:scale-105 transition duration-300'}" 
+                  class="${isDot ? 'w-28 h-28 sm:w-40 sm:h-40 object-contain drop-shadow-md' : 'max-w-full max-h-full object-contain filter drop-shadow-xl group-hover:scale-105 transition duration-300'}" 
                 />
                 <div class="absolute bottom-2.5 right-2.5 px-2 py-1 rounded-lg bg-black/60 backdrop-blur text-[10px] text-white font-bold flex items-center gap-1 pointer-events-none opacity-80 group-hover:opacity-100 transition">
                   <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
@@ -1409,7 +1537,7 @@
                 ${(d.images || []).map((item, idx) => `
                   <button 
                     onclick="setDexImage(${idx})" 
-                    class="touch-press px-2.5 py-1 rounded-lg text-[11px] font-extrabold transition ${idx === currentDexImgIndex ? 'bg-[#004ce8] text-white shadow-xs' : 'bg-white/80 dark:bg-slate-900 text-slate-600 dark:text-slate-400 border border-blue-200 dark:border-blue-900/60'}"
+                    class="touch-press px-2 sm:px-2.5 py-1 rounded-lg text-[10px] sm:text-[11px] font-extrabold transition ${idx === currentDexImgIndex ? 'bg-[#004ce8] text-white shadow-xs' : 'bg-white/80 dark:bg-slate-900 text-slate-600 dark:text-slate-400 border border-blue-200 dark:border-blue-900/60'}"
                   >
                     ${item.label}
                   </button>
@@ -1424,11 +1552,11 @@
                   <span>⚡</span>
                   <span>SPECIAL MOVES (대표 필살기)</span>
                 </h3>
-                <div class="grid grid-cols-1 gap-2">
-                  ${d.skills.map(s => `
+                <div class="grid grid-cols-1 gap-1.5 sm:gap-2">
+                  ${d.skills.map((s, idx) => `
                     <div class="p-2.5 rounded-xl bg-blue-50/60 dark:bg-blue-950/40 border border-blue-200/50 dark:border-blue-900/50 text-xs">
-                      <p class="font-black text-slate-900 dark:text-slate-100 text-[13px] text-blue-600 dark:text-blue-400">${s.name}</p>
-                      <p class="text-slate-600 dark:text-slate-400 text-[12px] mt-0.5 leading-relaxed font-medium">${s.desc}</p>
+                      <p id="dex-skill-name-${idx}" class="font-black text-slate-900 dark:text-slate-100 text-[12px] sm:text-[13px] text-blue-600 dark:text-blue-400">${s.name}</p>
+                      <p id="dex-skill-desc-${idx}" class="text-slate-600 dark:text-slate-400 text-[11px] sm:text-[12px] mt-0.5 leading-relaxed font-medium">${s.desc}</p>
                     </div>
                   `).join('')}
                 </div>
@@ -1437,14 +1565,11 @@
 
             <!-- Official Lore / Archive Profile -->
             <div class="space-y-2 pt-2 border-t border-blue-200/60 dark:border-blue-900/60">
-              <div class="flex items-center justify-between">
-                <h3 class="text-xs font-black tracking-wider text-blue-600 dark:text-blue-400 uppercase font-mono flex items-center gap-1.5">
-                  <span>📖</span>
-                  <span>OFFICIAL LORE (반다이 공식 도감 설정집)</span>
-                </h3>
-                <span id="dex-translation-status" class="text-[10px] text-blue-400 font-mono"></span>
-              </div>
-              <div class="p-4 rounded-2xl bg-slate-900/95 text-slate-200 border border-blue-500/40 shadow-inner font-sans text-xs sm:text-[13px] leading-relaxed relative overflow-hidden">
+              <h3 class="text-xs font-black tracking-wider text-blue-600 dark:text-blue-400 uppercase font-mono flex items-center gap-1.5">
+                <span>📖</span>
+                <span>OFFICIAL LORE (반다이 공식 도감 설정집)</span>
+              </h3>
+              <div class="p-3.5 sm:p-4 rounded-2xl bg-slate-900/95 text-slate-200 border border-blue-500/40 shadow-inner font-sans text-xs sm:text-[13px] leading-relaxed relative overflow-hidden">
                 <div class="absolute -right-6 -bottom-6 w-24 h-24 bg-blue-600/10 rounded-full blur-xl pointer-events-none"></div>
                 <p id="dex-profile-text" class="relative z-10 whitespace-pre-line text-slate-300 font-medium">${d.profile}</p>
               </div>
@@ -1474,15 +1599,15 @@
                   <div class="space-y-1.5">
                     <p class="text-[11px] font-bold text-slate-500 dark:text-slate-400">진화 가능 디지몬 (${d.nextEvolutions.length}체):</p>
                     <div class="flex items-center gap-2 overflow-x-auto pb-1.5 no-scrollbar">
-                      ${d.nextEvolutions.slice(0, 15).map(ev => `
+                      ${d.nextEvolutions.slice(0, 8).map(ev => `
                         <div 
                           onclick="selectDigimonById(${ev.id}, '${ev.name_ko || ev.digimon}')" 
-                          class="touch-press cursor-pointer shrink-0 p-2 rounded-xl bg-slate-50 dark:bg-slate-900/80 hover:bg-blue-50 dark:hover:bg-blue-950 border border-blue-200/60 dark:border-blue-900/60 flex items-center gap-2 transition"
+                          class="touch-press cursor-pointer shrink-0 p-1.5 sm:p-2 rounded-xl bg-slate-50 dark:bg-slate-900/80 hover:bg-blue-50 dark:hover:bg-blue-950 border border-blue-200/60 dark:border-blue-900/60 flex items-center gap-2 transition"
                         >
-                          <img src="${ev.image || 'https://digi-api.com/images/digimon/w/Agumon.png'}" class="w-8 h-8 object-contain rounded" onerror="this.src='https://digi-api.com/images/digimon/w/Agumon.png'" />
+                          <img src="${ev.image || 'https://digi-api.com/images/digimon/w/Agumon.png'}" class="w-7 h-7 sm:w-8 sm:h-8 object-contain rounded" onerror="this.src='https://digi-api.com/images/digimon/w/Agumon.png'" />
                           <div>
                             <span class="text-xs font-bold text-slate-800 dark:text-slate-200 whitespace-nowrap block">${ev.name_ko || ev.digimon}</span>
-                            ${ev.name_ja_ko && ev.name_ja_ko !== ev.name_ko ? `<span class="text-[9px] text-blue-500 font-mono block">(${ev.name_ja_ko})</span>` : `<span class="text-[9px] text-slate-400 font-mono block">${ev.digimon}</span>`}
+                            <span class="text-[9px] text-slate-400 font-mono block">${ev.name_en || ev.digimon}</span>
                           </div>
                         </div>
                       `).join('')}
@@ -1495,15 +1620,15 @@
                   <div class="space-y-1.5 pt-1">
                     <p class="text-[11px] font-bold text-slate-500 dark:text-slate-400">진화 전 형태 (${d.priorEvolutions.length}체):</p>
                     <div class="flex items-center gap-2 overflow-x-auto pb-1.5 no-scrollbar">
-                      ${d.priorEvolutions.slice(0, 10).map(ev => `
+                      ${d.priorEvolutions.slice(0, 8).map(ev => `
                         <div 
                           onclick="selectDigimonById(${ev.id}, '${ev.name_ko || ev.digimon}')" 
-                          class="touch-press cursor-pointer shrink-0 p-2 rounded-xl bg-slate-50 dark:bg-slate-900/80 hover:bg-blue-50 dark:hover:bg-blue-950 border border-blue-200/60 dark:border-blue-900/60 flex items-center gap-2 transition"
+                          class="touch-press cursor-pointer shrink-0 p-1.5 sm:p-2 rounded-xl bg-slate-50 dark:bg-slate-900/80 hover:bg-blue-50 dark:hover:bg-blue-950 border border-blue-200/60 dark:border-blue-900/60 flex items-center gap-2 transition"
                         >
-                          <img src="${ev.image || 'https://digi-api.com/images/digimon/w/Agumon.png'}" class="w-8 h-8 object-contain rounded" onerror="this.src='https://digi-api.com/images/digimon/w/Agumon.png'" />
+                          <img src="${ev.image || 'https://digi-api.com/images/digimon/w/Agumon.png'}" class="w-7 h-7 sm:w-8 sm:h-8 object-contain rounded" onerror="this.src='https://digi-api.com/images/digimon/w/Agumon.png'" />
                           <div>
                             <span class="text-xs font-bold text-slate-800 dark:text-slate-200 whitespace-nowrap block">${ev.name_ko || ev.digimon}</span>
-                            ${ev.name_ja_ko && ev.name_ja_ko !== ev.name_ko ? `<span class="text-[9px] text-blue-500 font-mono block">(${ev.name_ja_ko})</span>` : `<span class="text-[9px] text-slate-400 font-mono block">${ev.digimon}</span>`}
+                            <span class="text-[9px] text-slate-400 font-mono block">${ev.name_en || ev.digimon}</span>
                           </div>
                         </div>
                       `).join('')}

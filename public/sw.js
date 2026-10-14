@@ -1,5 +1,5 @@
-// Blue Card Edition v6 (with full Korean translation & canonical evolution engine)
-const CACHE_NAME = 'digi-feed-bluecard-v6';
+// Blue Card Edition v7 (with precision canon evolutions, skill translations, and mobile optimization)
+const CACHE_NAME = 'digi-feed-bluecard-v7';
 const ASSETS = [
   './',
   './index.html',
