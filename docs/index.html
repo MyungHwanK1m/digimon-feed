@@ -89,6 +89,17 @@
       background-size: 9px 9px;
       opacity: 0.14;
     }
+
+    /* V-Pet Dot Matrix Retro LCD Screen */
+    .lcd-screen {
+      background-color: #0b1a13;
+      background-image: 
+        linear-gradient(rgba(16, 185, 129, 0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(16, 185, 129, 0.08) 1px, transparent 1px);
+      background-size: 5px 5px;
+      box-shadow: inset 0 0 25px rgba(0, 0, 0, 0.85), 0 0 15px rgba(16, 185, 129, 0.2);
+      image-rendering: pixelated;
+    }
   </style>
 </head>
 <body class="cyber-grid-bg text-slate-800 dark:text-slate-100 min-h-screen flex flex-col font-sans transition-colors duration-200">
@@ -136,64 +147,118 @@
     </div>
   </header>
 
+  <!-- View Switcher (Feed vs Digi-Dex) -->
+  <div class="max-w-4xl w-full mx-auto px-3 sm:px-4 pt-3">
+    <div class="grid grid-cols-2 p-1 bg-white/80 dark:bg-[#070e22]/80 backdrop-blur rounded-2xl border border-blue-200 dark:border-blue-900/60 shadow-xs">
+      <button id="view-tab-feed" onclick="switchView('feed')" class="py-2 rounded-xl text-xs sm:text-sm font-black transition flex items-center justify-center gap-2 bg-[#004ce8] text-white shadow-md shadow-blue-600/30">
+        <span>📡</span>
+        <span>실시간 피드</span>
+      </button>
+      <button id="view-tab-dex" onclick="switchView('dex')" class="py-2 rounded-xl text-xs sm:text-sm font-black transition flex items-center justify-center gap-2 text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-300">
+        <span>📖</span>
+        <span>디지몬 도감/설정집</span>
+      </button>
+    </div>
+  </div>
+
   <!-- Main Container -->
   <main class="flex-1 max-w-4xl w-full mx-auto px-3 sm:px-4 py-3 space-y-3.5 pb-20">
 
-    <!-- Search Input (D-Ark Digital Search) -->
-    <div class="relative">
-      <svg class="w-4 h-4 absolute left-3.5 top-1/2 -translate-y-1/2 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
-      <input 
-        type="search" 
-        id="search-input" 
-        oninput="handleSearch(this.value)"
-        placeholder="디지몬, 피규어, 카드, 굿즈 검색..." 
-        class="w-full pl-10 pr-9 py-2.5 text-sm rounded-2xl bg-white/90 dark:bg-[#070e22]/90 border border-blue-200 dark:border-blue-900/60 focus:outline-none focus:border-[#004ce8] dark:focus:border-blue-400 text-slate-900 dark:text-slate-100 placeholder:text-slate-400 dark:placeholder:text-slate-500 transition shadow-sm backdrop-blur"
-      />
-      <button id="clear-search-btn" onclick="clearSearch()" class="hidden absolute right-3 top-1/2 -translate-y-1/2 text-blue-500 hover:text-blue-700 p-1 text-xs">✕</button>
-    </div>
-
-    <!-- Filter Bar: Category Chips (Blue Card Slots) -->
-    <div class="flex items-center gap-1.5 overflow-x-auto pb-1 no-scrollbar text-xs font-bold">
-      <button onclick="setCategory('all')" class="cat-chip touch-press px-3.5 py-2 rounded-xl transition bg-[#004ce8] text-white shrink-0 shadow-md shadow-blue-600/30 border border-blue-400/40" data-cat="all">전체</button>
-      <button onclick="setCategory('sns')" class="cat-chip touch-press px-3.5 py-2 rounded-xl transition bg-white/90 dark:bg-[#070e22]/90 text-slate-700 dark:text-slate-300 border border-blue-200 dark:border-blue-900/60 hover:border-blue-400 shrink-0 shadow-xs" data-cat="sns">📱 SNS/영상</button>
-      <button onclick="setCategory('figure')" class="cat-chip touch-press px-3.5 py-2 rounded-xl transition bg-white/90 dark:bg-[#070e22]/90 text-slate-700 dark:text-slate-300 border border-blue-200 dark:border-blue-900/60 hover:border-blue-400 shrink-0 shadow-xs" data-cat="figure">🧸 피규어/굿즈</button>
-      <button onclick="setCategory('card')" class="cat-chip touch-press px-3.5 py-2 rounded-xl transition bg-white/90 dark:bg-[#070e22]/90 text-slate-700 dark:text-slate-300 border border-blue-200 dark:border-blue-900/60 hover:border-blue-400 shrink-0 shadow-xs" data-cat="card">🃏 카드게임(TCG)</button>
-      <button onclick="setCategory('game')" class="cat-chip touch-press px-3.5 py-2 rounded-xl transition bg-white/90 dark:bg-[#070e22]/90 text-slate-700 dark:text-slate-300 border border-blue-200 dark:border-blue-900/60 hover:border-blue-400 shrink-0 shadow-xs" data-cat="game">🎮 게임/애니</button>
-      <button onclick="setCategory('community')" class="cat-chip touch-press px-3.5 py-2 rounded-xl transition bg-white/90 dark:bg-[#070e22]/90 text-slate-700 dark:text-slate-300 border border-blue-200 dark:border-blue-900/60 hover:border-blue-400 shrink-0 shadow-xs" data-cat="community">🔥 커뮤니티</button>
-      <button onclick="toggleBookmarkFilter()" id="bookmark-filter-btn" class="cat-chip touch-press px-3.5 py-2 rounded-xl transition bg-white/90 dark:bg-[#070e22]/90 text-slate-700 dark:text-slate-300 border border-blue-200 dark:border-blue-900/60 shrink-0 flex items-center gap-1 ml-auto shadow-xs">
-        <span class="text-amber-400">★</span>
-        <span>스크랩</span>
-      </button>
-    </div>
-
-    <!-- Period Selection Toolbar (D-Ark Digital Buffer) -->
-    <div class="flex items-center justify-between text-xs px-2 py-1.5 bg-white/80 dark:bg-[#070e22]/80 backdrop-blur rounded-xl border border-blue-200/80 dark:border-blue-900/60 shadow-xs">
-      <div class="flex items-center gap-1.5 text-[11px] text-blue-700 dark:text-blue-400 font-bold pl-1">
-        <span class="inline-block w-1.5 h-1.5 rounded-full bg-blue-500 animate-pulse"></span>
-        <span>보관 기간:</span>
+    <!-- 1. Live Feeds Section -->
+    <div id="feed-view-section" class="space-y-3.5">
+      <!-- Search Input (D-Ark Digital Search) -->
+      <div class="relative">
+        <svg class="w-4 h-4 absolute left-3.5 top-1/2 -translate-y-1/2 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+        <input 
+          type="search" 
+          id="search-input" 
+          oninput="handleSearch(this.value)"
+          placeholder="디지몬, 피규어, 카드, 굿즈 검색..." 
+          class="w-full pl-10 pr-9 py-2.5 text-sm rounded-2xl bg-white/90 dark:bg-[#070e22]/90 border border-blue-200 dark:border-blue-900/60 focus:outline-none focus:border-[#004ce8] dark:focus:border-blue-400 text-slate-900 dark:text-slate-100 placeholder:text-slate-400 dark:placeholder:text-slate-500 transition shadow-sm backdrop-blur"
+        />
+        <button id="clear-search-btn" onclick="clearSearch()" class="hidden absolute right-3 top-1/2 -translate-y-1/2 text-blue-500 hover:text-blue-700 p-1 text-xs">✕</button>
       </div>
-      <div class="flex items-center gap-1">
-        <button onclick="setPeriod(7)" class="period-btn touch-press px-2.5 py-1 rounded-lg text-[11px] font-bold transition" data-period="7">7일</button>
-        <button onclick="setPeriod(14)" class="period-btn touch-press px-2.5 py-1 rounded-lg text-[11px] font-bold transition" data-period="14">14일</button>
-        <button onclick="setPeriod(30)" class="period-btn touch-press px-2.5 py-1 rounded-lg text-[11px] font-bold transition bg-[#004ce8] text-white shadow-xs" data-period="30">30일</button>
-        <button onclick="setPeriod(90)" class="period-btn touch-press px-2.5 py-1 rounded-lg text-[11px] font-bold transition" data-period="90">90일</button>
+
+      <!-- Filter Bar: Category Chips (Blue Card Slots) -->
+      <div class="flex items-center gap-1.5 overflow-x-auto pb-1 no-scrollbar text-xs font-bold">
+        <button onclick="setCategory('all')" class="cat-chip touch-press px-3.5 py-2 rounded-xl transition bg-[#004ce8] text-white shrink-0 shadow-md shadow-blue-600/30 border border-blue-400/40" data-cat="all">전체</button>
+        <button onclick="setCategory('sns')" class="cat-chip touch-press px-3.5 py-2 rounded-xl transition bg-white/90 dark:bg-[#070e22]/90 text-slate-700 dark:text-slate-300 border border-blue-200 dark:border-blue-900/60 hover:border-blue-400 shrink-0 shadow-xs" data-cat="sns">📱 SNS/영상</button>
+        <button onclick="setCategory('figure')" class="cat-chip touch-press px-3.5 py-2 rounded-xl transition bg-white/90 dark:bg-[#070e22]/90 text-slate-700 dark:text-slate-300 border border-blue-200 dark:border-blue-900/60 hover:border-blue-400 shrink-0 shadow-xs" data-cat="figure">🧸 피규어/굿즈</button>
+        <button onclick="setCategory('card')" class="cat-chip touch-press px-3.5 py-2 rounded-xl transition bg-white/90 dark:bg-[#070e22]/90 text-slate-700 dark:text-slate-300 border border-blue-200 dark:border-blue-900/60 hover:border-blue-400 shrink-0 shadow-xs" data-cat="card">🃏 카드게임(TCG)</button>
+        <button onclick="setCategory('game')" class="cat-chip touch-press px-3.5 py-2 rounded-xl transition bg-white/90 dark:bg-[#070e22]/90 text-slate-700 dark:text-slate-300 border border-blue-200 dark:border-blue-900/60 hover:border-blue-400 shrink-0 shadow-xs" data-cat="game">🎮 게임/애니</button>
+        <button onclick="setCategory('community')" class="cat-chip touch-press px-3.5 py-2 rounded-xl transition bg-white/90 dark:bg-[#070e22]/90 text-slate-700 dark:text-slate-300 border border-blue-200 dark:border-blue-900/60 hover:border-blue-400 shrink-0 shadow-xs" data-cat="community">🔥 커뮤니티</button>
+        <button onclick="toggleBookmarkFilter()" id="bookmark-filter-btn" class="cat-chip touch-press px-3.5 py-2 rounded-xl transition bg-white/90 dark:bg-[#070e22]/90 text-slate-700 dark:text-slate-300 border border-blue-200 dark:border-blue-900/60 shrink-0 flex items-center gap-1 ml-auto shadow-xs">
+          <span class="text-amber-400">★</span>
+          <span>스크랩</span>
+        </button>
+      </div>
+
+      <!-- Period Selection Toolbar (D-Ark Digital Buffer) -->
+      <div class="flex items-center justify-between text-xs px-2 py-1.5 bg-white/80 dark:bg-[#070e22]/80 backdrop-blur rounded-xl border border-blue-200/80 dark:border-blue-900/60 shadow-xs">
+        <div class="flex items-center gap-1.5 text-[11px] text-blue-700 dark:text-blue-400 font-bold pl-1">
+          <span class="inline-block w-1.5 h-1.5 rounded-full bg-blue-500 animate-pulse"></span>
+          <span>보관 기간:</span>
+        </div>
+        <div class="flex items-center gap-1">
+          <button onclick="setPeriod(7)" class="period-btn touch-press px-2.5 py-1 rounded-lg text-[11px] font-bold transition" data-period="7">7일</button>
+          <button onclick="setPeriod(14)" class="period-btn touch-press px-2.5 py-1 rounded-lg text-[11px] font-bold transition" data-period="14">14일</button>
+          <button onclick="setPeriod(30)" class="period-btn touch-press px-2.5 py-1 rounded-lg text-[11px] font-bold transition bg-[#004ce8] text-white shadow-xs" data-period="30">30일</button>
+          <button onclick="setPeriod(90)" class="period-btn touch-press px-2.5 py-1 rounded-lg text-[11px] font-bold transition" data-period="90">90일</button>
+        </div>
+      </div>
+
+      <!-- Status Info Bar -->
+      <div class="flex items-center justify-between text-[11px] text-slate-500 dark:text-slate-400 px-1 pt-0.5">
+        <div class="flex items-center gap-1.5 font-medium">
+          <span class="text-blue-500 font-mono">SYS //</span>
+          <span id="last-updated-text">최신순 정렬됨</span>
+        </div>
+        <div id="item-count-text" class="font-bold text-[#004ce8] dark:text-blue-400 font-mono">0 ENTRIES</div>
+      </div>
+
+      <!-- Feeds List: Actual 'Blue Card' Form-Factor Cards -->
+      <div id="cards-container" class="space-y-4">
+        <!-- Loading Skeleton Cards -->
+        <div class="p-5 rounded-2xl bg-white/60 dark:bg-[#070e22]/60 border border-blue-200 dark:border-blue-900/60 animate-pulse h-36"></div>
+        <div class="p-5 rounded-2xl bg-white/60 dark:bg-[#070e22]/60 border border-blue-200 dark:border-blue-900/60 animate-pulse h-36"></div>
       </div>
     </div>
 
-    <!-- Status Info Bar -->
-    <div class="flex items-center justify-between text-[11px] text-slate-500 dark:text-slate-400 px-1 pt-0.5">
-      <div class="flex items-center gap-1.5 font-medium">
-        <span class="text-blue-500 font-mono">SYS //</span>
-        <span id="last-updated-text">최신순 정렬됨</span>
+    <!-- 2. Digi-Dex / Lore Section -->
+    <div id="dex-view-section" class="hidden space-y-4">
+      <!-- D-Ark Dex Search Bar -->
+      <div class="relative">
+        <svg class="w-4 h-4 absolute left-3.5 top-1/2 -translate-y-1/2 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+        <input 
+          type="search" 
+          id="dex-search-input" 
+          oninput="handleDexSearch(this.value)"
+          placeholder="디지몬 이름 검색 (예: 아구몬, 오메가몬, 길몬, 듀크몬...)" 
+          class="w-full pl-10 pr-9 py-2.5 text-sm rounded-2xl bg-white/90 dark:bg-[#070e22]/90 border border-blue-200 dark:border-blue-900/60 focus:outline-none focus:border-[#004ce8] dark:focus:border-blue-400 text-slate-900 dark:text-slate-100 placeholder:text-slate-400 dark:placeholder:text-slate-500 transition shadow-sm backdrop-blur"
+        />
+        <button id="dex-clear-search-btn" onclick="clearDexSearch()" class="hidden absolute right-3 top-1/2 -translate-y-1/2 text-blue-500 hover:text-blue-700 p-1 text-xs">✕</button>
       </div>
-      <div id="item-count-text" class="font-bold text-[#004ce8] dark:text-blue-400 font-mono">0 ENTRIES</div>
-    </div>
 
-    <!-- Feeds List: Actual 'Blue Card' Form-Factor Cards -->
-    <div id="cards-container" class="space-y-4">
-      <!-- Loading Skeleton Cards -->
-      <div class="p-5 rounded-2xl bg-white/60 dark:bg-[#070e22]/60 border border-blue-200 dark:border-blue-900/60 animate-pulse h-36"></div>
-      <div class="p-5 rounded-2xl bg-white/60 dark:bg-[#070e22]/60 border border-blue-200 dark:border-blue-900/60 animate-pulse h-36"></div>
+      <!-- Quick Digimon Tag Chips -->
+      <div class="flex items-center gap-1.5 overflow-x-auto pb-1 no-scrollbar text-xs font-bold">
+        <span class="text-[11px] text-blue-600 dark:text-blue-400 font-bold shrink-0 mr-1">추천:</span>
+        <button onclick="selectQuickDex('오메가몬')" class="dex-quick-tag touch-press px-3 py-1.5 rounded-xl transition bg-white/90 dark:bg-[#070e22]/90 text-slate-700 dark:text-slate-300 border border-blue-200 dark:border-blue-900/60 hover:border-blue-400 shrink-0 shadow-xs">오메가몬</button>
+        <button onclick="selectQuickDex('듀크몬')" class="dex-quick-tag touch-press px-3 py-1.5 rounded-xl transition bg-white/90 dark:bg-[#070e22]/90 text-slate-700 dark:text-slate-300 border border-blue-200 dark:border-blue-900/60 hover:border-blue-400 shrink-0 shadow-xs">듀크몬</button>
+        <button onclick="selectQuickDex('아구몬')" class="dex-quick-tag touch-press px-3 py-1.5 rounded-xl transition bg-white/90 dark:bg-[#070e22]/90 text-slate-700 dark:text-slate-300 border border-blue-200 dark:border-blue-900/60 hover:border-blue-400 shrink-0 shadow-xs">아구몬</button>
+        <button onclick="selectQuickDex('길몬')" class="dex-quick-tag touch-press px-3 py-1.5 rounded-xl transition bg-white/90 dark:bg-[#070e22]/90 text-slate-700 dark:text-slate-300 border border-blue-200 dark:border-blue-900/60 hover:border-blue-400 shrink-0 shadow-xs">길몬</button>
+        <button onclick="selectQuickDex('워그레이몬')" class="dex-quick-tag touch-press px-3 py-1.5 rounded-xl transition bg-white/90 dark:bg-[#070e22]/90 text-slate-700 dark:text-slate-300 border border-blue-200 dark:border-blue-900/60 hover:border-blue-400 shrink-0 shadow-xs">워그레이몬</button>
+        <button onclick="selectQuickDex('아그니몬')" class="dex-quick-tag touch-press px-3 py-1.5 rounded-xl transition bg-white/90 dark:bg-[#070e22]/90 text-slate-700 dark:text-slate-300 border border-blue-200 dark:border-blue-900/60 hover:border-blue-400 shrink-0 shadow-xs">아그니몬</button>
+        <button onclick="selectQuickDex('베르제브몬')" class="dex-quick-tag touch-press px-3 py-1.5 rounded-xl transition bg-white/90 dark:bg-[#070e22]/90 text-slate-700 dark:text-slate-300 border border-blue-200 dark:border-blue-900/60 hover:border-blue-400 shrink-0 shadow-xs">베르제브몬</button>
+        <button onclick="selectQuickDex('알파몬')" class="dex-quick-tag touch-press px-3 py-1.5 rounded-xl transition bg-white/90 dark:bg-[#070e22]/90 text-slate-700 dark:text-slate-300 border border-blue-200 dark:border-blue-900/60 hover:border-blue-400 shrink-0 shadow-xs">알파몬</button>
+        <button onclick="selectQuickDex('황제드라몬')" class="dex-quick-tag touch-press px-3 py-1.5 rounded-xl transition bg-white/90 dark:bg-[#070e22]/90 text-slate-700 dark:text-slate-300 border border-blue-200 dark:border-blue-900/60 hover:border-blue-400 shrink-0 shadow-xs">황제드라몬</button>
+        <button onclick="selectQuickDex('브이몬')" class="dex-quick-tag touch-press px-3 py-1.5 rounded-xl transition bg-white/90 dark:bg-[#070e22]/90 text-slate-700 dark:text-slate-300 border border-blue-200 dark:border-blue-900/60 hover:border-blue-400 shrink-0 shadow-xs">브이몬</button>
+        <button onclick="selectQuickDex('가트몬')" class="dex-quick-tag touch-press px-3 py-1.5 rounded-xl transition bg-white/90 dark:bg-[#070e22]/90 text-slate-700 dark:text-slate-300 border border-blue-200 dark:border-blue-900/60 hover:border-blue-400 shrink-0 shadow-xs">가트몬</button>
+      </div>
+
+      <!-- Detail Card Display Container -->
+      <div id="dex-detail-container" class="space-y-4">
+        <!-- Rendered by JavaScript -->
+      </div>
     </div>
 
   </main>
@@ -496,8 +561,9 @@
       input.focus();
     }
 
-    // Go Home: Reset category, search, bookmark filter and scroll to top
+    // Go Home: Reset category, search, bookmark filter, switch to feed and scroll to top
     function goHome() {
+      switchView('feed');
       setCategory('all');
       const input = document.getElementById('search-input');
       if (input) {
@@ -537,10 +603,10 @@
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
-    // PWA Service Worker (Blue Card v3 with auto-update)
+    // PWA Service Worker (Blue Card v4 with auto-update)
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
-        navigator.serviceWorker.register('sw.js?v=3').then((reg) => {
+        navigator.serviceWorker.register('sw.js?v=4').then((reg) => {
           reg.update();
         }).catch(console.error);
 
@@ -575,10 +641,348 @@
       document.getElementById('pwa-banner').classList.add('hidden');
     }
 
+    // ==========================================
+    // 📖 DIGI-DEX & LORE ENGINE (공식 도감 / 설정집)
+    // ==========================================
+    let currentView = 'feed';
+    let digidexList = [];
+    let currentDexDigimon = null;
+    let currentDexImgIndex = 0;
+    let dexSearchTimer = null;
+
+    // View Switching: [📡 실시간 피드] <-> [📖 디지몬 도감/설정집]
+    function switchView(view) {
+      currentView = view;
+      const feedTab = document.getElementById('view-tab-feed');
+      const dexTab = document.getElementById('view-tab-dex');
+      const feedSec = document.getElementById('feed-view-section');
+      const dexSec = document.getElementById('dex-view-section');
+
+      if (view === 'feed') {
+        feedTab.className = "py-2 rounded-xl text-xs sm:text-sm font-black transition flex items-center justify-center gap-2 bg-[#004ce8] text-white shadow-md shadow-blue-600/30";
+        dexTab.className = "py-2 rounded-xl text-xs sm:text-sm font-black transition flex items-center justify-center gap-2 text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-300";
+        feedSec.classList.remove('hidden');
+        dexSec.classList.add('hidden');
+      } else {
+        dexTab.className = "py-2 rounded-xl text-xs sm:text-sm font-black transition flex items-center justify-center gap-2 bg-[#004ce8] text-white shadow-md shadow-blue-600/30";
+        feedTab.className = "py-2 rounded-xl text-xs sm:text-sm font-black transition flex items-center justify-center gap-2 text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-300";
+        dexSec.classList.remove('hidden');
+        feedSec.classList.add('hidden');
+        
+        if (!currentDexDigimon && digidexList.length > 0) {
+          selectQuickDex('오메가몬');
+        }
+      }
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // Load Digi-Dex Database
+    async function loadDigidex() {
+      try {
+        const res = await fetch(`data/digidex_ko.json?t=${Date.now()}`);
+        if (!res.ok) throw new Error("Digidex load error");
+        const data = await res.json();
+        digidexList = data.digimons || [];
+        if (currentView === 'dex' && !currentDexDigimon && digidexList.length > 0) {
+          selectQuickDex('오메가몬');
+        }
+      } catch (err) {
+        console.error("Failed to load digidex_ko.json", err);
+      }
+    }
+
+    // Quick Tag Selection
+    function selectQuickDex(name) {
+      const input = document.getElementById('dex-search-input');
+      if (input) input.value = name;
+      handleDexSearch(name);
+    }
+
+    // Dex Search Handler
+    function handleDexSearch(query) {
+      clearTimeout(dexSearchTimer);
+      const clearBtn = document.getElementById('dex-clear-search-btn');
+      const q = (query || '').trim().toLowerCase();
+      if (q) {
+        clearBtn.classList.remove('hidden');
+      } else {
+        clearBtn.classList.add('hidden');
+      }
+
+      dexSearchTimer = setTimeout(() => {
+        executeDexSearch(q);
+      }, 250);
+    }
+
+    function clearDexSearch() {
+      const input = document.getElementById('dex-search-input');
+      if (input) {
+        input.value = '';
+        handleDexSearch('');
+        input.focus();
+      }
+    }
+
+    // Execute Search: 1차 Local DB -> 2차 Global Digi-API Fallback
+    async function executeDexSearch(q) {
+      const container = document.getElementById('dex-detail-container');
+      if (!q) {
+        if (digidexList.length > 0) {
+          renderDexDetail(digidexList[1]); // 오메가몬 기본 표시
+        }
+        return;
+      }
+
+      // 1. Local Search (한글/영문 매칭)
+      const matched = digidexList.find(d => 
+        d.name_ko.toLowerCase().includes(q) || 
+        d.name_en.toLowerCase().includes(q) || 
+        (d.name_ja && d.name_ja.includes(q))
+      );
+
+      if (matched) {
+        renderDexDetail(matched);
+        return;
+      }
+
+      // 2. Global Fallback (Digi-API)
+      container.innerHTML = `
+        <div class="p-8 text-center bg-white/80 dark:bg-[#070e22]/80 rounded-2xl border border-blue-200 dark:border-blue-900/60 shadow-sm animate-pulse">
+          <div class="text-3xl mb-2 animate-bounce">📡</div>
+          <p class="font-extrabold text-sm text-[#004ce8] dark:text-blue-400">디지털 월드 글로벌 아카이브 분석 중...</p>
+          <p class="text-xs text-slate-500 mt-1">'${q}' 공식 도감 데이터를 실시간으로 가져옵니다.</p>
+        </div>
+      `;
+
+      try {
+        const res = await fetch(`https://digi-api.com/api/v1/digimon/${encodeURIComponent(q)}`);
+        if (!res.ok) throw new Error("NotFound");
+        const apiData = await res.json();
+        
+        // 카드 이미지도 병합 조회
+        let tcgImg = null;
+        try {
+          const cardRes = await fetch(`https://digimoncard.io/api-public/search.php?n=${encodeURIComponent(apiData.name)}`);
+          if (cardRes.ok) {
+            const cardData = await cardRes.json();
+            if (Array.isArray(cardData) && cardData.length > 0 && cardData[0].id) {
+              tcgImg = `https://images.digimoncard.io/images/cards/${cardData[0].id}.jpg`;
+            }
+          }
+        } catch (_) {}
+
+        const images = [];
+        if (apiData.images && apiData.images.length > 0) {
+          images.push({ type: 'official', label: '🎨 공식 도감', url: apiData.images[0].href });
+        }
+        if (tcgImg) {
+          images.push({ type: 'tcg', label: '🃏 TCG 카드', url: tcgImg });
+        }
+
+        const descriptions = apiData.descriptions || [];
+        const engDesc = descriptions.find(d => d.language === 'en_us') || descriptions[0];
+
+        const fallbackDigimon = {
+          id: apiData.name.toLowerCase(),
+          name_ko: apiData.name,
+          name_en: apiData.name,
+          name_ja: apiData.name,
+          level: (apiData.levels && apiData.levels[0]) ? apiData.levels[0].level : '미확인',
+          attribute: (apiData.attributes && apiData.attributes[0]) ? apiData.attributes[0].attribute : '미확인',
+          type: (apiData.types && apiData.types[0]) ? apiData.types[0].type : '미확인',
+          images: images,
+          skills: (apiData.skills || []).slice(0, 4).map(s => ({
+            name: s.skill,
+            desc: s.description || '공식 필살기입니다.'
+          })),
+          profile: engDesc ? engDesc.description : '공식 도감 데이터가 기록되어 있습니다.'
+        };
+
+        renderDexDetail(fallbackDigimon);
+      } catch (e) {
+        container.innerHTML = `
+          <div class="py-12 text-center bg-white/80 dark:bg-[#070e22]/80 rounded-2xl border border-blue-200 dark:border-blue-900/60 p-6 shadow-sm">
+            <div class="text-4xl mb-2">🔍</div>
+            <p class="font-extrabold text-sm text-slate-800 dark:text-slate-200">'${q}' 디지몬을 찾을 수 없습니다.</p>
+            <p class="text-xs mt-1 text-slate-500">정확한 한국어 또는 영어 디지몬 이름으로 검색해 보세요.</p>
+          </div>
+        `;
+      }
+    }
+
+    // Render Digimon Detailed Profile
+    function renderDexDetail(digimon) {
+      currentDexDigimon = digimon;
+      currentDexImgIndex = 0;
+      updateDexCard();
+    }
+
+    // Cycle Through Images (Official -> Dot -> TCG)
+    function cycleDexImage() {
+      if (!currentDexDigimon || !currentDexDigimon.images || currentDexDigimon.images.length <= 1) return;
+      currentDexImgIndex = (currentDexImgIndex + 1) % currentDexDigimon.images.length;
+      updateDexCardImageOnly();
+    }
+
+    function setDexImage(index) {
+      if (!currentDexDigimon || !currentDexDigimon.images) return;
+      currentDexImgIndex = index;
+      updateDexCardImageOnly();
+    }
+
+    function updateDexCardImageOnly() {
+      const img = currentDexDigimon.images[currentDexImgIndex];
+      const imgElem = document.getElementById('dex-main-img');
+      const badgeElem = document.getElementById('dex-img-mode-badge');
+      const frameElem = document.getElementById('dex-img-frame');
+      const selectorElem = document.getElementById('dex-img-selector');
+
+      if (!imgElem || !img) return;
+
+      imgElem.src = img.url;
+      badgeElem.textContent = img.label;
+
+      if (img.type === 'dot') {
+        frameElem.className = "lcd-screen w-full aspect-square max-h-72 sm:max-h-80 rounded-2xl flex items-center justify-center p-6 relative overflow-hidden transition-all duration-300";
+        imgElem.className = "w-32 h-32 sm:w-40 sm:h-40 object-contain drop-shadow-md animate-pulse";
+      } else {
+        frameElem.className = "bg-gradient-to-b from-blue-50 to-slate-100 dark:from-[#08122c] dark:to-[#050b1a] w-full aspect-square max-h-72 sm:max-h-80 rounded-2xl flex items-center justify-center p-4 relative overflow-hidden transition-all duration-300 border border-blue-200/60 dark:border-blue-900/60 shadow-inner";
+        imgElem.className = "max-w-full max-h-full object-contain filter drop-shadow-xl hover:scale-105 transition duration-300";
+      }
+
+      // Update selector buttons
+      if (selectorElem) {
+        selectorElem.innerHTML = currentDexDigimon.images.map((item, idx) => `
+          <button 
+            onclick="setDexImage(${idx})" 
+            class="touch-press px-2.5 py-1 rounded-lg text-[11px] font-extrabold transition ${idx === currentDexImgIndex ? 'bg-[#004ce8] text-white shadow-xs' : 'bg-white/80 dark:bg-slate-900 text-slate-600 dark:text-slate-400 border border-blue-200 dark:border-blue-900/60'}"
+          >
+            ${item.label}
+          </button>
+        `).join('');
+      }
+    }
+
+    function updateDexCard() {
+      const container = document.getElementById('dex-detail-container');
+      const d = currentDexDigimon;
+      if (!d) return;
+
+      const currentImg = (d.images && d.images[currentDexImgIndex]) || { url: '', label: '이미지 없음', type: 'official' };
+      const isDot = currentImg.type === 'dot';
+
+      container.innerHTML = `
+        <article class="blue-card-item bg-white/95 dark:bg-[#070e22]/95 border-2 border-blue-400 dark:border-blue-600 rounded-3xl p-4 sm:p-6 shadow-xl relative overflow-hidden">
+          <!-- Blue Card Left Stripe -->
+          <div class="absolute left-0 top-0 bottom-0 w-2.5 sm:w-3 bg-slate-900 border-r border-slate-950"></div>
+          
+          <!-- Watermark -->
+          <div class="absolute top-2 right-2 w-28 h-28 dot-matrix-watermark rounded-tr-2xl pointer-events-none"></div>
+
+          <div class="pl-2 sm:pl-3 space-y-4">
+            
+            <!-- Header: Title & Badges -->
+            <div class="flex items-start justify-between gap-3 flex-wrap border-b border-blue-200/60 dark:border-blue-900/60 pb-3">
+              <div>
+                <div class="flex items-center gap-2">
+                  <span class="text-[10px] font-black px-2 py-0.5 rounded bg-blue-600 text-white font-mono tracking-wider shadow-xs">DIGI-DEX ARCHIVE</span>
+                  <span class="text-xs font-bold text-slate-400 font-mono">${d.name_en}</span>
+                </div>
+                <h2 class="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white tracking-tight mt-1 flex items-baseline gap-2">
+                  <span>${d.name_ko}</span>
+                  ${d.name_ja ? `<span class="text-sm font-semibold text-slate-400">(${d.name_ja})</span>` : ''}
+                </h2>
+              </div>
+
+              <!-- Spec Badges -->
+              <div class="flex items-center gap-1.5 flex-wrap">
+                <span class="text-xs font-black px-2.5 py-1 rounded-xl bg-blue-500/15 text-blue-600 dark:text-blue-400 border border-blue-500/30">${d.level}</span>
+                <span class="text-xs font-black px-2.5 py-1 rounded-xl bg-purple-500/15 text-purple-600 dark:text-purple-400 border border-purple-500/30">${d.attribute}</span>
+                <span class="text-xs font-black px-2.5 py-1 rounded-xl bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 border border-emerald-500/30">${d.type}</span>
+              </div>
+            </div>
+
+            <!-- Interactive Illustration / Dot Frame (Click to Switch!) -->
+            <div class="space-y-2">
+              <div class="flex items-center justify-between text-xs font-bold px-1 text-slate-500 dark:text-slate-400">
+                <span class="flex items-center gap-1.5 text-blue-600 dark:text-blue-400 font-bold">
+                  <span class="animate-bounce">👆</span>
+                  <span>화면 클릭 시 비주얼 순환 전환</span>
+                </span>
+                <span id="dex-img-mode-badge" class="font-mono text-[11px] font-black text-slate-700 dark:text-slate-200 bg-blue-50 dark:bg-blue-950 px-2 py-0.5 rounded border border-blue-200 dark:border-blue-800">${currentImg.label}</span>
+              </div>
+
+              <div 
+                id="dex-img-frame" 
+                onclick="cycleDexImage()" 
+                class="${isDot ? 'lcd-screen' : 'bg-gradient-to-b from-blue-50 to-slate-100 dark:from-[#08122c] dark:to-[#050b1a] border border-blue-200/60 dark:border-blue-900/60 shadow-inner'} w-full aspect-square max-h-72 sm:max-h-80 rounded-2xl flex items-center justify-center p-4 relative overflow-hidden cursor-pointer select-none group touch-press transition-all duration-300"
+                title="클릭하여 도트/공식일러/카드 전환"
+              >
+                <img 
+                  id="dex-main-img" 
+                  src="${currentImg.url}" 
+                  alt="${d.name_ko}" 
+                  class="${isDot ? 'w-32 h-32 sm:w-40 sm:h-40 object-contain drop-shadow-md animate-pulse' : 'max-w-full max-h-full object-contain filter drop-shadow-xl group-hover:scale-105 transition duration-300'}" 
+                />
+                <div class="absolute bottom-2.5 right-2.5 px-2 py-1 rounded-lg bg-black/60 backdrop-blur text-[10px] text-white font-bold flex items-center gap-1 pointer-events-none opacity-80 group-hover:opacity-100 transition">
+                  <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+                  <span>터치 시 전환</span>
+                </div>
+              </div>
+
+              <!-- Quick Image Buttons -->
+              <div id="dex-img-selector" class="flex items-center gap-1.5 justify-center flex-wrap pt-1">
+                ${(d.images || []).map((item, idx) => `
+                  <button 
+                    onclick="setDexImage(${idx})" 
+                    class="touch-press px-2.5 py-1 rounded-lg text-[11px] font-extrabold transition ${idx === currentDexImgIndex ? 'bg-[#004ce8] text-white shadow-xs' : 'bg-white/80 dark:bg-slate-900 text-slate-600 dark:text-slate-400 border border-blue-200 dark:border-blue-900/60'}"
+                  >
+                    ${item.label}
+                  </button>
+                `).join('')}
+              </div>
+            </div>
+
+            <!-- Special Moves / Skills -->
+            ${d.skills && d.skills.length > 0 ? `
+              <div class="space-y-2 pt-2 border-t border-blue-200/60 dark:border-blue-900/60">
+                <h3 class="text-xs font-black tracking-wider text-blue-600 dark:text-blue-400 uppercase font-mono flex items-center gap-1.5">
+                  <span>⚡</span>
+                  <span>SPECIAL MOVES (대표 필살기)</span>
+                </h3>
+                <div class="grid grid-cols-1 gap-2">
+                  ${d.skills.map(s => `
+                    <div class="p-2.5 rounded-xl bg-blue-50/60 dark:bg-blue-950/40 border border-blue-200/50 dark:border-blue-900/50 text-xs">
+                      <p class="font-black text-slate-900 dark:text-slate-100 text-[13px] text-blue-600 dark:text-blue-400">${s.name}</p>
+                      <p class="text-slate-600 dark:text-slate-400 text-[12px] mt-0.5 leading-relaxed font-medium">${s.desc}</p>
+                    </div>
+                  `).join('')}
+                </div>
+              </div>
+            ` : ''}
+
+            <!-- Official Lore / Archive Profile -->
+            <div class="space-y-2 pt-2 border-t border-blue-200/60 dark:border-blue-900/60">
+              <h3 class="text-xs font-black tracking-wider text-blue-600 dark:text-blue-400 uppercase font-mono flex items-center gap-1.5">
+                <span>📖</span>
+                <span>OFFICIAL LORE (반다이 공식 도감 설정집)</span>
+              </h3>
+              <div class="p-4 rounded-2xl bg-slate-900/95 text-slate-200 border border-blue-500/40 shadow-inner font-sans text-xs sm:text-[13px] leading-relaxed relative overflow-hidden">
+                <div class="absolute -right-6 -bottom-6 w-24 h-24 bg-blue-600/10 rounded-full blur-xl pointer-events-none"></div>
+                <p class="relative z-10 whitespace-pre-line text-slate-300 font-medium">${d.profile}</p>
+              </div>
+            </div>
+
+          </div>
+        </article>
+      `;
+    }
+
     // Initialize App
     initTheme();
     updatePeriodButtons();
     fetchFeeds();
+    loadDigidex();
   </script>
 </body>
 </html>
