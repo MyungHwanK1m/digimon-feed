@@ -1,67 +1,8 @@
 {
-  "last_updated": "2026-10-14 05:37:24",
-  "total_count": 16,
+  "last_updated": "2026-10-14 15:32:01",
+  "total_count": 11,
+  "retention_days": 30,
   "feeds": [
-    {
-      "id": "651f04aff5e1bd6cc15f372d20fa12d2",
-      "title": "규칙이 긴 게임을 읽는 순서와 디지몬 에볼루션 게임",
-      "snippet": "규칙이 긴 게임을 읽는 순서와 디지몬 에볼루션 게임&nbsp;&nbsp;Calgary Roughnecks",
-      "source": "Calgary Roughnecks",
-      "source_badge": "뉴스",
-      "category": "game",
-      "category_name": "뉴스/보도",
-      "link": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxNQ1UzZW1jVDRBNm9OaW45NDRQbFhGcFRlaGhocXRkRlp0ZHZvMmF3dDE5cGRzNEg5NlcwaVBEeGEtdG9OTDlDYnRLcU8xN2tOcHFDVnhHcE5TX0ZfTnFvNXBIUnczd09GeS1RTjc5cEppcUJFX1JaTVl3ckc0ZnpqNndOR1k3NTh1aW0tbE90UXpiWWpyQ3NtLWtjZnphbkZMZkh5UUNyX1RxQWxsbkk0dnEwMXpJamlYdnhFWERRb0dVNFdGN2l3a2U5andlWkdOSnF4OA?oc=5",
-      "image": null,
-      "created_at": "Sun, 11 Oct 2026 16:54:48 GMT"
-    },
-    {
-      "id": "de81a2319712162f092a9c95aaca4210",
-      "title": "세종문화회관",
-      "snippet": "세종문화회관&nbsp;&nbsp;세종문화회관",
-      "source": "세종문화회관",
-      "source_badge": "뉴스",
-      "category": "general",
-      "category_name": "뉴스/보도",
-      "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQVGtMTi1FdXZRU0tFRzNxc18ySFhvZ1UyRm9yUjU0d0x4TGJsUXQ5Tm1DdzRma0pvd1V2Ull3MGJJVVp0bDF1ZkpQQ0hldXhjYTlqUmJhR002dVFmcnY2Ql9uOVpuVWNkNTlKNkN5T0U0OWJIXzdjT1U1TUZDWmVFY2RPWGRWYjVtTVZvR2t3NUxCQVpRR0lPNw?oc=5",
-      "image": null,
-      "created_at": "Mon, 04 May 2026 16:36:13 GMT"
-    },
-    {
-      "id": "cb91eeb0c3ab112457552b066f40c6fc",
-      "title": "디지몬 UP | 반다이 남코 엔터테인먼트 공식 사이트",
-      "snippet": "디지몬 UP | 반다이 남코 엔터테인먼트 공식 사이트&nbsp;&nbsp;デジモンUP",
-      "source": "デジモンUP",
-      "source_badge": "뉴스",
-      "category": "figure",
-      "category_name": "뉴스/보도",
-      "link": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE5wWkd5QWM0aVhnVUlXZkp3dEt0QmhoVEtNbWE4NzhoVDFsd05CLWg1VnpDcDh1bVUxQkU4RTktSUsxMWFncXBsMlVBNjJwelU?oc=5",
-      "image": null,
-      "created_at": "Mon, 13 Jul 2026 07:00:00 GMT"
-    },
-    {
-      "id": "b4545a9f2e9f082c3a05979b37fac85b",
-      "title": "[디지몬 팬들럼] 강화 모드",
-      "snippet": "[디지몬 팬들럼] 강화 모드&nbsp;&nbsp;YouTube",
-      "source": "YouTube",
-      "source_badge": "뉴스",
-      "category": "general",
-      "category_name": "뉴스/보도",
-      "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPZjh0VXM4eDk0ZFVqLW5LeDJaUXNUWExpXzZSWnI5NlRVWEFYZ0FNVVVrQkhYRjZWVWxjU1VuRXFuWUo4UUJrUEFjZVhFZFJXTVB2YklIS3NPVUVkWG5xdG5kckFFaWR1NUJZRDFGUmhzaU5WQmx4Z3NwTkdJQllLN1M4QzlPbC00dEdTWkZLeXVDZ1NmU0w2RTBITTlXSjBFZTdEUzFB?oc=5",
-      "image": null,
-      "created_at": "Fri, 09 Oct 2026 18:19:04 GMT"
-    },
-    {
-      "id": "baba50e7e725eb8a709baaa1454d985a",
-      "title": "디지몬 테이머즈 25주년 기념 상품 예약 판매 개시",
-      "snippet": "디지몬 테이머즈 25주년 기념 상품 예약 판매 개시&nbsp;&nbsp;haveagood-holiday.com",
-      "source": "haveagood-holiday.com",
-      "source_badge": "뉴스",
-      "category": "figure",
-      "category_name": "뉴스/보도",
-      "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxPaEZBd1YwTUxrbFJlUzhKQm13LUV1ZFRHTFBuV0RmcWhSUlVsOGVQSmVibTM5MjRybWFpcnNFLVBxVHNsTWkwYzFSTjAxTm9qeHZBQXRKUkJwRGU5MEwxY2VNTk85QnBESmtfZ3Q5LXQzX3cxVDN0UXpFd1ZFUUtlc0JHV2JfQlQwY2REVGtydlRYeElRWlE2dUtGYw?oc=5",
-      "image": null,
-      "created_at": "Thu, 01 Oct 2026 07:00:00 GMT"
-    },
     {
       "id": "5005f8580742e5afc802b33f853f0224",
       "title": "설정 항목의 많고 적음을 비교하는 디지몬 온라인 카드게임",
@@ -72,103 +13,8 @@
       "category_name": "뉴스/보도",
       "link": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxOZDhIT1Y0RmdaM3RNQk5xRnFXOGdwYmpVVG9UWkU5Ul9hZFZGcmZMYUNuZ09sU050eE5RLWtuZ1V0ZXNuYW5YREJJM1JLd2dBU0UwektWN2VFVi1zWTFVU05ZdV96VkpCVTBDYndXbTAzVXluaWZBWkEtZkdOdmZHVzlpR0ttSGlXRU0yTmlNeWlRN1hnU0Y3MnViWXZMbmJNSzQxa0dOTzcyT2JHM0VqeEt4ZnQ0RERWaG41RENFVjVGdEc4cWp6akdaQXo1azc3bzhLX2Z0cmNCUWxzR0tDYg?oc=5",
       "image": null,
-      "created_at": "Mon, 12 Oct 2026 09:38:44 GMT"
-    },
-    {
-      "id": "9e9dee2bb8b098370f0fec6a93398501",
-      "title": "[특집] 닿을 수 없기에 가치 있는 - 극장이 자극하는 애니메이션의 노스탤지어",
-      "snippet": "[특집] 닿을 수 없기에 가치 있는 - 극장이 자극하는 애니메이션의 노스탤지어&nbsp;&nbsp;씨네21",
-      "source": "씨네21",
-      "source_badge": "뉴스",
-      "category": "game",
-      "category_name": "뉴스/보도",
-      "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE5LYVE1UENZRzJNb3h2ajI0d2VXQlIwOWtPQnY0dm1rMlFFSkJOSVl1RE5VNFJmVlVleUxsN1RhUXJjZjVSQ0RhYXpZQ2tBYnZETkc1YjJR?oc=5",
-      "image": null,
-      "created_at": "Fri, 04 Sep 2026 07:00:00 GMT"
-    },
-    {
-      "id": "ca0329efff378806c98ec3e3b17a2ec3",
-      "title": "모든 모험의 시작을 담은 신비로운 ‘운명적 만남’! 개봉 1주차 특전으로 간직한다!",
-      "snippet": "모든 모험의 시작을 담은 신비로운 ‘운명적 만남’! 개봉 1주차 특전으로 간직한다!&nbsp;&nbsp;파이낸셜리더스",
-      "source": "파이낸셜리더스",
-      "source_badge": "뉴스",
-      "category": "general",
-      "category_name": "뉴스/보도",
-      "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTE5va2NRY0VxS21ldE13Y1IxS1ZZSDBpREs0dTJfU2ctRklSQUdVNkV3b2c2c1l1UlhSNDRBZGtKcDlsQ3FVckxnazNoN0lJY2s2MHYtZ3lrTzlXUkFUY3dZRl9NaWd5eEN6Z1E?oc=5",
-      "image": null,
-      "created_at": "Fri, 11 Sep 2026 07:00:00 GMT"
-    },
-    {
-      "id": "05222b4d9281bfd3eb093011429abdc2",
-      "title": "소리와 움직임을 조절하는 디지몬 에볼루션 게임 환경 설정",
-      "snippet": "소리와 움직임을 조절하는 디지몬 에볼루션 게임 환경 설정&nbsp;&nbsp;Calgary Roughnecks",
-      "source": "Calgary Roughnecks",
-      "source_badge": "뉴스",
-      "category": "game",
-      "category_name": "뉴스/보도",
-      "link": "https://news.google.com/rss/articles/CBMihgJBVV95cUxPOTdkN283TE5PbDIyYS1ISndaNkRRcE8yTmdidUtaZ0NWcmxVWV9aLVhabDlMNGUxejF2TEJsdEcxNE1Fa3VwUXpoR2tYMlhxWDFydDdtUklwY2FiRi1pV2twRUVGdFhVY0FWRktTTzA5UEd5cmkzdDdGX2l2amEwa056NVdYaTQ4WWhqbFM3dWkxbWoxSmpTakJZLVpGNDlxc2JpU09kYWdESFZqa2o3UGZLRUp3bDkzamtaZzk1bkpUSnROWWNNdzh5ZnBIRm15bXJMTGUzN1BJcXJxangwTEFBMjBpak1hMVd1NWREeVo3RnFMUTBFYkVUNFJjV2JoVWhEendB?oc=5",
-      "image": null,
-      "created_at": "Sun, 11 Oct 2026 19:22:20 GMT"
-    },
-    {
-      "id": "275bfd3ab2669987626708fc3aee9ba2",
-      "title": "“디지몬 UP” 2026년 출시 예정! | News | 디지몬 UP | 반다이 남코 엔터테인먼트 공식 사이트",
-      "snippet": "“디지몬 UP” 2026년 출시 예정! | News | 디지몬 UP | 반다이 남코 엔터테인먼트 공식 사이트&nbsp;&nbsp;デジモンUP",
-      "source": "デジモンUP",
-      "source_badge": "뉴스",
-      "category": "figure",
-      "category_name": "뉴스/보도",
-      "link": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE5ZQmxWSnR0cGowZ1EyakNiYjJNQWtoNE1aN2hvdmhpU1BrZl9MMXFlaHhqLUNRM1RBU01zYldWcjhmckg2eEVBaUhwdkVRZw?oc=5",
-      "image": null,
-      "created_at": "Sun, 22 Mar 2026 07:00:00 GMT"
-    },
-    {
-      "id": "2eb9e6661ac8894530520f606207e0be",
-      "title": "화면 중앙에 집중해서 보는 디지몬 온라인 카드게임 릴 영역",
-      "snippet": "화면 중앙에 집중해서 보는 디지몬 온라인 카드게임 릴 영역&nbsp;&nbsp;Calgary Roughnecks",
-      "source": "Calgary Roughnecks",
-      "source_badge": "뉴스",
-      "category": "card",
-      "category_name": "뉴스/보도",
-      "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOenZWRnFrS3c3UGZRamw3cWM5cmZra3dLc3kyRmROaS1NRGxjUldGNTdZZFRFWWV5N2hPYjl3b1lkbV9oWXk1ck9TanozSjBQbGR5M09EWHE4SnlUVG5DZnNfeWlET3l0M3ZfUHR0aEZKYWlyVHVlOVFaSEY5YWlmQktMYTVpNWF6VVRSQnBreFVKZ28ycmxGbA?oc=5",
-      "image": null,
-      "created_at": "Sun, 11 Oct 2026 02:20:03 GMT"
-    },
-    {
-      "id": "37883f478dc266acb8622d6f63126d44",
-      "title": "디지몬 UP | 반다이 남코 엔터테인먼트 공식 사이트",
-      "snippet": "디지몬 UP | 반다이 남코 엔터테인먼트 공식 사이트&nbsp;&nbsp;デジモンUP",
-      "source": "デジモンUP",
-      "source_badge": "뉴스",
-      "category": "figure",
-      "category_name": "뉴스/보도",
-      "link": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE93ZHhfY3BKeXlTVXFvb1BYN2Rwa1FnYXV3bTIzZzNOdmIxNDBSS3ZCamNqV3R0VDM2UkNPRWFERU15OUpzU2FOZEF4aDlJd1E?oc=5",
-      "image": null,
-      "created_at": "Fri, 01 May 2026 07:00:00 GMT"
-    },
-    {
-      "id": "e9652d591e0482abbdd9d5b4c7ce0504",
-      "title": "어떤 항목이 게임 규칙에 속하나요? 디지몬 온라인 카드게임",
-      "snippet": "어떤 항목이 게임 규칙에 속하나요? 디지몬 온라인 카드게임&nbsp;&nbsp;Calgary Roughnecks",
-      "source": "Calgary Roughnecks",
-      "source_badge": "뉴스",
-      "category": "card",
-      "category_name": "뉴스/보도",
-      "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE1kOXF4MTBRRFVkV0RxT1FFR21BLU9IYkZUcGowWTRzLUlWa2tnaVh6bnRObkJkYzFTcHBwbVMyV05MT0JZUmpXUDFnSWl0ZVZxODhmM1RfaFZmTlZkLUx3?oc=5",
-      "image": null,
-      "created_at": "Sun, 11 Oct 2026 21:34:23 GMT"
-    },
-    {
-      "id": "83cd6bd8822d01bba8642df7e4192e84",
-      "title": "지원 기능을 기준으로 비교하는 디지몬 덱 레시피 사이트 게임 목록",
-      "snippet": "지원 기능을 기준으로 비교하는 디지몬 덱 레시피 사이트 게임 목록&nbsp;&nbsp;Calgary Roughnecks",
-      "source": "Calgary Roughnecks",
-      "source_badge": "뉴스",
-      "category": "game",
-      "category_name": "뉴스/보도",
-      "link": "https://news.google.com/rss/articles/CBMic0FVX3lxTFBjVTFsY0JhUjg2eGE1TUFmQlg2TndZLTNqSVJJZTh5Sjd5WW41eDdZdHl2RmpNZk5FNDdFMF84R2UzMEpCRl9jczJpTlduSEQ5cDhYakkxakxzT0x5Q0RpUWI4Rkk0X0lRRkFmZlZrQTMtVG8?oc=5",
-      "image": null,
-      "created_at": "Fri, 09 Oct 2026 12:36:41 GMT"
+      "timestamp": 1791797924,
+      "created_at": "2026-10-12 18:38"
     },
     {
       "id": "ebde7a1596651eda9be4bdf623ddf25c",
@@ -180,7 +26,86 @@
       "category_name": "뉴스/보도",
       "link": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxOWGJwY3NaV0tzVVBkOFZkc1JvLXpxUEFnTWU4dWxuTVN5ZDZRTkhSLUF1WUFGRWo4MWQwdmRTRW5YLVNyb29CclhSNDFsRFBGMVJ2eHQ0YmhrSE9YVklNUjNWcjVGUUs0WUdCMVZzSTJWT1RjLVJmc0lMMHA2eW1EMzlCbm9tbGlNTE1fcHVwSmtPdm8xM01LS3cwdTVuaTBCa21VMjhhX2JMRjZwcXRnMTdTM21UOWRGN2tnN2xCTzhnZlpqTTVPUDRjVDY5UTEweDVJSnBn?oc=5",
       "image": null,
-      "created_at": "Sun, 11 Oct 2026 23:01:13 GMT"
+      "timestamp": 1791759673,
+      "created_at": "2026-10-12 08:01"
+    },
+    {
+      "id": "e9652d591e0482abbdd9d5b4c7ce0504",
+      "title": "어떤 항목이 게임 규칙에 속하나요? 디지몬 온라인 카드게임",
+      "snippet": "어떤 항목이 게임 규칙에 속하나요? 디지몬 온라인 카드게임&nbsp;&nbsp;Calgary Roughnecks",
+      "source": "Calgary Roughnecks",
+      "source_badge": "뉴스",
+      "category": "card",
+      "category_name": "뉴스/보도",
+      "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE1kOXF4MTBRRFVkV0RxT1FFR21BLU9IYkZUcGowWTRzLUlWa2tnaVh6bnRObkJkYzFTcHBwbVMyV05MT0JZUmpXUDFnSWl0ZVZxODhmM1RfaFZmTlZkLUx3?oc=5",
+      "image": null,
+      "created_at": "2026-10-12 06:34",
+      "timestamp": 1791754463
+    },
+    {
+      "id": "05222b4d9281bfd3eb093011429abdc2",
+      "title": "소리와 움직임을 조절하는 디지몬 에볼루션 게임 환경 설정",
+      "snippet": "소리와 움직임을 조절하는 디지몬 에볼루션 게임 환경 설정&nbsp;&nbsp;Calgary Roughnecks",
+      "source": "Calgary Roughnecks",
+      "source_badge": "뉴스",
+      "category": "game",
+      "category_name": "뉴스/보도",
+      "link": "https://news.google.com/rss/articles/CBMihgJBVV95cUxPOTdkN283TE5PbDIyYS1ISndaNkRRcE8yTmdidUtaZ0NWcmxVWV9aLVhabDlMNGUxejF2TEJsdEcxNE1Fa3VwUXpoR2tYMlhxWDFydDdtUklwY2FiRi1pV2twRUVGdFhVY0FWRktTTzA5UEd5cmkzdDdGX2l2amEwa056NVdYaTQ4WWhqbFM3dWkxbWoxSmpTakJZLVpGNDlxc2JpU09kYWdESFZqa2o3UGZLRUp3bDkzamtaZzk1bkpUSnROWWNNdzh5ZnBIRm15bXJMTGUzN1BJcXJxangwTEFBMjBpak1hMVd1NWREeVo3RnFMUTBFYkVUNFJjV2JoVWhEendB?oc=5",
+      "image": null,
+      "timestamp": 1791746540,
+      "created_at": "2026-10-12 04:22"
+    },
+    {
+      "id": "651f04aff5e1bd6cc15f372d20fa12d2",
+      "title": "규칙이 긴 게임을 읽는 순서와 디지몬 에볼루션 게임",
+      "snippet": "규칙이 긴 게임을 읽는 순서와 디지몬 에볼루션 게임&nbsp;&nbsp;Calgary Roughnecks",
+      "source": "Calgary Roughnecks",
+      "source_badge": "뉴스",
+      "category": "game",
+      "category_name": "뉴스/보도",
+      "link": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxNQ1UzZW1jVDRBNm9OaW45NDRQbFhGcFRlaGhocXRkRlp0ZHZvMmF3dDE5cGRzNEg5NlcwaVBEeGEtdG9OTDlDYnRLcU8xN2tOcHFDVnhHcE5TX0ZfTnFvNXBIUnczd09GeS1RTjc5cEppcUJFX1JaTVl3ckc0ZnpqNndOR1k3NTh1aW0tbE90UXpiWWpyQ3NtLWtjZnphbkZMZkh5UUNyX1RxQWxsbkk0dnEwMXpJamlYdnhFWERRb0dVNFdGN2l3a2U5andlWkdOSnF4OA?oc=5",
+      "image": null,
+      "timestamp": 1791737688,
+      "created_at": "2026-10-12 01:54"
+    },
+    {
+      "id": "f7af57ffa6a0a65e0e0fd6594c50f3cb",
+      "title": "한 가지 테마를 여러 방식으로 풀어낸 디지몬 에볼루션 게임 분류",
+      "snippet": "한 가지 테마를 여러 방식으로 풀어낸 디지몬 에볼루션 게임 분류&nbsp;&nbsp;Calgary Roughnecks",
+      "source": "Calgary Roughnecks",
+      "source_badge": "뉴스",
+      "category": "game",
+      "category_name": "뉴스/보도",
+      "link": "https://news.google.com/rss/articles/CBMikwJBVV95cUxOWmZ4cDBzVF9ERWlRTGZmd2IyMDZQOFloa1FIZzRtWkZqMmZEc1ZOQnhNby1hX2RKcjJfRnFMX2d2N3JJbjBNaEVHOEpqMDNFLUVEa1NQeTdnempYSU1sYWVfRXUyNHBiVi1ROGdycWw2clYzcE1CTUNmZWJGY21iM3o0WWtqc1JFUHQyZjBsNjlXaVlsenV3RXhxXzdhN1pGQkpzbGJuMTdGU0RsUVhESUNYcm5vTmUxLXViNm5CMVB3d25FaldCX1RRc3BRUF80SWZnUnJVQWlIaFQtRmRFZjdHNHhrUGFFSEJxaWtaN2hlQk5XTWFwMS1jdFcxUjNfOGFKUkMtZ1ZDWFVNeDFpX0xjNA?oc=5",
+      "image": null,
+      "timestamp": 1791735759,
+      "created_at": "2026-10-12 01:22"
+    },
+    {
+      "id": "2eb9e6661ac8894530520f606207e0be",
+      "title": "화면 중앙에 집중해서 보는 디지몬 온라인 카드게임 릴 영역",
+      "snippet": "화면 중앙에 집중해서 보는 디지몬 온라인 카드게임 릴 영역&nbsp;&nbsp;Calgary Roughnecks",
+      "source": "Calgary Roughnecks",
+      "source_badge": "뉴스",
+      "category": "card",
+      "category_name": "뉴스/보도",
+      "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOenZWRnFrS3c3UGZRamw3cWM5cmZra3dLc3kyRmROaS1NRGxjUldGNTdZZFRFWWV5N2hPYjl3b1lkbV9oWXk1ck9TanozSjBQbGR5M09EWHE4SnlUVG5DZnNfeWlET3l0M3ZfUHR0aEZKYWlyVHVlOVFaSEY5YWlmQktMYTVpNWF6VVRSQnBreFVKZ28ycmxGbA?oc=5",
+      "image": null,
+      "timestamp": 1791685203,
+      "created_at": "2026-10-11 11:20"
+    },
+    {
+      "id": "b4545a9f2e9f082c3a05979b37fac85b",
+      "title": "[디지몬 팬들럼] 강화 모드",
+      "snippet": "[디지몬 팬들럼] 강화 모드&nbsp;&nbsp;YouTube",
+      "source": "YouTube",
+      "source_badge": "뉴스",
+      "category": "general",
+      "category_name": "뉴스/보도",
+      "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPZjh0VXM4eDk0ZFVqLW5LeDJaUXNUWExpXzZSWnI5NlRVWEFYZ0FNVVVrQkhYRjZWVWxjU1VuRXFuWUo4UUJrUEFjZVhFZFJXTVB2YklIS3NPVUVkWG5xdG5kckFFaWR1NUJZRDFGUmhzaU5WQmx4Z3NwTkdJQllLN1M4QzlPbC00dEdTWkZLeXVDZ1NmU0w2RTBITTlXSjBFZTdEUzFB?oc=5",
+      "image": null,
+      "created_at": "2026-10-10 03:19",
+      "timestamp": 1791569944
     },
     {
       "id": "c441706e6c970d868859e249655b5419",
@@ -192,7 +117,34 @@
       "category_name": "뉴스/보도",
       "link": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE11UlJwVjZfcmx6RXd2YlpOeW02dlJwSVB1SUpCUnU5a09oX2xENEl0aTZyVmVHemRPS1lhbDZYN3VhaU1aa3V5RFBRLWFoZFpybExidU05NF9GWjBC?oc=5",
       "image": null,
-      "created_at": "Fri, 09 Oct 2026 18:19:04 GMT"
+      "created_at": "2026-10-10 03:19",
+      "timestamp": 1791569944
+    },
+    {
+      "id": "83cd6bd8822d01bba8642df7e4192e84",
+      "title": "지원 기능을 기준으로 비교하는 디지몬 덱 레시피 사이트 게임 목록",
+      "snippet": "지원 기능을 기준으로 비교하는 디지몬 덱 레시피 사이트 게임 목록&nbsp;&nbsp;Calgary Roughnecks",
+      "source": "Calgary Roughnecks",
+      "source_badge": "뉴스",
+      "category": "game",
+      "category_name": "뉴스/보도",
+      "link": "https://news.google.com/rss/articles/CBMic0FVX3lxTFBjVTFsY0JhUjg2eGE1TUFmQlg2TndZLTNqSVJJZTh5Sjd5WW41eDdZdHl2RmpNZk5FNDdFMF84R2UzMEpCRl9jczJpTlduSEQ5cDhYakkxakxzT0x5Q0RpUWI4Rkk0X0lRRkFmZlZrQTMtVG8?oc=5",
+      "image": null,
+      "created_at": "2026-10-09 21:36",
+      "timestamp": 1791549401
+    },
+    {
+      "id": "baba50e7e725eb8a709baaa1454d985a",
+      "title": "디지몬 테이머즈 25주년 기념 상품 예약 판매 개시",
+      "snippet": "디지몬 테이머즈 25주년 기념 상품 예약 판매 개시&nbsp;&nbsp;haveagood-holiday.com",
+      "source": "haveagood-holiday.com",
+      "source_badge": "뉴스",
+      "category": "figure",
+      "category_name": "뉴스/보도",
+      "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxPaEZBd1YwTUxrbFJlUzhKQm13LUV1ZFRHTFBuV0RmcWhSUlVsOGVQSmVibTM5MjRybWFpcnNFLVBxVHNsTWkwYzFSTjAxTm9qeHZBQXRKUkJwRGU5MEwxY2VNTk85QnBESmtfZ3Q5LXQzX3cxVDN0UXpFd1ZFUUtlc0JHV2JfQlQwY2REVGtydlRYeElRWlE2dUtGYw?oc=5",
+      "image": null,
+      "created_at": "2026-10-01 16:00",
+      "timestamp": 1790838000
     }
   ]
 }
