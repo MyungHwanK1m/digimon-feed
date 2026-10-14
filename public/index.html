@@ -2,12 +2,12 @@
 <html lang="ko" class="dark">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>DIGI-FEED | 디지몬 실시간 자동 모니터</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>DIGI-FEED | 디지몬 실시간 모니터</title>
   
   <!-- PWA Meta -->
   <link rel="manifest" href="manifest.json">
-  <meta name="theme-color" content="#f97316">
+  <meta name="theme-color" content="#0f172a">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="apple-mobile-web-app-title" content="디지피드">
@@ -22,10 +22,8 @@
           colors: {
             brand: {
               50: '#fff7ed',
-              100: '#ffedd5',
               500: '#f97316',
               600: '#ea580c',
-              700: '#c2410c',
             }
           }
         }
@@ -33,111 +31,144 @@
     }
   </script>
   <style>
-    /* Mobile app scrollbar */
-    ::-webkit-scrollbar { width: 5px; height: 5px; }
-    ::-webkit-scrollbar-track { background: transparent; }
-    ::-webkit-scrollbar-thumb { background: rgba(156, 163, 175, 0.4); border-radius: 9999px; }
+    /* iOS Safe Area & Touch */
+    :root {
+      --sat: env(safe-area-inset-top, 0px);
+      --sab: env(safe-area-inset-bottom, 0px);
+    }
+    body {
+      padding-top: var(--sat);
+      padding-bottom: var(--sab);
+      -webkit-tap-highlight-color: transparent;
+      user-select: none;
+      -webkit-user-select: none;
+    }
+    /* Hide scrollbars for chips */
     .no-scrollbar::-webkit-scrollbar { display: none; }
     .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-    body { -webkit-tap-highlight-color: transparent; }
+    
+    /* Active touch feedback */
+    .touch-press:active {
+      transform: scale(0.97);
+      transition: transform 0.1s ease;
+    }
   </style>
 </head>
-<body class="bg-slate-900 text-slate-100 min-h-screen flex flex-col font-sans transition-colors duration-200">
+<body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col font-sans transition-colors duration-200">
 
-  <!-- Header -->
-  <header class="sticky top-0 z-30 bg-slate-900/90 backdrop-blur-md border-b border-slate-800">
-    <div class="max-w-6xl mx-auto px-4 h-14 flex items-center justify-between">
-      <div class="flex items-center gap-2.5">
-        <span class="text-2xl">👾</span>
-        <div>
-          <span class="font-extrabold text-base tracking-wider text-orange-500">DIGI-FEED</span>
-          <span class="text-[11px] text-slate-400 ml-1.5 hidden sm:inline">디지몬 자동 서칭</span>
-        </div>
+  <!-- Top Sticky Navigation Bar -->
+  <header class="sticky top-0 z-40 bg-slate-950/95 backdrop-blur-md border-b border-slate-800/80 px-4 h-14 flex items-center justify-between">
+    <div class="flex items-center gap-2.5">
+      <div class="w-8 h-8 rounded-xl bg-gradient-to-tr from-orange-600 to-amber-500 flex items-center justify-center text-lg shadow-md shadow-orange-500/20">
+        👾
       </div>
+      <div>
+        <h1 class="font-black text-base tracking-wider text-orange-500 flex items-center gap-1.5">
+          DIGI-FEED
+          <span class="text-[10px] font-semibold px-1.5 py-0.5 rounded bg-orange-500/20 text-orange-400 border border-orange-500/30">최근 30일</span>
+        </h1>
+      </div>
+    </div>
 
-      <!-- Controls -->
-      <div class="flex items-center gap-2">
-        <button id="theme-toggle" onclick="toggleTheme()" class="p-2 rounded-lg text-slate-400 hover:text-slate-100 hover:bg-slate-800 transition" title="테마 변경">
-          <span id="theme-icon">🌙</span>
-        </button>
-        <button onclick="fetchFeeds(true)" class="flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-lg bg-orange-600 hover:bg-orange-500 text-white shadow-sm transition active:scale-95">
-          <svg id="refresh-spinner" class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
-          <span class="hidden sm:inline">새로고침</span>
-        </button>
-      </div>
+    <!-- Quick Actions -->
+    <div class="flex items-center gap-1.5">
+      <button id="theme-btn" onclick="toggleTheme()" class="p-2 rounded-xl text-slate-400 hover:text-slate-100 active:bg-slate-800 transition" title="테마 변경">
+        <span id="theme-icon">🌙</span>
+      </button>
+      <button onclick="fetchFeeds(true)" class="touch-press flex items-center gap-1 px-3 py-1.5 rounded-xl bg-orange-500 hover:bg-orange-600 text-white font-bold text-xs shadow-md shadow-orange-500/20 transition">
+        <svg id="refresh-icon" class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+        <span>새로고침</span>
+      </button>
     </div>
   </header>
 
   <!-- Main Container -->
-  <main class="flex-1 max-w-6xl w-full mx-auto px-4 py-4 space-y-4">
+  <main class="flex-1 max-w-4xl w-full mx-auto px-3 sm:px-4 py-3 space-y-3 pb-20">
 
-    <!-- Search & Filter Bar -->
-    <div class="space-y-3">
-      <!-- Search Input -->
-      <div class="relative">
-        <svg class="w-4 h-4 absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
-        <input 
-          type="text" 
-          id="search-input" 
-          oninput="handleSearch(this.value)"
-          placeholder="디지몬, 굿즈, 카드명 검색 (예: 오메가몬, 디지카, 피규어)..." 
-          class="w-full pl-10 pr-4 py-2.5 text-sm rounded-xl bg-slate-800/80 border border-slate-700/80 focus:outline-none focus:border-orange-500 text-slate-100 placeholder:text-slate-400 transition shadow-inner"
-        />
-      </div>
-
-      <!-- Category Filter Chips -->
-      <div class="flex items-center gap-1.5 overflow-x-auto pb-1 no-scrollbar text-xs">
-        <button onclick="setCategory('all')" class="cat-chip px-3 py-1.5 rounded-full font-medium transition bg-orange-500 text-white" data-cat="all">전체</button>
-        <button onclick="setCategory('figure')" class="cat-chip px-3 py-1.5 rounded-full font-medium transition bg-slate-800 text-slate-300 border border-slate-700 hover:text-white" data-cat="figure">🧸 피규어/굿즈</button>
-        <button onclick="setCategory('card')" class="cat-chip px-3 py-1.5 rounded-full font-medium transition bg-slate-800 text-slate-300 border border-slate-700 hover:text-white" data-cat="card">🃏 카드게임(TCG)</button>
-        <button onclick="setCategory('game')" class="cat-chip px-3 py-1.5 rounded-full font-medium transition bg-slate-800 text-slate-300 border border-slate-700 hover:text-white" data-cat="game">🎮 게임/애니</button>
-        <button onclick="setCategory('community')" class="cat-chip px-3 py-1.5 rounded-full font-medium transition bg-slate-800 text-slate-300 border border-slate-700 hover:text-white" data-cat="community">🔥 커뮤니티 인기</button>
-        <button onclick="toggleBookmarkFilter()" id="bookmark-filter-btn" class="ml-auto px-3 py-1.5 rounded-full font-medium transition bg-slate-800 text-slate-300 border border-slate-700 hover:text-white flex items-center gap-1">
-          <span>⭐ 스크랩</span>
-        </button>
-      </div>
+    <!-- Mobile-Optimized Search Input -->
+    <div class="relative">
+      <svg class="w-4 h-4 absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+      <input 
+        type="search" 
+        id="search-input" 
+        oninput="handleSearch(this.value)"
+        placeholder="디지몬, 피규어, 카드, 굿즈 검색..." 
+        class="w-full pl-10 pr-9 py-2.5 text-sm rounded-2xl bg-slate-900 border border-slate-800 focus:outline-none focus:border-orange-500 text-slate-100 placeholder:text-slate-500 transition shadow-sm"
+      />
+      <button id="clear-search-btn" onclick="clearSearch()" class="hidden absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-white p-1 text-xs">✕</button>
     </div>
 
-    <!-- Status Bar -->
-    <div class="flex items-center justify-between text-[11px] text-slate-400 px-1">
+    <!-- Category Filter Chips (Thumb-friendly scroll) -->
+    <div class="flex items-center gap-1.5 overflow-x-auto pb-1 no-scrollbar text-xs font-medium">
+      <button onclick="setCategory('all')" class="cat-chip touch-press px-3.5 py-2 rounded-xl transition bg-orange-500 text-white font-bold shrink-0 shadow-sm" data-cat="all">전체</button>
+      <button onclick="setCategory('figure')" class="cat-chip touch-press px-3.5 py-2 rounded-xl transition bg-slate-900 text-slate-300 border border-slate-800 hover:border-slate-700 shrink-0" data-cat="figure">🧸 피규어/굿즈</button>
+      <button onclick="setCategory('card')" class="cat-chip touch-press px-3.5 py-2 rounded-xl transition bg-slate-900 text-slate-300 border border-slate-800 hover:border-slate-700 shrink-0" data-cat="card">🃏 카드게임(TCG)</button>
+      <button onclick="setCategory('game')" class="cat-chip touch-press px-3.5 py-2 rounded-xl transition bg-slate-900 text-slate-300 border border-slate-800 hover:border-slate-700 shrink-0" data-cat="game">🎮 게임/애니</button>
+      <button onclick="setCategory('community')" class="cat-chip touch-press px-3.5 py-2 rounded-xl transition bg-slate-900 text-slate-300 border border-slate-800 hover:border-slate-700 shrink-0" data-cat="community">🔥 커뮤니티 인기</button>
+      <button onclick="toggleBookmarkFilter()" id="bookmark-filter-btn" class="cat-chip touch-press px-3.5 py-2 rounded-xl transition bg-slate-900 text-slate-300 border border-slate-800 shrink-0 flex items-center gap-1 ml-auto">
+        <span>⭐ 스크랩</span>
+      </button>
+    </div>
+
+    <!-- Status Info Bar -->
+    <div class="flex items-center justify-between text-[11px] text-slate-400 px-1 pt-0.5">
       <div class="flex items-center gap-1.5">
-        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-        <span id="last-updated-text">데이터 로딩 중...</span>
+        <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+        <span id="last-updated-text">최신순 정렬됨</span>
       </div>
-      <div id="item-count-text">0건 탐색됨</div>
+      <div id="item-count-text" class="font-medium text-slate-400">0건 보관 중</div>
     </div>
 
-    <!-- Feeds Grid -->
-    <div id="cards-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3.5">
-      <!-- Loading Skeletons -->
-      <div class="p-4 rounded-xl bg-slate-800/50 border border-slate-800 animate-pulse h-36"></div>
-      <div class="p-4 rounded-xl bg-slate-800/50 border border-slate-800 animate-pulse h-36"></div>
-      <div class="p-4 rounded-xl bg-slate-800/50 border border-slate-800 animate-pulse h-36"></div>
+    <!-- Feeds List (Mobile single-column card, PC 2-column) -->
+    <div id="cards-container" class="space-y-3 sm:space-y-3.5">
+      <!-- Loading Skeleton Cards -->
+      <div class="p-4 rounded-2xl bg-slate-900/60 border border-slate-800/80 animate-pulse h-28"></div>
+      <div class="p-4 rounded-2xl bg-slate-900/60 border border-slate-800/80 animate-pulse h-28"></div>
+      <div class="p-4 rounded-2xl bg-slate-900/60 border border-slate-800/80 animate-pulse h-28"></div>
     </div>
 
   </main>
 
-  <!-- PWA Install Banner (Conditional) -->
-  <div id="pwa-banner" class="hidden fixed bottom-4 left-4 right-4 max-w-md mx-auto p-4 rounded-2xl bg-orange-600 text-white shadow-2xl flex items-center justify-between z-50">
+  <!-- Floating Scroll-To-Top Button -->
+  <button id="scroll-top-btn" onclick="scrollToTop()" class="hidden fixed bottom-6 right-5 w-11 h-11 rounded-full bg-orange-500/90 hover:bg-orange-500 text-white shadow-xl backdrop-blur flex items-center justify-center transition active:scale-95 z-30">
+    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 10l7-7m0 0l7 7m-7-7v18"/></svg>
+  </button>
+
+  <!-- PWA Install Prompt Banner -->
+  <div id="pwa-banner" class="hidden fixed bottom-4 left-4 right-4 max-w-sm mx-auto p-3.5 rounded-2xl bg-orange-600 text-white shadow-2xl flex items-center justify-between z-50">
     <div class="text-xs">
-      <p class="font-bold">앱으로 더 편리하게 보기</p>
-      <p class="text-orange-100 mt-0.5">홈 화면에 추가하면 앱처럼 열립니다.</p>
+      <p class="font-extrabold text-[13px]">홈 화면에 앱으로 추가</p>
+      <p class="text-orange-100 text-[11px] mt-0.5">주소창 없이 전체화면으로 빠르게 확인하세요.</p>
     </div>
-    <div class="flex items-center gap-2">
-      <button onclick="installPwa()" class="px-3 py-1.5 bg-white text-orange-600 font-bold text-xs rounded-lg shadow">추가</button>
-      <button onclick="dismissPwaBanner()" class="p-1 text-orange-200 hover:text-white">✕</button>
+    <div class="flex items-center gap-1.5 shrink-0">
+      <button onclick="installPwa()" class="px-3 py-1.5 bg-white text-orange-600 font-bold text-xs rounded-xl shadow-sm">추가</button>
+      <button onclick="dismissPwaBanner()" class="p-1.5 text-orange-200 hover:text-white">✕</button>
     </div>
   </div>
 
   <script>
-    // State
     let feeds = [];
     let currentCategory = 'all';
     let searchQuery = '';
     let showOnlyBookmarks = false;
     let deferredPrompt = null;
 
-    // Load Bookmarks from LocalStorage
+    // 한국어 상대 시간 포맷터 (방금 전, 15분 전, 2시간 전, 어제, 3일 전)
+    function formatRelativeTime(ts, dateStr) {
+      if (!ts) return dateStr || '';
+      const now = Math.floor(Date.now() / 1000);
+      const diff = now - ts;
+
+      if (diff < 60) return '방금 전';
+      if (diff < 3600) return `${Math.floor(diff / 60)}분 전`;
+      if (diff < 86400) return `${Math.floor(diff / 3600)}시간 전`;
+      if (diff < 86400 * 2) return '어제';
+      if (diff < 86400 * 7) return `${Math.floor(diff / 86400)}일 전`;
+      
+      return dateStr ? dateStr.split(' ')[0] : `${Math.floor(diff / 86400)}일 전`;
+    }
+
+    // Bookmarks LocalStorage
     function getBookmarks() {
       try {
         return JSON.parse(localStorage.getItem('digi_bookmarks') || '[]');
@@ -150,7 +181,8 @@
       localStorage.setItem('digi_bookmarks', JSON.stringify(bks));
     }
 
-    function toggleBookmark(id) {
+    function toggleBookmark(id, event) {
+      if (event) event.stopPropagation();
       let bks = getBookmarks();
       if (bks.includes(id)) {
         bks = bks.filter(x => x !== id);
@@ -161,35 +193,39 @@
       renderCards();
     }
 
-    // Fetch Feeds JSON
+    // Fetch Feeds
     async function fetchFeeds(isManual = false) {
-      const spinner = document.getElementById('refresh-spinner');
-      if (spinner) spinner.classList.add('animate-spin');
+      const icon = document.getElementById('refresh-icon');
+      if (icon) icon.classList.add('animate-spin');
 
       try {
         const res = await fetch(`digimon_feeds.json?t=${Date.now()}`);
-        if (!res.ok) throw new Error("Feeds file not found");
+        if (!res.ok) throw new Error("Feeds file load error");
         const data = await res.json();
-        feeds = data.feeds || [];
+        
+        // 최신순 정렬 보장
+        feeds = (data.feeds || []).sort((a, b) => (b.timestamp || 0) - (a.timestamp || 0));
+
         document.getElementById('last-updated-text').textContent = `최근 갱신: ${data.last_updated || '방금 전'}`;
-        document.getElementById('item-count-text').textContent = `총 ${feeds.length}건`;
+        document.getElementById('item-count-text').textContent = `최근 30일 · ${feeds.length}건`;
         renderCards();
       } catch (err) {
         console.error(err);
         document.getElementById('last-updated-text').textContent = "피드 로드 실패 (새로고침을 눌러보세요)";
       } finally {
-        if (spinner) spinner.classList.remove('animate-spin');
+        if (icon) setTimeout(() => icon.classList.remove('animate-spin'), 400);
       }
     }
 
-    // Render Cards
+    // Render Cards (스마트폰 최적화 레이아웃)
     function renderCards() {
       const container = document.getElementById('cards-container');
       const bks = getBookmarks();
 
       const filtered = feeds.filter(item => {
         const matchesCat = currentCategory === 'all' || item.category === currentCategory;
-        const matchesSearch = item.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
+        const matchesSearch = !searchQuery || 
+                              item.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
                               (item.snippet && item.snippet.toLowerCase().includes(searchQuery.toLowerCase()));
         const isBked = bks.includes(item.id);
         const matchesBk = !showOnlyBookmarks || isBked;
@@ -198,10 +234,10 @@
 
       if (filtered.length === 0) {
         container.innerHTML = `
-          <div class="col-span-full py-16 text-center text-slate-500">
+          <div class="py-16 text-center text-slate-500 bg-slate-900/40 rounded-2xl border border-slate-800/60 p-6">
             <div class="text-4xl mb-2">🔍</div>
-            <p class="font-medium text-sm">해당하는 디지몬 소식이 없습니다.</p>
-            <p class="text-xs mt-1 text-slate-600">검색어 또는 다른 카테고리를 눌러보세요.</p>
+            <p class="font-bold text-sm text-slate-300">소식이 없습니다.</p>
+            <p class="text-xs mt-1 text-slate-500">다른 카테고리나 검색어를 눌러보세요.</p>
           </div>
         `;
         return;
@@ -209,7 +245,10 @@
 
       container.innerHTML = filtered.map(item => {
         const isBked = bks.includes(item.id);
-        const badgeColor = item.source_badge === '루리웹' 
+        const relativeTime = formatRelativeTime(item.timestamp, item.created_at);
+
+        // 배지 스타일
+        const badgeStyle = item.source_badge === '루리웹' 
           ? 'bg-emerald-500/10 text-emerald-400 border-emerald-500/30'
           : item.source_badge === '디시'
           ? 'bg-purple-500/10 text-purple-400 border-purple-500/30'
@@ -218,39 +257,55 @@
           : 'bg-amber-500/10 text-amber-400 border-amber-500/30';
 
         return `
-          <div class="bg-slate-800/70 border border-slate-700/70 hover:border-orange-500/50 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition flex flex-col justify-between group">
-            ${item.image ? `
-              <div class="h-32 w-full overflow-hidden bg-black/20 relative">
-                <img src="${item.image}" alt="${item.title}" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" loading="lazy" />
+          <article 
+            onclick="window.open('${item.link}', '_blank', 'noopener,noreferrer')" 
+            class="touch-press cursor-pointer bg-slate-900/80 hover:bg-slate-900 border border-slate-800/80 hover:border-orange-500/50 rounded-2xl p-3.5 sm:p-4 shadow-sm hover:shadow-md transition-all duration-150 flex flex-col justify-between group relative overflow-hidden"
+          >
+            <!-- Card Top: Source badge, Relative time, Bookmark star -->
+            <div class="flex items-center justify-between gap-2 mb-2">
+              <div class="flex items-center gap-1.5 flex-wrap">
+                <span class="text-[10px] font-bold px-2 py-0.5 rounded-md border ${badgeStyle}">${item.source_badge || item.source}</span>
+                <span class="text-[11px] font-medium text-slate-400">${item.source || ''}</span>
               </div>
-            ` : ''}
+              <div class="flex items-center gap-2 shrink-0">
+                <span class="text-[11px] font-medium text-orange-400/90">${relativeTime}</span>
+                <button 
+                  onclick="toggleBookmark('${item.id}', event)" 
+                  class="p-1 -mr-1 text-base text-slate-500 hover:text-amber-400 active:scale-125 transition"
+                  title="스크랩 저장"
+                >
+                  ${isBked ? '⭐' : '☆'}
+                </button>
+              </div>
+            </div>
 
-            <div class="p-3.5 flex-1 flex flex-col justify-between space-y-2.5">
-              <div>
-                <div class="flex items-center justify-between gap-1.5 mb-1.5">
-                  <span class="text-[10px] font-semibold px-2 py-0.5 rounded border ${badgeColor}">${item.source_badge || item.source}</span>
-                  <span class="text-[10px] text-slate-400">${item.created_at || ''}</span>
+            <!-- Card Body: Thumbnail (optional) & Text -->
+            <div class="flex gap-3 items-start">
+              ${item.image ? `
+                <div class="w-20 h-20 sm:w-24 sm:h-24 rounded-xl overflow-hidden bg-slate-800 shrink-0 border border-slate-700/50 relative">
+                  <img src="${item.image}" alt="${item.title}" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" loading="lazy" />
                 </div>
-                <h3 class="font-bold text-sm leading-snug line-clamp-2 text-slate-100 group-hover:text-orange-400 transition">
+              ` : ''}
+              
+              <div class="flex-1 min-w-0 space-y-1">
+                <h2 class="font-bold text-[14px] sm:text-[15px] leading-snug text-slate-100 group-hover:text-orange-400 transition line-clamp-2">
                   ${item.title}
-                </h3>
-                <p class="text-xs text-slate-400 line-clamp-2 mt-1 leading-relaxed">
+                </h2>
+                <p class="text-xs text-slate-400 line-clamp-2 leading-relaxed">
                   ${item.snippet || ''}
                 </p>
               </div>
-
-              <div class="pt-2 border-t border-slate-700/60 flex items-center justify-between text-xs">
-                <button onclick="toggleBookmark('${item.id}')" class="flex items-center gap-1 ${isBked ? 'text-amber-400' : 'text-slate-400 hover:text-amber-300'} transition">
-                  <span>${isBked ? '★' : '☆'}</span>
-                  <span>${isBked ? '보관됨' : '스크랩'}</span>
-                </button>
-                <a href="${item.link}" target="_blank" rel="noopener noreferrer" class="font-medium text-orange-400 hover:underline flex items-center gap-1">
-                  원문 보기
-                  <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
-                </a>
-              </div>
             </div>
-          </div>
+
+            <!-- Card Bottom Bar: Category & Open Link -->
+            <div class="mt-2.5 pt-2 border-t border-slate-800/60 flex items-center justify-between text-[11px] text-slate-400">
+              <span class="text-slate-500">카테고리: <strong class="text-slate-400 font-semibold">${item.category_name || '일반'}</strong></span>
+              <span class="font-bold text-orange-400 flex items-center gap-0.5 group-hover:translate-x-0.5 transition">
+                원문 읽기
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg>
+              </span>
+            </div>
+          </article>
         `;
       }).join('');
     }
@@ -259,28 +314,57 @@
       currentCategory = cat;
       document.querySelectorAll('.cat-chip').forEach(btn => {
         if (btn.getAttribute('data-cat') === cat) {
-          btn.className = "cat-chip px-3 py-1.5 rounded-full font-medium transition bg-orange-500 text-white";
-        } else {
-          btn.className = "cat-chip px-3 py-1.5 rounded-full font-medium transition bg-slate-800 text-slate-300 border border-slate-700 hover:text-white";
+          btn.className = "cat-chip touch-press px-3.5 py-2 rounded-xl transition bg-orange-500 text-white font-bold shrink-0 shadow-sm";
+        } else if (btn.id !== 'bookmark-filter-btn') {
+          btn.className = "cat-chip touch-press px-3.5 py-2 rounded-xl transition bg-slate-900 text-slate-300 border border-slate-800 hover:border-slate-700 shrink-0";
         }
       });
       renderCards();
     }
 
     function handleSearch(val) {
-      searchQuery = val;
+      searchQuery = val.trim();
+      const clearBtn = document.getElementById('clear-search-btn');
+      if (searchQuery) {
+        clearBtn.classList.remove('hidden');
+      } else {
+        clearBtn.classList.add('hidden');
+      }
       renderCards();
+    }
+
+    function clearSearch() {
+      const input = document.getElementById('search-input');
+      input.value = '';
+      handleSearch('');
+      input.focus();
     }
 
     function toggleBookmarkFilter() {
       showOnlyBookmarks = !showOnlyBookmarks;
       const btn = document.getElementById('bookmark-filter-btn');
       if (showOnlyBookmarks) {
-        btn.className = "ml-auto px-3 py-1.5 rounded-full font-medium transition bg-amber-500 text-slate-900 font-bold flex items-center gap-1";
+        btn.className = "cat-chip touch-press px-3.5 py-2 rounded-xl transition bg-amber-500 text-slate-950 font-bold shrink-0 flex items-center gap-1 ml-auto shadow-md shadow-amber-500/20";
+        btn.innerHTML = "<span>⭐ 스크랩됨</span>";
       } else {
-        btn.className = "ml-auto px-3 py-1.5 rounded-full font-medium transition bg-slate-800 text-slate-300 border border-slate-700 hover:text-white flex items-center gap-1";
+        btn.className = "cat-chip touch-press px-3.5 py-2 rounded-xl transition bg-slate-900 text-slate-300 border border-slate-800 shrink-0 flex items-center gap-1 ml-auto";
+        btn.innerHTML = "<span>⭐ 스크랩</span>";
       }
       renderCards();
+    }
+
+    // Scroll to Top Button
+    window.addEventListener('scroll', () => {
+      const topBtn = document.getElementById('scroll-top-btn');
+      if (window.scrollY > 250) {
+        topBtn.classList.remove('hidden');
+      } else {
+        topBtn.classList.add('hidden');
+      }
+    });
+
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
     // Theme Toggle
@@ -289,22 +373,22 @@
       const isDark = html.classList.toggle('dark');
       document.getElementById('theme-icon').textContent = isDark ? '🌙' : '☀️';
       if (!isDark) {
-        document.body.classList.remove('bg-slate-900', 'text-slate-100');
+        document.body.classList.remove('bg-slate-950', 'text-slate-100');
         document.body.classList.add('bg-slate-50', 'text-slate-800');
       } else {
         document.body.classList.remove('bg-slate-50', 'text-slate-800');
-        document.body.classList.add('bg-slate-900', 'text-slate-100');
+        document.body.classList.add('bg-slate-950', 'text-slate-100');
       }
     }
 
-    // PWA Service Worker Registration
+    // PWA Service Worker
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
         navigator.serviceWorker.register('sw.js').catch(console.error);
       });
     }
 
-    // PWA Install Prompt Handler
+    // PWA Install Prompt
     window.addEventListener('beforeinstallprompt', (e) => {
       e.preventDefault();
       deferredPrompt = e;

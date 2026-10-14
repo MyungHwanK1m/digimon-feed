@@ -2,7 +2,8 @@ import os
 import json
 import hashlib
 import re
-from datetime import datetime
+import email.utils
+from datetime import datetime, timedelta, timezone
 import requests
 from bs4 import BeautifulSoup
 import feedparser
@@ -16,6 +17,54 @@ DATA_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "data")
 FEEDS_FILE = os.path.join(DATA_DIR, "digimon_feeds.json")
 DOCS_DATA_FILE = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "docs", "digimon_feeds.json"))
 PUBLIC_DATA_FILE = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "public", "digimon_feeds.json"))
+
+def parse_to_timestamp(date_str: str) -> int:
+    """다양한 날짜 형식을 Unix timestamp(초)로 정규화"""
+    if not date_str:
+        return int(datetime.now().timestamp())
+    
+    date_str = str(date_str).strip()
+    now = datetime.now()
+
+    # 1. RFC 2822 (RSS 포맷: Sun, 11 Oct 2026 16:54:48 GMT 등)
+    try:
+        dt = email.utils.parsedate_to_datetime(date_str)
+        return int(dt.timestamp())
+    except Exception:
+        pass
+
+    # 2. ISO 포맷 (2026-10-14T14:27:06 등)
+    try:
+        dt = datetime.fromisoformat(date_str.replace("Z", "+00:00"))
+        return int(dt.timestamp())
+    except Exception:
+        pass
+
+    # 3. 'HH:MM' (당일 등록된 글 - 루리웹/디시)
+    if re.match(r"^\d{1,2}:\d{2}$", date_str):
+        parts = date_str.split(":")
+        dt = now.replace(hour=int(parts[0]), minute=int(parts[1]), second=0, microsecond=0)
+        return int(dt.timestamp())
+
+    # 4. 'YYYY.MM.DD' or 'YYYY-MM-DD'
+    match = re.search(r"(\d{4})[.-](\d{1,2})[.-](\d{1,2})", date_str)
+    if match:
+        y, m, d = match.groups()
+        dt = datetime(int(y), int(m), int(d))
+        return int(dt.timestamp())
+
+    # 5. 'YY.MM.DD' (모바일 웹 축약형)
+    match = re.search(r"(\d{2})[.-](\d{1,2})[.-](\d{1,2})", date_str)
+    if match:
+        y, m, d = match.groups()
+        dt = datetime(2000 + int(y), int(m), int(d))
+        return int(dt.timestamp())
+
+    return int(now.timestamp())
+
+def format_display_date(timestamp: int) -> str:
+    """화면 표시용 YYYY-MM-DD HH:MM 포맷"""
+    return datetime.fromtimestamp(timestamp).strftime("%Y-%m-%d %H:%M")
 
 def get_hash_id(url: str) -> str:
     return hashlib.md5(url.strip().encode("utf-8")).hexdigest()
@@ -54,6 +103,7 @@ def crawl_google_news_digimon():
                 source_name = parts[1]
 
             category = classify_category(title, "general")
+            ts = parse_to_timestamp(published)
 
             items.append({
                 "id": get_hash_id(link),
@@ -65,7 +115,8 @@ def crawl_google_news_digimon():
                 "category_name": "뉴스/보도",
                 "link": link,
                 "image": None,
-                "created_at": published or datetime.now().isoformat()
+                "timestamp": ts,
+                "created_at": format_display_date(ts)
             })
     except Exception as e:
         print(f"[Error] Google News crawling failed: {e}")
@@ -100,7 +151,8 @@ def crawl_ruliweb_hobby():
                     img_src = "https:" + img_src
 
                 time_elem = row.select_one("td.time")
-                created_at = time_elem.get_text(strip=True) if time_elem else datetime.now().strftime("%Y-%m-%d")
+                raw_time = time_elem.get_text(strip=True) if time_elem else ""
+                ts = parse_to_timestamp(raw_time)
 
                 category = classify_category(title, "figure")
 
@@ -114,7 +166,8 @@ def crawl_ruliweb_hobby():
                     "category_name": "피규어/굿즈" if category == "figure" else "커뮤니티",
                     "link": link,
                     "image": img_src,
-                    "created_at": created_at
+                    "timestamp": ts,
+                    "created_at": format_display_date(ts)
                 })
     except Exception as e:
         print(f"[Error] Ruliweb crawling failed: {e}")
@@ -144,7 +197,8 @@ def crawl_dc_gallery(gallery_id: str, badge_name: str, default_cat: str):
                     link = "https://m.dcinside.com" + link
 
                 time_elem = row.select_one(".ginfo li:nth-child(2)")
-                created_at = time_elem.get_text(strip=True) if time_elem else datetime.now().strftime("%Y-%m-%d")
+                raw_time = time_elem.get_text(strip=True) if time_elem else ""
+                ts = parse_to_timestamp(raw_time)
 
                 cat = classify_category(title, default_cat)
 
@@ -158,7 +212,8 @@ def crawl_dc_gallery(gallery_id: str, badge_name: str, default_cat: str):
                     "category_name": "카드게임(TCG)" if cat == "card" else "커뮤니티 인기글",
                     "link": link,
                     "image": None,
-                    "created_at": created_at
+                    "timestamp": ts,
+                    "created_at": format_display_date(ts)
                 })
     except Exception as e:
         print(f"[Error] DC {gallery_id} crawling failed: {e}")
@@ -174,6 +229,7 @@ def crawl_withthewill_news():
             link = entry.link
             published = getattr(entry, "published", "")
             summary = re.sub(r'<[^>]+>', '', getattr(entry, "summary", ""))[:120].strip()
+            ts = parse_to_timestamp(published)
 
             items.append({
                 "id": get_hash_id(link),
@@ -185,7 +241,8 @@ def crawl_withthewill_news():
                 "category_name": "해외 소식",
                 "link": link,
                 "image": None,
-                "created_at": published or datetime.now().isoformat()
+                "timestamp": ts,
+                "created_at": format_display_date(ts)
             })
     except Exception as e:
         print(f"[Error] WithTheWill crawling failed: {e}")
@@ -222,20 +279,32 @@ def main():
         except Exception as e:
             print(f"[Warning] Failed to read existing feeds: {e}")
 
+    # 기존 데이터 timestamp 보정
+    for item in existing_items:
+        if "timestamp" not in item:
+            item["timestamp"] = parse_to_timestamp(item.get("created_at", ""))
+            item["created_at"] = format_display_date(item["timestamp"])
+
     # ID 기준 중복 제거 및 최신 데이터 우선 병합
     feed_map = {item["id"]: item for item in existing_items}
     for item in all_new_items:
         feed_map[item["id"]] = item
 
-    merged_list = list(feed_map.values())
-    
-    # 최신 200개 유지
-    final_feeds = merged_list[:200]
+    # [핵심] 최근 30일(1달) 이내 데이터만 보관
+    cutoff_timestamp = int((datetime.now() - timedelta(days=30)).timestamp())
+    filtered_feeds = [
+        item for item in feed_map.values()
+        if item.get("timestamp", 0) >= cutoff_timestamp
+    ]
+
+    # [핵심] 최신순 내림차순 정렬 (가장 최신글이 index 0)
+    filtered_feeds.sort(key=lambda x: x.get("timestamp", 0), reverse=True)
 
     result = {
         "last_updated": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
-        "total_count": len(final_feeds),
-        "feeds": final_feeds
+        "total_count": len(filtered_feeds),
+        "retention_days": 30,
+        "feeds": filtered_feeds
     }
 
     os.makedirs(DATA_DIR, exist_ok=True)
@@ -248,7 +317,7 @@ def main():
         with open(target, "w", encoding="utf-8") as f:
             json.dump(result, f, ensure_ascii=False, indent=2)
 
-    print(f"Successfully saved {len(final_feeds)} items to data, docs, and public folders.")
+    print(f"Successfully filtered (last 30 days) & sorted newest-first: {len(filtered_feeds)} items saved.")
 
 if __name__ == "__main__":
     main()
