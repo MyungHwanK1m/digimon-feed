@@ -1,8 +1,47 @@
 {
-  "last_updated": "2026-10-14 15:38:24",
-  "total_count": 40,
+  "last_updated": "2026-10-14 19:50:45",
+  "total_count": 43,
   "retention_days": 90,
   "feeds": [
+    {
+      "id": "f6c6423bfac5a4b6dc6f235acec4ed03",
+      "title": "[r/digimon] Digimon Adventure: Mini Mini Chibi Plush Mascot Keychains Out in February 2027",
+      "snippet": "Digimon Adventure: Mini Mini Chibi Plush Mascot Keychains will be out in February 2027, with pre-orders open now.",
+      "source": "Reddit digimon",
+      "source_badge": "레딧",
+      "category": "sns",
+      "category_name": "SNS/해외",
+      "link": "https://www.reddit.com/r/digimon/comments/1x5xw8p/digimon_adventure_mini_mini_chibi_plush_mascot/",
+      "image": "https://preview.redd.it/im6p52rmzgvh1.jpg?width=140&height=140&auto=webp&s=03fadfa6121b6f9e7cff6bf0b0213d42164de90f",
+      "timestamp": 1791999950,
+      "created_at": "2026-10-14 17:45"
+    },
+    {
+      "id": "e6a1270e9f730bd9d0498daecbcf03b5",
+      "title": "[r/digimon] In Yggdrasil we trust 🙏",
+      "snippet": "by Nick Peppermint on bluesky  https://bsky.app/profile/did:plc:3en223dt2xat7invkdm3b5m3/post/3mxu237lxcc2a  &#32;",
+      "source": "Reddit digimon",
+      "source_badge": "레딧",
+      "category": "sns",
+      "category_name": "SNS/해외",
+      "link": "https://www.reddit.com/r/digimon/comments/1x5xm65/in_yggdrasil_we_trust/",
+      "image": "https://preview.redd.it/eruvd0ouxgvh1.jpeg?width=640&crop=smart&auto=webp&s=1d09fc5edfd26dbd88c58b474bc4916fc1c7e02e",
+      "timestamp": 1791999315,
+      "created_at": "2026-10-14 17:35"
+    },
+    {
+      "id": "147000eff8c01f92558686361e7bfdb0",
+      "title": "[r/digimon] [OC] Sparrowmon go schlop schlop schlop schlop",
+      "snippet": "can't believe no one did this before :c  &#32; submitted by &#32;  /u/Temp_Otherworld   [link] &#32; [comments]",
+      "source": "Reddit digimon",
+      "source_badge": "레딧",
+      "category": "sns",
+      "category_name": "SNS/해외",
+      "link": "https://www.reddit.com/r/digimon/comments/1x5xld7/oc_sparrowmon_go_schlop_schlop_schlop_schlop/",
+      "image": "https://preview.redd.it/9shb1zjexgvh1.png?width=640&crop=smart&auto=webp&s=cf733081cff00544e63368c4e495846752ac7409",
+      "timestamp": 1791999264,
+      "created_at": "2026-10-14 17:34"
+    },
     {
       "id": "fbccec4e03f43b4a4cf8942255877a65",
       "title": "[트윗] [🎬] 포켓몬 vs 디지몬 https://t.co/yncmt3Kq4E #ATEEZ #에이티즈 #9트쫑 - X",
