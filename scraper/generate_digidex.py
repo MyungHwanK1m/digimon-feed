@@ -1,23 +1,40 @@
 import json
 import os
+import re
 import requests
 
-# 주요 한국어 더빙명 <-> 일본 원칭(가타카나 음차) 매핑 테이블
+# 주요 한국어 더빙명 <-> 일본 원칭(가타카나 음차) 매핑 테이블 (기본형 기준)
 KO_JA_NAME_MAP = {
     "agumon": {"ko": "아구몬", "ja_ko": "아구몬", "aliases": ["아구몬"]},
+    "pagumon": {"ko": "파구몬", "ja_ko": "파구몬", "aliases": ["파구몬", "포구몬", "뽀구몬"]},
+    "koromon": {"ko": "코로몬", "ja_ko": "코로몬", "aliases": ["코로몬"]},
+    "botamon": {"ko": "깜몬", "ja_ko": "보타몬", "aliases": ["깜몬", "보타몬"]},
+    "tsunomon": {"ko": "뿔몬", "ja_ko": "츠노몬", "aliases": ["뿔몬", "츠노몬"]},
     "gabumon": {"ko": "파피몬", "ja_ko": "가부몬", "aliases": ["파피몬", "가부몬"]},
+    "garurumon": {"ko": "가루루몬", "ja_ko": "가루루몬", "aliases": ["가루루몬"]},
+    "weregarurumon": {"ko": "워가루루몬", "ja_ko": "웨어가루루몬", "aliases": ["워가루루몬", "웨어가루루몬"]},
+    "metalgarurumon": {"ko": "메탈가루루몬", "ja_ko": "메탈가루루몬", "aliases": ["메탈가루루몬"]},
     "gomamon": {"ko": "쉬라몬", "ja_ko": "고마몬", "aliases": ["쉬라몬", "고마몬"]},
     "palmon": {"ko": "팔몬", "ja_ko": "파르몬", "aliases": ["팔몬", "파르몬"]},
     "tentomon": {"ko": "텐타몬", "ja_ko": "텐토몬", "aliases": ["텐타몬", "텐토몬"]},
+    "kabuterimon": {"ko": "캅테리몬", "ja_ko": "카부테리몬", "aliases": ["캅테리몬", "카부테리몬"]},
+    "atlurkabuterimon": {"ko": "아트라캅테리몬", "ja_ko": "아틀라카부테리몬", "aliases": ["아트라캅테리몬", "아틀라캅테리몬"]},
+    "heraklekabuterimon": {"ko": "헤라클레스캅테리몬", "ja_ko": "헤라클레스카부테리몬", "aliases": ["헤라클레스캅테리몬", "헤라클레스카부테리몬"]},
     "piyomon": {"ko": "피요몬", "ja_ko": "피요몬", "aliases": ["피요몬"]},
     "biyomon": {"ko": "피요몬", "ja_ko": "피요몬", "aliases": ["피요몬", "비요몬"]},
     "patamon": {"ko": "파닥몬", "ja_ko": "파타몬", "aliases": ["파닥몬", "파타몬"]},
+    "tokomon": {"ko": "토코몬", "ja_ko": "토코몬", "aliases": ["토코몬"]},
     "tailmon": {"ko": "가트몬", "ja_ko": "테일몬", "aliases": ["가트몬", "테일몬", "테이루몬"]},
     "gatomon": {"ko": "가트몬", "ja_ko": "테일몬", "aliases": ["가트몬", "테일몬"]},
+    "plotmon": {"ko": "플롯트몬", "ja_ko": "프로트몬", "aliases": ["플롯트몬", "프로트몬", "야옹몬"]},
+    "salamon": {"ko": "플롯트몬", "ja_ko": "프로트몬", "aliases": ["플롯트몬", "샐러몬"]},
+    "nyaromon": {"ko": "야옹몬", "ja_ko": "냐로몬", "aliases": ["야옹몬", "냐로몬"]},
     "wormmon": {"ko": "웜몬", "ja_ko": "츄츄몬", "aliases": ["웜몬", "츄츄몬", "추추몬"]},
     "chibimon": {"ko": "꼬마몬", "ja_ko": "치비몬", "aliases": ["꼬마몬", "치비몬"]},
-    "v-mon": {"ko": "브이몬", "ja_ko": "브이몬", "aliases": ["브이몬", "뷔몬", "브이몬"]},
+    "chicomon": {"ko": "치코몬", "ja_ko": "치코몬", "aliases": ["치코몬"]},
+    "v-mon": {"ko": "브이몬", "ja_ko": "브이몬", "aliases": ["브이몬", "뷔몬"]},
     "veemon": {"ko": "브이몬", "ja_ko": "브이몬", "aliases": ["브이몬"]},
+    "vmon": {"ko": "브이몬", "ja_ko": "브이몬", "aliases": ["브이몬"]},
     "xv-mon": {"ko": "엑스브이몬", "ja_ko": "엑스브이몬", "aliases": ["엑스브이몬"]},
     "exveemon": {"ko": "엑스브이몬", "ja_ko": "엑스브이몬", "aliases": ["엑스브이몬"]},
     "stingmon": {"ko": "스팅몬", "ja_ko": "스팅몬", "aliases": ["스팅몬"]},
@@ -28,7 +45,15 @@ KO_JA_NAME_MAP = {
     "terriermon": {"ko": "테리어몬", "ja_ko": "테리아몬", "aliases": ["테리어몬", "테리아몬"]},
     "renamon": {"ko": "레나몬", "ja_ko": "레나몬", "aliases": ["레나몬"]},
     "guilmon": {"ko": "길몬", "ja_ko": "기루몬", "aliases": ["길몬", "기루몬"]},
+    "gigimon": {"ko": "기기몬", "ja_ko": "기기몬", "aliases": ["기기몬"]},
+    "growmon": {"ko": "그라우몬", "ja_ko": "그라우몬", "aliases": ["그라우몬"]},
+    "megalogrowmon": {"ko": "메가로그라우몬", "ja_ko": "메가로그라우몬", "aliases": ["메가로그라우몬", "워그라우몬"]},
+    "wargrowmon": {"ko": "메가로그라우몬", "ja_ko": "메가로그라우몬", "aliases": ["메가로그라우몬", "워그라우몬"]},
+    "dukemon": {"ko": "듀크몬", "ja_ko": "듀크몬", "aliases": ["듀크몬", "갈란트몬"]},
+    "gallantmon": {"ko": "듀크몬", "ja_ko": "듀크몬", "aliases": ["듀크몬", "갈란트몬"]},
     "impmon": {"ko": "임프몬", "ja_ko": "임프몬", "aliases": ["임프몬"]},
+    "beelzebumon": {"ko": "베르제브몬", "ja_ko": "베르제브몬", "aliases": ["베르제브몬", "베엘제몬"]},
+    "beelzemon": {"ko": "베르제브몬", "ja_ko": "베르제브몬", "aliases": ["베르제브몬", "베엘제몬"]},
     "culumon": {"ko": "동글몬", "ja_ko": "쿠루몬", "aliases": ["동글몬", "쿠루몬"]},
     "calumon": {"ko": "동글몬", "ja_ko": "쿠루몬", "aliases": ["동글몬", "쿠루몬"]},
     "monodramon": {"ko": "모노드라몬", "ja_ko": "모노드라몬", "aliases": ["모노드라몬"]},
@@ -43,8 +68,6 @@ KO_JA_NAME_MAP = {
     "piximon": {"ko": "피콜몬", "ja_ko": "피콜로몬", "aliases": ["피콜몬", "피콜로몬"]},
     "daemon": {"ko": "마왕몬", "ja_ko": "데몬", "aliases": ["마왕몬", "데몬"]},
     "creepymon": {"ko": "마왕몬", "ja_ko": "데몬", "aliases": ["마왕몬", "데몬"]},
-    "dukemon": {"ko": "듀크몬", "ja_ko": "듀크몬", "aliases": ["듀크몬", "갈란트몬"]},
-    "gallantmon": {"ko": "듀크몬", "ja_ko": "듀크몬", "aliases": ["듀크몬", "갈란트몬"]},
     "omegamon": {"ko": "오메가몬", "ja_ko": "오메가몬", "aliases": ["오메가몬", "옴니몬"]},
     "omnimon": {"ko": "오메가몬", "ja_ko": "오메가몬", "aliases": ["오메가몬", "옴니몬"]},
     "magnamon": {"ko": "매그너몬", "ja_ko": "매그너몬", "aliases": ["매그너몬"]},
@@ -55,8 +78,6 @@ KO_JA_NAME_MAP = {
     "seraphimon": {"ko": "세라피몬", "ja_ko": "세라피몬", "aliases": ["세라피몬"]},
     "ofanimon": {"ko": "오파니몬", "ja_ko": "오파니몬", "aliases": ["오파니몬"]},
     "ophanimon": {"ko": "오파니몬", "ja_ko": "오파니몬", "aliases": ["오파니몬"]},
-    "beelzebumon": {"ko": "베르제브몬", "ja_ko": "베르제브몬", "aliases": ["베르제브몬", "베엘제몬"]},
-    "beelzemon": {"ko": "베르제브몬", "ja_ko": "베르제브몬", "aliases": ["베르제브몬", "베엘제몬"]},
     "lucemon": {"ko": "루체몬", "ja_ko": "루체몬", "aliases": ["루체몬"]},
     "agnimon": {"ko": "아그니몬", "ja_ko": "아그니몬", "aliases": ["아그니몬"]},
     "wolfmon": {"ko": "볼프몬", "ja_ko": "볼프몬", "aliases": ["볼프몬", "울프몬"]},
@@ -90,12 +111,9 @@ KO_JA_NAME_MAP = {
     "barbamon": {"ko": "발바몬", "ja_ko": "발바몬", "aliases": ["발바몬"]},
     "imperialdramon": {"ko": "황제드라몬", "ja_ko": "인페리얼드라몬", "aliases": ["황제드라몬", "임페리얼드라몬"]},
     "wargreymon": {"ko": "워그레이몬", "ja_ko": "워그레이몬", "aliases": ["워그레이몬"]},
-    "metalgarurumon": {"ko": "메탈가루루몬", "ja_ko": "메탈가루루몬", "aliases": ["메탈가루루몬"]},
     "blackwargreymon": {"ko": "블랙워그레이몬", "ja_ko": "블랙워그레이몬", "aliases": ["블랙워그레이몬"]},
     "greymon": {"ko": "그레이몬", "ja_ko": "그레이몬", "aliases": ["그레이몬"]},
-    "garurumon": {"ko": "가루루몬", "ja_ko": "가루루몬", "aliases": ["가루루몬"]},
     "metalgreymon": {"ko": "메탈그레이몬", "ja_ko": "메탈그레이몬", "aliases": ["메탈그레이몬"]},
-    "weregarurumon": {"ko": "워가루루몬", "ja_ko": "웨어가루루몬", "aliases": ["워가루루몬", "웨어가루루몬"]},
     "skullgreymon": {"ko": "스컬그레이몬", "ja_ko": "스컬그레이몬", "aliases": ["스컬그레이몬"]},
     "shinegreymon": {"ko": "샤인그레이몬", "ja_ko": "샤인그레이몬", "aliases": ["샤인그레이몬"]},
     "miragegaogamon": {"ko": "미라주가오가몬", "ja_ko": "미라주가오가몬", "aliases": ["미라주가오가몬"]},
@@ -108,21 +126,110 @@ KO_JA_NAME_MAP = {
     "metaletemon": {"ko": "메탈에테몬", "ja_ko": "메탈에테몬", "aliases": ["메탈에테몬"]},
     "pinocchimon": {"ko": "피노키몬", "ja_ko": "피노키몬", "aliases": ["피노키몬", "퍼펫몬"]},
     "puppetmon": {"ko": "피노키몬", "ja_ko": "피노키몬", "aliases": ["피노키몬", "퍼펫몬"]},
-    "mugendramon": {"ko": "파워드라몬", "ja_ko": "무겐드라몬", "aliases": ["파워드라몬", "무겐드라몬", "머시ンド라몬"]},
+    "mugendramon": {"ko": "파워드라몬", "ja_ko": "무겐드라몬", "aliases": ["파워드라몬", "무겐드라몬"]},
     "machinedramon": {"ko": "파워드라몬", "ja_ko": "무겐드라몬", "aliases": ["파워드라몬", "무겐드라몬"]},
     "metalseadramon": {"ko": "메탈시드라몬", "ja_ko": "메탈시드라몬", "aliases": ["메탈시드라몬"]},
+    "seadramon": {"ko": "시드라몬", "ja_ko": "시드라몬", "aliases": ["시드라몬"]},
     "apocalymon": {"ko": "아포카리몬", "ja_ko": "아포카리몬", "aliases": ["아포카리몬"]},
     "diablomon": {"ko": "디아블로몬", "ja_ko": "디아블로몬", "aliases": ["디아블로몬", "디아보로몬"]},
     "diaboromon": {"ko": "디아블로몬", "ja_ko": "디아블로몬", "aliases": ["디아블로몬", "디아보로몬"]}
 }
 
+# 접두사 한글 변환
+PREFIX_RULES = [
+    (r"^Toy\s*", "토이 "),
+    (r"^Clear\s*", "클리어 "),
+    (r"^Yuki\s*", "눈 "),
+    (r"^Snow\s*", "눈 "),
+    (r"^Bushi\s*", "무사 "),
+    (r"^Nise\s*", "가짜 "),
+    (r"^Dot\s*", "도트 "),
+    (r"^Santa\s*", "산타 "),
+    (r"^Black\s*", "블랙 "),
+    (r"^Dark\s*", "다크 "),
+    (r"^Chaos\s*", "카오스 ")
+]
+
+# 접미사 / 모드 한글 변환
+SUFFIX_RULES = [
+    (r"\(Black\)", "(흑)"),
+    (r"\(X-Antibody\)", "(X항체)"),
+    (r"\(Burst\s*Mode\)", "(버스트 모드)"),
+    (r"\(Merciful\s*Mode\)", "(머시풀 모드)"),
+    (r"\(Paladin\s*Mode\)", "(팔라딘 모드)"),
+    (r"\(Crimson\s*Mode\)", "(크림슨 모드)"),
+    (r"\(Blast\s*Mode\)", "(블래스트 모드)"),
+    (r"\(Future\s*Mode\)", "(퓨처 모드)"),
+    (r"\(Satan\s*Mode\)", "(사탄 모드)"),
+    (r"\(Fighting\s*Mode\)", "(파이터 모드)"),
+    (r"\(Dragon\s*Mode\)", "(드래곤 모드)"),
+    (r"\(2006\s*Anime\s*Version\)", "(2006 애니판)"),
+    (r"\s*Hakase$", " 박사"),
+    (r"\s*Alter-B$", " Alter-B"),
+    (r"\s*Alter-S$", " Alter-S"),
+    (r"\s*Zwart\s*Defeat$", " 즈왈트 디피트"),
+    (r"\s*Zwart$", " 즈왈트")
+]
+
 def clean_key(name: str) -> str:
-    return name.lower().replace(" ", "").replace("-", "").replace(":", "").replace("_", "")
+    return name.lower().replace(" ", "").replace("-", "").replace(":", "").replace("_", "").replace("(", "").replace(")", "")
+
+def translate_digimon_name(raw_name: str):
+    name = raw_name.strip()
+    k_clean = clean_key(name)
+
+    # 1. 완전 일치 사전 검사
+    if k_clean in KO_JA_NAME_MAP:
+        entry = KO_JA_NAME_MAP[k_clean]
+        return entry["ko"], entry["ja_ko"], list(entry["aliases"])
+
+    # 2. 접두사 / 접미사 분리 추출
+    extracted_prefix_ko = ""
+    extracted_suffix_ko = ""
+    core_name = name
+
+    for pattern, ko_sub in PREFIX_RULES:
+        if re.search(pattern, core_name, re.IGNORECASE):
+            extracted_prefix_ko += ko_sub
+            core_name = re.sub(pattern, "", core_name, flags=re.IGNORECASE).strip()
+
+    for pattern, ko_sub in SUFFIX_RULES:
+        if re.search(pattern, core_name, re.IGNORECASE):
+            extracted_suffix_ko = f" {ko_sub}" + extracted_suffix_ko
+            core_name = re.sub(pattern, "", core_name, flags=re.IGNORECASE).strip()
+
+    core_k = clean_key(core_name)
+
+    # 3. 코어 이름 매핑 확인
+    core_ko = None
+    core_ja_ko = None
+    aliases = [name, raw_name]
+
+    if core_k in KO_JA_NAME_MAP:
+        core_ko = KO_JA_NAME_MAP[core_k]["ko"]
+        core_ja_ko = KO_JA_NAME_MAP[core_k]["ja_ko"]
+        aliases.extend(KO_JA_NAME_MAP[core_k]["aliases"])
+    else:
+        # -mon 형태면 기본 한글화
+        if core_name.lower().endswith("mon"):
+            base = core_name[:-3].strip()
+            core_ko = f"{base}몬"
+            core_ja_ko = core_ko
+        else:
+            core_ko = core_name
+            core_ja_ko = core_name
+
+    final_name_ko = f"{extracted_prefix_ko}{core_ko}{extracted_suffix_ko}".strip()
+    final_name_ja = f"{extracted_prefix_ko}{core_ja_ko}{extracted_suffix_ko}".strip()
+    aliases.append(final_name_ko)
+
+    return final_name_ko, final_name_ja, list(set(aliases))
 
 def fetch_and_build_all_index():
     print("Fetching all 1,488 Digimon from Digi-API...")
     url = "https://digi-api.com/api/v1/digimon?pageSize=1500"
-    res = requests.get(url, timeout=30).json()
+    headers = {"User-Agent": "Mozilla/5.0"}
+    res = requests.get(url, headers=headers, timeout=30).json()
     items = res.get("content", [])
     print(f"Total fetched from Digi-API: {len(items)}")
 
@@ -130,31 +237,8 @@ def fetch_and_build_all_index():
     for item in items:
         digi_id = item["id"]
         raw_name = item["name"]
-        k = clean_key(raw_name)
 
-        # 기본 이름 설정
-        name_ko = raw_name
-        name_ja_ko = raw_name
-        aliases = [raw_name]
-
-        # 정밀 매핑 확인
-        matched = False
-        for map_k, map_v in KO_JA_NAME_MAP.items():
-            if map_k in k or k in map_k:
-                name_ko = map_v["ko"]
-                name_ja_ko = map_v["ja_ko"]
-                aliases.extend(map_v["aliases"])
-                matched = True
-                break
-
-        if not matched:
-            # -mon 형태면 한국어 음차 보정
-            if raw_name.endswith("mon"):
-                base = raw_name[:-3]
-                name_ko = f"{base}몬"
-                aliases.append(name_ko)
-
-        aliases = list(set(aliases))
+        name_ko, name_ja_ko, aliases = translate_digimon_name(raw_name)
 
         master_list.append({
             "id": digi_id,

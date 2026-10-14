@@ -607,10 +607,10 @@
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
-    // PWA Service Worker (Blue Card v5 with auto-update)
+    // PWA Service Worker (Blue Card v6 with auto-update)
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
-        navigator.serviceWorker.register('sw.js?v=5').then((reg) => {
+        navigator.serviceWorker.register('sw.js?v=6').then((reg) => {
           reg.update();
         }).catch(console.error);
 
@@ -903,32 +903,239 @@
       }
     }
 
+    // ========================================================
+    // Korean Translation & 1,488 Universal Canon Evolution Engine
+    // ========================================================
+
+    function translateLevel(lvl) {
+      if (!lvl) return '미확인';
+      const l = String(lvl).toLowerCase().trim();
+      if (l.includes('baby i') || l === 'fresh') return '유년기 I';
+      if (l.includes('baby ii') || l.includes('in-training') || l === 'training') return '유년기 II';
+      if (l.includes('child') || l.includes('rookie')) return '성장기';
+      if (l.includes('adult') || l.includes('champion')) return '성숙기';
+      if (l.includes('perfect') || (l.includes('ultimate') && !l.includes('mega'))) return '완전체';
+      if (l.includes('mega') || l.includes('ultimate')) return '궁극체';
+      if (l.includes('armor')) return '아머체';
+      if (l.includes('hybrid')) return '하이브리드체';
+      return lvl;
+    }
+
+    function translateAttribute(attr) {
+      if (!attr) return '미확인';
+      const a = String(attr).toLowerCase().trim();
+      if (a.includes('vaccine')) return '백신 (Vaccine)';
+      if (a.includes('virus')) return '바이러스 (Virus)';
+      if (a.includes('data')) return '데이터 (Data)';
+      if (a.includes('free')) return '프리 (Free)';
+      if (a.includes('variable')) return '가변 (Variable)';
+      if (a.includes('unknown')) return '불명';
+      return attr;
+    }
+
+    const DIGI_TYPES_KO = {
+      'holy knight': '성기사형 (로얄 나이츠)',
+      'ancient holy knight': '고대성기사형',
+      'holy beast': '성수형',
+      'mythical beast': '환수형',
+      'ancient dragon': '고대용형',
+      'ancient beast': '고대수형',
+      'ancient insect': '고대곤충형',
+      'ancient mutant': '고대돌연변이형',
+      'ancient bird': '고대조류형',
+      'ancient aquatic': '고대수생형',
+      'ancient plant': '고대식물형',
+      'ancient fish': '고대어형',
+      'ancient mineral': '고대광물형',
+      'dragon man': '용인형',
+      'reptile': '파충류형',
+      'dinosaur': '공룡형',
+      'dragon': '용형',
+      'beast man': '수인형',
+      'beast': '수형 (짐승형)',
+      'insect': '곤충형',
+      'warrior': '전사형',
+      'machine': '기계형',
+      'cyborg': '사이보그형',
+      'aquatic beast': '수생수형',
+      'aquatic': '수생형',
+      'mollusk': '연체형',
+      'crustacean': '갑각류형',
+      'marine mammal': '해양포유류형',
+      'bird man': '조인형',
+      'giant bird': '거조형',
+      'bird': '조류형',
+      'plant': '식물형',
+      'vegetation': '식물형',
+      'mineral': '광물형',
+      'rock': '암석형',
+      'undead': '언데드형',
+      'ghost': '유령형',
+      'demon man': '마인형',
+      'demon beast': '마수형',
+      'demon': '악마형',
+      'fallen angel': '타천사형',
+      'archangel': '대천사형',
+      'holy angel': '성천사형',
+      'angel': '천사형',
+      'fairy': '요정형',
+      'puppet': '퍼펫형 (돌형)',
+      'mutant': '돌연변이형',
+      'larva': '유충형',
+      'smoke': '연기형',
+      'slime': '슬라임형',
+      'amphibian': '양서류형',
+      'composite': '합성형',
+      'unknown': '불명'
+    };
+
+    function translateType(typ) {
+      if (!typ) return '미확인';
+      const t = String(typ).toLowerCase().trim();
+      for (const [k, v] of Object.entries(DIGI_TYPES_KO)) {
+        if (t === k || t.includes(k)) return v;
+      }
+      return typ;
+    }
+
+    // 1,488 All Digimon Evolution Sanitation & Canonical Prioritization
+    function cleanAndPrioritizeEvolutions(currentName, currentLevel, rawPrior, rawNext) {
+      const nameLower = (currentName || '').toLowerCase().trim();
+
+      // 1. Terminal Form Check (더 이상 진화가 없는 최종 형태 전수 판별)
+      const isTerminal = 
+        nameLower.includes('merciful mode') ||
+        nameLower.includes('burst mode') ||
+        nameLower.includes('paladin mode') ||
+        nameLower.includes('crimson mode') ||
+        nameLower.includes('future mode') ||
+        nameLower.includes('satan mode') ||
+        nameLower.includes('blast mode') ||
+        nameLower.includes('superior mode');
+
+      let cleanedNext = isTerminal ? [] : (rawNext ? [...rawNext] : []);
+
+      // 2. Prior Evolution Filter: 조그레스 보조/제물 디지몬 배제 (e.g. 'with Omegamon...' 배제)
+      let cleanedPrior = (rawPrior ? [...rawPrior] : []).filter(p => {
+        const cond = (p.condition || '').toLowerCase().trim();
+        if (!cond) return true;
+        // 다른 디지몬의 조그레스 소재로 끌려간 보조 디지몬은 단독 진화전에서 제외
+        if (cond.startsWith('with ') && !cond.startsWith('with or without')) {
+          return false;
+        }
+        return true;
+      });
+
+      // 3. Level Consistency Check (성장기 진화 전에 성숙기/스카몬 등 역진화 데이터 배제)
+      const curLvlKo = translateLevel(currentLevel);
+      if (curLvlKo === '성장기') {
+        cleanedPrior = cleanedPrior.filter(p => {
+          const pName = (p.digimon || '').toLowerCase();
+          return !pName.includes('greymon') && !pName.includes('sukamon') && !pName.includes('adult') && !pName.includes('champion');
+        });
+      }
+
+      // 4. Lineage / Canonical affinity sort for ALL Digimon
+      function getAffinityScore(candidateName, targetName) {
+        const c = (candidateName || '').toLowerCase();
+        const t = (targetName || '').toLowerCase();
+        
+        // 원작 대표 플래그십 진화쌍 가중치
+        if (t.includes('merciful') && c === 'omegamon') return 3000;
+        if (t === 'omegamon' && (c === 'wargreymon' || c === 'metalgarurumon')) return 3000;
+        if (t === 'agumon' && (c === 'koromon' || c === 'greymon')) return 3000;
+        if (t === 'greymon' && (c === 'agumon' || c === 'metalgreymon')) return 3000;
+        if (t === 'metalgreymon' && (c === 'greymon' || c === 'wargreymon')) return 3000;
+        if (t === 'gabumon' && (c === 'tsunomon' || c === 'garurumon')) return 3000;
+        if (t === 'garurumon' && (c === 'gabumon' || c === 'weregarurumon')) return 3000;
+        if (t === 'guilmon' && (c === 'gigimon' || c === 'growmon')) return 3000;
+        if ((t === 'v-mon' || t === 'veemon') && (c === 'chibimon' || c.includes('xv-mon'))) return 3000;
+        if (t.includes('tentomon') && c.includes('kabuterimon')) return 3000;
+        if (t.includes('patamon') && (c.includes('angemon') || c.includes('tokomon'))) return 3000;
+        if ((t.includes('tailmon') || t.includes('gatomon')) && (c.includes('angewomon') || c.includes('plotmon'))) return 3000;
+
+        // 패밀리 이름 일치 가중치 (e.g. Greymon -> GeoGreymon, RizeGreymon 등)
+        const baseClean = t.replace(/\(.*?\)/g, '').replace(/mode/g, '').replace(/x-antibody/g, '').trim();
+        const baseWords = baseClean.split(' ').filter(w => w.length >= 4);
+        for (const w of baseWords) {
+          if (c.includes(w)) return 1000;
+        }
+        return 0;
+      }
+
+      cleanedPrior.sort((a, b) => getAffinityScore(b.digimon, currentName) - getAffinityScore(a.digimon, currentName));
+      cleanedNext.sort((a, b) => getAffinityScore(b.digimon, currentName) - getAffinityScore(a.digimon, currentName));
+
+      // 5. Korean Name Lookup for each evolution
+      function enrichWithKorean(evList) {
+        return evList.map(ev => {
+          const m = masterIndex.find(idx => idx.id === ev.id || idx.name.toLowerCase() === (ev.digimon || '').toLowerCase());
+          return {
+            id: ev.id,
+            digimon: ev.digimon,
+            name_ko: m ? m.name_ko : (ev.digimon.endsWith('mon') ? ev.digimon.slice(0, -3) + '몬' : ev.digimon),
+            name_ja_ko: m ? m.name_ja_ko : '',
+            image: ev.image || (m ? m.image : 'https://digi-api.com/images/digimon/w/Agumon.png')
+          };
+        });
+      }
+
+      return {
+        isTerminal,
+        prior: enrichWithKorean(cleanedPrior),
+        next: enrichWithKorean(cleanedNext)
+      };
+    }
+
+    // Client-side Profile & Skill Translator
+    const translationCache = {};
+    async function translateTextToKo(text) {
+      if (!text || text.length < 2) return text;
+      if (translationCache[text]) return translationCache[text];
+
+      try {
+        const cleanText = text.replace(/[\r\n]+/g, ' ').slice(0, 500);
+        const url = `https://api.mymemory.translated.net/get?q=${encodeURIComponent(cleanText)}&langpair=en|ko`;
+        const res = await fetch(url);
+        if (res.ok) {
+          const data = await res.json();
+          if (data && data.responseData && data.responseData.translatedText) {
+            const translated = data.responseData.translatedText;
+            translationCache[text] = translated;
+            return translated;
+          }
+        }
+      } catch (_) {}
+      return text;
+    }
+
     // Fetch Full Detail: 1차 Local DB -> 2차 Real-time Network API (Digi-API 1,488마리)
     async function fetchDigimonFullDetail(idOrQuery, displayName) {
       const container = document.getElementById('dex-detail-container');
       
-      // 1. Local High-Detail DB 확인 (사전 제작된 고품질 데이터)
-      const localMatch = localDigidex.find(d => 
-        String(d.id).toLowerCase() === String(idOrQuery).toLowerCase() || 
-        d.name_ko === displayName || 
-        d.name_en.toLowerCase() === String(idOrQuery).toLowerCase()
-      );
-
-      if (localMatch) {
-        renderDexDetail(localMatch);
-        // 진화 체계가 비어있다면 백그라운드에서 Digi-API로 진화 트리 보강
-        if ((!localMatch.nextEvolutions || localMatch.nextEvolutions.length === 0) && localMatch.name_en) {
-          fetch(`https://digi-api.com/api/v1/digimon/${encodeURIComponent(localMatch.name_en)}`)
-            .then(res => res.json())
-            .then(apiData => {
-              if (currentDexDigimon && (currentDexDigimon.id === localMatch.id || currentDexDigimon.name_en === localMatch.name_en)) {
-                currentDexDigimon.priorEvolutions = apiData.priorEvolutions || [];
-                currentDexDigimon.nextEvolutions = apiData.nextEvolutions || [];
-                updateDexCard();
-              }
-            }).catch(() => {});
+      // 1. Local High-Detail DB 확인 (고유 식별자가 로컬 12종 ID와 일치할 때만 한정)
+      const isLocalId = localDigidex.some(d => String(d.id).toLowerCase() === String(idOrQuery).toLowerCase());
+      
+      if (isLocalId) {
+        const localMatch = localDigidex.find(d => String(d.id).toLowerCase() === String(idOrQuery).toLowerCase());
+        if (localMatch) {
+          renderDexDetail(localMatch);
+          // 진화 체계가 비어있다면 백그라운드에서 Digi-API로 정통 진화 트리 보강
+          if ((!localMatch.nextEvolutions || localMatch.nextEvolutions.length === 0) && localMatch.name_en) {
+            fetch(`https://digi-api.com/api/v1/digimon/${encodeURIComponent(localMatch.name_en)}`)
+              .then(res => res.json())
+              .then(apiData => {
+                if (currentDexDigimon && currentDexDigimon.id === localMatch.id) {
+                  const evoData = cleanAndPrioritizeEvolutions(localMatch.name_en, localMatch.level, apiData.priorEvolutions, apiData.nextEvolutions);
+                  currentDexDigimon.priorEvolutions = evoData.prior;
+                  currentDexDigimon.nextEvolutions = evoData.next;
+                  currentDexDigimon.isTerminal = evoData.isTerminal;
+                  updateDexCard();
+                }
+              }).catch(() => {});
+          }
+          return;
         }
-        return;
       }
 
       // 2. Real-time Network Fetch (Digi-API 1,488 All Digimon)
@@ -978,25 +1185,51 @@
         // 인덱스에서 한글명/일문명 보강
         const idxEntry = masterIndex.find(m => m.id === apiData.id) || {};
 
+        // 스펙 완전 한글화
+        const rawLevel = (apiData.levels && apiData.levels[0]) ? apiData.levels[0].level : '미확인';
+        const rawAttr = (apiData.attributes && apiData.attributes[0]) ? apiData.attributes[0].attribute : '미확인';
+        const rawType = (apiData.types && apiData.types[0]) ? apiData.types[0].type : '미확인';
+
+        const koLevel = translateLevel(rawLevel);
+        const koAttr = translateAttribute(rawAttr);
+        const koType = translateType(rawType);
+
+        // 1,488 전 종 정통 진화 체계 정제 및 최종 형태 판별
+        const evoData = cleanAndPrioritizeEvolutions(apiData.name, rawLevel, apiData.priorEvolutions, apiData.nextEvolutions);
+
         const fullDigimon = {
           id: apiData.id,
           name_ko: idxEntry.name_ko || apiData.name,
           name_ja_ko: idxEntry.name_ja_ko || '',
           name_en: apiData.name,
-          level: (apiData.levels && apiData.levels[0]) ? apiData.levels[0].level : '미확인',
-          attribute: (apiData.attributes && apiData.attributes[0]) ? apiData.attributes[0].attribute : '미확인',
-          type: (apiData.types && apiData.types[0]) ? apiData.types[0].type : '미확인',
+          level: koLevel,
+          attribute: koAttr,
+          type: koType,
           images: images,
           skills: (apiData.skills || []).slice(0, 4).map(s => ({
             name: s.skill,
             desc: s.description || '공식 필살기입니다.'
           })),
           profile: engDesc ? engDesc.description : '공식 도감 데이터가 기록되어 있습니다.',
-          priorEvolutions: apiData.priorEvolutions || [],
-          nextEvolutions: apiData.nextEvolutions || []
+          priorEvolutions: evoData.prior,
+          nextEvolutions: evoData.next,
+          isTerminal: evoData.isTerminal
         };
 
         renderDexDetail(fullDigimon);
+
+        // 백그라운드 공식 도감 설명 한글 번역
+        if (fullDigimon.profile && /[a-zA-Z]/.test(fullDigimon.profile)) {
+          translateTextToKo(fullDigimon.profile).then(translated => {
+            if (currentDexDigimon && currentDexDigimon.id === fullDigimon.id && translated !== fullDigimon.profile) {
+              currentDexDigimon.profile = translated;
+              const profileEl = document.getElementById('dex-profile-text');
+              const statusEl = document.getElementById('dex-translation-status');
+              if (profileEl) profileEl.textContent = translated;
+              if (statusEl) statusEl.innerHTML = `<span class="px-1.5 py-0.5 rounded bg-blue-100 dark:bg-blue-900/60 text-blue-700 dark:text-blue-300 font-bold">🇰🇷 한국어 번역 완료</span>`;
+            }
+          });
+        }
       } catch (err) {
         container.innerHTML = `
           <div class="py-12 text-center bg-white/80 dark:bg-[#070e22]/80 rounded-2xl border border-blue-200 dark:border-blue-900/60 p-6 shadow-sm">
@@ -1181,18 +1414,21 @@
 
             <!-- Official Lore / Archive Profile -->
             <div class="space-y-2 pt-2 border-t border-blue-200/60 dark:border-blue-900/60">
-              <h3 class="text-xs font-black tracking-wider text-blue-600 dark:text-blue-400 uppercase font-mono flex items-center gap-1.5">
-                <span>📖</span>
-                <span>OFFICIAL LORE (반다이 공식 도감 설정집)</span>
-              </h3>
+              <div class="flex items-center justify-between">
+                <h3 class="text-xs font-black tracking-wider text-blue-600 dark:text-blue-400 uppercase font-mono flex items-center gap-1.5">
+                  <span>📖</span>
+                  <span>OFFICIAL LORE (반다이 공식 도감 설정집)</span>
+                </h3>
+                <span id="dex-translation-status" class="text-[10px] text-blue-400 font-mono"></span>
+              </div>
               <div class="p-4 rounded-2xl bg-slate-900/95 text-slate-200 border border-blue-500/40 shadow-inner font-sans text-xs sm:text-[13px] leading-relaxed relative overflow-hidden">
                 <div class="absolute -right-6 -bottom-6 w-24 h-24 bg-blue-600/10 rounded-full blur-xl pointer-events-none"></div>
-                <p class="relative z-10 whitespace-pre-line text-slate-300 font-medium">${d.profile}</p>
+                <p id="dex-profile-text" class="relative z-10 whitespace-pre-line text-slate-300 font-medium">${d.profile}</p>
               </div>
             </div>
 
             <!-- Evolution Chain (진화 체계 및 연관 디지몬) -->
-            ${(d.priorEvolutions && d.priorEvolutions.length > 0) || (d.nextEvolutions && d.nextEvolutions.length > 0) ? `
+            ${d.isTerminal || (d.priorEvolutions && d.priorEvolutions.length > 0) || (d.nextEvolutions && d.nextEvolutions.length > 0) ? `
               <div class="space-y-3 pt-3 border-t border-blue-200/60 dark:border-blue-900/60">
                 <h3 class="text-xs font-black tracking-wider text-blue-600 dark:text-blue-400 uppercase font-mono flex items-center justify-between">
                   <span class="flex items-center gap-1.5">
@@ -1203,22 +1439,33 @@
                 </h3>
 
                 <!-- Next Evolutions (진화 후) -->
-                ${d.nextEvolutions && d.nextEvolutions.length > 0 ? `
+                ${d.isTerminal ? `
+                  <div class="p-3 rounded-2xl bg-blue-50 dark:bg-blue-950/50 border border-blue-200 dark:border-blue-800/80 text-xs flex items-center gap-2.5">
+                    <span class="text-lg">⚡</span>
+                    <div>
+                      <p class="font-extrabold text-blue-800 dark:text-blue-300">최종 진화 형태 (Terminal Form)</p>
+                      <p class="text-[11px] text-slate-500 dark:text-slate-400 mt-0.5">공식 도감상 더 이상의 진화 단계가 없는 궁극의 형태입니다.</p>
+                    </div>
+                  </div>
+                ` : (d.nextEvolutions && d.nextEvolutions.length > 0 ? `
                   <div class="space-y-1.5">
                     <p class="text-[11px] font-bold text-slate-500 dark:text-slate-400">진화 가능 디지몬 (${d.nextEvolutions.length}체):</p>
                     <div class="flex items-center gap-2 overflow-x-auto pb-1.5 no-scrollbar">
                       ${d.nextEvolutions.slice(0, 15).map(ev => `
                         <div 
-                          onclick="selectDigimonById(${ev.id}, '${ev.digimon}')" 
+                          onclick="selectDigimonById(${ev.id}, '${ev.name_ko || ev.digimon}')" 
                           class="touch-press cursor-pointer shrink-0 p-2 rounded-xl bg-slate-50 dark:bg-slate-900/80 hover:bg-blue-50 dark:hover:bg-blue-950 border border-blue-200/60 dark:border-blue-900/60 flex items-center gap-2 transition"
                         >
-                          <img src="${ev.image}" class="w-8 h-8 object-contain rounded" onerror="this.src='https://digi-api.com/images/digimon/w/Agumon.png'" />
-                          <span class="text-xs font-bold text-slate-800 dark:text-slate-200 whitespace-nowrap">${ev.digimon}</span>
+                          <img src="${ev.image || 'https://digi-api.com/images/digimon/w/Agumon.png'}" class="w-8 h-8 object-contain rounded" onerror="this.src='https://digi-api.com/images/digimon/w/Agumon.png'" />
+                          <div>
+                            <span class="text-xs font-bold text-slate-800 dark:text-slate-200 whitespace-nowrap block">${ev.name_ko || ev.digimon}</span>
+                            ${ev.name_ja_ko && ev.name_ja_ko !== ev.name_ko ? `<span class="text-[9px] text-blue-500 font-mono block">(${ev.name_ja_ko})</span>` : `<span class="text-[9px] text-slate-400 font-mono block">${ev.digimon}</span>`}
+                          </div>
                         </div>
                       `).join('')}
                     </div>
                   </div>
-                ` : ''}
+                ` : '')}
 
                 <!-- Prior Evolutions (진화 전) -->
                 ${d.priorEvolutions && d.priorEvolutions.length > 0 ? `
@@ -1227,11 +1474,14 @@
                     <div class="flex items-center gap-2 overflow-x-auto pb-1.5 no-scrollbar">
                       ${d.priorEvolutions.slice(0, 10).map(ev => `
                         <div 
-                          onclick="selectDigimonById(${ev.id}, '${ev.digimon}')" 
+                          onclick="selectDigimonById(${ev.id}, '${ev.name_ko || ev.digimon}')" 
                           class="touch-press cursor-pointer shrink-0 p-2 rounded-xl bg-slate-50 dark:bg-slate-900/80 hover:bg-blue-50 dark:hover:bg-blue-950 border border-blue-200/60 dark:border-blue-900/60 flex items-center gap-2 transition"
                         >
-                          <img src="${ev.image}" class="w-8 h-8 object-contain rounded" onerror="this.src='https://digi-api.com/images/digimon/w/Agumon.png'" />
-                          <span class="text-xs font-bold text-slate-800 dark:text-slate-200 whitespace-nowrap">${ev.digimon}</span>
+                          <img src="${ev.image || 'https://digi-api.com/images/digimon/w/Agumon.png'}" class="w-8 h-8 object-contain rounded" onerror="this.src='https://digi-api.com/images/digimon/w/Agumon.png'" />
+                          <div>
+                            <span class="text-xs font-bold text-slate-800 dark:text-slate-200 whitespace-nowrap block">${ev.name_ko || ev.digimon}</span>
+                            ${ev.name_ja_ko && ev.name_ja_ko !== ev.name_ko ? `<span class="text-[9px] text-blue-500 font-mono block">(${ev.name_ja_ko})</span>` : `<span class="text-[9px] text-slate-400 font-mono block">${ev.digimon}</span>`}
+                          </div>
                         </div>
                       `).join('')}
                     </div>

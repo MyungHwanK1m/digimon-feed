@@ -1,5 +1,5 @@
-// Blue Card Edition v5 (with 1,488 All Digimon Master Index)
-const CACHE_NAME = 'digi-feed-bluecard-v5';
+// Blue Card Edition v6 (with full Korean translation & canonical evolution engine)
+const CACHE_NAME = 'digi-feed-bluecard-v6';
 const ASSETS = [
   './',
   './index.html',
