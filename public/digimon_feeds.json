@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-10-14 14:28:50",
-  "total_count": 15,
+  "last_updated": "2026-10-14 05:37:24",
+  "total_count": 16,
   "feeds": [
     {
       "id": "651f04aff5e1bd6cc15f372d20fa12d2",
@@ -181,6 +181,18 @@
       "link": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxOWGJwY3NaV0tzVVBkOFZkc1JvLXpxUEFnTWU4dWxuTVN5ZDZRTkhSLUF1WUFGRWo4MWQwdmRTRW5YLVNyb29CclhSNDFsRFBGMVJ2eHQ0YmhrSE9YVklNUjNWcjVGUUs0WUdCMVZzSTJWT1RjLVJmc0lMMHA2eW1EMzlCbm9tbGlNTE1fcHVwSmtPdm8xM01LS3cwdTVuaTBCa21VMjhhX2JMRjZwcXRnMTdTM21UOWRGN2tnN2xCTzhnZlpqTTVPUDRjVDY5UTEweDVJSnBn?oc=5",
       "image": null,
       "created_at": "Sun, 11 Oct 2026 23:01:13 GMT"
+    },
+    {
+      "id": "c441706e6c970d868859e249655b5419",
+      "title": "[디지몬 팬들럼] 강화 모드",
+      "snippet": "[디지몬 팬들럼] 강화 모드&nbsp;&nbsp;YouTube",
+      "source": "YouTube",
+      "source_badge": "뉴스",
+      "category": "general",
+      "category_name": "뉴스/보도",
+      "link": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE11UlJwVjZfcmx6RXd2YlpOeW02dlJwSVB1SUpCUnU5a09oX2xENEl0aTZyVmVHemRPS1lhbDZYN3VhaU1aa3V5RFBRLWFoZFpybExidU05NF9GWjBC?oc=5",
+      "image": null,
+      "created_at": "Fri, 09 Oct 2026 18:19:04 GMT"
     }
   ]
 }
