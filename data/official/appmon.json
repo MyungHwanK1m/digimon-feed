@@ -1,0 +1,1930 @@
+{
+ "source": "https://digimon.net/appmon_ko/",
+ "note": "기본 정보만 저장 (프로필·필살기·그림은 공식 페이지 참고)",
+ "total": 148,
+ "appmons": [
+  {
+   "id": 1,
+   "name_ko": "서치몬",
+   "grade": "스탠다드",
+   "app": "검색",
+   "attribute": "소셜",
+   "related": [
+    76,
+    122,
+    4
+   ],
+   "url": "https://digimon.net/appmon_ko/detail.php?id=1"
+  },
+  {
+   "id": 2,
+   "name_ko": "콜몬",
+   "grade": "스탠다드",
+   "app": "전화",
+   "attribute": "소셜",
+   "related": [
+    3,
+    9,
+    6
+   ],
+   "url": "https://digimon.net/appmon_ko/detail.php?id=2"
+  },
+  {
+   "id": 3,
+   "name_ko": "메일몬",
+   "grade": "스탠다드",
+   "app": "메일",
+   "attribute": "소셜",
+   "related": [
+    6,
+    2,
+    9
+   ],
+   "url": "https://digimon.net/appmon_ko/detail.php?id=3"
+  },
+  {
+   "id": 4,
+   "name_ko": "츠부몬",
+   "grade": "스탠다드",
+   "app": "트윗",
+   "attribute": "소셜",
+   "related": [
+    12,
+    96,
+    48
+   ],
+   "url": "https://digimon.net/appmon_ko/detail.php?id=4"
+  },
+  {
+   "id": 5,
+   "name_ko": "언어몬",
+   "grade": "스탠다드",
+   "app": "번역",
+   "attribute": "소셜",
+   "related": [
+    31,
+    85,
+    42
+   ],
+   "url": "https://digimon.net/appmon_ko/detail.php?id=5"
+  },
+  {
+   "id": 6,
+   "name_ko": "어드몬",
+   "grade": "스탠다드",
+   "app": "주소록",
+   "attribute": "소셜",
+   "related": [
+    3,
+    79,
+    2
+   ],
+   "url": "https://digimon.net/appmon_ko/detail.php?id=6"
+  },
+  {
+   "id": 7,
+   "name_ko": "리뷰몬",
+   "grade": "스탠다드",
+   "app": "리뷰",
+   "attribute": "소셜",
+   "related": [
+    18,
+    80,
+    10
+   ],
+   "url": "https://digimon.net/appmon_ko/detail.php?id=7"
+  },
+  {
+   "id": 8,
+   "name_ko": "세팅몬",
+   "grade": "스탠다드",
+   "app": "설정",
+   "attribute": "소셜",
+   "related": [
+    65,
+    106,
+    17
+   ],
+   "url": "https://digimon.net/appmon_ko/detail.php?id=8"
+  },
+  {
+   "id": 9,
+   "name_ko": "메시몬",
+   "grade": "스탠다드",
+   "app": "메시지",
+   "attribute": "소셜",
+   "related": [
+    79,
+    6,
+    2
+   ],
+   "url": "https://digimon.net/appmon_ko/detail.php?id=9"
+  },
+  {
+   "id": 10,
+   "name_ko": "속닥몬",
+   "grade": "스탠다드",
+   "app": "비밀 후기",
+   "attribute": "소셜",
+   "related": [
+    18,
+    80,
+    7
+   ],
+   "url": "https://digimon.net/appmon_ko/detail.php?id=10"
+  },
+  {
+   "id": 11,
+   "name_ko": "로켓몬",
+   "grade": "스탠다드",
+   "app": "로켓",
+   "attribute": "내비",
+   "related": [
+    21,
+    18,
+    46
+   ],
+   "url": "https://digimon.net/appmon_ko/detail.php?id=11"
+  },
+  {
+   "id": 12,
+   "name_ko": "내비몬",
+   "grade": "스탠다드",
+   "app": "내비",
+   "attribute": "내비",
+   "related": [
+    1,
+    78,
+    4
+   ],
+   "url": "https://digimon.net/appmon_ko/detail.php?id=12"
+  },
+  {
+   "id": 13,
+   "name_ko": "제트몬",
+   "grade": "스탠다드",
+   "app": "비행",
+   "attribute": "내비",
+   "related": [
+    14,
+    82,
+    61
+   ],
+   "url": "https://digimon.net/appmon_ko/detail.php?id=13"
+  },
+  {
+   "id": 14,
+   "name_ko": "열차몬",
+   "grade": "스탠다드",
+   "app": "환승",
+   "attribute": "내비",
+   "related": [
+    13,
+    17,
+    82
+   ],
+   "url": "https://digimon.net/appmon_ko/detail.php?id=14"
+  },
+  {
+   "id": 15,
+   "name_ko": "웨더몬",
+   "grade": "스탠다드",
+   "app": "날씨",
+   "attribute": "내비",
+   "related": [
+    11,
+    83,
+    18
+   ],
+   "url": "https://digimon.net/appmon_ko/detail.php?id=15"
+  },
+  {
+   "id": 16,
+   "name_ko": "컴퍼스몬",
+   "grade": "스탠다드",
+   "app": "나침반",
+   "attribute": "내비",
+   "related": [
+    17,
+    13,
+    14
+   ],
+   "url": "https://digimon.net/appmon_ko/detail.php?id=16"
+  },
+  {
+   "id": 17,
+   "name_ko": "호텔몬",
+   "grade": "스탠다드",
+   "app": "호텔",
+   "attribute": "내비",
+   "related": [
+    16,
+    102,
+    82
+   ],
+   "url": "https://digimon.net/appmon_ko/detail.php?id=17"
+  },
+  {
+   "id": 18,
+   "name_ko": "뉴스몬",
+   "grade": "스탠다드",
+   "app": "뉴스",
+   "attribute": "내비",
+   "related": [
+    15,
+    7,
+    80
+   ],
+   "url": "https://digimon.net/appmon_ko/detail.php?id=18"
+  },
+  {
+   "id": 19,
+   "name_ko": "튜토몬",
+   "grade": "스탠다드",
+   "app": "해설",
+   "attribute": "내비",
+   "related": [
+    4,
+    96,
+    48
+   ],
+   "url": "https://digimon.net/appmon_ko/detail.php?id=19"
+  },
+  {
+   "id": 20,
+   "name_ko": "엠시몬",
+   "grade": "스탠다드",
+   "app": "실황",
+   "attribute": "내비",
+   "related": [
+    50,
+    100,
+    54
+   ],
+   "url": "https://digimon.net/appmon_ko/detail.php?id=20"
+  },
+  {
+   "id": 21,
+   "name_ko": "카메라몬",
+   "grade": "스탠다드",
+   "app": "카메라",
+   "attribute": "툴",
+   "related": [
+    86,
+    110,
+    11
+   ],
+   "url": "https://digimon.net/appmon_ko/detail.php?id=21"
+  },
+  {
+   "id": 22,
+   "name_ko": "레코몬",
+   "grade": "스탠다드",
+   "app": "녹음",
+   "attribute": "툴",
+   "related": [
+    100,
+    20,
+    50
+   ],
+   "url": "https://digimon.net/appmon_ko/detail.php?id=22"
+  },
+  {
+   "id": 23,
+   "name_ko": "칼큐몬",
+   "grade": "스탠다드",
+   "app": "전자계산기",
+   "attribute": "툴",
+   "related": [
+    49,
+    47,
+    34
+   ],
+   "url": "https://digimon.net/appmon_ko/detail.php?id=23"
+  },
+  {
+   "id": 24,
+   "name_ko": "트래쉬몬",
+   "grade": "스탠다드",
+   "app": "쓰레기통",
+   "attribute": "툴",
+   "related": [
+    40,
+    39,
+    87
+   ],
+   "url": "https://digimon.net/appmon_ko/detail.php?id=24"
+  },
+  {
+   "id": 25,
+   "name_ko": "미러몬",
+   "grade": "스탠다드",
+   "app": "거울",
+   "attribute": "툴",
+   "related": [
+    57,
+    72,
+    39
+   ],
+   "url": "https://digimon.net/appmon_ko/detail.php?id=25"
+  },
+  {
+   "id": 26,
+   "name_ko": "라이트몬",
+   "grade": "스탠다드",
+   "app": "조명",
+   "attribute": "툴",
+   "related": [
+    56,
+    52,
+    97
+   ],
+   "url": "https://digimon.net/appmon_ko/detail.php?id=26"
+  },
+  {
+   "id": 27,
+   "name_ko": "워치몬",
+   "grade": "스탠다드",
+   "app": "시계",
+   "attribute": "툴",
+   "related": [
+    29,
+    84,
+    38
+   ],
+   "url": "https://digimon.net/appmon_ko/detail.php?id=27"
+  },
+  {
+   "id": 28,
+   "name_ko": "다이어리몬",
+   "grade": "스탠다드",
+   "app": "일기장",
+   "attribute": "툴",
+   "related": [
+    29,
+    63,
+    95
+   ],
+   "url": "https://digimon.net/appmon_ko/detail.php?id=28"
+  },
+  {
+   "id": 29,
+   "name_ko": "캘린더몬",
+   "grade": "스탠다드",
+   "app": "캘린더",
+   "attribute": "툴",
+   "related": [
+    84,
+    28,
+    95
+   ],
+   "url": "https://digimon.net/appmon_ko/detail.php?id=29"
+  },
+  {
+   "id": 30,
+   "name_ko": "음파몬",
+   "grade": "스탠다드",
+   "app": "초음파",
+   "attribute": "툴",
+   "related": [
+    31,
+    85,
+    5
+   ],
+   "url": "https://digimon.net/appmon_ko/detail.php?id=30"
+  },
+  {
+   "id": 31,
+   "name_ko": "재밍몬",
+   "grade": "스탠다드",
+   "app": "재밍",
+   "attribute": "툴",
+   "related": [
+    42,
+    30,
+    85
+   ],
+   "url": "https://digimon.net/appmon_ko/detail.php?id=31"
+  },
+  {
+   "id": 32,
+   "name_ko": "프로텍몬",
+   "grade": "스탠다드",
+   "app": "보안",
+   "attribute": "시스템",
+   "related": [
+    88,
+    33,
+    41
+   ],
+   "url": "https://digimon.net/appmon_ko/detail.php?id=32"
+  },
+  {
+   "id": 33,
+   "name_ko": "핵몬",
+   "grade": "스탠다드",
+   "app": "해킹",
+   "attribute": "시스템",
+   "related": [
+    88,
+    77,
+    115
+   ],
+   "url": "https://digimon.net/appmon_ko/detail.php?id=33"
+  },
+  {
+   "id": 34,
+   "name_ko": "배터리몬",
+   "grade": "스탠다드",
+   "app": "배터리",
+   "attribute": "시스템",
+   "related": [
+    23,
+    47,
+    92
+   ],
+   "url": "https://digimon.net/appmon_ko/detail.php?id=34"
+  },
+  {
+   "id": 35,
+   "name_ko": "페코몬",
+   "grade": "스탠다드",
+   "app": "압축",
+   "attribute": "시스템",
+   "related": [
+    38,
+    40,
+    36
+   ],
+   "url": "https://digimon.net/appmon_ko/detail.php?id=35"
+  },
+  {
+   "id": 36,
+   "name_ko": "포코몬",
+   "grade": "스탠다드",
+   "app": "해동",
+   "attribute": "시스템",
+   "related": [
+    38,
+    89,
+    35
+   ],
+   "url": "https://digimon.net/appmon_ko/detail.php?id=36"
+  },
+  {
+   "id": 37,
+   "name_ko": "카피페몬",
+   "grade": "스탠다드",
+   "app": "복사&붙여넣기",
+   "attribute": "시스템",
+   "related": [
+    25,
+    39,
+    52
+   ],
+   "url": "https://digimon.net/appmon_ko/detail.php?id=37"
+  },
+  {
+   "id": 38,
+   "name_ko": "세이브몬",
+   "grade": "스탠다드",
+   "app": "백업",
+   "attribute": "시스템",
+   "related": [
+    35,
+    27,
+    36
+   ],
+   "url": "https://digimon.net/appmon_ko/detail.php?id=38"
+  },
+  {
+   "id": 39,
+   "name_ko": "월몬",
+   "grade": "스탠다드",
+   "app": "배경 화면",
+   "attribute": "시스템",
+   "related": [
+    49,
+    37,
+    25
+   ],
+   "url": "https://digimon.net/appmon_ko/detail.php?id=39"
+  },
+  {
+   "id": 40,
+   "name_ko": "에코몬",
+   "grade": "스탠다드",
+   "app": "에너지 절약",
+   "attribute": "시스템",
+   "related": [
+    87,
+    68,
+    24
+   ],
+   "url": "https://digimon.net/appmon_ko/detail.php?id=40"
+  },
+  {
+   "id": 41,
+   "name_ko": "삐뽀몬",
+   "grade": "스탠다드",
+   "app": "경보",
+   "attribute": "시스템",
+   "related": [
+    33,
+    88,
+    32
+   ],
+   "url": "https://digimon.net/appmon_ko/detail.php?id=41"
+  },
+  {
+   "id": 42,
+   "name_ko": "시그널몬",
+   "grade": "스탠다드",
+   "app": "통신",
+   "attribute": "시스템",
+   "related": [
+    5,
+    85
+   ],
+   "url": "https://digimon.net/appmon_ko/detail.php?id=42"
+  },
+  {
+   "id": 43,
+   "name_ko": "온몬",
+   "grade": "스탠다드",
+   "app": "온라인",
+   "attribute": "게임",
+   "related": [
+    112,
+    76,
+    1
+   ],
+   "url": "https://digimon.net/appmon_ko/detail.php?id=43"
+  },
+  {
+   "id": 44,
+   "name_ko": "오프몬",
+   "grade": "스탠다드",
+   "app": "오프라인",
+   "attribute": "게임",
+   "related": [
+    33,
+    121,
+    77
+   ],
+   "url": "https://digimon.net/appmon_ko/detail.php?id=44"
+  },
+  {
+   "id": 45,
+   "name_ko": "콰광몬",
+   "grade": "스탠다드",
+   "app": "액션",
+   "attribute": "게임",
+   "related": [
+    66,
+    96,
+    19
+   ],
+   "url": "https://digimon.net/appmon_ko/detail.php?id=45"
+  },
+  {
+   "id": 46,
+   "name_ko": "샷몬",
+   "grade": "스탠다드",
+   "app": "슈팅",
+   "attribute": "게임",
+   "related": [
+    86,
+    21,
+    11
+   ],
+   "url": "https://digimon.net/appmon_ko/detail.php?id=46"
+  },
+  {
+   "id": 47,
+   "name_ko": "카드몬",
+   "grade": "스탠다드",
+   "app": "카드",
+   "attribute": "게임",
+   "related": [
+    92,
+    59,
+    34
+   ],
+   "url": "https://digimon.net/appmon_ko/detail.php?id=47"
+  },
+  {
+   "id": 48,
+   "name_ko": "롤플레잉몬",
+   "grade": "스탠다드",
+   "app": "롤플레잉",
+   "attribute": "게임",
+   "related": [
+    45,
+    19,
+    96
+   ],
+   "url": "https://digimon.net/appmon_ko/detail.php?id=48"
+  },
+  {
+   "id": 49,
+   "name_ko": "퍼즐몬",
+   "grade": "스탠다드",
+   "app": "퍼즐",
+   "attribute": "게임",
+   "related": [
+    40,
+    23,
+    87
+   ],
+   "url": "https://digimon.net/appmon_ko/detail.php?id=49"
+  },
+  {
+   "id": 50,
+   "name_ko": "댄스몬",
+   "grade": "스탠다드",
+   "app": "리듬",
+   "attribute": "게임",
+   "related": [
+    54,
+    100,
+    22
+   ],
+   "url": "https://digimon.net/appmon_ko/detail.php?id=50"
+  },
+  {
+   "id": 51,
+   "name_ko": "레이스몬",
+   "grade": "스탠다드",
+   "app": "레이스",
+   "attribute": "게임",
+   "related": [
+    13,
+    91,
+    61
+   ],
+   "url": "https://digimon.net/appmon_ko/detail.php?id=51"
+  },
+  {
+   "id": 52,
+   "name_ko": "드로몬",
+   "grade": "스탠다드",
+   "app": "페인트",
+   "attribute": "엔터테인먼트",
+   "related": [
+    26,
+    37,
+    97
+   ],
+   "url": "https://digimon.net/appmon_ko/detail.php?id=52"
+  },
+  {
+   "id": 53,
+   "name_ko": "텔러몬",
+   "grade": "스탠다드",
+   "app": "점술",
+   "attribute": "엔터테인먼트",
+   "related": [
+    59,
+    47,
+    98
+   ],
+   "url": "https://digimon.net/appmon_ko/detail.php?id=53"
+  },
+  {
+   "id": 54,
+   "name_ko": "뮤지몬",
+   "grade": "스탠다드",
+   "app": "음악",
+   "attribute": "엔터테인먼트",
+   "related": [
+    20,
+    118,
+    125
+   ],
+   "url": "https://digimon.net/appmon_ko/detail.php?id=54"
+  },
+  {
+   "id": 55,
+   "name_ko": "덥석몬",
+   "grade": "스탠다드",
+   "app": "맛집",
+   "attribute": "엔터테인먼트",
+   "related": [
+    45,
+    93,
+    66
+   ],
+   "url": "https://digimon.net/appmon_ko/detail.php?id=55"
+  },
+  {
+   "id": 56,
+   "name_ko": "비디몬",
+   "grade": "스탠다드",
+   "app": "영상",
+   "attribute": "엔터테인먼트",
+   "related": [
+    10,
+    26,
+    80
+   ],
+   "url": "https://digimon.net/appmon_ko/detail.php?id=56"
+  },
+  {
+   "id": 57,
+   "name_ko": "드레스몬",
+   "grade": "스탠다드",
+   "app": "패션",
+   "attribute": "엔터테인먼트",
+   "related": [
+    72,
+    74,
+    99
+   ],
+   "url": "https://digimon.net/appmon_ko/detail.php?id=57"
+  },
+  {
+   "id": 58,
+   "name_ko": "북몬",
+   "grade": "스탠다드",
+   "app": "e북",
+   "attribute": "엔터테인먼트",
+   "related": [
+    106,
+    75,
+    8
+   ],
+   "url": "https://digimon.net/appmon_ko/detail.php?id=58"
+  },
+  {
+   "id": 59,
+   "name_ko": "뽑몬",
+   "grade": "스탠다드",
+   "app": "캡슐 뽑기",
+   "attribute": "엔터테인먼트",
+   "related": [
+    60,
+    101,
+    53
+   ],
+   "url": "https://digimon.net/appmon_ko/detail.php?id=59"
+  },
+  {
+   "id": 60,
+   "name_ko": "럭몬",
+   "grade": "스탠다드",
+   "app": "슬롯",
+   "attribute": "엔터테인먼트",
+   "related": [
+    59,
+    62,
+    101
+   ],
+   "url": "https://digimon.net/appmon_ko/detail.php?id=60"
+  },
+  {
+   "id": 61,
+   "name_ko": "트릭몬",
+   "grade": "스탠다드",
+   "app": "마술",
+   "attribute": "엔터테인먼트",
+   "related": [
+    51,
+    91,
+    13
+   ],
+   "url": "https://digimon.net/appmon_ko/detail.php?id=61"
+  },
+  {
+   "id": 62,
+   "name_ko": "다이스몬",
+   "grade": "스탠다드",
+   "app": "주사위",
+   "attribute": "엔터테인먼트",
+   "related": [
+    60,
+    59,
+    101
+   ],
+   "url": "https://digimon.net/appmon_ko/detail.php?id=62"
+  },
+  {
+   "id": 63,
+   "name_ko": "쿡몬",
+   "grade": "스탠다드",
+   "app": "요리",
+   "attribute": "엔터테인먼트",
+   "related": [
+    28,
+    95,
+    29
+   ],
+   "url": "https://digimon.net/appmon_ko/detail.php?id=63"
+  },
+  {
+   "id": 64,
+   "name_ko": "바이러몬",
+   "grade": "스탠다드",
+   "app": "바이러스",
+   "attribute": "라이프",
+   "related": [
+    71,
+    104,
+    67
+   ],
+   "url": "https://digimon.net/appmon_ko/detail.php?id=64"
+  },
+  {
+   "id": 65,
+   "name_ko": "슬립몬",
+   "grade": "스탠다드",
+   "app": "수면",
+   "attribute": "라이프",
+   "related": [
+    8,
+    17,
+    102
+   ],
+   "url": "https://digimon.net/appmon_ko/detail.php?id=65"
+  },
+  {
+   "id": 66,
+   "name_ko": "머슬몬",
+   "grade": "스탠다드",
+   "app": "근육 트레이닝",
+   "attribute": "라이프",
+   "related": [
+    49,
+    55,
+    93
+   ],
+   "url": "https://digimon.net/appmon_ko/detail.php?id=66"
+  },
+  {
+   "id": 67,
+   "name_ko": "에이드몬",
+   "grade": "스탠다드",
+   "app": "구조",
+   "attribute": "라이프",
+   "related": [
+    103,
+    69,
+    64
+   ],
+   "url": "https://digimon.net/appmon_ko/detail.php?id=67"
+  },
+  {
+   "id": 68,
+   "name_ko": "머니몬",
+   "grade": "스탠다드",
+   "app": "전자화폐",
+   "attribute": "라이프",
+   "related": [
+    101,
+    73,
+    40
+   ],
+   "url": "https://digimon.net/appmon_ko/detail.php?id=68"
+  },
+  {
+   "id": 69,
+   "name_ko": "스파몬",
+   "grade": "스탠다드",
+   "app": "온천",
+   "attribute": "라이프",
+   "related": [
+    67,
+    103,
+    70
+   ],
+   "url": "https://digimon.net/appmon_ko/detail.php?id=69"
+  },
+  {
+   "id": 70,
+   "name_ko": "서플리몬",
+   "grade": "스탠다드",
+   "app": "보충제",
+   "attribute": "라이프",
+   "related": [
+    69,
+    67,
+    103
+   ],
+   "url": "https://digimon.net/appmon_ko/detail.php?id=70"
+  },
+  {
+   "id": 71,
+   "name_ko": "도프몬",
+   "grade": "스탠다드",
+   "app": "증강",
+   "attribute": "라이프",
+   "related": [
+    64,
+    104,
+    67
+   ],
+   "url": "https://digimon.net/appmon_ko/detail.php?id=71"
+  },
+  {
+   "id": 72,
+   "name_ko": "옥셔몬",
+   "grade": "스탠다드",
+   "app": "경매",
+   "attribute": "라이프",
+   "related": [
+    74,
+    99,
+    25
+   ],
+   "url": "https://digimon.net/appmon_ko/detail.php?id=72"
+  },
+  {
+   "id": 73,
+   "name_ko": "가계몬",
+   "grade": "스탠다드",
+   "app": "가계부",
+   "attribute": "라이프",
+   "related": [
+    105,
+    35,
+    68
+   ],
+   "url": "https://digimon.net/appmon_ko/detail.php?id=73"
+  },
+  {
+   "id": 74,
+   "name_ko": "쇼핑몬",
+   "grade": "스탠다드",
+   "app": "쇼핑",
+   "attribute": "라이프",
+   "related": [
+    57,
+    25,
+    72
+   ],
+   "url": "https://digimon.net/appmon_ko/detail.php?id=74"
+  },
+  {
+   "id": 75,
+   "name_ko": "딕셔몬",
+   "grade": "스탠다드",
+   "app": "사전",
+   "attribute": "라이프",
+   "related": [
+    8,
+    58,
+    106
+   ],
+   "url": "https://digimon.net/appmon_ko/detail.php?id=75"
+  },
+  {
+   "id": 76,
+   "name_ko": "로긴몬",
+   "grade": "슈퍼",
+   "app": "로그인",
+   "attribute": "소셜",
+   "related": [
+    43,
+    112,
+    87
+   ],
+   "url": "https://digimon.net/appmon_ko/detail.php?id=76"
+  },
+  {
+   "id": 77,
+   "name_ko": "로간몬",
+   "grade": "슈퍼",
+   "app": "로그아웃",
+   "attribute": "소셜",
+   "related": [
+    113,
+    121,
+    84
+   ],
+   "url": "https://digimon.net/appmon_ko/detail.php?id=77"
+  },
+  {
+   "id": 78,
+   "name_ko": "슈퍼 서치몬",
+   "grade": "슈퍼",
+   "app": "슈퍼 검색",
+   "attribute": "소셜",
+   "related": [
+    107,
+    122,
+    84
+   ],
+   "url": "https://digimon.net/appmon_ko/detail.php?id=78"
+  },
+  {
+   "id": 79,
+   "name_ko": "소셔몬",
+   "grade": "슈퍼",
+   "app": "SNS",
+   "attribute": "소셜",
+   "related": [
+    2,
+    108,
+    9
+   ],
+   "url": "https://digimon.net/appmon_ko/detail.php?id=79"
+  },
+  {
+   "id": 80,
+   "name_ko": "가십몬",
+   "grade": "슈퍼",
+   "app": "가십",
+   "attribute": "소셜",
+   "related": [
+    7,
+    108,
+    18
+   ],
+   "url": "https://digimon.net/appmon_ko/detail.php?id=80"
+  },
+  {
+   "id": 81,
+   "name_ko": "스카시몬",
+   "grade": "슈퍼",
+   "app": "실패",
+   "attribute": "소셜",
+   "related": [
+    64,
+    7,
+    70
+   ],
+   "url": "https://digimon.net/appmon_ko/detail.php?id=81"
+  },
+  {
+   "id": 82,
+   "name_ko": "트립몬",
+   "grade": "슈퍼",
+   "app": "여행",
+   "attribute": "내비",
+   "related": [
+    86,
+    14,
+    110
+   ],
+   "url": "https://digimon.net/appmon_ko/detail.php?id=82"
+  },
+  {
+   "id": 83,
+   "name_ko": "웨더드라몬",
+   "grade": "슈퍼",
+   "app": "기후",
+   "attribute": "내비",
+   "related": [
+    11,
+    111,
+    15
+   ],
+   "url": "https://digimon.net/appmon_ko/detail.php?id=83"
+  },
+  {
+   "id": 84,
+   "name_ko": "타임몬",
+   "grade": "슈퍼",
+   "app": "타임 슬립",
+   "attribute": "툴",
+   "related": [
+    113,
+    107,
+    78
+   ],
+   "url": "https://digimon.net/appmon_ko/detail.php?id=84"
+  },
+  {
+   "id": 85,
+   "name_ko": "로어몬",
+   "grade": "슈퍼",
+   "app": "음성 변조",
+   "attribute": "툴",
+   "related": [
+    5,
+    114,
+    97
+   ],
+   "url": "https://digimon.net/appmon_ko/detail.php?id=85"
+  },
+  {
+   "id": 86,
+   "name_ko": "스코프몬",
+   "grade": "슈퍼",
+   "app": "감시",
+   "attribute": "툴",
+   "related": [
+    110,
+    21,
+    82
+   ],
+   "url": "https://digimon.net/appmon_ko/detail.php?id=86"
+  },
+  {
+   "id": 87,
+   "name_ko": "크래프트몬",
+   "grade": "슈퍼",
+   "app": "설계",
+   "attribute": "툴",
+   "related": [
+    76,
+    39,
+    24
+   ],
+   "url": "https://digimon.net/appmon_ko/detail.php?id=87"
+  },
+  {
+   "id": 88,
+   "name_ko": "레이드라몬",
+   "grade": "슈퍼",
+   "app": "슈퍼 해킹",
+   "attribute": "시스템",
+   "related": [
+    33,
+    89,
+    123
+   ],
+   "url": "https://digimon.net/appmon_ko/detail.php?id=88"
+  },
+  {
+   "id": 89,
+   "name_ko": "데집몬",
+   "grade": "슈퍼",
+   "app": "압축 해동",
+   "attribute": "시스템",
+   "related": [
+    115,
+    35,
+    36
+   ],
+   "url": "https://digimon.net/appmon_ko/detail.php?id=89"
+  },
+  {
+   "id": 90,
+   "name_ko": "미에누몬",
+   "grade": "슈퍼",
+   "app": "스텔스",
+   "attribute": "시스템",
+   "related": [
+    25,
+    37,
+    65
+   ],
+   "url": "https://digimon.net/appmon_ko/detail.php?id=90"
+  },
+  {
+   "id": 91,
+   "name_ko": "워프몬",
+   "grade": "슈퍼",
+   "app": "전송",
+   "attribute": "시스템",
+   "related": [
+    51,
+    83,
+    61
+   ],
+   "url": "https://digimon.net/appmon_ko/detail.php?id=91"
+  },
+  {
+   "id": 92,
+   "name_ko": "책사몬",
+   "grade": "슈퍼",
+   "app": "시뮬레이션",
+   "attribute": "게임",
+   "related": [
+    34,
+    90,
+    116
+   ],
+   "url": "https://digimon.net/appmon_ko/detail.php?id=92"
+  },
+  {
+   "id": 93,
+   "name_ko": "도스코몬",
+   "grade": "슈퍼",
+   "app": "격투",
+   "attribute": "게임",
+   "related": [
+    45,
+    117,
+    95
+   ],
+   "url": "https://digimon.net/appmon_ko/detail.php?id=93"
+  },
+  {
+   "id": 94,
+   "name_ko": "브레몬",
+   "grade": "슈퍼",
+   "app": "두뇌 트레이닝",
+   "attribute": "게임",
+   "related": [
+    49,
+    23,
+    66
+   ],
+   "url": "https://digimon.net/appmon_ko/detail.php?id=94"
+  },
+  {
+   "id": 95,
+   "name_ko": "코치몬",
+   "grade": "슈퍼",
+   "app": "육성",
+   "attribute": "게임",
+   "related": [
+    63,
+    117,
+    28
+   ],
+   "url": "https://digimon.net/appmon_ko/detail.php?id=95"
+  },
+  {
+   "id": 96,
+   "name_ko": "테크마스몬",
+   "grade": "슈퍼",
+   "app": "공략",
+   "attribute": "게임",
+   "related": [
+    48,
+    4,
+    19
+   ],
+   "url": "https://digimon.net/appmon_ko/detail.php?id=96"
+  },
+  {
+   "id": 97,
+   "name_ko": "이펙몬",
+   "grade": "슈퍼",
+   "app": "이펙트",
+   "attribute": "엔터테인먼트",
+   "related": [
+    114,
+    85,
+    52
+   ],
+   "url": "https://digimon.net/appmon_ko/detail.php?id=97"
+  },
+  {
+   "id": 98,
+   "name_ko": "타로몬",
+   "grade": "슈퍼",
+   "app": "슈퍼 점술",
+   "attribute": "엔터테인먼트",
+   "related": [
+    59,
+    53,
+    47
+   ],
+   "url": "https://digimon.net/appmon_ko/detail.php?id=98"
+  },
+  {
+   "id": 99,
+   "name_ko": "코디몬",
+   "grade": "슈퍼",
+   "app": "코디네이트",
+   "attribute": "엔터테인먼트",
+   "related": [
+    57,
+    74,
+    120
+   ],
+   "url": "https://digimon.net/appmon_ko/detail.php?id=99"
+  },
+  {
+   "id": 100,
+   "name_ko": "미디어몬",
+   "grade": "슈퍼",
+   "app": "미디어 플레이어",
+   "attribute": "엔터테인먼트",
+   "related": [
+    54,
+    118,
+    102
+   ],
+   "url": "https://digimon.net/appmon_ko/detail.php?id=100"
+  },
+  {
+   "id": 101,
+   "name_ko": "베이거스몬",
+   "grade": "슈퍼",
+   "app": "룰렛",
+   "attribute": "엔터테인먼트",
+   "related": [
+    62,
+    60,
+    59
+   ],
+   "url": "https://digimon.net/appmon_ko/detail.php?id=101"
+  },
+  {
+   "id": 102,
+   "name_ko": "드리몬",
+   "grade": "슈퍼",
+   "app": "꿈",
+   "attribute": "엔터테인먼트",
+   "related": [
+    17,
+    100,
+    118
+   ],
+   "url": "https://digimon.net/appmon_ko/detail.php?id=102"
+  },
+  {
+   "id": 103,
+   "name_ko": "메딕몬",
+   "grade": "슈퍼",
+   "app": "메디컬",
+   "attribute": "라이프",
+   "related": [
+    104,
+    67,
+    119
+   ],
+   "url": "https://digimon.net/appmon_ko/detail.php?id=103"
+  },
+  {
+   "id": 104,
+   "name_ko": "닥몬",
+   "grade": "슈퍼",
+   "app": "닥터",
+   "attribute": "라이프",
+   "related": [
+    64,
+    103,
+    119
+   ],
+   "url": "https://digimon.net/appmon_ko/detail.php?id=104"
+  },
+  {
+   "id": 105,
+   "name_ko": "컨설몬",
+   "grade": "슈퍼",
+   "app": "절약",
+   "attribute": "라이프",
+   "related": [
+    120,
+    74,
+    99
+   ],
+   "url": "https://digimon.net/appmon_ko/detail.php?id=105"
+  },
+  {
+   "id": 106,
+   "name_ko": "라이브러몬",
+   "grade": "슈퍼",
+   "app": "도서관",
+   "attribute": "라이프",
+   "related": [
+    8,
+    58,
+    75
+   ],
+   "url": "https://digimon.net/appmon_ko/detail.php?id=106"
+  },
+  {
+   "id": 107,
+   "name_ko": "글로브몬",
+   "grade": "얼티미트",
+   "app": "글로벌",
+   "attribute": "소셜",
+   "related": [
+    1,
+    108,
+    78
+   ],
+   "url": "https://digimon.net/appmon_ko/detail.php?id=107"
+  },
+  {
+   "id": 108,
+   "name_ko": "카리스몬",
+   "grade": "얼티미트",
+   "app": "마인드 컨트롤",
+   "attribute": "소셜",
+   "related": [
+    107,
+    119,
+    120
+   ],
+   "url": "https://digimon.net/appmon_ko/detail.php?id=108"
+  },
+  {
+   "id": 109,
+   "name_ko": "안댐몬",
+   "grade": "얼티미트",
+   "app": "안 돼 안 돼",
+   "attribute": "소셜",
+   "related": [
+    104,
+    84,
+    95
+   ],
+   "url": "https://digimon.net/appmon_ko/detail.php?id=109"
+  },
+  {
+   "id": 110,
+   "name_ko": "새틀라몬",
+   "grade": "얼티미트",
+   "app": "GPS",
+   "attribute": "내비",
+   "related": [
+    82,
+    21,
+    86
+   ],
+   "url": "https://digimon.net/appmon_ko/detail.php?id=110"
+  },
+  {
+   "id": 111,
+   "name_ko": "코멧몬",
+   "grade": "얼티미트",
+   "app": "천체",
+   "attribute": "내비",
+   "related": [
+    91,
+    116,
+    126
+   ],
+   "url": "https://digimon.net/appmon_ko/detail.php?id=111"
+  },
+  {
+   "id": 112,
+   "name_ko": "부팅몬",
+   "grade": "얼티미트",
+   "app": "슈퍼 부팅",
+   "attribute": "툴",
+   "related": [
+    76,
+    121,
+    43
+   ],
+   "url": "https://digimon.net/appmon_ko/detail.php?id=112"
+  },
+  {
+   "id": 113,
+   "name_ko": "셧몬",
+   "grade": "얼티미트",
+   "app": "강제 종료",
+   "attribute": "툴",
+   "related": [
+    112,
+    121,
+    44
+   ],
+   "url": "https://digimon.net/appmon_ko/detail.php?id=113"
+  },
+  {
+   "id": 114,
+   "name_ko": "페이크몬",
+   "grade": "얼티미트",
+   "app": "위장",
+   "attribute": "툴",
+   "related": [
+    120,
+    125,
+    108
+   ],
+   "url": "https://digimon.net/appmon_ko/detail.php?id=114"
+  },
+  {
+   "id": 115,
+   "name_ko": "리바이브몬",
+   "grade": "얼티미트",
+   "app": "복원",
+   "attribute": "시스템",
+   "related": [
+    88,
+    123,
+    119
+   ],
+   "url": "https://digimon.net/appmon_ko/detail.php?id=115"
+  },
+  {
+   "id": 116,
+   "name_ko": "와루다몬",
+   "grade": "얼티미트",
+   "app": "책략",
+   "attribute": "시스템",
+   "related": [
+    126,
+    111,
+    92
+   ],
+   "url": "https://digimon.net/appmon_ko/detail.php?id=116"
+  },
+  {
+   "id": 117,
+   "name_ko": "오우자몬",
+   "grade": "얼티미트",
+   "app": "전투",
+   "attribute": "게임",
+   "related": [
+    45,
+    124,
+    120
+   ],
+   "url": "https://digimon.net/appmon_ko/detail.php?id=117"
+  },
+  {
+   "id": 118,
+   "name_ko": "엔터몬",
+   "grade": "얼티미트",
+   "app": "오락",
+   "attribute": "엔터테인먼트",
+   "related": [
+    114,
+    100,
+    54
+   ],
+   "url": "https://digimon.net/appmon_ko/detail.php?id=118"
+  },
+  {
+   "id": 119,
+   "name_ko": "바이오몬",
+   "grade": "얼티미트",
+   "app": "라이프",
+   "attribute": "라이프",
+   "related": [
+    108,
+    123,
+    120
+   ],
+   "url": "https://digimon.net/appmon_ko/detail.php?id=119"
+  },
+  {
+   "id": 120,
+   "name_ko": "뷰티몬",
+   "grade": "얼티미트",
+   "app": "미용",
+   "attribute": "라이프",
+   "related": [
+    114,
+    108,
+    119
+   ],
+   "url": "https://digimon.net/appmon_ko/detail.php?id=120"
+  },
+  {
+   "id": 121,
+   "name_ko": "리부트몬",
+   "grade": "신",
+   "app": "재부팅",
+   "attribute": "하나님",
+   "related": [
+    113,
+    77,
+    112
+   ],
+   "url": "https://digimon.net/appmon_ko/detail.php?id=121"
+  },
+  {
+   "id": 122,
+   "name_ko": "가이아몬",
+   "grade": "신",
+   "app": "창조",
+   "attribute": "하나님",
+   "related": [
+    107,
+    108,
+    1
+   ],
+   "url": "https://digimon.net/appmon_ko/detail.php?id=122"
+  },
+  {
+   "id": 123,
+   "name_ko": "하데스몬",
+   "grade": "신",
+   "app": "변화",
+   "attribute": "하나님",
+   "related": [
+    119,
+    115,
+    88
+   ],
+   "url": "https://digimon.net/appmon_ko/detail.php?id=123"
+  },
+  {
+   "id": 124,
+   "name_ko": "포세이도몬",
+   "grade": "신",
+   "app": "무적",
+   "attribute": "하나님",
+   "related": [
+    120,
+    45,
+    117
+   ],
+   "url": "https://digimon.net/appmon_ko/detail.php?id=124"
+  },
+  {
+   "id": 125,
+   "name_ko": "우라노스몬",
+   "grade": "신",
+   "app": "각성",
+   "attribute": "하나님",
+   "related": [
+    118,
+    114,
+    100
+   ],
+   "url": "https://digimon.net/appmon_ko/detail.php?id=125"
+  },
+  {
+   "id": 126,
+   "name_ko": "데우스몬",
+   "grade": "신",
+   "app": "전능",
+   "attribute": "하나님",
+   "related": [
+    116,
+    111,
+    83
+   ],
+   "url": "https://digimon.net/appmon_ko/detail.php?id=126"
+  },
+  {
+   "id": 127,
+   "name_ko": "탭몬(소셜)",
+   "grade": "－",
+   "app": "탭",
+   "attribute": "소셜",
+   "related": [
+    131,
+    130,
+    132
+   ],
+   "url": "https://digimon.net/appmon_ko/detail.php?id=127"
+  },
+  {
+   "id": 128,
+   "name_ko": "탭몬(내비)",
+   "grade": "－",
+   "app": "탭",
+   "attribute": "내비",
+   "related": [
+    129,
+    133,
+    127
+   ],
+   "url": "https://digimon.net/appmon_ko/detail.php?id=128"
+  },
+  {
+   "id": 129,
+   "name_ko": "탭몬(툴)",
+   "grade": "－",
+   "app": "탭",
+   "attribute": "툴",
+   "related": [
+    133,
+    127,
+    130
+   ],
+   "url": "https://digimon.net/appmon_ko/detail.php?id=129"
+  },
+  {
+   "id": 130,
+   "name_ko": "탭몬(시스템)",
+   "grade": "－",
+   "app": "탭",
+   "attribute": "시스템",
+   "related": [
+    127,
+    132,
+    133
+   ],
+   "url": "https://digimon.net/appmon_ko/detail.php?id=130"
+  },
+  {
+   "id": 131,
+   "name_ko": "탭몬(게임)",
+   "grade": "－",
+   "app": "탭",
+   "attribute": "게임",
+   "related": [
+    127,
+    128,
+    133
+   ],
+   "url": "https://digimon.net/appmon_ko/detail.php?id=131"
+  },
+  {
+   "id": 132,
+   "name_ko": "탭몬(엔터테인먼트)",
+   "grade": "－",
+   "app": "탭",
+   "attribute": "엔터테인먼트",
+   "related": [
+    133,
+    130,
+    127
+   ],
+   "url": "https://digimon.net/appmon_ko/detail.php?id=132"
+  },
+  {
+   "id": 133,
+   "name_ko": "탭몬(라이프)",
+   "grade": "－",
+   "app": "탭",
+   "attribute": "라이프",
+   "related": [
+    130,
+    131,
+    129
+   ],
+   "url": "https://digimon.net/appmon_ko/detail.php?id=133"
+  },
+  {
+   "id": 134,
+   "name_ko": "플릭몬(소셜)",
+   "grade": "－",
+   "app": "플릭",
+   "attribute": "소셜",
+   "related": [
+    135,
+    139,
+    137
+   ],
+   "url": "https://digimon.net/appmon_ko/detail.php?id=134"
+  },
+  {
+   "id": 135,
+   "name_ko": "플릭몬(내비)",
+   "grade": "－",
+   "app": "플릭",
+   "attribute": "내비",
+   "related": [
+    136,
+    137,
+    134
+   ],
+   "url": "https://digimon.net/appmon_ko/detail.php?id=135"
+  },
+  {
+   "id": 136,
+   "name_ko": "플릭몬(툴)",
+   "grade": "－",
+   "app": "플릭",
+   "attribute": "툴",
+   "related": [
+    137,
+    139,
+    138
+   ],
+   "url": "https://digimon.net/appmon_ko/detail.php?id=136"
+  },
+  {
+   "id": 137,
+   "name_ko": "플릭몬(시스템)",
+   "grade": "－",
+   "app": "플릭",
+   "attribute": "시스템",
+   "related": [
+    138,
+    134,
+    140
+   ],
+   "url": "https://digimon.net/appmon_ko/detail.php?id=137"
+  },
+  {
+   "id": 138,
+   "name_ko": "플릭몬(게임)",
+   "grade": "－",
+   "app": "플릭",
+   "attribute": "게임",
+   "related": [
+    135,
+    134,
+    136
+   ],
+   "url": "https://digimon.net/appmon_ko/detail.php?id=138"
+  },
+  {
+   "id": 139,
+   "name_ko": "플릭몬(엔터테인먼트)",
+   "grade": "－",
+   "app": "플릭",
+   "attribute": "엔터테인먼트",
+   "related": [
+    137,
+    138,
+    135
+   ],
+   "url": "https://digimon.net/appmon_ko/detail.php?id=139"
+  },
+  {
+   "id": 140,
+   "name_ko": "플릭몬(라이프)",
+   "grade": "－",
+   "app": "플릭",
+   "attribute": "라이프",
+   "related": [
+    134,
+    136,
+    139
+   ],
+   "url": "https://digimon.net/appmon_ko/detail.php?id=140"
+  },
+  {
+   "id": 141,
+   "name_ko": "스와이프몬(소셜)",
+   "grade": "－",
+   "app": "스와이프",
+   "attribute": "소셜",
+   "related": [
+    146,
+    145,
+    142
+   ],
+   "url": "https://digimon.net/appmon_ko/detail.php?id=141"
+  },
+  {
+   "id": 142,
+   "name_ko": "스와이프몬(내비)",
+   "grade": "－",
+   "app": "스와이프",
+   "attribute": "내비",
+   "related": [
+    145,
+    144,
+    143
+   ],
+   "url": "https://digimon.net/appmon_ko/detail.php?id=142"
+  },
+  {
+   "id": 143,
+   "name_ko": "스와이프몬(툴)",
+   "grade": "－",
+   "app": "스와이프",
+   "attribute": "툴",
+   "related": [
+    145,
+    142,
+    147
+   ],
+   "url": "https://digimon.net/appmon_ko/detail.php?id=143"
+  },
+  {
+   "id": 144,
+   "name_ko": "스와이프몬(시스템)",
+   "grade": "－",
+   "app": "스와이프",
+   "attribute": "시스템",
+   "related": [
+    147,
+    145,
+    146
+   ],
+   "url": "https://digimon.net/appmon_ko/detail.php?id=144"
+  },
+  {
+   "id": 145,
+   "name_ko": "스와이프몬(게임)",
+   "grade": "－",
+   "app": "스와이프",
+   "attribute": "게임",
+   "related": [
+    142,
+    143,
+    146
+   ],
+   "url": "https://digimon.net/appmon_ko/detail.php?id=145"
+  },
+  {
+   "id": 146,
+   "name_ko": "스와이프몬(엔터테인먼트)",
+   "grade": "－",
+   "app": "스와이프",
+   "attribute": "엔터테인먼트",
+   "related": [
+    141,
+    143,
+    145
+   ],
+   "url": "https://digimon.net/appmon_ko/detail.php?id=146"
+  },
+  {
+   "id": 147,
+   "name_ko": "스와이프몬(라이프)",
+   "grade": "－",
+   "app": "스와이프",
+   "attribute": "라이프",
+   "related": [
+    145,
+    144,
+    141
+   ],
+   "url": "https://digimon.net/appmon_ko/detail.php?id=147"
+  },
+  {
+   "id": 148,
+   "name_ko": "단테몬",
+   "grade": "불명",
+   "app": "개방",
+   "attribute": "없음",
+   "related": [
+    37,
+    83,
+    103
+   ],
+   "url": "https://digimon.net/appmon_ko/detail.php?id=148"
+  }
+ ]
+}
