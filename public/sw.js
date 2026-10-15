@@ -1,11 +1,11 @@
-// Blue Card Edition v8 (evolution engine fix, XSS hardening, bounded cache)
-const CACHE_NAME = 'digi-feed-bluecard-v8';
+// DIGI-FEED v9 (digidex DB, evolution views)
+const CACHE_NAME = 'digi-feed-v9';
 const ASSETS = [
   './',
   './index.html',
   './manifest.json',
   './digimon_feeds.json',
-  './data/digidex_ko.json',
+  './data/digidex_db.json',
   './data/digimon_all_index.json',
   './icon-192.png',
   './icon-512.png'
