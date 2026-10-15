@@ -161,7 +161,7 @@
       </button>
       <button id="view-tab-dex" onclick="switchView('dex')" class="py-2 rounded-xl text-xs sm:text-sm font-black transition flex items-center justify-center gap-2 text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-300">
         <span>📖</span>
-        <span>디지몬 도감/설정집</span>
+        <span>디지몬 도감</span>
       </button>
     </div>
   </div>
@@ -229,43 +229,40 @@
       </div>
     </div>
 
-    <!-- 2. Digi-Dex / Lore Section -->
-    <div id="dex-view-section" class="hidden space-y-4">
-      <!-- D-Ark Dex Search Bar -->
-      <div class="relative">
-        <svg class="w-4 h-4 absolute left-3.5 top-1/2 -translate-y-1/2 text-blue-500 z-10 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
-        <input 
-          type="search" 
-          id="dex-search-input" 
-          oninput="handleDexSearch(this.value)"
-          placeholder="디지몬 이름 검색 (한글/일어원칭/영문... 예: 가부몬, 추추몬, 아구몬)" 
-          class="w-full pl-10 pr-9 py-2.5 text-sm rounded-2xl bg-white/90 dark:bg-[#070e22]/90 border border-blue-200 dark:border-blue-900/60 focus:outline-none focus:border-[#004ce8] dark:focus:border-blue-400 text-slate-900 dark:text-slate-100 placeholder:text-slate-400 dark:placeholder:text-slate-500 transition shadow-sm backdrop-blur"
-        />
-        <button id="dex-clear-search-btn" onclick="clearDexSearch()" class="hidden absolute right-3 top-1/2 -translate-y-1/2 text-blue-500 hover:text-blue-700 p-1 text-xs">✕</button>
+    <!-- 2. Digi-Dex Section (공식 디지몬 도감 기준) -->
+    <div id="dex-view-section" class="hidden space-y-3">
+      <!-- 목록 화면 -->
+      <div id="dex-list-view" class="space-y-3">
+        <div class="relative">
+          <svg class="w-4 h-4 absolute left-3.5 top-1/2 -translate-y-1/2 text-blue-500 z-10 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+          <input
+            type="search"
+            id="dex-search-input"
+            oninput="onDexSearch(this.value)"
+            placeholder="이름·영문·번호로 검색 (예: 아구몬, Agumon, 66)"
+            class="w-full pl-10 pr-9 py-2.5 text-sm rounded-2xl bg-white/90 dark:bg-[#070e22]/90 border border-blue-200 dark:border-blue-900/60 focus:outline-none focus:border-[#004ce8] dark:focus:border-blue-400 text-slate-900 dark:text-slate-100 placeholder:text-slate-400 dark:placeholder:text-slate-500 transition shadow-sm backdrop-blur"
+          />
+          <button id="dex-clear-search-btn" onclick="clearDexSearch()" class="hidden absolute right-3 top-1/2 -translate-y-1/2 text-blue-500 hover:text-blue-700 p-1 text-xs">✕</button>
+        </div>
 
-        <!-- Dynamic Suggestion Box (단계별 스마트 드롭다운) -->
-        <div id="dex-suggestions-box" class="hidden absolute left-0 right-0 top-full mt-1.5 z-30 bg-white/95 dark:bg-[#070e22]/95 backdrop-blur-xl border-2 border-blue-400 dark:border-blue-500/80 rounded-2xl shadow-2xl p-2 max-h-72 overflow-y-auto no-scrollbar"></div>
+        <div id="dex-level-chips" class="flex items-center gap-1.5 overflow-x-auto pb-1 no-scrollbar"></div>
+
+        <div class="flex items-center justify-between text-[11px] text-slate-500 dark:text-slate-400 px-1">
+          <span id="dex-count-text" class="font-bold text-[#004ce8] dark:text-blue-400 font-mono">LOADING…</span>
+          <label class="flex items-center gap-1.5 cursor-pointer select-none">
+            <input id="dex-include-ex" type="checkbox" onchange="onDexIncludeEx(this.checked)" class="accent-[#004ce8]">
+            <span>공식 외 디지몬(EX) 포함</span>
+          </label>
+        </div>
+
+        <div id="dex-list" class="grid grid-cols-1 sm:grid-cols-2 gap-2"></div>
+        <button id="dex-more-btn" onclick="showMoreDex()" class="hidden w-full touch-press py-2.5 rounded-xl text-xs font-bold text-blue-600 dark:text-blue-400 bg-white/80 dark:bg-[#070e22]/80 border border-blue-200 dark:border-blue-900/60">더 보기</button>
       </div>
 
-      <!-- Quick Digimon Tag Chips -->
-      <div class="flex items-center gap-1.5 overflow-x-auto pb-1 no-scrollbar text-xs font-bold">
-        <span class="text-[11px] text-blue-600 dark:text-blue-400 font-bold shrink-0 mr-1">추천:</span>
-        <button onclick="selectQuickDex('오메가몬')" class="dex-quick-tag touch-press px-3 py-1.5 rounded-xl transition bg-white/90 dark:bg-[#070e22]/90 text-slate-700 dark:text-slate-300 border border-blue-200 dark:border-blue-900/60 hover:border-blue-400 shrink-0 shadow-xs">오메가몬</button>
-        <button onclick="selectQuickDex('듀크몬')" class="dex-quick-tag touch-press px-3 py-1.5 rounded-xl transition bg-white/90 dark:bg-[#070e22]/90 text-slate-700 dark:text-slate-300 border border-blue-200 dark:border-blue-900/60 hover:border-blue-400 shrink-0 shadow-xs">듀크몬</button>
-        <button onclick="selectQuickDex('아구몬')" class="dex-quick-tag touch-press px-3 py-1.5 rounded-xl transition bg-white/90 dark:bg-[#070e22]/90 text-slate-700 dark:text-slate-300 border border-blue-200 dark:border-blue-900/60 hover:border-blue-400 shrink-0 shadow-xs">아구몬</button>
-        <button onclick="selectQuickDex('길몬')" class="dex-quick-tag touch-press px-3 py-1.5 rounded-xl transition bg-white/90 dark:bg-[#070e22]/90 text-slate-700 dark:text-slate-300 border border-blue-200 dark:border-blue-900/60 hover:border-blue-400 shrink-0 shadow-xs">길몬</button>
-        <button onclick="selectQuickDex('워그레이몬')" class="dex-quick-tag touch-press px-3 py-1.5 rounded-xl transition bg-white/90 dark:bg-[#070e22]/90 text-slate-700 dark:text-slate-300 border border-blue-200 dark:border-blue-900/60 hover:border-blue-400 shrink-0 shadow-xs">워그레이몬</button>
-        <button onclick="selectQuickDex('아그니몬')" class="dex-quick-tag touch-press px-3 py-1.5 rounded-xl transition bg-white/90 dark:bg-[#070e22]/90 text-slate-700 dark:text-slate-300 border border-blue-200 dark:border-blue-900/60 hover:border-blue-400 shrink-0 shadow-xs">아그니몬</button>
-        <button onclick="selectQuickDex('베르제브몬')" class="dex-quick-tag touch-press px-3 py-1.5 rounded-xl transition bg-white/90 dark:bg-[#070e22]/90 text-slate-700 dark:text-slate-300 border border-blue-200 dark:border-blue-900/60 hover:border-blue-400 shrink-0 shadow-xs">베르제브몬</button>
-        <button onclick="selectQuickDex('알파몬')" class="dex-quick-tag touch-press px-3 py-1.5 rounded-xl transition bg-white/90 dark:bg-[#070e22]/90 text-slate-700 dark:text-slate-300 border border-blue-200 dark:border-blue-900/60 hover:border-blue-400 shrink-0 shadow-xs">알파몬</button>
-        <button onclick="selectQuickDex('황제드라몬')" class="dex-quick-tag touch-press px-3 py-1.5 rounded-xl transition bg-white/90 dark:bg-[#070e22]/90 text-slate-700 dark:text-slate-300 border border-blue-200 dark:border-blue-900/60 hover:border-blue-400 shrink-0 shadow-xs">황제드라몬</button>
-        <button onclick="selectQuickDex('브이몬')" class="dex-quick-tag touch-press px-3 py-1.5 rounded-xl transition bg-white/90 dark:bg-[#070e22]/90 text-slate-700 dark:text-slate-300 border border-blue-200 dark:border-blue-900/60 hover:border-blue-400 shrink-0 shadow-xs">브이몬</button>
-        <button onclick="selectQuickDex('가트몬')" class="dex-quick-tag touch-press px-3 py-1.5 rounded-xl transition bg-white/90 dark:bg-[#070e22]/90 text-slate-700 dark:text-slate-300 border border-blue-200 dark:border-blue-900/60 hover:border-blue-400 shrink-0 shadow-xs">가트몬</button>
-      </div>
-
-      <!-- Detail Card Display Container -->
-      <div id="dex-detail-container" class="space-y-4">
-        <!-- Rendered by JavaScript -->
+      <!-- 상세 화면 -->
+      <div id="dex-detail-view" class="hidden space-y-3">
+        <button onclick="closeDexDetail()" class="touch-press flex items-center gap-1 text-xs font-bold text-blue-600 dark:text-blue-400 px-1 py-1">← 목록으로</button>
+        <div id="dex-detail-container"></div>
       </div>
     </div>
 
@@ -655,7 +652,7 @@
     // PWA Service Worker (Blue Card v6 with auto-update)
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
-        navigator.serviceWorker.register('sw.js?v=9').then((reg) => {
+        navigator.serviceWorker.register('sw.js?v=10').then((reg) => {
           reg.update();
         }).catch(console.error);
 
@@ -691,1117 +688,240 @@
     }
 
     // ==========================================
-    // 📖 DIGI-DEX & LORE ENGINE (전 종 1,488마리 실시간 도감)
+    // 📖 디지몬 도감 (공식 디지몬 도감 기준 · data/dex.json)
+    //   - 번호·이름·단계·유형·속성·관련 디지몬: 공식 도감 (digimon.net/reference_ko)
+    //   - 그림: Digi-API / 프로필·필살기: 공식 도감 페이지로 연결
+    //   - 생성: scraper/collect_official.py → scraper/build_dex.py
     // ==========================================
     let currentView = 'feed';
-    let masterIndex = [];  // 1,488마리 전체 마스터 인덱스 (한글/일문원칭/영문/별칭)
-    let localDigidex = []; // 사전 구축된 고품질 한국어 상세 도감
-    let currentDexDigimon = null;
-    let currentDexImgIndex = 0;
-    let dexSearchTimer = null;
+    let dexList = [];
+    let dexByNo = {};
+    let dexLoaded = false;
+    const dexState = { query: '', level: '전체', includeEx: false, shown: 0, selected: null };
+    const DEX_PAGE = 60;
+    const DEX_LEVELS = ['전체', '유년기 I', '유년기 II', '성장기', '성숙기', '완전체', '궁극체', '아머체', '하이브리드체', '기타'];
+    const DEX_MAIN_LEVELS = new Set(DEX_LEVELS.slice(1, -1));
 
-    // View Switching: [📡 실시간 피드] <-> [📖 디지몬 도감/설정집]
+    // View Switching: [📡 실시간 피드] <-> [📖 디지몬 도감]
     function switchView(view) {
       currentView = view;
       const feedTab = document.getElementById('view-tab-feed');
       const dexTab = document.getElementById('view-tab-dex');
       const feedSec = document.getElementById('feed-view-section');
       const dexSec = document.getElementById('dex-view-section');
-
-      if (view === 'feed') {
-        feedTab.className = "py-2 rounded-xl text-xs sm:text-sm font-black transition flex items-center justify-center gap-2 bg-[#004ce8] text-white shadow-md shadow-blue-600/30";
-        dexTab.className = "py-2 rounded-xl text-xs sm:text-sm font-black transition flex items-center justify-center gap-2 text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-300";
-        feedSec.classList.remove('hidden');
-        dexSec.classList.add('hidden');
-        hideSuggestions();
-      } else {
-        dexTab.className = "py-2 rounded-xl text-xs sm:text-sm font-black transition flex items-center justify-center gap-2 bg-[#004ce8] text-white shadow-md shadow-blue-600/30";
-        feedTab.className = "py-2 rounded-xl text-xs sm:text-sm font-black transition flex items-center justify-center gap-2 text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-300";
-        dexSec.classList.remove('hidden');
-        feedSec.classList.add('hidden');
-        
-        if (!currentDexDigimon) {
-          selectQuickDex('오메가몬');
-        }
-      }
+      const on = "py-2 rounded-xl text-xs sm:text-sm font-black transition flex items-center justify-center gap-2 bg-[#004ce8] text-white shadow-md shadow-blue-600/30";
+      const off = "py-2 rounded-xl text-xs sm:text-sm font-black transition flex items-center justify-center gap-2 text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-300";
+      feedTab.className = view === 'feed' ? on : off;
+      dexTab.className = view === 'feed' ? off : on;
+      feedSec.classList.toggle('hidden', view !== 'feed');
+      dexSec.classList.toggle('hidden', view === 'feed');
+      if (view === 'dex' && dexLoaded && !dexState.shown) renderDexList(true);
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
-    // Load Databases (1,488 All Index + Local High-Detail DB)
     async function loadDigidex() {
       try {
-        const [resAll, resLocal] = await Promise.all([
-          fetch(`data/digimon_all_index.json?t=${Date.now()}`),
-          fetch(`data/digidex_db.json?t=${Date.now()}`)
-        ]);
-        if (resAll.ok) {
-          const dataAll = await resAll.json();
-          masterIndex = dataAll.digimons || [];
-        }
-        if (resLocal.ok) {
-          applyDigidexDb(await resLocal.json());
-        }
-        if (currentView === 'dex' && !currentDexDigimon) {
-          selectQuickDex('오메가몬');
+        const res = await fetch(`data/dex.json?t=${Date.now()}`);
+        if (!res.ok) throw new Error('dex load error');
+        const data = await res.json();
+        dexList = data.digimons || [];
+        dexByNo = Object.fromEntries(dexList.map(d => [d.no, d]));
+        dexLoaded = true;
+        renderDexLevelChips();
+        const fromHash = (location.hash.match(/^#dex\/(.+)$/) || [])[1];
+        if (fromHash && dexByNo[decodeURIComponent(fromHash)]) {
+          switchView('dex');
+          openDexDetail(decodeURIComponent(fromHash), false);
+        } else if (currentView === 'dex') {
+          renderDexList(true);
         }
       } catch (err) {
-        console.error("Failed to load digidex databases", err);
+        console.error('Failed to load dex', err);
+        const t = document.getElementById('dex-count-text');
+        if (t) t.textContent = '도감 데이터를 불러오지 못했습니다';
       }
     }
 
-    // 도감 DB 적용: 직접 작성한 도감(dex)과 도감이 정한 진화 루트(dex.evolution)
-    function applyDigidexDb(db) {
-      const entries = (db && db.digimons) || [];
-      localDigidex = entries
-        .filter(e => e.dex && (e.dex.profile || (e.dex.skills && e.dex.skills.length)))
-        .map(e => ({ ...e.dex, id: e.id, name_en: e.name, name_ko: e.dex.name_ko || e.name }));
-      CANONICAL_BY_NORM = Object.fromEntries(entries
-        .filter(e => e.dex && e.dex.evolution)
-        .map(e => [normName(e.name), e.dex.evolution]));
+    function dexLevelGroup(d) {
+      return DEX_MAIN_LEVELS.has(d.level) ? d.level : '기타';
     }
 
-    // Quick Tag Selection
-    function selectQuickDex(name) {
-      const input = document.getElementById('dex-search-input');
-      if (input) input.value = name;
-      hideSuggestions();
-      executeDexSearch(name);
+    function dexMatches(d) {
+      if (!dexState.includeEx && !d.official) return false;
+      if (dexState.level !== '전체' && dexLevelGroup(d) !== dexState.level) return false;
+      const q = dexState.query;
+      if (!q) return true;
+      const num = q.replace(/^no\.?\s*/i, '');
+      if (/^\d+$/.test(num) && d.official && parseInt(d.no, 10) === parseInt(num, 10)) return true;
+      if (/^ex-?\d+$/i.test(q) && d.no.toLowerCase() === q.toLowerCase().replace(/^ex-?/, 'ex-').replace(/ex-(\d+)/, (m, n) => 'ex-' + n.padStart(4, '0'))) return true;
+      const hay = [d.name, d.name_dub, d.name_en, d.api_name].filter(Boolean).join(' ').toLowerCase().replace(/\s+/g, '');
+      return hay.includes(q.toLowerCase().replace(/\s+/g, ''));
     }
 
-    // Step-by-Step Smart Search Input Handler
-    function handleDexSearch(query) {
+    function renderDexLevelChips() {
+      const box = document.getElementById('dex-level-chips');
+      if (!box) return;
+      box.innerHTML = DEX_LEVELS.map(l => `
+        <button onclick="onDexLevel(${jsArg(l)})" class="touch-press px-3 py-1.5 rounded-xl text-xs font-bold shrink-0 transition border ${dexState.level === l ? 'bg-[#004ce8] text-white border-blue-400/40 shadow-md shadow-blue-600/30' : 'bg-white/90 dark:bg-[#070e22]/90 text-slate-700 dark:text-slate-300 border-blue-200 dark:border-blue-900/60'}">${escapeHtml(l)}</button>
+      `).join('');
+    }
+
+    function dexThumb(d, size) {
+      return d.image
+        ? `<img src="${escapeHtml(d.image)}" alt="" loading="lazy" class="${size} object-contain shrink-0" onerror="this.style.visibility='hidden'">`
+        : `<span class="${size} shrink-0 rounded-lg bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-[10px] text-slate-400">?</span>`;
+    }
+
+    function dexNoLabel(d) {
+      return d.official ? `No.${d.no}` : d.no;
+    }
+
+    function renderDexList(reset) {
+      const box = document.getElementById('dex-list');
+      if (!box) return;
+      const items = dexList.filter(dexMatches);
+      if (reset) {
+        dexState.shown = 0;
+        box.innerHTML = '';
+      }
+      const next = items.slice(dexState.shown, dexState.shown + DEX_PAGE);
+      box.insertAdjacentHTML('beforeend', next.map(d => `
+        <div onclick="openDexDetail(${jsArg(d.no)})" class="touch-press cursor-pointer p-2.5 rounded-xl bg-white/95 dark:bg-[#070e22]/95 border border-blue-200/80 dark:border-blue-900/60 hover:border-[#004ce8] flex items-center gap-3 transition">
+          ${dexThumb(d, 'w-11 h-11')}
+          <div class="min-w-0 flex-1">
+            <p class="text-[10px] font-bold font-mono ${d.official ? 'text-blue-600 dark:text-blue-400' : 'text-slate-400'}">${escapeHtml(dexNoLabel(d))}</p>
+            <p class="text-sm font-black text-slate-900 dark:text-slate-100 leading-tight break-keep">${escapeHtml(d.name)}${d.name_dub ? ` <span class="text-[11px] font-bold text-slate-400">(${escapeHtml(d.name_dub)})</span>` : ''}</p>
+            <p class="text-[10px] text-slate-400 truncate">${escapeHtml(d.level)}${d.type ? ' · ' + escapeHtml(d.type) : ''}</p>
+          </div>
+        </div>
+      `).join(''));
+      dexState.shown += next.length;
+      document.getElementById('dex-count-text').textContent = `${items.length.toLocaleString()} DIGIMON`;
+      document.getElementById('dex-more-btn').classList.toggle('hidden', dexState.shown >= items.length);
+      if (!items.length) {
+        box.innerHTML = `<div class="col-span-full py-12 text-center text-xs text-slate-500">조건에 맞는 디지몬이 없습니다.${dexState.includeEx ? '' : ' 공식 외 디지몬(EX)을 포함해 보세요.'}</div>`;
+      }
+    }
+
+    let dexSearchTimer = null;
+    function onDexSearch(v) {
+      dexState.query = (v || '').trim();
+      document.getElementById('dex-clear-search-btn').classList.toggle('hidden', !dexState.query);
       clearTimeout(dexSearchTimer);
-      const clearBtn = document.getElementById('dex-clear-search-btn');
-      const q = (query || '').trim().toLowerCase();
-      
-      if (q) {
-        clearBtn.classList.remove('hidden');
-      } else {
-        clearBtn.classList.add('hidden');
-        hideSuggestions();
-        return;
-      }
-
-      dexSearchTimer = setTimeout(() => {
-        renderSmartSuggestions(q);
-      }, 150);
+      dexSearchTimer = setTimeout(() => renderDexList(true), 120);
     }
-
     function clearDexSearch() {
       const input = document.getElementById('dex-search-input');
-      if (input) {
-        input.value = '';
-        handleDexSearch('');
-        hideSuggestions();
-        input.focus();
-      }
+      input.value = '';
+      onDexSearch('');
+      input.focus();
+    }
+    function onDexLevel(level) {
+      dexState.level = level;
+      renderDexLevelChips();
+      renderDexList(true);
+    }
+    function onDexIncludeEx(on) {
+      dexState.includeEx = !!on;
+      renderDexList(true);
+    }
+    function showMoreDex() {
+      renderDexList(false);
     }
 
-    function hideSuggestions() {
-      const box = document.getElementById('dex-suggestions-box');
-      if (box) box.classList.add('hidden');
+    function openDexDetail(no, pushHash = true) {
+      const d = dexByNo[no];
+      if (!d) return;
+      dexState.selected = no;
+      if (pushHash) history.replaceState(null, '', `#dex/${encodeURIComponent(no)}`);
+      document.getElementById('dex-list-view').classList.add('hidden');
+      document.getElementById('dex-detail-view').classList.remove('hidden');
+      renderDexDetail(d);
+      window.scrollTo({ top: 0 });
     }
 
-    // Smart Gradual Suggestions (1글자: 핵심 칩, 2글자: 미니 카드, 3글자 이상: 정밀 풀 드롭다운)
-    function renderSmartSuggestions(q) {
-      const box = document.getElementById('dex-suggestions-box');
-      if (!box || !masterIndex || masterIndex.length === 0) return;
-
-      // 일치 디지몬 탐색 (한국어 더빙명, 일본 원칭, 영문명, 별칭 포괄 매칭)
-      const matches = masterIndex.filter(d => {
-        const koMatch = d.name_ko && d.name_ko.toLowerCase().includes(q);
-        const jaMatch = d.name_ja_ko && d.name_ja_ko.toLowerCase().includes(q);
-        const enMatch = d.name && d.name.toLowerCase().includes(q);
-        const aliasMatch = (d.aliases || []).some(a => a.toLowerCase().includes(q));
-        return koMatch || jaMatch || enMatch || aliasMatch;
-      });
-
-      if (matches.length === 0) {
-        box.innerHTML = `
-          <div class="p-3 text-center text-xs text-slate-500 font-medium">
-            '${escapeHtml(q)}' 관련 디지몬을 찾을 수 없습니다. 영문명(예: Agumon)으로 검색해 보세요.
-          </div>
-        `;
-        box.classList.remove('hidden');
-        return;
-      }
-
-      const qLen = q.length;
-
-      // 1. [1글자 입력 시] -> 컴팩트 태그 칩 (화면을 가리지 않고 가볍게 4~5개 노출)
-      if (qLen === 1) {
-        const topChips = matches.slice(0, 5);
-        box.innerHTML = `
-          <div class="p-1.5 space-y-1">
-            <div class="flex items-center justify-between text-[10px] font-bold text-blue-600 dark:text-blue-400 font-mono px-1">
-              <span>🎯 '${escapeHtml(q)}' 추천 디지몬</span>
-              <span class="text-slate-400 font-normal">탭하여 선택</span>
-            </div>
-            <div class="flex items-center gap-1.5 flex-wrap pt-1">
-              ${topChips.map(m => `
-                <button 
-                  onclick="selectDigimonById(${jsArg(m.id)}, ${jsArg(m.name_ko)})" 
-                  class="touch-press px-2.5 py-1.5 rounded-xl bg-blue-50 dark:bg-blue-950/60 hover:bg-blue-600 hover:text-white border border-blue-200 dark:border-blue-800 text-xs font-bold text-slate-800 dark:text-slate-200 transition flex items-center gap-1.5"
-                >
-                  ${m.image ? `<img src="${escapeHtml(m.image)}" class="w-4 h-4 object-contain" onerror="this.style.display='none'" />` : '👾'}
-                  <span>${escapeHtml(m.name_ko)}</span>
-                </button>
-              `).join('')}
-            </div>
-          </div>
-        `;
-        box.classList.remove('hidden');
-        return;
-      }
-
-      // 2. [2글자 입력 시] -> 미니 카드 형태 (최대 6개)
-      if (qLen === 2) {
-        const topCards = matches.slice(0, 6);
-        box.innerHTML = `
-          <div class="p-1 space-y-1">
-            <div class="flex items-center justify-between text-[10px] font-bold text-blue-600 dark:text-blue-400 font-mono px-1">
-              <span>🔍 '${escapeHtml(q)}' 관련 디지몬</span>
-              <span class="text-slate-400 font-normal">상위 추천</span>
-            </div>
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-1.5 pt-1">
-              ${topCards.map(m => `
-                <div 
-                  onclick="selectDigimonById(${jsArg(m.id)}, ${jsArg(m.name_ko)})" 
-                  class="touch-press cursor-pointer p-2 rounded-xl bg-slate-50 dark:bg-slate-900/80 hover:bg-blue-50 dark:hover:bg-blue-950/60 border border-blue-200/60 dark:border-blue-900/60 flex items-center gap-2.5 transition"
-                >
-                  <div class="w-9 h-9 rounded-lg bg-white dark:bg-slate-800 border border-blue-200/40 p-0.5 shrink-0 flex items-center justify-center">
-                    <img src="${escapeHtml(m.image || '')}" alt="${escapeHtml(m.name_ko)}" class="max-w-full max-h-full object-contain" onerror="this.style.display='none'" />
-                  </div>
-                  <div class="min-w-0 flex-1">
-                    <p class="font-extrabold text-xs text-slate-900 dark:text-slate-100 truncate">${escapeHtml(m.name_ko)}</p>
-                    <p class="text-[10px] text-slate-400 font-mono truncate">${escapeHtml(m.name)}</p>
-                  </div>
-                </div>
-              `).join('')}
-            </div>
-          </div>
-        `;
-        box.classList.remove('hidden');
-        return;
-      }
-
-      // 3. [3글자 이상 입력 시] -> 정밀 풀 드롭다운 (최대 12개)
-      const topList = matches.slice(0, 12);
-      box.innerHTML = `
-        <div class="p-1 space-y-1">
-          <div class="flex items-center justify-between px-1 text-[10px] font-mono font-bold text-blue-600 dark:text-blue-400">
-            <span>⚡ 1,488 전 종 검색 결과 (${matches.length}마리 매칭)</span>
-            <span class="text-slate-400 font-normal">터치하여 열람</span>
-          </div>
-          <div class="divide-y divide-blue-100 dark:divide-blue-900/40">
-            ${topList.map(m => `
-              <div 
-                onclick="selectDigimonById(${jsArg(m.id)}, ${jsArg(m.name_ko)})" 
-                class="touch-press cursor-pointer p-2 hover:bg-blue-50 dark:hover:bg-blue-950/60 flex items-center justify-between gap-3 transition rounded-lg"
-              >
-                <div class="flex items-center gap-2.5 min-w-0">
-                  <div class="w-8 h-8 rounded-lg bg-slate-100 dark:bg-slate-800 p-0.5 shrink-0 flex items-center justify-center">
-                    <img src="${escapeHtml(m.image || '')}" alt="${escapeHtml(m.name_ko)}" class="max-w-full max-h-full object-contain" onerror="this.style.display='none'" />
-                  </div>
-                  <div class="min-w-0">
-                    <p class="font-black text-xs text-slate-900 dark:text-slate-100 truncate">${escapeHtml(m.name_ko)}</p>
-                    <p class="text-[10px] text-slate-400 font-mono truncate">${escapeHtml(m.name)}</p>
-                  </div>
-                </div>
-                <span class="text-[10px] font-bold text-blue-600 dark:text-blue-400 shrink-0 font-mono">선택 →</span>
-              </div>
-            `).join('')}
-          </div>
-        </div>
-      `;
-      box.classList.remove('hidden');
+    function closeDexDetail() {
+      dexState.selected = null;
+      history.replaceState(null, '', location.pathname + location.search);
+      document.getElementById('dex-detail-view').classList.add('hidden');
+      document.getElementById('dex-list-view').classList.remove('hidden');
+      if (!dexState.shown) renderDexList(true);
     }
 
-    // Select Digimon from Suggestion or Quick Tag
-    function selectDigimonById(id, name) {
-      hideSuggestions();
-      const input = document.getElementById('dex-search-input');
-      if (input && name) input.value = name;
-      fetchDigimonFullDetail(id, name);
-    }
-
-    // Execute Search Trigger
-    function executeDexSearch(q) {
-      hideSuggestions();
-      if (!q) {
-        selectQuickDex('오메가몬');
-        return;
-      }
-
-      q = String(q).trim().toLowerCase();
-      // 인덱스에서 매칭되는 첫 번째 디지몬 선택 (한글, 일어원칭, 영문, 별칭 포괄)
-      // 변종(카오스듀크몬 등)도 기본형 이름을 별칭으로 가지므로 이름 일치를 별칭 일치보다 먼저 검사
-      const matched = masterIndex.find(d => {
-        const koMatch = d.name_ko && d.name_ko.toLowerCase() === q;
-        const jaMatch = d.name_ja_ko && d.name_ja_ko.toLowerCase() === q;
-        const enMatch = d.name && d.name.toLowerCase() === q;
-        return koMatch || jaMatch || enMatch;
-      }) || masterIndex.find(d => (d.aliases || []).some(a => a.toLowerCase() === q))
-        || masterIndex.find(d => {
-        return (d.name_ko && d.name_ko.toLowerCase().includes(q)) || 
-               (d.name_ja_ko && d.name_ja_ko.toLowerCase().includes(q)) ||
-               (d.name && d.name.toLowerCase().includes(q)) ||
-               (d.aliases || []).some(a => a.toLowerCase().includes(q));
-      });
-
-      if (matched) {
-        selectDigimonById(matched.id, matched.name_ko);
-      } else {
-        fetchDigimonFullDetail(q, q);
-      }
-    }
-
-    // ========================================================
-    // Korean Translation & Evolution Engine
-    // ========================================================
-
-    // 이름 비교용 정규화 ("Imperialdramon(Dragon Mode)" == "Imperialdramon: Dragon Mode")
-    function normName(s) {
-      return String(s || '').toLowerCase().replace(/[^a-z0-9À-ɏ]/g, '');
-    }
-
-    function findIndexEntry(idOrName) {
-      if (typeof idOrName === 'number') return masterIndex.find(m => m.id === idOrName) || null;
-      const n = normName(idOrName);
-      return masterIndex.find(m => normName(m.name) === n) || null;
-    }
-
-    // Digi-API는 일본식 단계명 사용 (Child=성장기, Adult=성숙기, Perfect=완전체, Ultimate=궁극체)
-    const LEVEL_KO = {
-      'baby i': '유년기 I', 'baby': '유년기 I', 'fresh': '유년기 I',
-      'baby ii': '유년기 II', 'in-training': '유년기 II', 'in training': '유년기 II', 'training': '유년기 II',
-      'child': '성장기', 'rookie': '성장기',
-      'adult': '성숙기', 'champion': '성숙기',
-      'perfect': '완전체',
-      'ultimate': '궁극체', 'mega': '궁극체',
-      'super ultimate': '초궁극체', 'ultra': '초궁극체',
-      'armor': '아머체',
-      'hybrid': '하이브리드체',
-      'unknown': '불명'
-    };
-    const LEVEL_RANK = { '유년기 I': 1, '유년기 II': 2, '성장기': 3, '성숙기': 4, '완전체': 5, '궁극체': 6, '초궁극체': 7 };
-
-    function translateLevel(lvl) {
-      if (!lvl) return '미확인';
-      const raw = String(lvl).trim();
-      if (/[가-힣]/.test(raw)) return raw;
-      return LEVEL_KO[raw.toLowerCase()] || raw;
-    }
-
-    function levelRank(lvl) {
-      return LEVEL_RANK[translateLevel(lvl)] || null;
-    }
-
-    function translateAttribute(attr) {
-      if (!attr) return '미확인';
-      const a = String(attr).toLowerCase().trim();
-      if (a.includes('vaccine')) return '백신 (Vaccine)';
-      if (a.includes('virus')) return '바이러스 (Virus)';
-      if (a.includes('data')) return '데이터 (Data)';
-      if (a.includes('free')) return '프리 (Free)';
-      if (a.includes('variable')) return '가변 (Variable)';
-      if (a.includes('unknown')) return '불명';
-      return attr;
-    }
-
-    const DIGI_TYPES_KO = {
-      'ancient holy knight': '고대성기사형',
-      'holy knight': '성기사형',
-      'holy beast': '성수형',
-      'mythical beast': '환수형',
-      'ancient dragon': '고대용형',
-      'ancient beast': '고대수형',
-      'ancient insect': '고대곤충형',
-      'ancient mutant': '고대돌연변이형',
-      'ancient bird': '고대조류형',
-      'ancient aquatic': '고대수생형',
-      'ancient plant': '고대식물형',
-      'ancient fish': '고대어형',
-      'ancient mineral': '고대광물형',
-      'machine dragon': '기계용형',
-      'demon dragon': '마룡형',
-      'dragon man': '용인형',
-      'reptile': '파충류형',
-      'dinosaur': '공룡형',
-      'dragon': '용형',
-      'beast man': '수인형',
-      'demon beast': '마수형',
-      'aquatic beast': '수생수형',
-      'beast': '수형 (짐승형)',
-      'insect': '곤충형',
-      'warrior': '전사형',
-      'machine': '기계형',
-      'cyborg': '사이보그형',
-      'aquatic': '수생형',
-      'mollusk': '연체형',
-      'crustacean': '갑각류형',
-      'marine mammal': '해양포유류형',
-      'bird man': '조인형',
-      'giant bird': '거조형',
-      'bird': '조류형',
-      'plant': '식물형',
-      'vegetation': '식물형',
-      'mineral': '광물형',
-      'rock': '암석형',
-      'undead': '언데드형',
-      'ghost': '유령형',
-      'demon lord': '마왕형',
-      'demon man': '마인형',
-      'demon': '악마형',
-      'fallen angel': '타천사형',
-      'archangel': '대천사형',
-      'holy angel': '성천사형',
-      'seraph': '치천사형',
-      'cherub': '지천사형',
-      'angel': '천사형',
-      'fairy': '요정형',
-      'puppet': '퍼펫형 (돌형)',
-      'mutant': '돌연변이형',
-      'larva': '유충형',
-      'lesser': '레서형',
-      'smoke': '연기형',
-      'slime': '슬라임형',
-      'amphibian': '양서류형',
-      'composite': '합성형',
-      // Digi-API /type 전체 목록(150종) 기준 추가분
-      'alien': '에일리언형',
-      'space alien': '우주인형',
-      'ancient': '고대형',
-      'ancient aquatic beast man': '고대수생수인형',
-      'ancient bird man': '고대조인형',
-      'ancient crustacean': '고대갑각류형',
-      'ancient dragon man': '고대용인형',
-      'ancient mutation': '고대변이형',
-      'ancient mythical beast': '고대환수형',
-      'ancient ore': '고대광석형',
-      'ankylosaur': '곡룡형',
-      'ceratopsian': '각룡형',
-      'plesiosaur': '수장룡형',
-      'pterosaur': '익룡형',
-      'stegosaur': '검룡형',
-      'aquatic beast man': '수생수인형',
-      'aquatic mammal': '수생포유류형',
-      'mammal': '포유류형',
-      'armor': '아머형',
-      'artificial fallen angel': '인조타천사형',
-      'avatar': '화신형',
-      'baby dragon': '아기용형',
-      'small dragon': '소룡형',
-      'beast dragon': '수룡형',
-      'dark dragon': '암흑룡형',
-      'devil dragon': '악마룡형',
-      'evil dragon': '사룡형',
-      'earth dragon': '지룡형',
-      'flame dragon': '염룡형',
-      'holy dragon': '성룡형',
-      'light dragon': '광룡형',
-      'mythical dragon': '환룡형',
-      'ocean dragon': '해룡형',
-      'rock dragon': '암룡형',
-      'sky dragon': '천룡형',
-      'dragon warrior': '용전사형',
-      'beast knight': '수기사형',
-      'dark knight': '암흑기사형',
-      'magic knight': '마법기사형',
-      'magic warrior': '마법전사형',
-      'bewitching beast': '요수형',
-      'bewitching bird': '요조형',
-      'god beast': '신수형',
-      'rare beast': '희수형',
-      'marine beast': '해수형',
-      'synthetic beast': '합성수형',
-      'holy bird': '성조형',
-      'small bird': '소조형',
-      'chick': '병아리형',
-      'braun': '브라운형',
-      'bulb': '구근형',
-      'seed': '씨앗형',
-      'insectivorous plant': '식충식물형',
-      'card': '카드형',
-      'demon god': '마신형',
-      'wicked god': '사신형',
-      'god man': '신인형',
-      'small devil': '소악마형',
-      'small angel': '소천사형',
-      'dominion': '주천사형',
-      'virtue': '역천사형',
-      'power': '능천사형',
-      'ophan': '좌천사형',
-      'enhancement': '강화형',
-      'flame': '화염형',
-      'food': '음식형',
-      'galaxy': '은하형',
-      'holy sword': '성검형',
-      'hybrid': '하이브리드형',
-      'ice-snow': '빙설형',
-      'invade': '침략형',
-      'lcd': '액정형',
-      'major': '메이저형',
-      'super major': '슈퍼메이저형',
-      'minor': '마이너형',
-      'marine man': '해인형',
-      'reptile man': '파충인형',
-      'mine': '기뢰형',
-      'monk': '승려형',
-      'musical instrument': '악기형',
-      'mutation': '변이형',
-      'navigation': '내비게이션형',
-      'oni': '오니형',
-      'ore': '광석형',
-      'parasite': '기생형',
-      'perfect': '퍼펙트형',
-      'shellfish': '패류형',
-      'skeleton': '해골형',
-      'spirit': '정령형',
-      'tathāgata': '여래형',
-      'toy': '장난감형',
-      'tropical fish': '열대어형',
-      'weapon': '무기형',
-      'unique': '유니크형',
-      'unbalanced': '언밸런스형',
-      'unanalyzable': '해석불능',
-      'species unknown': '종족불명',
-      'no data': '데이터 없음',
-      'unknown': '불명'
-    };
-    // 긴 키부터 검사해야 "Demon Beast"가 "beast"에 먼저 걸리지 않음
-    const DIGI_TYPE_KEYS = Object.keys(DIGI_TYPES_KO).sort((a, b) => b.length - a.length);
-
-    function translateType(typ) {
-      if (!typ) return '미확인';
-      const t = String(typ).toLowerCase().trim();
-      const key = DIGI_TYPE_KEYS.find(k => t === k || t.includes(k));
-      return key ? DIGI_TYPES_KO[key] : typ;
-    }
-
-    // 도감 DB(data/digidex_db.yaml → data/digidex_db.json)의 dex.evolution 에 적힌 진화 루트
-    // 진화가 적힌 디지몬은 "도감" 보기에 그대로 표시되고, "전체" 보기(Digi-API 목록)에서는 맨 앞으로 정렬됨
-    let CANONICAL_BY_NORM = {};
-
-    // Digi-API condition 예: "with Garurumon"(조그레스), "with or without ..."(선택), "with X Eraser"(아이템),
-    // "with the Human Spirit of Fire", "with the Digimental of Courage", "Warp Evolution" → 조그레스는 "with <디지몬>" 형태만 인정
-    // ("with the ..."는 실제 데이터에서 전부 아이템·스피릿·디지멘탈)
-    const NON_JOGRESS_HINTS = ['evolution', 'spirit', 'eraser', 'digitron', 'digimental', 'yggdrasill', 'blade', 'proud', 'crest', 'item'];
-    function isJogressCondition(cond) {
-      const c = String(cond || '').toLowerCase().trim();
-      if (c.includes('jogress')) return true;
-      if (!c.startsWith('with ') || c.startsWith('with or without') || c.startsWith('with the ')) return false;
-      return !NON_JOGRESS_HINTS.some(h => c.includes(h));
-    }
-
-    // 같은 계열(이름 공유) → 조건 없는 일반 진화 → 나머지 순으로 정렬 (그레이몬 다음 진화가 175개라 앞쪽이 중요)
-    function evoSortScore(ev, currentName) {
-      const words = String(currentName || '').toLowerCase().replace(/\(.*?\)/g, ' ').split(/[^a-z]+/).filter(w => w.length >= 4);
-      const name = String(ev.digimon || '').toLowerCase();
-      let score = 0;
-      if (words.some(w => name.includes(w))) score += 2;
-      if (!String(ev.condition || '').trim()) score += 1;
-      return score;
-    }
-
-    // Digi-API 진화 조건 문구로 출처·진화 방식 배지 추출 (조건이 비어 있는 항목이 많아 일부에만 붙음)
-    const EVO_TAG_RULES = [
-      [/vital bracelet/i, '바이탈'],
-      [/pendulum/i, '펜듈럼'],
-      [/card game/i, 'TCG'],
-      [/digimental/i, '아머진화'],
-      [/spirit/i, '스피릿'],
-      [/burst/i, '버스트'],
-      [/x-antibody|x antibody/i, 'X항체']
-    ];
-    function evoTags(cond) {
-      const c = String(cond || '');
-      return EVO_TAG_RULES.filter(([re]) => re.test(c)).map(([, label]) => label).slice(0, 2);
-    }
-
-    function applyEvoData(target, evo) {
-      return Object.assign(target, {
-        priorEvolutions: evo.prior,
-        nextEvolutions: evo.next,
-        warpPrior: evo.warpPrior,
-        warpNext: evo.warpNext,
-        dexPrior: evo.dexPrior,
-        dexNext: evo.dexNext,
-        hasDexEvo: evo.hasDexEvo,
-        isTerminal: evo.isTerminal
-      });
-    }
-
-    function toEvoCard(ev) {
-      const m = findIndexEntry(typeof ev.id === 'number' ? ev.id : ev.digimon) || findIndexEntry(ev.digimon);
-      const nameEn = m ? m.name : ev.digimon;
-      return {
-        id: m ? m.id : ev.id,
-        digimon: nameEn,
-        name_ko: m ? m.name_ko : nameEn,
-        name_en: nameEn,
-        image: ev.image || (m && m.image) || '',
-        level: m && m.level ? translateLevel(m.level) : '',
-        jogress: !!ev.jogress
-      };
-    }
-
-    function isWarpCondition(cond) {
-      return /warp/i.test(String(cond || ''));
-    }
-
-    // Digi-API 진화 목록 정리
-    // - 일반 진화: 바로 다음/이전 단계 (같은 단계의 모드 체인지·변종 포함)
-    // - 워프진화: 조건에 "Warp"가 있거나 단계를 2칸 이상 건너뛰는 진화 → 별도 섹션
-    // - 역방향 항목(다음 진화인데 단계가 더 낮은 것 등)은 API의 퇴화 데이터라 제외
-    // - 단계 비교는 인덱스에 level 이 있을 때만 (아머체·하이브리드체는 단계 비교 안 함)
-    function cleanAndPrioritizeEvolutions(currentName, currentLevel, rawPrior, rawNext) {
-      const canon = CANONICAL_BY_NORM[normName(currentName)] || {};
-      const curRank = levelRank(currentLevel);
-      const rankOf = ev => {
-        const m = findIndexEntry(typeof ev.id === 'number' ? ev.id : ev.digimon);
-        return m && m.level ? levelRank(m.level) : null;
-      };
-
-      const split = (list, dir, canonNames) => {
-        const normal = [], warp = [];
-        for (const raw of list || []) {
-          const ev = { ...raw, jogress: isJogressCondition(raw.condition) };
-          const r = rankOf(ev);
-          const gap = curRank && r ? (r - curRank) * dir : null; // 진행 방향으로 몇 단계인지
-          if (gap !== null && gap < 0) continue; // 역방향
-          if (isWarpCondition(ev.condition) || (gap !== null && gap >= 2)) {
-            ev.warp = true;
-            warp.push(ev);
-          } else {
-            normal.push(ev);
-          }
-        }
-        // 정렬: 도감 지정 진화 → 바로 다음(이전) 단계 → 같은 계열 이름 → 조건 없는 진화 → 나머지 (같은 단계 변종은 뒤로)
-        const canonKeys = (canonNames || []).map(normName);
-        const sorted = l => l
-          .map((ev, i) => {
-            const ci = canonKeys.indexOf(normName(ev.digimon));
-            const r = rankOf(ev);
-            const oneStep = curRank && r && (r - curRank) * dir === 1 ? 10 : 0;
-            return { ev, i, sc: (ci >= 0 ? 100 - ci : 0) + oneStep + evoSortScore(ev, currentName) };
-          })
-          .sort((x, y) => y.sc - x.sc || x.i - y.i)
-          .map(x => x.ev);
-        return { normal: sorted(normal), warp: sorted(warp) };
-      };
-
-      const dedupe = list => {
-        const seen = new Set();
-        return list.map(ev => ({ ...toEvoCard(ev), warp: !!ev.warp, condition: ev.condition || '' })).filter(ev => {
-          const k = normName(ev.digimon);
-          if (seen.has(k)) return false;
-          seen.add(k);
-          return true;
-        });
-      };
-
-      const nx = split(rawNext, 1, canon.next);
-      const pr = split(rawPrior, -1, canon.prior);
-
-      const next = dedupe(nx.normal);
-      const warpNext = dedupe(nx.warp);
-      // 같은 단계끼리는 API가 양방향으로 넣는 경우가 있음 (알파몬 ↔ 알파몬 왕룡검) → 다음 진화에 있으면 진화 전에서 제외
-      const nextKeys = new Set(next.map(ev => normName(ev.digimon)));
-      // (모드 체인지처럼 도감에 진화 전으로 적힌 것은 유지)
-      const canonPrior = new Set((canon.prior || []).map(normName));
-      const prior = dedupe(pr.normal).filter(ev => canonPrior.has(normName(ev.digimon)) || !nextKeys.has(normName(ev.digimon)));
-      const warpPrior = dedupe(pr.warp);
-
-      const isTerminal = next.length === 0 && warpNext.length === 0 && (curRank || 0) >= LEVEL_RANK['궁극체'];
-
-      // 도감 보기: 도감 DB에 적힌 진화만 (API 카드에 있으면 조건 정보까지 재사용)
-      const pickDex = (names, pool, jogress) => names ? names.map(n => {
-        const card = pool.find(ev => normName(ev.digimon) === normName(n)) || toEvoCard({ digimon: n });
-        return jogress ? { ...card, jogress: true } : card;
-      }) : null;
-      const dexNext = pickDex(canon.next, [...next, ...warpNext], false);
-      const dexPrior = pickDex(canon.prior, [...prior, ...warpPrior], !!canon.jogress);
-      const hasDexEvo = !!(dexNext || dexPrior);
-
-      return { isTerminal, prior, next, warpPrior, warpNext, dexPrior, dexNext, hasDexEvo };
-    }
-
-    // Client-side Profile & Skill Translator (MyMemory 무료 API: 요청당 500자 제한 → 문장 단위로 나눠 번역)
-    const translationCache = {};
-    async function translateChunk(chunk) {
-      if (translationCache[chunk]) return translationCache[chunk];
-      try {
-        const url = `https://api.mymemory.translated.net/get?q=${encodeURIComponent(chunk)}&langpair=en|ko`;
-        const res = await fetch(url);
-        if (res.ok) {
-          const data = await res.json();
-          const translated = data && data.responseStatus === 200 && data.responseData && data.responseData.translatedText;
-          if (translated) {
-            translationCache[chunk] = translated;
-            return translated;
-          }
-        }
-      } catch (_) {}
-      return null;
-    }
-
-    async function translateTextToKo(text) {
-      if (!text || text.length < 2) return text;
-      const clean = text.replace(/[\r\n]+/g, ' ').trim();
-      const sentences = clean.match(/[^.!?]+[.!?]*\s*/g) || [clean];
-      const chunks = [];
-      let cur = '';
-      for (const s of sentences) {
-        if ((cur + s).length > 450 && cur) { chunks.push(cur.trim()); cur = ''; }
-        cur += s;
-      }
-      if (cur.trim()) chunks.push(cur.trim());
-
-      const out = [];
-      for (const c of chunks) {
-        const t = await translateChunk(c.slice(0, 480));
-        if (!t) return text; // 하나라도 실패하면 잘린 번역 대신 원문 유지
-        out.push(t);
-      }
-      return out.join(' ');
-    }
-
-    // 직접 작성한 도감(digidex_db.json) 항목 찾기: ID 또는 영문명 정규화 비교
-    function findLocalDex(idOrQuery) {
-      const byKey = localDigidex.find(d => String(d.id).toLowerCase() === String(idOrQuery).toLowerCase());
-      if (byKey) return byKey;
-      const idx = typeof idOrQuery === 'number' ? findIndexEntry(idOrQuery) : null;
-      const target = normName(idx ? idx.name : idOrQuery);
-      return localDigidex.find(d => normName(d.name_en) === target) || null;
-    }
-
-    // Fetch Full Detail: 1차 Local DB -> 2차 Real-time Network API (Digi-API)
-    async function fetchDigimonFullDetail(idOrQuery, displayName) {
-      const container = document.getElementById('dex-detail-container');
-
-      // 1. Local High-Detail DB (직접 작성한 한국어 도감)
-      const localMatch = findLocalDex(idOrQuery);
-      if (localMatch) {
-        fetchDigimonFullDetail.pending = `local:${localMatch.id}`;
-        const idxEntry = typeof idOrQuery === 'number' ? findIndexEntry(idOrQuery) : findIndexEntry(localMatch.name_en);
-        const apiKey = idxEntry ? idxEntry.id : localMatch.name_en;
-        const local = { ...localMatch, apiId: apiKey };
-        renderDexDetail(local);
-        // 진화 정보는 Digi-API에서 보강 (ID로 조회해야 "Imperialdramon: Dragon Mode" 같은 표기 차이에도 안전)
-        if (!local.nextEvolutions || local.nextEvolutions.length === 0) {
-          fetch(`https://digi-api.com/api/v1/digimon/${encodeURIComponent(apiKey)}`)
-            .then(res => res.ok ? res.json() : Promise.reject())
-            .then(apiData => {
-              if (currentDexDigimon !== local) return;
-              applyEvoData(local, cleanAndPrioritizeEvolutions(apiData.name, local.level, apiData.priorEvolutions, apiData.nextEvolutions));
-              updateDexCard();
-            }).catch(() => {
-              if (currentDexDigimon !== local) return;
-              applyEvoData(local, cleanAndPrioritizeEvolutions(localMatch.name_en, local.level, [], []));
-              updateDexCard();
-            });
-        }
-        return;
-      }
-
-      // 2. Real-time Network Fetch (Digi-API)
-      container.innerHTML = `
-        <div class="p-8 text-center bg-white/80 dark:bg-[#070e22]/80 rounded-2xl border border-blue-200 dark:border-blue-900/60 shadow-sm animate-pulse">
-          <div class="text-3xl mb-2 animate-bounce">📡</div>
-          <p class="font-extrabold text-sm text-[#004ce8] dark:text-blue-400">디지털 월드 실시간 통신 접속 중...</p>
-          <p class="text-xs text-slate-500 mt-1">'${escapeHtml(displayName || idOrQuery)}' 공식 도감 및 카드 데이터를 불러옵니다.</p>
-        </div>
-      `;
-
-      const requestKey = String(idOrQuery);
-      fetchDigimonFullDetail.pending = requestKey;
-
-      try {
-        const idxForCard = typeof idOrQuery === 'number' ? findIndexEntry(idOrQuery) : null;
-        const [apiRes, cardRes] = await Promise.all([
-          fetch(`https://digi-api.com/api/v1/digimon/${encodeURIComponent(idOrQuery)}`),
-          fetch(`https://digimoncard.io/api-public/search.php?n=${encodeURIComponent(idxForCard ? idxForCard.name : (displayName || idOrQuery))}`).catch(() => null)
-        ]);
-
-        if (!apiRes.ok) throw new Error("NotFound");
-        const apiData = await apiRes.json();
-        if (fetchDigimonFullDetail.pending !== requestKey) return; // 그 사이 다른 디지몬을 선택함
-
-        // TCG 카드 이미지
-        let tcgImages = [];
-        if (cardRes && cardRes.ok) {
-          try {
-            const cardData = await cardRes.json();
-            if (Array.isArray(cardData)) {
-              tcgImages = cardData.filter(c => c.id).slice(0, 3).map(c => ({
-                type: 'tcg',
-                label: `🃏 TCG 카드 (${c.id})`,
-                url: `https://images.digimoncard.io/images/cards/${encodeURIComponent(c.id)}.jpg`
-              }));
-            }
-          } catch (_) {}
-        }
-
-        const images = [];
-        if (apiData.images && apiData.images.length > 0) {
-          images.push({ type: 'official', label: '🎨 공식 도감', url: apiData.images[0].href });
-        }
-        images.push(...tcgImages);
-
-        const descriptions = apiData.descriptions || [];
-        const engDesc = descriptions.find(d => d.language === 'en_us') || descriptions[0];
-
-        const idxEntry = findIndexEntry(apiData.id) || {};
-
-        const rawLevel = (apiData.levels && apiData.levels[0]) ? apiData.levels[0].level : '미확인';
-        const rawAttr = (apiData.attributes && apiData.attributes[0]) ? apiData.attributes[0].attribute : '미확인';
-        const rawType = (apiData.types && apiData.types[0]) ? apiData.types[0].type : '미확인';
-
-        const evoData = cleanAndPrioritizeEvolutions(apiData.name, rawLevel, apiData.priorEvolutions, apiData.nextEvolutions);
-
-        const fullDigimon = {
-          id: apiData.id,
-          name_ko: idxEntry.name_ko || apiData.name,
-          name_ja_ko: idxEntry.name_ja_ko || '',
-          name_en: apiData.name,
-          level: translateLevel(rawLevel),
-          attribute: translateAttribute(rawAttr),
-          type: translateType(rawType),
-          images: images,
-          // 필살기 이름은 고유명사라 기계 번역하지 않음 (설명만 번역)
-          skills: (apiData.skills || []).slice(0, 4).map(s => ({
-            name: s.skill,
-            desc: s.description || ''
-          })),
-          profile: engDesc ? engDesc.description : '도감 설명이 등록되어 있지 않습니다.',
-          profileIsMachine: false,
-        };
-        applyEvoData(fullDigimon, evoData);
-
-        renderDexDetail(fullDigimon);
-
-        // 백그라운드 도감 설명 한글 번역 (기계 번역)
-        if (engDesc && /[a-zA-Z]/.test(fullDigimon.profile)) {
-          translateTextToKo(fullDigimon.profile).then(translated => {
-            if (currentDexDigimon === fullDigimon && translated !== fullDigimon.profile) {
-              fullDigimon.profile = translated;
-              fullDigimon.profileIsMachine = true;
-              const profileEl = document.getElementById('dex-profile-text');
-              if (profileEl) profileEl.textContent = translated;
-              const badge = document.getElementById('dex-profile-mt');
-              if (badge) badge.classList.remove('hidden');
-            }
-          });
-        }
-
-        fullDigimon.skills.forEach(async (sk, idx) => {
-          if (sk.desc && /[a-zA-Z]/.test(sk.desc)) {
-            const translatedDesc = await translateTextToKo(sk.desc);
-            if (currentDexDigimon === fullDigimon && translatedDesc && translatedDesc !== sk.desc) {
-              sk.desc = translatedDesc;
-              const descEl = document.getElementById(`dex-skill-desc-${idx}`);
-              if (descEl) descEl.textContent = translatedDesc;
-            }
-          }
-        });
-      } catch (err) {
-        if (fetchDigimonFullDetail.pending !== requestKey) return;
-        container.innerHTML = `
-          <div class="py-12 text-center bg-white/80 dark:bg-[#070e22]/80 rounded-2xl border border-blue-200 dark:border-blue-900/60 p-6 shadow-sm">
-            <div class="text-4xl mb-2">🔍</div>
-            <p class="font-extrabold text-sm text-slate-800 dark:text-slate-200">'${escapeHtml(displayName || idOrQuery)}' 디지몬을 찾을 수 없습니다.</p>
-            <p class="text-xs mt-1 text-slate-500">정확한 한국어 더빙명, 일본 원칭 또는 영어 디지몬 이름으로 검색해 보세요.</p>
-          </div>
-        `;
-      }
-    }
-
-    // Render Digimon Detailed Profile
-    function renderDexDetail(digimon) {
-      currentDexDigimon = digimon;
-      currentDexImgIndex = 0;
-      updateDexCard();
-    }
-
-    // Cycle Through Images (Official -> Dot -> TCG)
-    function cycleDexImage() {
-      if (!currentDexDigimon || !currentDexDigimon.images || currentDexDigimon.images.length <= 1) return;
-      currentDexImgIndex = (currentDexImgIndex + 1) % currentDexDigimon.images.length;
-      updateDexCardImageOnly();
-    }
-
-    function setDexImage(index) {
-      if (!currentDexDigimon || !currentDexDigimon.images) return;
-      currentDexImgIndex = index;
-      updateDexCardImageOnly();
-    }
-
-    const DEX_FRAME_SIZE = 'w-full h-56 sm:h-80';
-
-    function updateDexCardImageOnly() {
-      const img = currentDexDigimon.images[currentDexImgIndex];
-      const imgElem = document.getElementById('dex-main-img');
-      const badgeElem = document.getElementById('dex-img-mode-badge');
-      const frameElem = document.getElementById('dex-img-frame');
-      const selectorElem = document.getElementById('dex-img-selector');
-
-      if (!imgElem || !img) return;
-
-      imgElem.src = img.url;
-      if (badgeElem) badgeElem.textContent = img.label;
-
-      if (img.type === 'dot') {
-        frameElem.className = "lcd-screen " + DEX_FRAME_SIZE + " rounded-2xl flex items-center justify-center p-6 relative overflow-hidden transition-all duration-300";
-        imgElem.className = "w-32 h-32 sm:w-40 sm:h-40 object-contain drop-shadow-md select-none";
-        imgElem.style.imageRendering = "pixelated";
-      } else {
-        frameElem.className = "bg-gradient-to-b from-blue-50 to-slate-100 dark:from-[#08122c] dark:to-[#050b1a] " + DEX_FRAME_SIZE + " rounded-2xl flex items-center justify-center p-4 relative overflow-hidden transition-all duration-300 border border-blue-200/60 dark:border-blue-900/60 shadow-inner";
-        imgElem.className = "max-w-full max-h-full object-contain filter drop-shadow-xl hover:scale-105 transition duration-300 select-none";
-        imgElem.style.imageRendering = "auto";
-      }
-
-      // Update selector buttons
-      if (selectorElem) {
-        selectorElem.innerHTML = currentDexDigimon.images.map((item, idx) => `
-          <button 
-            onclick="setDexImage(${idx})" 
-            class="touch-press px-2.5 py-1 rounded-lg text-[11px] font-extrabold transition ${idx === currentDexImgIndex ? 'bg-[#004ce8] text-white shadow-xs' : 'bg-white/80 dark:bg-slate-900 text-slate-600 dark:text-slate-400 border border-blue-200 dark:border-blue-900/60'}"
-          >
-            ${escapeHtml(item.label)}
-          </button>
-        `).join('');
-      }
-    }
-
-    // Dex Image Fallback Handler (엑스박스 방지: 실패 시 1순위 공식 일러로 자동 복구)
-    function handleDexImgError(imgElem) {
-      if (!currentDexDigimon || !currentDexDigimon.images || currentDexDigimon.images.length === 0) return;
-      const fallbackUrl = currentDexDigimon.images[0].url;
-      if (!fallbackUrl || imgElem.src === fallbackUrl) {
-        imgElem.style.visibility = 'hidden';
-        return;
-      }
-      if (fallbackUrl && imgElem.src !== fallbackUrl) {
-        imgElem.src = fallbackUrl;
-        imgElem.style.imageRendering = "auto";
-        const badgeElem = document.getElementById('dex-img-mode-badge');
-        if (badgeElem) badgeElem.textContent = "🎨 공식 도감 (대체)";
-        const frameElem = document.getElementById('dex-img-frame');
-        if (frameElem) {
-          frameElem.className = "bg-gradient-to-b from-blue-50 to-slate-100 dark:from-[#08122c] dark:to-[#050b1a] " + DEX_FRAME_SIZE + " rounded-2xl flex items-center justify-center p-4 relative overflow-hidden transition-all duration-300 border border-blue-200/60 dark:border-blue-900/60 shadow-inner";
-        }
-      }
-    }
-
-    const EVO_ROW_LIMIT = 8;
-    function renderEvoRow(title, list) {
-      if (!list || list.length === 0) return '';
-      const rest = list.length - EVO_ROW_LIMIT;
+    function renderDexChips(title, nos) {
+      const list = (nos || []).map(n => dexByNo[n]).filter(Boolean);
+      if (!list.length) return '';
       return `
         <div class="space-y-1.5">
           <p class="text-[11px] font-bold text-slate-500 dark:text-slate-400">${title} <span class="text-slate-400 font-medium">${list.length}</span></p>
           <div class="grid grid-cols-2 sm:grid-cols-3 gap-1.5 sm:gap-2">
-            ${list.map((ev, i) => `
-              <div
-                onclick="selectDigimonById(${jsArg(ev.id ?? ev.digimon)}, ${jsArg(ev.name_ko || ev.digimon)})"
-                ${ev.condition ? `title="${escapeHtml(ev.condition)}"` : ''}
-                class="${i >= EVO_ROW_LIMIT ? 'evo-more hidden ' : ''}touch-press cursor-pointer min-w-0 p-2 rounded-xl bg-slate-50 dark:bg-slate-900/80 hover:bg-blue-50 dark:hover:bg-blue-950 border border-blue-200/60 dark:border-blue-900/60 flex items-center gap-2 transition"
-              >
-                ${ev.image ? `<img src="${escapeHtml(ev.image)}" loading="lazy" class="w-8 h-8 shrink-0 object-contain rounded" onerror="this.style.visibility='hidden'" />` : '<span class="w-8 h-8 shrink-0"></span>'}
+            ${list.map(t => `
+              <div onclick="openDexDetail(${jsArg(t.no)})" class="touch-press cursor-pointer min-w-0 p-2 rounded-xl bg-slate-50 dark:bg-slate-900/80 hover:bg-blue-50 dark:hover:bg-blue-950 border border-blue-200/60 dark:border-blue-900/60 flex items-center gap-2 transition">
+                ${dexThumb(t, 'w-8 h-8')}
                 <div class="min-w-0">
-                  <span class="text-xs font-bold text-slate-800 dark:text-slate-200 block leading-tight break-keep">${escapeHtml(ev.name_ko || ev.digimon)}</span>
-                  <span class="text-[9px] text-slate-400 block truncate">${ev.jogress ? '<span class="font-black text-amber-600 dark:text-amber-400">조그레스</span> · ' : ''}${evoTags(ev.condition).map(t => `<span class="font-bold text-sky-600 dark:text-sky-400">${t}</span> · `).join('')}${escapeHtml(ev.level || ev.name_en || ev.digimon)}</span>
+                  <span class="text-xs font-bold text-slate-800 dark:text-slate-200 block leading-tight break-keep">${escapeHtml(t.name)}</span>
+                  <span class="text-[9px] text-slate-400 block truncate">${escapeHtml(dexNoLabel(t))} · ${escapeHtml(t.level)}</span>
                 </div>
               </div>
             `).join('')}
-            ${rest > 0 ? `
-              <button
-                onclick="this.parentElement.querySelectorAll('.evo-more').forEach(e => e.classList.remove('hidden')); this.remove();"
-                class="col-span-full touch-press py-2 rounded-xl text-[11px] font-bold text-blue-600 dark:text-blue-400 bg-blue-50/60 dark:bg-blue-950/40 border border-blue-200/60 dark:border-blue-900/60"
-              >${rest}체 더 보기</button>` : ''}
           </div>
         </div>
       `;
     }
 
-    // 진화 보기 모드: 'dex'(도감 DB에 진화 루트가 적힌 디지몬만) / 'all'(Digi-API 전체)
-    let evoMode = 'dex';
-    try { evoMode = localStorage.getItem('digi_evo_mode') === 'all' ? 'all' : 'dex'; } catch (_) {}
-    function setEvoMode(mode) {
-      evoMode = mode === 'all' ? 'all' : 'dex';
-      try { localStorage.setItem('digi_evo_mode', evoMode); } catch (_) {}
-      updateDexCard();
-    }
-
-    function renderDexEvolutions(d) {
-      const total = (d.nextEvolutions || []).length + (d.priorEvolutions || []).length + (d.warpNext || []).length + (d.warpPrior || []).length;
-      return `
-        ${d.dexNext ? renderEvoRow('진화', d.dexNext) : ''}
-        ${d.dexPrior ? renderEvoRow('진화 전', d.dexPrior) : ''}
-        <p class="text-[10px] text-slate-400 leading-relaxed">도감에 정리된 진화 루트입니다. 게임·육성기기·TCG까지 포함한 Digi-API 전체 진화 ${total}건은 <button onclick="setEvoMode('all')" class="font-bold text-blue-600 dark:text-blue-400 underline">전체</button>에서 볼 수 있습니다.</p>
-      `;
-    }
-
-    // 워프진화: 별도 접이식 패널로 구분
-    function renderWarpPanel(d) {
-      const n = (d.warpNext || []).length, p = (d.warpPrior || []).length;
-      if (!n && !p) return '';
-      return `
-        <details class="group rounded-2xl border border-purple-300/60 dark:border-purple-800/70 bg-purple-50/50 dark:bg-purple-950/20">
-          <summary class="list-none cursor-pointer select-none px-3 py-2.5 flex items-center gap-2">
-            <span class="text-sm font-black text-purple-700 dark:text-purple-300">🌀 워프진화</span>
-            <span class="text-[10px] font-bold tracking-widest text-purple-500/70 font-mono">WARP</span>
-            <span class="text-[11px] font-medium text-slate-400">${n + p}</span>
-            <span class="ml-auto text-[11px] text-purple-500 group-open:rotate-180 transition">▼</span>
-          </summary>
-          <div class="px-3 pb-3 space-y-3">
-            <p class="text-[10px] text-slate-500 dark:text-slate-400 leading-relaxed">단계를 건너뛰어 진화하는 경우입니다 (예: 성장기 → 궁극체). 항목을 길게 누르거나 마우스를 올리면 Digi-API의 진화 조건이 보입니다.</p>
-            ${renderEvoRow('워프진화 가능', d.warpNext)}
-            ${renderEvoRow('워프진화로 도달하는 디지몬', d.warpPrior)}
-          </div>
-        </details>
-      `;
-    }
-
-    function updateDexCard() {
-      const container = document.getElementById('dex-detail-container');
-      const d = currentDexDigimon;
-      if (!d) return;
-
-      const currentImg = (d.images && d.images[currentDexImgIndex]) || { url: '', label: '이미지 없음', type: 'official' };
-      const isDot = currentImg.type === 'dot';
-
-      container.innerHTML = `
-        <article class="blue-card-item bg-white/95 dark:bg-[#070e22]/95 border-2 border-blue-400 dark:border-blue-600 rounded-2xl sm:rounded-3xl p-3 sm:p-6 shadow-xl relative overflow-hidden">
-          <!-- Blue Card Left Stripe -->
+    function renderDexDetail(d) {
+      const evo = d.evolution || {};
+      const badge = 'text-[11px] sm:text-xs font-black px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-xl border';
+      const hasEvo = (evo.prior || []).length || (evo.next || []).length || (evo.related || []).length;
+      document.getElementById('dex-detail-container').innerHTML = `
+        <article class="bg-white/95 dark:bg-[#070e22]/95 border-2 border-blue-400 dark:border-blue-600 rounded-2xl sm:rounded-3xl p-4 sm:p-6 shadow-xl relative overflow-hidden space-y-4">
           <div class="absolute left-0 top-0 bottom-0 w-2 sm:w-3 bg-slate-900 border-r border-slate-950"></div>
-          
-          <!-- Watermark -->
-          <div class="hidden sm:block absolute top-2 right-2 w-28 h-28 dot-matrix-watermark rounded-tr-2xl pointer-events-none"></div>
-
-          <div class="pl-1.5 sm:pl-3 space-y-3.5 sm:space-y-4">
-            
-            <!-- Header: Title & Badges -->
-            <div class="flex items-start justify-between gap-2.5 flex-wrap border-b border-blue-200/60 dark:border-blue-900/60 pb-3">
-              <div>
-                <div class="flex items-center gap-2">
-                  <span class="text-[9px] sm:text-[10px] font-black px-1.5 py-0.5 rounded bg-blue-600 text-white font-mono tracking-wider shadow-xs">DIGI-DEX ARCHIVE</span>
-                  <span class="text-[11px] sm:text-xs font-bold text-slate-400 font-mono">${escapeHtml(d.name_en)}</span>
-                </div>
-                <h2 class="text-xl sm:text-2xl font-black text-slate-900 dark:text-white tracking-tight mt-1 flex items-baseline gap-2 flex-wrap">
-                  <span>${escapeHtml(d.name_ko)}</span>
-                  ${d.name_ja_ko && d.name_ja_ko !== d.name_ko ? `<span class="text-xs font-bold text-blue-500">(${escapeHtml(d.name_ja_ko)})</span>` : ''}
-                </h2>
+          <div class="pl-2 sm:pl-3 space-y-4">
+            <div class="space-y-1.5 border-b border-blue-200/60 dark:border-blue-900/60 pb-3">
+              <div class="flex items-center gap-2 flex-wrap">
+                <span class="text-[10px] font-black px-1.5 py-0.5 rounded font-mono tracking-wider ${d.official ? 'bg-blue-600 text-white' : 'bg-slate-500 text-white'}">${escapeHtml(dexNoLabel(d))}</span>
+                ${d.official ? '' : '<span class="text-[10px] font-bold text-slate-400">공식 도감에 없는 디지몬 (Digi-API 자료)</span>'}
+                <span class="text-[11px] font-bold text-slate-400 font-mono">${escapeHtml(d.name_en || '')}</span>
               </div>
-
-              <!-- Spec Badges -->
-              <div class="flex items-center gap-1 sm:gap-1.5 flex-wrap">
-                <span class="text-[11px] sm:text-xs font-black px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-xl bg-blue-500/15 text-blue-600 dark:text-blue-400 border border-blue-500/30">${escapeHtml(d.level)}</span>
-                <span class="text-[11px] sm:text-xs font-black px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-xl bg-purple-500/15 text-purple-600 dark:text-purple-400 border border-purple-500/30">${escapeHtml(d.attribute)}</span>
-                <span class="text-[11px] sm:text-xs font-black px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-xl bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 border border-emerald-500/30">${escapeHtml(d.type)}</span>
+              <h2 class="text-xl sm:text-2xl font-black text-slate-900 dark:text-white tracking-tight break-keep">
+                ${escapeHtml(d.name)}
+                ${d.name_dub ? `<span class="text-sm font-bold text-blue-500 ml-1">더빙: ${escapeHtml(d.name_dub)}</span>` : ''}
+              </h2>
+              <div class="flex items-center gap-1.5 flex-wrap pt-1">
+                <span class="${badge} bg-blue-500/15 text-blue-600 dark:text-blue-400 border-blue-500/30">${escapeHtml(d.level)}</span>
+                ${d.type ? `<span class="${badge} bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 border-emerald-500/30">${escapeHtml(d.type)}</span>` : ''}
+                ${d.attribute ? `<span class="${badge} bg-purple-500/15 text-purple-600 dark:text-purple-400 border-purple-500/30">${escapeHtml(d.attribute)}</span>` : ''}
+                ${d.x_antibody ? `<span class="${badge} bg-rose-500/15 text-rose-600 dark:text-rose-400 border-rose-500/30">X항체</span>` : ''}
+                ${d.xros ? `<span class="${badge} bg-amber-500/15 text-amber-600 dark:text-amber-400 border-amber-500/30">크로스워즈</span>` : ''}
               </div>
             </div>
 
-            <!-- Interactive Illustration / Dot Frame (Click to Switch!) -->
-            <div class="space-y-2">
+            ${d.image ? `
+              <div class="bg-gradient-to-b from-blue-50 to-slate-100 dark:from-[#08122c] dark:to-[#050b1a] w-full h-56 sm:h-72 rounded-2xl flex items-center justify-center p-4 border border-blue-200/60 dark:border-blue-900/60">
+                <img src="${escapeHtml(d.image)}" alt="${escapeHtml(d.name)}" class="max-w-full max-h-full object-contain drop-shadow-xl" onerror="this.parentElement.remove()">
+              </div>` : ''}
 
-              <div 
-                id="dex-img-frame" 
-                onclick="cycleDexImage()" 
-                class="${isDot ? 'lcd-screen' : 'bg-gradient-to-b from-blue-50 to-slate-100 dark:from-[#08122c] dark:to-[#050b1a] border border-blue-200/60 dark:border-blue-900/60 shadow-inner'} ${DEX_FRAME_SIZE} rounded-2xl flex items-center justify-center p-4 relative overflow-hidden cursor-pointer select-none group touch-press transition-all duration-300"
-                title="클릭하여 도트/공식일러/카드 전환"
-              >
-                <img 
-                  id="dex-main-img" 
-                  src="${escapeHtml(currentImg.url)}" 
-                  alt="${escapeHtml(d.name_ko)}" 
-                  onerror="handleDexImgError(this)"
-                  style="${isDot ? 'image-rendering: pixelated;' : ''}"
-                  class="${isDot ? 'w-28 h-28 sm:w-40 sm:h-40 object-contain drop-shadow-md' : 'max-w-full max-h-full object-contain filter drop-shadow-xl group-hover:scale-105 transition duration-300'}" 
-                />
-                ${(d.images || []).length > 1 ? `
-                <div class="absolute bottom-2 right-2 px-2 py-1 rounded-lg bg-black/55 backdrop-blur text-[10px] text-white font-bold flex items-center gap-1 pointer-events-none">
-                  <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
-                  <span id="dex-img-mode-badge">${escapeHtml(currentImg.label)}</span>
-                </div>` : ''}
-              </div>
+            ${d.url ? `
+              <a href="${escapeHtml(safeUrl(d.url))}" target="_blank" rel="noopener noreferrer" class="touch-press flex items-center justify-between gap-3 p-3 rounded-2xl bg-[#004ce8] text-white shadow-md shadow-blue-600/30">
+                <span>
+                  <span class="block text-sm font-black">공식 디지몬 도감에서 보기</span>
+                  <span class="block text-[11px] text-blue-100">프로필 · 필살기 · 공식 일러스트</span>
+                </span>
+                <span class="text-lg">↗</span>
+              </a>` : ''}
 
-              <!-- Quick Image Buttons -->
-              <div id="dex-img-selector" class="flex items-center gap-1.5 justify-center flex-wrap pt-1">
-                ${(d.images || []).map((item, idx) => `
-                  <button 
-                    onclick="setDexImage(${idx})" 
-                    class="touch-press px-2 sm:px-2.5 py-1 rounded-lg text-[10px] sm:text-[11px] font-extrabold transition ${idx === currentDexImgIndex ? 'bg-[#004ce8] text-white shadow-xs' : 'bg-white/80 dark:bg-slate-900 text-slate-600 dark:text-slate-400 border border-blue-200 dark:border-blue-900/60'}"
-                  >
-                    ${escapeHtml(item.label)}
-                  </button>
-                `).join('')}
-              </div>
-            </div>
-
-            <!-- Special Moves / Skills -->
-            ${d.skills && d.skills.length > 0 ? `
-              <div class="space-y-2 pt-2 border-t border-blue-200/60 dark:border-blue-900/60">
-                <h3 class="flex items-baseline gap-2">
-                  <span class="text-sm font-black text-slate-900 dark:text-white">⚡ 필살기</span>
-                  <span class="text-[10px] font-bold tracking-widest text-blue-600/70 dark:text-blue-400/70 font-mono">SPECIAL MOVES</span>
-                </h3>
-                <div class="grid grid-cols-1 gap-1.5 sm:gap-2">
-                  ${d.skills.map((s, idx) => `
-                    <div class="p-2.5 rounded-xl bg-blue-50/60 dark:bg-blue-950/40 border border-blue-200/50 dark:border-blue-900/50 text-xs">
-                      <p id="dex-skill-name-${idx}" class="font-black text-slate-900 dark:text-slate-100 text-[12px] sm:text-[13px] text-blue-600 dark:text-blue-400">${escapeHtml(s.name)}</p>
-                      <p id="dex-skill-desc-${idx}" class="text-slate-600 dark:text-slate-400 text-[11px] sm:text-[12px] mt-0.5 leading-relaxed font-medium">${escapeHtml(s.desc || '설명 정보가 없습니다.')}</p>
-                    </div>
-                  `).join('')}
-                </div>
-              </div>
-            ` : ''}
-
-            <!-- Official Lore / Archive Profile -->
-            <div class="space-y-2 pt-2 border-t border-blue-200/60 dark:border-blue-900/60">
+            <div class="space-y-3 pt-1">
               <h3 class="flex items-baseline gap-2">
-                  <span class="text-sm font-black text-slate-900 dark:text-white">📖 도감 설정</span>
-                  <span class="text-[10px] font-bold tracking-widest text-blue-600/70 dark:text-blue-400/70 font-mono">PROFILE</span>
-                  <span id="dex-profile-mt" class="${d.profileIsMachine ? '' : 'hidden'} ml-auto text-[10px] font-medium text-slate-400">자동 번역</span>
-                </h3>
-              <div class="p-3.5 sm:p-4 rounded-2xl bg-slate-900/95 text-slate-200 border border-blue-500/40 shadow-inner font-sans text-xs sm:text-[13px] leading-relaxed relative overflow-hidden">
-                <div class="absolute -right-6 -bottom-6 w-24 h-24 bg-blue-600/10 rounded-full blur-xl pointer-events-none"></div>
-                <p id="dex-profile-text" class="relative z-10 whitespace-pre-line text-slate-300 font-medium">${escapeHtml(d.profile)}</p>
-              </div>
+                <span class="text-sm font-black text-slate-900 dark:text-white">🔗 진화</span>
+                <span class="text-[10px] font-bold tracking-widest text-blue-600/70 dark:text-blue-400/70 font-mono">EVOLUTION</span>
+                <span class="ml-auto text-[10px] font-medium text-slate-400">공식 도감 기준</span>
+              </h3>
+              ${hasEvo ? `
+                ${renderDexChips('진화 전', evo.prior)}
+                ${renderDexChips('진화 후', evo.next)}
+                ${renderDexChips('관련 디지몬', evo.related)}
+              ` : `<p class="text-xs text-slate-400">${d.official ? '공식 도감에 등록된 진화·관련 디지몬이 없습니다.' : '공식 도감 진화 정보가 없는 디지몬입니다.'}</p>`}
             </div>
-
-            <!-- Evolution Chain (진화 체계 및 연관 디지몬) -->
-            ${d.isTerminal || (d.priorEvolutions && d.priorEvolutions.length > 0) || (d.nextEvolutions && d.nextEvolutions.length > 0) || (d.warpNext && d.warpNext.length > 0) || (d.warpPrior && d.warpPrior.length > 0) ? `
-              <div class="space-y-3 pt-3 border-t border-blue-200/60 dark:border-blue-900/60">
-                <h3 class="flex items-baseline gap-2">
-                  <span class="text-sm font-black text-slate-900 dark:text-white">🔗 진화 체계</span>
-                  <span class="text-[10px] font-bold tracking-widest text-blue-600/70 dark:text-blue-400/70 font-mono">EVOLUTION</span>
-                  ${d.hasDexEvo ? `
-                    <span class="ml-auto self-center flex p-0.5 rounded-lg bg-slate-100 dark:bg-slate-900 border border-blue-200/60 dark:border-blue-900/60 text-[11px] font-bold">
-                      <button onclick="setEvoMode('dex')" class="touch-press px-2.5 py-1 rounded-md transition ${evoMode === 'dex' ? 'bg-[#004ce8] text-white' : 'text-slate-500 dark:text-slate-400'}">도감</button>
-                      <button onclick="setEvoMode('all')" class="touch-press px-2.5 py-1 rounded-md transition ${evoMode === 'all' ? 'bg-[#004ce8] text-white' : 'text-slate-500 dark:text-slate-400'}">전체</button>
-                    </span>` : `<span class="ml-auto text-[10px] font-medium text-slate-400">탭하면 이동</span>`}
-                </h3>
-
-                ${d.hasDexEvo && evoMode === 'dex' ? renderDexEvolutions(d) : `
-                ${d.isTerminal ? `
-                  <div class="p-3 rounded-2xl bg-blue-50 dark:bg-blue-950/50 border border-blue-200 dark:border-blue-800/80 text-xs flex items-center gap-2.5">
-                    <span class="text-lg">⚡</span>
-                    <div>
-                      <p class="font-extrabold text-blue-800 dark:text-blue-300">최종 진화 형태</p>
-                      <p class="text-[11px] text-slate-500 dark:text-slate-400 mt-0.5">Digi-API에 등록된 다음 진화가 없는 최종 형태입니다.</p>
-                    </div>
-                  </div>
-                ` : renderEvoRow('진화 가능 디지몬', d.nextEvolutions)}
-
-                ${renderEvoRow('진화 전 형태', d.priorEvolutions)}
-
-                ${renderWarpPanel(d)}
-                `}
-              </div>
-            ` : ''}
-
           </div>
         </article>
       `;

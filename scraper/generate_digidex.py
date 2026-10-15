@@ -294,9 +294,6 @@ def translate_digimon_name(raw_name: str):
     return final_ko, final_ja, list(dict.fromkeys(aliases))
 
 
-EVOLUTIONS_FILE = "data/digimon_evolutions.json"  # 점검용 (웹앱에서는 사용하지 않음)
-
-
 def fetch_detail(session, digi_id):
     url = f"https://digi-api.com/api/v1/digimon/{digi_id}"
     for attempt in range(3):
@@ -307,14 +304,6 @@ def fetch_detail(session, digi_id):
     return None
 
 
-def compact_evolutions(detail):
-    def pack(evs):
-        out = []
-        for e in evs or []:
-            cond = (e.get("condition") or "").strip()
-            out.append([e.get("id"), e.get("digimon"), cond] if cond else [e.get("id"), e.get("digimon")])
-        return out
-    return {"p": pack(detail.get("priorEvolutions")), "n": pack(detail.get("nextEvolutions"))}
 
 
 def write_index(master_list):
@@ -369,7 +358,6 @@ def fetch_and_build_all_index(with_levels=True):
 
     existing = load_existing_index()
     master_list = []
-    evolutions = {}
     for i, item in enumerate(items):
         digi_id = item["id"]
         level = existing.get(digi_id, {}).get("level")
@@ -378,7 +366,6 @@ def fetch_and_build_all_index(with_levels=True):
             if detail:
                 levels = detail.get("levels") or []
                 level = levels[0]["level"] if levels else level
-                evolutions[str(digi_id)] = compact_evolutions(detail)
             time.sleep(0.05)
         master_list.append(build_entry(digi_id, item["name"], item.get("image"), level))
         if (i + 1) % 100 == 0:
@@ -386,11 +373,6 @@ def fetch_and_build_all_index(with_levels=True):
 
     print(f"Built master index with {len(master_list)} entries.")
     write_index(master_list)
-    if evolutions:
-        os.makedirs(os.path.dirname(EVOLUTIONS_FILE), exist_ok=True)
-        with open(EVOLUTIONS_FILE, "w", encoding="utf-8") as f:
-            json.dump(evolutions, f, ensure_ascii=False, separators=(",", ":"))
-        print(f"Saved evolutions for {len(evolutions)} Digimon to {EVOLUTIONS_FILE}")
 
 
 if __name__ == "__main__":

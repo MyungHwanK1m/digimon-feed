@@ -5,9 +5,6 @@ on:
   schedule:
     # 매주 화요일 03:23 UTC (공식 신규 디지몬 반영)
     - cron: '23 3 * * 2'
-  push: # (임시) 작업 브랜치에서 첫 수집 실행
-    branches: [claude/tender-davinci-dcqvn9]
-    paths: ['scraper/collect_official.py', '.github/workflows/collect-official.yml']
 
 permissions:
   contents: write
@@ -24,11 +21,14 @@ jobs:
       - run: pip install -r scraper/requirements.txt
       - name: Collect official reference (basic info only)
         run: python scraper/collect_official.py
+      - name: Rebuild dex data
+        run: python scraper/build_dex.py
+
       - name: Commit if changed
         run: |
           git config --global user.name "DigiBot"
           git config --global user.email "digibot@users.noreply.github.com"
-          git add data/official
+          git add data/official public/data/dex.json docs/data/dex.json
           if git diff --staged --quiet; then
             echo "No changes."
           else
