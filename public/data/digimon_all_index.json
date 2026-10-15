@@ -2571,10 +2571,10 @@
     {
       "id": 225,
       "name": "Pyocomon",
-      "name_ko": "어니언몬",
+      "name_ko": "어니몬",
       "name_ja_ko": "표코몬",
       "aliases": [
-        "어니언몬",
+        "어니몬",
         "표코몬",
         "요코몬",
         "Pyocomon"
@@ -2828,9 +2828,10 @@
     {
       "id": 248,
       "name": "Hououmon",
-      "name_ko": "Hououmon",
-      "name_ja_ko": "Hououmon",
+      "name_ko": "호우오몬",
+      "name_ja_ko": "호우오몬",
       "aliases": [
+        "호우오몬",
         "Hououmon"
       ],
       "image": "https://digi-api.com/images/digimon/w/Hououmon.png",
@@ -3476,9 +3477,10 @@
     {
       "id": 305,
       "name": "Fladramon",
-      "name_ko": "플레이드라몬",
+      "name_ko": "화염드라몬",
       "name_ja_ko": "플레이드라몬",
       "aliases": [
+        "화염드라몬",
         "플레이드라몬",
         "플라드라몬",
         "Fladramon"
@@ -3559,9 +3561,10 @@
     {
       "id": 312,
       "name": "Lighdramon",
-      "name_ko": "라이드라몬",
+      "name_ko": "번개드라몬",
       "name_ja_ko": "라이드라몬",
       "aliases": [
+        "번개드라몬",
         "라이드라몬",
         "Lighdramon"
       ],
@@ -4001,9 +4004,11 @@
     {
       "id": 351,
       "name": "Vikemon",
-      "name_ko": "Vikemon",
-      "name_ja_ko": "Vikemon",
+      "name_ko": "바이킹몬",
+      "name_ja_ko": "바이크몬",
       "aliases": [
+        "바이킹몬",
+        "바이크몬",
         "Vikemon"
       ],
       "image": "https://digi-api.com/images/digimon/w/Vikemon.png",
@@ -4061,11 +4066,11 @@
     {
       "id": 356,
       "name": "Wormmon",
-      "name_ko": "츄츄몬",
+      "name_ko": "추추몬",
       "name_ja_ko": "웜몬",
       "aliases": [
-        "츄츄몬",
         "추추몬",
+        "츄츄몬",
         "웜몬",
         "Wormmon"
       ],
@@ -14541,10 +14546,12 @@
     {
       "id": 1290,
       "name": "Hououmon (X-Antibody)",
-      "name_ko": "Hououmon (X-Antibody)",
-      "name_ja_ko": "Hououmon (X-Antibody)",
+      "name_ko": "호우오몬 (X항체)",
+      "name_ja_ko": "호우오몬 (X항체)",
       "aliases": [
-        "Hououmon (X-Antibody)"
+        "Hououmon (X-Antibody)",
+        "호우오몬",
+        "호우오몬 (X항체)"
       ],
       "image": "https://digi-api.com/images/digimon/w/Hououmon_(X-Antibody).png",
       "level": "Ultimate"

@@ -239,7 +239,7 @@
           type="search" 
           id="dex-search-input" 
           oninput="handleDexSearch(this.value)"
-          placeholder="디지몬 이름 검색 (한글/일어원칭/영문... 예: 가부몬, 츄츄몬, 아구몬)" 
+          placeholder="디지몬 이름 검색 (한글/일어원칭/영문... 예: 가부몬, 추추몬, 아구몬)" 
           class="w-full pl-10 pr-9 py-2.5 text-sm rounded-2xl bg-white/90 dark:bg-[#070e22]/90 border border-blue-200 dark:border-blue-900/60 focus:outline-none focus:border-[#004ce8] dark:focus:border-blue-400 text-slate-900 dark:text-slate-100 placeholder:text-slate-400 dark:placeholder:text-slate-500 transition shadow-sm backdrop-blur"
         />
         <button id="dex-clear-search-btn" onclick="clearDexSearch()" class="hidden absolute right-3 top-1/2 -translate-y-1/2 text-blue-500 hover:text-blue-700 p-1 text-xs">✕</button>
@@ -922,14 +922,16 @@
         return;
       }
 
+      q = String(q).trim().toLowerCase();
       // 인덱스에서 매칭되는 첫 번째 디지몬 선택 (한글, 일어원칭, 영문, 별칭 포괄)
+      // 변종(카오스듀크몬 등)도 기본형 이름을 별칭으로 가지므로 이름 일치를 별칭 일치보다 먼저 검사
       const matched = masterIndex.find(d => {
         const koMatch = d.name_ko && d.name_ko.toLowerCase() === q;
         const jaMatch = d.name_ja_ko && d.name_ja_ko.toLowerCase() === q;
         const enMatch = d.name && d.name.toLowerCase() === q;
-        const aliasMatch = (d.aliases || []).some(a => a.toLowerCase() === q);
-        return koMatch || jaMatch || enMatch || aliasMatch;
-      }) || masterIndex.find(d => {
+        return koMatch || jaMatch || enMatch;
+      }) || masterIndex.find(d => (d.aliases || []).some(a => a.toLowerCase() === q))
+        || masterIndex.find(d => {
         return (d.name_ko && d.name_ko.toLowerCase().includes(q)) || 
                (d.name_ja_ko && d.name_ja_ko.toLowerCase().includes(q)) ||
                (d.name && d.name.toLowerCase().includes(q)) ||
@@ -1055,6 +1057,105 @@
       'slime': '슬라임형',
       'amphibian': '양서류형',
       'composite': '합성형',
+      // Digi-API /type 전체 목록(150종) 기준 추가분
+      'alien': '에일리언형',
+      'space alien': '우주인형',
+      'ancient': '고대형',
+      'ancient aquatic beast man': '고대수생수인형',
+      'ancient bird man': '고대조인형',
+      'ancient crustacean': '고대갑각류형',
+      'ancient dragon man': '고대용인형',
+      'ancient mutation': '고대변이형',
+      'ancient mythical beast': '고대환수형',
+      'ancient ore': '고대광석형',
+      'ankylosaur': '곡룡형',
+      'ceratopsian': '각룡형',
+      'plesiosaur': '수장룡형',
+      'pterosaur': '익룡형',
+      'stegosaur': '검룡형',
+      'aquatic beast man': '수생수인형',
+      'aquatic mammal': '수생포유류형',
+      'mammal': '포유류형',
+      'armor': '아머형',
+      'artificial fallen angel': '인조타천사형',
+      'avatar': '화신형',
+      'baby dragon': '아기용형',
+      'small dragon': '소룡형',
+      'beast dragon': '수룡형',
+      'dark dragon': '암흑룡형',
+      'devil dragon': '악마룡형',
+      'evil dragon': '사룡형',
+      'earth dragon': '지룡형',
+      'flame dragon': '염룡형',
+      'holy dragon': '성룡형',
+      'light dragon': '광룡형',
+      'mythical dragon': '환룡형',
+      'ocean dragon': '해룡형',
+      'rock dragon': '암룡형',
+      'sky dragon': '천룡형',
+      'dragon warrior': '용전사형',
+      'beast knight': '수기사형',
+      'dark knight': '암흑기사형',
+      'magic knight': '마법기사형',
+      'magic warrior': '마법전사형',
+      'bewitching beast': '요수형',
+      'bewitching bird': '요조형',
+      'god beast': '신수형',
+      'rare beast': '희수형',
+      'marine beast': '해수형',
+      'synthetic beast': '합성수형',
+      'holy bird': '성조형',
+      'small bird': '소조형',
+      'chick': '병아리형',
+      'braun': '브라운형',
+      'bulb': '구근형',
+      'seed': '씨앗형',
+      'insectivorous plant': '식충식물형',
+      'card': '카드형',
+      'demon god': '마신형',
+      'wicked god': '사신형',
+      'god man': '신인형',
+      'small devil': '소악마형',
+      'small angel': '소천사형',
+      'dominion': '주천사형',
+      'virtue': '역천사형',
+      'power': '능천사형',
+      'ophan': '좌천사형',
+      'enhancement': '강화형',
+      'flame': '화염형',
+      'food': '음식형',
+      'galaxy': '은하형',
+      'holy sword': '성검형',
+      'hybrid': '하이브리드형',
+      'ice-snow': '빙설형',
+      'invade': '침략형',
+      'lcd': '액정형',
+      'major': '메이저형',
+      'super major': '슈퍼메이저형',
+      'minor': '마이너형',
+      'marine man': '해인형',
+      'reptile man': '파충인형',
+      'mine': '기뢰형',
+      'monk': '승려형',
+      'musical instrument': '악기형',
+      'mutation': '변이형',
+      'navigation': '내비게이션형',
+      'oni': '오니형',
+      'ore': '광석형',
+      'parasite': '기생형',
+      'perfect': '퍼펙트형',
+      'shellfish': '패류형',
+      'skeleton': '해골형',
+      'spirit': '정령형',
+      'tathāgata': '여래형',
+      'toy': '장난감형',
+      'tropical fish': '열대어형',
+      'weapon': '무기형',
+      'unique': '유니크형',
+      'unbalanced': '언밸런스형',
+      'unanalyzable': '해석불능',
+      'species unknown': '종족불명',
+      'no data': '데이터 없음',
       'unknown': '불명'
     };
     // 긴 키부터 검사해야 "Demon Beast"가 "beast"에 먼저 걸리지 않음
@@ -1071,7 +1172,7 @@
     // prior/next 중 지정된 쪽만 API 데이터 대신 사용, terminal: true 는 최종 형태
     const CANONICAL_LINES = {
       'Koromon': { prior: ['Botamon'], next: ['Agumon'] },
-      'Agumon': { prior: ['Koromon'], next: ['Greymon', 'Tyranomon'] },
+      'Agumon': { prior: ['Koromon'], next: ['Greymon'] },
       'Agumon (2006 Anime Version)': { prior: ['Koromon'], next: ['Geo Greymon'] },
       'Agumon (Black)': { prior: ['Koromon'] },
       'Greymon': { prior: ['Agumon'], next: ['Metal Greymon'] },
@@ -1093,6 +1194,8 @@
       'Chibimon': { next: ['V-mon'] },
       'V-mon': { prior: ['Chibimon'], next: ['XV-mon', 'Fladramon', 'Lighdramon'] },
       'XV-mon': { prior: ['V-mon'], next: ['Paildramon'] },
+      'Fladramon': { prior: ['V-mon'] },
+      'Lighdramon': { prior: ['V-mon'] },
       'Paildramon': { prior: ['XV-mon', 'Stingmon'], jogress: true, next: ['Imperialdramon(Dragon Mode)'] },
       'Imperialdramon(Dragon Mode)': { prior: ['Paildramon'], next: ['Imperialdramon(Fighter Mode)'] },
       'Imperialdramon(Fighter Mode)': { prior: ['Imperialdramon(Dragon Mode)'], next: ['Imperialdramon(Paladin Mode)'] },
@@ -1127,12 +1230,13 @@
     const CANONICAL_BY_NORM = Object.fromEntries(Object.entries(CANONICAL_LINES).map(([k, v]) => [normName(k), v]));
 
     // Digi-API condition 예: "with Garurumon"(조그레스), "with or without ..."(선택), "with X Eraser"(아이템),
-    // "with the Human Spirit of Fire", "Warp Evolution" → 조그레스는 "with <디지몬>" 형태만 인정
-    const NON_JOGRESS_HINTS = ['evolution', 'spirit', 'eraser', 'digitron', 'blade', 'proud', 'antibody', 'crest', 'item'];
+    // "with the Human Spirit of Fire", "with the Digimental of Courage", "Warp Evolution" → 조그레스는 "with <디지몬>" 형태만 인정
+    // ("with the ..."는 실제 데이터에서 전부 아이템·스피릿·디지멘탈)
+    const NON_JOGRESS_HINTS = ['evolution', 'spirit', 'eraser', 'digitron', 'digimental', 'yggdrasill', 'blade', 'proud', 'crest', 'item'];
     function isJogressCondition(cond) {
       const c = String(cond || '').toLowerCase().trim();
       if (c.includes('jogress')) return true;
-      if (!c.startsWith('with ') || c.startsWith('with or without')) return false;
+      if (!c.startsWith('with ') || c.startsWith('with or without') || c.startsWith('with the ')) return false;
       return !NON_JOGRESS_HINTS.some(h => c.includes(h));
     }
 
@@ -1199,7 +1303,11 @@
       const nextCards = dedupe(next);
       const isTerminal = canon.terminal === true || (nextCards.length === 0 && (curRank || 0) >= LEVEL_RANK['궁극체']);
 
-      return { isTerminal, prior: dedupe(prior), next: nextCards };
+      // 같은 단계끼리는 API가 양방향으로 넣는 경우가 있음 (알파몬 ↔ 알파몬 왕룡검) → 다음 진화에 있으면 진화 전에서 제외
+      const nextKeys = new Set(nextCards.map(ev => normName(ev.digimon)));
+      const priorCards = dedupe(prior).filter(ev => canon.prior || !nextKeys.has(normName(ev.digimon)));
+
+      return { isTerminal, prior: priorCards, next: nextCards };
     }
 
     // Client-side Profile & Skill Translator (MyMemory 무료 API: 요청당 500자 제한 → 문장 단위로 나눠 번역)
