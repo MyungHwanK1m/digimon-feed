@@ -1,0 +1,43 @@
+name: Build Digi-Dex Index
+
+on:
+  workflow_dispatch: # Actions 탭에서 수동 실행
+  schedule:
+    # 매주 월요일 03:17 UTC (신규 디지몬·레벨 정보 갱신)
+    - cron: '17 3 * * 1'
+
+permissions:
+  contents: write
+
+jobs:
+  build-index:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r scraper/requirements.txt
+
+      - name: Build master index (names + levels from Digi-API)
+        run: python scraper/generate_digidex.py
+
+      - name: Commit and push if index changed
+        run: |
+          git config --global user.name "DigiBot"
+          git config --global user.email "digibot@users.noreply.github.com"
+          git add docs/data/digimon_all_index.json public/data/digimon_all_index.json
+          if git diff --staged --quiet; then
+            echo "No changes in digidex index."
+          else
+            git commit -m "chore(digidex): rebuild master index with levels [skip ci]"
+            git pull --rebase origin "${GITHUB_REF_NAME}"
+            git push
+          fi
