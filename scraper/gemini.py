@@ -40,8 +40,10 @@ def _list_flash_models():
     r.raise_for_status()
     names = [m["name"].split("/", 1)[1] for m in r.json().get("models", [])
              if "generateContent" in m.get("supportedGenerationMethods", [])]
-    flash = [n for n in names if re.fullmatch(r"gemini-[\d.]+-flash", n)]
-    return sorted(flash, key=lambda n: [int(x) for x in re.findall(r"\d+", n)], reverse=True)
+    ver = lambda n: [int(x) for x in re.findall(r"\d+", n)]
+    flash = sorted([n for n in names if re.fullmatch(r"gemini-[\d.]+-flash", n)], key=ver, reverse=True)
+    lite = sorted([n for n in names if re.fullmatch(r"gemini-[\d.]+-flash-lite", n)], key=ver, reverse=True)
+    return flash + lite  # 혼잡(503)·제한(404) 때 다음 후보로 넘어감
 
 
 def _pick_model(exclude=()):
@@ -90,7 +92,7 @@ PROMPT = """너는 디지몬 공식 도감 번역가다. 아래 JSON의 각 값�
 {payload}"""
 
 
-def translate_map(texts, glossary=None, retries=4):
+def translate_map(texts, glossary=None, retries=8):
     global _last_call
     texts = {k: v for k, v in texts.items() if v and v.strip()}
     if not texts:
@@ -106,7 +108,7 @@ def translate_map(texts, glossary=None, retries=4):
         "contents": [{"parts": [{"text": PROMPT.format(glossary=gl, payload=json.dumps(texts, ensure_ascii=False))}]}],
         "generationConfig": {"temperature": 0.2, "responseMimeType": "application/json"},
     }
-    tried = set()
+    tried, busy = set(), {}
     model = _pick_model()
     for attempt in range(retries):
         wait = _last_call + MIN_INTERVAL - time.time()
@@ -128,7 +130,20 @@ def translate_map(texts, glossary=None, retries=4):
             time.sleep(30 * (attempt + 1))
             continue
         if r.status_code >= 500:
-            print(f"  [gemini] HTTP {r.status_code}: {r.text[:200]}")
+            print(f"  [gemini] {model} HTTP {r.status_code}: {r.text[:160]}")
+            busy[model] = busy.get(model, 0) + 1
+            if busy[model] >= 2:  # 같은 모델이 계속 혼잡하면 다른 모델로
+                global _model
+                tried.add(model)
+                pref = _model
+                try:
+                    model = _pick_model(exclude=tried)
+                    print(f"  [gemini] → {model} (이번 요청만)")
+                    continue
+                except RuntimeError:
+                    pass
+                finally:
+                    _model = pref  # 다음 요청은 다시 기본(최신) 모델부터
             time.sleep(10 * (attempt + 1))
             continue
         if r.status_code == 404:
