@@ -1,8 +1,21 @@
 {
-  "last_updated": "2026-10-14 22:50:36",
-  "total_count": 44,
+  "last_updated": "2026-10-15 01:05:42",
+  "total_count": 43,
   "retention_days": 90,
   "feeds": [
+    {
+      "id": "42c1e0a22ab64cba752faac6c95a1a4d",
+      "title": "[r/digimon] in the middle of nowhere: keramon [ art by: tiredseapotato]",
+      "snippet": "one more to go in terms of the work in progresses!   &#32; submitted by &#32;  /u/tiredseapotao   [link] &#32; [co",
+      "source": "Reddit digimon",
+      "source_badge": "레딧",
+      "category": "sns",
+      "category_name": "SNS/해외",
+      "link": "https://www.reddit.com/r/digimon/comments/1x66as4/in_the_middle_of_nowhere_keramon_art_by/",
+      "image": "https://preview.redd.it/sx8aidp7oivh1.png?width=640&crop=smart&auto=webp&s=5548464541a1818f27ea53e40ac57ce9ffcc827a",
+      "timestamp": 1792020267,
+      "created_at": "2026-10-14 23:24"
+    },
     {
       "id": "f6c6423bfac5a4b6dc6f235acec4ed03",
       "title": "[r/digimon] Digimon Adventure: Mini Mini Chibi Plush Mascot Keychains Out in February 2027",
@@ -548,32 +561,6 @@
       "image": null,
       "timestamp": 1784629375,
       "created_at": "2026-07-21 10:22"
-    },
-    {
-      "id": "8edd842c9ae43754d54d74918ef4b336",
-      "title": "[반다이식완] 디지몬 디지바이스 패키지 참 & 비스킷",
-      "snippet": "루리웹 피규어/프라모델/굿즈 정보 게시판 소식입니다.",
-      "source": "루리웹 모형정보",
-      "source_badge": "루리웹",
-      "category": "figure",
-      "category_name": "피규어/굿즈",
-      "link": "https://bbs.ruliweb.com/family/242/board/300017/read/2428778?search_type=subject&search_key=%EB%94%94%EC%A7%80%EB%AA%AC",
-      "image": null,
-      "timestamp": 1784246400,
-      "created_at": "2026-07-17 00:00"
-    },
-    {
-      "id": "4b600d5e6d31cb075e3fbac23af820b8",
-      "title": "[반다이식완] 디지몬 디지바이스 패키지 참 & 비스킷",
-      "snippet": "루리웹 피규어/프라모델/굿즈 정보 게시판 소식입니다.",
-      "source": "루리웹 모형정보",
-      "source_badge": "루리웹",
-      "category": "figure",
-      "category_name": "피규어/굿즈",
-      "link": "https://bbs.ruliweb.com/family/242/board/300017/read/2428778?search_type=subject&search_key=%EB%94%94%EC%A7%80%EB%B0%94%EC%9D%B4%EC%8A%A4",
-      "image": null,
-      "timestamp": 1784246400,
-      "created_at": "2026-07-17 00:00"
     }
   ]
 }
