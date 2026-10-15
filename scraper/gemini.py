@@ -23,7 +23,11 @@ _last_call = 0.0
 
 
 class QuotaExceeded(Exception):
-    pass
+    """일일 한도 — 오늘은 더 진행 불가"""
+
+
+class Busy(Exception):
+    """모든 모델이 혼잡하거나 응답 없음 — 잠시 후 다시 시도하면 됨"""
 
 
 def available():
@@ -162,4 +166,4 @@ def translate_map(texts, glossary=None, retries=8):
             print(f"  [gemini] 응답 해석 실패({e}): {r.text[:300]}")
             continue
         return {k: str(out[k]).strip() for k in texts if isinstance(out, dict) and out.get(k)}
-    raise QuotaExceeded("재시도 한도 초과")
+    raise Busy("재시도 한도 초과 (모델 혼잡 또는 응답 없음)")

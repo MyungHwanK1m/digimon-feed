@@ -29,7 +29,8 @@ OUT_DIRS = ["public/data/dex_ko", "docs/data/dex_ko"]
 DIGI_API = "https://digi-api.com/api/v1/digimon/"
 BATCH_CHARS = 3500
 BATCH_ITEMS = 6
-MAX_SKILLS = 6  # 앱에 보여주는 필살기 수와 맞춤
+MAX_SKILLS = 6
+TIME_BUDGET = 95 * 60  # 워크플로 제한(120분) 안에서 저장·커밋할 여유를 남김  # 앱에 보여주는 필살기 수와 맞춤
 
 
 def load(path, default):
@@ -127,6 +128,7 @@ def main():
     session = requests.Session()
     session.headers["User-Agent"] = "digimon-feed (fan project)"
     pending, done, chars = [], 0, 0
+    started = time.time()
 
     def flush():
         nonlocal pending, chars, done
@@ -142,7 +144,16 @@ def main():
         for api_id, _, _ in pending:  # 설명의 주인공 이름도 항상 용어집에 포함
             if api_id in own_names:
                 gl.setdefault(*own_names[api_id])
-        out = gemini.translate_map(texts, gl)
+        while True:
+            try:
+                out = gemini.translate_map(texts, gl)
+                break
+            except gemini.Busy as e:
+                # 무료 등급은 혼잡할 때 밀려남 → 시간 예산 안에서 쉬었다가 같은 묶음을 다시 시도
+                if time.time() - started > TIME_BUDGET:
+                    raise
+                print(f"  혼잡 — 3분 뒤 다시 시도 ({e})")
+                time.sleep(180)
         for api_id, src, h in pending:
             if src["profile"] and f"{api_id}.p" not in out:
                 print(f"  {api_id}: 프로필 번역 누락 — 다음에 다시")
@@ -159,7 +170,7 @@ def main():
 
     try:
         for api_id in todo:
-            if done + len(pending) >= max_n:
+            if done + len(pending) >= max_n or time.time() - started > TIME_BUDGET:
                 break
             src = fetch_source(session, api_id)
             time.sleep(0.1)
@@ -179,6 +190,8 @@ def main():
             pending.append((api_id, src, h))
             chars += size
         flush()
+    except gemini.Busy as e:
+        print(f"시간 예산 안에 혼잡이 풀리지 않음 — 저장 후 다음 실행 때 이어서: {e}")
     except gemini.QuotaExceeded as e:
         print(f"Gemini 한도 도달 — 여기까지 저장하고 다음 실행 때 이어서 진행: {e}")
     except RuntimeError as e:
