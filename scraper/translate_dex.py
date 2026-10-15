@@ -27,8 +27,8 @@ DEX_FILE = "public/data/dex.json"
 LEDGER = "data/translations/dex_ko.json"
 OUT_DIRS = ["public/data/dex_ko", "docs/data/dex_ko"]
 DIGI_API = "https://digi-api.com/api/v1/digimon/"
-BATCH_CHARS = 3500
-BATCH_ITEMS = 6
+BATCH_CHARS = 9000
+BATCH_ITEMS = 15  # 무료 등급은 요청 수(모델당 하루 약 20회)가 한계라 한 번에 많이 묶음
 MAX_SKILLS = 6
 TIME_BUDGET = 95 * 60  # 워크플로 제한(120분) 안에서 저장·커밋할 여유를 남김  # 앱에 보여주는 필살기 수와 맞춤
 
@@ -185,7 +185,7 @@ def main():
             size = len(src["profile"]) + sum(len(s["name"]) + len(s["desc"]) for s in src["skills"])
             if pending and (chars + size > BATCH_CHARS or len(pending) >= BATCH_ITEMS):
                 flush()
-                if done % 60 < BATCH_ITEMS:
+                if done % 45 < BATCH_ITEMS:
                     write_outputs(ledger)  # 중간 저장
             pending.append((api_id, src, h))
             chars += size

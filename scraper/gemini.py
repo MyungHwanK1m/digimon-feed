@@ -18,7 +18,6 @@ import requests
 API = "https://generativelanguage.googleapis.com/v1beta"
 MIN_INTERVAL = 6.5  # 무료 등급 분당 요청 제한(약 10회)에 맞춘 간격(초)
 
-_model = None
 _last_call = 0.0
 
 
@@ -50,24 +49,22 @@ def _list_flash_models():
     return flash + lite  # 혼잡(503)·제한(404) 때 다음 후보로 넘어감
 
 
-def _pick_model(exclude=()):
-    """GEMINI_MODEL 이 있으면 그것, 없으면 사용 가능한 최신 flash 모델"""
-    global _model
-    if _model and _model not in exclude:
-        return _model
-    wanted = os.environ.get("GEMINI_MODEL")
-    if wanted and wanted not in exclude:
-        _model = wanted
-        return _model
-    try:
-        flash = [n for n in _list_flash_models() if n not in exclude]
-    except Exception as e:
-        raise RuntimeError(f"모델 목록 조회 실패: {e}")
-    if not flash:
-        raise RuntimeError("사용 가능한 flash 모델이 없습니다")
-    _model = flash[0]
-    print(f"  [gemini] 모델: {_model}")
-    return _model
+_models = None
+_exhausted = set()  # 이번 실행에서 일일 한도에 걸렸거나 쓸 수 없는 모델 (무료 한도는 모델별로 따로 셈)
+
+
+def _candidates():
+    """GEMINI_MODEL(있으면) → 최신 flash → … → flash-lite 순서"""
+    global _models
+    if _models is None:
+        try:
+            listed = _list_flash_models()
+        except Exception as e:
+            raise RuntimeError(f"모델 목록 조회 실패: {e}")
+        wanted = os.environ.get("GEMINI_MODEL")
+        _models = ([wanted] if wanted else []) + [m for m in listed if m != wanted]
+        print(f"  [gemini] 후보 모델: {', '.join(_models)}")
+    return [m for m in _models if m not in _exhausted]
 
 
 TERMS_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "data", "translations", "terms.json")
@@ -96,7 +93,7 @@ PROMPT = """너는 디지몬 공식 도감 번역가다. 아래 JSON의 각 값�
 {payload}"""
 
 
-def translate_map(texts, glossary=None, retries=8):
+def translate_map(texts, glossary=None, retries=12):
     global _last_call
     texts = {k: v for k, v in texts.items() if v and v.strip()}
     if not texts:
@@ -112,9 +109,13 @@ def translate_map(texts, glossary=None, retries=8):
         "contents": [{"parts": [{"text": PROMPT.format(glossary=gl, payload=json.dumps(texts, ensure_ascii=False))}]}],
         "generationConfig": {"temperature": 0.2, "responseMimeType": "application/json"},
     }
-    tried, busy = set(), {}
-    model = _pick_model()
+    busy = {}
     for attempt in range(retries):
+        models = _candidates()
+        if not models:
+            raise QuotaExceeded("모든 모델이 오늘 한도에 도달")
+        # 이번 요청에서 두 번 이상 혼잡했던 모델은 건너뜀 (다 혼잡하면 그중 덜 실패한 모델)
+        model = min(models, key=lambda m: (busy.get(m, 0) >= 2, models.index(m)))
         wait = _last_call + MIN_INTERVAL - time.time()
         if wait > 0:
             time.sleep(wait)
@@ -122,39 +123,28 @@ def translate_map(texts, glossary=None, retries=8):
         try:
             r = requests.post(f"{API}/models/{model}:generateContent", headers=_headers(), json=body, timeout=300)
         except Exception as e:
-            print(f"  [gemini] 요청 오류: {e}")
-            time.sleep(5 * (attempt + 1))
+            print(f"  [gemini] {model} 요청 오류: {e}")
+            busy[model] = busy.get(model, 0) + 1
             continue
         if r.status_code == 429:
             msg = r.text
-            print(f"  [gemini] 429: {msg[:400]}")
-            # 일일 한도(PerDay)면 오늘은 그만, 분당 한도면 잠깐 쉬고 재시도
-            if "PerDay" in msg or "per day" in msg.lower():
-                raise QuotaExceeded(msg[:300])
+            if "PerDay" in msg or "per day" in msg.lower() or "free_tier_requests" in msg:
+                # 무료 등급 일일 한도는 모델마다 따로 → 다음 모델로
+                _exhausted.add(model)
+                print(f"  [gemini] {model} 오늘 한도 도달 → 다른 모델")
+                continue
+            print(f"  [gemini] {model} 분당 한도 — 잠시 대기")
             time.sleep(30 * (attempt + 1))
             continue
         if r.status_code >= 500:
-            print(f"  [gemini] {model} HTTP {r.status_code}: {r.text[:160]}")
             busy[model] = busy.get(model, 0) + 1
-            if busy[model] >= 2:  # 같은 모델이 계속 혼잡하면 다른 모델로
-                global _model
-                tried.add(model)
-                pref = _model
-                try:
-                    model = _pick_model(exclude=tried)
-                    print(f"  [gemini] → {model} (이번 요청만)")
-                    continue
-                except RuntimeError:
-                    pass
-                finally:
-                    _model = pref  # 다음 요청은 다시 기본(최신) 모델부터
-            time.sleep(10 * (attempt + 1))
+            print(f"  [gemini] {model} 혼잡(HTTP {r.status_code})")
+            if all(busy.get(m, 0) >= 2 for m in models):
+                time.sleep(20)
             continue
         if r.status_code == 404:
-            # 단종·신규 사용자 제한 모델 → 다음 최신 flash 모델로 교체
-            tried.add(model)
-            print(f"  [gemini] {model} 사용 불가 → 다른 모델 시도")
-            model = _pick_model(exclude=tried)
+            _exhausted.add(model)
+            print(f"  [gemini] {model} 사용 불가 → 다른 모델")
             continue
         if r.status_code != 200:
             raise RuntimeError(f"Gemini HTTP {r.status_code}: {r.text[:300]}")
