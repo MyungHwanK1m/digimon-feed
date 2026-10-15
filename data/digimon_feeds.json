@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-10-15 17:29:29",
-  "total_count": 94,
+  "last_updated": "2026-10-15 20:42:31",
+  "total_count": 96,
   "retention_days": 90,
   "feeds": [
     {
@@ -13,9 +13,48 @@
       "category_name": "피규어/굿즈",
       "link": "https://digimon.net/product/detail.php?item_type=1&id=956",
       "image": null,
-      "timestamp": 1792085365,
-      "created_at": "2026-10-15 17:29",
+      "timestamp": 1792096946,
+      "created_at": "2026-10-15 20:42",
       "title_ja": "デジタルモンスター WORLDMAKING ACRYLIC STAND ブースターver.5"
+    },
+    {
+      "id": "76b76972fc0a32667c20f620f68c9b50",
+      "title": "[인스타] 프롬푸딩 | AI 매거진 (@prom.pudding)",
+      "snippet": "인스타그램 디지몬 관련 공개 게시물입니다.",
+      "source": "Instagram",
+      "source_badge": "인스타그램",
+      "category": "sns",
+      "category_name": "SNS/해외",
+      "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE1zT0RzcFJBbS1HVWQ4Nnc2eXR3UHhnRWd5dzd3cElHUGhTb1pseTBuVzdEMm04dEdxdkYzT0VoZTRCM2tmcmtjY0NmN0hyYUR2?oc=5",
+      "image": null,
+      "timestamp": 1792094826,
+      "created_at": "2026-10-15 20:07"
+    },
+    {
+      "id": "f3391c47bffd1d3a3eabc0d52b78ebaf",
+      "title": "[r/digimon] Reina (Kakudrawmon)",
+      "snippet": "source- https://x.com/Kakudrawmon/status/2110807181998031189  &#32; submitted by &#32;  /u/Kakudrawmon   [link] &#",
+      "source": "Reddit digimon",
+      "source_badge": "레딧",
+      "category": "sns",
+      "category_name": "SNS/해외",
+      "link": "https://www.reddit.com/r/digimon/comments/1x6ue19/reina_kakudrawmon/",
+      "image": "https://preview.redd.it/i6gqq4k5iovh1.png?width=640&crop=smart&auto=webp&s=a0f83d85c39b1efda7883b97c649e6f123f8ac85",
+      "timestamp": 1792090859,
+      "created_at": "2026-10-15 19:00"
+    },
+    {
+      "id": "8e16fa4a273fe322a1926a8027b14b0d",
+      "title": "[r/digimon] Bearcatmon by artcetona",
+      "snippet": "SOURCE I am not the artist. If you like this art and want to see more like this please support the artist on their",
+      "source": "Reddit digimon",
+      "source_badge": "레딧",
+      "category": "figure",
+      "category_name": "피규어/굿즈",
+      "link": "https://www.reddit.com/r/digimon/comments/1x6sfl2/bearcatmon_by_artcetona/",
+      "image": "https://preview.redd.it/2306s48y4ovh1.jpeg?width=640&crop=smart&auto=webp&s=0372768eb0363864582a420321c9d67fab5d6fb1",
+      "timestamp": 1792086450,
+      "created_at": "2026-10-15 17:47"
     },
     {
       "id": "fb770fcbd51ebb14545c3a535f628cab",
@@ -354,19 +393,6 @@
       "image": "https://preview.redd.it/9shb1zjexgvh1.png?width=640&crop=smart&auto=webp&s=cf733081cff00544e63368c4e495846752ac7409",
       "timestamp": 1791999264,
       "created_at": "2026-10-14 17:34"
-    },
-    {
-      "id": "76b76972fc0a32667c20f620f68c9b50",
-      "title": "[인스타] 프롬푸딩 | AI 매거진 (@prom.pudding)",
-      "snippet": "인스타그램 디지몬 관련 공개 게시물입니다.",
-      "source": "Instagram",
-      "source_badge": "인스타그램",
-      "category": "sns",
-      "category_name": "SNS/해외",
-      "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE1zT0RzcFJBbS1HVWQ4Nnc2eXR3UHhnRWd5dzd3cElHUGhTb1pseTBuVzdEMm04dEdxdkYzT0VoZTRCM2tmcmtjY0NmN0hyYUR2?oc=5",
-      "image": null,
-      "timestamp": 1791995636,
-      "created_at": "2026-10-14 16:33"
     },
     {
       "id": "fbccec4e03f43b4a4cf8942255877a65",
