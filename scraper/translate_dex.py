@@ -118,6 +118,8 @@ def main():
     entries = load(DEX_FILE, {"digimons": []})["digimons"]
     glossary = build_glossary(entries)
     ledger = load(LEDGER, {})
+    own_names = {str(e["api_id"]): (e["api_name"], e["name"]) for e in entries
+                 if e.get("api_id") and e.get("api_name") and re.search(r"[가-힣]", e.get("name", ""))}
     ids = list(dict.fromkeys(str(e["api_id"]) for e in entries if e.get("api_id")))  # 공식 번호순 → EX
     todo = [i for i in ids if recheck or i not in ledger]
     print(f"대상 {len(todo)}종 (전체 {len(ids)}, 번역 완료 {len(ledger)})")
@@ -136,7 +138,11 @@ def main():
             for i, s in enumerate(src["skills"]):
                 texts[f"{api_id}.s{i}.n"] = s["name"]
                 texts[f"{api_id}.s{i}.d"] = s["desc"]
-        out = gemini.translate_map(texts, glossary_for(" ".join(texts.values()), glossary))
+        gl = glossary_for(" ".join(texts.values()), glossary)
+        for api_id, _, _ in pending:  # 설명의 주인공 이름도 항상 용어집에 포함
+            if api_id in own_names:
+                gl.setdefault(*own_names[api_id])
+        out = gemini.translate_map(texts, gl)
         for api_id, src, h in pending:
             if src["profile"] and f"{api_id}.p" not in out:
                 print(f"  {api_id}: 프로필 번역 누락 — 다음에 다시")

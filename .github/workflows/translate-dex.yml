@@ -9,6 +9,10 @@ on:
         description: '번역된 것도 원문 변경 확인'
         type: boolean
         default: false
+      max:
+        description: '이번 실행 최대 번역 수 (비우면 전부)'
+        type: string
+        default: ''
   schedule:
     - cron: '41 4 * * *'
 
@@ -33,7 +37,7 @@ jobs:
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GEMINI_MODEL: ${{ vars.GEMINI_MODEL }}
-        run: python scraper/translate_dex.py ${{ inputs.recheck && '--recheck' || '' }}
+        run: python scraper/translate_dex.py ${{ inputs.recheck && '--recheck' || '' }} ${{ inputs.max && format('--max {0}', inputs.max) || '' }}
       - name: Commit if changed
         run: |
           git config --global user.name "DigiBot"

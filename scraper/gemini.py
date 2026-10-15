@@ -58,12 +58,27 @@ def _pick_model():
     return _model
 
 
-PROMPT = """너는 디지몬 전문 번역가다. 아래 JSON의 각 값을 자연스러운 한국어로 번역해라.
-규칙:
-- 같은 키를 그대로 쓰고, 값만 한국어 번역으로 바꾼 JSON 객체 하나만 출력한다.
-- 디지몬 이름·용어는 아래 용어집을 반드시 따른다. 용어집에 없는 디지몬 이름은 한국 정발 표기(국내 방영·게임 표기)를 쓴다.
-- 일본어 원문의 상품명·작품명은 한국 정발명이 있으면 그것을, 없으면 자연스럽게 옮긴다. 가격·날짜·숫자는 바꾸지 않는다.
-- 설명을 덧붙이거나 줄이지 말고 원문 의미 그대로 옮긴다.
+TERMS_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "data", "translations", "terms.json")
+
+
+def load_terms():
+    """고정 용어집 (data/translations/terms.json, '_'로 시작하는 키는 메모)"""
+    try:
+        with open(TERMS_FILE, encoding="utf-8") as f:
+            return {k: v for k, v in json.load(f).items() if not k.startswith("_")}
+    except (OSError, ValueError):
+        return {}
+
+
+PROMPT = """너는 디지몬 공식 도감 번역가다. 아래 JSON의 각 값을 한국어로 번역해라. 원작 고증이 최우선이다.
+출력: 같은 키를 그대로 쓰고 값만 한국어 번역으로 바꾼 JSON 객체 하나만 출력한다.
+
+고증 규칙
+1. 디지몬 이름과 세계관 용어는 아래 용어집 표기를 반드시 그대로 쓴다. 용어집에 없는 디지몬 이름은 뜻을 풀어 의역하지 말고 일본 원작 이름을 한글로 옮긴다(공식 도감 방식).
+2. 진화 단계·속성은 용어집 표기만 쓴다(예: Ultimate는 '궁극체', Perfect는 '완전체', Vaccine은 '백신종'). 영어 더빙식 단계명으로 해석하지 않는다.
+3. 필살기 이름은 일본 원작 기술명을 확실히 아는 경우에만 그 한글 표기(예: Pepper Breath → 베이비 플레임)를 쓰고, 확실하지 않으면 영어 기술명을 그대로 한글 음역한다. 기술명을 지어내지 않는다.
+4. 원문에 없는 설정·정보를 덧붙이거나 빼지 않는다. 모호한 부분은 원문 그대로의 의미로 옮긴다.
+5. 문체: 도감 설명은 '~이다/~한다'체 평서문. 상품명·작품명은 한국 정발명이 있으면 그것을, 없으면 원문을 자연스럽게 옮기고 가격·날짜·숫자는 그대로 둔다.
 {glossary}
 번역할 JSON:
 {payload}"""
@@ -74,9 +89,13 @@ def translate_map(texts, glossary=None, retries=4):
     texts = {k: v for k, v in texts.items() if v and v.strip()}
     if not texts:
         return {}
+    joined = " ".join(texts.values())
+    # 대소문자 구분 + 단어 단위로만 찾음 (일반 단어 'data', 'free' 등이 용어로 잡히지 않도록)
+    terms = {k: v for k, v in load_terms().items() if re.search(rf"(?<![\w-]){re.escape(k)}(?![\w-])", joined)}
+    terms.update(glossary or {})
     gl = ""
-    if glossary:
-        gl = "용어집(영어/일본어 → 한국어):\n" + "\n".join(f"- {k} → {v}" for k, v in glossary.items())
+    if terms:
+        gl = "\n용어집(영어/일본어 → 한국어):\n" + "\n".join(f"- {k} → {v}" for k, v in terms.items())
     body = {
         "contents": [{"parts": [{"text": PROMPT.format(glossary=gl, payload=json.dumps(texts, ensure_ascii=False))}]}],
         "generationConfig": {"temperature": 0.2, "responseMimeType": "application/json"},

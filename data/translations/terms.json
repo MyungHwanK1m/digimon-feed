@@ -1,0 +1,18 @@
+{
+ "_note": "번역 고정 용어집 (영어/일본어 → 한국어). 공식 도감(digimon.net/reference_ko) 표기 기준. 고치면 다음 번역부터 반영 — 이미 번역된 항목은 translate-dex 를 recheck 로 돌리거나 data/translations/dex_ko.json 에서 해당 항목을 지우면 다시 번역됨",
+ "Baby I": "유년기 I", "Fresh": "유년기 I", "Baby II": "유년기 II", "In-Training": "유년기 II",
+ "Child": "성장기", "Rookie": "성장기", "Adult": "성숙기", "Champion": "성숙기",
+ "Perfect": "완전체", "Ultimate": "궁극체", "Mega": "궁극체",
+ "Armor": "아머체", "Hybrid": "하이브리드체",
+ "Vaccine": "백신종", "Data": "데이터종", "Virus": "바이러스종", "Free": "프리", "Variable": "배리어블",
+ "Digital World": "디지털 월드", "Real World": "현실 세계", "Dark Area": "다크 에어리어",
+ "Digicore": "디지코어", "Digi-Core": "디지코어", "Digitama": "디지타마", "Digi-Egg": "디지타마",
+ "Digimental": "디지멘탈", "X-Antibody": "X항체", "X Program": "X프로그램",
+ "Yggdrasil": "이그드라실", "Royal Knights": "로열나이츠", "Seven Great Demon Lords": "칠대마왕",
+ "Four Holy Beasts": "사성수", "Four Sovereigns": "사성수", "Olympos XII": "올림포스 12신", "Olympus XII": "올림포스 12신",
+ "Three Great Angels": "삼대천사", "Twelve Devas": "데바", "Deva": "데바",
+ "Digivolve": "진화", "Digivolution": "진화", "Warp Digivolve": "워프진화", "Jogress": "조그레스",
+ "DNA Digivolve": "조그레스 진화", "Armor Digivolve": "아머 진화", "Mode Change": "모드 체인지",
+ "Holy Ring": "홀리 링", "Chrome Digizoid": "크롬 데지조이드", "Digizoid": "데지조이드",
+ "Tamer": "테이머", "Digivice": "디지바이스", "Spirit": "스피릿"
+}
