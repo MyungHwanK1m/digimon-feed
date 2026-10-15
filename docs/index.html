@@ -1169,13 +1169,12 @@
       return key ? DIGI_TYPES_KO[key] : typ;
     }
 
-    // 원작 애니메이션 대표 진화 라인 (Digi-API 영문명 기준)
-    // 진화 목록 자체는 Digi-API 데이터를 그대로 쓰고, 여기 있는 원작 진화는 목록 맨 앞으로 정렬하는 데만 사용
+    // 원작 애니메이션(TV 본편) 파트너 진화 라인 — 작성 규칙과 전체 목록은 EVOLUTION.md 참고
+    // "애니" 보기에 그대로 표시되고, "전체" 보기(Digi-API 목록)에서는 맨 앞으로 정렬하는 데만 사용
     const CANONICAL_LINES = {
       'Koromon': { prior: ['Botamon'], next: ['Agumon'] },
       'Agumon': { prior: ['Koromon'], next: ['Greymon'] },
       'Agumon (2006 Anime Version)': { prior: ['Koromon'], next: ['Geo Greymon'] },
-      'Agumon (Black)': { prior: ['Koromon'] },
       'Greymon': { prior: ['Agumon'], next: ['Metal Greymon'] },
       'Metal Greymon': { prior: ['Greymon'], next: ['War Greymon'] },
       'War Greymon': { prior: ['Metal Greymon'], next: ['Omegamon'] },
@@ -1184,13 +1183,13 @@
       'Garurumon': { prior: ['Gabumon'], next: ['Were Garurumon'] },
       'Were Garurumon': { prior: ['Garurumon'], next: ['Metal Garurumon'] },
       'Metal Garurumon': { prior: ['Were Garurumon'], next: ['Omegamon'] },
-      'Omegamon': { prior: ['War Greymon', 'Metal Garurumon'], next: ['Omegamon(Merciful Mode)', 'Omegamon (X-Antibody)'] },
+      'Omegamon': { prior: ['War Greymon', 'Metal Garurumon'], next: ['Omegamon(Merciful Mode)'] },
       'Omegamon(Merciful Mode)': { prior: ['Omegamon'] },
       'Gigimon': { next: ['Guilmon'] },
       'Guilmon': { prior: ['Gigimon'], next: ['Growmon'] },
       'Growmon': { prior: ['Guilmon'], next: ['Megalo Growmon'] },
       'Megalo Growmon': { prior: ['Growmon'], next: ['Dukemon'] },
-      'Dukemon': { prior: ['Megalo Growmon'], next: ['Dukemon(Crimson Mode)', 'Dukemon (X-Antibody)'] },
+      'Dukemon': { prior: ['Megalo Growmon'], next: ['Dukemon(Crimson Mode)'] },
       'Dukemon(Crimson Mode)': { prior: ['Dukemon'] },
       'Chibimon': { next: ['V-mon'] },
       'V-mon': { prior: ['Chibimon'], next: ['XV-mon', 'Fladramon', 'Lighdramon'] },

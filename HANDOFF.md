@@ -3,6 +3,8 @@
 클라우드 세션에서는 네트워크 정책 때문에 `digi-api.com`, `wikimon.net` 등에 접속할 수 없어 일부 검증을 하지 못했습니다.
 PC(로컬)에서는 인터넷이 열려 있으므로 아래 순서대로 이어서 진행하면 됩니다.
 
+> 진화 표시 규칙과 원작 애니 라인 목록은 **[EVOLUTION.md](EVOLUTION.md)** 가 기준입니다.
+
 ## 1. 현재 상태
 
 - 작업 브랜치: `claude/tender-davinci-dcqvn9` (1차 작업은 PR #1로 main에 머지됨)
