@@ -652,7 +652,7 @@
     // PWA Service Worker (Blue Card v6 with auto-update)
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
-        navigator.serviceWorker.register('sw.js?v=10').then((reg) => {
+        navigator.serviceWorker.register('sw.js?v=11').then((reg) => {
           reg.update();
         }).catch(console.error);
 
@@ -837,6 +837,7 @@
       document.getElementById('dex-list-view').classList.add('hidden');
       document.getElementById('dex-detail-view').classList.remove('hidden');
       renderDexDetail(d);
+      loadDexExtras(d);
       window.scrollTo({ top: 0 });
     }
 
@@ -865,6 +866,138 @@
               </div>
             `).join('')}
           </div>
+        </div>
+      `;
+    }
+
+    // ---- 화면에서 바로 보는 보조 정보 ----
+    // 도감 설명·필살기: Digi-API 영문 설명을 자동 번역 (공식 문장은 저장하지 않으므로 공식 링크와 함께 제공)
+    // TCG 카드: digimoncard.io 공개 API (카드게임은 북미식 이름이라 일부 디지몬은 카드를 못 찾을 수 있음)
+    const dexExtraCache = {};
+    const translationCache = {};
+
+    async function translateChunk(chunk) {
+      if (translationCache[chunk]) return translationCache[chunk];
+      try {
+        const res = await fetch(`https://api.mymemory.translated.net/get?q=${encodeURIComponent(chunk)}&langpair=en|ko`);
+        if (res.ok) {
+          const data = await res.json();
+          const t = data && data.responseStatus === 200 && data.responseData && data.responseData.translatedText;
+          if (t) return (translationCache[chunk] = t);
+        }
+      } catch (_) {}
+      return null;
+    }
+
+    async function translateTextToKo(text) {
+      const clean = String(text || '').replace(/[\r\n]+/g, ' ').trim();
+      if (clean.length < 2) return clean;
+      const sentences = clean.match(/[^.!?]+[.!?]*\s*/g) || [clean];
+      const chunks = [];
+      let cur = '';
+      for (const sentence of sentences) {
+        if ((cur + sentence).length > 450 && cur) { chunks.push(cur.trim()); cur = ''; }
+        cur += sentence;
+      }
+      if (cur.trim()) chunks.push(cur.trim());
+      const out = [];
+      for (const c of chunks) {
+        const t = await translateChunk(c.slice(0, 480));
+        if (!t) return null; // 일부만 번역되면 원문 유지
+        out.push(t);
+      }
+      return out.join(' ');
+    }
+
+    function stillShowing(d) {
+      return dexState.selected === d.no;
+    }
+
+    async function loadDexExtras(d) {
+      loadDexDescription(d);
+      loadDexTcg(d);
+    }
+
+    async function loadDexDescription(d) {
+      const box = () => document.getElementById('dex-desc');
+      if (!d.api_id) return;
+      let info = dexExtraCache['api:' + d.api_id];
+      if (!info) {
+        try {
+          const res = await fetch(`https://digi-api.com/api/v1/digimon/${d.api_id}`);
+          if (!res.ok) throw new Error('api');
+          const api = await res.json();
+          const desc = (api.descriptions || []).find(x => x.language === 'en_us') || (api.descriptions || [])[0];
+          info = dexExtraCache['api:' + d.api_id] = {
+            profile: desc ? desc.description : '',
+            skills: (api.skills || []).map(s => ({ name: s.skill, desc: s.description || '' }))
+          };
+        } catch (_) {
+          if (stillShowing(d) && box()) box().innerHTML = '<p class="text-xs text-slate-400">도감 설명을 불러오지 못했습니다. 공식 도감 링크에서 확인해 주세요.</p>';
+          return;
+        }
+      }
+      if (!stillShowing(d) || !box()) return;
+      if (!info.profile && !info.skills.length) {
+        box().innerHTML = '<p class="text-xs text-slate-400">등록된 도감 설명이 없습니다.</p>';
+        return;
+      }
+      box().innerHTML = `
+        <h3 class="flex items-baseline gap-2">
+          <span class="text-sm font-black text-slate-900 dark:text-white">📖 도감 설명</span>
+          <span class="text-[10px] font-bold tracking-widest text-blue-600/70 dark:text-blue-400/70 font-mono">PROFILE</span>
+          <span class="ml-auto text-[10px] font-medium text-slate-400">자동 번역 · Digi-API</span>
+        </h3>
+        ${info.profile ? `<p id="dex-desc-profile" class="p-3.5 rounded-2xl bg-slate-900/95 text-slate-300 border border-blue-500/40 text-xs sm:text-[13px] leading-relaxed">${escapeHtml(info.profile)}</p>` : ''}
+        ${info.skills.length ? `
+          <div class="space-y-1.5">
+            <p class="text-[11px] font-bold text-slate-500 dark:text-slate-400">⚡ 필살기</p>
+            ${info.skills.slice(0, 6).map((sk, i) => `
+              <div class="p-2.5 rounded-xl bg-blue-50/60 dark:bg-blue-950/40 border border-blue-200/50 dark:border-blue-900/50">
+                <p class="text-[12px] font-black text-blue-600 dark:text-blue-400">${escapeHtml(sk.name)}</p>
+                ${sk.desc ? `<p id="dex-desc-skill-${i}" class="text-[11px] sm:text-[12px] text-slate-600 dark:text-slate-400 mt-0.5 leading-relaxed">${escapeHtml(sk.desc)}</p>` : ''}
+              </div>`).join('')}
+          </div>` : ''}
+        <p class="text-[10px] text-slate-400">원문은 영어이며 자동 번역이라 공식 표현과 다를 수 있습니다. 정확한 내용은 공식 도감에서 확인하세요.</p>
+      `;
+      const setText = (id, t) => { const el = document.getElementById(id); if (el && t && stillShowing(d)) el.textContent = t; };
+      if (info.profile) translateTextToKo(info.profile).then(t => setText('dex-desc-profile', t));
+      info.skills.slice(0, 6).forEach((sk, i) => { if (sk.desc) translateTextToKo(sk.desc).then(t => setText('dex-desc-skill-' + i, t)); });
+    }
+
+    async function loadDexTcg(d) {
+      const names = [...new Set([d.api_name, d.api_name && d.api_name.replace(/\s*\(.*?\)\s*/g, ' ').trim()].filter(Boolean))];
+      if (!names.length) return;
+      const key = 'tcg:' + names[0];
+      let cards = dexExtraCache[key];
+      if (!cards) {
+        cards = [];
+        for (const n of names) {
+          try {
+            const res = await fetch(`https://digimoncard.io/api-public/search.php?n=${encodeURIComponent(n)}`);
+            if (!res.ok) continue;
+            const data = await res.json();
+            if (!Array.isArray(data)) continue;
+            const want = n.toLowerCase().replace(/[^a-z0-9]/g, '');
+            cards = data.filter(c => c.id && String(c.name || '').toLowerCase().replace(/[^a-z0-9]/g, '') === want);
+            if (cards.length) break;
+          } catch (_) {}
+        }
+        dexExtraCache[key] = cards;
+      }
+      const box = document.getElementById('dex-tcg');
+      if (!stillShowing(d) || !box || !cards.length) return;
+      box.classList.remove('hidden');
+      box.innerHTML = `
+        <p class="text-[11px] font-bold text-slate-500 dark:text-slate-400">🃏 TCG 카드 <span class="text-slate-400 font-medium">${cards.length}</span> <span class="font-normal text-slate-400">· 탭하면 크게 보기</span></p>
+        <div class="flex gap-2 overflow-x-auto pb-1.5 no-scrollbar">
+          ${cards.slice(0, 20).map(c => {
+            const url = `https://images.digimoncard.io/images/cards/${encodeURIComponent(c.id)}.jpg`;
+            return `<a href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer" class="shrink-0 touch-press">
+              <img src="${escapeHtml(url)}" alt="${escapeHtml(c.id)}" loading="lazy" class="h-36 sm:h-44 rounded-lg border border-blue-200/60 dark:border-blue-900/60 shadow-sm" onerror="this.closest('a').remove()">
+              <span class="block text-center text-[9px] text-slate-400 font-mono mt-0.5">${escapeHtml(c.id)}</span>
+            </a>`;
+          }).join('')}
         </div>
       `;
     }
@@ -909,6 +1042,12 @@
                 </span>
                 <span class="text-lg">↗</span>
               </a>` : ''}
+
+            <div id="dex-tcg" class="hidden space-y-1.5"></div>
+
+            <div id="dex-desc" class="${d.api_id ? '' : 'hidden'} space-y-3">
+              ${d.api_id ? '<p class="text-xs text-slate-400 animate-pulse">도감 설명을 불러오는 중…</p>' : ''}
+            </div>
 
             <div class="space-y-3 pt-1">
               <h3 class="flex items-baseline gap-2">

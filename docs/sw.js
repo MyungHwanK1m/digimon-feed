@@ -1,5 +1,5 @@
-// DIGI-FEED v10 (official-reference dex)
-const CACHE_NAME = 'digi-feed-v10';
+// DIGI-FEED v11 (dex: translated profile, TCG cards)
+const CACHE_NAME = 'digi-feed-v11';
 const ASSETS = [
   './',
   './index.html',
