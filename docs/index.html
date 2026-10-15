@@ -741,7 +741,14 @@
       else showDexList();
     }
 
-    window.addEventListener('popstate', () => applyRoute(routeFromHash()));
+    // 스크롤 위치는 직접 관리 (브라우저 자동 복원이 상세·목록 위치를 엉뚱하게 바꾸지 않도록)
+    if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+    let feedScroll = 0;
+    window.addEventListener('popstate', () => {
+      const route = routeFromHash();
+      applyRoute(route);
+      if (route.view === 'feed') requestAnimationFrame(() => window.scrollTo({ top: feedScroll }));
+    });
 
     // View Switching: [📡 실시간 피드] <-> [📖 디지몬 도감]
     function switchView(view) {
@@ -751,6 +758,7 @@
     }
 
     function showView(view) {
+      if (currentView === 'feed' && view !== 'feed') feedScroll = window.scrollY; // 피드로 돌아올 때 위치 복원
       currentView = view;
       const feedTab = document.getElementById('view-tab-feed');
       const dexTab = document.getElementById('view-tab-dex');
