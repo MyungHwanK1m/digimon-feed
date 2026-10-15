@@ -189,7 +189,7 @@ def classify_category(title: str, default_cat: str = "general", source_badge: st
         return "game", "게임/공식애니"
 
     # [5순위] 소스 기반 매핑
-    if source_badge in ["레딧", "X(트위터)", "유튜브"]:
+    if source_badge in ["레딧", "X(트위터)", "유튜브", "인스타그램"]:
         return "sns", "SNS/해외"
     if source_badge == "디시":
         return "community", "커뮤니티"
@@ -496,6 +496,47 @@ def crawl_twitter_digimon():
         print(f"[Error] Twitter crawling failed: {e}")
     return items
 
+def crawl_instagram_digimon():
+    """인스타그램은 비로그인 접근이 막혀 있어(로그인 페이지로 리다이렉트) 구글뉴스 site: 검색으로 공개 게시물을 수집"""
+    items = []
+    queries = [
+        "site:instagram.com 디지몬",
+        "site:instagram.com digimon",
+        "site:instagram.com 디지몬 카드",
+    ]
+    seen = set()
+    for q in queries:
+        feed_url = f"https://news.google.com/rss/search?q={requests.utils.quote(q)}&hl=ko&gl=KR&ceid=KR:ko"
+        try:
+            feed = feedparser.parse(feed_url)
+            for entry in feed.entries[:20]:
+                link = entry.link
+                if link in seen:
+                    continue
+                seen.add(link)
+                title = re.sub(r"\s*[-•|]\s*Instagram.*$", "", entry.title).strip()
+                if not title:
+                    continue
+                published = getattr(entry, "published", "")
+                ts = parse_to_timestamp(published)
+                category, cat_name = classify_category(title, "sns", "인스타그램")
+                items.append({
+                    "id": get_hash_id(link),
+                    "title": f"[인스타] {title}",
+                    "snippet": "인스타그램 디지몬 관련 공개 게시물입니다.",
+                    "source": "Instagram",
+                    "source_badge": "인스타그램",
+                    "category": category,
+                    "category_name": cat_name,
+                    "link": link,
+                    "image": None,
+                    "timestamp": ts,
+                    "created_at": format_display_date(ts)
+                })
+        except Exception as e:
+            print(f"[Error] Instagram crawling failed ({q}): {e}")
+    return items
+
 def main():
     print(f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] Starting Digimon feeds crawl...")
     all_new_items = []
@@ -523,6 +564,9 @@ def main():
 
     print("8. Crawling Twitter (X)...")
     all_new_items.extend(crawl_twitter_digimon())
+
+    print("9. Crawling Instagram (via Google News)...")
+    all_new_items.extend(crawl_instagram_digimon())
 
     print(f"Total fetched: {len(all_new_items)} items")
 

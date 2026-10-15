@@ -26,9 +26,6 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r scraper/requirements.txt
 
-      - name: (temp) Probe Instagram via public search feeds
-        run: python scraper/probe_instagram.py || true
-
       - name: Build master index (names + levels from Digi-API)
         run: python scraper/generate_digidex.py
 

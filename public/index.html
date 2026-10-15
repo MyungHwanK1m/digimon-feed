@@ -382,7 +382,7 @@
     function cleanTitle(rawTitle) {
       if (!rawTitle) return '';
       return rawTitle
-        .replace(/^\[(r\/digimon|r\/디지카|트윗|영상|해외공식|국내공식|뉴스)\]\s*/i, '')
+        .replace(/^\[(r\/digimon|r\/디지카|트윗|인스타|영상|해외공식|국내공식|뉴스)\]\s*/i, '')
         .replace(/^【[^】]+】\s*/, '')
         .trim();
     }
@@ -469,7 +469,7 @@
         if (currentCategory === 'all') {
           matchesCat = true;
         } else if (currentCategory === 'sns') {
-          matchesCat = item.category === 'sns' || ['레딧', 'X(트위터)', '유튜브', '공식/글로벌'].includes(item.source_badge);
+          matchesCat = item.category === 'sns' || ['레딧', 'X(트위터)', '유튜브', '인스타그램', '공식/글로벌'].includes(item.source_badge);
         } else {
           matchesCat = item.category === currentCategory;
         }
@@ -511,6 +511,8 @@
           ? 'bg-cyan-500/15 text-cyan-600 dark:text-cyan-400 border-cyan-500/40'
           : item.source_badge === 'X(트위터)'
           ? 'bg-sky-500/15 text-sky-600 dark:text-sky-400 border-sky-500/40'
+          : item.source_badge === '인스타그램'
+          ? 'bg-pink-500/15 text-pink-600 dark:text-pink-400 border-pink-500/40'
           : item.source_badge === '유튜브'
           ? 'bg-rose-500/15 text-rose-600 dark:text-rose-400 border-rose-500/40'
           : item.source_badge === '공식/글로벌'
@@ -1168,8 +1170,8 @@
       return key ? DIGI_TYPES_KO[key] : typ;
     }
 
-    // 원작 애니메이션 대표 진화 라인 (Digi-API 영문명 기준, ID·한글명은 인덱스에서 조회)
-    // prior/next 중 지정된 쪽만 API 데이터 대신 사용, terminal: true 는 최종 형태
+    // 원작 애니메이션 대표 진화 라인 (Digi-API 영문명 기준)
+    // 진화 목록 자체는 Digi-API 데이터를 그대로 쓰고, 여기 있는 원작 진화는 목록 맨 앞으로 정렬하는 데만 사용
     const CANONICAL_LINES = {
       'Koromon': { prior: ['Botamon'], next: ['Agumon'] },
       'Agumon': { prior: ['Koromon'], next: ['Greymon'] },
@@ -1183,23 +1185,23 @@
       'Garurumon': { prior: ['Gabumon'], next: ['Were Garurumon'] },
       'Were Garurumon': { prior: ['Garurumon'], next: ['Metal Garurumon'] },
       'Metal Garurumon': { prior: ['Were Garurumon'], next: ['Omegamon'] },
-      'Omegamon': { prior: ['War Greymon', 'Metal Garurumon'], jogress: true, next: ['Omegamon(Merciful Mode)', 'Omegamon (X-Antibody)'] },
-      'Omegamon(Merciful Mode)': { prior: ['Omegamon'], next: [], terminal: true },
+      'Omegamon': { prior: ['War Greymon', 'Metal Garurumon'], next: ['Omegamon(Merciful Mode)', 'Omegamon (X-Antibody)'] },
+      'Omegamon(Merciful Mode)': { prior: ['Omegamon'] },
       'Gigimon': { next: ['Guilmon'] },
       'Guilmon': { prior: ['Gigimon'], next: ['Growmon'] },
       'Growmon': { prior: ['Guilmon'], next: ['Megalo Growmon'] },
       'Megalo Growmon': { prior: ['Growmon'], next: ['Dukemon'] },
       'Dukemon': { prior: ['Megalo Growmon'], next: ['Dukemon(Crimson Mode)', 'Dukemon (X-Antibody)'] },
-      'Dukemon(Crimson Mode)': { prior: ['Dukemon'], next: [], terminal: true },
+      'Dukemon(Crimson Mode)': { prior: ['Dukemon'] },
       'Chibimon': { next: ['V-mon'] },
       'V-mon': { prior: ['Chibimon'], next: ['XV-mon', 'Fladramon', 'Lighdramon'] },
       'XV-mon': { prior: ['V-mon'], next: ['Paildramon'] },
       'Fladramon': { prior: ['V-mon'] },
       'Lighdramon': { prior: ['V-mon'] },
-      'Paildramon': { prior: ['XV-mon', 'Stingmon'], jogress: true, next: ['Imperialdramon(Dragon Mode)'] },
+      'Paildramon': { prior: ['XV-mon', 'Stingmon'], next: ['Imperialdramon(Dragon Mode)'] },
       'Imperialdramon(Dragon Mode)': { prior: ['Paildramon'], next: ['Imperialdramon(Fighter Mode)'] },
       'Imperialdramon(Fighter Mode)': { prior: ['Imperialdramon(Dragon Mode)'], next: ['Imperialdramon(Paladin Mode)'] },
-      'Imperialdramon(Paladin Mode)': { prior: ['Imperialdramon(Fighter Mode)'], next: [], terminal: true },
+      'Imperialdramon(Paladin Mode)': { prior: ['Imperialdramon(Fighter Mode)'] },
       'Tokomon': { next: ['Patamon'] },
       'Patamon': { prior: ['Tokomon'], next: ['Angemon'] },
       'Angemon': { prior: ['Patamon'], next: ['Holy Angemon'] },
@@ -1225,7 +1227,52 @@
       'Garudamon': { prior: ['Birdramon'], next: ['Hououmon'] },
       'Impmon': { next: ['Beelzebumon'] },
       'Beelzebumon': { prior: ['Impmon'], next: ['Beelzebumon(Blast Mode)'] },
-      'Beelzebumon(Blast Mode)': { prior: ['Beelzebumon'], next: [], terminal: true }
+      'Beelzebumon(Blast Mode)': { prior: ['Beelzebumon'] },
+      // 어드벤처 궁극체
+      'Holy Angemon': { prior: ['Angemon'], next: ['Seraphimon'] },
+      'Seraphimon': { prior: ['Holy Angemon'] },
+      'Ofanimon': { prior: ['Angewomon'] },
+      'Herakle Kabuterimon': { prior: ['Atlur Kabuterimon (Red)'] },
+      'Rosemon': { prior: ['Lilimon'] },
+      'Vikemon': { prior: ['Zudomon'] },
+      'Hououmon': { prior: ['Garudamon'] },
+      'Botamon': { next: ['Koromon'] },
+      'Punimon': { next: ['Tunomon'] },
+      // 어드벤처 02
+      'Chicomon': { next: ['Chibimon'] },
+      'Leafmon': { next: ['Minomon'] },
+      'Minomon': { prior: ['Leafmon'], next: ['Wormmon'] },
+      'Wormmon': { prior: ['Minomon'], next: ['Stingmon'] },
+      'Stingmon': { prior: ['Wormmon'], next: ['Paildramon'] },
+      'Poromon': { next: ['Hawkmon'] },
+      'Hawkmon': { prior: ['Poromon'], next: ['Aquilamon'] },
+      'Aquilamon': { prior: ['Hawkmon'], next: ['Silphymon'] },
+      'Silphymon': { prior: ['Aquilamon', 'Tailmon'] },
+      'Upamon': { next: ['Armadimon'] },
+      'Armadimon': { prior: ['Upamon'], next: ['Ankylomon'] },
+      'Ankylomon': { prior: ['Armadimon'], next: ['Shakkoumon'] },
+      'Shakkoumon': { prior: ['Ankylomon', 'Angemon'] },
+      // 테이머즈
+      'Gummymon': { next: ['Terriermon'] },
+      'Terriermon': { prior: ['Gummymon'], next: ['Galgomon'] },
+      'Galgomon': { prior: ['Terriermon'], next: ['Rapidmon Perfect'] },
+      'Rapidmon Perfect': { prior: ['Galgomon'], next: ['Saint Galgomon'] },
+      'Saint Galgomon': { prior: ['Rapidmon Perfect'] },
+      'Renamon': { next: ['Kyubimon'] },
+      'Kyubimon': { prior: ['Renamon'], next: ['Taomon'] },
+      'Taomon': { prior: ['Kyubimon'], next: ['Sakuyamon'] },
+      'Sakuyamon': { prior: ['Taomon'] },
+      // 세이버즈
+      'Geo Greymon': { prior: ['Agumon (2006 Anime Version)'], next: ['Rize Greymon'] },
+      'Rize Greymon': { prior: ['Geo Greymon'], next: ['Shine Greymon'] },
+      'Shine Greymon': { prior: ['Rize Greymon'], next: ['Shine Greymon(Burst Mode)'] },
+      'Gaomon': { next: ['Gaogamon'] },
+      'Gaogamon': { prior: ['Gaomon'], next: ['Mach Gaogamon'] },
+      'Mach Gaogamon': { prior: ['Gaogamon'], next: ['Mirage Gaogamon'] },
+      'Mirage Gaogamon': { prior: ['Mach Gaogamon'], next: ['Mirage Gaogamon(Burst Mode)'] },
+      'Lalamon': { next: ['Sunflowmon'] },
+      'Sunflowmon': { prior: ['Lalamon'], next: ['Lilamon'] },
+      'Lilamon': { prior: ['Sunflowmon'], next: ['Lotusmon'] }
     };
     const CANONICAL_BY_NORM = Object.fromEntries(Object.entries(CANONICAL_LINES).map(([k, v]) => [normName(k), v]));
 
@@ -1264,6 +1311,15 @@
       };
     }
 
+    function isWarpCondition(cond) {
+      return /warp/i.test(String(cond || ''));
+    }
+
+    // Digi-API 진화 목록 정리
+    // - 일반 진화: 바로 다음/이전 단계 (같은 단계의 모드 체인지·변종 포함)
+    // - 워프진화: 조건에 "Warp"가 있거나 단계를 2칸 이상 건너뛰는 진화 → 별도 섹션
+    // - 역방향 항목(다음 진화인데 단계가 더 낮은 것 등)은 API의 퇴화 데이터라 제외
+    // - 단계 비교는 인덱스에 level 이 있을 때만 (아머체·하이브리드체는 단계 비교 안 함)
     function cleanAndPrioritizeEvolutions(currentName, currentLevel, rawPrior, rawNext) {
       const canon = CANONICAL_BY_NORM[normName(currentName)] || {};
       const curRank = levelRank(currentLevel);
@@ -1272,27 +1328,37 @@
         return m && m.level ? levelRank(m.level) : null;
       };
 
-      // API 데이터: 조그레스 소재는 버리지 않고 표시만 하고, 단계가 맞지 않는 역방향 항목만 제외
-      // (단계 정보는 인덱스에 level 이 있을 때만 사용)
-      const apiPrior = (rawPrior || [])
-        .map(p => ({ ...p, jogress: isJogressCondition(p.condition) }))
-        .filter(p => { const r = rankOf(p); return !curRank || !r || r <= curRank; });
-      const apiNext = (rawNext || [])
-        .filter(n => { const r = rankOf(n); return !curRank || !r || r >= curRank; });
-
-      const bySort = list => list
-        .map((ev, i) => ({ ev, i, sc: evoSortScore(ev, currentName) }))
-        .sort((x, y) => y.sc - x.sc || x.i - y.i)
-        .map(x => x.ev);
-
-      const prior = canon.prior
-        ? canon.prior.map(name => ({ digimon: name, jogress: !!canon.jogress }))
-        : bySort(apiPrior);
-      const next = canon.next ? canon.next.map(name => ({ digimon: name })) : bySort(apiNext);
+      const split = (list, dir, canonNames) => {
+        const normal = [], warp = [];
+        for (const raw of list || []) {
+          const ev = { ...raw, jogress: isJogressCondition(raw.condition) };
+          const r = rankOf(ev);
+          const gap = curRank && r ? (r - curRank) * dir : null; // 진행 방향으로 몇 단계인지
+          if (gap !== null && gap < 0) continue; // 역방향
+          if (isWarpCondition(ev.condition) || (gap !== null && gap >= 2)) {
+            ev.warp = true;
+            warp.push(ev);
+          } else {
+            normal.push(ev);
+          }
+        }
+        // 정렬: 원작 진화 → 바로 다음(이전) 단계 → 같은 계열 이름 → 조건 없는 진화 → 나머지 (같은 단계 변종은 뒤로)
+        const canonKeys = (canonNames || []).map(normName);
+        const sorted = l => l
+          .map((ev, i) => {
+            const ci = canonKeys.indexOf(normName(ev.digimon));
+            const r = rankOf(ev);
+            const oneStep = curRank && r && (r - curRank) * dir === 1 ? 10 : 0;
+            return { ev, i, sc: (ci >= 0 ? 100 - ci : 0) + oneStep + evoSortScore(ev, currentName) };
+          })
+          .sort((x, y) => y.sc - x.sc || x.i - y.i)
+          .map(x => x.ev);
+        return { normal: sorted(normal), warp: sorted(warp) };
+      };
 
       const dedupe = list => {
         const seen = new Set();
-        return list.map(toEvoCard).filter(ev => {
+        return list.map(ev => ({ ...toEvoCard(ev), warp: !!ev.warp, condition: ev.condition || '' })).filter(ev => {
           const k = normName(ev.digimon);
           if (seen.has(k)) return false;
           seen.add(k);
@@ -1300,14 +1366,20 @@
         });
       };
 
-      const nextCards = dedupe(next);
-      const isTerminal = canon.terminal === true || (nextCards.length === 0 && (curRank || 0) >= LEVEL_RANK['궁극체']);
+      const nx = split(rawNext, 1, canon.next);
+      const pr = split(rawPrior, -1, canon.prior);
 
+      const next = dedupe(nx.normal);
+      const warpNext = dedupe(nx.warp);
       // 같은 단계끼리는 API가 양방향으로 넣는 경우가 있음 (알파몬 ↔ 알파몬 왕룡검) → 다음 진화에 있으면 진화 전에서 제외
-      const nextKeys = new Set(nextCards.map(ev => normName(ev.digimon)));
-      const priorCards = dedupe(prior).filter(ev => canon.prior || !nextKeys.has(normName(ev.digimon)));
+      const nextKeys = new Set(next.map(ev => normName(ev.digimon)));
+      // (모드 체인지처럼 원작 진화로 등록된 것은 유지)
+      const canonPrior = new Set((canon.prior || []).map(normName));
+      const prior = dedupe(pr.normal).filter(ev => canonPrior.has(normName(ev.digimon)) || !nextKeys.has(normName(ev.digimon)));
+      const warpPrior = dedupe(pr.warp);
 
-      return { isTerminal, prior: priorCards, next: nextCards };
+      const isTerminal = next.length === 0 && warpNext.length === 0 && (curRank || 0) >= LEVEL_RANK['궁극체'];
+      return { isTerminal, prior, next, warpPrior, warpNext };
     }
 
     // Client-side Profile & Skill Translator (MyMemory 무료 API: 요청당 500자 제한 → 문장 단위로 나눠 번역)
@@ -1381,6 +1453,8 @@
               local.priorEvolutions = evoData.prior;
               local.nextEvolutions = evoData.next;
               local.isTerminal = evoData.isTerminal;
+              local.warpPrior = evoData.warpPrior;
+              local.warpNext = evoData.warpNext;
               updateDexCard();
             }).catch(() => {
               if (currentDexDigimon !== local) return;
@@ -1388,6 +1462,8 @@
               local.priorEvolutions = evoData.prior;
               local.nextEvolutions = evoData.next;
               local.isTerminal = evoData.isTerminal;
+              local.warpPrior = evoData.warpPrior;
+              local.warpNext = evoData.warpNext;
               updateDexCard();
             });
         }
@@ -1467,6 +1543,8 @@
           profileIsMachine: false,
           priorEvolutions: evoData.prior,
           nextEvolutions: evoData.next,
+          warpPrior: evoData.warpPrior,
+          warpNext: evoData.warpNext,
           isTerminal: evoData.isTerminal
         };
 
@@ -1588,27 +1666,52 @@
     const EVO_ROW_LIMIT = 8;
     function renderEvoRow(title, list) {
       if (!list || list.length === 0) return '';
-      const shown = list.slice(0, EVO_ROW_LIMIT);
-      const rest = list.length - shown.length;
+      const rest = list.length - EVO_ROW_LIMIT;
       return `
         <div class="space-y-1.5">
           <p class="text-[11px] font-bold text-slate-500 dark:text-slate-400">${title} <span class="text-slate-400 font-medium">${list.length}</span></p>
           <div class="grid grid-cols-2 sm:grid-cols-3 gap-1.5 sm:gap-2">
-            ${shown.map(ev => `
+            ${list.map((ev, i) => `
               <div
                 onclick="selectDigimonById(${jsArg(ev.id ?? ev.digimon)}, ${jsArg(ev.name_ko || ev.digimon)})"
-                class="touch-press cursor-pointer min-w-0 p-2 rounded-xl bg-slate-50 dark:bg-slate-900/80 hover:bg-blue-50 dark:hover:bg-blue-950 border border-blue-200/60 dark:border-blue-900/60 flex items-center gap-2 transition"
+                ${ev.condition ? `title="${escapeHtml(ev.condition)}"` : ''}
+                class="${i >= EVO_ROW_LIMIT ? 'evo-more hidden ' : ''}touch-press cursor-pointer min-w-0 p-2 rounded-xl bg-slate-50 dark:bg-slate-900/80 hover:bg-blue-50 dark:hover:bg-blue-950 border border-blue-200/60 dark:border-blue-900/60 flex items-center gap-2 transition"
               >
-                ${ev.image ? `<img src="${escapeHtml(ev.image)}" class="w-8 h-8 shrink-0 object-contain rounded" onerror="this.style.visibility='hidden'" />` : '<span class="w-8 h-8 shrink-0"></span>'}
+                ${ev.image ? `<img src="${escapeHtml(ev.image)}" loading="lazy" class="w-8 h-8 shrink-0 object-contain rounded" onerror="this.style.visibility='hidden'" />` : '<span class="w-8 h-8 shrink-0"></span>'}
                 <div class="min-w-0">
                   <span class="text-xs font-bold text-slate-800 dark:text-slate-200 block leading-tight break-keep">${escapeHtml(ev.name_ko || ev.digimon)}</span>
                   <span class="text-[9px] text-slate-400 block truncate">${ev.jogress ? '<span class="font-black text-amber-600 dark:text-amber-400">조그레스</span> · ' : ''}${escapeHtml(ev.level || ev.name_en || ev.digimon)}</span>
                 </div>
               </div>
             `).join('')}
-            ${rest > 0 ? `<span class="col-span-full text-[11px] font-bold text-slate-400 px-1">외 ${rest}체</span>` : ''}
+            ${rest > 0 ? `
+              <button
+                onclick="this.parentElement.querySelectorAll('.evo-more').forEach(e => e.classList.remove('hidden')); this.remove();"
+                class="col-span-full touch-press py-2 rounded-xl text-[11px] font-bold text-blue-600 dark:text-blue-400 bg-blue-50/60 dark:bg-blue-950/40 border border-blue-200/60 dark:border-blue-900/60"
+              >${rest}체 더 보기</button>` : ''}
           </div>
         </div>
+      `;
+    }
+
+    // 워프진화: 별도 접이식 패널로 구분
+    function renderWarpPanel(d) {
+      const n = (d.warpNext || []).length, p = (d.warpPrior || []).length;
+      if (!n && !p) return '';
+      return `
+        <details class="group rounded-2xl border border-purple-300/60 dark:border-purple-800/70 bg-purple-50/50 dark:bg-purple-950/20">
+          <summary class="list-none cursor-pointer select-none px-3 py-2.5 flex items-center gap-2">
+            <span class="text-sm font-black text-purple-700 dark:text-purple-300">🌀 워프진화</span>
+            <span class="text-[10px] font-bold tracking-widest text-purple-500/70 font-mono">WARP</span>
+            <span class="text-[11px] font-medium text-slate-400">${n + p}</span>
+            <span class="ml-auto text-[11px] text-purple-500 group-open:rotate-180 transition">▼</span>
+          </summary>
+          <div class="px-3 pb-3 space-y-3">
+            <p class="text-[10px] text-slate-500 dark:text-slate-400 leading-relaxed">단계를 건너뛰어 진화하는 경우입니다 (예: 성장기 → 궁극체). 항목을 길게 누르거나 마우스를 올리면 Digi-API의 진화 조건이 보입니다.</p>
+            ${renderEvoRow('워프진화 가능', d.warpNext)}
+            ${renderEvoRow('워프진화로 도달하는 디지몬', d.warpPrior)}
+          </div>
+        </details>
       `;
     }
 
@@ -1720,7 +1823,7 @@
             </div>
 
             <!-- Evolution Chain (진화 체계 및 연관 디지몬) -->
-            ${d.isTerminal || (d.priorEvolutions && d.priorEvolutions.length > 0) || (d.nextEvolutions && d.nextEvolutions.length > 0) ? `
+            ${d.isTerminal || (d.priorEvolutions && d.priorEvolutions.length > 0) || (d.nextEvolutions && d.nextEvolutions.length > 0) || (d.warpNext && d.warpNext.length > 0) || (d.warpPrior && d.warpPrior.length > 0) ? `
               <div class="space-y-3 pt-3 border-t border-blue-200/60 dark:border-blue-900/60">
                 <h3 class="flex items-baseline gap-2">
                   <span class="text-sm font-black text-slate-900 dark:text-white">🔗 진화 체계</span>
@@ -1733,12 +1836,14 @@
                     <span class="text-lg">⚡</span>
                     <div>
                       <p class="font-extrabold text-blue-800 dark:text-blue-300">최종 진화 형태</p>
-                      <p class="text-[11px] text-slate-500 dark:text-slate-400 mt-0.5">등록된 다음 진화 단계가 없는 최종 형태입니다.</p>
+                      <p class="text-[11px] text-slate-500 dark:text-slate-400 mt-0.5">Digi-API에 등록된 다음 진화가 없는 최종 형태입니다.</p>
                     </div>
                   </div>
                 ` : renderEvoRow('진화 가능 디지몬', d.nextEvolutions)}
 
                 ${renderEvoRow('진화 전 형태', d.priorEvolutions)}
+
+                ${renderWarpPanel(d)}
               </div>
             ` : ''}
 
