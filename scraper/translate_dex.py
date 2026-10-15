@@ -27,8 +27,8 @@ DEX_FILE = "public/data/dex.json"
 LEDGER = "data/translations/dex_ko.json"
 OUT_DIRS = ["public/data/dex_ko", "docs/data/dex_ko"]
 DIGI_API = "https://digi-api.com/api/v1/digimon/"
-BATCH_CHARS = 6000
-BATCH_ITEMS = 12
+BATCH_CHARS = 3500
+BATCH_ITEMS = 6
 MAX_SKILLS = 6  # 앱에 보여주는 필살기 수와 맞춤
 
 
@@ -174,7 +174,7 @@ def main():
             size = len(src["profile"]) + sum(len(s["name"]) + len(s["desc"]) for s in src["skills"])
             if pending and (chars + size > BATCH_CHARS or len(pending) >= BATCH_ITEMS):
                 flush()
-                if done % 120 < BATCH_ITEMS:
+                if done % 60 < BATCH_ITEMS:
                     write_outputs(ledger)  # 중간 저장
             pending.append((api_id, src, h))
             chars += size

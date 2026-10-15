@@ -114,19 +114,21 @@ def translate_map(texts, glossary=None, retries=4):
             time.sleep(wait)
         _last_call = time.time()
         try:
-            r = requests.post(f"{API}/models/{model}:generateContent", headers=_headers(), json=body, timeout=120)
+            r = requests.post(f"{API}/models/{model}:generateContent", headers=_headers(), json=body, timeout=300)
         except Exception as e:
             print(f"  [gemini] 요청 오류: {e}")
             time.sleep(5 * (attempt + 1))
             continue
         if r.status_code == 429:
             msg = r.text
+            print(f"  [gemini] 429: {msg[:400]}")
             # 일일 한도(PerDay)면 오늘은 그만, 분당 한도면 잠깐 쉬고 재시도
             if "PerDay" in msg or "per day" in msg.lower():
                 raise QuotaExceeded(msg[:300])
             time.sleep(30 * (attempt + 1))
             continue
         if r.status_code >= 500:
+            print(f"  [gemini] HTTP {r.status_code}: {r.text[:200]}")
             time.sleep(10 * (attempt + 1))
             continue
         if r.status_code == 404:
@@ -142,7 +144,7 @@ def translate_map(texts, glossary=None, retries=4):
             raw = re.sub(r"^```(?:json)?|```$", "", raw.strip()).strip()
             out = json.loads(raw)
         except Exception as e:
-            print(f"  [gemini] 응답 해석 실패({e}) — 재시도")
+            print(f"  [gemini] 응답 해석 실패({e}): {r.text[:300]}")
             continue
         return {k: str(out[k]).strip() for k in texts if isinstance(out, dict) and out.get(k)}
     raise QuotaExceeded("재시도 한도 초과")
