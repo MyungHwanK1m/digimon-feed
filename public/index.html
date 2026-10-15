@@ -1296,6 +1296,34 @@
       return score;
     }
 
+    // Digi-API 진화 조건 문구로 출처·진화 방식 배지 추출 (조건이 비어 있는 항목이 많아 일부에만 붙음)
+    const EVO_TAG_RULES = [
+      [/vital bracelet/i, '바이탈'],
+      [/pendulum/i, '펜듈럼'],
+      [/card game/i, 'TCG'],
+      [/digimental/i, '아머진화'],
+      [/spirit/i, '스피릿'],
+      [/burst/i, '버스트'],
+      [/x-antibody|x antibody/i, 'X항체']
+    ];
+    function evoTags(cond) {
+      const c = String(cond || '');
+      return EVO_TAG_RULES.filter(([re]) => re.test(c)).map(([, label]) => label).slice(0, 2);
+    }
+
+    function applyEvoData(target, evo) {
+      return Object.assign(target, {
+        priorEvolutions: evo.prior,
+        nextEvolutions: evo.next,
+        warpPrior: evo.warpPrior,
+        warpNext: evo.warpNext,
+        animePrior: evo.animePrior,
+        animeNext: evo.animeNext,
+        hasAnime: evo.hasAnime,
+        isTerminal: evo.isTerminal
+      });
+    }
+
     function toEvoCard(ev) {
       const m = findIndexEntry(typeof ev.id === 'number' ? ev.id : ev.digimon) || findIndexEntry(ev.digimon);
       const nameEn = m ? m.name : ev.digimon;
@@ -1378,7 +1406,14 @@
       const warpPrior = dedupe(pr.warp);
 
       const isTerminal = next.length === 0 && warpNext.length === 0 && (curRank || 0) >= LEVEL_RANK['궁극체'];
-      return { isTerminal, prior, next, warpPrior, warpNext };
+
+      // 애니메이션 기준 보기: 원작 라인에 적힌 진화만 (API 카드에 있으면 조건 정보까지 재사용)
+      const pickAnime = (names, pool) => names ? names.map(n => pool.find(ev => normName(ev.digimon) === normName(n)) || toEvoCard({ digimon: n })) : null;
+      const animeNext = pickAnime(canon.next, [...next, ...warpNext]);
+      const animePrior = pickAnime(canon.prior, [...prior, ...warpPrior]);
+      const hasAnime = !!(animeNext || animePrior);
+
+      return { isTerminal, prior, next, warpPrior, warpNext, animePrior, animeNext, hasAnime };
     }
 
     // Client-side Profile & Skill Translator (MyMemory 무료 API: 요청당 500자 제한 → 문장 단위로 나눠 번역)
@@ -1448,21 +1483,11 @@
             .then(res => res.ok ? res.json() : Promise.reject())
             .then(apiData => {
               if (currentDexDigimon !== local) return;
-              const evoData = cleanAndPrioritizeEvolutions(apiData.name, local.level, apiData.priorEvolutions, apiData.nextEvolutions);
-              local.priorEvolutions = evoData.prior;
-              local.nextEvolutions = evoData.next;
-              local.isTerminal = evoData.isTerminal;
-              local.warpPrior = evoData.warpPrior;
-              local.warpNext = evoData.warpNext;
+              applyEvoData(local, cleanAndPrioritizeEvolutions(apiData.name, local.level, apiData.priorEvolutions, apiData.nextEvolutions));
               updateDexCard();
             }).catch(() => {
               if (currentDexDigimon !== local) return;
-              const evoData = cleanAndPrioritizeEvolutions(localMatch.name_en, local.level, [], []);
-              local.priorEvolutions = evoData.prior;
-              local.nextEvolutions = evoData.next;
-              local.isTerminal = evoData.isTerminal;
-              local.warpPrior = evoData.warpPrior;
-              local.warpNext = evoData.warpNext;
+              applyEvoData(local, cleanAndPrioritizeEvolutions(localMatch.name_en, local.level, [], []));
               updateDexCard();
             });
         }
@@ -1540,12 +1565,8 @@
           })),
           profile: engDesc ? engDesc.description : '도감 설명이 등록되어 있지 않습니다.',
           profileIsMachine: false,
-          priorEvolutions: evoData.prior,
-          nextEvolutions: evoData.next,
-          warpPrior: evoData.warpPrior,
-          warpNext: evoData.warpNext,
-          isTerminal: evoData.isTerminal
         };
+        applyEvoData(fullDigimon, evoData);
 
         renderDexDetail(fullDigimon);
 
@@ -1679,7 +1700,7 @@
                 ${ev.image ? `<img src="${escapeHtml(ev.image)}" loading="lazy" class="w-8 h-8 shrink-0 object-contain rounded" onerror="this.style.visibility='hidden'" />` : '<span class="w-8 h-8 shrink-0"></span>'}
                 <div class="min-w-0">
                   <span class="text-xs font-bold text-slate-800 dark:text-slate-200 block leading-tight break-keep">${escapeHtml(ev.name_ko || ev.digimon)}</span>
-                  <span class="text-[9px] text-slate-400 block truncate">${ev.jogress ? '<span class="font-black text-amber-600 dark:text-amber-400">조그레스</span> · ' : ''}${escapeHtml(ev.level || ev.name_en || ev.digimon)}</span>
+                  <span class="text-[9px] text-slate-400 block truncate">${ev.jogress ? '<span class="font-black text-amber-600 dark:text-amber-400">조그레스</span> · ' : ''}${evoTags(ev.condition).map(t => `<span class="font-bold text-sky-600 dark:text-sky-400">${t}</span> · `).join('')}${escapeHtml(ev.level || ev.name_en || ev.digimon)}</span>
                 </div>
               </div>
             `).join('')}
@@ -1690,6 +1711,24 @@
               >${rest}체 더 보기</button>` : ''}
           </div>
         </div>
+      `;
+    }
+
+    // 진화 보기 모드: 'anime'(원작 애니메이션 라인이 있는 디지몬만) / 'all'(Digi-API 전체)
+    let evoMode = 'anime';
+    try { evoMode = localStorage.getItem('digi_evo_mode') === 'all' ? 'all' : 'anime'; } catch (_) {}
+    function setEvoMode(mode) {
+      evoMode = mode === 'all' ? 'all' : 'anime';
+      try { localStorage.setItem('digi_evo_mode', evoMode); } catch (_) {}
+      updateDexCard();
+    }
+
+    function renderAnimeEvolutions(d) {
+      const total = (d.nextEvolutions || []).length + (d.priorEvolutions || []).length + (d.warpNext || []).length + (d.warpPrior || []).length;
+      return `
+        ${d.animeNext ? renderEvoRow('진화 (애니메이션)', d.animeNext) : ''}
+        ${d.animePrior ? renderEvoRow('진화 전 (애니메이션)', d.animePrior) : ''}
+        <p class="text-[10px] text-slate-400 leading-relaxed">애니메이션 기준 진화만 보여주고 있습니다. 게임·육성기기·TCG까지 포함한 Digi-API 전체 진화 ${total}건은 <button onclick="setEvoMode('all')" class="font-bold text-blue-600 dark:text-blue-400 underline">전체</button>에서 볼 수 있습니다.</p>
       `;
     }
 
@@ -1827,9 +1866,14 @@
                 <h3 class="flex items-baseline gap-2">
                   <span class="text-sm font-black text-slate-900 dark:text-white">🔗 진화 체계</span>
                   <span class="text-[10px] font-bold tracking-widest text-blue-600/70 dark:text-blue-400/70 font-mono">EVOLUTION</span>
-                  <span class="ml-auto text-[10px] font-medium text-slate-400">탭하면 이동</span>
+                  ${d.hasAnime ? `
+                    <span class="ml-auto self-center flex p-0.5 rounded-lg bg-slate-100 dark:bg-slate-900 border border-blue-200/60 dark:border-blue-900/60 text-[11px] font-bold">
+                      <button onclick="setEvoMode('anime')" class="touch-press px-2.5 py-1 rounded-md transition ${evoMode === 'anime' ? 'bg-[#004ce8] text-white' : 'text-slate-500 dark:text-slate-400'}">애니</button>
+                      <button onclick="setEvoMode('all')" class="touch-press px-2.5 py-1 rounded-md transition ${evoMode === 'all' ? 'bg-[#004ce8] text-white' : 'text-slate-500 dark:text-slate-400'}">전체</button>
+                    </span>` : `<span class="ml-auto text-[10px] font-medium text-slate-400">탭하면 이동</span>`}
                 </h3>
 
+                ${d.hasAnime && evoMode === 'anime' ? renderAnimeEvolutions(d) : `
                 ${d.isTerminal ? `
                   <div class="p-3 rounded-2xl bg-blue-50 dark:bg-blue-950/50 border border-blue-200 dark:border-blue-800/80 text-xs flex items-center gap-2.5">
                     <span class="text-lg">⚡</span>
@@ -1843,6 +1887,7 @@
                 ${renderEvoRow('진화 전 형태', d.priorEvolutions)}
 
                 ${renderWarpPanel(d)}
+                `}
               </div>
             ` : ''}
 
