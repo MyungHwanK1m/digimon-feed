@@ -2,6 +2,10 @@ name: Collect Official Reference
 
 on:
   workflow_dispatch:
+    inputs:
+      mode:
+        description: 'full | list-only | appmon-only'
+        default: 'full'
   schedule:
     # 매주 화요일 03:23 UTC (공식 신규 디지몬 반영)
     - cron: '23 3 * * 2'
@@ -20,7 +24,7 @@ jobs:
           python-version: '3.10'
       - run: pip install -r scraper/requirements.txt
       - name: Collect official reference (basic info only)
-        run: python scraper/collect_official.py
+        run: python scraper/collect_official.py ${{ inputs.mode == 'list-only' && '--list-only' || inputs.mode == 'appmon-only' && '--appmon-only' || '' }}
       - name: Rebuild dex data
         run: python scraper/build_dex.py
 

@@ -2,6 +2,7 @@ import os
 import json
 import hashlib
 import re
+import html
 import email.utils
 from datetime import datetime, timedelta, timezone
 import requests
@@ -537,6 +538,101 @@ def crawl_instagram_digimon():
             print(f"[Error] Instagram crawling failed ({q}): {e}")
     return items
 
+OFFICIAL_SITE = "https://digimon.net/"
+
+
+def _official_date(text: str) -> str:
+    """'2026/10/14' · '2026年10月03日発売' → '2026-10-14' (parse_to_timestamp 가 읽는 형식)"""
+    m = re.search(r"(\d{4})\D(\d{1,2})\D(\d{1,2})", text or "")
+    return f"{m.group(1)}-{int(m.group(2)):02d}-{int(m.group(3)):02d}" if m else ""
+
+
+def _official_cards(html_text: str):
+    """digimon.net 목록 카드(<li class="c-cardList ...">)에서 링크·제목·태그·날짜 추출"""
+    for block in re.findall(r'<li class="c-cardList c-card">(.*?)</a></li>', html_text, re.S):
+        link = re.search(r'href="([^"]+)"', block)
+        title = re.search(r'<p class="c-card__tit">(.*?)</p>', block, re.S)
+        if not link or not title:
+            continue
+        tag = re.search(r'<li class="c-cardTagList">(.*?)</li>', block, re.S)
+        date = re.search(r'<p class="c-card__date">(.*?)</p>', block, re.S)
+        release = re.search(r'発売日\s*:\s*</dt>\s*<dd[^>]*>(.*?)</dd>', block, re.S)
+        price = re.search(r'価\s*格\s*:\s*</dt>\s*<dd[^>]*>(.*?)</dd>', block, re.S)
+        strip = lambda m: html.unescape(re.sub(r"<[^>]+>", "", m.group(1))).strip() if m else ""
+        yield {
+            "link": link.group(1),
+            "title": strip(title),
+            "tag": strip(tag),
+            "date": strip(date),
+            "release": strip(release),
+            "price": strip(price),
+        }
+
+
+def crawl_official_topics():
+    """공식 사이트 뉴스(digimon.net/topic) — 제목·날짜·링크만 저장 (본문은 공식 페이지로 연결)"""
+    items = []
+    url = OFFICIAL_SITE + "topic/?cat=ALL"
+    try:
+        res = requests.get(url, headers={"User-Agent": "Mozilla/5.0 (digimon-feed fan project)"}, timeout=20)
+        res.raise_for_status()
+        for c in list(_official_cards(res.text))[:20]:
+            link = requests.compat.urljoin(url, c["link"])
+            ts = parse_to_timestamp(_official_date(c["date"]))
+            category, cat_name = classify_category(c["title"], "game", "디지몬웹")
+            items.append({
+                "id": get_hash_id(link),
+                "title": f"[공식] {c['title']}",
+                "snippet": f"디지몬 공식 사이트 {c['tag'] or '뉴스'}",
+                "source": "digimon.net",
+                "source_badge": "디지몬웹",
+                "category": category,
+                "category_name": cat_name,
+                "link": link,
+                "image": None,
+                "timestamp": ts,
+                "created_at": format_display_date(ts),
+            })
+    except Exception as e:
+        print(f"[Error] Official topics crawling failed: {e}")
+    return items
+
+
+def crawl_official_products():
+    """공식 사이트 상품(digimon.net/product/…) — 상품명·발매일·가격·링크만 저장"""
+    items = []
+    sections = [("card", "card", "카드게임(TCG)"), ("game", "game", "게임/공식애니"),
+                ("goods", "figure", "피규어/굿즈"), ("others", "figure", "피규어/굿즈")]
+    now_ts = int(datetime.now().timestamp())
+    for path, cat, cat_name in sections:
+        url = f"{OFFICIAL_SITE}product/{path}/"
+        try:
+            res = requests.get(url, headers={"User-Agent": "Mozilla/5.0 (digimon-feed fan project)"}, timeout=20)
+            res.raise_for_status()
+            for c in list(_official_cards(res.text))[:8]:
+                link = requests.compat.urljoin(url, c["link"])
+                release = _official_date(c["release"])
+                # 발매 예정 상품은 미래 날짜라 지금 시각으로 맞춤 (발매일은 요약에 표시)
+                ts = min(parse_to_timestamp(release), now_ts) if release else now_ts
+                info = " · ".join(x for x in [f"발매 {release}" if release else c["release"], c["price"]] if x)
+                items.append({
+                    "id": get_hash_id(link),
+                    "title": f"[공식 상품] {c['title']}",
+                    "snippet": info or "디지몬 공식 사이트 상품 정보",
+                    "source": "digimon.net",
+                    "source_badge": "디지몬웹",
+                    "category": cat,
+                    "category_name": cat_name,
+                    "link": link,
+                    "image": None,
+                    "timestamp": ts,
+                    "created_at": format_display_date(ts),
+                    "keep_first_seen": True,
+                })
+        except Exception as e:
+            print(f"[Error] Official products crawling failed ({path}): {e}")
+    return items
+
 def main():
     print(f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] Starting Digimon feeds crawl...")
     all_new_items = []
@@ -567,6 +663,10 @@ def main():
 
     print("9. Crawling Instagram (via Google News)...")
     all_new_items.extend(crawl_instagram_digimon())
+
+    print("10. Crawling official site news & products (digimon.net)...")
+    all_new_items.extend(crawl_official_topics())
+    all_new_items.extend(crawl_official_products())
 
     print(f"Total fetched: {len(all_new_items)} items")
 
@@ -604,6 +704,11 @@ def main():
             # 새로 수집된 아이템도 category 정규화
             if isinstance(item.get("category"), (list, tuple)):
                 item["category"] = item["category"][0]
+            # 발매 예정 상품처럼 날짜가 '지금'으로 찍히는 항목은 처음 수집한 시각을 유지 (매시간 맨 위로 올라오지 않도록)
+            prev = feed_map.get(item["id"])
+            if item.pop("keep_first_seen", False) and prev:
+                item["timestamp"] = prev.get("timestamp", item["timestamp"])
+                item["created_at"] = prev.get("created_at", item["created_at"])
             feed_map[item["id"]] = item
 
     # [핵심 1] 최근 90일(약 3달) 이내 데이터 보관 (사용자가 앱에서 기간 필터 선택 가능)

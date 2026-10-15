@@ -7,8 +7,11 @@
 번호 규칙: 오래된 등록이 1번(공식 목록은 최신순이라 역순으로 매김). data/official/numbers.json 에 한 번 매긴 번호는 고정하고,
 새로 생긴 디지몬은 등록 순서대로 뒤에 이어 붙임.
 
-사용: python scraper/collect_official.py            # 전체 수집 (상세 페이지 포함, 약 15~25분)
-      python scraper/collect_official.py --list-only # 목록만
+아프몬 도감(digimon.net/appmon_ko)도 같은 원칙으로 수집: 이름·등급·앱 이름·속성·관련 아프몬·공식 주소 → data/official/appmon.json
+
+사용: python scraper/collect_official.py             # 디지몬 전체 수집 (상세 페이지 포함, 약 30분) + 아프몬
+      python scraper/collect_official.py --list-only  # 디지몬 목록만 + 아프몬
+      python scraper/collect_official.py --appmon-only
 """
 import html
 import json
@@ -159,5 +162,47 @@ def main():
     print(f"저장: {REFERENCE_FILE} ({len(entries)}종), {NUMBERS_FILE}")
 
 
+APPMON_BASE = "https://digimon.net/appmon_ko/"
+APPMON_FILE = os.path.join(OUT_DIR, "appmon.json")
+
+
+def collect_appmon():
+    print("아프몬 도감 수집…")
+    r = get(APPMON_BASE)
+    if r is None:
+        print("아프몬 목록 요청 실패 — 건너뜀")
+        return
+    ids = []
+    for m in re.finditer(r'href="\./detail\.php\?id=(\d+)"', r.text):
+        if int(m.group(1)) not in ids:
+            ids.append(int(m.group(1)))
+    entries = []
+    for i in ids:
+        d = get(APPMON_BASE + "detail.php", params={"id": i})
+        time.sleep(DELAY)
+        if d is None:
+            continue
+        page = d.text
+        name = re.search(r'c-titleSet__main[^>]*>(.*?)</h3>', page, re.S)
+        info = {text(k): text(v) for k, v in re.findall(r"<dt[^>]*>(.*?)</dt>\s*<dd>(.*?)</dd>", page, re.S)}
+        rel = page.split('class="p-ref__related"', 1)
+        related = [int(x) for x in re.findall(r'detail\.php\?id=(\d+)"', rel[1])] if len(rel) == 2 else []
+        entries.append({
+            "id": i,
+            "name_ko": text(name.group(1)) if name else "",
+            "grade": info.get("등급", ""),
+            "app": info.get("앱 이름", ""),
+            "attribute": info.get("속성", ""),
+            "related": [x for x in dict.fromkeys(related) if x != i],
+            "url": f"{APPMON_BASE}detail.php?id={i}",
+        })
+    with open(APPMON_FILE, "w", encoding="utf-8") as f:
+        json.dump({"source": APPMON_BASE, "note": "기본 정보만 저장 (프로필·필살기·그림은 공식 페이지 참고)",
+                   "total": len(entries), "appmons": entries}, f, ensure_ascii=False, indent=1)
+    print(f"저장: {APPMON_FILE} ({len(entries)}종)")
+
+
 if __name__ == "__main__":
-    main()
+    if "--appmon-only" not in sys.argv:
+        main()
+    collect_appmon()
