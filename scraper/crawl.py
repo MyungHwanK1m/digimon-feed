@@ -1,4 +1,5 @@
 import os
+import sys
 import json
 import hashlib
 import re
@@ -633,6 +634,52 @@ def crawl_official_products():
             print(f"[Error] Official products crawling failed ({path}): {e}")
     return items
 
+TITLE_CACHE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "data", "translations", "feed_titles.json")
+JA_RE = re.compile(r"[\u3040-\u30ff\u4e00-\u9fff]")
+
+
+def translate_official_titles(items):
+    """공식 사이트(일본어) 항목 제목을 Gemini로 한국어 번역. 원제는 title_ja 에 보관, 번역 결과는 캐시해서 같은 제목은 다시 요청하지 않음.
+    GEMINI_API_KEY 가 없거나 실패하면 원문 그대로 둠."""
+    try:
+        import gemini
+    except ImportError:
+        sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+        import gemini
+    cache = {}
+    if os.path.exists(TITLE_CACHE):
+        with open(TITLE_CACHE, encoding="utf-8") as f:
+            cache = json.load(f)
+    targets = []
+    for item in items:
+        if item.get("source_badge") != "디지몬웹" or item.get("title_ja"):
+            continue
+        m = re.match(r"(\[[^\]]+\]\s*)?(.*)", item.get("title", ""), re.S)
+        prefix, body = m.group(1) or "", m.group(2).strip()
+        if JA_RE.search(body):
+            targets.append((item, prefix, body))
+    missing = list(dict.fromkeys(b for _, _, b in targets if b not in cache))
+    if missing and gemini.available():
+        try:
+            for i in range(0, len(missing), 40):
+                chunk = missing[i:i + 40]
+                out = gemini.translate_map({str(n): t for n, t in enumerate(chunk)})
+                for n, t in enumerate(chunk):
+                    if out.get(str(n)):
+                        cache[t] = out[str(n)]
+        except Exception as e:
+            print(f"[Warning] Official title translation stopped: {e}")
+        os.makedirs(os.path.dirname(TITLE_CACHE), exist_ok=True)
+        with open(TITLE_CACHE, "w", encoding="utf-8") as f:
+            json.dump(cache, f, ensure_ascii=False, indent=1)
+    elif missing:
+        print("[Info] GEMINI_API_KEY 없음 — 공식 사이트 제목은 일본어 원문 유지")
+    for item, prefix, body in targets:
+        if body in cache:
+            item["title_ja"] = body
+            item["title"] = prefix + cache[body]
+
+
 def main():
     print(f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] Starting Digimon feeds crawl...")
     all_new_items = []
@@ -717,6 +764,8 @@ def main():
         item for item in feed_map.values()
         if item.get("timestamp", 0) >= cutoff_timestamp and not is_spam(item)
     ]
+
+    translate_official_titles(filtered_feeds)
 
     # [핵심 2] 최신순 내림차순 정렬 (가장 최신글이 index 0)
     filtered_feeds.sort(key=lambda x: x.get("timestamp", 0), reverse=True)

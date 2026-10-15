@@ -31,7 +31,7 @@ Digi-API  ──(generate_digidex.py)──> public/data/digimon_all_index.json 
 
 | 항목 | 출처 | 비고 |
 |---|---|---|
-| 도감 설명·필살기 | Digi-API 영문 설명 → MyMemory 자동 번역 | "자동 번역 · Digi-API" 표시. 공식 문장과 다를 수 있음 |
+| 도감 설명·필살기 | Digi-API 영문 설명 → Gemini로 미리 번역 (`data/dex_ko/`) | 아직 번역 안 된 디지몬만 화면에서 MyMemory/Google 실시간 번역. 공식 문장과 다를 수 있음 |
 | TCG 카드 사진 | digimoncard.io 공개 API (`search.php?n=영문명`) | 카드게임은 북미식 이름이라 이름이 다른 디지몬(예: 듀크몬=Gallantmon)은 못 찾을 수 있음 |
 
 넣지 않은 것과 이유:
@@ -60,3 +60,11 @@ Digi-API  ──(generate_digidex.py)──> public/data/digimon_all_index.json 
 
 영문 표기 일치 → 표기 규칙(X항체·2006·모드 등) → 같은 단계 안 유사도 순으로 자동 연결합니다.
 잘못 연결되거나 빠진 것은 `data/official/api_map.json`에 `"공식 디렉터리명": "Digi-API 이름"`으로 지정한 뒤 `python scraper/build_dex.py`를 실행합니다. 결과는 `data/official/match_report.md`에서 확인합니다.
+
+## 미리 번역 (Gemini)
+
+- `scraper/translate_dex.py`: Digi-API 영어 프로필·필살기를 Gemini로 번역 → `public|docs/data/dex_ko/<api_id//100>.json` (앱은 필요한 조각만 받음), 원장 `data/translations/dex_ko.json`
+- 공식 한국어 이름을 용어집으로 넣어 이름 표기를 통일 (예: WarGreymon → 워그레이몬)
+- 워크플로 `translate-dex.yml`: 매일 04:41 UTC, 안 된 것만 번역. 무료 등급 한도에 걸리면 저장 후 다음 날 이어서
+- 피드: 공식 사이트(일본어) 제목도 `crawl.py`에서 Gemini 번역, 원제는 `title_ja`, 캐시 `data/translations/feed_titles.json`
+- 필요: 저장소 Settings → Secrets and variables → Actions 에 `GEMINI_API_KEY` (선택: Variables 에 `GEMINI_MODEL`). 키가 없으면 번역 단계만 건너뜀
