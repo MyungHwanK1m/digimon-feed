@@ -4,7 +4,8 @@
             X항체 여부, 관련된 디지몬(디렉터리명), 공식 상세 페이지 주소
 저장하지 않는 것: 프로필 문장, 필살기, 그림 (공식 사이트 이용 조건 — 화면에서는 공식 페이지로 연결)
 
-번호 규칙: data/official/numbers.json 에 한 번 매긴 번호는 고정. 새로 생긴 디지몬은 공식 목록 순서대로 뒤에 이어 붙임.
+번호 규칙: 오래된 등록이 1번(공식 목록은 최신순이라 역순으로 매김). data/official/numbers.json 에 한 번 매긴 번호는 고정하고,
+새로 생긴 디지몬은 등록 순서대로 뒤에 이어 붙임.
 
 사용: python scraper/collect_official.py            # 전체 수집 (상세 페이지 포함, 약 15~25분)
       python scraper/collect_official.py --list-only # 목록만
@@ -109,9 +110,10 @@ def main():
     rows = fetch_list()
     print(f"목록 {len(rows)}건")
 
+    # 공식 목록은 최신 등록순 → 뒤에서부터(오래된 것부터) 번호를 매겨 새 디지몬이 항상 뒤에 붙도록 함
     numbers = load_json(NUMBERS_FILE, {})
     next_no = max(numbers.values(), default=0) + 1
-    for row in rows:
+    for row in reversed(rows):
         d = row["directory_name"]
         if d not in numbers:
             numbers[d] = next_no
