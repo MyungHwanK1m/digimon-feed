@@ -26,6 +26,9 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r scraper/requirements.txt
 
+      - name: (temp) Probe Instagram via public search feeds
+        run: python scraper/probe_instagram.py || true
+
       - name: Build master index (names + levels from Digi-API)
         run: python scraper/generate_digidex.py
 
@@ -33,7 +36,7 @@ jobs:
         run: |
           git config --global user.name "DigiBot"
           git config --global user.email "digibot@users.noreply.github.com"
-          git add docs/data/digimon_all_index.json public/data/digimon_all_index.json
+          git add docs/data/digimon_all_index.json public/data/digimon_all_index.json data/digimon_evolutions.json
           if git diff --staged --quiet; then
             echo "No changes in digidex index."
           else
