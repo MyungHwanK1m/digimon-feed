@@ -9,17 +9,10 @@ os.makedirs(OUT, exist_ok=True)
 S = requests.Session()
 S.headers.update({"User-Agent": "Mozilla/5.0 (digimon-feed fan project; structure check)"})
 PAGES = {
-    "topic_list": "https://digimon.net/topic/?cat=ALL",
-    "topic_detail": "https://digimon.net/topic/detail.php?id=2096",
-    "product": "https://digimon.net/product/",
-    "product_card": "https://digimon.net/product/card/",
-    "product_goods": "https://digimon.net/product/goods/",
-    "product_detail_item": "https://digimon.net/product/detail.php?item_type=1&id=970",
-    "product_detail_jan": "https://digimon.net/product/detail.php?item_type=0&jan_cd=4573102725592000",
-    "appmon_ko": "https://digimon.net/appmon_ko/",
-    "history": "https://digimon.net/history/",
-    "profile": "https://digimon.net/profile/",
-    "iliad": "https://digimon.net/digitalworld-Iliad/",
+    "appmon_detail": "https://digimon.net/appmon_ko/detail.php?id=1",
+    "topic_cat1": "https://digimon.net/topic/?cat=1",
+    "product_game": "https://digimon.net/product/game/",
+    "product_others": "https://digimon.net/product/others/",
 }
 for name, url in PAGES.items():
     try:
@@ -34,3 +27,15 @@ for name, url in PAGES.items():
             print("     json endpoint:", m)
     except Exception as e:
         print(f"=== {name} -> error {e}")
+
+
+# 번역 경로 점검
+for label, url in [
+    ("mymemory", "https://api.mymemory.translated.net/get?q=" + requests.utils.quote("A small dinosaur Digimon.") + "&langpair=en|ko"),
+    ("google-gtx", "https://translate.googleapis.com/translate_a/single?client=gtx&sl=en&tl=ko&dt=t&q=" + requests.utils.quote("A small dinosaur Digimon. It is brave.")),
+]:
+    try:
+        r = S.get(url, timeout=30, headers={"Origin": "https://example.github.io"})
+        print(f"=== {label}: HTTP {r.status_code} acao={r.headers.get('access-control-allow-origin')} body={r.text[:300]}")
+    except Exception as e:
+        print(f"=== {label}: error {e}")
