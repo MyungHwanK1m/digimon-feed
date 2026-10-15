@@ -1,11 +1,24 @@
 {
-  "last_updated": "2026-10-15 07:33:25",
-  "total_count": 83,
+  "last_updated": "2026-10-15 09:48:47",
+  "total_count": 87,
   "retention_days": 90,
   "feeds": [
     {
+      "id": "f14a73b5d0b740364b73df2f059ef472",
+      "title": "[r/digimon] Look at how beautiful this is! Info & tickets revealed as well!",
+      "snippet": "Kyo with a cello the size of himself is not something I knew I needed in my life but here we are. Gaogomon the for",
+      "source": "Reddit digimon",
+      "source_badge": "레딧",
+      "category": "game",
+      "category_name": "신작/공식속보",
+      "link": "https://www.reddit.com/r/digimon/comments/1x6h1x4/look_at_how_beautiful_this_is_info_tickets/",
+      "image": "https://preview.redd.it/5bmqpaq7nlvh1.jpeg?width=640&crop=smart&auto=webp&s=cb73a1326351bd6693737c80947f828f38adc7a4",
+      "timestamp": 1792056294,
+      "created_at": "2026-10-15 09:24"
+    },
+    {
       "id": "6d1e19590cc7d1d1033b094d3b0cc08e",
-      "title": "[공식 상품] DIGIMON ダイカットステッカーセット（自販機）",
+      "title": "[공식 상품] DIGIMON 다이컷 스티커 세트 (자판기)",
       "snippet": "2026年03月中旬発売 · 200円(税込)",
       "source": "digimon.net",
       "source_badge": "디지몬웹",
@@ -14,11 +27,12 @@
       "link": "https://digimon.net/product/detail.php?item_type=0&jan_cd=4582770018738000",
       "image": null,
       "timestamp": 1792049599,
-      "created_at": "2026-10-15 07:33"
+      "created_at": "2026-10-15 07:33",
+      "title_ja": "DIGIMON ダイカットステッカーセット（自販機）"
     },
     {
       "id": "40c4e47458894093452e107a841004d5",
-      "title": "[공식 상품] G.E.M.シリーズ デジモンテイマーズ レナモン＆牧野留姫 【再販】",
+      "title": "[공식 상품] G.E.M. 시리즈 디지몬 테이머즈 레나몬 & 마키노 루키 【재판】",
       "snippet": "2027年06月下旬発売予定 · 9,680円(税込",
       "source": "digimon.net",
       "source_badge": "디지몬웹",
@@ -27,11 +41,12 @@
       "link": "https://digimon.net/product/detail.php?item_type=1&id=973",
       "image": null,
       "timestamp": 1792049599,
-      "created_at": "2026-10-15 07:33"
+      "created_at": "2026-10-15 07:33",
+      "title_ja": "G.E.M.シリーズ デジモンテイマーズ レナモン＆牧野留姫 【再販】"
     },
     {
       "id": "79c936e439666733312908ab8c706418",
-      "title": "[공식 상품] MEGA EGG FIGURE デジモンアドベンチャー おやすみデジコレ！",
+      "title": "[공식 상품] MEGA EGG FIGURE 디지몬 어드벤처 잘자 디지코레!",
       "snippet": "2027年05月下旬発売予定 · 1,760円",
       "source": "digimon.net",
       "source_badge": "디지몬웹",
@@ -40,11 +55,12 @@
       "link": "https://digimon.net/product/detail.php?item_type=1&id=957",
       "image": null,
       "timestamp": 1792049599,
-      "created_at": "2026-10-15 07:33"
+      "created_at": "2026-10-15 07:33",
+      "title_ja": "MEGA EGG FIGURE デジモンアドベンチャー おやすみデジコレ！"
     },
     {
       "id": "f7fcaf24faf7cbc3c92d08f3492ed409",
-      "title": "[공식 상품] デジタルモンスターCOLOR ULTRAMAN SERIES 60th EDITION（ULTRAMAN HENSHIN COLOR／GRAFFITI ULTRAHEROES COLOR）",
+      "title": "[공식 상품] 디지털 몬스터 COLOR ULTRAMAN SERIES 60th EDITION (ULTRAMAN HENSHIN COLOR／GRAFFITI ULTRAHEROES COLOR)",
       "snippet": "2027年02月発送予定 · 7700",
       "source": "digimon.net",
       "source_badge": "디지몬웹",
@@ -53,11 +69,12 @@
       "link": "https://digimon.net/product/detail.php?item_type=1&id=953",
       "image": null,
       "timestamp": 1792049599,
-      "created_at": "2026-10-15 07:33"
+      "created_at": "2026-10-15 07:33",
+      "title_ja": "デジタルモンスターCOLOR ULTRAMAN SERIES 60th EDITION（ULTRAMAN HENSHIN COLOR／GRAFFITI ULTRAHEROES COLOR）"
     },
     {
       "id": "0c6af6a832076964c7c803737df7eb82",
-      "title": "[공식 상품] G.E.M.シリーズ デジモンアドベンチャー ガルルモン＆石田ヤマト【再販】",
+      "title": "[공식 상품] G.E.M. 시리즈 디지몬 어드벤처 가루몬 & 이시다 야마토 【재판】",
       "snippet": "2026年12月下旬発売予定 · 17,600円(税込)",
       "source": "digimon.net",
       "source_badge": "디지몬웹",
@@ -66,11 +83,12 @@
       "link": "https://digimon.net/product/detail.php?item_type=1&id=964",
       "image": null,
       "timestamp": 1792049599,
-      "created_at": "2026-10-15 07:33"
+      "created_at": "2026-10-15 07:33",
+      "title_ja": "G.E.M.シリーズ デジモンアドベンチャー ガルルモン＆石田ヤマト【再販】"
     },
     {
       "id": "717373ca72f97bb33f740eca8e3e8c7f",
-      "title": "[공식 상품] ゴジラVSデジタルモンスター　ミニソフビクロニクル",
+      "title": "[공식 상품] 고질라 VS 디지털 몬스터 미니 소프비 크로니클",
       "snippet": "2026年12月上旬発売予定 · 660",
       "source": "digimon.net",
       "source_badge": "디지몬웹",
@@ -79,11 +97,12 @@
       "link": "https://digimon.net/product/detail.php?item_type=1&id=967",
       "image": null,
       "timestamp": 1792049599,
-      "created_at": "2026-10-15 07:33"
+      "created_at": "2026-10-15 07:33",
+      "title_ja": "ゴジラVSデジタルモンスター　ミニソフビクロニクル"
     },
     {
       "id": "473598019dd4d00bc41b2e9ff7d65b88",
-      "title": "[공식 상품] デフォリアル ウォーグレイモン：”G”侵食モード",
+      "title": "[공식 상품] 데포리얼 워그레이몬: \"G\" 침식 모드",
       "snippet": "2026年12月発送予定 · 19,800円",
       "source": "digimon.net",
       "source_badge": "디지몬웹",
@@ -92,11 +111,12 @@
       "link": "https://digimon.net/product/detail.php?item_type=1&id=966",
       "image": null,
       "timestamp": 1792049599,
-      "created_at": "2026-10-15 07:33"
+      "created_at": "2026-10-15 07:33",
+      "title_ja": "デフォリアル ウォーグレイモン：”G”侵食モード"
     },
     {
       "id": "09ae3b3dddbb565b7f7076b94508e641",
-      "title": "[공식 상품] デジモンケース イレモンペンデュラムCOLOR2（メタリックオレンジ／メタリックシルバー）",
+      "title": "[공식 상품] 디지몬 케이스 이레몬 펜들럼 COLOR 2 (메탈릭 오렌지／메탈릭 실버)",
       "snippet": "2026年12月発送予定 · 1980",
       "source": "digimon.net",
       "source_badge": "디지몬웹",
@@ -105,11 +125,12 @@
       "link": "https://digimon.net/product/detail.php?item_type=1&id=943",
       "image": null,
       "timestamp": 1792049599,
-      "created_at": "2026-10-15 07:33"
+      "created_at": "2026-10-15 07:33",
+      "title_ja": "デジモンケース イレモンペンデュラムCOLOR2（メタリックオレンジ／メタリックシルバー）"
     },
     {
       "id": "386ee3535f8efbe4d29317173924b38c",
-      "title": "[공식 상품] デジモンペンデュラムCOLOR （8 CELESTIALWALKER オリンポスグリーン／9 ASTRALSENTINEL イリアスブルー）",
+      "title": "[공식 상품] 디지몬 펜들럼 COLOR (8 CELESTIALWALKER 올림포스 그린／9 ASTRALSENTINEL 일리아스 블루)",
       "snippet": "2026年12月発送予定 · 7150",
       "source": "digimon.net",
       "source_badge": "디지몬웹",
@@ -118,11 +139,12 @@
       "link": "https://digimon.net/product/detail.php?item_type=1&id=942",
       "image": null,
       "timestamp": 1792049599,
-      "created_at": "2026-10-15 07:33"
+      "created_at": "2026-10-15 07:33",
+      "title_ja": "デジモンペンデュラムCOLOR （8 CELESTIALWALKER オリンポスグリーン／9 ASTRALSENTINEL イリアスブルー）"
     },
     {
       "id": "d65ad68e7f36e83f7c201e481726465d",
-      "title": "[공식 상품] デジタルモンスター WORLDMAKING ACRYLIC STAND ブースターver.5",
+      "title": "[공식 상품] 디지털 몬스터 WORLDMAKING 아크릴 스탠드 부스터 ver.5",
       "snippet": "2026年12月発送予定 · 990円（税込）",
       "source": "digimon.net",
       "source_badge": "디지몬웹",
@@ -131,11 +153,12 @@
       "link": "https://digimon.net/product/detail.php?item_type=1&id=956",
       "image": null,
       "timestamp": 1792049599,
-      "created_at": "2026-10-15 07:33"
+      "created_at": "2026-10-15 07:33",
+      "title_ja": "デジタルモンスター WORLDMAKING ACRYLIC STAND ブースターver.5"
     },
     {
       "id": "16db0e616e06bb5a24acd04169e2b3cf",
-      "title": "[공식 상품] デジモンアドベンチャー タグ＆紋章アクセサリー",
+      "title": "[공식 상품] 디지몬 어드벤처 태그 & 문장 액세서리",
       "snippet": "2026年12月発送予定 · 16,500円（税込）",
       "source": "digimon.net",
       "source_badge": "디지몬웹",
@@ -144,11 +167,12 @@
       "link": "https://digimon.net/product/detail.php?item_type=1&id=951",
       "image": null,
       "timestamp": 1792049599,
-      "created_at": "2026-10-15 07:33"
+      "created_at": "2026-10-15 07:33",
+      "title_ja": "デジモンアドベンチャー タグ＆紋章アクセサリー"
     },
     {
       "id": "172c07c682aefc0a7b68ba2e9ef0605b",
-      "title": "[공식 상품] G.E.M.シリーズ デジモンアドベンチャー グレイモン＆八神太一【再販】",
+      "title": "[공식 상품] G.E.M. 시리즈 디지몬 어드벤처 그레이몬 & 야가미 타이치 【재판】",
       "snippet": "2026年11月下旬発売予定 · 17,600円(税込)",
       "source": "digimon.net",
       "source_badge": "디지몬웹",
@@ -157,11 +181,12 @@
       "link": "https://digimon.net/product/detail.php?item_type=1&id=963",
       "image": null,
       "timestamp": 1792049599,
-      "created_at": "2026-10-15 07:33"
+      "created_at": "2026-10-15 07:33",
+      "title_ja": "G.E.M.シリーズ デジモンアドベンチャー グレイモン＆八神太一【再販】"
     },
     {
       "id": "ecc009e0ddd7a6b63ce8a2251d8c3791",
-      "title": "[공식 상품] 東宝大怪獣シリーズ メタルガルルモン：”G”侵食モード",
+      "title": "[공식 상품] 토호 대괴수 시리즈 메탈가루몬: \"G\" 침식 모드",
       "snippet": "2026年11月発送予定 · 39,600円",
       "source": "digimon.net",
       "source_badge": "디지몬웹",
@@ -170,7 +195,21 @@
       "link": "https://digimon.net/product/detail.php?item_type=1&id=937",
       "image": null,
       "timestamp": 1792049599,
-      "created_at": "2026-10-15 07:33"
+      "created_at": "2026-10-15 07:33",
+      "title_ja": "東宝大怪獣シリーズ メタルガルルモン：”G”侵食モード"
+    },
+    {
+      "id": "016a442bbb59b47b67c3bc5254548c2e",
+      "title": "[r/digimon] Sharing my Deva Figures",
+      "snippet": "Complete the set   &#32; submitted by &#32;  /u/Immortal_Draylo   [link] &#32; [comments]",
+      "source": "Reddit digimon",
+      "source_badge": "레딧",
+      "category": "sns",
+      "category_name": "SNS/해외",
+      "link": "https://www.reddit.com/r/digimon/comments/1x6erzf/sharing_my_deva_figures/",
+      "image": "https://preview.redd.it/qgn6fnpbxkvh1.jpg?width=140&height=76&auto=webp&s=889fb152703bd949fb2154b9350f843fdce64505",
+      "timestamp": 1792047515,
+      "created_at": "2026-10-15 06:58"
     },
     {
       "id": "cd6db40a41b2355559141045cf6646a3",
@@ -184,6 +223,20 @@
       "image": "https://preview.redd.it/66ylko38zjvh1.png?width=140&height=78&auto=webp&s=b23c103e74e19c5863bc16f007c3b358fa4b4174",
       "timestamp": 1792036113,
       "created_at": "2026-10-15 03:48"
+    },
+    {
+      "id": "022980d0abf1d6e057e20b9178c9f919",
+      "title": "[공식] 「DIGIMON CONCERT ~2026 Anniversary & BEATBREAK~」 키 비주얼 & 스페셜 게스트 해금! 티켓 정보도!",
+      "snippet": "디지몬 공식 사이트 ニュース",
+      "source": "digimon.net",
+      "source_badge": "디지몬웹",
+      "category": "game",
+      "category_name": "신작/공식속보",
+      "link": "https://digimon.net/topic/detail.php?id=2097",
+      "image": null,
+      "timestamp": 1792022400,
+      "created_at": "2026-10-15 00:00",
+      "title_ja": "「DIGIMON CONCERT ～2026 Anniversary & BEATBREAK～」キービジュアル＆スペシャルゲスト解禁！チケット情報も！"
     },
     {
       "id": "42c1e0a22ab64cba752faac6c95a1a4d",
@@ -259,6 +312,19 @@
       "category": "sns",
       "category_name": "SNS/해외",
       "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTFBuazFQLUVRU1dTX1BXUVVxZnJ1MEloUENKcVZtcmVCek5acDM1dlMzcVFmS1h0RF9ERHEyZlJhWEpiWWU3UEdQTzJFS3VKTjVtcHpCTU5yRDFIVTExZnlXRkxrNVo?oc=5",
+      "image": null,
+      "timestamp": 1791991800,
+      "created_at": "2026-10-14 15:30"
+    },
+    {
+      "id": "227983839bec8106abf8df05bf815050",
+      "title": "[트윗] [🎬] 포켓몬 vs 디지몬 https://t.co/yncmt3Kq4E #ATEEZ #에이티즈 #9트쫑 - X",
+      "snippet": "X(트위터) 디지몬 공식/굿즈 속보 트윗입니다.",
+      "source": "X(트위터)",
+      "source_badge": "X(트위터)",
+      "category": "sns",
+      "category_name": "SNS/해외",
+      "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTE1FSGNnR01oVVBTZU8yb01KM2RvWFc0SkV6dVV0NW9kNUNRUWNWMG9kbnJLV3IzUFNLRVNySzdIZnFtaDF3VUF4Q0dRdWViTE5BN2o5bmpCS01PTkJtZUxuR0VCTkR0YlJXM0JENGsyVTJ4X3Y5QlE?oc=5",
       "image": null,
       "timestamp": 1791991800,
       "created_at": "2026-10-14 15:30"
@@ -408,7 +474,7 @@
     },
     {
       "id": "21c9fed7a072662079adae6d94e89dcb",
-      "title": "[공식] 第159回デジ民投票スタート",
+      "title": "[공식] 제159회 디지민 투표 스타트",
       "snippet": "디지몬 공식 사이트 ニュース",
       "source": "digimon.net",
       "source_badge": "디지몬웹",
@@ -417,7 +483,8 @@
       "link": "https://digimon.net/topic/detail.php?id=2096",
       "image": null,
       "timestamp": 1791936000,
-      "created_at": "2026-10-14 00:00"
+      "created_at": "2026-10-14 00:00",
+      "title_ja": "第159回デジ民投票スタート"
     },
     {
       "id": "141a1236cb4a901361b2d72d8842c19a",
@@ -603,7 +670,7 @@
     },
     {
       "id": "77fd2c8522279d0977ed0ed5bc481eb6",
-      "title": "[공식] デジモン図鑑に、新たにスズモン、セキリュウモン、ルートモン、フィカスモン を追加！",
+      "title": "[공식] 디지몬 도감에 새로 스즈몬, 세키류몬, 루트몬, 피쿠스몬 추가!",
       "snippet": "디지몬 공식 사이트 ニュース",
       "source": "digimon.net",
       "source_badge": "디지몬웹",
@@ -612,11 +679,12 @@
       "link": "https://digimon.net/topic/detail.php?id=2080",
       "image": null,
       "timestamp": 1791504000,
-      "created_at": "2026-10-09 00:00"
+      "created_at": "2026-10-09 00:00",
+      "title_ja": "デジモン図鑑に、新たにスズモン、セキリュウモン、ルートモン、フィカスモン を追加！"
     },
     {
       "id": "d7b537b8b500ca589aa177840d9be5d2",
-      "title": "[공식] 「レナモン」と「牧野留姫」がG.E.M.シリーズに再登場！",
+      "title": "[공식] '레나몬'과 '마키노 루키'가 G.E.M. 시리즈에 재등장!",
       "snippet": "디지몬 공식 사이트 商品情報",
       "source": "digimon.net",
       "source_badge": "디지몬웹",
@@ -625,7 +693,8 @@
       "link": "https://digimon.net/topic/detail.php?id=2095",
       "image": null,
       "timestamp": 1791417600,
-      "created_at": "2026-10-08 00:00"
+      "created_at": "2026-10-08 00:00",
+      "title_ja": "「レナモン」と「牧野留姫」がG.E.M.シリーズに再登場！"
     },
     {
       "id": "b3f6e4bcb11d57b0ca00f7c8c9a3c44e",
@@ -642,7 +711,7 @@
     },
     {
       "id": "c53ec883d5ec0a53b2425f7a9b84d50e",
-      "title": "[공식] 『僕らが選んだベストアドベンチャー』最新配信情報をUP！",
+      "title": "[공식] 『우리가 고른 베스트 어드벤처』 최신 스트리밍 정보 UP!",
       "snippet": "디지몬 공식 사이트 ニュース",
       "source": "digimon.net",
       "source_badge": "디지몬웹",
@@ -651,11 +720,12 @@
       "link": "https://digimon.net/topic/detail.php?id=2094",
       "image": null,
       "timestamp": 1790985600,
-      "created_at": "2026-10-03 00:00"
+      "created_at": "2026-10-03 00:00",
+      "title_ja": "『僕らが選んだベストアドベンチャー』最新配信情報をUP！"
     },
     {
       "id": "c0368887e957b5adde01e483ab2e312e",
-      "title": "[공식 상품] デジモンカードゲーム エクストラブースター CHIVALROUS XIII 【EX-13】",
+      "title": "[공식 상품] 디지몬 카드 게임 엑스트라 부스터 CHIVALROUS XIII 【EX-13】",
       "snippet": "발매 2026-10-03 · 240円(税込)",
       "source": "digimon.net",
       "source_badge": "디지몬웹",
@@ -664,11 +734,12 @@
       "link": "https://digimon.net/product/detail.php?item_type=0&jan_cd=4582770011999000",
       "image": null,
       "timestamp": 1790985600,
-      "created_at": "2026-10-03 00:00"
+      "created_at": "2026-10-03 00:00",
+      "title_ja": "デジモンカードゲーム エクストラブースター CHIVALROUS XIII 【EX-13】"
     },
     {
       "id": "2237924032746e34d32789d322a11a25",
-      "title": "[공식] 第157回デジ民投票　結果発表！",
+      "title": "[공식] 제157회 디지민 투표 결과 발표!",
       "snippet": "디지몬 공식 사이트 ニュース",
       "source": "digimon.net",
       "source_badge": "디지몬웹",
@@ -677,7 +748,8 @@
       "link": "https://digimon.net/topic/detail.php?id=2092",
       "image": null,
       "timestamp": 1790899200,
-      "created_at": "2026-10-02 00:00"
+      "created_at": "2026-10-02 00:00",
+      "title_ja": "第157回デジ民投票　結果発表！"
     },
     {
       "id": "baba50e7e725eb8a709baaa1454d985a",
@@ -720,7 +792,7 @@
     },
     {
       "id": "1c82d09be81cca6506ba51b58da3c01a",
-      "title": "[공식] 『デジモンエッグズ』連載開始記念 みなと歩先生スペシャルインタビュー",
+      "title": "[공식] 『디지몬 에그즈』 연재 시작 기념 미나토 아유무 선생님 스페셜 인터뷰",
       "snippet": "디지몬 공식 사이트 ニュース",
       "source": "digimon.net",
       "source_badge": "디지몬웹",
@@ -729,11 +801,12 @@
       "link": "https://digimon.net/topic/detail.php?id=2090",
       "image": null,
       "timestamp": 1790726400,
-      "created_at": "2026-09-30 00:00"
+      "created_at": "2026-09-30 00:00",
+      "title_ja": "『デジモンエッグズ』連載開始記念 みなと歩先生スペシャルインタビュー"
     },
     {
       "id": "198c8c5258da68b550d1f0e95d1a8a8a",
-      "title": "[공식] 放送１０周年「デジモンユニバース アプリモンスターズ」全52話 YouTube期間限定公開決定！！",
+      "title": "[공식] 방송 10주년 「디지몬 유니버스 어플리 몬스터즈」 전 52화 YouTube 기간 한정 공개 결정!!",
       "snippet": "디지몬 공식 사이트 ニュース",
       "source": "digimon.net",
       "source_badge": "디지몬웹",
@@ -742,11 +815,12 @@
       "link": "https://digimon.net/topic/detail.php?id=2091",
       "image": null,
       "timestamp": 1790726400,
-      "created_at": "2026-09-30 00:00"
+      "created_at": "2026-09-30 00:00",
+      "title_ja": "放送１０周年「デジモンユニバース アプリモンスターズ」全52話 YouTube期間限定公開決定！！"
     },
     {
       "id": "ed7cf202e106f10e55d0f0a10c557732",
-      "title": "[공식] 【放送開始5周年】「デジモンゴーストゲーム」BD-BOX下巻　本日発売！！",
+      "title": "[공식] 【방송 개시 5주년】 「디지몬 고스트 게임」 BD-BOX 하권 오늘 발매!!",
       "snippet": "디지몬 공식 사이트 ニュース",
       "source": "digimon.net",
       "source_badge": "디지몬웹",
@@ -755,11 +829,12 @@
       "link": "https://digimon.net/topic/detail.php?id=2093",
       "image": null,
       "timestamp": 1790726400,
-      "created_at": "2026-09-30 00:00"
+      "created_at": "2026-09-30 00:00",
+      "title_ja": "【放送開始5周年】「デジモンゴーストゲーム」BD-BOX下巻　本日発売！！"
     },
     {
       "id": "4eb8ea46bcdb0c0c1ba0dbeb97f1956d",
-      "title": "[공식] デジモン29周年【デジモン＆ニク】テーマ企画 第3弾",
+      "title": "[공식] 디지몬 29주년 【디지몬 & 고기】 테마 기획 제3탄",
       "snippet": "디지몬 공식 사이트 ニュース",
       "source": "digimon.net",
       "source_badge": "디지몬웹",
@@ -768,11 +843,12 @@
       "link": "https://digimon.net/topic/detail.php?id=2084",
       "image": null,
       "timestamp": 1790640000,
-      "created_at": "2026-09-29 00:00"
+      "created_at": "2026-09-29 00:00",
+      "title_ja": "デジモン29周年【デジモン＆ニク】テーマ企画 第3弾"
     },
     {
       "id": "0bcb274d1b4f3c78ac287a3013465533",
-      "title": "[공식] 「DIGIMON BEATBREAK」Blu-ray企画進行中！",
+      "title": "[공식] 「DIGIMON BEATBREAK」 Blu-ray 기획 진행 중!",
       "snippet": "디지몬 공식 사이트 ニュース",
       "source": "digimon.net",
       "source_badge": "디지몬웹",
@@ -781,11 +857,12 @@
       "link": "https://digimon.net/topic/detail.php?id=2087",
       "image": null,
       "timestamp": 1790467200,
-      "created_at": "2026-09-27 00:00"
+      "created_at": "2026-09-27 00:00",
+      "title_ja": "「DIGIMON BEATBREAK」Blu-ray企画進行中！"
     },
     {
       "id": "e14013ea31abdc5fc10e53a3930a42bc",
-      "title": "[공식] デジタルモンスターCOLOR DIGIMON BEATBREAK EDITION 予約開始",
+      "title": "[공식] 디지털 몬스터 COLOR DIGIMON BEATBREAK EDITION 예약 시작",
       "snippet": "디지몬 공식 사이트 ニュース",
       "source": "digimon.net",
       "source_badge": "디지몬웹",
@@ -794,11 +871,12 @@
       "link": "https://digimon.net/topic/detail.php?id=2088",
       "image": null,
       "timestamp": 1790467200,
-      "created_at": "2026-09-27 00:00"
+      "created_at": "2026-09-27 00:00",
+      "title_ja": "デジタルモンスターCOLOR DIGIMON BEATBREAK EDITION 予約開始"
     },
     {
       "id": "a69e658325d7d834fb217df0ac4fa428",
-      "title": "[공식] デジモンケース イレモンCOLOR 予約開始",
+      "title": "[공식] 디지몬 케이스 이레몬 COLOR 예약 시작",
       "snippet": "디지몬 공식 사이트 ニュース",
       "source": "digimon.net",
       "source_badge": "디지몬웹",
@@ -807,11 +885,12 @@
       "link": "https://digimon.net/topic/detail.php?id=2089",
       "image": null,
       "timestamp": 1790467200,
-      "created_at": "2026-09-27 00:00"
+      "created_at": "2026-09-27 00:00",
+      "title_ja": "デジモンケース イレモンCOLOR 予約開始"
     },
     {
       "id": "dd53e4679fbd12f1fae3eee952399431",
-      "title": "[공식] デジモン図鑑に、新たにヴォルブモンを追加！さらにアトラタスモン、アルバタスモンのデジモン図鑑を更新！",
+      "title": "[공식] 디지몬 도감에 새로 보르브몬을 추가! 거기에 아트라타스몬, 알바타스몬의 디지몬 도금을 갱신!",
       "snippet": "디지몬 공식 사이트 ニュース",
       "source": "digimon.net",
       "source_badge": "디지몬웹",
@@ -820,7 +899,8 @@
       "link": "https://digimon.net/topic/detail.php?id=2086",
       "image": null,
       "timestamp": 1790467200,
-      "created_at": "2026-09-27 00:00"
+      "created_at": "2026-09-27 00:00",
+      "title_ja": "デジモン図鑑に、新たにヴォルブモンを追加！さらにアトラタスモン、アルバタスモンのデジモン図鑑を更新！"
     },
     {
       "id": "b74a947906936d97e46a8ec74f369112",
@@ -837,7 +917,7 @@
     },
     {
       "id": "7aec4e6ca4f387a2d997e0b9f42d9460",
-      "title": "[공식] 第158回デジ民投票スタート",
+      "title": "[공식] 제158회 디지민 투표 스타트",
       "snippet": "디지몬 공식 사이트 ニュース",
       "source": "digimon.net",
       "source_badge": "디지몬웹",
@@ -846,11 +926,12 @@
       "link": "https://digimon.net/topic/detail.php?id=2083",
       "image": null,
       "timestamp": 1790121600,
-      "created_at": "2026-09-23 00:00"
+      "created_at": "2026-09-23 00:00",
+      "title_ja": "第158回デジ民投票スタート"
     },
     {
       "id": "a091b3c89af8cc9175d5e72eb98c2a09",
-      "title": "[공식] デジモン図鑑に、新たにノスフェラモン、アルティオモン を追加！",
+      "title": "[공식] 디지몬 도감에 새로 노스페라몬, 아르티오몬 추가!",
       "snippet": "디지몬 공식 사이트 ニュース",
       "source": "digimon.net",
       "source_badge": "디지몬웹",
@@ -859,7 +940,8 @@
       "link": "https://digimon.net/topic/detail.php?id=2069",
       "image": null,
       "timestamp": 1789862400,
-      "created_at": "2026-09-20 00:00"
+      "created_at": "2026-09-20 00:00",
+      "title_ja": "デジモン図鑑に、新たにノスフェラモン、アルティオモン を追加！"
     },
     {
       "id": "91d95f16c1719a273d5ac935509af22f",
@@ -889,7 +971,7 @@
     },
     {
       "id": "8743a59417975f6a4c593f7beca5c0ef",
-      "title": "[공식] 「デフォリアル ウォーグレイモン:”G”侵食モード」 2026年9月16日 12時よりプレミアムバンダイで受注開始！！",
+      "title": "[공식] 「데포리얼 워그레이몬: \"G\" 침식 모드」 2026년 9월 16일 12시부터 프리미엄 반다이에서 예약 접수 시작!!",
       "snippet": "디지몬 공식 사이트 商品情報",
       "source": "digimon.net",
       "source_badge": "디지몬웹",
@@ -898,7 +980,8 @@
       "link": "https://digimon.net/topic/detail.php?id=2075",
       "image": null,
       "timestamp": 1789516800,
-      "created_at": "2026-09-16 00:00"
+      "created_at": "2026-09-16 00:00",
+      "title_ja": "「デフォリアル ウォーグレイモン:”G”侵食モード」 2026年9月16日 12時よりプレミアムバンダイで受注開始！！"
     },
     {
       "id": "f3ae1fd1d47a253a807a61abae989f9b",
@@ -1032,7 +1115,7 @@
     },
     {
       "id": "493c8fda6d95287378a99b3e3db23939",
-      "title": "[공식 상품] デジモンカードゲーム ブースターパック TIMELESS BONDS【BT-26】",
+      "title": "[공식 상품] 디지몬 카드 게임 부스터 팩 TIMELESS BONDS 【BT-26】",
       "snippet": "발매 2026-08-29 · 240円(税込)",
       "source": "digimon.net",
       "source_badge": "디지몬웹",
@@ -1041,7 +1124,8 @@
       "link": "https://digimon.net/product/detail.php?item_type=0&jan_cd=4582769982811000",
       "image": null,
       "timestamp": 1787961600,
-      "created_at": "2026-08-29 00:00"
+      "created_at": "2026-08-29 00:00",
+      "title_ja": "デジモンカードゲーム ブースターパック TIMELESS BONDS【BT-26】"
     },
     {
       "id": "03ef8f1e69c71c08f78e96c203c92f35",
