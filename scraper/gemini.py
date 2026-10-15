@@ -2,7 +2,7 @@
 
 환경 변수
   GEMINI_API_KEY   필수. 없으면 available() 이 False → 호출하는 쪽은 번역을 건너뜀
-  GEMINI_MODEL     선택. 기본 gemini-2.5-flash, 없어진 모델이면 사용 가능한 flash 모델을 자동으로 고름
+  GEMINI_MODEL     선택. 비우면 사용 가능한 최신 flash 모델을 자동으로 고름 (막힌 모델이면 다음 모델로 교체)
 
 translate_map({"키": "원문", ...}, glossary={"Agumon": "아구몬"}) → {"키": "한국어"}
   - 여러 문장을 한 번에 JSON으로 주고받아 요청 수를 줄임 (무료 등급은 분당·일일 요청 수 제한이 있음)
@@ -34,27 +34,33 @@ def _headers():
     return {"x-goog-api-key": os.environ["GEMINI_API_KEY"], "Content-Type": "application/json"}
 
 
-def _pick_model():
-    """설정된 모델이 없으면 generateContent 를 지원하는 최신 flash 모델을 고름"""
+def _list_flash_models():
+    """generateContent 를 지원하는 flash 모델, 최신 버전부터"""
+    r = requests.get(f"{API}/models", headers=_headers(), params={"pageSize": 200}, timeout=30)
+    r.raise_for_status()
+    names = [m["name"].split("/", 1)[1] for m in r.json().get("models", [])
+             if "generateContent" in m.get("supportedGenerationMethods", [])]
+    flash = [n for n in names if re.fullmatch(r"gemini-[\d.]+-flash", n)]
+    return sorted(flash, key=lambda n: [int(x) for x in re.findall(r"\d+", n)], reverse=True)
+
+
+def _pick_model(exclude=()):
+    """GEMINI_MODEL 이 있으면 그것, 없으면 사용 가능한 최신 flash 모델"""
     global _model
-    if _model:
+    if _model and _model not in exclude:
         return _model
-    wanted = os.environ.get("GEMINI_MODEL") or "gemini-2.5-flash"
+    wanted = os.environ.get("GEMINI_MODEL")
+    if wanted and wanted not in exclude:
+        _model = wanted
+        return _model
     try:
-        r = requests.get(f"{API}/models", headers=_headers(), params={"pageSize": 200}, timeout=30)
-        r.raise_for_status()
-        names = [m["name"].split("/", 1)[1] for m in r.json().get("models", [])
-                 if "generateContent" in m.get("supportedGenerationMethods", [])]
+        flash = [n for n in _list_flash_models() if n not in exclude]
     except Exception as e:
-        print(f"  [gemini] 모델 목록 조회 실패({e}) — {wanted} 사용")
-        _model = wanted
-        return _model
-    if wanted in names:
-        _model = wanted
-    else:
-        flash = [n for n in names if re.fullmatch(r"gemini-[\d.]+-flash", n)]
-        _model = sorted(flash, key=lambda n: [int(x) for x in re.findall(r"\d+", n)])[-1] if flash else wanted
-        print(f"  [gemini] {wanted} 없음 → {_model} 사용")
+        raise RuntimeError(f"모델 목록 조회 실패: {e}")
+    if not flash:
+        raise RuntimeError("사용 가능한 flash 모델이 없습니다")
+    _model = flash[0]
+    print(f"  [gemini] 모델: {_model}")
     return _model
 
 
@@ -100,6 +106,7 @@ def translate_map(texts, glossary=None, retries=4):
         "contents": [{"parts": [{"text": PROMPT.format(glossary=gl, payload=json.dumps(texts, ensure_ascii=False))}]}],
         "generationConfig": {"temperature": 0.2, "responseMimeType": "application/json"},
     }
+    tried = set()
     model = _pick_model()
     for attempt in range(retries):
         wait = _last_call + MIN_INTERVAL - time.time()
@@ -121,6 +128,12 @@ def translate_map(texts, glossary=None, retries=4):
             continue
         if r.status_code >= 500:
             time.sleep(10 * (attempt + 1))
+            continue
+        if r.status_code == 404:
+            # 단종·신규 사용자 제한 모델 → 다음 최신 flash 모델로 교체
+            tried.add(model)
+            print(f"  [gemini] {model} 사용 불가 → 다른 모델 시도")
+            model = _pick_model(exclude=tried)
             continue
         if r.status_code != 200:
             raise RuntimeError(f"Gemini HTTP {r.status_code}: {r.text[:300]}")
