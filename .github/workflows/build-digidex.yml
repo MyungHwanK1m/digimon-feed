@@ -29,14 +29,14 @@ jobs:
       - name: Build master index (names + levels from Digi-API)
         run: python scraper/generate_digidex.py
 
-      - name: Rebuild DB outputs (labels come from the index)
-        run: python scraper/build_db.py
+      - name: Rebuild dex data (images and dub names come from the index)
+        run: python scraper/build_dex.py
 
       - name: Commit and push if index changed
         run: |
           git config --global user.name "DigiBot"
           git config --global user.email "digibot@users.noreply.github.com"
-          git add docs/data/digimon_all_index.json public/data/digimon_all_index.json data/digimon_evolutions.json public/data/digidex_db.json docs/data/digidex_db.json EVOLUTION.md
+          git add docs/data/digimon_all_index.json public/data/digimon_all_index.json public/data/dex.json docs/data/dex.json data/official/match_report.md
           if git diff --staged --quiet; then
             echo "No changes in digidex index."
           else

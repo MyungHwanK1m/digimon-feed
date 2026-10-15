@@ -1,11 +1,11 @@
-// DIGI-FEED v9 (digidex DB, evolution views)
-const CACHE_NAME = 'digi-feed-v9';
+// DIGI-FEED v10 (official-reference dex)
+const CACHE_NAME = 'digi-feed-v10';
 const ASSETS = [
   './',
   './index.html',
   './manifest.json',
   './digimon_feeds.json',
-  './data/digidex_db.json',
+  './data/dex.json',
   './data/digimon_all_index.json',
   './icon-192.png',
   './icon-512.png'
