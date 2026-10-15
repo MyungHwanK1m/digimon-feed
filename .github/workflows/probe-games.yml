@@ -1,0 +1,24 @@
+name: (temp) Probe game evolution sources
+on:
+  push:
+    branches: [claude/tender-davinci-dcqvn9]
+    paths: ['scraper/probe_games.py', '.github/workflows/probe-games.yml']
+permissions:
+  contents: write
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.10' }
+      - run: pip install requests
+      - run: python scraper/probe_games.py
+      - name: Commit probe output
+        run: |
+          git config --global user.name "DigiBot"
+          git config --global user.email "digibot@users.noreply.github.com"
+          git add -f tmp_games
+          git commit -m "chore: (temp) game source probe output [skip ci]" || exit 0
+          git pull --rebase origin "${GITHUB_REF_NAME}"
+          git push
