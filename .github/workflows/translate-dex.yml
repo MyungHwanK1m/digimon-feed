@@ -1,7 +1,7 @@
 name: Translate Dex Descriptions
 
 # Digi-API 영어 도감 설명을 Gemini로 미리 한국어 번역 (저장소 Secrets 에 GEMINI_API_KEY 필요)
-# 무료 등급 일일 한도에 걸리면 저장 후 멈추고 다음 날 이어서 진행
+# 무료 등급 한도·혼잡에 걸리면 저장 후 멈추고 다음 실행 때 이어서 진행
 on:
   workflow_dispatch:
     inputs:
@@ -9,8 +9,12 @@ on:
         description: '번역된 것도 원문 변경 확인'
         type: boolean
         default: false
+      max:
+        description: '이번 실행 최대 번역 수 (비우면 전부)'
+        type: string
+        default: ''
   schedule:
-    - cron: '41 4 * * *'
+    - cron: '41 */4 * * *'  # 4시간마다, 안 된 것만 (다 끝나면 금방 종료)
 
 permissions:
   contents: write
@@ -33,7 +37,7 @@ jobs:
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GEMINI_MODEL: ${{ vars.GEMINI_MODEL }}
-        run: python scraper/translate_dex.py ${{ inputs.recheck && '--recheck' || '' }}
+        run: python scraper/translate_dex.py ${{ inputs.recheck && '--recheck' || '' }} ${{ inputs.max && format('--max {0}', inputs.max) || '' }}
       - name: Commit if changed
         run: |
           git config --global user.name "DigiBot"
