@@ -1,8 +1,21 @@
 {
-  "last_updated": "2026-10-15 01:05:42",
-  "total_count": 43,
+  "last_updated": "2026-10-15 06:43:06",
+  "total_count": 52,
   "retention_days": 90,
   "feeds": [
+    {
+      "id": "cd6db40a41b2355559141045cf6646a3",
+      "title": "[r/digimon] So, did anyone ever notice Ryo was in Tri's 6th movie?",
+      "snippet": "&#32; submitted by &#32;  /u/Cenrji   [link] &#32; [comments]",
+      "source": "Reddit digimon",
+      "source_badge": "레딧",
+      "category": "sns",
+      "category_name": "SNS/해외",
+      "link": "https://www.reddit.com/r/digimon/comments/1x6bkmz/so_did_anyone_ever_notice_ryo_was_in_tris_6th/",
+      "image": "https://preview.redd.it/66ylko38zjvh1.png?width=140&height=78&auto=webp&s=b23c103e74e19c5863bc16f007c3b358fa4b4174",
+      "timestamp": 1792036113,
+      "created_at": "2026-10-15 03:48"
+    },
     {
       "id": "42c1e0a22ab64cba752faac6c95a1a4d",
       "title": "[r/digimon] in the middle of nowhere: keramon [ art by: tiredseapotato]",
@@ -54,6 +67,19 @@
       "image": "https://preview.redd.it/9shb1zjexgvh1.png?width=640&crop=smart&auto=webp&s=cf733081cff00544e63368c4e495846752ac7409",
       "timestamp": 1791999264,
       "created_at": "2026-10-14 17:34"
+    },
+    {
+      "id": "76b76972fc0a32667c20f620f68c9b50",
+      "title": "[인스타] 프롬푸딩 | AI 매거진 (@prom.pudding)",
+      "snippet": "인스타그램 디지몬 관련 공개 게시물입니다.",
+      "source": "Instagram",
+      "source_badge": "인스타그램",
+      "category": "sns",
+      "category_name": "SNS/해외",
+      "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE1zT0RzcFJBbS1HVWQ4Nnc2eXR3UHhnRWd5dzd3cElHUGhTb1pseTBuVzdEMm04dEdxdkYzT0VoZTRCM2tmcmtjY0NmN0hyYUR2?oc=5",
+      "image": null,
+      "timestamp": 1791995636,
+      "created_at": "2026-10-14 16:33"
     },
     {
       "id": "fbccec4e03f43b4a4cf8942255877a65",
@@ -277,6 +303,19 @@
       "created_at": "2026-10-13 00:00"
     },
     {
+      "id": "4f273163b6a115fde8e798a82f40dc43",
+      "title": "[인스타] 어드밴스 덱 「금강계만다라」 [STK-22] 발매 안내 발매일 : 2026년 10월 16일(금) 가격 : 12,000원 구성 : 구축 완료 덱 54장 / 인덱스 3장 / 특전 카드 5종(총 8장) / 양면 플레이시트 1장 본 상품은 원자재 가격 상승으로 인해 부득이하게 인상된 금액으로 판매됩니다. 그 외",
+      "snippet": "인스타그램 디지몬 관련 공개 게시물입니다.",
+      "source": "Instagram",
+      "source_badge": "인스타그램",
+      "category": "figure",
+      "category_name": "피규어/굿즈",
+      "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE4wRi1UbFQ0QkRFdDN2VTZMQnZ5WW9hX2NOUjNiUDRERm00bmI0WVdhQ1BDQjFyWGpkWm5XcTl4RHFjZ2Y5UVd4NjRjVjgzd3MxZXc?oc=5",
+      "image": null,
+      "timestamp": 1791768404,
+      "created_at": "2026-10-12 01:26"
+    },
+    {
       "id": "b1354fd1a6d46303bc7edc40403dcf9c",
       "title": "[r/digimon] Digimon: World’s Best Picks: Episode 2, Digimon Adventure: Episode 10- Centarumon the Protector!, Discussion Thread",
       "snippet": "https://preview.redd.it/690gy9pa1bth1.jpg?width=2160&amp;format=pjpg&amp;auto=webp&amp;s=076bc9fb69b4bd5920e08a063",
@@ -288,6 +327,19 @@
       "image": "https://external-preview.redd.it/s3RUYoTi2mTSLabMHIgqWiyV6ikF1WyOyFMj87f4_x0.jpeg?width=140&height=140&auto=webp&s=a0a2f06917379c666c90ac100a97f5b1976b752b",
       "timestamp": 1791652382,
       "created_at": "2026-10-10 17:13"
+    },
+    {
+      "id": "1e2542a34b1a833e1800ea65186cd597",
+      "title": "[인스타] Taichi Yagami Digimon Adventure . #lego #legomoc #legostagram #digimon #digimonadventure",
+      "snippet": "인스타그램 디지몬 관련 공개 게시물입니다.",
+      "source": "Instagram",
+      "source_badge": "인스타그램",
+      "category": "sns",
+      "category_name": "SNS/영상",
+      "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFA1MVhwSkg1bVZLd0pXNHdKS2FnZjZpaTJubnlRQklNcDhhN19DMVlQMUJNQi1DZXVRZVY0MzBxUlQ2QjhDX1VpTmhoMGxoUFE2eVE?oc=5",
+      "image": null,
+      "timestamp": 1791604714,
+      "created_at": "2026-10-10 03:58"
     },
     {
       "id": "b4545a9f2e9f082c3a05979b37fac85b",
@@ -327,6 +379,19 @@
       "image": null,
       "timestamp": 1791522509,
       "created_at": "2026-10-09 05:08"
+    },
+    {
+      "id": "d58bdab8b49f2403b6614dc29a3e9b0b",
+      "title": "[인스타] 아 여기부터 저기까지 그냥 다 주실래요 𖦹 ̫ 𖦹 💜💚 기분 따라 골라 쓰고 싶은 역대급 애니메이션 모자 라인업! 에반게리온 초호기부터 디지몬, 포켓몬, 냥코 대전쟁까지 캐릭터들의 머리를 그대로 재현한 모자들이 예약 판매를 시작했습니다! 특유의 디테일을 완벽하게",
+      "snippet": "인스타그램 디지몬 관련 공개 게시물입니다.",
+      "source": "Instagram",
+      "source_badge": "인스타그램",
+      "category": "figure",
+      "category_name": "피규어/굿즈",
+      "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE1WcEhuN0tFOVluSXUwQkxZbkpLeHphaUZDbl8wLWdrUEcySTRNdzc2MWpPWGptUmlyZm5YQks4ZnpKZnA4aDVBeUUtSzR6alQ1Y0E?oc=5",
+      "image": null,
+      "timestamp": 1791508502,
+      "created_at": "2026-10-09 01:15"
     },
     {
       "id": "20f4970585795191be02e6ed9b7de271",
@@ -394,6 +459,32 @@
       "created_at": "2026-10-01 07:00"
     },
     {
+      "id": "9ae80f7b3a21f9b730976f81e7939fce",
+      "title": "[인스타] 【周邊】 📌韓國（Korea） #デジモンアドベンチャー #DigimonAdventure #Digimon #Adventure #數碼寶貝 #數碼寶貝大冒險 #デジモン #八神太一 #石田ヤマト #泉光子郎 #武之内空 #城戸丈 #太刀川ミミ #太刀川美美 #高石タケル #高石岳 #高石武 #八神ヒカリ #八神光 #八神",
+      "snippet": "인스타그램 디지몬 관련 공개 게시물입니다.",
+      "source": "Instagram",
+      "source_badge": "인스타그램",
+      "category": "sns",
+      "category_name": "SNS/해외",
+      "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE1NUWx4b3N4SVdsZDVkdFVEMl9EUHRQNFR1a3R3MVFGdzd6V29NSkYxSTNUX0t1V0N4MEFpdVVtbnB0Vm5ldExUbm5aZF85V3hsT1E?oc=5",
+      "image": null,
+      "timestamp": 1790838000,
+      "created_at": "2026-10-01 07:00"
+    },
+    {
+      "id": "b74a947906936d97e46a8ec74f369112",
+      "title": "[인스타] 디지몬, 다마고치, 프리큐어 등등! 홍대에 열린 반다이남코 굿즈 축제 [Bandai Namco Merch Festival in Seoul] 다양한 캐릭터와 콜라보를 이어온 홍대 리밋션이 디지몬과 다마고치를 중심으로 한 굿즈 축제를 열었다. ‘다모여 페스타’란 이름으로 열리는 이 축제는 디지",
+      "snippet": "인스타그램 디지몬 관련 공개 게시물입니다.",
+      "source": "Instagram",
+      "source_badge": "인스타그램",
+      "category": "figure",
+      "category_name": "피규어/굿즈",
+      "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE9LQWlWZGhkUEVUa0VOaXIwTkVtRF9hLVAxNlFsWk1rbEppREE1ekdvTUxHNUVRVFJ0eG9LTDdoVkhrWTZRaDhORy11OE1rbDl3bUNGenhB?oc=5",
+      "image": null,
+      "timestamp": 1790146800,
+      "created_at": "2026-09-23 07:00"
+    },
+    {
       "id": "91d95f16c1719a273d5ac935509af22f",
       "title": "[트윗] 많은 관심과 성원에 힘입어, 디지몬 어드벤처 프레임이 재출시 되었습니다! 26.09.18부터 26.10.31까지 포토이즘에서 만나보세요:) - X",
       "snippet": "X(트위터) 디지몬 공식/굿즈 속보 트윗입니다.",
@@ -433,6 +524,19 @@
       "created_at": "2026-09-14 00:00"
     },
     {
+      "id": "b34cb16609d15d9b01832ba950a9e77d",
+      "title": "[인스타] #반다이(BANDAI)가 TV 애니메이션 ‘#디지몬어드벤처’ 시리즈에 등장한 역대 디지바이스를 미니어처 패키지 참으로 재현한 ‘디지바이스 패키지 참 & 비스킷’을 2027년 1월 출시합니다. 디지바이스, D-3, 디아크, 디스캐너를 각각 2가지 컬러로 구성하고 시크릿 1종을",
+      "snippet": "인스타그램 디지몬 관련 공개 게시물입니다.",
+      "source": "Instagram",
+      "source_badge": "인스타그램",
+      "category": "figure",
+      "category_name": "피규어/굿즈",
+      "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE15TktfdlE3QVVOQ0pOVlEyUHBhV2J3c2RFX00wc0VvcGhLRkxiMU1mZnU3dXplaVhzSXBncGdCWWpscEhVMVE0NUxUdDBfZzdRV2c?oc=5",
+      "image": null,
+      "timestamp": 1789282800,
+      "created_at": "2026-09-13 07:00"
+    },
+    {
       "id": "9cafb7a0853994ea7bda7e66acf542ea",
       "title": "[트윗] 🎶이 전주에 심장 뛰는 디지몬 팬 손!🙋 〈볼레로〉가 울리면 모험이 시작되고 〈Butter-Fly〉가 들리면 선택받은 아이가 되는 우리 이번엔 극장에서 꼭 들어보세요🔊✨ 👾9월 16일 메가박스 단독 개봉!👾 - X",
       "snippet": "X(트위터) 디지몬 공식/굿즈 속보 트윗입니다.",
@@ -454,6 +558,19 @@
       "category": "figure",
       "category_name": "피규어/굿즈",
       "link": "https://news.google.com/rss/articles/CBMib0FVX3lxTFBGbC0xY1Y0djZ0dGxmMkxhTjk0cWZjYm9PdkZJWVdFVXBrSjQ0c2NUamFNYnFGWVZHZW96ZWdQZWtiWUdBaWNqYlZ5d3BzZDRhaDl0VjJ3OTVZTXg1eTVPRVppN0wxaHVtWDJhMnJsYw?oc=5",
+      "image": null,
+      "timestamp": 1788937200,
+      "created_at": "2026-09-09 07:00"
+    },
+    {
+      "id": "9e177706912413972ba2d3fccb41918a",
+      "title": "[인스타] 사전 예약 서두르세요! 메가박스(@megaboxon)가 디지몬 팝콘통을 출시합니다🍿 영화 개봉을 맞아 선보이는 굿즈인데요. 아구몬부터 파피몬, 피요몬, 텐타몬 등 총 8종의 팝콘통과 키링이 랜덤으로 들어있어요. 디지몬 세대 에디터는 벌써부터 추억 돋고 반가운데요. 과",
+      "snippet": "인스타그램 디지몬 관련 공개 게시물입니다.",
+      "source": "Instagram",
+      "source_badge": "인스타그램",
+      "category": "figure",
+      "category_name": "피규어/굿즈",
+      "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE4zaHBoN1Vxa2pWN0ZtclN5NFZaNmVzU0pzRDBhd1NIZ2dUTGI2Q0dDVGdJVWhaYndNd1c0YVdBeVExTzFGRmxnX1ZkWjk1bGtXNFE?oc=5",
       "image": null,
       "timestamp": 1788937200,
       "created_at": "2026-09-09 07:00"
