@@ -24,6 +24,7 @@ REF_FILE = "data/official/reference.json"
 INDEX_FILE = "public/data/digimon_all_index.json"
 API_MAP_FILE = "data/official/api_map.json"
 GAME_EVO_FILE = "data/game_evolutions.json"
+APPMON_FILE = "data/official/appmon.json"
 OUT_FILES = ["public/data/dex.json", "docs/data/dex.json"]
 REPORT_FILE = "data/official/match_report.md"
 
@@ -200,11 +201,25 @@ def main():
         if evo:
             e["evolution"] = evo
 
+    # 아프몬 도감 (공식 appmon_ko): 번호 A-001 = 공식 id
+    appmons = []
+    for a in sorted(load(APPMON_FILE, {"appmons": []})["appmons"], key=lambda x: x["id"]):
+        no = f"A-{a['id']:03d}"
+        item = {"no": no, "kind": "appmon", "official": True, "name": a.get("name_ko") or no,
+                "level": a.get("grade") or "불명", "app": a.get("app", ""), "attribute": a.get("attribute", ""),
+                "url": a.get("url")}
+        rel = [f"A-{r:03d}" for r in a.get("related", [])]
+        if rel:
+            item["evolution"] = {"related": rel}
+        appmons.append(item)
+
     data = {
         "source": "digimon.net/reference_ko (기본 정보) + Digi-API (그림·더빙명)",
         "official_total": len(ref),
         "ex_total": ex_no - 1,
+        "appmon_total": len(appmons),
         "digimons": entries,
+        "appmons": appmons,
     }
     for target in OUT_FILES:
         os.makedirs(os.path.dirname(target), exist_ok=True)

@@ -233,6 +233,7 @@
     <div id="dex-view-section" class="hidden space-y-3">
       <!-- 목록 화면 -->
       <div id="dex-list-view" class="space-y-3">
+        <div id="dex-kind-tabs" class="grid grid-cols-2 p-1 bg-white/80 dark:bg-[#070e22]/80 rounded-xl border border-blue-200 dark:border-blue-900/60 text-xs font-black"></div>
         <div class="relative">
           <svg class="w-4 h-4 absolute left-3.5 top-1/2 -translate-y-1/2 text-blue-500 z-10 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
           <input
@@ -257,6 +258,19 @@
 
         <div id="dex-list" class="grid grid-cols-1 sm:grid-cols-2 gap-2"></div>
         <button id="dex-more-btn" onclick="showMoreDex()" class="hidden w-full touch-press py-2.5 rounded-xl text-xs font-bold text-blue-600 dark:text-blue-400 bg-white/80 dark:bg-[#070e22]/80 border border-blue-200 dark:border-blue-900/60">더 보기</button>
+
+        <!-- 공식 설정 자료 (링크만) -->
+        <div class="pt-3 space-y-1.5">
+          <p class="text-[11px] font-bold text-slate-500 dark:text-slate-400 px-1">📚 공식 설정 자료 <span class="font-normal text-slate-400">· digimon.net</span></p>
+          <div class="grid grid-cols-2 gap-1.5 text-xs font-bold">
+            <a href="https://digimon.net/about/" target="_blank" rel="noopener noreferrer" class="touch-press p-2.5 rounded-xl bg-white/90 dark:bg-[#070e22]/90 border border-blue-200 dark:border-blue-900/60 text-slate-700 dark:text-slate-300">디지몬이란? ↗</a>
+            <a href="https://digimon.net/profile/" target="_blank" rel="noopener noreferrer" class="touch-press p-2.5 rounded-xl bg-white/90 dark:bg-[#070e22]/90 border border-blue-200 dark:border-blue-900/60 text-slate-700 dark:text-slate-300">디지몬 프로필 ↗</a>
+            <a href="https://digimon.net/history/" target="_blank" rel="noopener noreferrer" class="touch-press p-2.5 rounded-xl bg-white/90 dark:bg-[#070e22]/90 border border-blue-200 dark:border-blue-900/60 text-slate-700 dark:text-slate-300">액정 장난감·게임의 역사 ↗</a>
+            <a href="https://digimon.net/digitalworld-Iliad/" target="_blank" rel="noopener noreferrer" class="touch-press p-2.5 rounded-xl bg-white/90 dark:bg-[#070e22]/90 border border-blue-200 dark:border-blue-900/60 text-slate-700 dark:text-slate-300">디지털 월드 · 일리아스 ↗</a>
+            <a href="https://digimon.net/digitalworld-shambala/" target="_blank" rel="noopener noreferrer" class="touch-press p-2.5 rounded-xl bg-white/90 dark:bg-[#070e22]/90 border border-blue-200 dark:border-blue-900/60 text-slate-700 dark:text-slate-300">디지털 월드 · 샴발라 ↗</a>
+            <a href="https://digimon.net/topic/?cat=ALL" target="_blank" rel="noopener noreferrer" class="touch-press p-2.5 rounded-xl bg-white/90 dark:bg-[#070e22]/90 border border-blue-200 dark:border-blue-900/60 text-slate-700 dark:text-slate-300">공식 뉴스 ↗</a>
+          </div>
+        </div>
       </div>
 
       <!-- 상세 화면 -->
@@ -378,7 +392,7 @@
     function cleanTitle(rawTitle) {
       if (!rawTitle) return '';
       return rawTitle
-        .replace(/^\[(r\/digimon|r\/디지카|트윗|인스타|영상|해외공식|국내공식|뉴스)\]\s*/i, '')
+        .replace(/^\[(r\/digimon|r\/디지카|트윗|인스타|영상|해외공식|국내공식|뉴스|공식|공식 상품)\]\s*/i, '')
         .replace(/^【[^】]+】\s*/, '')
         .trim();
     }
@@ -507,6 +521,8 @@
           ? 'bg-cyan-500/15 text-cyan-600 dark:text-cyan-400 border-cyan-500/40'
           : item.source_badge === 'X(트위터)'
           ? 'bg-sky-500/15 text-sky-600 dark:text-sky-400 border-sky-500/40'
+          : item.source_badge === '디지몬웹'
+          ? 'bg-blue-600/15 text-blue-700 dark:text-blue-300 border-blue-600/40'
           : item.source_badge === '인스타그램'
           ? 'bg-pink-500/15 text-pink-600 dark:text-pink-400 border-pink-500/40'
           : item.source_badge === '유튜브'
@@ -652,7 +668,7 @@
     // PWA Service Worker (Blue Card v6 with auto-update)
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
-        navigator.serviceWorker.register('sw.js?v=11').then((reg) => {
+        navigator.serviceWorker.register('sw.js?v=13').then((reg) => {
           reg.update();
         }).catch(console.error);
 
@@ -697,13 +713,52 @@
     let dexList = [];
     let dexByNo = {};
     let dexLoaded = false;
-    const dexState = { query: '', level: '전체', includeEx: false, shown: 0, selected: null };
+    const dexState = { kind: 'digimon', query: '', level: '전체', includeEx: false, shown: 0, selected: null, listScroll: 0 };
+    let appmonList = [];
     const DEX_PAGE = 60;
     const DEX_LEVELS = ['전체', '유년기 I', '유년기 II', '성장기', '성숙기', '완전체', '궁극체', '아머체', '하이브리드체', '기타'];
     const DEX_MAIN_LEVELS = new Set(DEX_LEVELS.slice(1, -1));
 
     // View Switching: [📡 실시간 피드] <-> [📖 디지몬 도감]
+    // ---- 화면 이동 기록 (휴대폰 뒤로가기 지원) ----
+    // 주소: '' = 피드, '#dex' = 도감 목록, '#dex/<번호>' = 도감 상세
+    function routeFromHash() {
+      const m = location.hash.match(/^#dex(?:\/(.+))?$/);
+      if (!m) return { view: 'feed' };
+      return m[1] ? { view: 'dex', no: decodeURIComponent(m[1]) } : { view: 'dex' };
+    }
+
+    function goTo(hash) {
+      if (location.hash !== hash && !(hash === '' && !location.hash)) {
+        history.pushState({ digifeed: true }, '', hash || (location.pathname + location.search));
+      }
+    }
+
+    function applyRoute(route) {
+      showView(route.view);
+      if (route.view !== 'dex') return;
+      if (route.no && dexByNo[route.no]) showDexDetail(route.no);
+      else showDexList();
+    }
+
+    // 스크롤 위치는 직접 관리 (브라우저 자동 복원이 상세·목록 위치를 엉뚱하게 바꾸지 않도록)
+    if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+    let feedScroll = 0;
+    window.addEventListener('popstate', () => {
+      const route = routeFromHash();
+      applyRoute(route);
+      if (route.view === 'feed') requestAnimationFrame(() => window.scrollTo({ top: feedScroll }));
+    });
+
+    // View Switching: [📡 실시간 피드] <-> [📖 디지몬 도감]
     function switchView(view) {
+      goTo(view === 'dex' ? '#dex' : '');
+      applyRoute({ view });
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function showView(view) {
+      if (currentView === 'feed' && view !== 'feed') feedScroll = window.scrollY; // 피드로 돌아올 때 위치 복원
       currentView = view;
       const feedTab = document.getElementById('view-tab-feed');
       const dexTab = document.getElementById('view-tab-dex');
@@ -716,7 +771,6 @@
       feedSec.classList.toggle('hidden', view !== 'feed');
       dexSec.classList.toggle('hidden', view === 'feed');
       if (view === 'dex' && dexLoaded && !dexState.shown) renderDexList(true);
-      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
     async function loadDigidex() {
@@ -725,16 +779,12 @@
         if (!res.ok) throw new Error('dex load error');
         const data = await res.json();
         dexList = data.digimons || [];
-        dexByNo = Object.fromEntries(dexList.map(d => [d.no, d]));
+        appmonList = data.appmons || [];
+        dexByNo = Object.fromEntries([...dexList, ...appmonList].map(d => [d.no, d]));
+        renderDexKindTabs();
         dexLoaded = true;
         renderDexLevelChips();
-        const fromHash = (location.hash.match(/^#dex\/(.+)$/) || [])[1];
-        if (fromHash && dexByNo[decodeURIComponent(fromHash)]) {
-          switchView('dex');
-          openDexDetail(decodeURIComponent(fromHash), false);
-        } else if (currentView === 'dex') {
-          renderDexList(true);
-        }
+        applyRoute(routeFromHash());
       } catch (err) {
         console.error('Failed to load dex', err);
         const t = document.getElementById('dex-count-text');
@@ -742,26 +792,52 @@
       }
     }
 
+    function renderDexKindTabs() {
+      const box = document.getElementById('dex-kind-tabs');
+      if (!box) return;
+      const tab = (k, label, n) => `<button onclick="onDexKind(${jsArg(k)})" class="touch-press py-1.5 rounded-lg transition ${dexState.kind === k ? 'bg-[#004ce8] text-white shadow-sm' : 'text-slate-500 dark:text-slate-400'}">${label} <span class="font-mono text-[10px] opacity-70">${n}</span></button>`;
+      box.innerHTML = tab('digimon', '디지몬', dexList.filter(d => d.official).length) + tab('appmon', '아프몬', appmonList.length);
+      box.classList.toggle('hidden', !appmonList.length);
+    }
+
+    function onDexKind(kind) {
+      dexState.kind = kind;
+      dexState.level = '전체';
+      renderDexKindTabs();
+      renderDexLevelChips();
+      document.getElementById('dex-include-ex').closest('label').classList.toggle('invisible', kind === 'appmon');
+      renderDexList(true);
+    }
+
+    function currentDexSource() {
+      return dexState.kind === 'appmon' ? appmonList : dexList;
+    }
+
     function dexLevelGroup(d) {
+      if (d.kind === 'appmon') return d.level;
       return DEX_MAIN_LEVELS.has(d.level) ? d.level : '기타';
     }
 
     function dexMatches(d) {
-      if (!dexState.includeEx && !d.official) return false;
+      if (d.kind !== 'appmon' && !dexState.includeEx && !d.official) return false;
       if (dexState.level !== '전체' && dexLevelGroup(d) !== dexState.level) return false;
       const q = dexState.query;
       if (!q) return true;
       const num = q.replace(/^no\.?\s*/i, '');
       if (/^\d+$/.test(num) && d.official && parseInt(d.no, 10) === parseInt(num, 10)) return true;
       if (/^ex-?\d+$/i.test(q) && d.no.toLowerCase() === q.toLowerCase().replace(/^ex-?/, 'ex-').replace(/ex-(\d+)/, (m, n) => 'ex-' + n.padStart(4, '0'))) return true;
-      const hay = [d.name, d.name_dub, d.name_en, d.api_name].filter(Boolean).join(' ').toLowerCase().replace(/\s+/g, '');
+      if (d.kind === 'appmon' && d.no.toLowerCase() === q.toLowerCase()) return true;
+      const hay = [d.name, d.name_dub, d.name_en, d.api_name, d.app].filter(Boolean).join(' ').toLowerCase().replace(/\s+/g, '');
       return hay.includes(q.toLowerCase().replace(/\s+/g, ''));
     }
 
     function renderDexLevelChips() {
       const box = document.getElementById('dex-level-chips');
       if (!box) return;
-      box.innerHTML = DEX_LEVELS.map(l => `
+      const levels = dexState.kind === 'appmon'
+        ? ['전체', ...new Set(appmonList.map(a => a.level))]
+        : DEX_LEVELS;
+      box.innerHTML = levels.map(l => `
         <button onclick="onDexLevel(${jsArg(l)})" class="touch-press px-3 py-1.5 rounded-xl text-xs font-bold shrink-0 transition border ${dexState.level === l ? 'bg-[#004ce8] text-white border-blue-400/40 shadow-md shadow-blue-600/30' : 'bg-white/90 dark:bg-[#070e22]/90 text-slate-700 dark:text-slate-300 border-blue-200 dark:border-blue-900/60'}">${escapeHtml(l)}</button>
       `).join('');
     }
@@ -773,13 +849,13 @@
     }
 
     function dexNoLabel(d) {
-      return d.official ? `No.${d.no}` : d.no;
+      return d.official && d.kind !== 'appmon' ? `No.${d.no}` : d.no;
     }
 
     function renderDexList(reset) {
       const box = document.getElementById('dex-list');
       if (!box) return;
-      const items = dexList.filter(dexMatches);
+      const items = currentDexSource().filter(dexMatches);
       if (reset) {
         dexState.shown = 0;
         box.innerHTML = '';
@@ -791,12 +867,12 @@
           <div class="min-w-0 flex-1">
             <p class="text-[10px] font-bold font-mono ${d.official ? 'text-blue-600 dark:text-blue-400' : 'text-slate-400'}">${escapeHtml(dexNoLabel(d))}</p>
             <p class="text-sm font-black text-slate-900 dark:text-slate-100 leading-tight break-keep">${escapeHtml(d.name)}${d.name_dub ? ` <span class="text-[11px] font-bold text-slate-400">(${escapeHtml(d.name_dub)})</span>` : ''}</p>
-            <p class="text-[10px] text-slate-400 truncate">${escapeHtml(d.level)}${d.type ? ' · ' + escapeHtml(d.type) : ''}</p>
+            <p class="text-[10px] text-slate-400 truncate">${escapeHtml(d.level)}${d.type ? ' · ' + escapeHtml(d.type) : ''}${d.app ? ' · ' + escapeHtml(d.app) : ''}</p>
           </div>
         </div>
       `).join(''));
       dexState.shown += next.length;
-      document.getElementById('dex-count-text').textContent = `${items.length.toLocaleString()} DIGIMON`;
+      document.getElementById('dex-count-text').textContent = `${items.length.toLocaleString()} ${dexState.kind === 'appmon' ? 'APPMON' : 'DIGIMON'}`;
       document.getElementById('dex-more-btn').classList.toggle('hidden', dexState.shown >= items.length);
       if (!items.length) {
         box.innerHTML = `<div class="col-span-full py-12 text-center text-xs text-slate-500">조건에 맞는 디지몬이 없습니다.${dexState.includeEx ? '' : ' 공식 외 디지몬(EX)을 포함해 보세요.'}</div>`;
@@ -829,11 +905,17 @@
       renderDexList(false);
     }
 
-    function openDexDetail(no, pushHash = true) {
+    function openDexDetail(no) {
+      if (!dexByNo[no]) return;
+      if (dexState.selected === null) dexState.listScroll = window.scrollY; // 목록으로 돌아올 때 위치 복원
+      goTo(`#dex/${encodeURIComponent(no)}`);
+      showDexDetail(no);
+    }
+
+    function showDexDetail(no) {
       const d = dexByNo[no];
       if (!d) return;
       dexState.selected = no;
-      if (pushHash) history.replaceState(null, '', `#dex/${encodeURIComponent(no)}`);
       document.getElementById('dex-list-view').classList.add('hidden');
       document.getElementById('dex-detail-view').classList.remove('hidden');
       renderDexDetail(d);
@@ -841,12 +923,23 @@
       window.scrollTo({ top: 0 });
     }
 
+    // "← 목록으로": 앱 안에서 연 상세면 뒤로가기와 같게, 링크로 바로 연 상세면 목록으로 교체
     function closeDexDetail() {
+      if (history.state && history.state.digifeed) {
+        history.back();
+      } else {
+        history.replaceState({ digifeed: true }, '', '#dex');
+        showDexList();
+      }
+    }
+
+    function showDexList() {
+      const wasDetail = dexState.selected !== null;
       dexState.selected = null;
-      history.replaceState(null, '', location.pathname + location.search);
       document.getElementById('dex-detail-view').classList.add('hidden');
       document.getElementById('dex-list-view').classList.remove('hidden');
       if (!dexState.shown) renderDexList(true);
+      if (wasDetail) requestAnimationFrame(() => window.scrollTo({ top: dexState.listScroll || 0 }));
     }
 
     function renderDexChips(title, nos) {
@@ -874,19 +967,42 @@
     // 도감 설명·필살기: Digi-API 영문 설명을 자동 번역 (공식 문장은 저장하지 않으므로 공식 링크와 함께 제공)
     // TCG 카드: digimoncard.io 공개 API (카드게임은 북미식 이름이라 일부 디지몬은 카드를 못 찾을 수 있음)
     const dexExtraCache = {};
-    const translationCache = {};
+    // 번역: MyMemory(무료, IP당 하루 약 5,000자) → 실패·한도 초과 시 구글 번역으로 대체.
+    // 결과는 휴대폰(localStorage)에 저장해 같은 문장은 다시 요청하지 않음.
+    const TR_STORE = 'digi_tr_v1';
+    let translationCache = {};
+    try { translationCache = JSON.parse(localStorage.getItem(TR_STORE) || '{}'); } catch (_) {}
+    function saveTranslations() {
+      try {
+        const keys = Object.keys(translationCache);
+        if (keys.length > 800) keys.slice(0, keys.length - 800).forEach(k => delete translationCache[k]);
+        localStorage.setItem(TR_STORE, JSON.stringify(translationCache));
+      } catch (_) {}
+    }
+
+    async function translateWithMyMemory(text) {
+      const res = await fetch(`https://api.mymemory.translated.net/get?q=${encodeURIComponent(text)}&langpair=en|ko`);
+      if (!res.ok) return null;
+      const data = await res.json();
+      const t = data && data.responseData && data.responseData.translatedText;
+      if (Number(data.responseStatus) !== 200 || data.quotaFinished || !t || /MYMEMORY WARNING|QUERY LENGTH LIMIT/i.test(t)) return null;
+      return t;
+    }
+
+    async function translateWithGoogle(text) {
+      const res = await fetch(`https://translate.googleapis.com/translate_a/single?client=gtx&sl=en&tl=ko&dt=t&q=${encodeURIComponent(text)}`);
+      if (!res.ok) return null;
+      const data = await res.json();
+      return Array.isArray(data) && Array.isArray(data[0]) ? data[0].map(x => x[0]).join('') : null;
+    }
 
     async function translateChunk(chunk) {
       if (translationCache[chunk]) return translationCache[chunk];
-      try {
-        const res = await fetch(`https://api.mymemory.translated.net/get?q=${encodeURIComponent(chunk)}&langpair=en|ko`);
-        if (res.ok) {
-          const data = await res.json();
-          const t = data && data.responseStatus === 200 && data.responseData && data.responseData.translatedText;
-          if (t) return (translationCache[chunk] = t);
-        }
-      } catch (_) {}
-      return null;
+      let t = null;
+      try { t = await translateWithMyMemory(chunk); } catch (_) {}
+      if (!t) { try { t = await translateWithGoogle(chunk); } catch (_) {} }
+      if (t) { translationCache[chunk] = t; saveTranslations(); }
+      return t;
     }
 
     async function translateTextToKo(text) {
@@ -918,9 +1034,53 @@
       loadDexTcg(d);
     }
 
+    // 미리 번역해 둔 도감 설명 (scraper/translate_dex.py → data/dex_ko/<api_id/100>.json)
+    async function loadPretranslated(apiId) {
+      const bucket = Math.floor(apiId / 100), key = 'ko:' + bucket;
+      if (!(key in dexExtraCache)) {
+        dexExtraCache[key] = fetch(`data/dex_ko/${bucket}.json`).then(r => r.ok ? r.json() : {}).catch(() => ({}));
+      }
+      const data = await dexExtraCache[key];
+      const item = data[String(apiId)];
+      return item && (item.profile || (item.skills || []).length) ? item : null;
+    }
+
+    function renderDexDescBox(d, info, pre) {
+      const box = document.getElementById('dex-desc');
+      if (!stillShowing(d) || !box) return;
+      if (!info.profile && !info.skills.length) {
+        box.innerHTML = '<p class="text-xs text-slate-400">등록된 도감 설명이 없습니다.</p>';
+        return;
+      }
+      box.innerHTML = `
+        <h3 class="flex items-baseline gap-2">
+          <span class="text-sm font-black text-slate-900 dark:text-white">📖 도감 설명</span>
+          <span class="text-[10px] font-bold tracking-widest text-blue-600/70 dark:text-blue-400/70 font-mono">PROFILE</span>
+          <span id="dex-tr-status" class="ml-auto text-[10px] font-medium text-slate-400 ${pre ? '' : 'animate-pulse'}">${pre ? '번역 · Digi-API' : '번역 중…'}</span>
+        </h3>
+        ${info.profile ? `<p id="dex-desc-profile" class="p-3.5 rounded-2xl bg-slate-900/95 text-slate-300 border border-blue-500/40 text-xs sm:text-[13px] leading-relaxed">${escapeHtml(info.profile)}</p>` : ''}
+        ${info.skills.length ? `
+          <div class="space-y-1.5">
+            <p class="text-[11px] font-bold text-slate-500 dark:text-slate-400">⚡ 필살기</p>
+            ${info.skills.slice(0, 6).map((sk, i) => `
+              <div class="p-2.5 rounded-xl bg-blue-50/60 dark:bg-blue-950/40 border border-blue-200/50 dark:border-blue-900/50">
+                <p class="text-[12px] font-black text-blue-600 dark:text-blue-400">${escapeHtml(sk.name)}${sk.name_en && sk.name_en !== sk.name ? ` <span class="text-[10px] font-medium text-slate-400">${escapeHtml(sk.name_en)}</span>` : ''}</p>
+                ${sk.desc ? `<p id="dex-desc-skill-${i}" class="text-[11px] sm:text-[12px] text-slate-600 dark:text-slate-400 mt-0.5 leading-relaxed">${escapeHtml(sk.desc)}</p>` : ''}
+              </div>`).join('')}
+          </div>` : ''}
+        <p class="text-[10px] text-slate-400">원문은 영어이며 자동 번역이라 공식 표현과 다를 수 있습니다. 정확한 내용은 공식 도감에서 확인하세요.</p>
+      `;
+    }
+
     async function loadDexDescription(d) {
       const box = () => document.getElementById('dex-desc');
       if (!d.api_id) return;
+      const pre = await loadPretranslated(d.api_id);
+      if (pre) {
+        renderDexDescBox(d, { profile: pre.profile || '', skills: (pre.skills || []).filter(s => s.name || s.desc) }, true);
+        return;
+      }
+      // 아직 미리 번역되지 않은 디지몬: Digi-API 원문을 받아 그 자리에서 번역
       let info = dexExtraCache['api:' + d.api_id];
       if (!info) {
         try {
@@ -937,32 +1097,20 @@
           return;
         }
       }
-      if (!stillShowing(d) || !box()) return;
-      if (!info.profile && !info.skills.length) {
-        box().innerHTML = '<p class="text-xs text-slate-400">등록된 도감 설명이 없습니다.</p>';
-        return;
-      }
-      box().innerHTML = `
-        <h3 class="flex items-baseline gap-2">
-          <span class="text-sm font-black text-slate-900 dark:text-white">📖 도감 설명</span>
-          <span class="text-[10px] font-bold tracking-widest text-blue-600/70 dark:text-blue-400/70 font-mono">PROFILE</span>
-          <span class="ml-auto text-[10px] font-medium text-slate-400">자동 번역 · Digi-API</span>
-        </h3>
-        ${info.profile ? `<p id="dex-desc-profile" class="p-3.5 rounded-2xl bg-slate-900/95 text-slate-300 border border-blue-500/40 text-xs sm:text-[13px] leading-relaxed">${escapeHtml(info.profile)}</p>` : ''}
-        ${info.skills.length ? `
-          <div class="space-y-1.5">
-            <p class="text-[11px] font-bold text-slate-500 dark:text-slate-400">⚡ 필살기</p>
-            ${info.skills.slice(0, 6).map((sk, i) => `
-              <div class="p-2.5 rounded-xl bg-blue-50/60 dark:bg-blue-950/40 border border-blue-200/50 dark:border-blue-900/50">
-                <p class="text-[12px] font-black text-blue-600 dark:text-blue-400">${escapeHtml(sk.name)}</p>
-                ${sk.desc ? `<p id="dex-desc-skill-${i}" class="text-[11px] sm:text-[12px] text-slate-600 dark:text-slate-400 mt-0.5 leading-relaxed">${escapeHtml(sk.desc)}</p>` : ''}
-              </div>`).join('')}
-          </div>` : ''}
-        <p class="text-[10px] text-slate-400">원문은 영어이며 자동 번역이라 공식 표현과 다를 수 있습니다. 정확한 내용은 공식 도감에서 확인하세요.</p>
-      `;
+      renderDexDescBox(d, info, false);
+      if (!stillShowing(d) || !box() || (!info.profile && !info.skills.length)) return;
       const setText = (id, t) => { const el = document.getElementById(id); if (el && t && stillShowing(d)) el.textContent = t; };
-      if (info.profile) translateTextToKo(info.profile).then(t => setText('dex-desc-profile', t));
-      info.skills.slice(0, 6).forEach((sk, i) => { if (sk.desc) translateTextToKo(sk.desc).then(t => setText('dex-desc-skill-' + i, t)); });
+      const status = document.getElementById('dex-tr-status');
+      const jobs = [];
+      if (info.profile) jobs.push(translateTextToKo(info.profile).then(t => (setText('dex-desc-profile', t), !!t)));
+      info.skills.slice(0, 6).forEach((sk, i) => {
+        if (sk.desc) jobs.push(translateTextToKo(sk.desc).then(t => (setText('dex-desc-skill-' + i, t), !!t)));
+      });
+      Promise.all(jobs).then(results => {
+        if (!stillShowing(d) || !status) return;
+        status.textContent = results.every(Boolean) ? '자동 번역 · Digi-API' : '번역 실패 · 영어 원문 표시';
+        status.className = 'ml-auto text-[10px] font-medium ' + (results.every(Boolean) ? 'text-slate-400' : 'text-amber-500');
+      });
     }
 
     async function loadDexTcg(d) {
@@ -1023,6 +1171,7 @@
               <div class="flex items-center gap-1.5 flex-wrap pt-1">
                 <span class="${badge} bg-blue-500/15 text-blue-600 dark:text-blue-400 border-blue-500/30">${escapeHtml(d.level)}</span>
                 ${d.type ? `<span class="${badge} bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 border-emerald-500/30">${escapeHtml(d.type)}</span>` : ''}
+                ${d.app ? `<span class="${badge} bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 border-emerald-500/30">앱: ${escapeHtml(d.app)}</span>` : ''}
                 ${d.attribute ? `<span class="${badge} bg-purple-500/15 text-purple-600 dark:text-purple-400 border-purple-500/30">${escapeHtml(d.attribute)}</span>` : ''}
                 ${d.x_antibody ? `<span class="${badge} bg-rose-500/15 text-rose-600 dark:text-rose-400 border-rose-500/30">X항체</span>` : ''}
                 ${d.xros ? `<span class="${badge} bg-amber-500/15 text-amber-600 dark:text-amber-400 border-amber-500/30">크로스워즈</span>` : ''}
@@ -1037,7 +1186,7 @@
             ${d.url ? `
               <a href="${escapeHtml(safeUrl(d.url))}" target="_blank" rel="noopener noreferrer" class="touch-press flex items-center justify-between gap-3 p-3 rounded-2xl bg-[#004ce8] text-white shadow-md shadow-blue-600/30">
                 <span>
-                  <span class="block text-sm font-black">공식 디지몬 도감에서 보기</span>
+                  <span class="block text-sm font-black">공식 ${d.kind === 'appmon' ? '아프몬' : '디지몬'} 도감에서 보기</span>
                   <span class="block text-[11px] text-blue-100">프로필 · 필살기 · 공식 일러스트</span>
                 </span>
                 <span class="text-lg">↗</span>
@@ -1058,7 +1207,7 @@
               ${hasEvo ? `
                 ${renderDexChips('진화 전', evo.prior)}
                 ${renderDexChips('진화 후', evo.next)}
-                ${renderDexChips('관련 디지몬', evo.related)}
+                ${renderDexChips(d.kind === 'appmon' ? '관련 아프몬' : '관련 디지몬', evo.related)}
               ` : `<p class="text-xs text-slate-400">${d.official ? '공식 도감에 등록된 진화·관련 디지몬이 없습니다.' : '공식 도감 진화 정보가 없는 디지몬입니다.'}</p>`}
             </div>
           </div>

@@ -27,6 +27,9 @@ jobs:
           pip install -r scraper/requirements.txt
 
       - name: Run Crawler
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_MODEL: ${{ vars.GEMINI_MODEL }}
         run: |
           python scraper/crawl.py
 
@@ -35,6 +38,7 @@ jobs:
           git config --global user.name "DigiBot"
           git config --global user.email "digibot@users.noreply.github.com"
           git add data/digimon_feeds.json docs/digimon_feeds.json public/digimon_feeds.json
+          git add data/translations 2>/dev/null || true
           if git diff --staged --quiet; then
             echo "No changes in feeds data."
           else

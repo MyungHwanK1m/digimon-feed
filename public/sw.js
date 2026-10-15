@@ -1,5 +1,5 @@
-// DIGI-FEED v11 (dex: translated profile, TCG cards)
-const CACHE_NAME = 'digi-feed-v11';
+// DIGI-FEED v12 (appmon dex, official feed, history navigation)
+const CACHE_NAME = 'digi-feed-v13';
 const ASSETS = [
   './',
   './index.html',
