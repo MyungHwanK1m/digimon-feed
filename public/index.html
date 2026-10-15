@@ -655,7 +655,7 @@
     // PWA Service Worker (Blue Card v6 with auto-update)
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
-        navigator.serviceWorker.register('sw.js?v=8').then((reg) => {
+        navigator.serviceWorker.register('sw.js?v=9').then((reg) => {
           reg.update();
         }).catch(console.error);
 
@@ -732,15 +732,14 @@
       try {
         const [resAll, resLocal] = await Promise.all([
           fetch(`data/digimon_all_index.json?t=${Date.now()}`),
-          fetch(`data/digidex_ko.json?t=${Date.now()}`)
+          fetch(`data/digidex_db.json?t=${Date.now()}`)
         ]);
         if (resAll.ok) {
           const dataAll = await resAll.json();
           masterIndex = dataAll.digimons || [];
         }
         if (resLocal.ok) {
-          const dataLocal = await resLocal.json();
-          localDigidex = dataLocal.digimons || [];
+          applyDigidexDb(await resLocal.json());
         }
         if (currentView === 'dex' && !currentDexDigimon) {
           selectQuickDex('오메가몬');
@@ -748,6 +747,17 @@
       } catch (err) {
         console.error("Failed to load digidex databases", err);
       }
+    }
+
+    // 도감 DB 적용: 직접 작성한 도감(dex)과 도감이 정한 진화 루트(dex.evolution)
+    function applyDigidexDb(db) {
+      const entries = (db && db.digimons) || [];
+      localDigidex = entries
+        .filter(e => e.dex && (e.dex.profile || (e.dex.skills && e.dex.skills.length)))
+        .map(e => ({ ...e.dex, id: e.id, name_en: e.name, name_ko: e.dex.name_ko || e.name }));
+      CANONICAL_BY_NORM = Object.fromEntries(entries
+        .filter(e => e.dex && e.dex.evolution)
+        .map(e => [normName(e.name), e.dex.evolution]));
     }
 
     // Quick Tag Selection
@@ -1169,110 +1179,9 @@
       return key ? DIGI_TYPES_KO[key] : typ;
     }
 
-    // 원작 애니메이션(TV 본편) 파트너 진화 라인 — 작성 규칙과 전체 목록은 EVOLUTION.md 참고
-    // "애니" 보기에 그대로 표시되고, "전체" 보기(Digi-API 목록)에서는 맨 앞으로 정렬하는 데만 사용
-    const CANONICAL_LINES = {
-      'Koromon': { prior: ['Botamon'], next: ['Agumon'] },
-      'Agumon': { prior: ['Koromon'], next: ['Greymon'] },
-      'Agumon (2006 Anime Version)': { prior: ['Koromon'], next: ['Geo Greymon'] },
-      'Greymon': { prior: ['Agumon'], next: ['Metal Greymon'] },
-      'Metal Greymon': { prior: ['Greymon'], next: ['War Greymon'] },
-      'War Greymon': { prior: ['Metal Greymon'], next: ['Omegamon'] },
-      'Tunomon': { next: ['Gabumon'] },
-      'Gabumon': { prior: ['Tunomon'], next: ['Garurumon'] },
-      'Garurumon': { prior: ['Gabumon'], next: ['Were Garurumon'] },
-      'Were Garurumon': { prior: ['Garurumon'], next: ['Metal Garurumon'] },
-      'Metal Garurumon': { prior: ['Were Garurumon'], next: ['Omegamon'] },
-      'Omegamon': { prior: ['War Greymon', 'Metal Garurumon'], next: ['Omegamon(Merciful Mode)'] },
-      'Omegamon(Merciful Mode)': { prior: ['Omegamon'] },
-      'Gigimon': { next: ['Guilmon'] },
-      'Guilmon': { prior: ['Gigimon'], next: ['Growmon'] },
-      'Growmon': { prior: ['Guilmon'], next: ['Megalo Growmon'] },
-      'Megalo Growmon': { prior: ['Growmon'], next: ['Dukemon'] },
-      'Dukemon': { prior: ['Megalo Growmon'], next: ['Dukemon(Crimson Mode)'] },
-      'Dukemon(Crimson Mode)': { prior: ['Dukemon'] },
-      'Chibimon': { next: ['V-mon'] },
-      'V-mon': { prior: ['Chibimon'], next: ['XV-mon', 'Fladramon', 'Lighdramon'] },
-      'XV-mon': { prior: ['V-mon'], next: ['Paildramon'] },
-      'Fladramon': { prior: ['V-mon'] },
-      'Lighdramon': { prior: ['V-mon'] },
-      'Paildramon': { prior: ['XV-mon', 'Stingmon'], next: ['Imperialdramon(Dragon Mode)'] },
-      'Imperialdramon(Dragon Mode)': { prior: ['Paildramon'], next: ['Imperialdramon(Fighter Mode)'] },
-      'Imperialdramon(Fighter Mode)': { prior: ['Imperialdramon(Dragon Mode)'], next: ['Imperialdramon(Paladin Mode)'] },
-      'Imperialdramon(Paladin Mode)': { prior: ['Imperialdramon(Fighter Mode)'] },
-      'Tokomon': { next: ['Patamon'] },
-      'Patamon': { prior: ['Tokomon'], next: ['Angemon'] },
-      'Angemon': { prior: ['Patamon'], next: ['Holy Angemon'] },
-      'Nyaromon': { next: ['Plotmon'] },
-      'Plotmon': { prior: ['Nyaromon'], next: ['Tailmon'] },
-      'Tailmon': { prior: ['Plotmon'], next: ['Angewomon'] },
-      'Angewomon': { prior: ['Tailmon'] },
-      'Mochimon': { next: ['Tentomon'] },
-      'Tentomon': { prior: ['Mochimon'], next: ['Kabuterimon'] },
-      'Kabuterimon': { prior: ['Tentomon'], next: ['Atlur Kabuterimon (Red)'] },
-      'Atlur Kabuterimon (Red)': { prior: ['Kabuterimon'], next: ['Herakle Kabuterimon'] },
-      'Tanemon': { next: ['Palmon'] },
-      'Palmon': { prior: ['Tanemon'], next: ['Togemon'] },
-      'Togemon': { prior: ['Palmon'], next: ['Lilimon'] },
-      'Lilimon': { prior: ['Togemon'], next: ['Rosemon'] },
-      'Pukamon': { next: ['Gomamon'] },
-      'Gomamon': { prior: ['Pukamon'], next: ['Ikkakumon'] },
-      'Ikkakumon': { prior: ['Gomamon'], next: ['Zudomon'] },
-      'Zudomon': { prior: ['Ikkakumon'], next: ['Vikemon'] },
-      'Pyocomon': { next: ['Piyomon'] },
-      'Piyomon': { prior: ['Pyocomon'], next: ['Birdramon'] },
-      'Birdramon': { prior: ['Piyomon'], next: ['Garudamon'] },
-      'Garudamon': { prior: ['Birdramon'], next: ['Hououmon'] },
-      'Impmon': { next: ['Beelzebumon'] },
-      'Beelzebumon': { prior: ['Impmon'], next: ['Beelzebumon(Blast Mode)'] },
-      'Beelzebumon(Blast Mode)': { prior: ['Beelzebumon'] },
-      // 어드벤처 궁극체
-      'Holy Angemon': { prior: ['Angemon'], next: ['Seraphimon'] },
-      'Seraphimon': { prior: ['Holy Angemon'] },
-      'Ofanimon': { prior: ['Angewomon'] },
-      'Herakle Kabuterimon': { prior: ['Atlur Kabuterimon (Red)'] },
-      'Rosemon': { prior: ['Lilimon'] },
-      'Vikemon': { prior: ['Zudomon'] },
-      'Hououmon': { prior: ['Garudamon'] },
-      'Botamon': { next: ['Koromon'] },
-      'Punimon': { next: ['Tunomon'] },
-      // 어드벤처 02
-      'Chicomon': { next: ['Chibimon'] },
-      'Leafmon': { next: ['Minomon'] },
-      'Minomon': { prior: ['Leafmon'], next: ['Wormmon'] },
-      'Wormmon': { prior: ['Minomon'], next: ['Stingmon'] },
-      'Stingmon': { prior: ['Wormmon'], next: ['Paildramon'] },
-      'Poromon': { next: ['Hawkmon'] },
-      'Hawkmon': { prior: ['Poromon'], next: ['Aquilamon'] },
-      'Aquilamon': { prior: ['Hawkmon'], next: ['Silphymon'] },
-      'Silphymon': { prior: ['Aquilamon', 'Tailmon'] },
-      'Upamon': { next: ['Armadimon'] },
-      'Armadimon': { prior: ['Upamon'], next: ['Ankylomon'] },
-      'Ankylomon': { prior: ['Armadimon'], next: ['Shakkoumon'] },
-      'Shakkoumon': { prior: ['Ankylomon', 'Angemon'] },
-      // 테이머즈
-      'Gummymon': { next: ['Terriermon'] },
-      'Terriermon': { prior: ['Gummymon'], next: ['Galgomon'] },
-      'Galgomon': { prior: ['Terriermon'], next: ['Rapidmon Perfect'] },
-      'Rapidmon Perfect': { prior: ['Galgomon'], next: ['Saint Galgomon'] },
-      'Saint Galgomon': { prior: ['Rapidmon Perfect'] },
-      'Renamon': { next: ['Kyubimon'] },
-      'Kyubimon': { prior: ['Renamon'], next: ['Taomon'] },
-      'Taomon': { prior: ['Kyubimon'], next: ['Sakuyamon'] },
-      'Sakuyamon': { prior: ['Taomon'] },
-      // 세이버즈
-      'Geo Greymon': { prior: ['Agumon (2006 Anime Version)'], next: ['Rize Greymon'] },
-      'Rize Greymon': { prior: ['Geo Greymon'], next: ['Shine Greymon'] },
-      'Shine Greymon': { prior: ['Rize Greymon'], next: ['Shine Greymon(Burst Mode)'] },
-      'Gaomon': { next: ['Gaogamon'] },
-      'Gaogamon': { prior: ['Gaomon'], next: ['Mach Gaogamon'] },
-      'Mach Gaogamon': { prior: ['Gaogamon'], next: ['Mirage Gaogamon'] },
-      'Mirage Gaogamon': { prior: ['Mach Gaogamon'], next: ['Mirage Gaogamon(Burst Mode)'] },
-      'Lalamon': { next: ['Sunflowmon'] },
-      'Sunflowmon': { prior: ['Lalamon'], next: ['Lilamon'] },
-      'Lilamon': { prior: ['Sunflowmon'], next: ['Lotusmon'] }
-    };
-    const CANONICAL_BY_NORM = Object.fromEntries(Object.entries(CANONICAL_LINES).map(([k, v]) => [normName(k), v]));
+    // 도감 DB(data/digidex_db.yaml → data/digidex_db.json)의 dex.evolution 에 적힌 진화 루트
+    // 진화가 적힌 디지몬은 "도감" 보기에 그대로 표시되고, "전체" 보기(Digi-API 목록)에서는 맨 앞으로 정렬됨
+    let CANONICAL_BY_NORM = {};
 
     // Digi-API condition 예: "with Garurumon"(조그레스), "with or without ..."(선택), "with X Eraser"(아이템),
     // "with the Human Spirit of Fire", "with the Digimental of Courage", "Warp Evolution" → 조그레스는 "with <디지몬>" 형태만 인정
@@ -1316,9 +1225,9 @@
         nextEvolutions: evo.next,
         warpPrior: evo.warpPrior,
         warpNext: evo.warpNext,
-        animePrior: evo.animePrior,
-        animeNext: evo.animeNext,
-        hasAnime: evo.hasAnime,
+        dexPrior: evo.dexPrior,
+        dexNext: evo.dexNext,
+        hasDexEvo: evo.hasDexEvo,
         isTerminal: evo.isTerminal
       });
     }
@@ -1368,7 +1277,7 @@
             normal.push(ev);
           }
         }
-        // 정렬: 원작 진화 → 바로 다음(이전) 단계 → 같은 계열 이름 → 조건 없는 진화 → 나머지 (같은 단계 변종은 뒤로)
+        // 정렬: 도감 지정 진화 → 바로 다음(이전) 단계 → 같은 계열 이름 → 조건 없는 진화 → 나머지 (같은 단계 변종은 뒤로)
         const canonKeys = (canonNames || []).map(normName);
         const sorted = l => l
           .map((ev, i) => {
@@ -1399,20 +1308,23 @@
       const warpNext = dedupe(nx.warp);
       // 같은 단계끼리는 API가 양방향으로 넣는 경우가 있음 (알파몬 ↔ 알파몬 왕룡검) → 다음 진화에 있으면 진화 전에서 제외
       const nextKeys = new Set(next.map(ev => normName(ev.digimon)));
-      // (모드 체인지처럼 원작 진화로 등록된 것은 유지)
+      // (모드 체인지처럼 도감에 진화 전으로 적힌 것은 유지)
       const canonPrior = new Set((canon.prior || []).map(normName));
       const prior = dedupe(pr.normal).filter(ev => canonPrior.has(normName(ev.digimon)) || !nextKeys.has(normName(ev.digimon)));
       const warpPrior = dedupe(pr.warp);
 
       const isTerminal = next.length === 0 && warpNext.length === 0 && (curRank || 0) >= LEVEL_RANK['궁극체'];
 
-      // 애니메이션 기준 보기: 원작 라인에 적힌 진화만 (API 카드에 있으면 조건 정보까지 재사용)
-      const pickAnime = (names, pool) => names ? names.map(n => pool.find(ev => normName(ev.digimon) === normName(n)) || toEvoCard({ digimon: n })) : null;
-      const animeNext = pickAnime(canon.next, [...next, ...warpNext]);
-      const animePrior = pickAnime(canon.prior, [...prior, ...warpPrior]);
-      const hasAnime = !!(animeNext || animePrior);
+      // 도감 보기: 도감 DB에 적힌 진화만 (API 카드에 있으면 조건 정보까지 재사용)
+      const pickDex = (names, pool, jogress) => names ? names.map(n => {
+        const card = pool.find(ev => normName(ev.digimon) === normName(n)) || toEvoCard({ digimon: n });
+        return jogress ? { ...card, jogress: true } : card;
+      }) : null;
+      const dexNext = pickDex(canon.next, [...next, ...warpNext], false);
+      const dexPrior = pickDex(canon.prior, [...prior, ...warpPrior], !!canon.jogress);
+      const hasDexEvo = !!(dexNext || dexPrior);
 
-      return { isTerminal, prior, next, warpPrior, warpNext, animePrior, animeNext, hasAnime };
+      return { isTerminal, prior, next, warpPrior, warpNext, dexPrior, dexNext, hasDexEvo };
     }
 
     // Client-side Profile & Skill Translator (MyMemory 무료 API: 요청당 500자 제한 → 문장 단위로 나눠 번역)
@@ -1455,7 +1367,7 @@
       return out.join(' ');
     }
 
-    // 로컬 고품질 도감(digidex_ko.json) 항목 찾기: 인덱스 영문명과 정규화 비교
+    // 직접 작성한 도감(digidex_db.json) 항목 찾기: ID 또는 영문명 정규화 비교
     function findLocalDex(idOrQuery) {
       const byKey = localDigidex.find(d => String(d.id).toLowerCase() === String(idOrQuery).toLowerCase());
       if (byKey) return byKey;
@@ -1713,21 +1625,21 @@
       `;
     }
 
-    // 진화 보기 모드: 'anime'(원작 애니메이션 라인이 있는 디지몬만) / 'all'(Digi-API 전체)
-    let evoMode = 'anime';
-    try { evoMode = localStorage.getItem('digi_evo_mode') === 'all' ? 'all' : 'anime'; } catch (_) {}
+    // 진화 보기 모드: 'dex'(도감 DB에 진화 루트가 적힌 디지몬만) / 'all'(Digi-API 전체)
+    let evoMode = 'dex';
+    try { evoMode = localStorage.getItem('digi_evo_mode') === 'all' ? 'all' : 'dex'; } catch (_) {}
     function setEvoMode(mode) {
-      evoMode = mode === 'all' ? 'all' : 'anime';
+      evoMode = mode === 'all' ? 'all' : 'dex';
       try { localStorage.setItem('digi_evo_mode', evoMode); } catch (_) {}
       updateDexCard();
     }
 
-    function renderAnimeEvolutions(d) {
+    function renderDexEvolutions(d) {
       const total = (d.nextEvolutions || []).length + (d.priorEvolutions || []).length + (d.warpNext || []).length + (d.warpPrior || []).length;
       return `
-        ${d.animeNext ? renderEvoRow('진화 (애니메이션)', d.animeNext) : ''}
-        ${d.animePrior ? renderEvoRow('진화 전 (애니메이션)', d.animePrior) : ''}
-        <p class="text-[10px] text-slate-400 leading-relaxed">애니메이션 기준 진화만 보여주고 있습니다. 게임·육성기기·TCG까지 포함한 Digi-API 전체 진화 ${total}건은 <button onclick="setEvoMode('all')" class="font-bold text-blue-600 dark:text-blue-400 underline">전체</button>에서 볼 수 있습니다.</p>
+        ${d.dexNext ? renderEvoRow('진화', d.dexNext) : ''}
+        ${d.dexPrior ? renderEvoRow('진화 전', d.dexPrior) : ''}
+        <p class="text-[10px] text-slate-400 leading-relaxed">도감에 정리된 진화 루트입니다. 게임·육성기기·TCG까지 포함한 Digi-API 전체 진화 ${total}건은 <button onclick="setEvoMode('all')" class="font-bold text-blue-600 dark:text-blue-400 underline">전체</button>에서 볼 수 있습니다.</p>
       `;
     }
 
@@ -1865,14 +1777,14 @@
                 <h3 class="flex items-baseline gap-2">
                   <span class="text-sm font-black text-slate-900 dark:text-white">🔗 진화 체계</span>
                   <span class="text-[10px] font-bold tracking-widest text-blue-600/70 dark:text-blue-400/70 font-mono">EVOLUTION</span>
-                  ${d.hasAnime ? `
+                  ${d.hasDexEvo ? `
                     <span class="ml-auto self-center flex p-0.5 rounded-lg bg-slate-100 dark:bg-slate-900 border border-blue-200/60 dark:border-blue-900/60 text-[11px] font-bold">
-                      <button onclick="setEvoMode('anime')" class="touch-press px-2.5 py-1 rounded-md transition ${evoMode === 'anime' ? 'bg-[#004ce8] text-white' : 'text-slate-500 dark:text-slate-400'}">애니</button>
+                      <button onclick="setEvoMode('dex')" class="touch-press px-2.5 py-1 rounded-md transition ${evoMode === 'dex' ? 'bg-[#004ce8] text-white' : 'text-slate-500 dark:text-slate-400'}">도감</button>
                       <button onclick="setEvoMode('all')" class="touch-press px-2.5 py-1 rounded-md transition ${evoMode === 'all' ? 'bg-[#004ce8] text-white' : 'text-slate-500 dark:text-slate-400'}">전체</button>
                     </span>` : `<span class="ml-auto text-[10px] font-medium text-slate-400">탭하면 이동</span>`}
                 </h3>
 
-                ${d.hasAnime && evoMode === 'anime' ? renderAnimeEvolutions(d) : `
+                ${d.hasDexEvo && evoMode === 'dex' ? renderDexEvolutions(d) : `
                 ${d.isTerminal ? `
                   <div class="p-3 rounded-2xl bg-blue-50 dark:bg-blue-950/50 border border-blue-200 dark:border-blue-800/80 text-xs flex items-center gap-2.5">
                     <span class="text-lg">⚡</span>
