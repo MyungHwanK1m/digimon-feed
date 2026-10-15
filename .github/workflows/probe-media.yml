@@ -1,0 +1,14 @@
+name: (temp) Probe media sources
+on:
+  push:
+    branches: [claude/tender-davinci-dcqvn9]
+    paths: ['scraper/probe_media.py', '.github/workflows/probe-media.yml']
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.10' }
+      - run: pip install requests
+      - run: python scraper/probe_media.py
