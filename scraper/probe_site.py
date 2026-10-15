@@ -9,16 +9,17 @@ os.makedirs(OUT, exist_ok=True)
 S = requests.Session()
 S.headers.update({"User-Agent": "Mozilla/5.0 (digimon-feed fan project; structure check)"})
 PAGES = {
-    "home_ko": "https://digimon.net/ko/",
-    "home": "https://digimon.net/",
-    "news": "https://digimon.net/news/",
-    "news_ko": "https://digimon.net/ko/news/",
-    "goods": "https://digimon.net/goods/",
-    "appmon_ko": "https://digimon.net/appmon_reference_ko/",
-    "appmon": "https://digimon.net/appmon_reference/",
-    "about_ko": "https://digimon.net/about_ko/",
-    "rss": "https://digimon.net/feed/",
-    "sitemap": "https://digimon.net/sitemap.xml",
+    "topic_list": "https://digimon.net/topic/?cat=ALL",
+    "topic_detail": "https://digimon.net/topic/detail.php?id=2096",
+    "product": "https://digimon.net/product/",
+    "product_card": "https://digimon.net/product/card/",
+    "product_goods": "https://digimon.net/product/goods/",
+    "product_detail_item": "https://digimon.net/product/detail.php?item_type=1&id=970",
+    "product_detail_jan": "https://digimon.net/product/detail.php?item_type=0&jan_cd=4573102725592000",
+    "appmon_ko": "https://digimon.net/appmon_ko/",
+    "history": "https://digimon.net/history/",
+    "profile": "https://digimon.net/profile/",
+    "iliad": "https://digimon.net/digitalworld-Iliad/",
 }
 for name, url in PAGES.items():
     try:
@@ -27,7 +28,9 @@ for name, url in PAGES.items():
             f.write(r.content)
         links = sorted(set(re.findall(r'href="([^"#]+)"', r.text)))
         print(f"=== {name} {url} -> HTTP {r.status_code}, {len(r.content)} bytes, final={r.url}, links={len(links)}")
-        for l in [x for x in links if re.search(r"news|goods|appmon|reference|detail|toy|game|card|\.json|rss|feed", x)][:40]:
+        for l in [x for x in links if re.search(r"topic|product|appmon|detail|request|ajax|\.json|\.php", x)][:40]:
             print("    ", l)
+        for m in sorted(set(re.findall(r"(?:getJSON|ajax|fetch)\(\s*['\"]([^'\"]+)", r.text)))[:10]:
+            print("     json endpoint:", m)
     except Exception as e:
         print(f"=== {name} -> error {e}")
