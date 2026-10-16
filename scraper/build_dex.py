@@ -25,6 +25,8 @@ INDEX_FILE = "public/data/digimon_all_index.json"
 API_MAP_FILE = "data/official/api_map.json"
 GAME_EVO_FILE = "data/game_evolutions.json"
 APPMON_FILE = "data/official/appmon.json"
+WIKIMON_FILE = "data/wikimon/evolutions.json"
+EVO_DIRS = ["public/data/evo", "docs/data/evo"]
 OUT_FILES = ["public/data/dex.json", "docs/data/dex.json"]
 REPORT_FILE = "data/official/match_report.md"
 
@@ -73,6 +75,68 @@ def candidates(name_en):
         out.append(f"{m.group(1)}({m.group(2)} Mode)")
     out.append(re.sub(r"[-_ ](\d+|[A-Z])$", "", s))  # WHAMON_2, COREDRAMON_B 등 꼬리 제거
     return [norm(x) for x in out]
+
+
+CAT_ORDER = ["anime", "game", "tcg", "device", "other"]
+
+
+def write_wikimon_evolutions(entries):
+    """{api_id: {"f": [진화 전...], "t": [진화 후...]}}, 각 항목 {"n": 도감번호, "c": [분류], "w": [작품], "p": [함께 진화 번호], "x": 조건}"""
+    wk = load(WIKIMON_FILE, {}).get("digimons", {})
+    if not wk:
+        return
+    no_by_name = {e["api_name"]: e["no"] for e in entries if e.get("api_name")}
+    buckets, count = {}, 0
+    for e in entries:
+        w = wk.get(e.get("api_name") or "")
+        if not w:
+            continue
+        item = {}
+        for key, short in (("from", "f"), ("to", "t")):
+            by_no = {}
+            for it in w.get(key, []):
+                no = no_by_name.get(it["t"])
+                if not no or no == e["no"]:
+                    continue
+                cats = [c for c, _ in it.get("src", [])]
+                works = [n for _, n in it.get("src", [])]
+                partners = [no_by_name[p] for p in it.get("with", []) if p in no_by_name]
+                cond = it.get("cond")
+                if no not in by_no:
+                    by_no[no] = {"n": no, "_c": set(cats), "w": list(dict.fromkeys(works)), "p": list(dict.fromkeys(partners)), "x": cond}
+                else:
+                    cur = by_no[no]
+                    cur["_c"].update(cats)
+                    for wn in works:
+                        if wn not in cur["w"]:
+                            cur["w"].append(wn)
+                    for pn in partners:
+                        if pn not in cur["p"]:
+                            cur["p"].append(pn)
+                    if cond and not cur.get("x"):
+                        cur["x"] = cond
+            rows = []
+            for r in by_no.values():
+                cats_sorted = sorted(r.pop("_c"), key=CAT_ORDER.index)
+                row = {"n": r["n"], "c": cats_sorted or ["other"], "w": r["w"]}
+                if r["p"]:
+                    row["p"] = r["p"]
+                if r.get("x"):
+                    row["x"] = r["x"]
+                rows.append(row)
+            rows.sort(key=lambda r: (-len(r["w"]), "anime" not in r["c"]))
+            if rows:
+                item[short] = rows
+        if item:
+            buckets.setdefault(e["api_id"] // 100, {})[str(e["api_id"])] = item
+            e["evo_wikimon"] = True
+            count += 1
+    for d in EVO_DIRS:
+        os.makedirs(d, exist_ok=True)
+        for n, items in buckets.items():
+            with open(os.path.join(d, f"{n}.json"), "w", encoding="utf-8") as f:
+                json.dump(items, f, ensure_ascii=False, separators=(",", ":"))
+    print(f"Wikimon 진화: {count}종")
 
 
 def main():
@@ -189,6 +253,9 @@ def main():
                 evo["source"] = g["source"]
         if evo:
             e["evolution"] = evo
+
+    # 3-1) Wikimon 진화 (출처 포함) → data/evo/<api_id//100>.json (상세 화면에서 필요한 조각만 받음)
+    write_wikimon_evolutions(entries)
 
     # 아프몬 도감 (공식 appmon_ko): 번호 A-001 = 공식 id
     appmons = []

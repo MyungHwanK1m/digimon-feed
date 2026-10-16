@@ -170,16 +170,18 @@
 | 1147 | 그레이몬(청)(X항체) | GREYMON_BLUE_X | Greymon (Blue) (X-Antibody) |
 | 1159 | 바알몬(X항체) | BAALMON_X | Baalmon (X-Antibody) |
 
-## 수동 지정: 45건
+## 수동 지정: 57건
 
 | 번호 | 공식 이름 | 공식 영문 | Digi-API |
 |---|---|---|---|
 | 70 | 알카디몬 | ARKADIMON | Arkadimon Child |
 | 71 | 아르마몬 | ARMADIMON | Armadimon |
 | 121 | 헉몬 | HUCKMON | Hackmon |
+| 135 | 폰체스몬(흑) | PAUNCHESSMON | Pawn Chessmon (Black) |
 | 193 | 코어드라몬(녹) | COREDRAMON_G | Coredramon (Green) |
 | 214 | 스카몬 | SCUMON | Sukamon |
 | 247 | 나이트체스몬(백) | KNIGHTCHESSMON | Knight Chessmon (White) |
+| 304 | 아르고몬 | ALGOMON_ULTIMATE | Algomon (Perfect) |
 | 305 | 안티라몬(데바) | ANDIRAMON | Andiramon (Deva) |
 | 337 | 사이버드라몬 | CYBERDRAMON_ANDROID | Cyberdramon |
 | 385 | 비숍체스몬 | BISHOPCHESSMON | Bishop Chessmon (White) |
@@ -188,18 +190,25 @@
 | 398 | 고래몬 | WHAMON | Whamon Perfect |
 | 419 | 메탈그레이몬(바이러스종) | METALGREYMON-Vi | Metal Greymon (Virus) |
 | 420 | 메탈그레이몬(백신종) | METALGREYMON-Va | Metal Greymon |
+| 426 | 야타가라몬(2006) | YATAGARAMON | Yatagaramon (2006 Anime Version) |
 | 429 | 래피드몬 | RAPIDMON | Rapidmon Perfect |
 | 431 | 룩체스몬 | ROOKCHESSMON | Rook Chessmon (Black) |
 | 446 | 아르고몬 | ALGOMON_MEGA | Algomon (Ultimate) |
 | 509 | 케루비몬(선) | CHERUBIMON | Cherubimon (Virtue) |
 | 523 | 저스티몬: 액셀 암 | JUSTIMON | Justimon(Accel Arm) |
+| 633 | 백사몬 | QUETZALMON | Coatlmon |
 | 640 | 잠수몬 | SABMARIMON | Submarimon |
 | 702 | 스트라비몬 | STORABIMON | Strabimon |
 | 720 | 레베몬 | LOUWEMON | Löwemon |
+| 747 | 샤우트몬+제트 스패로우 | JETSPARROW | Shoutmon (Jet Sparrow) |
+| 748 | 샤우트몬+스타소드 | STARSWORD | Shoutmon (Star Sword) |
+| 749 | 샤우트몬+도루루캐논 | DORULUCANNON | Shoutmon (Dorulu Cannon) |
+| 780 | 바리스타몬 | BARISTAMON | Ballistamon |
 | 791 | 메탈그레이몬(2010) | METALGREYMON | Metal Greymon (2010 Anime Version) |
 | 806 | 고래몬(성숙기) | WHAMON_2 | Whamon |
 | 808 | 안티라몬 | ANDIRAMON_2 | Andiramon |
 | 828 | 래피드몬 | RAPIDMON_GOLD | Rapidmon Armor |
+| 830 | 야타가라몬 | YATAGARAMON_AXCEL | Yatagaramon |
 | 882 | 케루비몬(악)(X항체) | CHERUBIMONDARK_X | Cherubimon (Vice) (X-Antibody) |
 | 907 | 아구몬(흑)(X항체) | AGUMON_B_X | Agumon (Black) (X-Antibody) |
 | 909 | 메탈그레이몬(바이러스종)(X항체) | METALGREYMON_VI_X | Metal Greymon (Virus) (X-Antibody) |
@@ -215,29 +224,21 @@
 | 998 | 아르고몬 | ALGOMON | Algomon (Baby I) |
 | 1041 | 버거몬 | BURGAMON_ROOKIE | Burgamon |
 | 1053 | 메탈그레이몬(X항체) | METALGREYMON_VA_X | Metal Greymon (X-Antibody) |
+| 1068 | 요!요!몬 | YOXTUYOXTUMON | Yo!Yo!mon |
 | 1069 | 코스파이더몬 | KODOKUGUMON | Kodokugumon Child |
 | 1083 | 브라키몬 | BRAKIMON | Brachimon |
+| 1084 | 가이오몬: 엄도의 형 | GAIOUMON_ITTO | Gaioumon(Itto Mode) |
 | 1094 | 버거몬 | BURGAMON_CHAMPION | Burgamon Adult |
 | 1121 | 오메가몬 즈왈트 DEFEAT | OMEGAMONZWART_D | Omegamon Zwart Defeat |
+| 1160 | 벰몬 | VEMMON | BEMmon |
 
-## 연결 안 됨 (공식 전용): 87건
+## 연결 안 됨 (공식 전용): 76건
 
 | 번호 | 공식 이름 | 공식 영문 | Digi-API |
 |---|---|---|---|
-| 135 | 폰체스몬(흑) | PAUNCHESSMON | - |
-| 304 | 아르고몬 | ALGOMON_ULTIMATE | - |
 | 451 | 위그드라실_7D6 | YGGDRASILL7D6 | - |
-| 633 | 백사몬 | QUETZALMON | - |
-| 747 | 샤우트몬+제트 스패로우 | JETSPARROW | - |
-| 748 | 샤우트몬+스타소드 | STARSWORD | - |
-| 749 | 샤우트몬+도루루캐논 | DORULUCANNON | - |
-| 780 | 바리스타몬 | BARISTAMON | - |
 | 797 | 네오 | NEO | - |
-| 830 | 야타가라몬 | YATAGARAMON_AXCEL | - |
 | 1065 | 트레일몬 | TRAILMON | - |
-| 1068 | 요!요!몬 | YOXTUYOXTUMON | - |
-| 1084 | 가이오몬: 엄도의 형 | GAIOUMON_ITTO | - |
-| 1160 | 벰몬 | VEMMON | - |
 | 1239 | 뮬몬 | MULEMON | - |
 | 1240 | 모킹버몬 | MOCKINGBIRDMON | - |
 | 1241 | 하니와몬 | HANIMON | - |
@@ -312,7 +313,7 @@
 | 1324 | 루트몬 | ROOTMON | - |
 | 1325 | 피쿠스몬 | FICUSMON | - |
 
-## 영문명 일치: 1035건
+## 영문명 일치: 1034건
 
 (목록 생략)
 

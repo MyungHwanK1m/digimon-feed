@@ -271,6 +271,16 @@
             <a href="https://digimon.net/topic/?cat=ALL" target="_blank" rel="noopener noreferrer" class="touch-press p-2.5 rounded-xl bg-white/90 dark:bg-[#070e22]/90 border border-blue-200 dark:border-blue-900/60 text-slate-700 dark:text-slate-300">공식 뉴스 ↗</a>
           </div>
         </div>
+
+        <!-- 자료 출처 -->
+        <div class="pt-2 px-1 space-y-1 text-[10px] leading-relaxed text-slate-400">
+          <p class="font-bold text-slate-500 dark:text-slate-400">ⓘ 자료 출처</p>
+          <p>· 번호·이름·등급·유형·속성·관련 디지몬: <a href="https://digimon.net/reference_ko/" target="_blank" rel="noopener noreferrer" class="underline">디지몬 공식 도감 (digimon.net)</a></p>
+          <p>· 진화 전/후와 진화별 출처: <a href="https://wikimon.net" target="_blank" rel="noopener noreferrer" class="underline">Wikimon</a> (팬 위키, 각 디지몬 문서의 Evolves From / Evolves To)</p>
+          <p>· 그림·영문 도감 설명·필살기: <a href="https://digi-api.com" target="_blank" rel="noopener noreferrer" class="underline">Digi-API</a> (한국어는 자동 번역)</p>
+          <p>· TCG 카드: <a href="https://digimoncard.io" target="_blank" rel="noopener noreferrer" class="underline">digimoncard.io</a></p>
+          <p>디지몬 관련 권리는 반다이 남코 등 각 권리자에게 있습니다. 비상업 팬 프로젝트입니다.</p>
+        </div>
       </div>
 
       <!-- 상세 화면 -->
@@ -713,7 +723,7 @@
     let dexList = [];
     let dexByNo = {};
     let dexLoaded = false;
-    const dexState = { kind: 'digimon', query: '', level: '전체', includeEx: false, shown: 0, selected: null, listScroll: 0 };
+    const dexState = { kind: 'digimon', query: '', level: '전체', includeEx: false, shown: 0, selected: null, listScroll: 0, evoFilter: 'all', evoMore: {} };
     let appmonList = [];
     const DEX_PAGE = 60;
     const DEX_LEVELS = ['전체', '유년기 I', '유년기 II', '성장기', '성숙기', '완전체', '궁극체', '아머체', '하이브리드체', '기타'];
@@ -1025,11 +1035,129 @@
       return out.join(' ');
     }
 
+    // ---- 진화 (Wikimon: 진화마다 출처가 있음) ----
+    // 화면: [출처 필터] + 진화 전 | 현재(아종) | 진화 후, 각 디지몬에 출처 배지, 배지를 누르면 작품명
+    const EVO_CATS = [
+      ['all', '전체', ''], ['anime', '애니', '📺'], ['game', '게임', '🎮'], ['tcg', 'TCG', '🃏'], ['device', '기기', '📟'], ['other', '기타', '📚']
+    ];
+    const EVO_ICON = Object.fromEntries(EVO_CATS.map(([k, , i]) => [k, i]));
+    const EVO_PAGE = 12;
+
+    async function loadEvoBucket(apiId) {
+      const bucket = Math.floor(apiId / 100), key = 'evo:' + bucket;
+      if (!(key in dexExtraCache)) {
+        dexExtraCache[key] = fetch(`data/evo/${bucket}.json`).then(r => r.ok ? r.json() : {}).catch(() => ({}));
+      }
+      return (await dexExtraCache[key])[String(apiId)] || null;
+    }
+
+    function baseName(d) {
+      return (d.api_name || d.name_en || '').replace(/\s*\(.*\)\s*$/, '').replace(/\s+/g, '').toLowerCase();
+    }
+
+    // 아종: Digi-API 이름에서 괄호를 뗀 이름이 같은 디지몬 (아구몬(흑)·(X항체)·(2010) 등)
+    function dexVariants(d) {
+      const b = baseName(d);
+      if (!b) return [d];
+      const list = dexList.filter(x => x.no === d.no || (x.api_name && baseName(x) === b));
+      return list.sort((a, b2) => (a.no === d.no ? -1 : b2.no === d.no ? 1 : String(a.no).localeCompare(String(b2.no))));
+    }
+
+    async function loadDexEvolution(d) {
+      const evo = d.api_id ? await loadEvoBucket(d.api_id) : null;
+      if (!stillShowing(d)) return;
+      dexState.evoMore = {};
+      renderDexEvolution(d, evo);
+    }
+
+    function setEvoFilter(k) {
+      dexState.evoFilter = k;
+      const d = dexByNo[dexState.selected];
+      if (d && d.api_id) loadEvoBucket(d.api_id).then(evo => stillShowing(d) && renderDexEvolution(d, evo));
+    }
+
+    function showMoreEvo(side) {
+      dexState.evoMore[side] = true;
+      setEvoFilter(dexState.evoFilter);
+    }
+
+    function toggleEvoWorks(id) {
+      const el = document.getElementById(id);
+      if (el) el.classList.toggle('hidden');
+    }
+
+    function renderEvoColumn(title, side, rows) {
+      const f = dexState.evoFilter;
+      const list = (rows || []).filter(r => dexByNo[r.n] && (f === 'all' || r.c.includes(f)));
+      const shown = dexState.evoMore[side] ? list : list.slice(0, EVO_PAGE);
+      return `
+        <div class="min-w-0 space-y-1.5">
+          <p class="text-[11px] font-black text-slate-500 dark:text-slate-400">${title} <span class="font-medium text-slate-400">${list.length}</span></p>
+          ${list.length ? shown.map((r, i) => {
+            const t = dexByNo[r.n];
+            const wid = `evo-w-${side}-${i}`;
+            const partners = (r.p || []).map(n => dexByNo[n]).filter(Boolean);
+            return `
+              <div class="rounded-xl bg-slate-50 dark:bg-slate-900/80 border border-blue-200/60 dark:border-blue-900/60 p-1.5">
+                <div onclick="openDexDetail(${jsArg(t.no)})" class="touch-press cursor-pointer flex items-center gap-1.5 min-w-0">
+                  ${dexThumb(t, 'w-7 h-7')}
+                  <span class="text-[11px] sm:text-xs font-bold text-slate-800 dark:text-slate-200 leading-tight break-keep min-w-0">${escapeHtml(t.name)}</span>
+                </div>
+                <button onclick="toggleEvoWorks('${wid}')" class="mt-1 text-[11px] leading-none tracking-tight" title="출처 보기">${r.c.map(c => EVO_ICON[c] || '').join('')}${partners.length ? ' <span class="text-[9px] font-bold text-amber-600 dark:text-amber-400">＋' + partners.length + '</span>' : ''}</button>
+                <div id="${wid}" class="hidden mt-1 space-y-0.5 text-[9.5px] leading-snug text-slate-500 dark:text-slate-400">
+                  ${partners.length ? `<p class="text-amber-600 dark:text-amber-400 font-bold">함께: ${partners.map(p => escapeHtml(p.name)).join(', ')}</p>` : ''}
+                  ${r.x ? `<p class="italic">${escapeHtml(r.x)}</p>` : ''}
+                  ${r.w.map(w => `<p>· ${escapeHtml(w)}</p>`).join('')}
+                </div>
+              </div>`;
+          }).join('') : '<p class="text-[10px] text-slate-400">없음</p>'}
+          ${list.length > shown.length ? `<button onclick="showMoreEvo('${side}')" class="w-full text-[10px] font-bold text-blue-600 dark:text-blue-400 py-1">더보기 (+${list.length - shown.length})</button>` : ''}
+        </div>`;
+    }
+
+    function wikimonPageName(d) {
+      const raw = d.api_name === 'Hackmon' ? 'Huckmon' : (d.api_name || d.name_en || '');
+      return raw.replace(/^([^(]*[^\s(])\((.+)\)$/, '$1: $2').replace(/ /g, '_');
+    }
+
+    function renderDexEvolution(d, evo) {
+      const box = document.getElementById('dex-evo');
+      if (!box) return;
+      const variants = dexVariants(d);
+      const head = `
+        <h3 class="flex items-baseline gap-2">
+          <span class="text-sm font-black text-slate-900 dark:text-white">🧬 진화</span>
+          <span class="text-[10px] font-bold tracking-widest text-blue-600/70 dark:text-blue-400/70 font-mono">EVOLUTION</span>
+          <a href="https://wikimon.net/${encodeURIComponent(wikimonPageName(d))}" target="_blank" rel="noopener" class="ml-auto text-[10px] font-medium text-slate-400 underline">출처: Wikimon</a>
+        </h3>`;
+      if (!evo) {
+        box.innerHTML = head + '<p class="text-xs text-slate-400">진화 정보가 없습니다.</p>';
+        return;
+      }
+      const cats = new Set([...(evo.f || []), ...(evo.t || [])].flatMap(r => r.c));
+      const chips = EVO_CATS.filter(([k]) => k === 'all' || cats.has(k)).map(([k, label, icon]) => `
+        <button onclick="setEvoFilter('${k}')" class="shrink-0 px-2.5 py-1 rounded-full text-[11px] font-bold border transition ${dexState.evoFilter === k ? 'bg-blue-600 text-white border-blue-600' : 'bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-300 border-slate-200 dark:border-slate-700'}">${icon} ${label}</button>`).join('');
+      box.innerHTML = head + `
+        <div class="flex gap-1.5 overflow-x-auto no-scrollbar pb-0.5">${chips}</div>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5 sm:gap-3 items-start">
+          ${renderEvoColumn('진화 전', 'f', evo.f)}
+          <div class="min-w-0 space-y-1.5">
+            <p class="text-[11px] font-black text-slate-500 dark:text-slate-400">현재${variants.length > 1 ? ' · 아종' : ''}</p>
+            ${variants.map(v => v.no === d.no ? `
+              <div class="rounded-xl bg-blue-600 text-white p-1.5 flex items-center gap-1.5 min-w-0">${dexThumb(v, 'w-7 h-7')}<span class="text-[11px] sm:text-xs font-black leading-tight break-keep min-w-0">★ ${escapeHtml(v.name)}</span></div>` : `
+              <div onclick="openDexDetail(${jsArg(v.no)})" class="touch-press cursor-pointer rounded-xl bg-blue-50 dark:bg-blue-950/50 border border-blue-200/60 dark:border-blue-900/60 p-1.5 flex items-center gap-1.5 min-w-0">${dexThumb(v, 'w-7 h-7')}<span class="text-[11px] sm:text-xs font-bold text-slate-700 dark:text-slate-300 leading-tight break-keep min-w-0">${escapeHtml(v.name)}</span></div>`).join('')}
+          </div>
+          ${renderEvoColumn('진화 후', 't', evo.t)}
+        </div>
+        <p class="text-[10px] text-slate-400">📺애니 🎮게임 🃏TCG 📟기기 📚기타 · 배지를 누르면 작품명과 조건이 보입니다.</p>`;
+    }
+
     function stillShowing(d) {
       return dexState.selected === d.no;
     }
 
     async function loadDexExtras(d) {
+      if (d.kind !== 'appmon') loadDexEvolution(d);
       loadDexDescription(d);
       loadDexTcg(d);
     }
@@ -1113,10 +1241,34 @@
       });
     }
 
+    const TCG_EN_ALIASES = {
+      omegamon: 'Omnimon', dukemon: 'Gallantmon', tailmon: 'Gatomon', vamdemon: 'Myotismon',
+      piyomon: 'Biyomon', plotmon: 'Salamon', diablomon: 'Diaboromon', mugendramon: 'Machinedramon',
+      pinochimon: 'Puppetmon', piemon: 'Piedmon', hououmon: 'Phoenixmon',
+      heraklekabuterimon: 'HerculesKabuterimon', atlurkabuterimon: 'MegaKabuterimon',
+      holyangemon: 'MagnaAngemon', ofanimon: 'Ophanimon', beelzebumon: 'Beelzemon',
+      lordknightmon: 'Crusadermon', duftmon: 'Leopardmon', sleipmon: 'Kentaurosmon',
+      craniummon: 'Craniamon', ulforcevdramon: 'UlforceVeedramon', vdramon: 'Veedramon',
+      aerovdramon: 'AeroVeedramon', vmon: 'Veemon', xvmon: 'ExVeemon',
+      fladramon: 'Flamedramon', lighdramon: 'Raidramon', armadimon: 'Armadillomon',
+      dukemoncrimsonmode: 'Gallantmon Crimson Mode', omegamonmercifulmode: 'Omnimon Merciful Mode',
+      beelzebumonblastmode: 'Beelzemon Blast Mode'
+    };
+
     async function loadDexTcg(d) {
-      const names = [...new Set([d.api_name, d.api_name && d.api_name.replace(/\s*\(.*?\)\s*/g, ' ').trim()].filter(Boolean))];
+      const raw = d.api_name || d.name_en || '';
+      const stripped = raw.replace(/\s*\(.*?\)\s*/g, ' ').trim();
+      const normKey = raw.toLowerCase().replace(/[^a-z0-9]/g, '');
+      const alias = TCG_EN_ALIASES[normKey] || TCG_EN_ALIASES[stripped.toLowerCase().replace(/[^a-z0-9]/g, '')];
+      const names = [...new Set([
+        raw,
+        raw.replace(/\s+/g, ''),
+        stripped,
+        stripped.replace(/\s+/g, ''),
+        alias
+      ].filter(Boolean))];
       if (!names.length) return;
-      const key = 'tcg:' + names[0];
+      const key = 'tcg:' + d.no;
       let cards = dexExtraCache[key];
       if (!cards) {
         cards = [];
@@ -1198,9 +1350,11 @@
               ${d.api_id ? '<p class="text-xs text-slate-400 animate-pulse">도감 설명을 불러오는 중…</p>' : ''}
             </div>
 
+            ${d.kind === 'appmon' ? '' : '<div id="dex-evo" class="space-y-3 pt-1"><p class="text-xs text-slate-400 animate-pulse">진화 정보를 불러오는 중…</p></div>'}
+
             <div class="space-y-3 pt-1">
               <h3 class="flex items-baseline gap-2">
-                <span class="text-sm font-black text-slate-900 dark:text-white">🔗 ${(evo.prior || []).length || (evo.next || []).length ? '진화 · 관련' : '관련'}</span>
+                <span class="text-sm font-black text-slate-900 dark:text-white">🔗 ${d.kind === 'appmon' ? '관련' : '공식 도감 관련'}</span>
                 <span class="text-[10px] font-bold tracking-widest text-blue-600/70 dark:text-blue-400/70 font-mono">RELATED</span>
               </h3>
               ${hasEvo ? `
