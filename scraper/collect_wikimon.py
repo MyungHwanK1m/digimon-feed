@@ -199,53 +199,18 @@ def fetch_batch(session, titles):
             r = session.get(API, params=params, timeout=90)
             if r.status_code == 200:
                 return r.json()
-            print(f"  HTTP {r.status_code}")
+            print(f"  HTTP {r.status_code}: {r.text[:200]}", flush=True)
         except Exception as e:
-            print(f"  오류: {e}")
+            print(f"  오류: {e}", flush=True)
         time.sleep(DELAY * (attempt + 1))
     return None
 
 
-def main():
-    max_req = int(sys.argv[sys.argv.index("--max-requests") + 1]) if "--max-requests" in sys.argv else 10 ** 6
-    dex = json.load(open(DEX_FILE, encoding="utf-8"))["digimons"]
-    titles = sorted({e["api_name"] for e in dex if e.get("api_name")})
-    title_set = set(titles)
-    session = requests.Session()
-    session.headers["User-Agent"] = UA
-    out, stats, missing = {}, collections.Counter(), []
-    for n, i in enumerate(range(0, len(titles), BATCH)):
-        if n >= max_req:
-            break
-        if n:
-            time.sleep(DELAY)
-        chunk = titles[i:i + BATCH]
-        data = fetch_batch(session, chunk)
-        if not data:
-            print(f"  묶음 {n + 1} 실패 — 건너뜀")
-            continue
-        q = data.get("query", {})
-        back = {}
-        for m in (q.get("normalized") or []) + (q.get("redirects") or []):
-            back[m["to"]] = back.get(m["from"], m["from"])
-        for page in q.get("pages", []):
-            title = back.get(page["title"], page["title"])
-            if page.get("missing") or not page.get("revisions"):
-                missing.append(title)
-                continue
-            text = page["revisions"][0]["slots"]["main"]["content"]
-            ref_defs = dict(re.findall(r"<ref\s+name\s*=\s*\"?([^\">/]+?)\"?\s*>(.*?)</ref>", text, re.S))
-            out[title] = {
-                "from": parse_list(section(text, "Evolves From"), title_set, ref_defs, stats),
-                "to": parse_list(section(text, "Evolves To"), title_set, ref_defs, stats),
-            }
-        print(f"  묶음 {n + 1}/{(len(titles) + BATCH - 1) // BATCH}: 누적 {len(out)}종")
+TIME_BUDGET = 75 * 60  # 워크플로 제한 안에서 저장할 여유를 남김 — 못 끝낸 것은 다음 실행 때 이어서
 
+
+def save(out, stats, missing):
     os.makedirs(OUT_DIR, exist_ok=True)
-    if os.path.exists(OUT_FILE):  # 일부만 받은 실행이면 기존 데이터와 합침
-        old = json.load(open(OUT_FILE, encoding="utf-8")).get("digimons", {})
-        old.update(out)
-        out = old
     with open(OUT_FILE, "w", encoding="utf-8") as f:
         json.dump({"source": "https://wikimon.net (Evolves From / Evolves To)", "updated": time.strftime("%Y-%m-%d"),
                    "digimons": dict(sorted(out.items()))}, f, ensure_ascii=False, separators=(",", ":"))
@@ -255,8 +220,54 @@ def main():
         f.write(f"- 진화 항목: 출처 없음 {stats['no_source']}, 건너뛴 대상(카드게임 묶음 등) {stats['skipped_target']}, 해석 못한 이름 참조 {stats['unresolved_ref']}\n\n")
         f.write("## 찾지 못한 제목\n\n" + ", ".join(missing) + "\n\n")
         f.write("## 템플릿·애니 코드\n\n" + "\n".join(f"- {k}: {v}" for k, v in stats.most_common() if k.startswith(("template:", "anime_code:"))) + "\n\n")
-        f.write("## 분류 안 된 출처(기타) 상위 150\n\n" + "\n".join(f"- {k[6:]}: {v}" for k, v in stats.most_common() if k.startswith("other:"))[:20000] + "\n")
-    print(f"저장: {OUT_FILE} ({len(out)}종), 찾지 못함 {len(missing)}")
+        f.write("## 분류 안 된 출처(기타)\n\n" + "\n".join(f"- {k[6:]}: {v}" for k, v in stats.most_common(400) if k.startswith("other:")) + "\n")
+
+
+def main():
+    max_req = int(sys.argv[sys.argv.index("--max-requests") + 1]) if "--max-requests" in sys.argv else 10 ** 6
+    refresh = "--refresh" in sys.argv
+    dex = json.load(open(DEX_FILE, encoding="utf-8"))["digimons"]
+    all_titles = sorted({e["api_name"] for e in dex if e.get("api_name")})
+    title_set = set(all_titles)
+    out = {} if refresh or not os.path.exists(OUT_FILE) else json.load(open(OUT_FILE, encoding="utf-8")).get("digimons", {})
+    titles = [t for t in all_titles if t not in out]  # 이어받기: 아직 없는 것만 (전체 갱신은 --refresh)
+    print(f"대상 {len(titles)}종 (보유 {len(out)}종)", flush=True)
+    session = requests.Session()
+    session.headers["User-Agent"] = UA
+    stats, missing, started = collections.Counter(), [], time.time()
+    for n, i in enumerate(range(0, len(titles), BATCH)):
+        if n >= max_req or time.time() - started > TIME_BUDGET:
+            print("요청 수·시간 한도 — 여기까지 저장", flush=True)
+            break
+        if n:
+            time.sleep(DELAY)
+        chunk = titles[i:i + BATCH]
+        data = fetch_batch(session, chunk)
+        if not data:
+            print(f"  묶음 {n + 1} 실패 — 건너뜀", flush=True)
+            continue
+        q = data.get("query", {})
+        back = {}
+        for m in (q.get("normalized") or []) + (q.get("redirects") or []):
+            back[m["to"]] = back.get(m["from"], m["from"])
+        for page in q.get("pages", []):
+            title = back.get(page["title"], page["title"])
+            if page.get("missing"):
+                missing.append(title)
+                continue
+            if not page.get("revisions"):  # 응답 크기 한도로 잘린 문서 → 다음 실행에서 다시
+                stats["deferred"] += 1
+                continue
+            text = page["revisions"][0]["slots"]["main"]["content"]
+            ref_defs = dict(re.findall(r"<ref\s+name\s*=\s*\"?([^\">/]+?)\"?\s*>(.*?)</ref>", text, re.S))
+            out[title] = {
+                "from": parse_list(section(text, "Evolves From"), title_set, ref_defs, stats),
+                "to": parse_list(section(text, "Evolves To"), title_set, ref_defs, stats),
+            }
+        print(f"  묶음 {n + 1}/{(len(titles) + BATCH - 1) // BATCH}: 누적 {len(out)}종", flush=True)
+        save(out, stats, missing)  # 묶음마다 저장 (중간에 끊겨도 이어받기)
+    save(out, stats, missing)
+    print(f"저장: {OUT_FILE} ({len(out)}종), 찾지 못함 {len(missing)}", flush=True)
 
 
 if __name__ == "__main__":
