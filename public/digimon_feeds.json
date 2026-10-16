@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-10-16 12:57:14",
-  "total_count": 212,
+  "last_updated": "2026-10-16 17:06:24",
+  "total_count": 219,
   "retention_days": 90,
   "feeds": [
     {
@@ -13,10 +13,53 @@
       "category_name": "피규어/굿즈",
       "link": "https://digimon.net/product/others/",
       "image": null,
-      "timestamp": 1792155057,
-      "created_at": "2026-10-16 12:50",
+      "timestamp": 1792170304,
+      "created_at": "2026-10-16 17:05",
       "title_orig": "デジタルモンスター WORLDMAKING ACRYLIC STAND ブースターver.5",
       "title_ja": "デジタルモンスター WORLDMAKING ACRYLIC STAND ブースターver.5"
+    },
+    {
+      "id": "fa862f9440d723e343292e28a1b0419b",
+      "title": "[해외뉴스] 디지몬 스토리 타임 스트레인저 \"A Hero's Eternal Legacy\" DLC에 게코몬 등장",
+      "snippet": "Gekkomon revealed for Digimon Story Time Stranger \"A Hero’s Eternal Legacy\" DLC&nbsp;&nbsp;GoNintendo",
+      "source": "GoNintendo",
+      "source_badge": "해외뉴스",
+      "category": "game",
+      "category_name": "신작/공식속보",
+      "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNUDVRZFlKY3cxd1l5aEpIYXhTWldkdHF6MmFvUmtjbjFmTnktUy1OTzVSaXQxYUVkSnRJOUNiUlAyQldSZzg3WkwwZ2kxYmFWRWRqd1hfVWFMa2lpbk40SDRpZ1VsWm1wckg0ZFR6S0s1aGRSQWRjTGxKYVItVWtISzlHNllJbV9NcHRmbk85RFZMSDItX0xMZnpNZWZscV92Q252NEZQb0ZoRmhJc2k1U2RmSFpOZw?oc=5",
+      "image": null,
+      "timestamp": 1792167974,
+      "created_at": "2026-10-16 16:26",
+      "title_orig": "Gekkomon revealed for Digimon Story Time Stranger \"A Hero’s Eternal Legacy\" DLC"
+    },
+    {
+      "id": "7dac85421356ed4331bb101597f0f9a6",
+      "title": "[해외뉴스] 디지몬 알리시온, 수 주 내 사전 등록 개시 예정",
+      "snippet": "Digimon Alysion Set to Open Pre-Registration in the Coming Weeks&nbsp;&nbsp;GamerBraves",
+      "source": "GamerBraves",
+      "source_badge": "해외뉴스",
+      "category": "general",
+      "category_name": "일반/뉴스",
+      "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOcDBIVnNBa2EyVkF0dWs2WExLU0NxMzc5eWJjR1JfcWo3TGRROEl4am1CNUF5Wno3bWZJQ1JRekIxYWF2c2dkTTlXQXJRM2MtZnFkTlFYM1ZmSTlSbmtFMmNQbWRJM2JDMzF0TDdLd2I2Qno4eVFubk1HT21QcDZUTk9oZzZVU0lWempBam1VbVJJR0ZGU1AydQ?oc=5",
+      "image": null,
+      "timestamp": 1792157995,
+      "created_at": "2026-10-16 13:39",
+      "title_orig": "Digimon Alysion Set to Open Pre-Registration in the Coming Weeks"
+    },
+    {
+      "id": "dfccebde6dc8aca5a0d2a8914f7fecd2",
+      "title": "[일본뉴스] 【파워 로더다!】 디지몬 스토리 타임 스트레인저 54",
+      "snippet": "【パワーローダーだ！】デジモンストーリー タイムストレンジャー 54&nbsp;&nbsp;YouTube",
+      "source": "YouTube",
+      "source_badge": "일본뉴스",
+      "category": "general",
+      "category_name": "일반/뉴스",
+      "link": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE95cWctcS03amw0SGc1N1FGZXVKQXNxeVpCdEFseEthVWppMnNZbl8yejJhMUNWVTBTS3VHQXpaS2ZaLUcxb0E5Q21qTzZJUWdpU3ozUE43d1dsdGZI?oc=5",
+      "image": null,
+      "timestamp": 1792153508,
+      "created_at": "2026-10-16 12:25",
+      "title_orig": "【パワーローダーだ！】デジモンストーリー タイムストレンジャー 54",
+      "title_ja": "【パワーローダーだ！】デジモンストーリー タイムストレンジャー 54"
     },
     {
       "id": "229693f3f67620aec484ba728dfae4aa",
@@ -34,27 +77,13 @@
       "title_ja": "『デジモンアリシオン』事前登録が数週間以内に開始予定。新デジモン＆キャラ、オリジナルカードにも注目集まる新作オンラインカードゲーム"
     },
     {
-      "id": "7dac85421356ed4331bb101597f0f9a6",
-      "title": "[해외뉴스] 디지몬 알리시온, 수 주 내 사전 등록 개시 예정",
-      "snippet": "Digimon Alysion Set to Open Pre-Registration in the Coming Weeks&nbsp;&nbsp;GamerBraves",
-      "source": "GamerBraves",
-      "source_badge": "해외뉴스",
-      "category": "general",
-      "category_name": "일반/뉴스",
-      "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOcDBIVnNBa2EyVkF0dWs2WExLU0NxMzc5eWJjR1JfcWo3TGRROEl4am1CNUF5Wno3bWZJQ1JRekIxYWF2c2dkTTlXQXJRM2MtZnFkTlFYM1ZmSTlSbmtFMmNQbWRJM2JDMzF0TDdLd2I2Qno4eVFubk1HT21QcDZUTk9oZzZVU0lWempBam1VbVJJR0ZGU1AydQ?oc=5",
-      "image": null,
-      "timestamp": 1792144546,
-      "created_at": "2026-10-16 09:55",
-      "title_orig": "Digimon Alysion Set to Open Pre-Registration in the Coming Weeks"
-    },
-    {
       "id": "9a3293bb953fd64a74995f86f200e594",
       "title": "[일본뉴스] 보도자료: 10월 18일(일) 방송되는 『우리가 고른 베스트 어드벤처』는 TV 애니메이션 「디지몬 어드벤처」에서 5위에 오른 제13화 [엔젤몬 각성!]을 방송! (PR TIMES)",
       "snippet": "プレスリリース：10月18日(日)放送の『僕らが選んだベストアドベンチャー』は、TVアニメ「デジモンアドベンチャー」より、第5位にランクインした第13話［エンジェモン覚醒！］を放送！（PR TIMES）&nbsp;&nbsp;毎日新聞",
       "source": "毎日新聞",
       "source_badge": "일본뉴스",
-      "category": "general",
-      "category_name": "일반/뉴스",
+      "category": "game",
+      "category_name": "게임/공식애니",
       "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE0tektfUjdwNmF3cE5lZDZfRDdRXzEwTTBBeExuazc1STNweUFHM2lQSWFWaEtFSTVfSzkySjRuR0JoeU5OeHU5VXdMYWNaa0hodnNhZHVpWjh2Z1NCSkpaV2h0YnhBMFJj?oc=5",
       "image": null,
       "timestamp": 1792142584,
@@ -76,6 +105,21 @@
       "created_at": "2026-10-16 09:00",
       "title_orig": "【デジモンタイスト】最終回！私が世界を救う！【ネタバレ注意】#デジモンストーリータイムストレンジャー #ゲーム実況 #vtuber",
       "title_ja": "【デジモンタイスト】最終回！私が世界を救う！【ネタバレ注意】#デジモンストーリータイムストレンジャー #ゲーム実況 #vtuber"
+    },
+    {
+      "id": "2316cdadd72e11f713c9c3332934ea5d",
+      "title": "[일본뉴스] 10월 18일(일) 방송되는 『우리들이 고른 베스트 어드벤처』는, TV 애니메이션「디지몬 어드벤처」에서 제5위에 랭크된 제13화【엔젤몬 각성!】을 방송!",
+      "snippet": "10月18日(日)放送の『僕らが選んだベストアドベンチャー』は、TVアニメ「デジモンアドベンチャー」より、第5位にランクインした第13話【エンジェモン覚醒！】を放送！&nbsp;&nbsp;PR TIMES",
+      "source": "PR TIMES",
+      "source_badge": "일본뉴스",
+      "category": "general",
+      "category_name": "일반/뉴스",
+      "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTE53Z0JJMkNwWEl2MlFyQ3BCZk5qWWlKUVhxSEFuMlFoUGpoZ2VzZG9xQTcxU21HMzV2b2s2Vm1hU2FSSjBLcGc3eW1SY0RSZG54b1prWGxJcVhMdGpIQjhES1JndzRyNEl0LVE?oc=5",
+      "image": null,
+      "timestamp": 1792141202,
+      "created_at": "2026-10-16 09:00",
+      "title_orig": "10月18日(日)放送の『僕らが選んだベストアドベンチャー』は、TVアニメ「デジモンアドベンチャー」より、第5位にランクインした第13話【エンジェモン覚醒！】を放送！",
+      "title_ja": "10月18日(日)放送の『僕らが選んだベストアドベンチャー』は、TVアニメ「デジモンアドベンチャー」より、第5位にランクインした第13話【エンジェモン覚醒！】を放送！"
     },
     {
       "id": "3f41c4394d868c0f9e3cd8d44ad15e83",
@@ -267,8 +311,8 @@
       "category_name": "일반/뉴스",
       "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNOUpucmNfcDBlSk5DNUZlWjFyZWRlRFM0OHhYZU9FbC1xNGhveXNOTmN2UVJ2SUhXTmlTZmJjWGtCM2FwZlRSZ2FvV05EU3pDUXFXQzd0Ym5PWnFndVJpbUFVSGdfSEhtM3BKZklhN2kwaXJYY1hPWVlUSlg1VkVic3ZUVVI2YVpxNk0wQThzWQ?oc=5",
       "image": null,
-      "timestamp": 1792133708,
-      "created_at": "2026-10-16 06:55",
+      "timestamp": 1792134107,
+      "created_at": "2026-10-16 07:01",
       "title_orig": "デジモンアドベンチャー POP UP SHOP in 東京 11月6日より開催!",
       "title_ja": "デジモンアドベンチャー POP UP SHOP in 東京 11月6日より開催!"
     },
@@ -284,6 +328,19 @@
       "image": null,
       "timestamp": 1792129266,
       "created_at": "2026-10-16 05:41"
+    },
+    {
+      "id": "1aacfccb140b7921a699e1cacf72ab59",
+      "title": "[네이버] 디지몬 마스터즈 온라인",
+      "snippet": "디지몬 마스터즈 온라인&nbsp;&nbsp;NAVER",
+      "source": "네이버 게임",
+      "source_badge": "네이버",
+      "category": "game",
+      "category_name": "게임/공식애니",
+      "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTE9aVjNpbHFqb3YyTm0yS1RERUtkdUNlZlJRUzNpNDExRllLRm4yY3pMS3d0c0pBYkZXUTdBUmZ0RlV4LWluWm1teUE5alBncHRnTkdVZG5SUXFHWl9hUFdYWkM4Q3RCV0NPS0pz?oc=5",
+      "image": null,
+      "timestamp": 1792126162,
+      "created_at": "2026-10-16 04:49"
     },
     {
       "id": "94f5530726ccdafdddde0d8fd805620c",
@@ -311,7 +368,7 @@
       "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTE1QYUpmaUszZjBqaHo2d1U2THRsYmtqQUpFNmllam0xclNxTDk3LWRiQ2VKRGFDQkd6akROWDJlTXhJMnpwTHYwM0hUOG5MTmlVTkExUFRrR05aU3pDb0lwb3doSzBJVVNCZHB3?oc=5",
       "image": null,
       "timestamp": 1792106074,
-      "created_at": "2026-10-16 08:14"
+      "created_at": "2026-10-15 23:14"
     },
     {
       "id": "786092433c9d38c1b8a6358d00c415d5",
@@ -552,6 +609,21 @@
       "title_ja": "【デジモンUP】ニャロモンの性能と進化"
     },
     {
+      "id": "3181f48d61870eb23a987226cd787ad5",
+      "title": "[일본뉴스] 【디지몬 UP】 웜몬의 평가와 성능",
+      "snippet": "【デジモンUP】ワームモンの評価と性能&nbsp;&nbsp;GameWith",
+      "source": "GameWith",
+      "source_badge": "일본뉴스",
+      "category": "general",
+      "category_name": "일반/뉴스",
+      "link": "https://news.google.com/rss/articles/CBMiTEFVX3lxTE9KTm1HZTIwZGlWdk9RVjVlYTZwdnZrbHNGZnRvUHRybjA2OE13czVydzhVNjl6NkJpSDJJQ2lTWnZ2aFphbVJoMnlxclo?oc=5",
+      "image": null,
+      "timestamp": 1792058060,
+      "created_at": "2026-10-15 09:54",
+      "title_orig": "【デジモンUP】ワームモンの評価と性能",
+      "title_ja": "【デジモンUP】ワームモンの評価と性能"
+    },
+    {
       "id": "16c96d8c77947a11e0dc893846681870",
       "title": "[일본뉴스] 【디지몬 UP】 문장의 입수 방법과 사용법",
       "snippet": "【デジモンUP】紋章の入手方法と使い方&nbsp;&nbsp;GameWith",
@@ -602,8 +674,8 @@
       "snippet": "【デジモンUP】開催中のガシャ(ガチャ)情報まとめ&nbsp;&nbsp;GameWith",
       "source": "GameWith",
       "source_badge": "일본뉴스",
-      "category": "general",
-      "category_name": "일반/뉴스",
+      "category": "figure",
+      "category_name": "피규어/굿즈",
       "link": "https://news.google.com/rss/articles/CBMiTEFVX3lxTFBQMU9WRFVqRlRId3hPVWRRd1BPaVU4U3NqZkFZQmo5a3ZDaTgzWWNpOHdqRWV1d1BYUkw4U054TUVCd1dmdExxc1BHckg?oc=5",
       "image": null,
       "timestamp": 1792057796,
@@ -878,6 +950,21 @@
       "title_ja": "「DIGIMON CONCERT ～2026 Anniversary & BEATBREAK～」キービジュアル＆スペシャルゲスト解禁！チケット情報も！"
     },
     {
+      "id": "937056152f63f9c748b156c1099d28cb",
+      "title": "[일본뉴스] 토에이 애니메이션, 디지몬 선발 애니메이션을 10월 4일부터 방송 개시 메인 PV도 공개",
+      "snippet": "東映アニメーション、デジモン選抜アニメを10月4日より放送へ メインPVも公開&nbsp;&nbsp;Dellows News",
+      "source": "Dellows News",
+      "source_badge": "일본뉴스",
+      "category": "general",
+      "category_name": "일반/뉴스",
+      "link": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE90WWo2S2l2Sl9QcDc2bmdySnVyRDNIMUZUdlVqbEdlRzZDQXJ6dlFUTmdsRVdrcEFwWEUtTDBZMUNiMTkzYnBHeWVDTTJWZVNhT2h5a3lwc3NFX3ZBeWc?oc=5",
+      "image": null,
+      "timestamp": 1791998435,
+      "created_at": "2026-10-14 17:20",
+      "title_orig": "東映アニメーション、デジモン選抜アニメを10月4日より放送へ メインPVも公開",
+      "title_ja": "東映アニメーション、デジモン選抜アニメを10月4日より放送へ メインPVも公開"
+    },
+    {
       "id": "216652505b219cf861149968f406ca8e",
       "title": "[위키몬 신규] 멜로디",
       "snippet": "Wikimon에 새로 등록된 공식 신규 문서 (Melody)입니다.",
@@ -968,21 +1055,6 @@
       "image": null,
       "timestamp": 1791970360,
       "created_at": "2026-10-14 09:32"
-    },
-    {
-      "id": "3181f48d61870eb23a987226cd787ad5",
-      "title": "[일본뉴스] 【디지몬 UP】 웜몬의 평가와 성능",
-      "snippet": "【デジモンUP】ワームモンの評価と性能&nbsp;&nbsp;GameWith",
-      "source": "GameWith",
-      "source_badge": "일본뉴스",
-      "category": "general",
-      "category_name": "일반/뉴스",
-      "link": "https://news.google.com/rss/articles/CBMiTEFVX3lxTE9KTm1HZTIwZGlWdk9RVjVlYTZwdnZrbHNGZnRvUHRybjA2OE13czVydzhVNjl6NkJpSDJJQ2lTWnZ2aFphbVJoMnlxclo?oc=5",
-      "image": null,
-      "timestamp": 1791966067,
-      "created_at": "2026-10-14 17:21",
-      "title_orig": "【デジモンUP】ワームモンの評価と性能",
-      "title_ja": "【デジモンUP】ワームモンの評価と性能"
     },
     {
       "id": "c6c7593b3e8ab3871230d97581c56d3a",
@@ -1371,6 +1443,20 @@
       "timestamp": 1791253007,
       "created_at": "2026-10-06 02:16",
       "title_orig": "Every Digimon Anime Series of the Last 10 Years, Ranked Worst to Best"
+    },
+    {
+      "id": "63fdd4b3310a43499d18077aa8ada6dd",
+      "title": "[디지카] 덱 정보",
+      "snippet": "Deck Information&nbsp;&nbsp;digimon card meta",
+      "source": "Digimon Meta",
+      "source_badge": "디지카",
+      "category": "card",
+      "category_name": "카드게임(TCG)",
+      "link": "https://news.google.com/rss/articles/CBMisgRBVV95cUxPRHM4NTh2QzFYNWRraTZJU1dnT2E3SFhxQ1BTOFhMUTV0VUswNGdxVmlzb0UwN0ZaZ0laakozQnhTTF96UHpFNzByMmtYU3lpcmlaeTRWMmJIVkRoZXRSWWJ0Z3JSVV90Yl83YnJ3ckFXSHVIeUNOdWsybWFOdk5POWFsclRKc0J0Z3VYeVFxeFk5dG1RMHZETkt2NDJVWHpQUHQ1NUtDeFpKdHdLdlhxUmRnNVlEMHlRajdDSkJyZFBLckwxM0JoeVlWM2d3cWRWbUxrX0xFUDE4RUhQOFBlSWo5eXhjRjdRU19IZGVkUTJmcUlWWFhXRTZYWklYV2RIeUUyMUoxV0o2aHBOWWYwRGc2ZmZhdF9mUE1FYUZGVHlSRkJqTnpNT09xWkxZNXEyb1lOVVNYUzlQc2E3TDJFSWZqZENZUWc3U21UQkFGYlhsRWdyNVJSVTU3cXlRR3k1OHludnhQZ1JaQVVRQktCZVUyd293ZFRnNWIxSVJFS1lvbm5feUlSR1ZVZ3VpMWZZZ0lQRFNqX1hDRWlzWGZEb293SjIyU1ZvS2RkYms2Z3RNVjNfMXFSaXNHLUQxSktSSnUtNzlYYUwwcFdIbHMtM2NLSjdlY3ZydFdWNXh2a3o5QjlSaXRvZDAwMzBieFpzOGNIWDdKcVRzR2t1TUI2bm9DcThpa0V6clNBcE5jbW41MC1TN01vN19aaEVabGlRT1lEMGYwdDFzbTN4SGpnWDhn?oc=5",
+      "image": null,
+      "timestamp": 1791183600,
+      "created_at": "2026-10-05 07:00",
+      "title_orig": "Deck Information"
     },
     {
       "id": "8775e49451b58ae67d756234b773145a",
@@ -2553,6 +2639,21 @@
       "created_at": "2026-08-26 07:00"
     },
     {
+      "id": "db0414a5fe954610632b486949f1c0ea",
+      "title": "[일본뉴스] 제1탄은 파타몬과 엔젤몬이 라인업! 『디지몬 어드벤처』의 경품 피규어 시리즈「디지바이스탠드!」가 새롭게 등장!",
+      "snippet": "第1弾はパタモンとエンジェモンがラインナップ！『デジモンアドベンチャー』のプライズフィギュアシリーズ「デジヴァイスタンド！」が新登場！&nbsp;&nbsp;電撃ホビーウェブ",
+      "source": "電撃ホビーウェブ",
+      "source_badge": "일본뉴스",
+      "category": "general",
+      "category_name": "일반/뉴스",
+      "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE5GdGJ6aXptVUt4QU13Q2dINlZQUXZPdlF6eGNZUTNaXzVOX19uak5hX0RMRV96SEdzUUE0czVjYTFvUHQzZTNoQURwZFZpM1hx?oc=5",
+      "image": null,
+      "timestamp": 1787468400,
+      "created_at": "2026-08-23 07:00",
+      "title_orig": "第1弾はパタモンとエンジェモンがラインナップ！『デジモンアドベンチャー』のプライズフィギュアシリーズ「デジヴァイスタンド！」が新登場！",
+      "title_ja": "第1弾はパタモンとエンジェモンがラインナップ！『デジモンアドベンチャー』のプライズフィギュアシリーズ「デジヴァイスタンド！」が新登場！"
+    },
+    {
       "id": "5e04b6dab7d73313fae246533d3a76a8",
       "title": "[일본뉴스] 고그마몬 | CHARACTER | DIGIMON BEATBREAK - 디지몬 비트브레이크",
       "snippet": "ゴグマモン | CHARACTER | DIGIMON BEATBREAK - デジモンビートブレイク&nbsp;&nbsp;東映アニメーション",
@@ -2713,7 +2814,7 @@
       "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE1GRXJIOUR6ZEZ6WEF4THRoTzVmd1BRS05HRmg3aGJsZHN5aUdCV2VucXczUHlIUnZ5YU1oTXZ0dml3RG1ORGlpZEFyMjJOa2FtV2c?oc=5",
       "image": null,
       "timestamp": 1786258800,
-      "created_at": "2026-08-09 16:00"
+      "created_at": "2026-08-09 07:00"
     },
     {
       "id": "135f25834c6f161278b92d74fb5e2474",
@@ -2849,7 +2950,7 @@
       "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE9lQTRtanRnRWpmaHk5MGhsSFpQWEZUZmRNNU93enU0dExoV0ZTY19HVUVRMHY2eTFkckZheXZmQV9IbHFnU0x0ZWZRdnBQUm9tNXc?oc=5",
       "image": null,
       "timestamp": 1785567600,
-      "created_at": "2026-08-01 16:00"
+      "created_at": "2026-08-01 07:00"
     },
     {
       "id": "03ef8f1e69c71c08f78e96c203c92f35",
