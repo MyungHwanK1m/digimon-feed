@@ -2,9 +2,6 @@ name: Collect Wikimon Evolutions
 
 # Wikimon 진화 목록(출처 포함) 수집 — api.php, 50문서씩, 요청 간 60초 (robots.txt Crawl-delay)
 on:
-  push:  # (임시) 브랜치에서 첫 수집
-    branches: [claude/tender-davinci-dcqvn9]
-    paths: [scraper/collect_wikimon.py, .github/workflows/collect-wikimon.yml]
   workflow_dispatch:
     inputs:
       max_requests:
