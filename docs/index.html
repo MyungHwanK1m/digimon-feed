@@ -184,14 +184,19 @@
         <button id="clear-search-btn" onclick="clearSearch()" class="hidden absolute right-3 top-1/2 -translate-y-1/2 text-blue-500 hover:text-blue-700 p-1 text-xs">✕</button>
       </div>
 
-      <!-- Filter Bar: Category Chips (Blue Card Slots) -->
+      <!-- Filter Bar: Site/Platform Chips (Intuitive Site Filters) -->
       <div class="flex items-center gap-1.5 overflow-x-auto pb-1 no-scrollbar text-xs font-bold">
         <button onclick="setCategory('all')" class="cat-chip touch-press px-3.5 py-2 rounded-xl transition bg-[#004ce8] text-white shrink-0 shadow-md shadow-blue-600/30 border border-blue-400/40" data-cat="all">전체</button>
-        <button onclick="setCategory('sns')" class="cat-chip touch-press px-3.5 py-2 rounded-xl transition bg-white/90 dark:bg-[#070e22]/90 text-slate-700 dark:text-slate-300 border border-blue-200 dark:border-blue-900/60 hover:border-blue-400 shrink-0 shadow-xs" data-cat="sns">📱 SNS/영상</button>
-        <button onclick="setCategory('figure')" class="cat-chip touch-press px-3.5 py-2 rounded-xl transition bg-white/90 dark:bg-[#070e22]/90 text-slate-700 dark:text-slate-300 border border-blue-200 dark:border-blue-900/60 hover:border-blue-400 shrink-0 shadow-xs" data-cat="figure">🧸 피규어/굿즈</button>
-        <button onclick="setCategory('card')" class="cat-chip touch-press px-3.5 py-2 rounded-xl transition bg-white/90 dark:bg-[#070e22]/90 text-slate-700 dark:text-slate-300 border border-blue-200 dark:border-blue-900/60 hover:border-blue-400 shrink-0 shadow-xs" data-cat="card">🃏 카드게임(TCG)</button>
-        <button onclick="setCategory('game')" class="cat-chip touch-press px-3.5 py-2 rounded-xl transition bg-white/90 dark:bg-[#070e22]/90 text-slate-700 dark:text-slate-300 border border-blue-200 dark:border-blue-900/60 hover:border-blue-400 shrink-0 shadow-xs" data-cat="game">🎮 게임/애니</button>
-        <button onclick="setCategory('community')" class="cat-chip touch-press px-3.5 py-2 rounded-xl transition bg-white/90 dark:bg-[#070e22]/90 text-slate-700 dark:text-slate-300 border border-blue-200 dark:border-blue-900/60 hover:border-blue-400 shrink-0 shadow-xs" data-cat="community">🔥 커뮤니티</button>
+        <button onclick="setCategory('site_dweb')" class="cat-chip touch-press px-3 py-2 rounded-xl transition bg-white/90 dark:bg-[#070e22]/90 text-slate-700 dark:text-slate-300 border border-blue-200 dark:border-blue-900/60 hover:border-blue-400 shrink-0 shadow-xs" data-cat="site_dweb">🌐 공식 (디지몬웹)</button>
+        <button onclick="setCategory('site_card')" class="cat-chip touch-press px-3 py-2 rounded-xl transition bg-white/90 dark:bg-[#070e22]/90 text-slate-700 dark:text-slate-300 border border-blue-200 dark:border-blue-900/60 hover:border-blue-400 shrink-0 shadow-xs" data-cat="site_card">🃏 디지카 (TCG)</button>
+        <button onclick="setCategory('site_wiki')" class="cat-chip touch-press px-3 py-2 rounded-xl transition bg-white/90 dark:bg-[#070e22]/90 text-slate-700 dark:text-slate-300 border border-blue-200 dark:border-blue-900/60 hover:border-blue-400 shrink-0 shadow-xs" data-cat="site_wiki">📖 위키몬</button>
+        <button onclick="setCategory('site_hobby')" class="cat-chip touch-press px-3 py-2 rounded-xl transition bg-white/90 dark:bg-[#070e22]/90 text-slate-700 dark:text-slate-300 border border-blue-200 dark:border-blue-900/60 hover:border-blue-400 shrink-0 shadow-xs" data-cat="site_hobby">🧸 루리웹/하비</button>
+        <button onclick="setCategory('site_game')" class="cat-chip touch-press px-3 py-2 rounded-xl transition bg-white/90 dark:bg-[#070e22]/90 text-slate-700 dark:text-slate-300 border border-blue-200 dark:border-blue-900/60 hover:border-blue-400 shrink-0 shadow-xs" data-cat="site_game">🎮 게임/애니</button>
+        <button onclick="setCategory('site_community')" class="cat-chip touch-press px-3 py-2 rounded-xl transition bg-white/90 dark:bg-[#070e22]/90 text-slate-700 dark:text-slate-300 border border-blue-200 dark:border-blue-900/60 hover:border-blue-400 shrink-0 shadow-xs" data-cat="site_community">💬 커뮤니티 (디시/아카)</button>
+        <button onclick="setCategory('site_x')" class="cat-chip touch-press px-3 py-2 rounded-xl transition bg-white/90 dark:bg-[#070e22]/90 text-slate-700 dark:text-slate-300 border border-blue-200 dark:border-blue-900/60 hover:border-blue-400 shrink-0 shadow-xs" data-cat="site_x">🐦 X (트위터)</button>
+        <button onclick="setCategory('site_insta')" class="cat-chip touch-press px-3 py-2 rounded-xl transition bg-white/90 dark:bg-[#070e22]/90 text-slate-700 dark:text-slate-300 border border-blue-200 dark:border-blue-900/60 hover:border-blue-400 shrink-0 shadow-xs" data-cat="site_insta">📸 인스타</button>
+        <button onclick="setCategory('site_youtube')" class="cat-chip touch-press px-3 py-2 rounded-xl transition bg-white/90 dark:bg-[#070e22]/90 text-slate-700 dark:text-slate-300 border border-blue-200 dark:border-blue-900/60 hover:border-blue-400 shrink-0 shadow-xs" data-cat="site_youtube">▶️ 유튜브</button>
+        <button onclick="setCategory('site_news')" class="cat-chip touch-press px-3 py-2 rounded-xl transition bg-white/90 dark:bg-[#070e22]/90 text-slate-700 dark:text-slate-300 border border-blue-200 dark:border-blue-900/60 hover:border-blue-400 shrink-0 shadow-xs" data-cat="site_news">📰 뉴스/웹진</button>
         <button onclick="toggleBookmarkFilter()" id="bookmark-filter-btn" class="cat-chip touch-press px-3.5 py-2 rounded-xl transition bg-white/90 dark:bg-[#070e22]/90 text-slate-700 dark:text-slate-300 border border-blue-200 dark:border-blue-900/60 shrink-0 flex items-center gap-1 ml-auto shadow-xs">
           <span class="text-amber-400">★</span>
           <span>스크랩</span>
@@ -486,12 +491,33 @@
         }
 
         let matchesCat = false;
+        const sbadge = item.source_badge || '';
+        const cat = item.category || '';
+
         if (currentCategory === 'all') {
           matchesCat = true;
-        } else if (currentCategory === 'sns') {
-          matchesCat = item.category === 'sns' || ['레딧', 'X(트위터)', '유튜브', '인스타그램', '공식/글로벌'].includes(item.source_badge);
+        } else if (currentCategory === 'site_dweb') {
+          matchesCat = sbadge === '디지몬웹';
+        } else if (currentCategory === 'site_card') {
+          matchesCat = sbadge === '디지카' || cat === 'card';
+        } else if (currentCategory === 'site_wiki') {
+          matchesCat = sbadge === '위키몬' || sbadge === '위키몬 신규';
+        } else if (currentCategory === 'site_hobby') {
+          matchesCat = ['루리웹', '하비뉴스', '프반/하비'].includes(sbadge) && cat === 'figure';
+        } else if (currentCategory === 'site_game') {
+          matchesCat = (['루리웹', '네이버'].includes(sbadge) && cat === 'game') || cat === 'game';
+        } else if (currentCategory === 'site_community') {
+          matchesCat = ['디시', '아카라이브'].includes(sbadge);
+        } else if (currentCategory === 'site_x') {
+          matchesCat = sbadge === 'X(트위터)';
+        } else if (currentCategory === 'site_insta') {
+          matchesCat = sbadge === '인스타그램';
+        } else if (currentCategory === 'site_youtube') {
+          matchesCat = sbadge === '유튜브';
+        } else if (currentCategory === 'site_news') {
+          matchesCat = ['뉴스', '해외뉴스', '일본뉴스', '애니뉴스', '글로벌뉴스', '공식/글로벌'].includes(sbadge);
         } else {
-          matchesCat = item.category === currentCategory;
+          matchesCat = cat === currentCategory;
         }
 
         const matchesSearch = !searchQuery || 
@@ -525,6 +551,10 @@
 
         const badgeStyle = item.source_badge === '루리웹' 
           ? 'bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 border-emerald-500/40'
+          : item.source_badge === '아카라이브'
+          ? 'bg-orange-500/15 text-orange-600 dark:text-orange-400 border-orange-500/40'
+          : item.source_badge === '네이버'
+          ? 'bg-green-500/15 text-green-600 dark:text-green-400 border-green-500/40'
           : item.source_badge === '디시'
           ? 'bg-purple-500/15 text-purple-600 dark:text-purple-400 border-purple-500/40'
           : item.source_badge === '레딧'

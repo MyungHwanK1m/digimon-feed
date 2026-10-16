@@ -1,5 +1,5 @@
-// DIGI-FEED v18 (safe official goods links & wikimon new pages)
-const CACHE_NAME = 'digi-feed-v18';
+// DIGI-FEED v19 (site filter chips & new sources: meta, amiami, arcalive, naver)
+const CACHE_NAME = 'digi-feed-v19';
 const ASSETS = [
   './',
   './index.html',

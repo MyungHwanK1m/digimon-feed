@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-10-16 17:35:00",
-  "total_count": 175,
+  "last_updated": "2026-10-16 17:47:38",
+  "total_count": 205,
   "retention_days": 90,
   "feeds": [
     {
@@ -13,8 +13,8 @@
       "category_name": "피규어/굿즈",
       "link": "https://digimon.net/product/others/",
       "image": null,
-      "timestamp": 1792139699,
-      "created_at": "2026-10-16 17:34",
+      "timestamp": 1792140450,
+      "created_at": "2026-10-16 17:47",
       "title_orig": "デジタルモンスター WORLDMAKING ACRYLIC STAND ブースターver.5",
       "title_ja": "デジタルモンスター WORLDMAKING ACRYLIC STAND ブースターver.5"
     },
@@ -223,6 +223,19 @@
       "image": null,
       "timestamp": 1792122985,
       "created_at": "2026-10-16 12:56"
+    },
+    {
+      "id": "a430cb7ebe0f2d6657f4b1f14f2ab190",
+      "title": "[네이버] 디지몬 마스터즈 온라인",
+      "snippet": "디지몬 마스터즈 온라인&nbsp;&nbsp;NAVER",
+      "source": "네이버 게임",
+      "source_badge": "네이버",
+      "category": "game",
+      "category_name": "게임/공식애니",
+      "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTE1QYUpmaUszZjBqaHo2d1U2THRsYmtqQUpFNmllam0xclNxTDk3LWRiQ2VKRGFDQkd6akROWDJlTXhJMnpwTHYwM0hUOG5MTmlVTkExUFRrR05aU3pDb0lwb3doSzBJVVNCZHB3?oc=5",
+      "image": null,
+      "timestamp": 1792106074,
+      "created_at": "2026-10-16 08:14"
     },
     {
       "id": "786092433c9d38c1b8a6358d00c415d5",
@@ -704,6 +717,32 @@
       "title_ja": "東宝大怪獣シリーズ メタルガルルモン：”G”侵食モード"
     },
     {
+      "id": "14a88d9e5b67d7bddfe590b2ad6ed20d",
+      "title": "[네이버] (도와주세요 ㅠㅠ)무한산 플레이중인 디지몬 이별 불가 : 디지몬 소울체이서 시즌4",
+      "snippet": "(도와주세요 ㅠㅠ)무한산 플레이중인 디지몬 이별 불가 : 디지몬 소울체이서 시즌4&nbsp;&nbsp;네이버 게임",
+      "source": "네이버 게임",
+      "source_badge": "네이버",
+      "category": "game",
+      "category_name": "게임/공식애니",
+      "link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQUUFaaFRVMnIwckRTR1ZxbVpfSFd1Nnl0MnFsTHFxa19xak5kU25GamotdkxBcTNCQkFwRG03c1FCbExYN0toSEl3dV9KcG80MWl0TUU3X0JBZUlfX3hCeTRlUlM1MHlHM0FrUmpVcklqSjREb3ZtUzFEZklTd1FPUU9UWjY?oc=5",
+      "image": null,
+      "timestamp": 1792049147,
+      "created_at": "2026-10-15 16:25"
+    },
+    {
+      "id": "84667fbfa7b650761094a5be9abe6f37",
+      "title": "[네이버] 디지몬 마스터즈 온라인",
+      "snippet": "디지몬 마스터즈 온라인&nbsp;&nbsp;NAVER",
+      "source": "네이버 게임",
+      "source_badge": "네이버",
+      "category": "game",
+      "category_name": "게임/공식애니",
+      "link": "https://news.google.com/rss/articles/CBMibkFVX3lxTE8wcldzYkdDV1hIWDR0cFJxLWw3eGIzVWNvM0g3WVJHcVV5dnZGc2dFTDQ3UUs5TXh2Vy1jQm9tbVJlbFJ5TER3RzU0Wm1aTFN4ejk0LTgtX0Y1dlVFOG53eHdLT2kyVmptRE1kQmd3?oc=5",
+      "image": null,
+      "timestamp": 1792031060,
+      "created_at": "2026-10-15 11:24"
+    },
+    {
       "id": "216652505b219cf861149968f406ca8e",
       "title": "[위키몬 신규] Melody",
       "snippet": "Wikimon에 새로 등록된 공식 신규 문서 (Melody)입니다.",
@@ -842,7 +881,7 @@
       "source": "전격하비",
       "source_badge": "하비뉴스",
       "category": "figure",
-      "category_name": "일반/뉴스",
+      "category_name": "피규어/굿즈",
       "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE9HVExTUENrOHpGQTFBVEx1aVRDdkZ0dkl4YjBMeEtkb053N0tLaE5JVW1JRi1SeHJTNUc3REVBbS1CaFNDZE1kMDl5dG5UYlAt?oc=5",
       "image": null,
       "timestamp": 1791960300,
@@ -914,6 +953,71 @@
       "image": null,
       "timestamp": 1791817200,
       "created_at": "2026-10-13 00:00"
+    },
+    {
+      "id": "2f97581e9ec7d59118ae11bbad0bdd5e",
+      "title": "[네이버] 디지몬 마스터즈 온라인",
+      "snippet": "디지몬 마스터즈 온라인&nbsp;&nbsp;NAVER",
+      "source": "네이버 게임",
+      "source_badge": "네이버",
+      "category": "game",
+      "category_name": "게임/공식애니",
+      "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTE95LW1qODZPTEQwRGlKMUhZMm1YWFlWbV85QTV2Y0VteFBXQzNIb1EtLTdwMU1JQVpMRUVWbG1Oa1c4ZTNaX0stOWN2NFdzT1Qta2t2NDF6ZDFDemE1RmRtOUZ1bnBmdlFuSmZB?oc=5",
+      "image": null,
+      "timestamp": 1791746715,
+      "created_at": "2026-10-12 04:25"
+    },
+    {
+      "id": "34ff770d3d63eb1ec95e7227dad44393",
+      "title": "[네이버] 디지몬 마스터즈 온라인! 애니메이션의 감동과 재미를 그대로!!",
+      "snippet": "디지몬 마스터즈 온라인! 애니메이션의 감동과 재미를 그대로!!&nbsp;&nbsp;NAVER",
+      "source": "네이버 게임",
+      "source_badge": "네이버",
+      "category": "game",
+      "category_name": "게임/공식애니",
+      "link": "https://news.google.com/rss/articles/CBMibkFVX3lxTE02Z0tjRTRTWHQ3YW9ybUZNMmM3bEQtVXdZZGZuN1NQS1F3UmNNLUNPWGZKa2QzLWZjMDJvTUp5bWNocmdVTndQTEVJUklNWkRjczVqanpDVmh3THN1d2ZvUlJPRmxzdGRDR19jakt3?oc=5",
+      "image": null,
+      "timestamp": 1791670379,
+      "created_at": "2026-10-11 07:12"
+    },
+    {
+      "id": "154ff74339760f1113de53bd98ad8a40",
+      "title": "[루리웹] 디지몬: 월드 베스트 픽 - 디지몬 어드벤처: 표류? 모험의 섬! (제1...",
+      "snippet": "루리웹 애니정보 디지몬 최신 소식입니다.",
+      "source": "루리웹 애니정보",
+      "source_badge": "루리웹",
+      "category": "game",
+      "category_name": "게임/공식애니",
+      "link": "https://bbs.ruliweb.com/family/211/board/300015/read/2437991?search_type=subject&search_key=%EB%94%94%EC%A7%80%EB%AA%AC",
+      "image": null,
+      "timestamp": 1791644400,
+      "created_at": "2026-10-11 00:00"
+    },
+    {
+      "id": "9a1db30d038034a1ec60aef113101da0",
+      "title": "[네이버] 디지몬 마스터즈 온라인",
+      "snippet": "디지몬 마스터즈 온라인&nbsp;&nbsp;NAVER",
+      "source": "네이버 게임",
+      "source_badge": "네이버",
+      "category": "game",
+      "category_name": "게임/공식애니",
+      "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTFBnNHNrT3dtQ0FLTHE4UEl1RFg3Y3d2R01KMEwtSXFxMkhMb3VMSnZHNUFMNTVoNEh4eFcxMGVBUGhqdlhzQXpDSzA5d1VETmJEYU92Q1FmT3FqY0JkMmpzUjladE83LWlMSnRR?oc=5",
+      "image": null,
+      "timestamp": 1791634382,
+      "created_at": "2026-10-10 21:13"
+    },
+    {
+      "id": "15df92fdc01d2878492ea11e2bab28d2",
+      "title": "[네이버] 디지몬 마스터즈 온라인! 애니메이션의 감동과 재미를 그대로!!",
+      "snippet": "디지몬 마스터즈 온라인! 애니메이션의 감동과 재미를 그대로!!&nbsp;&nbsp;NAVER",
+      "source": "네이버 게임",
+      "source_badge": "네이버",
+      "category": "game",
+      "category_name": "게임/공식애니",
+      "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTE9XSlhuRkNScGU2bkUydGtNRTVGcVhjekxKU0pqZlhKVmtGTnBiR3d2WkFGZm9lTTlTZXNHZ2dXcGpnQTRMZUcxdWI5a2NBbnFXYkJ0bW1oUkVScE9pMElsZE9wMVhDMVBpekVr?oc=5",
+      "image": null,
+      "timestamp": 1791618349,
+      "created_at": "2026-10-10 16:45"
     },
     {
       "id": "1e2542a34b1a833e1800ea65186cd597",
@@ -1022,6 +1126,32 @@
       "title_ja": "デジモン図鑑に、新たにスズモン、セキリュウモン、ルートモン、フィカスモン を追加！"
     },
     {
+      "id": "f94ccaebb5a67ed418b94114bd66f2b6",
+      "title": "[하비뉴스] 【限定販売】G.E.M.シリーズ デジモンテイマーズ レナモン＆牧野留姫 完成品フィギュア（再販）[メガハウス]《０６月予約》",
+      "snippet": "【限定販売】G.E.M.シリーズ デジモンテイマーズ レナモン＆牧野留姫 完成品フィギュア（再販）[メガハウス]《０６月予約》&nbsp;&nbsp;あみあみ",
+      "source": "아미아미",
+      "source_badge": "하비뉴스",
+      "category": "figure",
+      "category_name": "피규어/굿즈",
+      "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTE5Bc2V0dERKQ1dBRUJ3SjJBdWMwMWhFREZULVBtdjlxcFNUY2EzRm5URk9qRHIwY0w1MTlTMDFLbEdYdnhpT0lnU2o2YjZiamdQVzVfYkdtelhJRGtrMEhoOS1XV2JuOEtaZWpZ?oc=5",
+      "image": null,
+      "timestamp": 1791454611,
+      "created_at": "2026-10-08 19:16"
+    },
+    {
+      "id": "feb6551d917863da83a6b53a16f8d4cc",
+      "title": "[네이버] 디지몬 마스터즈 온라인",
+      "snippet": "디지몬 마스터즈 온라인&nbsp;&nbsp;NAVER",
+      "source": "네이버 게임",
+      "source_badge": "네이버",
+      "category": "game",
+      "category_name": "게임/공식애니",
+      "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxPVGRFZmJBcFhjdlNxVHpKR3QxTTV2ODRiTXkxZ1B4TzdhVkV4Y0hvNU5HdUpDUEJiRUN2OXFIZlNxUDRoMVNOMGl6SXBkaEd6anlUTExuUFktd2trNk1QTWx1ZjVhYS05ZjllVVNETERWb1NWNVJjUEdXaThSQ2FVRg?oc=5",
+      "image": null,
+      "timestamp": 1791442800,
+      "created_at": "2026-10-08 16:00"
+    },
+    {
       "id": "98c8e1abdc0a703c2757ec8f803c6a74",
       "title": "[해외뉴스] Digimon World 2003 PC Recomp | KendoGarurumon playable test",
       "snippet": "Digimon World 2003 PC Recomp | KendoGarurumon playable test&nbsp;&nbsp;YouTube",
@@ -1089,6 +1219,19 @@
       "created_at": "2026-10-06 11:16"
     },
     {
+      "id": "8775e49451b58ae67d756234b773145a",
+      "title": "[루리웹] 디지몬 우리가 선택한 베스트 어드벤처 OP 공개",
+      "snippet": "루리웹 애니정보 디지몬 최신 소식입니다.",
+      "source": "루리웹 애니정보",
+      "source_badge": "루리웹",
+      "category": "game",
+      "category_name": "게임/공식애니",
+      "link": "https://bbs.ruliweb.com/family/211/board/300015/read/2437206?search_type=subject&search_key=%EB%94%94%EC%A7%80%EB%AA%AC",
+      "image": null,
+      "timestamp": 1791039600,
+      "created_at": "2026-10-04 00:00"
+    },
+    {
       "id": "c0368887e957b5adde01e483ab2e312e",
       "title": "[공식 상품] 디지몬 카드 게임 엑스트라 부스터 CHIVALROUS XIII 【EX-13】",
       "snippet": "발매 2026-10-03 · 240円(税込)",
@@ -1132,6 +1275,19 @@
       "created_at": "2026-10-03 00:00",
       "title_orig": "デジモンカードゲーム エクストラブースター CHIVALROUS XIII 【EX-13】",
       "title_ja": "デジモンカードゲーム エクストラブースター CHIVALROUS XIII 【EX-13】"
+    },
+    {
+      "id": "4a580da97f5df6d450c37668fe193c0a",
+      "title": "[루리웹] 디지몬 스토리 타임 스트레인저. 출시 1주년 기념 일러스트 공개",
+      "snippet": "루리웹 콘솔뉴스 디지몬 최신 소식입니다.",
+      "source": "루리웹 콘솔뉴스",
+      "source_badge": "루리웹",
+      "category": "game",
+      "category_name": "게임/공식애니",
+      "link": "https://bbs.ruliweb.com/news/board/1001/read/2363888?search_type=subject&search_key=%EB%94%94%EC%A7%80%EB%AA%AC",
+      "image": null,
+      "timestamp": 1790953200,
+      "created_at": "2026-10-03 00:00"
     },
     {
       "id": "bcc921907b294ccfa3123ad02969db2a",
@@ -1378,6 +1534,19 @@
       "created_at": "2026-09-27 16:00"
     },
     {
+      "id": "10dbfd08e2e1260cf5479157845b39ad",
+      "title": "[하비뉴스] Hobby Shop] | Digimon Adventure Acrylic Block Hikari Yagami & Tailmon(Pre-order)",
+      "snippet": "Hobby Shop] | Digimon Adventure Acrylic Block Hikari Yagami & Tailmon(Pre-order)&nbsp;&nbsp;AmiAmi",
+      "source": "AmiAmi",
+      "source_badge": "하비뉴스",
+      "category": "figure",
+      "category_name": "피규어/굿즈",
+      "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE1oRVlJWngyaEpGeGxTeUNWdmc3Wjl2dURIcEQwN0NORl9LdXZKMV9IRlpWcTMwTjUzbWx3dHNvNXNWNnplWUlxV3VvNF9FdzRMTUNZU3hod3huLWcyRDUxZE41OU1RZw?oc=5",
+      "image": null,
+      "timestamp": 1790488676,
+      "created_at": "2026-09-27 14:57"
+    },
+    {
       "id": "acb9c900bdb082702c744adba4ed41ac",
       "title": "[일본뉴스] DIGIMON BEATBREAK＞最終回放送記念 「デジタルモンスターCOLOR」登場 (MANTANWEB)",
       "snippet": "DIGIMON BEATBREAK＞最終回放送記念 「デジタルモンスターCOLOR」登場 (MANTANWEB)&nbsp;&nbsp;Yahoo!ニュース",
@@ -1428,6 +1597,19 @@
       "image": null,
       "timestamp": 1790470775,
       "created_at": "2026-09-27 09:59"
+    },
+    {
+      "id": "fbfa93a1776f0685ac53cece85b8af12",
+      "title": "[하비뉴스] デジモンアドベンチャー アクリルブロック 石田ヤマト＆ガブモン[キャラバン]《１２月予約》",
+      "snippet": "デジモンアドベンチャー アクリルブロック 石田ヤマト＆ガブモン[キャラバン]《１２月予約》&nbsp;&nbsp;あみあみ",
+      "source": "아미아미",
+      "source_badge": "하비뉴스",
+      "category": "figure",
+      "category_name": "피규어/굿즈",
+      "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTFA2RUZtNTF6U0FvemJfb2hhUDZmeXVJdWRiSlpyRGFkVjR6ZXNBN09iRWNpRkQ5Q01mQzhCc2k2VHhJT2wtS0FxclRDc0t0VzJsQU8zbVVGQ3FzQ2lLaTRFaEZSdlBtUW5nNHljZQ?oc=5",
+      "image": null,
+      "timestamp": 1790435144,
+      "created_at": "2026-09-27 00:05"
     },
     {
       "id": "0bcb274d1b4f3c78ac287a3013465533",
@@ -1488,6 +1670,45 @@
       "created_at": "2026-09-27 00:00",
       "title_orig": "デジモン図鑑に、新たにヴォルブモンを追加！さらにアトラタスモン、アルバタスモンのデジモン図鑑を更新！",
       "title_ja": "デジモン図鑑に、新たにヴォルブモンを追加！さらにアトラタスモン、アルバタスモンのデジモン図鑑を更新！"
+    },
+    {
+      "id": "c8407a46e18d8ab82e05055024bf0522",
+      "title": "[루리웹] [디지몬 시리즈] 우리들이 선택한 베스트 어드벤처 메인 PV",
+      "snippet": "루리웹 애니정보 디지몬 최신 소식입니다.",
+      "source": "루리웹 애니정보",
+      "source_badge": "루리웹",
+      "category": "game",
+      "category_name": "게임/공식애니",
+      "link": "https://bbs.ruliweb.com/family/211/board/300015/read/2436073?search_type=subject&search_key=%EB%94%94%EC%A7%80%EB%AA%AC",
+      "image": null,
+      "timestamp": 1790434800,
+      "created_at": "2026-09-27 00:00"
+    },
+    {
+      "id": "635c7be91c8f75e353dda40fa6f7e25e",
+      "title": "[하비뉴스] Hobby Shop] | Digimon Adventure Pair Acrylic Stand Yamato Ishida & Gabumon(Pre-order)",
+      "snippet": "Hobby Shop] | Digimon Adventure Pair Acrylic Stand Yamato Ishida & Gabumon(Pre-order)&nbsp;&nbsp;AmiAmi",
+      "source": "AmiAmi",
+      "source_badge": "하비뉴스",
+      "category": "figure",
+      "category_name": "피규어/굿즈",
+      "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTFA1Yzc0RFNUR2pXdUF5WnFCNFVuR0tsNkJyU2xqbWtTWmJWZ01xak5EelNXeDE3X0N6aW1uZnp6bThUZW15SEVkdGszRWRWTkVBRDRhV0VoajBmTHh5SXo5djZlOTJrZw?oc=5",
+      "image": null,
+      "timestamp": 1790427275,
+      "created_at": "2026-09-26 21:54"
+    },
+    {
+      "id": "9a368b9ba1bd6ed4ddd576898731a288",
+      "title": "[디지카] My Gundam Decks | Egman Deck Builder",
+      "snippet": "My Gundam Decks | Egman Deck Builder&nbsp;&nbsp;Egman Deck Builder",
+      "source": "Egman Events",
+      "source_badge": "디지카",
+      "category": "card",
+      "category_name": "카드게임(TCG)",
+      "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE8tVEtxZ2l3STZpN3ZRN3ZoQ1AwRkN3WG10RWFjOU1RcTlDZllUMmdCNzh6QXY3Mlo2S083UXpsUlZaMWVQbkMzdldwQzd5bHBwYmEwalh4cFdEeUpheTlGRHctOA?oc=5",
+      "image": null,
+      "timestamp": 1790373206,
+      "created_at": "2026-09-26 06:53"
     },
     {
       "id": "b74a947906936d97e46a8ec74f369112",
@@ -1565,7 +1786,7 @@
       "source": "전격하비",
       "source_badge": "하비뉴스",
       "category": "figure",
-      "category_name": "일반/뉴스",
+      "category_name": "피규어/굿즈",
       "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTFBpdks2WGhaRGt1Qkw3cEFyYzdHcUhfcGNPUS1KYkFNd3pWRWgzMEt3bTJHeDBWVnRBR0k4NWsySmRianJJSHpCSVZOQ1BybVdS?oc=5",
       "image": null,
       "timestamp": 1789801200,
@@ -1578,7 +1799,7 @@
       "source": "전격하비",
       "source_badge": "하비뉴스",
       "category": "figure",
-      "category_name": "일반/뉴스",
+      "category_name": "피규어/굿즈",
       "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTFBkbnJxUnRISF9LRHhEXzBvYzA3eU9zaHJyU2NwWHJ5eC1ZT2dvbVdTME5VcDY2SENJbFFla0pUUkFkdThfc2dfUXBKaUxQQkdl?oc=5",
       "image": null,
       "timestamp": 1789801200,
@@ -1591,7 +1812,7 @@
       "source": "하비워치",
       "source_badge": "하비뉴스",
       "category": "figure",
-      "category_name": "일반/뉴스",
+      "category_name": "피규어/굿즈",
       "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE5XNGJPWVhZQk93b29YRnhibkhkb240WXFtZml0QS1yRnV2cXY3YWxNWTlPbVdobWloRlZUTXJnU1E5S2ZNdzh3N0t1WWxuUDFBU2pRaUxnQVAtMnB0b1ZXdVFEbzJHUGc?oc=5",
       "image": null,
       "timestamp": 1789801200,
@@ -1676,6 +1897,19 @@
       "image": null,
       "timestamp": 1789484400,
       "created_at": "2026-09-16 00:00"
+    },
+    {
+      "id": "976318558804d4dd78cdfc3e313725d5",
+      "title": "[루리웹] 디지몬 스토리 타임 스트레인저. 일본 게임 대상 2026 우수상 수상!",
+      "snippet": "루리웹 콘솔뉴스 디지몬 최신 소식입니다.",
+      "source": "루리웹 콘솔뉴스",
+      "source_badge": "루리웹",
+      "category": "game",
+      "category_name": "게임/공식애니",
+      "link": "https://bbs.ruliweb.com/news/board/1001/read/2362620?search_type=subject&search_key=%EB%94%94%EC%A7%80%EB%AA%AC",
+      "image": null,
+      "timestamp": 1789398000,
+      "created_at": "2026-09-15 00:00"
     },
     {
       "id": "bb03f27fc6ae7d7595633594ef5c5e4a",
@@ -1767,6 +2001,32 @@
       "image": null,
       "timestamp": 1789023600,
       "created_at": "2026-09-10 16:00"
+    },
+    {
+      "id": "3db89d9657ce5bbc0eed6f6d4962d4c7",
+      "title": "[루리웹] 디지몬 게임 공식 어카운트. 게시물 기재 오류 사과",
+      "snippet": "루리웹 콘솔뉴스 디지몬 최신 소식입니다.",
+      "source": "루리웹 콘솔뉴스",
+      "source_badge": "루리웹",
+      "category": "game",
+      "category_name": "게임/공식애니",
+      "link": "https://bbs.ruliweb.com/news/board/1001/read/2362110?search_type=subject&search_key=%EB%94%94%EC%A7%80%EB%AA%AC",
+      "image": null,
+      "timestamp": 1788966000,
+      "created_at": "2026-09-10 00:00"
+    },
+    {
+      "id": "fbd3df9b206880fdee74f969526e92ee",
+      "title": "[루리웹] 디지몬 스토리 타임 스트레인저 - 알카디몬 등장 암시",
+      "snippet": "루리웹 콘솔뉴스 디지몬 최신 소식입니다.",
+      "source": "루리웹 콘솔뉴스",
+      "source_badge": "루리웹",
+      "category": "game",
+      "category_name": "게임/공식애니",
+      "link": "https://bbs.ruliweb.com/news/board/1001/read/2362017?search_type=subject&search_key=%EB%94%94%EC%A7%80%EB%AA%AC",
+      "image": null,
+      "timestamp": 1788966000,
+      "created_at": "2026-09-10 00:00"
     },
     {
       "id": "89dcc511541c9850d649e6cbf34a4b28",
@@ -1886,6 +2146,32 @@
       "created_at": "2026-09-04 07:00"
     },
     {
+      "id": "e2816bb201e3ea42e3d3750fe3bd90a3",
+      "title": "[루리웹] 반남코, 디지몬 스토리 타임 스트레인저 영웅의 유지 한국어판 발매 안내 ...",
+      "snippet": "루리웹 콘솔뉴스 디지몬 최신 소식입니다.",
+      "source": "루리웹 콘솔뉴스",
+      "source_badge": "루리웹",
+      "category": "game",
+      "category_name": "게임/공식애니",
+      "link": "https://bbs.ruliweb.com/news/board/1001/read/2361533?search_type=subject&search_key=%EB%94%94%EC%A7%80%EB%AA%AC",
+      "image": null,
+      "timestamp": 1788447600,
+      "created_at": "2026-09-04 00:00"
+    },
+    {
+      "id": "e7ed9ca1b98249fc5123b9bb537a8b3b",
+      "title": "[루리웹] 디지몬 스토리 타임 스트레인저: 영웅의 유지 - 발매 안내 트레일러",
+      "snippet": "루리웹 PC뉴스 디지몬 최신 소식입니다.",
+      "source": "루리웹 PC뉴스",
+      "source_badge": "루리웹",
+      "category": "game",
+      "category_name": "게임/공식애니",
+      "link": "https://bbs.ruliweb.com/news/board/1003/read/2354489?search_type=subject&search_key=%EB%94%94%EC%A7%80%EB%AA%AC",
+      "image": null,
+      "timestamp": 1788447600,
+      "created_at": "2026-09-04 00:00"
+    },
+    {
       "id": "712525d360d060551c41574ae2c8abba",
       "title": "[디지몬] 영상 하나로 입문하는 디지몬 카드게임",
       "snippet": "[디지몬] 영상 하나로 입문하는 디지몬 카드게임&nbsp;&nbsp;YouTube",
@@ -1925,6 +2211,19 @@
       "created_at": "2026-09-03 16:00"
     },
     {
+      "id": "1de5502de8dc363220bde806aff1e5db",
+      "title": "[루리웹] 디지몬 스토리: 타임 스트레인지 확장팩 DLC 발표 트레일러",
+      "snippet": "루리웹 콘솔뉴스 디지몬 최신 소식입니다.",
+      "source": "루리웹 콘솔뉴스",
+      "source_badge": "루리웹",
+      "category": "game",
+      "category_name": "게임/공식애니",
+      "link": "https://bbs.ruliweb.com/news/board/1001/read/2361462?search_type=subject&search_key=%EB%94%94%EC%A7%80%EB%AA%AC",
+      "image": null,
+      "timestamp": 1788361200,
+      "created_at": "2026-09-03 00:00"
+    },
+    {
       "id": "8982752d256235e5adbb43eeb20cbd13",
       "title": "[인스타] . 🌟 채색 원형 첫 공개 📌 디지몬 어드벤처 #デジモン 🥚💤 ✔️ 메가에그 피규어 굿나잇 디지코레 🗓️ 9월 예약 개시 예정 ! * 일본 현지 기준 정보로, 국내외 사정에 따라 일정이 변동될 수 있습니다. #메가하우스공식몰 #베스트하비",
       "snippet": "인스타그램 디지몬 관련 공개 게시물입니다.",
@@ -1962,6 +2261,19 @@
       "image": null,
       "timestamp": 1788159600,
       "created_at": "2026-08-31 16:00"
+    },
+    {
+      "id": "c81b510402e42424898121e775be8b9b",
+      "title": "[루리웹] 20년 전 추억의 애니 극장서 볼까…'이누야샤'·'디지몬' 개봉",
+      "snippet": "루리웹 애니정보 디지몬 최신 소식입니다.",
+      "source": "루리웹 애니정보",
+      "source_badge": "루리웹",
+      "category": "game",
+      "category_name": "게임/공식애니",
+      "link": "https://bbs.ruliweb.com/family/211/board/300015/read/2433394?search_type=subject&search_key=%EB%94%94%EC%A7%80%EB%AA%AC",
+      "image": null,
+      "timestamp": 1788102000,
+      "created_at": "2026-08-31 00:00"
     },
     {
       "id": "15724c77408cf7c6cb38079726e18eb8",
@@ -2072,6 +2384,32 @@
       "created_at": "2026-08-20 16:00"
     },
     {
+      "id": "beccc3dd590c70cadac95eb1fcb4d462",
+      "title": "[루리웹] 디지몬 극장판 국내개봉 기념 월페이퍼 배포",
+      "snippet": "루리웹 애니정보 디지몬 최신 소식입니다.",
+      "source": "루리웹 애니정보",
+      "source_badge": "루리웹",
+      "category": "game",
+      "category_name": "게임/공식애니",
+      "link": "https://bbs.ruliweb.com/family/211/board/300015/read/2432127?search_type=subject&search_key=%EB%94%94%EC%A7%80%EB%AA%AC",
+      "image": null,
+      "timestamp": 1787151600,
+      "created_at": "2026-08-20 00:00"
+    },
+    {
+      "id": "8250b001fc0df6a3bba556eaaa786128",
+      "title": "[루리웹] [디지몬 어드벤처 : 운명적 만남 & 우리들의 워 게임!] 스페셜 예고편...",
+      "snippet": "루리웹 애니정보 디지몬 최신 소식입니다.",
+      "source": "루리웹 애니정보",
+      "source_badge": "루리웹",
+      "category": "game",
+      "category_name": "게임/공식애니",
+      "link": "https://bbs.ruliweb.com/family/211/board/300015/read/2432016?search_type=subject&search_key=%EB%94%94%EC%A7%80%EB%AA%AC",
+      "image": null,
+      "timestamp": 1787065200,
+      "created_at": "2026-08-19 00:00"
+    },
+    {
       "id": "00c5ff9a910bf7d1fe413d9cb50c0340",
       "title": "[해외뉴스] G.E.M. Series Digimon Adventure Garurumon & Yamato Ishida Figure Returns with Re-release",
       "snippet": "G.E.M. Series Digimon Adventure Garurumon & Yamato Ishida Figure Returns with Re-release&nbsp;&nbsp;haveagood-holiday.co",
@@ -2124,6 +2462,19 @@
       "created_at": "2026-08-10 16:00"
     },
     {
+      "id": "595d5382ba8e447aab6fc88f64ec1691",
+      "title": "[루리웹] [디지몬 어드벤처 : 운명적 만남 & 우리들의 워 게임!]메인 포스터 공...",
+      "snippet": "루리웹 애니정보 디지몬 최신 소식입니다.",
+      "source": "루리웹 애니정보",
+      "source_badge": "루리웹",
+      "category": "game",
+      "category_name": "게임/공식애니",
+      "link": "https://bbs.ruliweb.com/family/211/board/300015/read/2431322?search_type=subject&search_key=%EB%94%94%EC%A7%80%EB%AA%AC",
+      "image": null,
+      "timestamp": 1786287600,
+      "created_at": "2026-08-10 00:00"
+    },
+    {
       "id": "eba96c29e35544a03cd1e176950a4da5",
       "title": "[트윗] [#이벤트] 홍대 메가박스에서 디지몬을 찾아라! 개봉 기념 SNS 인증 이벤트!🪽 * 당첨자 개별 DM 안내 * 비공개 계정 참여불가 * 이벤트 당첨 안내는 얼리버드픽쳐스 공식 SNS 계정을 통해 진행됩니다. - X",
       "snippet": "X(트위터) 디지몬 공식/굿즈 속보 트윗입니다.",
@@ -2148,6 +2499,32 @@
       "image": null,
       "timestamp": 1786258800,
       "created_at": "2026-08-09 16:00"
+    },
+    {
+      "id": "135f25834c6f161278b92d74fb5e2474",
+      "title": "[루리웹] 디지몬 스토리 타임 스트레인저 애니매직_de \"2025 최고의 J-게임\"...",
+      "snippet": "루리웹 콘솔뉴스 디지몬 최신 소식입니다.",
+      "source": "루리웹 콘솔뉴스",
+      "source_badge": "루리웹",
+      "category": "game",
+      "category_name": "게임/공식애니",
+      "link": "https://bbs.ruliweb.com/news/board/1001/read/2359576?search_type=subject&search_key=%EB%94%94%EC%A7%80%EB%AA%AC",
+      "image": null,
+      "timestamp": 1786114800,
+      "created_at": "2026-08-08 00:00"
+    },
+    {
+      "id": "a5d3aa10dc72e703fef1d881fbd48581",
+      "title": "[루리웹] 소드 아트 온라인 x 디지몬 콜라보 일러스트",
+      "snippet": "루리웹 콘솔뉴스 디지몬 최신 소식입니다.",
+      "source": "루리웹 콘솔뉴스",
+      "source_badge": "루리웹",
+      "category": "game",
+      "category_name": "게임/공식애니",
+      "link": "https://bbs.ruliweb.com/news/board/1001/read/2359534?search_type=subject&search_key=%EB%94%94%EC%A7%80%EB%AA%AC",
+      "image": null,
+      "timestamp": 1786028400,
+      "created_at": "2026-08-07 00:00"
     },
     {
       "id": "fa6c89721a420ec93691864d6b1e9c8c",
@@ -2317,6 +2694,19 @@
       "image": null,
       "timestamp": 1784876400,
       "created_at": "2026-07-24 16:00"
+    },
+    {
+      "id": "80736f9253ab4e3afa59df12aa1e59e1",
+      "title": "[디지카] Digimon Tournament Results | Egman Deck Builder",
+      "snippet": "Digimon Tournament Results | Egman Deck Builder&nbsp;&nbsp;Egman Deck Builder",
+      "source": "Egman Events",
+      "source_badge": "디지카",
+      "category": "card",
+      "category_name": "카드게임(TCG)",
+      "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE5GSXhvQ0hOcW5MQTM1YlM1S1YtdTJHRkNuNExCckhHNlRQLWFMWHUzU1dyUjBfZnlaX29QQmZXbk5WUFpoejhPUWJBVTRKM1A0blpXQlVDZ3pPNzFzYUlnUDFfMnV1QQ?oc=5",
+      "image": null,
+      "timestamp": 1784820310,
+      "created_at": "2026-07-24 00:25"
     },
     {
       "id": "c9fbc29f2ce2641731ee0212872f36c2",

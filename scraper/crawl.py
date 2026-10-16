@@ -88,7 +88,8 @@ TRUSTED_NEWS_SOURCES = [
     "디지몬", "haveagood-holiday", "x.com", "twitter", "트위터", "toei", "토에이",
     "digimoncard", "wikimon", "bandai", "dengeki", "hobby.watch", "impress",
     "animenewsnetwork", "crunchyroll", "ign", "kotaku", "siliconera", "famitsu", "4gamer", "gamebiz",
-    "oricon", "natalie", "mantan-web", "daewon", "대원"
+    "oricon", "natalie", "mantan-web", "daewon", "대원",
+    "digimonmeta", "egmanevents", "amiami", "goodsmile", "hlj", "arca.live", "naver", "네이버"
 ]
 
 def is_spam(item: dict) -> bool:
@@ -211,17 +212,17 @@ def classify_category(title: str, default_cat: str = "general", source_badge: st
         return "game", "게임/공식애니"
 
     # [5순위] 소스 기반 매핑
-    if source_badge in ["레딧", "X(트위터)", "유튜브", "인스타그램"]:
+    if source_badge in ["X(트위터)", "유튜브", "인스타그램"]:
         return "sns", "SNS/해외"
-    if source_badge == "디시":
+    if source_badge in ["디시", "아카라이브"]:
         return "community", "커뮤니티"
-    if source_badge in ["루리웹", "프반/하비"]:
+    if source_badge in ["루리웹", "프반/하비", "하비뉴스"]:
         return "figure", "피규어/굿즈"
     if source_badge == "디지카":
         return "card", "카드게임(TCG)"
-    if source_badge == "애니뉴스":
+    if source_badge in ["애니뉴스", "네이버"]:
         return "game", "게임/공식애니"
-    if source_badge == "위키몬":
+    if source_badge in ["위키몬", "위키몬 신규"]:
         return "general", "도감/위키"
 
     return default_cat, "일반/뉴스"
@@ -821,6 +822,200 @@ def crawl_global_anime_news():
             print(f"[Error] Anime news ({q}) crawling failed: {e}")
     return items
 
+def crawl_digimon_meta_and_egman():
+    """디지몬 카드게임 대회 우승 덱 & 메타 분석 사이트 (Digimon Meta, Egman Events)"""
+    items = []
+    queries = [
+        ('site:digimonmeta.com "deck"', 'Digimon Meta', '디지카'),
+        ('site:digimonmeta.com', 'Digimon Meta', '디지카'),
+        ('site:egmanevents.com "digimon"', 'Egman Events', '디지카'),
+    ]
+    seen = set()
+    for q, sname, badge in queries:
+        feed_url = f"https://news.google.com/rss/search?q={requests.utils.quote(q)}&hl=en-US&gl=US&ceid=US:en"
+        try:
+            feed = feedparser.parse(feed_url)
+            for entry in feed.entries[:8]:
+                link = entry.link
+                if link in seen:
+                    continue
+                seen.add(link)
+                title = entry.title
+                if " - " in title:
+                    title = title.rsplit(" - ", 1)[0]
+                published = getattr(entry, "published", "")
+                summary = re.sub(r'<[^>]+>', '', getattr(entry, "summary", ""))[:120].strip()
+                ts = parse_to_timestamp(published)
+                items.append({
+                    "id": get_hash_id(link),
+                    "title": f"[{badge}] {title.strip()}",
+                    "snippet": summary or f"{sname} 디지카 대회 우승 덱/메타 정보입니다.",
+                    "source": sname,
+                    "source_badge": badge,
+                    "category": "card",
+                    "category_name": "카드게임(TCG)",
+                    "link": link,
+                    "image": None,
+                    "timestamp": ts,
+                    "created_at": format_display_date(ts)
+                })
+        except Exception as e:
+            print(f"[Error] TCG meta ({q}) crawling failed: {e}")
+    return items
+
+def crawl_figure_shops():
+    """피규어/굿즈 예약 전문 샵 (AmiAmi, GoodSmile, HLJ)"""
+    items = []
+    queries = [
+        ('site:amiami.com "Digimon"', 'AmiAmi', '하비뉴스'),
+        ('site:amiami.jp "デジモン"', '아미아미', '하비뉴스'),
+        ('site:goodsmile.info "デジモン" OR site:goodsmile.com "Digimon"', '굿스마일', '하비뉴스'),
+        ('site:hlj.com "Digimon"', 'HLJ', '하비뉴스'),
+    ]
+    seen = set()
+    for q, sname, badge in queries:
+        feed_url = f"https://news.google.com/rss/search?q={requests.utils.quote(q)}&hl=ja&gl=JP&ceid=JP:ja"
+        try:
+            feed = feedparser.parse(feed_url)
+            for entry in feed.entries[:8]:
+                link = entry.link
+                if link in seen:
+                    continue
+                seen.add(link)
+                title = entry.title
+                if " - " in title:
+                    title = title.rsplit(" - ", 1)[0]
+                published = getattr(entry, "published", "")
+                summary = re.sub(r'<[^>]+>', '', getattr(entry, "summary", ""))[:120].strip()
+                ts = parse_to_timestamp(published)
+                items.append({
+                    "id": get_hash_id(link),
+                    "title": f"[{badge}] {title.strip()}",
+                    "snippet": summary or f"{sname} 디지몬 피규어/굿즈 예약 정보입니다.",
+                    "source": sname,
+                    "source_badge": badge,
+                    "category": "figure",
+                    "category_name": "피규어/굿즈",
+                    "link": link,
+                    "image": None,
+                    "timestamp": ts,
+                    "created_at": format_display_date(ts)
+                })
+        except Exception as e:
+            print(f"[Error] Figure shop ({q}) crawling failed: {e}")
+    return items
+
+def crawl_ruliweb_game_and_anime():
+    """루리웹 콘솔/PC 게임 정보 및 애니메이션 정보 게시판"""
+    items = []
+    boards = [
+        ("https://bbs.ruliweb.com/news/board/1001?search_type=subject&search_key=디지몬", "루리웹 콘솔뉴스", "game", "게임/공식애니"),
+        ("https://bbs.ruliweb.com/news/board/1003?search_type=subject&search_key=디지몬", "루리웹 PC뉴스", "game", "게임/공식애니"),
+        ("https://bbs.ruliweb.com/family/211/board/300015?search_type=subject&search_key=디지몬", "루리웹 애니정보", "game", "게임/공식애니"),
+    ]
+    for url, sname, cat, cat_name in boards:
+        try:
+            res = requests.get(url, headers=HEADERS, timeout=10)
+            if res.status_code == 200:
+                soup = BeautifulSoup(res.text, "html.parser")
+                rows = soup.select("tr.table_body")
+                for row in rows[:10]:
+                    title_elem = row.select_one("td.subject a.text_over") or row.select_one("td.subject a")
+                    if not title_elem:
+                        continue
+                    title = title_elem.get_text(strip=True)
+                    link = title_elem.get("href", "")
+                    if not link or "read/" not in link or "#cmt" in link or "notice" in row.get("class", []):
+                        continue
+                    if link and not link.startswith("http"):
+                        link = "https://bbs.ruliweb.com" + link
+                    title = re.sub(r'\(\d+\)$', '', title).strip()
+                    time_elem = row.select_one("td.time")
+                    raw_time = time_elem.get_text(strip=True) if time_elem else ""
+                    ts = parse_to_timestamp(raw_time)
+                    items.append({
+                        "id": get_hash_id(link),
+                        "title": f"[루리웹] {title}",
+                        "snippet": f"{sname} 디지몬 최신 소식입니다.",
+                        "source": sname,
+                        "source_badge": "루리웹",
+                        "category": cat,
+                        "category_name": cat_name,
+                        "link": link,
+                        "image": None,
+                        "timestamp": ts,
+                        "created_at": format_display_date(ts)
+                    })
+        except Exception as e:
+            print(f"[Error] Ruliweb board ({url}) crawling failed: {e}")
+    return items
+
+def crawl_arcalive_digimon():
+    """아카라이브 디지몬 채널 인기 정보글"""
+    items = []
+    query = requests.utils.quote('site:arca.live/b/digimon "디지몬"')
+    feed_url = f"https://news.google.com/rss/search?q={query}&hl=ko&gl=KR&ceid=KR:ko"
+    try:
+        feed = feedparser.parse(feed_url)
+        for entry in feed.entries[:12]:
+            title = entry.title
+            if " - " in title:
+                title = title.rsplit(" - ", 1)[0]
+            link = entry.link
+            published = getattr(entry, "published", "")
+            summary = re.sub(r'<[^>]+>', '', getattr(entry, "summary", ""))[:120].strip()
+            ts = parse_to_timestamp(published)
+            category, cat_name = classify_category(title, "community", "아카라이브")
+            items.append({
+                "id": get_hash_id(link),
+                "title": f"[아카라이브] {title.strip()}",
+                "snippet": summary or "아카라이브 디지몬 채널 게시글입니다.",
+                "source": "아카라이브",
+                "source_badge": "아카라이브",
+                "category": category,
+                "category_name": cat_name,
+                "link": link,
+                "image": None,
+                "timestamp": ts,
+                "created_at": format_display_date(ts)
+            })
+    except Exception as e:
+        print(f"[Error] Arcalive crawling failed: {e}")
+    return items
+
+def crawl_naver_game():
+    """네이버 게임 라운지 및 공식 소식"""
+    items = []
+    query = requests.utils.quote('site:game.naver.com "디지몬"')
+    feed_url = f"https://news.google.com/rss/search?q={query}&hl=ko&gl=KR&ceid=KR:ko"
+    try:
+        feed = feedparser.parse(feed_url)
+        for entry in feed.entries[:8]:
+            title = entry.title
+            if " - " in title:
+                title = title.rsplit(" - ", 1)[0]
+            link = entry.link
+            published = getattr(entry, "published", "")
+            summary = re.sub(r'<[^>]+>', '', getattr(entry, "summary", ""))[:120].strip()
+            ts = parse_to_timestamp(published)
+            category, cat_name = classify_category(title, "game", "네이버")
+            items.append({
+                "id": get_hash_id(link),
+                "title": f"[네이버] {title.strip()}",
+                "snippet": summary or "네이버 게임 디지몬 관련 소식입니다.",
+                "source": "네이버 게임",
+                "source_badge": "네이버",
+                "category": category,
+                "category_name": cat_name,
+                "link": link,
+                "image": None,
+                "timestamp": ts,
+                "created_at": format_display_date(ts)
+            })
+    except Exception as e:
+        print(f"[Error] Naver Game crawling failed: {e}")
+    return items
+
 OFFICIAL_SITE = "https://digimon.net/"
 
 
@@ -1056,6 +1251,21 @@ def main():
     print("15. Crawling official site news & products (digimon.net)...")
     all_new_items.extend(crawl_official_topics())
     all_new_items.extend(crawl_official_products())
+
+    print("16. Crawling Digimon Meta & Egman Events (TCG)...")
+    all_new_items.extend(crawl_digimon_meta_and_egman())
+
+    print("17. Crawling Figure & Hobby Shops (AmiAmi, GoodSmile, HLJ)...")
+    all_new_items.extend(crawl_figure_shops())
+
+    print("18. Crawling Ruliweb Game & Anime Info...")
+    all_new_items.extend(crawl_ruliweb_game_and_anime())
+
+    print("19. Crawling Arca.live Digimon Channel...")
+    all_new_items.extend(crawl_arcalive_digimon())
+
+    print("20. Crawling Naver Game Lounge...")
+    all_new_items.extend(crawl_naver_game())
 
     print(f"Total fetched: {len(all_new_items)} items")
 
