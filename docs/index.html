@@ -926,6 +926,8 @@
       const d = dexByNo[no];
       if (!d) return;
       dexState.selected = no;
+      dexViewerMode = 'official';
+      dexViewerTcgId = null;
       document.getElementById('dex-list-view').classList.add('hidden');
       document.getElementById('dex-detail-view').classList.remove('hidden');
       renderDexDetail(d);
@@ -1286,20 +1288,115 @@
         dexExtraCache[key] = cards;
       }
       const box = document.getElementById('dex-tcg');
-      if (!stillShowing(d) || !box || !cards.length) return;
+      if (!stillShowing(d)) return;
+      const btnTcg = document.getElementById('dex-btn-mode-tcg');
+      if (btnTcg && cards.length) {
+        btnTcg.classList.remove('hidden');
+      }
+      if (!box || !cards.length) return;
       box.classList.remove('hidden');
       box.innerHTML = `
-        <p class="text-[11px] font-bold text-slate-500 dark:text-slate-400">🃏 TCG 카드 <span class="text-slate-400 font-medium">${cards.length}</span> <span class="font-normal text-slate-400">· 탭하면 크게 보기</span></p>
+        <p class="text-[11px] font-bold text-slate-500 dark:text-slate-400">🃏 TCG 카드 <span class="text-slate-400 font-medium">${cards.length}</span> <span class="font-normal text-slate-400">· 탭하면 상단 뷰어로 보기</span></p>
         <div class="flex gap-2 overflow-x-auto pb-1.5 no-scrollbar">
           ${cards.slice(0, 20).map(c => {
             const url = `https://images.digimoncard.io/images/cards/${encodeURIComponent(c.id)}.jpg`;
-            return `<a href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer" class="shrink-0 touch-press">
-              <img src="${escapeHtml(url)}" alt="${escapeHtml(c.id)}" loading="lazy" class="h-36 sm:h-44 rounded-lg border border-blue-200/60 dark:border-blue-900/60 shadow-sm" onerror="this.closest('a').remove()">
+            return `<div onclick="setDexViewerMode('tcg', '${escapeHtml(c.id)}'); document.getElementById('dex-img-viewer').scrollIntoView({ behavior: 'smooth', block: 'nearest' });" class="shrink-0 touch-press cursor-pointer group">
+              <img src="${escapeHtml(url)}" alt="${escapeHtml(c.id)}" loading="lazy" referrerpolicy="no-referrer" class="h-36 sm:h-44 rounded-lg border border-blue-200/60 dark:border-blue-900/60 shadow-sm group-hover:scale-105 group-hover:border-purple-500 transition duration-200" onerror="this.closest('div').remove()">
               <span class="block text-center text-[9px] text-slate-400 font-mono mt-0.5">${escapeHtml(c.id)}</span>
-            </a>`;
+            </div>`;
           }).join('')}
         </div>
       `;
+    }
+
+    let dexViewerMode = 'official';
+    let dexViewerTcgId = null;
+
+    function getAvailableDexViewerModes(d) {
+      if (!d) return ['official'];
+      const modes = ['official'];
+      if (d.dot_image) modes.push('dot');
+      const tcgCards = dexExtraCache['tcg:' + d.no];
+      if (tcgCards && tcgCards.length) modes.push('tcg');
+      return modes;
+    }
+
+    function cycleDexViewerMode() {
+      const d = dexByNo[dexState.selected];
+      if (!d) return;
+      const modes = getAvailableDexViewerModes(d);
+      if (modes.length <= 1) return;
+      const idx = modes.indexOf(dexViewerMode);
+      const next = modes[(idx + 1) % modes.length];
+      setDexViewerMode(next);
+    }
+
+    function setDexViewerMode(mode, specificCardId) {
+      const d = dexByNo[dexState.selected];
+      if (!d) return;
+      dexViewerMode = mode;
+      if (specificCardId) dexViewerTcgId = specificCardId;
+
+      const frame = document.getElementById('dex-img-frame');
+      const img = document.getElementById('dex-viewer-img');
+      const badgeIcon = document.getElementById('dex-viewer-mode-icon');
+      const badgeText = document.getElementById('dex-viewer-mode-badge');
+      const btnOfficial = document.getElementById('dex-btn-mode-official');
+      const btnDot = document.getElementById('dex-btn-mode-dot');
+      const btnTcg = document.getElementById('dex-btn-mode-tcg');
+
+      if (!frame || !img) return;
+
+      const activeBtn = 'touch-press px-3 py-1 rounded-xl text-xs font-black transition text-white shadow-xs ';
+      const inactiveBtn = 'touch-press px-3 py-1 rounded-xl text-xs font-black transition bg-white/80 dark:bg-slate-900 text-slate-600 dark:text-slate-400 border border-blue-200 dark:border-blue-900/60 ';
+
+      if (btnOfficial) btnOfficial.className = (mode === 'official' ? activeBtn + 'bg-[#004ce8]' : inactiveBtn);
+      if (btnDot) {
+        if (d.dot_image) {
+          btnDot.classList.remove('hidden');
+          btnDot.className = (mode === 'dot' ? activeBtn + 'bg-emerald-600' : inactiveBtn);
+        } else {
+          btnDot.classList.add('hidden');
+        }
+      }
+      const tcgCards = dexExtraCache['tcg:' + d.no] || [];
+      if (btnTcg) {
+        if (tcgCards.length) {
+          btnTcg.classList.remove('hidden');
+          btnTcg.className = (mode === 'tcg' ? activeBtn + 'bg-purple-600' : inactiveBtn);
+        } else {
+          btnTcg.classList.add('hidden');
+        }
+      }
+
+      img.style.visibility = 'visible';
+
+      if (mode === 'dot' && d.dot_image) {
+        frame.className = 'lcd-screen w-full h-64 sm:h-80 rounded-2xl flex items-center justify-center p-4 border-2 border-emerald-500/40 shadow-inner relative overflow-hidden cursor-pointer select-none group touch-press transition-all duration-300';
+        img.className = 'w-28 h-28 sm:w-36 sm:h-36 object-contain select-none group-hover:scale-125 transition duration-200';
+        img.style.imageRendering = 'pixelated';
+        img.src = d.dot_image;
+        if (badgeIcon) badgeIcon.textContent = '👾';
+        if (badgeText) badgeText.textContent = 'LCD 도트 (V-Pet)';
+      } else if (mode === 'tcg' && tcgCards.length) {
+        const card = (dexViewerTcgId && tcgCards.find(c => c.id === dexViewerTcgId)) || tcgCards[0];
+        dexViewerTcgId = card.id;
+        const cardUrl = `https://images.digimoncard.io/images/cards/${encodeURIComponent(card.id)}.jpg`;
+        frame.className = 'bg-gradient-to-b from-purple-50 to-slate-100 dark:from-[#130924] dark:to-[#090514] w-full h-64 sm:h-80 rounded-2xl flex items-center justify-center p-4 border border-purple-200/60 dark:border-purple-900/60 shadow-inner relative overflow-hidden cursor-pointer select-none group touch-press transition-all duration-300';
+        img.className = 'max-w-full max-h-full object-contain filter drop-shadow-xl group-hover:scale-105 transition duration-300 select-none';
+        img.style.imageRendering = 'auto';
+        img.src = cardUrl;
+        if (badgeIcon) badgeIcon.textContent = '🃏';
+        if (badgeText) badgeText.textContent = `TCG 카드 (${card.id})`;
+      } else {
+        dexViewerMode = 'official';
+        frame.className = 'bg-gradient-to-b from-blue-50 to-slate-100 dark:from-[#08122c] dark:to-[#050b1a] w-full h-64 sm:h-80 rounded-2xl flex items-center justify-center p-4 border border-blue-200/60 dark:border-blue-900/60 shadow-inner relative overflow-hidden cursor-pointer select-none group touch-press transition-all duration-300';
+        img.className = 'max-w-full max-h-full object-contain filter drop-shadow-xl group-hover:scale-105 transition duration-300 select-none';
+        img.style.imageRendering = 'auto';
+        img.src = d.image || '';
+        if (badgeIcon) badgeIcon.textContent = '🎨';
+        if (badgeText) badgeText.textContent = '공식 일러스트';
+      }
     }
 
     function renderDexDetail(d) {
@@ -1330,10 +1427,53 @@
               </div>
             </div>
 
-            ${d.image ? `
-              <div class="bg-gradient-to-b from-blue-50 to-slate-100 dark:from-[#08122c] dark:to-[#050b1a] w-full h-56 sm:h-72 rounded-2xl flex items-center justify-center p-4 border border-blue-200/60 dark:border-blue-900/60">
-                <img src="${escapeHtml(d.image)}" alt="${escapeHtml(d.name)}" class="max-w-full max-h-full object-contain drop-shadow-xl" onerror="this.parentElement.remove()">
-              </div>` : ''}
+            <!-- Illustration / Dot / TCG Card Multi-Viewer -->
+            <div id="dex-img-viewer" class="space-y-2">
+              <div 
+                id="dex-img-frame" 
+                onclick="cycleDexViewerMode()"
+                class="bg-gradient-to-b from-blue-50 to-slate-100 dark:from-[#08122c] dark:to-[#050b1a] w-full h-64 sm:h-80 rounded-2xl flex items-center justify-center p-4 border border-blue-200/60 dark:border-blue-900/60 shadow-inner relative overflow-hidden cursor-pointer select-none group touch-press transition-all duration-300"
+                title="클릭하여 일러스트/도트/TCG 전환"
+              >
+                <img 
+                  id="dex-viewer-img" 
+                  src="${escapeHtml(d.image || '')}" 
+                  alt="${escapeHtml(d.name)}" 
+                  referrerpolicy="no-referrer"
+                  class="max-w-full max-h-full object-contain filter drop-shadow-xl group-hover:scale-105 transition duration-300 select-none"
+                  onerror="this.style.visibility='hidden'"
+                >
+                <div class="absolute bottom-2.5 right-2.5 px-2.5 py-1 rounded-lg bg-black/60 backdrop-blur text-[10px] text-white font-bold flex items-center gap-1.5 pointer-events-none shadow-xs">
+                  <span id="dex-viewer-mode-icon">🎨</span>
+                  <span id="dex-viewer-mode-badge">공식 일러스트</span>
+                </div>
+              </div>
+
+              <!-- Mode Selector Tabs -->
+              <div id="dex-viewer-tabs" class="flex items-center gap-1.5 justify-center flex-wrap pt-0.5">
+                <button 
+                  id="dex-btn-mode-official" 
+                  onclick="setDexViewerMode('official')" 
+                  class="touch-press px-3 py-1 rounded-xl text-xs font-black transition bg-[#004ce8] text-white shadow-xs"
+                >
+                  🎨 일러스트
+                </button>
+                <button 
+                  id="dex-btn-mode-dot" 
+                  onclick="setDexViewerMode('dot')" 
+                  class="touch-press px-3 py-1 rounded-xl text-xs font-black transition ${d.dot_image ? 'bg-white/80 dark:bg-slate-900 text-slate-600 dark:text-slate-400 border border-blue-200 dark:border-blue-900/60' : 'hidden'}"
+                >
+                  👾 도트
+                </button>
+                <button 
+                  id="dex-btn-mode-tcg" 
+                  onclick="setDexViewerMode('tcg')" 
+                  class="touch-press px-3 py-1 rounded-xl text-xs font-black transition ${(dexExtraCache['tcg:' + d.no] && dexExtraCache['tcg:' + d.no].length) ? 'bg-white/80 dark:bg-slate-900 text-slate-600 dark:text-slate-400 border border-blue-200 dark:border-blue-900/60' : 'hidden'}"
+                >
+                  🃏 TCG 카드
+                </button>
+              </div>
+            </div>
 
             ${d.url ? `
               <a href="${escapeHtml(safeUrl(d.url))}" target="_blank" rel="noopener noreferrer" class="touch-press flex items-center justify-between gap-3 p-3 rounded-2xl bg-[#004ce8] text-white shadow-md shadow-blue-600/30">

@@ -143,6 +143,7 @@ def main():
     ref = load(REF_FILE, {"digimons": []})["digimons"]
     api = load(INDEX_FILE, {"digimons": []})["digimons"]
     manual = load(API_MAP_FILE, {})
+    dots = load("data/wikimon/dots.json", {})
     api_by_norm = {norm(a["name"]): a for a in api}
     api_by_name = {a["name"]: a for a in api}
 
@@ -209,6 +210,8 @@ def main():
             e["api_name"] = a["name"]
             if a.get("image"):
                 e["image"] = a["image"]
+            if a["name"] in dots:
+                e["dot_image"] = dots[a["name"]]
         e["_related"] = o.get("related", [])
         entries.append(e)
         by_dir[d] = e
@@ -231,6 +234,8 @@ def main():
         }
         if a.get("image"):
             e["image"] = a["image"]
+        if a["name"] in dots:
+            e["dot_image"] = dots[a["name"]]
         entries.append(e)
         ex_no += 1
 
