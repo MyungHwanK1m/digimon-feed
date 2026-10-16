@@ -928,6 +928,7 @@
       dexState.selected = no;
       dexViewerMode = 'official';
       dexViewerTcgId = null;
+      dexTcgRarityFilter = 'ALL';
       document.getElementById('dex-list-view').classList.add('hidden');
       document.getElementById('dex-detail-view').classList.remove('hidden');
       renderDexDetail(d);
@@ -1263,6 +1264,120 @@
       beelzebumonblastmode: 'Beelzemon Blast Mode'
     };
 
+    const TCG_RARITY_INFO = {
+      'SEC': { label: 'SEC', icon: '✨', bg: 'bg-gradient-to-r from-amber-400 to-yellow-300 text-slate-950 border-amber-300 shadow-amber-500/20', order: 1 },
+      'SR':  { label: 'SR', icon: '⭐', bg: 'bg-gradient-to-r from-purple-600 to-indigo-600 text-white border-purple-400/40 shadow-purple-500/20', order: 2 },
+      'P':   { label: 'PROMO', icon: '🎁', bg: 'bg-emerald-600 text-white border-emerald-400/40 shadow-emerald-500/20', order: 3 },
+      'R':   { label: 'R', icon: '🔹', bg: 'bg-blue-600 text-white border-blue-400/40', order: 4 },
+      'U':   { label: 'U', icon: '', bg: 'bg-slate-600 text-slate-200 border-slate-500', order: 5 },
+      'C':   { label: 'C', icon: '', bg: 'bg-slate-700 text-slate-300 border-slate-600', order: 6 },
+    };
+
+    function normRarity(r) {
+      if (!r) return 'C';
+      const u = String(r).toUpperCase().trim();
+      if (u === 'COMMON') return 'C';
+      if (TCG_RARITY_INFO[u]) return u;
+      return 'C';
+    }
+
+    let dexTcgRarityFilter = 'ALL';
+
+    function renderTcgRarityBar(d) {
+      const bar = document.getElementById('dex-tcg-rarity-bar');
+      if (!bar) return;
+      if (dexViewerMode !== 'tcg') {
+        bar.classList.add('hidden');
+        return;
+      }
+      const tcgCards = dexExtraCache['tcg:' + d.no] || [];
+      if (!tcgCards.length) {
+        bar.classList.add('hidden');
+        return;
+      }
+      const availableRarities = new Set(tcgCards.map(c => normRarity(c.rarity)));
+      const rarityKeys = Object.keys(TCG_RARITY_INFO).filter(k => availableRarities.has(k));
+      if (rarityKeys.length <= 1) {
+        bar.classList.add('hidden');
+        return;
+      }
+      bar.classList.remove('hidden');
+
+      const allBtnClass = dexTcgRarityFilter === 'ALL'
+        ? 'bg-purple-600 text-white font-black shadow-xs'
+        : 'bg-white/80 dark:bg-slate-900 text-slate-600 dark:text-slate-400 border border-purple-200 dark:border-purple-900/60';
+
+      const chips = [
+        `<button onclick="filterTcgRarity('ALL')" class="touch-press px-2.5 py-0.5 rounded-lg text-[10px] font-bold transition border ${allBtnClass}">전체 (${tcgCards.length})</button>`
+      ];
+
+      for (const k of rarityKeys) {
+        const info = TCG_RARITY_INFO[k];
+        const count = tcgCards.filter(c => normRarity(c.rarity) === k).length;
+        const active = dexTcgRarityFilter === k;
+        const btnClass = active
+          ? `${info.bg} ring-2 ring-purple-500 font-black shadow-xs`
+          : 'bg-white/80 dark:bg-slate-900 text-slate-600 dark:text-slate-400 border border-slate-200 dark:border-slate-800';
+        chips.push(
+          `<button onclick="filterTcgRarity('${k}')" class="touch-press px-2 py-0.5 rounded-lg text-[10px] font-bold transition border ${btnClass}">${info.icon ? info.icon + ' ' : ''}${info.label} (${count})</button>`
+        );
+      }
+      bar.innerHTML = chips.join('');
+    }
+
+    function filterTcgRarity(rarity) {
+      dexTcgRarityFilter = rarity;
+      const d = dexByNo[dexState.selected];
+      if (!d) return;
+      const tcgCards = dexExtraCache['tcg:' + d.no] || [];
+      if (rarity !== 'ALL') {
+        const matched = tcgCards.find(c => normRarity(c.rarity) === rarity);
+        if (matched) {
+          setDexViewerMode('tcg', matched.id);
+        }
+      } else if (tcgCards.length) {
+        setDexViewerMode('tcg', tcgCards[0].id);
+      }
+      renderTcgRarityBar(d);
+      renderDexTcgGallery(d);
+    }
+
+    function renderDexTcgGallery(d) {
+      const box = document.getElementById('dex-tcg');
+      if (!stillShowing(d) || !box) return;
+      const tcgCards = dexExtraCache['tcg:' + d.no] || [];
+      if (!tcgCards.length) {
+        box.classList.add('hidden');
+        return;
+      }
+      box.classList.remove('hidden');
+
+      const filtered = dexTcgRarityFilter === 'ALL'
+        ? tcgCards
+        : tcgCards.filter(c => normRarity(c.rarity) === dexTcgRarityFilter);
+
+      box.innerHTML = `
+        <div class="flex items-center justify-between">
+          <p class="text-[11px] font-bold text-slate-500 dark:text-slate-400">🃏 TCG 카드 <span class="text-purple-600 dark:text-purple-400 font-bold">${filtered.length}</span><span class="text-slate-400 font-medium">/${tcgCards.length}</span> <span class="font-normal text-slate-400">· 탭하면 상단 뷰어로 보기</span></p>
+          ${dexTcgRarityFilter !== 'ALL' ? `<button onclick="filterTcgRarity('ALL')" class="text-[10px] font-bold text-purple-600 dark:text-purple-400 hover:underline">필터 초기화</button>` : ''}
+        </div>
+        <div class="flex gap-2 overflow-x-auto pb-1.5 no-scrollbar">
+          ${filtered.slice(0, 30).map(c => {
+            const url = `https://images.digimoncard.io/images/cards/${encodeURIComponent(c.id)}.jpg`;
+            const rk = normRarity(c.rarity);
+            const rinfo = TCG_RARITY_INFO[rk] || TCG_RARITY_INFO['C'];
+            return `<div onclick="setDexViewerMode('tcg', '${escapeHtml(c.id)}'); document.getElementById('dex-img-viewer').scrollIntoView({ behavior: 'smooth', block: 'nearest' });" class="shrink-0 touch-press cursor-pointer group">
+              <div class="relative overflow-hidden rounded-lg">
+                <img src="${escapeHtml(url)}" alt="${escapeHtml(c.id)}" loading="lazy" referrerpolicy="no-referrer" class="h-36 sm:h-44 rounded-lg border border-blue-200/60 dark:border-blue-900/60 shadow-sm group-hover:scale-105 group-hover:border-purple-500 transition duration-200" onerror="this.closest('.group').remove()">
+                <span class="absolute top-1 right-1 px-1 py-0.5 rounded text-[8.5px] font-black border shadow-xs ${rinfo.bg}">${rinfo.icon ? rinfo.icon + ' ' : ''}${rinfo.label}</span>
+              </div>
+              <span class="block text-center text-[9px] text-slate-400 font-mono mt-0.5">${escapeHtml(c.id)}</span>
+            </div>`;
+          }).join('')}
+        </div>
+      `;
+    }
+
     async function loadDexTcg(d) {
       const raw = d.api_name || d.name_en || '';
       const stripped = raw.replace(/\s*\(.*?\)\s*/g, ' ').trim();
@@ -1292,9 +1407,16 @@
             if (cards.length) break;
           } catch (_) {}
         }
+        // Sort cards by rarity order: SEC -> SR -> P -> R -> U -> C
+        cards.sort((a, b) => {
+          const ra = normRarity(a.rarity);
+          const rb = normRarity(b.rarity);
+          const oa = (TCG_RARITY_INFO[ra] || {}).order || 99;
+          const ob = (TCG_RARITY_INFO[rb] || {}).order || 99;
+          return oa - ob;
+        });
         dexExtraCache[key] = cards;
       }
-      const box = document.getElementById('dex-tcg');
       if (!stillShowing(d)) return;
       const btnTcg = document.getElementById('dex-btn-mode-tcg');
       if (btnTcg && (cards.length || d.tcg_image)) {
@@ -1303,20 +1425,10 @@
           btnTcg.className = 'touch-press px-3 py-1 rounded-xl text-xs font-black transition bg-white/80 dark:bg-slate-900 text-slate-600 dark:text-slate-400 border border-blue-200 dark:border-blue-900/60';
         }
       }
-      if (!box || !cards.length) return;
-      box.classList.remove('hidden');
-      box.innerHTML = `
-        <p class="text-[11px] font-bold text-slate-500 dark:text-slate-400">🃏 TCG 카드 <span class="text-slate-400 font-medium">${cards.length}</span> <span class="font-normal text-slate-400">· 탭하면 상단 뷰어로 보기</span></p>
-        <div class="flex gap-2 overflow-x-auto pb-1.5 no-scrollbar">
-          ${cards.slice(0, 20).map(c => {
-            const url = `https://images.digimoncard.io/images/cards/${encodeURIComponent(c.id)}.jpg`;
-            return `<div onclick="setDexViewerMode('tcg', '${escapeHtml(c.id)}'); document.getElementById('dex-img-viewer').scrollIntoView({ behavior: 'smooth', block: 'nearest' });" class="shrink-0 touch-press cursor-pointer group">
-              <img src="${escapeHtml(url)}" alt="${escapeHtml(c.id)}" loading="lazy" referrerpolicy="no-referrer" class="h-36 sm:h-44 rounded-lg border border-blue-200/60 dark:border-blue-900/60 shadow-sm group-hover:scale-105 group-hover:border-purple-500 transition duration-200" onerror="this.closest('div').remove()">
-              <span class="block text-center text-[9px] text-slate-400 font-mono mt-0.5">${escapeHtml(c.id)}</span>
-            </div>`;
-          }).join('')}
-        </div>
-      `;
+      renderDexTcgGallery(d);
+      if (dexViewerMode === 'tcg') {
+        renderTcgRarityBar(d);
+      }
     }
 
     let dexViewerMode = 'official';
@@ -1389,29 +1501,40 @@
         img.src = d.dot_image;
         if (badgeIcon) badgeIcon.textContent = '👾';
         if (badgeText) badgeText.textContent = 'LCD 도트 (V-Pet)';
+        const bar = document.getElementById('dex-tcg-rarity-bar');
+        if (bar) bar.classList.add('hidden');
       } else if (mode === 'tcg' && hasTcg) {
         let cardUrl = d.tcg_image || '';
         let cardLabel = 'TCG 카드';
+        let cardBadgeIcon = '🃏';
+        let cardObj = null;
+
         if (specificCardId && tcgCards.length) {
-          const card = tcgCards.find(c => c.id === specificCardId) || tcgCards[0];
-          dexViewerTcgId = card.id;
-          cardUrl = `https://images.digimoncard.io/images/cards/${encodeURIComponent(card.id)}.jpg`;
-          cardLabel = `TCG 카드 (${card.id})`;
+          cardObj = tcgCards.find(c => c.id === specificCardId) || tcgCards[0];
         } else if (tcgCards.length) {
-          const card = (dexViewerTcgId && tcgCards.find(c => c.id === dexViewerTcgId)) || tcgCards[0];
-          dexViewerTcgId = card.id;
-          cardUrl = `https://images.digimoncard.io/images/cards/${encodeURIComponent(card.id)}.jpg`;
-          cardLabel = `TCG 카드 (${card.id})`;
+          cardObj = (dexViewerTcgId && tcgCards.find(c => c.id === dexViewerTcgId)) || tcgCards[0];
+        }
+
+        if (cardObj) {
+          dexViewerTcgId = cardObj.id;
+          cardUrl = `https://images.digimoncard.io/images/cards/${encodeURIComponent(cardObj.id)}.jpg`;
+          const rk = normRarity(cardObj.rarity);
+          const rinfo = TCG_RARITY_INFO[rk] || TCG_RARITY_INFO['C'];
+          cardLabel = `TCG [${rinfo.label}] (${cardObj.id})`;
+          if (rinfo.icon) cardBadgeIcon = rinfo.icon;
         } else if (d.tcg_image) {
           const m = d.tcg_image.match(/\/cards\/([^/.]+)\.jpg/);
           cardLabel = m ? `TCG 카드 (${m[1]})` : 'TCG 카드';
         }
+
         frame.className = 'bg-gradient-to-b from-purple-50 to-slate-100 dark:from-[#130924] dark:to-[#090514] w-full h-64 sm:h-80 rounded-2xl flex items-center justify-center p-4 border border-purple-200/60 dark:border-purple-900/60 shadow-inner relative overflow-hidden cursor-pointer select-none group touch-press transition-all duration-300';
         img.className = 'max-w-full max-h-full object-contain filter drop-shadow-xl group-hover:scale-105 transition duration-300 select-none';
         img.style.imageRendering = 'auto';
         img.src = cardUrl;
-        if (badgeIcon) badgeIcon.textContent = '🃏';
+        if (badgeIcon) badgeIcon.textContent = cardBadgeIcon;
         if (badgeText) badgeText.textContent = cardLabel;
+
+        renderTcgRarityBar(d);
       } else {
         dexViewerMode = 'official';
         frame.className = 'bg-gradient-to-b from-blue-50 to-slate-100 dark:from-[#08122c] dark:to-[#050b1a] w-full h-64 sm:h-80 rounded-2xl flex items-center justify-center p-4 border border-blue-200/60 dark:border-blue-900/60 shadow-inner relative overflow-hidden cursor-pointer select-none group touch-press transition-all duration-300';
@@ -1420,6 +1543,8 @@
         img.src = d.image || '';
         if (badgeIcon) badgeIcon.textContent = '🎨';
         if (badgeText) badgeText.textContent = '공식 일러스트';
+        const bar = document.getElementById('dex-tcg-rarity-bar');
+        if (bar) bar.classList.add('hidden');
       }
     }
 
@@ -1497,6 +1622,9 @@
                   🃏 TCG 카드
                 </button>
               </div>
+
+              <!-- TCG Rarity Filter Bar (Shown ONLY when mode === 'tcg') -->
+              <div id="dex-tcg-rarity-bar" class="hidden flex items-center justify-center gap-1.5 flex-wrap pt-1"></div>
             </div>
 
             ${d.url ? `
