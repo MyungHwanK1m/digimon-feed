@@ -935,14 +935,12 @@
       window.scrollTo({ top: 0 });
     }
 
-    // "← 목록으로": 앱 안에서 연 상세면 뒤로가기와 같게, 링크로 바로 연 상세면 목록으로 교체
+    // "← 목록으로": 상세 화면을 닫고 확정적으로 도감 목록(#dex) 화면으로 복귀
     function closeDexDetail() {
-      if (history.state && history.state.digifeed) {
-        history.back();
-      } else {
-        history.replaceState({ digifeed: true }, '', '#dex');
-        showDexList();
+      if (location.hash !== '#dex') {
+        goTo('#dex');
       }
+      showDexList();
     }
 
     function showDexList() {
