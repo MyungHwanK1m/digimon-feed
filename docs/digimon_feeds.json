@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-10-16 17:06:24",
-  "total_count": 219,
+  "last_updated": "2026-10-16 20:18:08",
+  "total_count": 223,
   "retention_days": 90,
   "feeds": [
     {
@@ -13,8 +13,8 @@
       "category_name": "피규어/굿즈",
       "link": "https://digimon.net/product/others/",
       "image": null,
-      "timestamp": 1792170304,
-      "created_at": "2026-10-16 17:05",
+      "timestamp": 1792181719,
+      "created_at": "2026-10-16 20:15",
       "title_orig": "デジタルモンスター WORLDMAKING ACRYLIC STAND ブースターver.5",
       "title_ja": "デジタルモンスター WORLDMAKING ACRYLIC STAND ブースターver.5"
     },
@@ -42,8 +42,8 @@
       "category_name": "일반/뉴스",
       "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOcDBIVnNBa2EyVkF0dWs2WExLU0NxMzc5eWJjR1JfcWo3TGRROEl4am1CNUF5Wno3bWZJQ1JRekIxYWF2c2dkTTlXQXJRM2MtZnFkTlFYM1ZmSTlSbmtFMmNQbWRJM2JDMzF0TDdLd2I2Qno4eVFubk1HT21QcDZUTk9oZzZVU0lWempBam1VbVJJR0ZGU1AydQ?oc=5",
       "image": null,
-      "timestamp": 1792157995,
-      "created_at": "2026-10-16 13:39",
+      "timestamp": 1792154431,
+      "created_at": "2026-10-16 12:40",
       "title_orig": "Digimon Alysion Set to Open Pre-Registration in the Coming Weeks"
     },
     {
@@ -935,6 +935,21 @@
       "created_at": "2026-10-15 02:24"
     },
     {
+      "id": "9b7b11e07c5780da84c80729e4b74eb7",
+      "title": "[일본뉴스] 【디지몬UP】 디지털 월드 탐사 방법",
+      "snippet": "【デジモンUP】デジタルワールド探査のやり方&nbsp;&nbsp;GameWith",
+      "source": "GameWith",
+      "source_badge": "일본뉴스",
+      "category": "general",
+      "category_name": "일반/뉴스",
+      "link": "https://news.google.com/rss/articles/CBMiTEFVX3lxTE5QVlhWdlRWa3JLLWY5TnVXcC1PVGNraUtENm5jRmo3QmZnby1QVUtlU3JWUnoxdjZvSGlDUk1KcnF6TGtBYnRDU2FNSDE?oc=5",
+      "image": null,
+      "timestamp": 1792029071,
+      "created_at": "2026-10-15 01:51",
+      "title_orig": "【デジモンUP】デジタルワールド探査のやり方",
+      "title_ja": "【デジモンUP】デジタルワールド探査のやり方"
+    },
+    {
       "id": "022980d0abf1d6e057e20b9178c9f919",
       "title": "[공식] 「DIGIMON CONCERT ~2026 Anniversary & BEATBREAK~」 키 비주얼 & 스페셜 게스트 해금! 티켓 정보도!",
       "snippet": "디지몬 공식 사이트 ニュース",
@@ -1137,8 +1152,8 @@
       "snippet": "「デジモン」新作一番くじに迫力フィギュア多数！デュークモンやサクヤモン、ベルゼブモンを「魂豪示像」で立体化&nbsp;&nbsp;インサイド",
       "source": "インサイド",
       "source_badge": "일본뉴스",
-      "category": "game",
-      "category_name": "신작/공식속보",
+      "category": "figure",
+      "category_name": "신작 굿즈/완구",
       "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTFBaY3lMeTQ5OUhxaV9XdHJFMjFkUTBnbzRkZXZ4cWcyc2ZZNF85U2Vva0JNbjdDcFlsS3lEU2pPS2NPb0pmQkY4TWVyaDBJSjRmM01jb0h5bS1ORDZ4NVMyWUJlb1VENlh4bkE?oc=5",
       "image": null,
       "timestamp": 1791886503,
@@ -1415,6 +1430,20 @@
       "created_at": "2026-10-07 23:00",
       "title_orig": "『デジモンテイマーズ』より、クールビューティーで人気の高いレナモン＆牧野留姫がG.E.M.シリーズから再販！凛とした表情で相手を見据える姿で立体化！",
       "title_ja": "『デジモンテイマーズ』より、クールビューティーで人気の高いレナモン＆牧野留姫がG.E.M.シリーズから再販！凛とした表情で相手を見据える姿で立体化！"
+    },
+    {
+      "id": "ee6343d1fd3b25d0925fdc776926915e",
+      "title": "[디지카] 덱 정보",
+      "snippet": "Deck Information&nbsp;&nbsp;digimon card meta",
+      "source": "Digimon Meta",
+      "source_badge": "디지카",
+      "category": "card",
+      "category_name": "카드게임(TCG)",
+      "link": "https://news.google.com/rss/articles/CBMisARBVV95cUxNUFMya2QzRF9HaThpVzRMaFVmWW5LMFppNWRSa3BQWGdHTWtVdjZ2dW9rWFRENHZLVi1WbGRrUkVKeVdTcDFLS3QwUWpmLXlwa3dNa05lV2ZWU1Y4TmF3VURuN3l2bzZYNHdtRTREam8tU3Jja1owSFFDd1lXaEVvdnEteDl2MmlFSllaenRDMVVQa0JlUFhNak5SWUFPb2tiSG5yRU5Rd2NyQy1iYTh4aHh1OVotYXdnX3JraUd6R3AyU19HanhlSWgwUkQ0ZHdISng5T2pwSHRpYzNjcWd5NlNlRXlILUV2VUJiMV9tSEd0cXdlbnpxY0FFMThpaVBsTTJ1VzRtS255cG9nYzBHMDBiZ01hdnJlRzlONHExUUxNSnUyaTBDQXZUUFZlX18xRTFKRVdtYjZCM1Y0b08zOFJkWVUycUQzSUphX0lxSHVKdFVBX0NFbC1NdFlvNnNKckNERXd2RkJ6UGtCU0pyVmEtc29KaFVHNGVRT2xVLVNpNUNuLUdrcnp0VTZRcFNDc1p1R1YzejBaMWJ6WFVLWWZDY3BtT0U5aDkxM0hWRHR1a0FRZm9iX0NTQng4MUJUa0FuQkpUUTdpbFktdlpmSXE5Qk44LUVoR0gxTjRZQ09DaU92Ykw4Smgyel96cktEaVV1ZVYzU1N1SUgzbmdDSG9PTmNGclhkOUFmcDNYc3pDWms4REZSWVlSb1hCYVpqdkhYVDB2OVdNU1gzUktSUA?oc=5",
+      "image": null,
+      "timestamp": 1791356400,
+      "created_at": "2026-10-07 07:00",
+      "title_orig": "Deck Information"
     },
     {
       "id": "ba091baf0b45ce64835d5801715996e8",
@@ -1719,6 +1748,21 @@
       "title_ja": "デジモン29周年【デジモン＆ニク】テーマ企画 第3弾"
     },
     {
+      "id": "faa79a92f8bb2e2b3180fd6541d5cac3",
+      "title": "[하비뉴스] 디지몬 어드벤처 아크릴 블록 타케노우치 소라(한소라)&피요몬 [캐러반] 《12월 예약》",
+      "snippet": "デジモンアドベンチャー アクリルブロック 武之内空＆ピヨモン[キャラバン]《１２月予約》&nbsp;&nbsp;あみあみ",
+      "source": "아미아미",
+      "source_badge": "하비뉴스",
+      "category": "figure",
+      "category_name": "피규어/굿즈",
+      "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE0zSnFmZkJGZm5mTzFfZzVRYjVmWjdlVTJJRjlGbGstQXozQWhtQ0ZuaVh1blFKWUplOUJEWkF5ZzcxSTFFRURyZ0NtbFluVlNGSVpCeFc1Mm1aQklCLWdLd3B6dWdjWGF6dUxlbQ?oc=5",
+      "image": null,
+      "timestamp": 1790585399,
+      "created_at": "2026-09-28 08:49",
+      "title_orig": "デジモンアドベンチャー アクリルブロック 武之内空＆ピヨモン[キャラバン]《１２月予約》",
+      "title_ja": "デジモンアドベンチャー アクリルブロック 武之内空＆ピヨモン[キャラバン]《１２月予約》"
+    },
+    {
       "id": "0817dd3be73308b255656fe6f9913e7c",
       "title": "[해외뉴스] 컬러 디지몬 비트브레이크 에디션 버추얼 펫 3월 출시",
       "snippet": "Color Digimon Beatbreak Edition Virtual Pets Arrive in March&nbsp;&nbsp;Siliconera",
@@ -1746,6 +1790,20 @@
       "created_at": "2026-09-28 07:00",
       "title_orig": "『デジモンビートブレイク』最終回記念、「デジタルモンスターCOLOR」特別仕様が登場 - 専用ケースも同時発売",
       "title_ja": "『デジモンビートブレイク』最終回記念、「デジタルモンスターCOLOR」特別仕様が登場 - 専用ケースも同時発売"
+    },
+    {
+      "id": "34438a69238374a6d100df263c04c9b5",
+      "title": "[해외뉴스] 최고의 디지몬 궁극체 진화 10선, 순위",
+      "snippet": "10 Best Digimon Mega Evolutions, Ranked&nbsp;&nbsp;Comic Book Resources",
+      "source": "Comic Book Resources",
+      "source_badge": "해외뉴스",
+      "category": "figure",
+      "category_name": "피규어/굿즈",
+      "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFAyNVVIOXQxZE9HWWpzTVJSNjVXdzQyaGNneUlfeDBZcHpqQ3lMOFo4MnZrbHhOVDFtNDBoZmo1TlZ3MUJEb202MkdLRzAtNmsybloxQkNGZW53MFZ6TG1abGxKT3RhV00?oc=5",
+      "image": null,
+      "timestamp": 1790578800,
+      "created_at": "2026-09-28 07:00",
+      "title_orig": "10 Best Digimon Mega Evolutions, Ranked"
     },
     {
       "id": "f7c6eabe7f855295130e6900a10c62c2",
@@ -1940,21 +1998,6 @@
       "created_at": "2026-09-27 00:00"
     },
     {
-      "id": "fbfa93a1776f0685ac53cece85b8af12",
-      "title": "[하비뉴스] 디지몬 어드벤처 아크릴 블록 이시다 야마토(매튜) & 가브몬 [캐러반] 《12월 예약》",
-      "snippet": "デジモンアドベンチャー アクリルブロック 石田ヤマト＆ガブモン[キャラバン]《１２月予約》&nbsp;&nbsp;あみあみ",
-      "source": "아미아미",
-      "source_badge": "하비뉴스",
-      "category": "figure",
-      "category_name": "피규어/굿즈",
-      "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTFA2RUZtNTF6U0FvemJfb2hhUDZmeXVJdWRiSlpyRGFkVjR6ZXNBN09iRWNpRkQ5Q01mQzhCc2k2VHhJT2wtS0FxclRDc0t0VzJsQU8zbVVGQ3FzQ2lLaTRFaEZSdlBtUW5nNHljZQ?oc=5",
-      "image": null,
-      "timestamp": 1790435144,
-      "created_at": "2026-09-26 15:05",
-      "title_orig": "デジモンアドベンチャー アクリルブロック 石田ヤマト＆ガブモン[キャラバン]《１２月予約》",
-      "title_ja": "デジモンアドベンチャー アクリルブロック 石田ヤマト＆ガブモン[キャラバン]《１２月予約》"
-    },
-    {
       "id": "635c7be91c8f75e353dda40fa6f7e25e",
       "title": "[하비뉴스] 하비 샵] | 디지몬 어드벤처 페어 아크릴 스탠드 이시다 야마토(매튜) & 가브몬(예약 판매)",
       "snippet": "Hobby Shop] | Digimon Adventure Pair Acrylic Stand Yamato Ishida & Gabumon(Pre-order)&nbsp;&nbsp;AmiAmi",
@@ -2129,8 +2172,8 @@
       "snippet": "Digimon Adventure&nbsp;&nbsp;IGN Africa",
       "source": "IGN Africa",
       "source_badge": "해외뉴스",
-      "category": "general",
-      "category_name": "일반/뉴스",
+      "category": "game",
+      "category_name": "게임/공식애니",
       "link": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE52SE5CejdzODVHVHBNWXNMSC1NWXNmSWdzdGVHZ0pxQmszTzM0cDJIT1A3VzIwT2lRN3BmWGYyaFdESE5abVF3QVkyTzJTR2s?oc=5",
       "image": null,
       "timestamp": 1789573135,
@@ -2591,6 +2634,19 @@
       "category": "sns",
       "category_name": "SNS/해외",
       "link": "https://news.google.com/rss/articles/CBMib0FVX3lxTFBUWl9pY1BiZ2tDcDFQT1RQMnFhYjl3b2VISzVTNXFkandZSzFJb3ExTXJ1SkFDNmkxSXQ5LXNkczV3UVBsbm9aLWNva2cwU3YtWDBJY0U1TTNvc0s3ZEdOdWtoTjVyMXdoR2hVLVRIYw?oc=5",
+      "image": null,
+      "timestamp": 1788073200,
+      "created_at": "2026-08-30 07:00"
+    },
+    {
+      "id": "9d432ad51b4573abec1e6063c2adc2d9",
+      "title": "[트윗] ジェヒありがとう!! 재희 고마워!! watch 19:28🌳 https://t.co/zl3Zy6m6gO #JAEHEE #재희 #ジェヒ 💚 #NCTWISH #엔시티위시 #Digimon #디지몬 #デジモン #21世紀でも最高のデジアド - X",
+      "snippet": "X(트위터) 디지몬 공식/굿즈 속보 트윗입니다.",
+      "source": "X(트위터)",
+      "source_badge": "X(트위터)",
+      "category": "sns",
+      "category_name": "SNS/해외",
+      "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE4tTERBNmlNTjFnZDdFYjFMajdLVTE1TTl4SUpNb1BHX3dGZnA3MUhFdG9jc0lRRW85cGg1ZHd2NmZJTHNjb2txRVM0UkhjZ1NiSGlaaE5VRU52LVhFa3F5R0w2M00?oc=5",
       "image": null,
       "timestamp": 1788073200,
       "created_at": "2026-08-30 07:00"
