@@ -83,7 +83,10 @@ TRUSTED_NEWS_SOURCES = [
     "경향신문", "한겨레", "조선일보", "중앙일보", "동아일보", "뉴시스", "뉴스1",
     "스포츠조선", "스포츠서울", "데일리스포츠", "게임포커스", "게임샷", "게임톡",
     "스마트pc사랑", "반다이", "youtube", "유튜브", "포모스", "경향게임스",
-    "디지몬", "haveagood-holiday", "x.com", "twitter", "트위터", "reddit", "레딧", "toei", "토에이"
+    "디지몬", "haveagood-holiday", "x.com", "twitter", "트위터", "reddit", "레딧", "toei", "토에이",
+    "digimoncard", "wikimon", "p-bandai", "bandai", "dengeki", "hobby.watch", "impress",
+    "animenewsnetwork", "crunchyroll", "ign", "kotaku", "siliconera", "famitsu", "4gamer", "gamebiz",
+    "oricon", "natalie", "mantan-web", "daewon", "대원"
 ]
 
 def is_spam(item: dict) -> bool:
@@ -92,6 +95,7 @@ def is_spam(item: dict) -> bool:
     snippet = (item.get("snippet") or "").lower()
     source = (item.get("source") or "").lower()
     link = (item.get("link") or "").lower()
+    sbadge = item.get("source_badge") or ""
 
     # 1. 차단 소스 / 도메인 체크
     if any(b in source or b in link for b in BLOCKED_SOURCES) or "market/board" in link or "board/1020" in link:
@@ -103,9 +107,16 @@ def is_spam(item: dict) -> bool:
             return True
 
     # 3. 구글 뉴스 출처 검증 (검증된 언론사/공식 채널만 허용)
-    if item.get("source_badge") == "뉴스":
+    if sbadge == "뉴스":
         matched_trusted = any(t in source for t in TRUSTED_NEWS_SOURCES)
         if not matched_trusted:
+            return True
+
+    # 4. 글로벌/해외/일본 뉴스 관련성 검증 (디지몬 관련어 필수 포함)
+    if sbadge in ["해외뉴스", "일본뉴스", "프반/하비", "애니뉴스"]:
+        full = f"{title} {snippet} {link}".lower()
+        digi_kws = ["디지몬", "digimon", "デジモン", "디지바이스", "digivice", "デジヴァイス", "vpet", "v-pet", "vital", "바이탈", "seekers", "liberator"]
+        if not any(k in full for k in digi_kws):
             return True
 
     return False
@@ -195,8 +206,14 @@ def classify_category(title: str, default_cat: str = "general", source_badge: st
         return "sns", "SNS/해외"
     if source_badge == "디시":
         return "community", "커뮤니티"
-    if source_badge == "루리웹":
+    if source_badge in ["루리웹", "프반/하비"]:
         return "figure", "피규어/굿즈"
+    if source_badge == "디지카":
+        return "card", "카드게임(TCG)"
+    if source_badge == "애니뉴스":
+        return "game", "게임/공식애니"
+    if source_badge == "위키몬":
+        return "general", "도감/위키"
 
     return default_cat, "일반/뉴스"
 
@@ -465,8 +482,8 @@ def crawl_youtube_digimon():
 
 def crawl_twitter_digimon():
     items = []
-    # 굿즈, 쿠지, 프론티어, 공식 계정, 신작을 아우르는 X 검색
-    feed_url = 'https://news.google.com/rss/search?q=site:x.com+OR+site:twitter.com+(%22digimonweb_net%22+OR+%22digimon_tcg%22+OR+%22toei_anim_goods%22+OR+%22%EB%94%94%EC%A7%80%EB%AA%AC+%EA%B5%BF%EC%A6%88%22+OR+%22%EB%94%94%EC%A7%80%EB%AA%AC+%EC%BF%A0%EC%A7%80%22+OR+%22%EB%94%94%EC%A7%80%EB%AA%AC+%ED%94%84%EB%A1%A0%ED%8B%B0%EC%96%B4%22+OR+%22%EB%94%94%EC%A7%80%EB%AA%AC+%EC%8B%A0%EC%9E%91%22+OR+%22%EB%94%94%EC%A7%80%EB%AA%AC%22)&hl=ko&gl=KR&ceid=KR:ko'
+    # 굿즈, 쿠지, 프론티어, 공식 계정, 신작, 해외/일본 공식 계정을 아우르는 X 검색
+    feed_url = 'https://news.google.com/rss/search?q=site:x.com+OR+site:twitter.com+(%22digimonweb_net%22+OR+%22digimon_tcg%22+OR+%22toei_anim_goods%22+OR+%22%E3%83%87%E3%82%B8%E3%83%A2%E3%83%B3%22+OR+%22DigimonTCG%22+OR+%22%EB%94%94%EC%A7%80%EB%AA%AC+%EA%B5%BF%EC%A6%88%22+OR+%22%EB%94%94%EC%A7%80%EB%AA%AC+%EC%BF%A0%EC%A7%80%22+OR+%22%EB%94%94%EC%A7%80%EB%AA%AC+%ED%94%84%EB%A1%A0%ED%8B%B0%EC%96%B4%22+OR+%22%EB%94%94%EC%A7%80%EB%AA%AC+%EC%8B%A0%EC%9E%91%22+OR+%22%EB%94%94%EC%A7%80%EB%AA%AC%22)&hl=ko&gl=KR&ceid=KR:ko'
     try:
         feed = feedparser.parse(feed_url)
         for entry in feed.entries[:20]:
@@ -499,24 +516,30 @@ def crawl_twitter_digimon():
     return items
 
 def crawl_instagram_digimon():
-    """인스타그램은 비로그인 접근이 막혀 있어(로그인 페이지로 리다이렉트) 구글뉴스 site: 검색으로 공개 게시물을 수집"""
+    """인스타그램은 비로그인 직접 접근이 막혀 있어 구글뉴스 RSS site: 검색으로 공개 해시태그/게시물 수집"""
     items = []
     queries = [
-        "site:instagram.com 디지몬",
-        "site:instagram.com digimon",
-        "site:instagram.com 디지몬 카드",
+        'site:instagram.com/p/ "#디지몬"',
+        'site:instagram.com/p/ "#digimon"',
+        'site:instagram.com/p/ "#デジモン"',
+        'site:instagram.com "#디지몬"',
+        'site:instagram.com "#digimon"',
+        'site:instagram.com "#デジモン"',
+        'site:instagram.com/p/ "디지몬"',
+        'site:instagram.com/p/ "digimon"',
     ]
     seen = set()
     for q in queries:
         feed_url = f"https://news.google.com/rss/search?q={requests.utils.quote(q)}&hl=ko&gl=KR&ceid=KR:ko"
         try:
             feed = feedparser.parse(feed_url)
-            for entry in feed.entries[:20]:
+            for entry in feed.entries[:15]:
                 link = entry.link
                 if link in seen:
                     continue
                 seen.add(link)
                 title = re.sub(r"\s*[-•|]\s*Instagram.*$", "", entry.title).strip()
+                title = re.sub(r"^[•·\s]+", "", title).strip()
                 if not title:
                     continue
                 published = getattr(entry, "published", "")
@@ -537,6 +560,253 @@ def crawl_instagram_digimon():
                 })
         except Exception as e:
             print(f"[Error] Instagram crawling failed ({q}): {e}")
+    return items
+
+def crawl_google_news_global_en():
+    """구글 뉴스 글로벌 영어 피드 수집 (US:en)"""
+    items = []
+    queries = [
+        '"Digimon" OR "Digimon Card Game" OR "Digimon Liberator" OR "Digimon Seekers"',
+        '"Digimon Adventure" OR "Digimon World" OR "Digivice" OR "Vital Bracelet"',
+        '"Digimon" ("Bandai" OR "Toei Animation" OR "Anime")'
+    ]
+    seen = set()
+    for q in queries:
+        feed_url = f"https://news.google.com/rss/search?q={requests.utils.quote(q)}&hl=en-US&gl=US&ceid=US:en"
+        try:
+            feed = feedparser.parse(feed_url)
+            for entry in feed.entries[:12]:
+                link = entry.link
+                if link in seen:
+                    continue
+                seen.add(link)
+                title = entry.title
+                published = getattr(entry, "published", "")
+                summary = re.sub(r'<[^>]+>', '', getattr(entry, "summary", ""))
+                source_name = "Global News"
+                if " - " in title:
+                    parts = title.rsplit(" - ", 1)
+                    title = parts[0]
+                    source_name = parts[1]
+                category, cat_name = classify_category(title, "general", "해외뉴스")
+                ts = parse_to_timestamp(published)
+                items.append({
+                    "id": get_hash_id(link),
+                    "title": f"[해외뉴스] {title.strip()}",
+                    "snippet": summary[:120].strip() if summary else f"{source_name} 보도자료",
+                    "source": source_name,
+                    "source_badge": "해외뉴스",
+                    "category": category,
+                    "category_name": cat_name,
+                    "link": link,
+                    "image": None,
+                    "timestamp": ts,
+                    "created_at": format_display_date(ts)
+                })
+        except Exception as e:
+            print(f"[Error] Global EN News ({q}) crawling failed: {e}")
+    return items
+
+def crawl_google_news_global_ja():
+    """구글 뉴스 일본어 피드 수집 (JP:ja)"""
+    items = []
+    queries = [
+        '"デジモン" OR "デジモンカードゲーム" OR "デジモンリベレイター" OR "デジモンシーカーズ"',
+        '"デジモン フィギュア" OR "デジヴァイス" OR "デジタルモンスター" OR "バイタルブレス"',
+        '"デジモン" ("バンダイ" OR "東映アニメーション" OR "プレミアムバンダイ")'
+    ]
+    seen = set()
+    for q in queries:
+        feed_url = f"https://news.google.com/rss/search?q={requests.utils.quote(q)}&hl=ja&gl=JP&ceid=JP:ja"
+        try:
+            feed = feedparser.parse(feed_url)
+            for entry in feed.entries[:12]:
+                link = entry.link
+                if link in seen:
+                    continue
+                seen.add(link)
+                title = entry.title
+                published = getattr(entry, "published", "")
+                summary = re.sub(r'<[^>]+>', '', getattr(entry, "summary", ""))
+                source_name = "일본 뉴스"
+                if " - " in title:
+                    parts = title.rsplit(" - ", 1)
+                    title = parts[0]
+                    source_name = parts[1]
+                category, cat_name = classify_category(title, "general", "일본뉴스")
+                ts = parse_to_timestamp(published)
+                items.append({
+                    "id": get_hash_id(link),
+                    "title": f"[일본뉴스] {title.strip()}",
+                    "snippet": summary[:120].strip() if summary else f"{source_name} 보도자료",
+                    "source": source_name,
+                    "source_badge": "일본뉴스",
+                    "category": category,
+                    "category_name": cat_name,
+                    "link": link,
+                    "image": None,
+                    "timestamp": ts,
+                    "created_at": format_display_date(ts)
+                })
+        except Exception as e:
+            print(f"[Error] Global JA News ({q}) crawling failed: {e}")
+    return items
+
+def crawl_tcg_portals():
+    """디지몬 카드게임 전문 포털 수집 (digimoncard.io, digimoncard.co.kr, digimoncard.com)"""
+    items = []
+    queries = [
+        ('site:digimoncard.io', 'DigimonCard.io', '디지카'),
+        ('site:digimoncard.co.kr', '공식 디지카KR', '디지카'),
+        ('site:digimoncard.com', '반다이 공식 디지카', '디지카'),
+    ]
+    seen = set()
+    for q, sname, badge in queries:
+        feed_url = f"https://news.google.com/rss/search?q={requests.utils.quote(q)}&hl=ko&gl=KR&ceid=KR:ko"
+        try:
+            feed = feedparser.parse(feed_url)
+            for entry in feed.entries[:10]:
+                link = entry.link
+                if link in seen:
+                    continue
+                seen.add(link)
+                title = entry.title
+                if " - " in title:
+                    title = title.rsplit(" - ", 1)[0]
+                published = getattr(entry, "published", "")
+                summary = re.sub(r'<[^>]+>', '', getattr(entry, "summary", ""))[:120].strip()
+                ts = parse_to_timestamp(published)
+                category, cat_name = classify_category(title, "card", badge)
+                items.append({
+                    "id": get_hash_id(link),
+                    "title": f"[{badge}] {title.strip()}",
+                    "snippet": summary or f"{sname} 디지몬 카드게임 소식입니다.",
+                    "source": sname,
+                    "source_badge": badge,
+                    "category": category,
+                    "category_name": cat_name,
+                    "link": link,
+                    "image": None,
+                    "timestamp": ts,
+                    "created_at": format_display_date(ts)
+                })
+        except Exception as e:
+            print(f"[Error] TCG portal ({q}) crawling failed: {e}")
+    return items
+
+def crawl_wikimon_updates():
+    """위키몬(Wikimon) 최신 문서 및 소식 업데이트 수집"""
+    items = []
+    url = "https://wikimon.net/api.php?action=feedrecentchanges&feedformat=rss&namespace=0"
+    try:
+        res = requests.get(url, headers={"User-Agent": "Mozilla/5.0 (DigimonTracker/1.0)"}, timeout=10)
+        if res.status_code == 200:
+            feed = feedparser.parse(res.text)
+            for entry in feed.entries[:10]:
+                title = entry.title
+                link = entry.link
+                published = getattr(entry, "published", "")
+                summary = re.sub(r'<[^>]+>', '', getattr(entry, "summary", ""))[:120].strip()
+                ts = parse_to_timestamp(published)
+                items.append({
+                    "id": get_hash_id(link),
+                    "title": f"[위키몬] {title.strip()}",
+                    "snippet": summary or "Wikimon 디지몬 백과사전 최신 문서 업데이트입니다.",
+                    "source": "Wikimon",
+                    "source_badge": "위키몬",
+                    "category": "general",
+                    "category_name": "도감/위키",
+                    "link": link,
+                    "image": None,
+                    "timestamp": ts,
+                    "created_at": format_display_date(ts)
+                })
+    except Exception as e:
+        print(f"[Error] Wikimon RSS crawling failed: {e}")
+    return items
+
+def crawl_premium_bandai_hobby():
+    """프리미엄 반다이 및 주요 하비 웹진 수집"""
+    items = []
+    queries = [
+        ('site:p-bandai.jp ("デジモン" OR "デジヴァイス")', '프리미엄 반다이', '프반/하비', 'figure'),
+        ('site:p-bandai.com ("Digimon" OR "Digivice")', 'Premium Bandai US', '프반/하비', 'figure'),
+        ('site:hobby.dengeki.com "デジモン"', '전격하비', '프반/하비', 'figure'),
+        ('site:hobby.watch.impress.co.jp "デジモン"', '하비워치', '프반/하비', 'figure'),
+    ]
+    seen = set()
+    for q, sname, badge, def_cat in queries:
+        feed_url = f"https://news.google.com/rss/search?q={requests.utils.quote(q)}&hl=ja&gl=JP&ceid=JP:ja"
+        try:
+            feed = feedparser.parse(feed_url)
+            for entry in feed.entries[:8]:
+                link = entry.link
+                if link in seen:
+                    continue
+                seen.add(link)
+                title = entry.title
+                if " - " in title:
+                    title = title.rsplit(" - ", 1)[0]
+                published = getattr(entry, "published", "")
+                summary = re.sub(r'<[^>]+>', '', getattr(entry, "summary", ""))[:120].strip()
+                ts = parse_to_timestamp(published)
+                category, cat_name = classify_category(title, def_cat, badge)
+                items.append({
+                    "id": get_hash_id(link),
+                    "title": f"[{badge}] {title.strip()}",
+                    "snippet": summary or f"{sname} 디지몬 하비/완구 소식입니다.",
+                    "source": sname,
+                    "source_badge": badge,
+                    "category": category,
+                    "category_name": cat_name,
+                    "link": link,
+                    "image": None,
+                    "timestamp": ts,
+                    "created_at": format_display_date(ts)
+                })
+        except Exception as e:
+            print(f"[Error] Hobby portal ({q}) crawling failed: {e}")
+    return items
+
+def crawl_global_anime_news():
+    """글로벌 애니메이션 웹진 디지몬 소식 수집"""
+    items = []
+    queries = [
+        ('site:animenewsnetwork.com "Digimon"', 'Anime News Network', '애니뉴스'),
+        ('site:crunchyroll.com/news "Digimon"', 'Crunchyroll News', '애니뉴스'),
+    ]
+    seen = set()
+    for q, sname, badge in queries:
+        feed_url = f"https://news.google.com/rss/search?q={requests.utils.quote(q)}&hl=en-US&gl=US&ceid=US:en"
+        try:
+            feed = feedparser.parse(feed_url)
+            for entry in feed.entries[:8]:
+                link = entry.link
+                if link in seen:
+                    continue
+                seen.add(link)
+                title = entry.title
+                if " - " in title:
+                    title = title.rsplit(" - ", 1)[0]
+                published = getattr(entry, "published", "")
+                summary = re.sub(r'<[^>]+>', '', getattr(entry, "summary", ""))[:120].strip()
+                ts = parse_to_timestamp(published)
+                category, cat_name = classify_category(title, "game", badge)
+                items.append({
+                    "id": get_hash_id(link),
+                    "title": f"[{badge}] {title.strip()}",
+                    "snippet": summary or f"{sname} 디지몬 글로벌 보도입니다.",
+                    "source": sname,
+                    "source_badge": badge,
+                    "category": category,
+                    "category_name": cat_name,
+                    "link": link,
+                    "image": None,
+                    "timestamp": ts,
+                    "created_at": format_display_date(ts)
+                })
+        except Exception as e:
+            print(f"[Error] Anime news ({q}) crawling failed: {e}")
     return items
 
 OFFICIAL_SITE = "https://digimon.net/"
@@ -635,15 +905,18 @@ def crawl_official_products():
     return items
 
 TITLE_CACHE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "data", "translations", "feed_titles.json")
+KO_RE = re.compile(r"[\uac00-\ud7a3]")
 JA_RE = re.compile(r"[\u3040-\u30ff\u4e00-\u9fff]")
-
+EN_WORD_RE = re.compile(r"[a-zA-Z]{3,}")
 
 NAMES_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "data", "translations", "names.json")
+TERMS_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "data", "translations", "terms.json")
 
 
-def translate_official_titles(items):
-    """공식 사이트(일본어) 항목 제목을 Gemini로 한국어 번역. 원제는 title_ja 에 보관, 번역 결과는 캐시해서 같은 제목은 다시 요청하지 않음.
-    인물 이름은 data/translations/names.json 기준 '원작 이름(더빙 이름)'으로 표기.
+def translate_feed_titles(items):
+    """공식 사이트(일본어) 및 해외 글로벌 피드(영어/일본어) 제목을 Gemini로 한국어 번역.
+    원제는 title_orig (일어인 경우 title_ja)에 보관, 번역 결과는 feed_titles.json에 캐시.
+    디지몬 고증 이름은 names.json 및 terms.json 기준 표기.
     GEMINI_API_KEY 가 없거나 실패하면 원문 그대로 둠."""
     try:
         import gemini
@@ -658,87 +931,117 @@ def translate_official_titles(items):
     if os.path.exists(NAMES_FILE):
         with open(NAMES_FILE, encoding="utf-8") as f:
             names = {k: v for k, v in json.load(f).items() if not k.startswith("_")}
+    terms = {}
+    if os.path.exists(TERMS_FILE):
+        with open(TERMS_FILE, encoding="utf-8") as f:
+            terms = {k: v for k, v in json.load(f).items() if not k.startswith("_")}
 
-    def names_in(text):
-        return {ja: ko for ja, ko in names.items() if ja in text}
-
-    def names_ok(ja_text, ko_text):
-        return all(ko in ko_text for ko in names_in(ja_text).values())
+    def glossary_in(text):
+        gl = {k: v for k, v in names.items() if k in text}
+        gl.update({k: v for k, v in terms.items() if k.lower() in text.lower()})
+        return gl
 
     targets = []
     for item in items:
-        if item.get("source_badge") != "디지몬웹":
-            continue
-        m = re.match(r"(\[[^\]]+\]\s*)?(.*)", item.get("title", ""), re.S)
-        prefix, body = m.group(1) or "", m.group(2).strip()
-        body = item.get("title_ja") or body  # 이미 번역된 항목도 원제 기준으로 다시 맞춤 (이름 표기가 바뀌면 반영)
-        if JA_RE.search(body):
+        raw_title = item.get("title", "")
+        m = re.match(r"^(\[[^\]]+\]\s*)(.*)", raw_title, re.S)
+        prefix = m.group(1) if m else ""
+        body = m.group(2).strip() if m else raw_title.strip()
+        body = item.get("title_orig") or item.get("title_ja") or body
+
+        # 한글이 전혀 없고, 일본어 또는 영어 단어가 포함된 경우 번역 대상
+        if not KO_RE.search(body) and (JA_RE.search(body) or EN_WORD_RE.search(body)):
             targets.append((item, prefix, body))
-    # 캐시가 없거나, 인물 이름 표기가 규칙과 다르면 다시 번역
-    missing = list(dict.fromkeys(b for _, _, b in targets if b not in cache or not names_ok(b, cache[b])))
+
+    # 캐시에 없는 항목만 번역
+    missing = list(dict.fromkeys(b for _, _, b in targets if b not in cache))
     if missing and gemini.available():
         try:
-            for i in range(0, len(missing), 40):
-                chunk = missing[i:i + 40]
+            for i in range(0, len(missing), 30):
+                chunk = missing[i:i + 30]
                 gl = {}
                 for t in chunk:
-                    gl.update(names_in(t))
+                    gl.update(glossary_in(t))
                 out = gemini.translate_map({str(n): t for n, t in enumerate(chunk)}, gl)
                 for n, t in enumerate(chunk):
                     ko = out.get(str(n))
                     if not ko:
                         continue
                     # 모델이 괄호 더빙명을 빠뜨리면 원작 이름 뒤에 붙여 맞춤
-                    for full in names_in(t).values():
+                    for full in names.values():
                         base = full.split("(")[0]
                         if full not in ko and base in ko:
                             ko = ko.replace(base, full, 1)
                     cache[t] = ko
         except Exception as e:
-            print(f"[Warning] Official title translation stopped: {e}")
+            print(f"[Warning] Feed title translation stopped: {e}")
         os.makedirs(os.path.dirname(TITLE_CACHE), exist_ok=True)
         with open(TITLE_CACHE, "w", encoding="utf-8") as f:
             json.dump(cache, f, ensure_ascii=False, indent=1)
     elif missing:
-        print("[Info] GEMINI_API_KEY 없음 — 공식 사이트 제목은 일본어 원문 유지")
+        print(f"[Info] GEMINI_API_KEY 미설정 또는 할당량 초과 ({len(missing)}건 번역 대기 - 원문 유지)")
+
     for item, prefix, body in targets:
         if body in cache:
-            item["title_ja"] = body
+            item["title_orig"] = body
+            if JA_RE.search(body):
+                item["title_ja"] = body
             item["title"] = prefix + cache[body]
+
+def translate_official_titles(items):
+    return translate_feed_titles(items)
 
 
 def main():
     print(f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] Starting Digimon feeds crawl...")
     all_new_items = []
     
-    print("1. Crawling Google News...")
+    print("1. Crawling Google News (KR)...")
     all_new_items.extend(crawl_google_news_digimon())
 
-    print("2. Crawling Ruliweb Hobby...")
+    print("2. Crawling Google News Global (EN)...")
+    all_new_items.extend(crawl_google_news_global_en())
+
+    print("3. Crawling Google News Global (JA)...")
+    all_new_items.extend(crawl_google_news_global_ja())
+
+    print("4. Crawling Ruliweb Hobby...")
     all_new_items.extend(crawl_ruliweb_hobby())
 
-    print("3. Crawling DC Digimon...")
+    print("5. Crawling DC Digimon...")
     all_new_items.extend(crawl_dc_gallery("digimon", "디지몬", "community"))
 
-    print("4. Crawling DC TCG Digimon...")
+    print("6. Crawling DC TCG Digimon...")
     all_new_items.extend(crawl_dc_gallery("tcg_digimon", "디지카", "card"))
 
-    print("5. Crawling WithTheWill...")
+    print("7. Crawling TCG Portals (digimoncard.io, digimoncard.co.kr, digimoncard.com)...")
+    all_new_items.extend(crawl_tcg_portals())
+
+    print("8. Crawling WithTheWill...")
     all_new_items.extend(crawl_withthewill_news())
 
-    print("6. Crawling Reddit...")
+    print("9. Crawling Wikimon Updates...")
+    all_new_items.extend(crawl_wikimon_updates())
+
+    print("10. Crawling Reddit...")
     all_new_items.extend(crawl_reddit_digimon())
 
-    print("7. Crawling YouTube...")
+    print("11. Crawling YouTube...")
     all_new_items.extend(crawl_youtube_digimon())
 
-    print("8. Crawling Twitter (X)...")
+    print("12. Crawling Twitter (X)...")
     all_new_items.extend(crawl_twitter_digimon())
 
-    print("9. Crawling Instagram (via Google News)...")
+    print("13. Crawling Instagram (via Google News)...")
     all_new_items.extend(crawl_instagram_digimon())
 
-    print("10. Crawling official site news & products (digimon.net)...")
+    print("14. Crawling Premium Bandai & Hobby Media...")
+    all_new_items.extend(crawl_premium_bandai_hobby())
+
+    print("15. Crawling Global Anime News...")
+    all_new_items.extend(crawl_global_anime_news())
+
+    print("16. Crawling official site news & products (digimon.net)...")
     all_new_items.extend(crawl_official_topics())
     all_new_items.extend(crawl_official_products())
 
