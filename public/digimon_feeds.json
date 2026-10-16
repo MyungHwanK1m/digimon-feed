@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-10-16 17:47:38",
-  "total_count": 205,
+  "last_updated": "2026-10-16 12:57:14",
+  "total_count": 212,
   "retention_days": 90,
   "feeds": [
     {
@@ -13,10 +13,69 @@
       "category_name": "피규어/굿즈",
       "link": "https://digimon.net/product/others/",
       "image": null,
-      "timestamp": 1792140450,
-      "created_at": "2026-10-16 17:47",
+      "timestamp": 1792155057,
+      "created_at": "2026-10-16 12:50",
       "title_orig": "デジタルモンスター WORLDMAKING ACRYLIC STAND ブースターver.5",
       "title_ja": "デジタルモンスター WORLDMAKING ACRYLIC STAND ブースターver.5"
+    },
+    {
+      "id": "229693f3f67620aec484ba728dfae4aa",
+      "title": "[일본뉴스] 『디지몬 알리시온』 사전 등록이 수 주 이내에 시작될 예정. 신규 디지몬 & 캐릭터, 오리지널 카드에도 주목이 쏠리는 신작 온라인 카드 게임",
+      "snippet": "『デジモンアリシオン』事前登録が数週間以内に開始予定。新デジモン＆キャラ、オリジナルカードにも注目集まる新作オンラインカードゲーム&nbsp;&nbsp;ファミ通.com",
+      "source": "ファミ通.com",
+      "source_badge": "일본뉴스",
+      "category": "game",
+      "category_name": "신작/공식속보",
+      "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTFBlOWF0bnNVN08xbk9GTWtHdWNVckRtVlpjU2dPYUVISFlSbGlBejZCN3ZuRWVyRy1HcFF6azFoVG5BU19abHlOUzMzbzI4XzBZUjgzcEo2dw?oc=5",
+      "image": null,
+      "timestamp": 1792145760,
+      "created_at": "2026-10-16 10:16",
+      "title_orig": "『デジモンアリシオン』事前登録が数週間以内に開始予定。新デジモン＆キャラ、オリジナルカードにも注目集まる新作オンラインカードゲーム",
+      "title_ja": "『デジモンアリシオン』事前登録が数週間以内に開始予定。新デジモン＆キャラ、オリジナルカードにも注目集まる新作オンラインカードゲーム"
+    },
+    {
+      "id": "7dac85421356ed4331bb101597f0f9a6",
+      "title": "[해외뉴스] 디지몬 알리시온, 수 주 내 사전 등록 개시 예정",
+      "snippet": "Digimon Alysion Set to Open Pre-Registration in the Coming Weeks&nbsp;&nbsp;GamerBraves",
+      "source": "GamerBraves",
+      "source_badge": "해외뉴스",
+      "category": "general",
+      "category_name": "일반/뉴스",
+      "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOcDBIVnNBa2EyVkF0dWs2WExLU0NxMzc5eWJjR1JfcWo3TGRROEl4am1CNUF5Wno3bWZJQ1JRekIxYWF2c2dkTTlXQXJRM2MtZnFkTlFYM1ZmSTlSbmtFMmNQbWRJM2JDMzF0TDdLd2I2Qno4eVFubk1HT21QcDZUTk9oZzZVU0lWempBam1VbVJJR0ZGU1AydQ?oc=5",
+      "image": null,
+      "timestamp": 1792144546,
+      "created_at": "2026-10-16 09:55",
+      "title_orig": "Digimon Alysion Set to Open Pre-Registration in the Coming Weeks"
+    },
+    {
+      "id": "9a3293bb953fd64a74995f86f200e594",
+      "title": "[일본뉴스] 보도자료: 10월 18일(일) 방송되는 『우리가 고른 베스트 어드벤처』는 TV 애니메이션 「디지몬 어드벤처」에서 5위에 오른 제13화 [엔젤몬 각성!]을 방송! (PR TIMES)",
+      "snippet": "プレスリリース：10月18日(日)放送の『僕らが選んだベストアドベンチャー』は、TVアニメ「デジモンアドベンチャー」より、第5位にランクインした第13話［エンジェモン覚醒！］を放送！（PR TIMES）&nbsp;&nbsp;毎日新聞",
+      "source": "毎日新聞",
+      "source_badge": "일본뉴스",
+      "category": "general",
+      "category_name": "일반/뉴스",
+      "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE0tektfUjdwNmF3cE5lZDZfRDdRXzEwTTBBeExuazc1STNweUFHM2lQSWFWaEtFSTVfSzkySjRuR0JoeU5OeHU5VXdMYWNaa0hodnNhZHVpWjh2Z1NCSkpaV2h0YnhBMFJj?oc=5",
+      "image": null,
+      "timestamp": 1792142584,
+      "created_at": "2026-10-16 09:23",
+      "title_orig": "プレスリリース：10月18日(日)放送の『僕らが選んだベストアドベンチャー』は、TVアニメ「デジモンアドベンチャー」より、第5位にランクインした第13話［エンジェモン覚醒！］を放送！（PR TIMES）",
+      "title_ja": "プレスリリース：10月18日(日)放送の『僕らが選んだベストアドベンチャー』は、TVアニメ「デジモンアドベンチャー」より、第5位にランクインした第13話［エンジェモン覚醒！］を放送！（PR TIMES）"
+    },
+    {
+      "id": "ce3591fd25cb10d586bcc29af272c017",
+      "title": "[일본뉴스] 【디지몬 타이스】 최종회! 내가 세계를 구한다! 【스포일러 주의】 #디지몬 스토리 타임 스트레인저 #게임 실황 #vtuber",
+      "snippet": "【デジモンタイスト】最終回！私が世界を救う！【ネタバレ注意】#デジモンストーリータイムストレンジャー #ゲーム実況 #vtuber&nbsp;&nbsp;YouTube",
+      "source": "YouTube",
+      "source_badge": "일본뉴스",
+      "category": "figure",
+      "category_name": "피규어/굿즈",
+      "link": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE16cEJMVzVJLUt3RmpqcDhDZWlVczhVZ3NqYjBiUjJsaUJ0b3RLRVZIaHF0bHM2eEFyNldGSTNmcDhIY2hhTGY5Q1A0bTdPMnVPbzN5SWRUNW00MEFi?oc=5",
+      "image": null,
+      "timestamp": 1792141209,
+      "created_at": "2026-10-16 09:00",
+      "title_orig": "【デジモンタイスト】最終回！私が世界を救う！【ネタバレ注意】#デジモンストーリータイムストレンジャー #ゲーム実況 #vtuber",
+      "title_ja": "【デジモンタイスト】最終回！私が世界を救う！【ネタバレ注意】#デジモンストーリータイムストレンジャー #ゲーム実況 #vtuber"
     },
     {
       "id": "3f41c4394d868c0f9e3cd8d44ad15e83",
@@ -200,7 +259,7 @@
     },
     {
       "id": "0e708afa4c421825a13fe8c2df22ee99",
-      "title": "[일본뉴스] デジモンアドベンチャー POP UP SHOP in 東京 11月6日より開催!",
+      "title": "[일본뉴스] 디지몬 어드벤처 POP UP SHOP in 도쿄 11월 6일부터 개최!",
       "snippet": "デジモンアドベンチャー POP UP SHOP in 東京 11月6日より開催!&nbsp;&nbsp;コラボカフェ",
       "source": "コラボカフェ",
       "source_badge": "일본뉴스",
@@ -209,11 +268,26 @@
       "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNOUpucmNfcDBlSk5DNUZlWjFyZWRlRFM0OHhYZU9FbC1xNGhveXNOTmN2UVJ2SUhXTmlTZmJjWGtCM2FwZlRSZ2FvV05EU3pDUXFXQzd0Ym5PWnFndVJpbUFVSGdfSEhtM3BKZklhN2kwaXJYY1hPWVlUSlg1VkVic3ZUVVI2YVpxNk0wQThzWQ?oc=5",
       "image": null,
       "timestamp": 1792133708,
-      "created_at": "2026-10-16 15:55"
+      "created_at": "2026-10-16 06:55",
+      "title_orig": "デジモンアドベンチャー POP UP SHOP in 東京 11月6日より開催!",
+      "title_ja": "デジモンアドベンチャー POP UP SHOP in 東京 11月6日より開催!"
+    },
+    {
+      "id": "a79a183ead2ca30bc41bc484ef151dbe",
+      "title": "[네이버] 디지몬 마스터즈 온라인",
+      "snippet": "디지몬 마스터즈 온라인&nbsp;&nbsp;NAVER",
+      "source": "네이버 게임",
+      "source_badge": "네이버",
+      "category": "game",
+      "category_name": "게임/공식애니",
+      "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTE41OEhSX290cmUyOFE5Sk5xVHBYLVh5VWFqWDJkbllkYUNlSnVZOFA1UTdHekNlaWpvS0hfYkotMG9GQVJSX2tWdy1lRm5kaXVSRWVFcUJfUlhaSXFUem9VaUZQYjVJeGFaM3lr?oc=5",
+      "image": null,
+      "timestamp": 1792129266,
+      "created_at": "2026-10-16 05:41"
     },
     {
       "id": "94f5530726ccdafdddde0d8fd805620c",
-      "title": "[일본뉴스] デジモンコンサート 12月に開催! チケット販売は10月21日より!",
+      "title": "[일본뉴스] 디지몬 콘서트 12월에 개최! 티켓 판매는 10월 21일부터!",
       "snippet": "デジモンコンサート 12月に開催! チケット販売は10月21日より!&nbsp;&nbsp;コラボカフェ",
       "source": "コラボカフェ",
       "source_badge": "일본뉴스",
@@ -222,7 +296,9 @@
       "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxNTGZmT2ZtVjJGWWI0aFZLLVItR0d2NFBleWY5bmJzcV9adFdvUzRCbjNzVEtNMTRnTzFFMlZMWFVfdlI3Qm8zdDJLSm93RnVLZ1B5LTF1S2JleHdyczhmZXVoNGlpdmZ4WnhiY0cxWWxaSVNlYlBaQ2gtRElRNG4xeUU5WjQ4TG5sZU5YaGplcktYay1sUklFbnhR?oc=5",
       "image": null,
       "timestamp": 1792122985,
-      "created_at": "2026-10-16 12:56"
+      "created_at": "2026-10-16 03:56",
+      "title_orig": "デジモンコンサート 12月に開催! チケット販売は10月21日より!",
+      "title_ja": "デジモンコンサート 12月に開催! チケット販売は10月21日より!"
     },
     {
       "id": "a430cb7ebe0f2d6657f4b1f14f2ab190",
@@ -243,12 +319,13 @@
       "snippet": "Wikimon에 새로 등록된 공식 신규 문서 (EX14-012 (DCG))입니다.",
       "source": "Wikimon",
       "source_badge": "위키몬",
-      "category": "general",
-      "category_name": "도감/위키",
+      "category": "card",
+      "category_name": "카드게임(TCG)",
       "link": "https://wikimon.net/EX14-012_%28DCG%29",
       "image": null,
       "timestamp": 1792103441,
-      "created_at": "2026-10-16 07:30"
+      "created_at": "2026-10-16 07:30",
+      "title_orig": "EX14-012 (DCG)"
     },
     {
       "id": "e8f7edc87c7555dc93ac33e9b83acf58",
@@ -256,12 +333,13 @@
       "snippet": "Wikimon에 새로 등록된 공식 신규 문서 (BT27-103 (DCG))입니다.",
       "source": "Wikimon",
       "source_badge": "위키몬",
-      "category": "general",
-      "category_name": "도감/위키",
+      "category": "card",
+      "category_name": "카드게임(TCG)",
       "link": "https://wikimon.net/BT27-103_%28DCG%29",
       "image": null,
       "timestamp": 1792102964,
-      "created_at": "2026-10-16 07:22"
+      "created_at": "2026-10-16 07:22",
+      "title_orig": "BT27-103 (DCG)"
     },
     {
       "id": "318a1bbc6e1e39b965440f7d2ae0418d",
@@ -269,12 +347,13 @@
       "snippet": "Wikimon에 새로 등록된 공식 신규 문서 (BT27-084 (DCG))입니다.",
       "source": "Wikimon",
       "source_badge": "위키몬",
-      "category": "general",
-      "category_name": "도감/위키",
+      "category": "card",
+      "category_name": "카드게임(TCG)",
       "link": "https://wikimon.net/BT27-084_%28DCG%29",
       "image": null,
       "timestamp": 1792102487,
-      "created_at": "2026-10-16 07:14"
+      "created_at": "2026-10-16 07:14",
+      "title_orig": "BT27-084 (DCG)"
     },
     {
       "id": "6fd901e752cb80daaf1ba99eb1ccc636",
@@ -282,12 +361,13 @@
       "snippet": "Wikimon에 새로 등록된 공식 신규 문서 (BT27-070 (DCG))입니다.",
       "source": "Wikimon",
       "source_badge": "위키몬",
-      "category": "general",
-      "category_name": "도감/위키",
+      "category": "card",
+      "category_name": "카드게임(TCG)",
       "link": "https://wikimon.net/BT27-070_%28DCG%29",
       "image": null,
       "timestamp": 1792101044,
-      "created_at": "2026-10-16 06:50"
+      "created_at": "2026-10-16 06:50",
+      "title_orig": "BT27-070 (DCG)"
     },
     {
       "id": "a14fe06308b007767120e17f17238b11",
@@ -295,16 +375,17 @@
       "snippet": "Wikimon에 새로 등록된 공식 신규 문서 (BT27-035 (DCG))입니다.",
       "source": "Wikimon",
       "source_badge": "위키몬",
-      "category": "general",
-      "category_name": "도감/위키",
+      "category": "card",
+      "category_name": "카드게임(TCG)",
       "link": "https://wikimon.net/BT27-035_%28DCG%29",
       "image": null,
       "timestamp": 1792099122,
-      "created_at": "2026-10-16 06:18"
+      "created_at": "2026-10-16 06:18",
+      "title_orig": "BT27-035 (DCG)"
     },
     {
       "id": "4d1f0be48d0d0cf23b0b43e5dc0d89c6",
-      "title": "[위키몬 신규] Death-X-evolution",
+      "title": "[위키몬 신규] 데스-X-진화",
       "snippet": "Wikimon에 새로 등록된 공식 신규 문서 (Death-X-evolution)입니다.",
       "source": "Wikimon",
       "source_badge": "위키몬",
@@ -313,11 +394,12 @@
       "link": "https://wikimon.net/Death-X-evolution",
       "image": null,
       "timestamp": 1792085299,
-      "created_at": "2026-10-16 02:28"
+      "created_at": "2026-10-16 02:28",
+      "title_orig": "Death-X-evolution"
     },
     {
       "id": "034dc109a934547cd1d7047fcdf00a38",
-      "title": "[위키몬 신규] Death-X-Evolution",
+      "title": "[위키몬 신규] 데스-X-진화",
       "snippet": "Wikimon에 새로 등록된 공식 신규 문서 (Death-X-Evolution)입니다.",
       "source": "Wikimon",
       "source_badge": "위키몬",
@@ -326,7 +408,8 @@
       "link": "https://wikimon.net/Death-X-Evolution",
       "image": null,
       "timestamp": 1792084871,
-      "created_at": "2026-10-16 02:21"
+      "created_at": "2026-10-16 02:21",
+      "title_orig": "Death-X-Evolution"
     },
     {
       "id": "d058e8903dc8a8295429cec6e26de4ea",
@@ -334,8 +417,8 @@
       "snippet": "Wikimon에 새로 등록된 공식 신규 문서 (EX-14)입니다.",
       "source": "Wikimon",
       "source_badge": "위키몬",
-      "category": "general",
-      "category_name": "도감/위키",
+      "category": "card",
+      "category_name": "카드게임(TCG)",
       "link": "https://wikimon.net/EX-14",
       "image": null,
       "timestamp": 1792083076,
@@ -343,7 +426,7 @@
     },
     {
       "id": "1d92682f65d011e496c576e870b2f670",
-      "title": "[위키몬 신규] V-Pet",
+      "title": "[위키몬 신규] V펫",
       "snippet": "Wikimon에 새로 등록된 공식 신규 문서 (V-Pet)입니다.",
       "source": "Wikimon",
       "source_badge": "위키몬",
@@ -352,11 +435,12 @@
       "link": "https://wikimon.net/V-Pet",
       "image": null,
       "timestamp": 1792062821,
-      "created_at": "2026-10-15 20:13"
+      "created_at": "2026-10-15 20:13",
+      "title_orig": "V-Pet"
     },
     {
       "id": "8f28ef8d5d7fc3a79bed4bcc400f97a1",
-      "title": "[위키몬 신규] Malice Bot",
+      "title": "[위키몬 신규] 맬리스 봇",
       "snippet": "Wikimon에 새로 등록된 공식 신규 문서 (Malice Bot)입니다.",
       "source": "Wikimon",
       "source_badge": "위키몬",
@@ -365,11 +449,12 @@
       "link": "https://wikimon.net/Malice_Bot",
       "image": null,
       "timestamp": 1792062608,
-      "created_at": "2026-10-15 20:10"
+      "created_at": "2026-10-15 20:10",
+      "title_orig": "Malice Bot"
     },
     {
       "id": "a14fe5219a12430a384f68e7b7e053a1",
-      "title": "[위키몬 신규] Shaggai",
+      "title": "[위키몬 신규] 샤가이",
       "snippet": "Wikimon에 새로 등록된 공식 신규 문서 (Shaggai)입니다.",
       "source": "Wikimon",
       "source_badge": "위키몬",
@@ -378,11 +463,12 @@
       "link": "https://wikimon.net/Shaggai",
       "image": null,
       "timestamp": 1792062546,
-      "created_at": "2026-10-15 20:09"
+      "created_at": "2026-10-15 20:09",
+      "title_orig": "Shaggai"
     },
     {
       "id": "74b00ea663c93d9b439357eda1c6015b",
-      "title": "[위키몬 신규] Connect Jump",
+      "title": "[위키몬 신규] 커넥트 점프",
       "snippet": "Wikimon에 새로 등록된 공식 신규 문서 (Connect Jump)입니다.",
       "source": "Wikimon",
       "source_badge": "위키몬",
@@ -391,11 +477,12 @@
       "link": "https://wikimon.net/Connect_Jump",
       "image": null,
       "timestamp": 1792061975,
-      "created_at": "2026-10-15 19:59"
+      "created_at": "2026-10-15 19:59",
+      "title_orig": "Connect Jump"
     },
     {
       "id": "d78b98468b0bccb252d96b27d247d3bc",
-      "title": "[위키몬 신규] Mindlink",
+      "title": "[위키몬 신규] 마인드링크",
       "snippet": "Wikimon에 새로 등록된 공식 신규 문서 (Mindlink)입니다.",
       "source": "Wikimon",
       "source_badge": "위키몬",
@@ -404,11 +491,12 @@
       "link": "https://wikimon.net/Mindlink",
       "image": null,
       "timestamp": 1792061916,
-      "created_at": "2026-10-15 19:58"
+      "created_at": "2026-10-15 19:58",
+      "title_orig": "Mindlink"
     },
     {
       "id": "b1f53612fe15645bf855cbdb98d7e3c6",
-      "title": "[위키몬 신규] Nozomi Riko",
+      "title": "[위키몬 신규] 노조미 리코",
       "snippet": "Wikimon에 새로 등록된 공식 신규 문서 (Nozomi Riko)입니다.",
       "source": "Wikimon",
       "source_badge": "위키몬",
@@ -417,7 +505,8 @@
       "link": "https://wikimon.net/Nozomi_Riko",
       "image": null,
       "timestamp": 1792061810,
-      "created_at": "2026-10-15 19:56"
+      "created_at": "2026-10-15 19:56",
+      "title_orig": "Nozomi Riko"
     },
     {
       "id": "10a38b045d6ea64df61bb9275ca07ee1",
@@ -430,11 +519,26 @@
       "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE5LVkV0ZHdFanplR25feDlfX0J6aXk1eXhwQy1ITkx6Y2tfU3VQYjdnQzR5bVJ6YzlKQkdaMHAzcnRrNXpLV3FtekZVYW1aODNDOFlOenN3?oc=5",
       "image": null,
       "timestamp": 1792059171,
-      "created_at": "2026-10-15 19:12"
+      "created_at": "2026-10-15 10:12"
+    },
+    {
+      "id": "1abacbbd34c71ea80fb7f68b7215297a",
+      "title": "[일본뉴스] 【디지몬 UP】 워그레이몬의 평가와 성능",
+      "snippet": "【デジモンUP】ウォーグレイモンの評価と性能&nbsp;&nbsp;GameWith",
+      "source": "GameWith",
+      "source_badge": "일본뉴스",
+      "category": "general",
+      "category_name": "일반/뉴스",
+      "link": "https://news.google.com/rss/articles/CBMiTEFVX3lxTE1Cd3JrUXROODFIZTRhUnRrajQ2aUZUTjNfOHhUWkxGaFY1cDhOWHZ4Q1djTlJNdG56eEU5aTNLTWx4Q09DY0luQk5LV2E?oc=5",
+      "image": null,
+      "timestamp": 1792058088,
+      "created_at": "2026-10-15 09:54",
+      "title_orig": "【デジモンUP】ウォーグレイモンの評価と性能",
+      "title_ja": "【デジモンUP】ウォーグレイモンの評価と性能"
     },
     {
       "id": "905796d954c453aa7ba2cb6fb22f6d77",
-      "title": "[일본뉴스] 【デジモンUP】ニャロモンの性能と進化",
+      "title": "[일본뉴스] 【디지몬 UP】 야로몬의 성능과 진화",
       "snippet": "【デジモンUP】ニャロモンの性能と進化&nbsp;&nbsp;GameWith",
       "source": "GameWith",
       "source_badge": "일본뉴스",
@@ -443,11 +547,13 @@
       "link": "https://news.google.com/rss/articles/CBMiTEFVX3lxTE5RcTQwbllXZnEwbk1lQmRJcUNyZjJwUUREN2NUd2JqTW05dGFZeXcxdWxYUzVkUWw1QWhFcl9qb0Y5SUFQVjNMTVFmMDk?oc=5",
       "image": null,
       "timestamp": 1792058067,
-      "created_at": "2026-10-15 18:54"
+      "created_at": "2026-10-15 18:54",
+      "title_orig": "【デジモンUP】ニャロモンの性能と進化",
+      "title_ja": "【デジモンUP】ニャロモンの性能と進化"
     },
     {
       "id": "16c96d8c77947a11e0dc893846681870",
-      "title": "[일본뉴스] 【デジモンUP】紋章の入手方法と使い方",
+      "title": "[일본뉴스] 【디지몬 UP】 문장의 입수 방법과 사용법",
       "snippet": "【デジモンUP】紋章の入手方法と使い方&nbsp;&nbsp;GameWith",
       "source": "GameWith",
       "source_badge": "일본뉴스",
@@ -456,11 +562,13 @@
       "link": "https://news.google.com/rss/articles/CBMiTEFVX3lxTE1BUkMtUGNaaTdOQTdDMTlfYjFJQlFSU2xubXE1Vm02WW4wRTJ0Smp6Zm1JR3dmNXdaMDFDUjkwUW04MDdEZ2w1U1p1VHo?oc=5",
       "image": null,
       "timestamp": 1792057883,
-      "created_at": "2026-10-15 18:51"
+      "created_at": "2026-10-15 18:51",
+      "title_orig": "【デジモンUP】紋章の入手方法と使い方",
+      "title_ja": "【デジモンUP】紋章の入手方法と使い方"
     },
     {
       "id": "45973b027f5a6c099608a42f106a1a45",
-      "title": "[일본뉴스] 【デジモンUP】タクティカルメモリーの入手方法と使い方",
+      "title": "[일본뉴스] 【디지몬 UP】 택티컬 메모리의 입수 방법과 사용법",
       "snippet": "【デジモンUP】タクティカルメモリーの入手方法と使い方&nbsp;&nbsp;GameWith",
       "source": "GameWith",
       "source_badge": "일본뉴스",
@@ -469,11 +577,13 @@
       "link": "https://news.google.com/rss/articles/CBMiTEFVX3lxTFBLMjZsbDRSUTQzbUpjeHFpZm5QYTA2WnNocUNvekxfamJ1WFpoal9CcndxRjBJeng1LWpKUU03MjllM0dYcFRoOWdMbkc?oc=5",
       "image": null,
       "timestamp": 1792057866,
-      "created_at": "2026-10-15 18:51"
+      "created_at": "2026-10-15 18:51",
+      "title_orig": "【デジモンUP】タクティカルメモリーの入手方法と使い方",
+      "title_ja": "【デジモンUP】タクティカルメモリーの入手方法と使い方"
     },
     {
       "id": "2151914b6c1143e573e0e7bb5134d0cc",
-      "title": "[일본뉴스] 【デジモンUP】デジヴァイスの使い方 | フォルム変更",
+      "title": "[일본뉴스] 【디지몬 UP】 디지바이스 사용법 | 폼 변경",
       "snippet": "【デジモンUP】デジヴァイスの使い方 | フォルム変更&nbsp;&nbsp;GameWith",
       "source": "GameWith",
       "source_badge": "일본뉴스",
@@ -482,11 +592,13 @@
       "link": "https://news.google.com/rss/articles/CBMiTEFVX3lxTE5GTkNfSEFQcmtKdXFFTG1HS0t2dzBtRHBRRVRrVGIzQlF6cFNuSTdGQ0l1SEdWZ0wyX3JkNzQ0Y25MZVlUNDhWaHFZYXA?oc=5",
       "image": null,
       "timestamp": 1792057834,
-      "created_at": "2026-10-15 18:50"
+      "created_at": "2026-10-15 09:50",
+      "title_orig": "【デジモンUP】デジヴァイスの使い方 | フォルム変更",
+      "title_ja": "【デジモンUP】デジヴァイスの使い方 | フォルム変更"
     },
     {
       "id": "6a7fc69d3c4671d33f52a1c3a03e453e",
-      "title": "[일본뉴스] 【デジモンUP】開催中のガシャ(ガチャ)情報まとめ",
+      "title": "[일본뉴스] 【디지몬 UP】 개최 중인 가샤(가챠) 정보 정리",
       "snippet": "【デジモンUP】開催中のガシャ(ガチャ)情報まとめ&nbsp;&nbsp;GameWith",
       "source": "GameWith",
       "source_badge": "일본뉴스",
@@ -495,11 +607,13 @@
       "link": "https://news.google.com/rss/articles/CBMiTEFVX3lxTFBQMU9WRFVqRlRId3hPVWRRd1BPaVU4U3NqZkFZQmo5a3ZDaTgzWWNpOHdqRWV1d1BYUkw4U054TUVCd1dmdExxc1BHckg?oc=5",
       "image": null,
       "timestamp": 1792057796,
-      "created_at": "2026-10-15 18:49"
+      "created_at": "2026-10-15 18:49",
+      "title_orig": "【デジモンUP】開催中のガシャ(ガチャ)情報まとめ",
+      "title_ja": "【デジモンUP】開催中のガシャ(ガチャ)情報まとめ"
     },
     {
       "id": "5e13c54699a4ca612e8caf9f782052de",
-      "title": "[일본뉴스] 【デジモンUP】初心者向け序盤の効率的な進め方",
+      "title": "[일본뉴스] 【디지몬 UP】 초보자를 위한 초반 효율적인 진행 방법",
       "snippet": "【デジモンUP】初心者向け序盤の効率的な進め方&nbsp;&nbsp;GameWith",
       "source": "GameWith",
       "source_badge": "일본뉴스",
@@ -508,11 +622,13 @@
       "link": "https://news.google.com/rss/articles/CBMiTEFVX3lxTE9sVzdCYU5fejlBY19WVDA3ZTJIY3hYRi04UlBwYjVzLUpTMVVQUVdjOS1RY291WWc0WWJXOVVjTnRYUWR6MUFwVWQzUk4?oc=5",
       "image": null,
       "timestamp": 1792057776,
-      "created_at": "2026-10-15 18:49"
+      "created_at": "2026-10-15 09:49",
+      "title_orig": "【デジモンUP】初心者向け序盤の効率的な進め方",
+      "title_ja": "【デジモンUP】初心者向け序盤の効率的な進め方"
     },
     {
       "id": "7aaea59e5fd7d0c786cfa5edce8a1ef9",
-      "title": "[일본뉴스] 2026年12月開催「デジモンコンサート」のチケット販売情報が公開！ 総勢38キャラクターが“正装”姿で大集結したキービジュアルも解禁",
+      "title": "[일본뉴스] 2026년 12월 개최 「디지몬 콘서트」의 티켓 판매 정보 공개! 총 38개 캐릭터가 “정장” 차림으로 대집결한 키 비주얼도 해금",
       "snippet": "2026年12月開催「デジモンコンサート」のチケット販売情報が公開！ 総勢38キャラクターが“正装”姿で大集結したキービジュアルも解禁&nbsp;&nbsp;eeo",
       "source": "eeo",
       "source_badge": "일본뉴스",
@@ -521,11 +637,13 @@
       "link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE80Q25weGJ0ellxNFJnbVkxSEpJRE1HSnBzWWhnM080SDV0MDVCamRoUmsteFBnZkF5RENLTFNsNkdvLWZncVBMai1DT1ZuVkh5OVE0TA?oc=5",
       "image": null,
       "timestamp": 1792055067,
-      "created_at": "2026-10-15 18:04"
+      "created_at": "2026-10-15 09:04",
+      "title_orig": "2026年12月開催「デジモンコンサート」のチケット販売情報が公開！ 総勢38キャラクターが“正装”姿で大集結したキービジュアルも解禁",
+      "title_ja": "2026年12月開催「デジモンコンサート」のチケット販売情報が公開！ 総勢38キャラクターが“正装”姿で大集結したキービジュアルも解禁"
     },
     {
       "id": "5358cd3c4f310fe2ff771ed0865ba17b",
-      "title": "[일본뉴스] デジモンシリーズの歴史を\"音楽\"でつなぐスペシャルコンサート「DIGIMON CONCERT ～2026 Anniversary & BEATBREAK～」キービジュアル＆詳細情報解禁！",
+      "title": "[일본뉴스] 디지몬 시리즈의 역사를 \"음악\"으로 잇는 스페셜 콘서트 「DIGIMON CONCERT ～2026 Anniversary & BEATBREAK～」 키 비주얼 & 상세 정보 해금!",
       "snippet": "デジモンシリーズの歴史を\"音楽\"でつなぐスペシャルコンサート「DIGIMON CONCERT ～2026 Anniversary & BEATBREAK～」キービジュアル＆詳細情報解禁！&nbsp;&nbsp;PR TIMES",
       "source": "PR TIMES",
       "source_badge": "일본뉴스",
@@ -534,7 +652,22 @@
       "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTFBEaDRWcnNkbEFKb2pUNVRJZkNjci1uLUk0Y1RyV0NGZlA4V1QzQW1xTVY2R2ZILVp5Y3N1S1BYU2FTLVBkMjI0dE93SHdUSEZ6SVc4Q2J2ZzYxbVREeFVBWXFIXzFqbXJLZkE?oc=5",
       "image": null,
       "timestamp": 1792054802,
-      "created_at": "2026-10-15 18:00"
+      "created_at": "2026-10-15 09:00",
+      "title_orig": "デジモンシリーズの歴史を\"音楽\"でつなぐスペシャルコンサート「DIGIMON CONCERT ～2026 Anniversary & BEATBREAK～」キービジュアル＆詳細情報解禁！",
+      "title_ja": "デジモンシリーズの歴史を\"音楽\"でつなぐスペシャルコンサート「DIGIMON CONCERT ～2026 Anniversary & BEATBREAK～」キービジュアル＆詳細情報解禁！"
+    },
+    {
+      "id": "14a88d9e5b67d7bddfe590b2ad6ed20d",
+      "title": "[네이버] (도와주세요 ㅠㅠ)무한산 플레이중인 디지몬 이별 불가 : 디지몬 소울체이서 시즌4",
+      "snippet": "(도와주세요 ㅠㅠ)무한산 플레이중인 디지몬 이별 불가 : 디지몬 소울체이서 시즌4&nbsp;&nbsp;네이버 게임",
+      "source": "네이버 게임",
+      "source_badge": "네이버",
+      "category": "game",
+      "category_name": "게임/공식애니",
+      "link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQUUFaaFRVMnIwckRTR1ZxbVpfSFd1Nnl0MnFsTHFxa19xak5kU25GamotdkxBcTNCQkFwRG03c1FCbExYN0toSEl3dV9KcG80MWl0TUU3X0JBZUlfX3hCeTRlUlM1MHlHM0FrUmpVcklqSjREb3ZtUzFEZklTd1FPUU9UWjY?oc=5",
+      "image": null,
+      "timestamp": 1792051473,
+      "created_at": "2026-10-15 08:04"
     },
     {
       "id": "6d1e19590cc7d1d1033b094d3b0cc08e",
@@ -717,19 +850,6 @@
       "title_ja": "東宝大怪獣シリーズ メタルガルルモン：”G”侵食モード"
     },
     {
-      "id": "14a88d9e5b67d7bddfe590b2ad6ed20d",
-      "title": "[네이버] (도와주세요 ㅠㅠ)무한산 플레이중인 디지몬 이별 불가 : 디지몬 소울체이서 시즌4",
-      "snippet": "(도와주세요 ㅠㅠ)무한산 플레이중인 디지몬 이별 불가 : 디지몬 소울체이서 시즌4&nbsp;&nbsp;네이버 게임",
-      "source": "네이버 게임",
-      "source_badge": "네이버",
-      "category": "game",
-      "category_name": "게임/공식애니",
-      "link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQUUFaaFRVMnIwckRTR1ZxbVpfSFd1Nnl0MnFsTHFxa19xak5kU25GamotdkxBcTNCQkFwRG03c1FCbExYN0toSEl3dV9KcG80MWl0TUU3X0JBZUlfX3hCeTRlUlM1MHlHM0FrUmpVcklqSjREb3ZtUzFEZklTd1FPUU9UWjY?oc=5",
-      "image": null,
-      "timestamp": 1792049147,
-      "created_at": "2026-10-15 16:25"
-    },
-    {
       "id": "84667fbfa7b650761094a5be9abe6f37",
       "title": "[네이버] 디지몬 마스터즈 온라인",
       "snippet": "디지몬 마스터즈 온라인&nbsp;&nbsp;NAVER",
@@ -740,11 +860,26 @@
       "link": "https://news.google.com/rss/articles/CBMibkFVX3lxTE8wcldzYkdDV1hIWDR0cFJxLWw3eGIzVWNvM0g3WVJHcVV5dnZGc2dFTDQ3UUs5TXh2Vy1jQm9tbVJlbFJ5TER3RzU0Wm1aTFN4ejk0LTgtX0Y1dlVFOG53eHdLT2kyVmptRE1kQmd3?oc=5",
       "image": null,
       "timestamp": 1792031060,
-      "created_at": "2026-10-15 11:24"
+      "created_at": "2026-10-15 02:24"
+    },
+    {
+      "id": "022980d0abf1d6e057e20b9178c9f919",
+      "title": "[공식] 「DIGIMON CONCERT ~2026 Anniversary & BEATBREAK~」 키 비주얼 & 스페셜 게스트 해금! 티켓 정보도!",
+      "snippet": "디지몬 공식 사이트 ニュース",
+      "source": "digimon.net",
+      "source_badge": "디지몬웹",
+      "category": "game",
+      "category_name": "신작/공식속보",
+      "link": "https://digimon.net/topic/detail.php?id=2097",
+      "image": null,
+      "timestamp": 1792022400,
+      "created_at": "2026-10-15 00:00",
+      "title_orig": "「DIGIMON CONCERT ～2026 Anniversary & BEATBREAK～」キービジュアル＆スペシャルゲスト解禁！チケット情報も！",
+      "title_ja": "「DIGIMON CONCERT ～2026 Anniversary & BEATBREAK～」キービジュアル＆スペシャルゲスト解禁！チケット情報も！"
     },
     {
       "id": "216652505b219cf861149968f406ca8e",
-      "title": "[위키몬 신규] Melody",
+      "title": "[위키몬 신규] 멜로디",
       "snippet": "Wikimon에 새로 등록된 공식 신규 문서 (Melody)입니다.",
       "source": "Wikimon",
       "source_badge": "위키몬",
@@ -753,7 +888,8 @@
       "link": "https://wikimon.net/Melody",
       "image": null,
       "timestamp": 1791997834,
-      "created_at": "2026-10-15 02:10"
+      "created_at": "2026-10-15 02:10",
+      "title_orig": "Melody"
     },
     {
       "id": "fbccec4e03f43b4a4cf8942255877a65",
@@ -766,7 +902,7 @@
       "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTFBuazFQLUVRU1dTX1BXUVVxZnJ1MEloUENKcVZtcmVCek5acDM1dlMzcVFmS1h0RF9ERHEyZlJhWEpiWWU3UEdQTzJFS3VKTjVtcHpCTU5yRDFIVTExZnlXRkxrNVo?oc=5",
       "image": null,
       "timestamp": 1791991800,
-      "created_at": "2026-10-15 00:30"
+      "created_at": "2026-10-14 15:30"
     },
     {
       "id": "227983839bec8106abf8df05bf815050",
@@ -782,19 +918,17 @@
       "created_at": "2026-10-15 00:30"
     },
     {
-      "id": "022980d0abf1d6e057e20b9178c9f919",
-      "title": "[공식] 「DIGIMON CONCERT ~2026 Anniversary & BEATBREAK~」 키 비주얼 & 스페셜 게스트 해금! 티켓 정보도!",
-      "snippet": "디지몬 공식 사이트 ニュース",
-      "source": "digimon.net",
-      "source_badge": "디지몬웹",
-      "category": "game",
-      "category_name": "신작/공식속보",
-      "link": "https://digimon.net/topic/detail.php?id=2097",
+      "id": "0e5938a04b310f6d9d9f07e97d16fa0e",
+      "title": "[트윗] [🎬] 포켓몬 vs 디지몬 https://t.co/yncmt3Kq4E #ATEEZ #에이티즈 #9트쫑 - X",
+      "snippet": "X(트위터) 디지몬 공식/굿즈 속보 트윗입니다.",
+      "source": "X(트위터)",
+      "source_badge": "X(트위터)",
+      "category": "sns",
+      "category_name": "SNS/해외",
+      "link": "https://news.google.com/rss/articles/CBMib0FVX3lxTE9WVFBWWndtVkFIMnJDVldrVnRNd0NTWjJsV0FNWjROTG9OdG1DVTZuazV1QzhnLVMwaDdWZnJ6dVR5RWF4S1M3NjNibDZpeXpZUFc5V2Noa0hWeVlaMFdjb1NUekJ6WkxHYU5RU3p1UQ?oc=5",
       "image": null,
-      "timestamp": 1791990000,
-      "created_at": "2026-10-15 00:00",
-      "title_orig": "「DIGIMON CONCERT ～2026 Anniversary & BEATBREAK～」キービジュアル＆スペシャルゲスト解禁！チケット情報も！",
-      "title_ja": "「DIGIMON CONCERT ～2026 Anniversary & BEATBREAK～」キービジュアル＆スペシャルゲスト解禁！チケット情報も！"
+      "timestamp": 1791991800,
+      "created_at": "2026-10-14 15:30"
     },
     {
       "id": "d85cf9c43e7fd95c6201190cc28e2185",
@@ -820,7 +954,7 @@
       "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE42QnM2WHg2eGVFZnBlZnN5RHJZU0hiRlphUDFXYVowQ3dYenFWUkdQMzZDbzJ0RUFoc3lSX0F6TUNnbUcwT2R1WWpibTA5dGctY0p3LUNScGFzYjBiNFdzZE1BMVM4dW96SnRXSQ?oc=5",
       "image": null,
       "timestamp": 1791970360,
-      "created_at": "2026-10-14 18:32"
+      "created_at": "2026-10-14 09:32"
     },
     {
       "id": "978df55d7a8f8b20d39d60b3582c6a7e",
@@ -833,24 +967,11 @@
       "link": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE1WNXc2aHZuR1h3OTMzVVYzaEd3SFRQaGM4dkFIU1lNMGtzZXlWNEhVNEpqZ0dGYXpJM3FsTklLZkE1VDMwakFoeEtyeVRwS3lnSUdVUXBKcVZGM0R5aVpGNDZR?oc=5",
       "image": null,
       "timestamp": 1791970360,
-      "created_at": "2026-10-14 18:32"
-    },
-    {
-      "id": "1abacbbd34c71ea80fb7f68b7215297a",
-      "title": "[일본뉴스] 【デジモンUP】ウォーグレイモンの評価と性能",
-      "snippet": "【デジモンUP】ウォーグレイモンの評価と性能&nbsp;&nbsp;GameWith",
-      "source": "GameWith",
-      "source_badge": "일본뉴스",
-      "category": "general",
-      "category_name": "일반/뉴스",
-      "link": "https://news.google.com/rss/articles/CBMiTEFVX3lxTE1Cd3JrUXROODFIZTRhUnRrajQ2aUZUTjNfOHhUWkxGaFY1cDhOWHZ4Q1djTlJNdG56eEU5aTNLTWx4Q09DY0luQk5LV2E?oc=5",
-      "image": null,
-      "timestamp": 1791966093,
-      "created_at": "2026-10-14 17:21"
+      "created_at": "2026-10-14 09:32"
     },
     {
       "id": "3181f48d61870eb23a987226cd787ad5",
-      "title": "[일본뉴스] 【デジモンUP】ワームモンの評価と性能",
+      "title": "[일본뉴스] 【디지몬 UP】 웜몬의 평가와 성능",
       "snippet": "【デジモンUP】ワームモンの評価と性能&nbsp;&nbsp;GameWith",
       "source": "GameWith",
       "source_badge": "일본뉴스",
@@ -859,11 +980,13 @@
       "link": "https://news.google.com/rss/articles/CBMiTEFVX3lxTE9KTm1HZTIwZGlWdk9RVjVlYTZwdnZrbHNGZnRvUHRybjA2OE13czVydzhVNjl6NkJpSDJJQ2lTWnZ2aFphbVJoMnlxclo?oc=5",
       "image": null,
       "timestamp": 1791966067,
-      "created_at": "2026-10-14 17:21"
+      "created_at": "2026-10-14 17:21",
+      "title_orig": "【デジモンUP】ワームモンの評価と性能",
+      "title_ja": "【デジモンUP】ワームモンの評価と性能"
     },
     {
       "id": "c6c7593b3e8ab3871230d97581c56d3a",
-      "title": "[일본뉴스] 【デジモンUP】ムゲンドラモン(SP Ver.)の評価と性能",
+      "title": "[일본뉴스] 【디지몬 UP】 파워드라몬(SP Ver.)의 평가와 성능",
       "snippet": "【デジモンUP】ムゲンドラモン(SP Ver.)の評価と性能&nbsp;&nbsp;GameWith",
       "source": "GameWith",
       "source_badge": "일본뉴스",
@@ -872,11 +995,13 @@
       "link": "https://news.google.com/rss/articles/CBMiTEFVX3lxTE1scXpJWUxkbzRFUWdOWFVxRW9USWNuY1lRMGFTdWtQRHViTDllZkNKX2t1akxab20zcUl5d1c5dHZ1VWFMc29PX1VsNm4?oc=5",
       "image": null,
       "timestamp": 1791966019,
-      "created_at": "2026-10-14 17:20"
+      "created_at": "2026-10-14 08:20",
+      "title_orig": "【デジモンUP】ムゲンドラモン(SP Ver.)の評価と性能",
+      "title_ja": "【デジモンUP】ムゲンドラモン(SP Ver.)の評価と性能"
     },
     {
       "id": "ce964821934f93b5645ab91d66f002a6",
-      "title": "[하비뉴스] デュークモン、サクヤモン、ベルゼブモンのフィギュアをラインナップ！「一番くじ 「デジモン」シリーズ -Matrix Evolution-」が2027年3月24日発売予定",
+      "title": "[하비뉴스] 듀크몬, 사쿠야몬, 베르제브몬 피규어를 라인업! 「이치방쿠지 「디지몬」 시리즈 -Matrix Evolution-」이 2027년 3월 24일 발매 예정",
       "snippet": "デュークモン、サクヤモン、ベルゼブモンのフィギュアをラインナップ！「一番くじ 「デジモン」シリーズ -Matrix Evolution-」が2027年3月24日発売予定&nbsp;&nbsp;電撃ホビーウェブ",
       "source": "전격하비",
       "source_badge": "하비뉴스",
@@ -885,7 +1010,9 @@
       "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE9HVExTUENrOHpGQTFBVEx1aVRDdkZ0dkl4YjBMeEtkb053N0tLaE5JVW1JRi1SeHJTNUc3REVBbS1CaFNDZE1kMDl5dG5UYlAt?oc=5",
       "image": null,
       "timestamp": 1791960300,
-      "created_at": "2026-10-14 15:45"
+      "created_at": "2026-10-14 06:45",
+      "title_orig": "デュークモン、サクヤモン、ベルゼブモンのフィギュアをラインナップ！「一番くじ 「デジモン」シリーズ -Matrix Evolution-」が2027年3月24日発売予定",
+      "title_ja": "デュークモン、サクヤモン、ベルゼブモンのフィギュアをラインナップ！「一番くじ 「デジモン」シリーズ -Matrix Evolution-」が2027年3月24日発売予定"
     },
     {
       "id": "21c9fed7a072662079adae6d94e89dcb",
@@ -897,14 +1024,14 @@
       "category_name": "일반/뉴스",
       "link": "https://digimon.net/topic/detail.php?id=2096",
       "image": null,
-      "timestamp": 1791903600,
+      "timestamp": 1791936000,
       "created_at": "2026-10-14 00:00",
       "title_orig": "第159回デジ民投票スタート",
       "title_ja": "第159回デジ民投票スタート"
     },
     {
       "id": "9eaf4970fa67fb56e67d53ebab86ca06",
-      "title": "[일본뉴스] 「デジタルモンスター」は誕生25周年！記念展示イベント「デジモンミュージアム」が7月29日から秋葉原にて開催",
+      "title": "[일본뉴스] 「디지털 몬스터」는 탄생 25주년! 기념 전시 이벤트 「디지몬 뮤지엄」이 7월 29일부터 아키하바라에서 개최",
       "snippet": "「デジタルモンスター」は誕生25周年！記念展示イベント「デジモンミュージアム」が7月29日から秋葉原にて開催&nbsp;&nbsp;Gamer",
       "source": "Gamer",
       "source_badge": "일본뉴스",
@@ -913,11 +1040,13 @@
       "link": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE1qc1FHZFlYLTJEV1hBeU1hQzM3MkkxZ1htUTN6c1ZPekhaeGpEOXA2XzljeFBzMGlUMGdjSlRiQjQ2blpETEhxZ1NBVU5vSE4zbGlvdmhrV0owblFMcVE?oc=5",
       "image": null,
       "timestamp": 1791892026,
-      "created_at": "2026-10-13 20:47"
+      "created_at": "2026-10-13 11:47",
+      "title_orig": "「デジタルモンスター」は誕生25周年！記念展示イベント「デジモンミュージアム」が7月29日から秋葉原にて開催",
+      "title_ja": "「デジタルモンスター」は誕生25周年！記念展示イベント「デジモンミュージアム」が7月29日から秋葉原にて開催"
     },
     {
       "id": "a402be83be20023d96919e98b4d854b9",
-      "title": "[일본뉴스] 「デジモン」新作一番くじに迫力フィギュア多数！デュークモンやサクヤモン、ベルゼブモンを「魂豪示像」で立体化（インサイド）",
+      "title": "[일본뉴스] 「디지몬」 신작 이치방쿠지에 박력 피규어 다수! 듀크몬과 사쿠야몬, 베르제브몬을 「혼고지지」로 입체화 (인사이드)",
       "snippet": "「デジモン」新作一番くじに迫力フィギュア多数！デュークモンやサクヤモン、ベルゼブモンを「魂豪示像」で立体化（インサイド）&nbsp;&nbsp;Yahoo!ニュース",
       "source": "Yahoo!ニュース",
       "source_badge": "일본뉴스",
@@ -926,7 +1055,24 @@
       "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9UVktVT2Y1WDhBY2hKT0x2ZUM4OTNPNmdDb01RS0wwaTZfMXJXb19EYTllMkVjd2l4UW1XTFc1ZWpuLVJ2VHRvS3Z5M21ZSE15cWQwYWktcGR2OXB6RDFqNzh3Ylc3dDU1TE9KeXR2dlZuQWZ2R3pHVFNZNndMRXM?oc=5",
       "image": null,
       "timestamp": 1791886503,
-      "created_at": "2026-10-13 19:15"
+      "created_at": "2026-10-13 10:15",
+      "title_orig": "「デジモン」新作一番くじに迫力フィギュア多数！デュークモンやサクヤモン、ベルゼブモンを「魂豪示像」で立体化（インサイド）",
+      "title_ja": "「デジモン」新作一番くじに迫力フィギュア多数！デュークモンやサクヤモン、ベルゼブモンを「魂豪示像」で立体化（インサイド）"
+    },
+    {
+      "id": "e6afc44839109c81a444d34ad541fafd",
+      "title": "[일본뉴스] 「디지몬」 신작 제일복권에 박력 넘치는 피규어 다수! 듀크몬과 사쿠야몬, 베르제브몬을 「혼호시상」으로 입체화",
+      "snippet": "「デジモン」新作一番くじに迫力フィギュア多数！デュークモンやサクヤモン、ベルゼブモンを「魂豪示像」で立体化&nbsp;&nbsp;インサイド",
+      "source": "インサイド",
+      "source_badge": "일본뉴스",
+      "category": "game",
+      "category_name": "신작/공식속보",
+      "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTFBaY3lMeTQ5OUhxaV9XdHJFMjFkUTBnbzRkZXZ4cWcyc2ZZNF85U2Vva0JNbjdDcFlsS3lEU2pPS2NPb0pmQkY4TWVyaDBJSjRmM01jb0h5bS1ORDZ4NVMyWUJlb1VENlh4bkE?oc=5",
+      "image": null,
+      "timestamp": 1791886503,
+      "created_at": "2026-10-13 10:15",
+      "title_orig": "「デジモン」新作一番くじに迫力フィギュア多数！デュークモンやサクヤモン、ベルゼブモンを「魂豪示像」で立体化",
+      "title_ja": "「デジモン」新作一番くじに迫力フィギュア多数！デュークモンやサクヤモン、ベルゼブモンを「魂豪示像」で立体化"
     },
     {
       "id": "c2e18c08cc8afe89866a8715926b0395",
@@ -938,7 +1084,7 @@
       "category_name": "피규어/굿즈",
       "link": "https://bbs.ruliweb.com/family/242/board/300017/read/2438156?search_type=subject&search_key=%EB%94%94%EC%A7%80%EB%AA%AC",
       "image": null,
-      "timestamp": 1791817200,
+      "timestamp": 1791849600,
       "created_at": "2026-10-13 00:00"
     },
     {
@@ -951,7 +1097,7 @@
       "category_name": "피규어/굿즈",
       "link": "https://bbs.ruliweb.com/family/242/board/300017/read/2438156?search_type=subject&search_key=%EC%9D%B4%EC%B9%98%EB%B0%A9%EC%BF%A0%EC%A7%80+%EB%94%94%EC%A7%80%EB%AA%AC",
       "image": null,
-      "timestamp": 1791817200,
+      "timestamp": 1791849600,
       "created_at": "2026-10-13 00:00"
     },
     {
@@ -965,7 +1111,20 @@
       "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTE95LW1qODZPTEQwRGlKMUhZMm1YWFlWbV85QTV2Y0VteFBXQzNIb1EtLTdwMU1JQVpMRUVWbG1Oa1c4ZTNaX0stOWN2NFdzT1Qta2t2NDF6ZDFDemE1RmRtOUZ1bnBmdlFuSmZB?oc=5",
       "image": null,
       "timestamp": 1791746715,
-      "created_at": "2026-10-12 04:25"
+      "created_at": "2026-10-11 19:25"
+    },
+    {
+      "id": "154ff74339760f1113de53bd98ad8a40",
+      "title": "[루리웹] 디지몬: 월드 베스트 픽 - 디지몬 어드벤처: 표류? 모험의 섬! (제1...",
+      "snippet": "루리웹 애니정보 디지몬 최신 소식입니다.",
+      "source": "루리웹 애니정보",
+      "source_badge": "루리웹",
+      "category": "game",
+      "category_name": "게임/공식애니",
+      "link": "https://bbs.ruliweb.com/family/211/board/300015/read/2437991?search_type=subject&search_key=%EB%94%94%EC%A7%80%EB%AA%AC",
+      "image": null,
+      "timestamp": 1791676800,
+      "created_at": "2026-10-11 00:00"
     },
     {
       "id": "34ff770d3d63eb1ec95e7227dad44393",
@@ -978,20 +1137,7 @@
       "link": "https://news.google.com/rss/articles/CBMibkFVX3lxTE02Z0tjRTRTWHQ3YW9ybUZNMmM3bEQtVXdZZGZuN1NQS1F3UmNNLUNPWGZKa2QzLWZjMDJvTUp5bWNocmdVTndQTEVJUklNWkRjczVqanpDVmh3THN1d2ZvUlJPRmxzdGRDR19jakt3?oc=5",
       "image": null,
       "timestamp": 1791670379,
-      "created_at": "2026-10-11 07:12"
-    },
-    {
-      "id": "154ff74339760f1113de53bd98ad8a40",
-      "title": "[루리웹] 디지몬: 월드 베스트 픽 - 디지몬 어드벤처: 표류? 모험의 섬! (제1...",
-      "snippet": "루리웹 애니정보 디지몬 최신 소식입니다.",
-      "source": "루리웹 애니정보",
-      "source_badge": "루리웹",
-      "category": "game",
-      "category_name": "게임/공식애니",
-      "link": "https://bbs.ruliweb.com/family/211/board/300015/read/2437991?search_type=subject&search_key=%EB%94%94%EC%A7%80%EB%AA%AC",
-      "image": null,
-      "timestamp": 1791644400,
-      "created_at": "2026-10-11 00:00"
+      "created_at": "2026-10-10 22:12"
     },
     {
       "id": "9a1db30d038034a1ec60aef113101da0",
@@ -1004,7 +1150,7 @@
       "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTFBnNHNrT3dtQ0FLTHE4UEl1RFg3Y3d2R01KMEwtSXFxMkhMb3VMSnZHNUFMNTVoNEh4eFcxMGVBUGhqdlhzQXpDSzA5d1VETmJEYU92Q1FmT3FqY0JkMmpzUjladE83LWlMSnRR?oc=5",
       "image": null,
       "timestamp": 1791634382,
-      "created_at": "2026-10-10 21:13"
+      "created_at": "2026-10-10 12:13"
     },
     {
       "id": "15df92fdc01d2878492ea11e2bab28d2",
@@ -1017,11 +1163,11 @@
       "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTE9XSlhuRkNScGU2bkUydGtNRTVGcVhjekxKU0pqZlhKVmtGTnBiR3d2WkFGZm9lTTlTZXNHZ2dXcGpnQTRMZUcxdWI5a2NBbnFXYkJ0bW1oUkVScE9pMElsZE9wMVhDMVBpekVr?oc=5",
       "image": null,
       "timestamp": 1791618349,
-      "created_at": "2026-10-10 16:45"
+      "created_at": "2026-10-10 07:45"
     },
     {
       "id": "1e2542a34b1a833e1800ea65186cd597",
-      "title": "[인스타] Taichi Yagami Digimon Adventure . #lego #legomoc #legostagram #digimon #digimonadventure",
+      "title": "[인스타] 야가미 타이치(신태일) 디지몬 어드벤처 . #lego #legomoc #legostagram #digimon #digimonadventure",
       "snippet": "인스타그램 디지몬 관련 공개 게시물입니다.",
       "source": "Instagram",
       "source_badge": "인스타그램",
@@ -1030,7 +1176,8 @@
       "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFA1MVhwSkg1bVZLd0pXNHdKS2FnZjZpaTJubnlRQklNcDhhN19DMVlQMUJNQi1DZXVRZVY0MzBxUlQ2QjhDX1VpTmhoMGxoUFE2eVE?oc=5",
       "image": null,
       "timestamp": 1791604714,
-      "created_at": "2026-10-10 12:58"
+      "created_at": "2026-10-10 03:58",
+      "title_orig": "Taichi Yagami Digimon Adventure . #lego #legomoc #legostagram #digimon #digimonadventure"
     },
     {
       "id": "b4545a9f2e9f082c3a05979b37fac85b",
@@ -1069,7 +1216,7 @@
       "link": "https://news.google.com/rss/articles/CBMib0FVX3lxTE5IakZFNERpejJ4ZmNjWkd5VkQta3JVcGF4T3pqS1F0aW1QYXhYajF6LUc3Q3pSNG1GTmU1V0RkaTF5SS1raHktMVhCVWFwaDEyR2JKR25YR09CNkhpYjRPOHdaYlBJWVNVdE9oNnJUVQ?oc=5",
       "image": null,
       "timestamp": 1791522509,
-      "created_at": "2026-10-09 14:08"
+      "created_at": "2026-10-09 05:08"
     },
     {
       "id": "d58bdab8b49f2403b6614dc29a3e9b0b",
@@ -1094,7 +1241,7 @@
       "category_name": "피규어/굿즈",
       "link": "https://bbs.ruliweb.com/family/242/board/300017/read/2437832?search_type=subject&search_key=%EB%94%94%EC%A7%80%EB%AA%AC",
       "image": null,
-      "timestamp": 1791471600,
+      "timestamp": 1791504000,
       "created_at": "2026-10-09 00:00"
     },
     {
@@ -1107,7 +1254,7 @@
       "category_name": "피규어/굿즈",
       "link": "https://bbs.ruliweb.com/family/242/board/300017/read/2437832?search_type=subject&search_key=%EC%9D%B4%EC%B9%98%EB%B0%A9%EC%BF%A0%EC%A7%80+%EB%94%94%EC%A7%80%EB%AA%AC",
       "image": null,
-      "timestamp": 1791471600,
+      "timestamp": 1791504000,
       "created_at": "2026-10-09 00:00"
     },
     {
@@ -1120,14 +1267,14 @@
       "category_name": "일반/뉴스",
       "link": "https://digimon.net/topic/detail.php?id=2080",
       "image": null,
-      "timestamp": 1791471600,
+      "timestamp": 1791504000,
       "created_at": "2026-10-09 00:00",
       "title_orig": "デジモン図鑑に、新たにスズモン、セキリュウモン、ルートモン、フィカスモン を追加！",
       "title_ja": "デジモン図鑑に、新たにスズモン、セキリュウモン、ルートモン、フィカスモン を追加！"
     },
     {
       "id": "f94ccaebb5a67ed418b94114bd66f2b6",
-      "title": "[하비뉴스] 【限定販売】G.E.M.シリーズ デジモンテイマーズ レナモン＆牧野留姫 完成品フィギュア（再販）[メガハウス]《０６月予約》",
+      "title": "[하비뉴스] 【한정 판매】G.E.M. 시리즈 디지몬 테이머즈 레나몬 & 마키노 루키 완성품 피규어 (재판) [메가하우스] 《06월 예약》",
       "snippet": "【限定販売】G.E.M.シリーズ デジモンテイマーズ レナモン＆牧野留姫 完成品フィギュア（再販）[メガハウス]《０６月予約》&nbsp;&nbsp;あみあみ",
       "source": "아미아미",
       "source_badge": "하비뉴스",
@@ -1136,7 +1283,9 @@
       "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTE5Bc2V0dERKQ1dBRUJ3SjJBdWMwMWhFREZULVBtdjlxcFNUY2EzRm5URk9qRHIwY0w1MTlTMDFLbEdYdnhpT0lnU2o2YjZiamdQVzVfYkdtelhJRGtrMEhoOS1XV2JuOEtaZWpZ?oc=5",
       "image": null,
       "timestamp": 1791454611,
-      "created_at": "2026-10-08 19:16"
+      "created_at": "2026-10-08 10:16",
+      "title_orig": "【限定販売】G.E.M.シリーズ デジモンテイマーズ レナモン＆牧野留姫 完成品フィギュア（再販）[メガハウス]《０６月予約》",
+      "title_ja": "【限定販売】G.E.M.シリーズ デジモンテイマーズ レナモン＆牧野留姫 完成品フィギュア（再販）[メガハウス]《０６月予約》"
     },
     {
       "id": "feb6551d917863da83a6b53a16f8d4cc",
@@ -1149,11 +1298,11 @@
       "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxPVGRFZmJBcFhjdlNxVHpKR3QxTTV2ODRiTXkxZ1B4TzdhVkV4Y0hvNU5HdUpDUEJiRUN2OXFIZlNxUDRoMVNOMGl6SXBkaEd6anlUTExuUFktd2trNk1QTWx1ZjVhYS05ZjllVVNETERWb1NWNVJjUEdXaThSQ2FVRg?oc=5",
       "image": null,
       "timestamp": 1791442800,
-      "created_at": "2026-10-08 16:00"
+      "created_at": "2026-10-08 07:00"
     },
     {
       "id": "98c8e1abdc0a703c2757ec8f803c6a74",
-      "title": "[해외뉴스] Digimon World 2003 PC Recomp | KendoGarurumon playable test",
+      "title": "[해외뉴스] 디지몬 월드 2003 PC 리컴프 | 가룸몬 플레이 테스트",
       "snippet": "Digimon World 2003 PC Recomp | KendoGarurumon playable test&nbsp;&nbsp;YouTube",
       "source": "YouTube",
       "source_badge": "해외뉴스",
@@ -1162,20 +1311,8 @@
       "link": "https://news.google.com/rss/articles/CBMiQkFVX3lxTE02UFhCRXFwVU9sbENOa2FhVUxpU1JiYTZCanZSRmpoWlB0TjdLRWllaHZxX3VpZTVFVUdJVDVfeXpmUQ?oc=5",
       "image": null,
       "timestamp": 1791439521,
-      "created_at": "2026-10-08 15:05"
-    },
-    {
-      "id": "d1d506b9c5707876b3d66182226f6b31",
-      "title": "[하비뉴스] 『デジモンテイマーズ』より、クールビューティーで人気の高いレナモン＆牧野留姫がG.E.M.シリーズから再販！凛とした表情で相手を見据える姿で立体化！",
-      "snippet": "『デジモンテイマーズ』より、クールビューティーで人気の高いレナモン＆牧野留姫がG.E.M.シリーズから再販！凛とした表情で相手を見据える姿で立体化！&nbsp;&nbsp;電撃ホビーウェブ",
-      "source": "전격하비",
-      "source_badge": "하비뉴스",
-      "category": "figure",
-      "category_name": "피규어/굿즈",
-      "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE44R0pvVVY5TW9uWHRmb2NmWmNZYnE3MDhYcFZfZ2t0MFFsRFZDaDk3c0pRSFBHRTVwc3BvQV91SXZmS3Rxc0NIdThsb3AtZk1S?oc=5",
-      "image": null,
-      "timestamp": 1791414000,
-      "created_at": "2026-10-08 08:00"
+      "created_at": "2026-10-08 06:05",
+      "title_orig": "Digimon World 2003 PC Recomp | KendoGarurumon playable test"
     },
     {
       "id": "d7b537b8b500ca589aa177840d9be5d2",
@@ -1187,14 +1324,29 @@
       "category_name": "피규어/굿즈",
       "link": "https://digimon.net/topic/detail.php?id=2095",
       "image": null,
-      "timestamp": 1791385200,
+      "timestamp": 1791417600,
       "created_at": "2026-10-08 00:00",
       "title_orig": "「レナモン」と「牧野留姫」がG.E.M.シリーズに再登場！",
       "title_ja": "「レナモン」と「牧野留姫」がG.E.M.シリーズに再登場！"
     },
     {
+      "id": "d1d506b9c5707876b3d66182226f6b31",
+      "title": "[하비뉴스] 『디지몬 테이머즈』에서 쿨뷰티로 인기가 높은 레나몬 & 마키노 루키가 G.E.M. 시리즈로 재판! 늠름한 표정으로 상대를 응시하는 모습으로 입체화!",
+      "snippet": "『デジモンテイマーズ』より、クールビューティーで人気の高いレナモン＆牧野留姫がG.E.M.シリーズから再販！凛とした表情で相手を見据える姿で立体化！&nbsp;&nbsp;電撃ホビーウェブ",
+      "source": "전격하비",
+      "source_badge": "하비뉴스",
+      "category": "figure",
+      "category_name": "피규어/굿즈",
+      "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE44R0pvVVY5TW9uWHRmb2NmWmNZYnE3MDhYcFZfZ2t0MFFsRFZDaDk3c0pRSFBHRTVwc3BvQV91SXZmS3Rxc0NIdThsb3AtZk1S?oc=5",
+      "image": null,
+      "timestamp": 1791414000,
+      "created_at": "2026-10-07 23:00",
+      "title_orig": "『デジモンテイマーズ』より、クールビューティーで人気の高いレナモン＆牧野留姫がG.E.M.シリーズから再販！凛とした表情で相手を見据える姿で立体化！",
+      "title_ja": "『デジモンテイマーズ』より、クールビューティーで人気の高いレナモン＆牧野留姫がG.E.M.シリーズから再販！凛とした表情で相手を見据える姿で立体化！"
+    },
+    {
       "id": "ba091baf0b45ce64835d5801715996e8",
-      "title": "[해외뉴스] DIGIMON STORY TIME STRANGER’s demo is now available on Nintendo Switch and Nintendo Switch 2!",
+      "title": "[해외뉴스] 『디지몬 스토리: 타임 스트레인저』의 체험판을 지금 닌텐도 스위치 및 닌텐도 스위치 2에서 플레이할 수 있습니다!",
       "snippet": "DIGIMON STORY TIME STRANGER’s demo is now available on Nintendo Switch and Nintendo Switch 2!&nbsp;&nbsp;Bandai Namco Eu",
       "source": "Bandai Namco Europe",
       "source_badge": "해외뉴스",
@@ -1203,11 +1355,12 @@
       "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxOZV92M2ZlbmdWNHNwdGt3SURMNGJ4YlFPVHIyUTNUbEVESzBwVkpXSmI3bzMwMGlwZWMzX3dDY1lGU2ZwSElNMnEwSFNGZVBXQUhaZmtQUlFkeWduSEZCMUtmcEJ3QUM1RlFUZXIxWnVJeEdvZ0VYRWdONkRMLVgtcnE0N3JNWGtqQmFYeVNCamJqNHlfUEV4SkFWVWp2MFZMckJDSGc2TFBpRkMxWTRPTkxJcGVuaWNMNzFxanpFWTBkR0E5V0E?oc=5",
       "image": null,
       "timestamp": 1791270000,
-      "created_at": "2026-10-06 16:00"
+      "created_at": "2026-10-06 07:00",
+      "title_orig": "DIGIMON STORY TIME STRANGER’s demo is now available on Nintendo Switch and Nintendo Switch 2!"
     },
     {
       "id": "caee68680c74e0c5b7947b58e64e4f8b",
-      "title": "[해외뉴스] Every Digimon Anime Series of the Last 10 Years, Ranked Worst to Best",
+      "title": "[해외뉴스] 지난 10년간의 디지몬 애니메이션 시리즈 순위, 최악부터 최고까지",
       "snippet": "Every Digimon Anime Series of the Last 10 Years, Ranked Worst to Best&nbsp;&nbsp;IMDb",
       "source": "IMDb",
       "source_badge": "해외뉴스",
@@ -1216,7 +1369,8 @@
       "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE0tMFc5ZE5sMmNBSGRwWlFobUdjc01vRGxUM21xTFdDdHJ0WGZqMmNvb0dRempTSm9Dby1wZW0tSEN0VVZRa2JMVUdsZmRWcW1kSkhUREpqTjlkMDVpTUN6Wg?oc=5",
       "image": null,
       "timestamp": 1791253007,
-      "created_at": "2026-10-06 11:16"
+      "created_at": "2026-10-06 02:16",
+      "title_orig": "Every Digimon Anime Series of the Last 10 Years, Ranked Worst to Best"
     },
     {
       "id": "8775e49451b58ae67d756234b773145a",
@@ -1228,7 +1382,7 @@
       "category_name": "게임/공식애니",
       "link": "https://bbs.ruliweb.com/family/211/board/300015/read/2437206?search_type=subject&search_key=%EB%94%94%EC%A7%80%EB%AA%AC",
       "image": null,
-      "timestamp": 1791039600,
+      "timestamp": 1791072000,
       "created_at": "2026-10-04 00:00"
     },
     {
@@ -1256,10 +1410,23 @@
       "category_name": "일반/뉴스",
       "link": "https://digimon.net/topic/detail.php?id=2094",
       "image": null,
-      "timestamp": 1790953200,
+      "timestamp": 1790985600,
       "created_at": "2026-10-03 00:00",
       "title_orig": "『僕らが選んだベストアドベンチャー』最新配信情報をUP！",
       "title_ja": "『僕らが選んだベストアドベンチャー』最新配信情報をUP！"
+    },
+    {
+      "id": "4a580da97f5df6d450c37668fe193c0a",
+      "title": "[루리웹] 디지몬 스토리 타임 스트레인저. 출시 1주년 기념 일러스트 공개",
+      "snippet": "루리웹 콘솔뉴스 디지몬 최신 소식입니다.",
+      "source": "루리웹 콘솔뉴스",
+      "source_badge": "루리웹",
+      "category": "game",
+      "category_name": "게임/공식애니",
+      "link": "https://bbs.ruliweb.com/news/board/1001/read/2363888?search_type=subject&search_key=%EB%94%94%EC%A7%80%EB%AA%AC",
+      "image": null,
+      "timestamp": 1790985600,
+      "created_at": "2026-10-03 00:00"
     },
     {
       "id": "29cd29b9087b87aed674a57ba9d56fe8",
@@ -1277,21 +1444,8 @@
       "title_ja": "デジモンカードゲーム エクストラブースター CHIVALROUS XIII 【EX-13】"
     },
     {
-      "id": "4a580da97f5df6d450c37668fe193c0a",
-      "title": "[루리웹] 디지몬 스토리 타임 스트레인저. 출시 1주년 기념 일러스트 공개",
-      "snippet": "루리웹 콘솔뉴스 디지몬 최신 소식입니다.",
-      "source": "루리웹 콘솔뉴스",
-      "source_badge": "루리웹",
-      "category": "game",
-      "category_name": "게임/공식애니",
-      "link": "https://bbs.ruliweb.com/news/board/1001/read/2363888?search_type=subject&search_key=%EB%94%94%EC%A7%80%EB%AA%AC",
-      "image": null,
-      "timestamp": 1790953200,
-      "created_at": "2026-10-03 00:00"
-    },
-    {
       "id": "bcc921907b294ccfa3123ad02969db2a",
-      "title": "[해외뉴스] Digimon World 1 Remaster HD Part 1 Showcase",
+      "title": "[해외뉴스] 디지몬 월드 1 리마스터 HD 파트 1 쇼케이스",
       "snippet": "Digimon World 1 Remaster HD Part 1 Showcase&nbsp;&nbsp;YouTube",
       "source": "YouTube",
       "source_badge": "해외뉴스",
@@ -1300,33 +1454,8 @@
       "link": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE9QeVRwUHQ2VTRJcV9aNlN1UGNEaC1BWllVd1FBeFJhV21nLVJTY2M1ZkNMaXU4V3lEajhmVUoxR0VGVjNHSGFnbDc1dGFTNTFsUWcwNDhnMzF3TWFY?oc=5",
       "image": null,
       "timestamp": 1790919868,
-      "created_at": "2026-10-02 14:44"
-    },
-    {
-      "id": "8d342a6b773b02995d2579e0a8c66321",
-      "title": "[일본뉴스] 天馬家の両親 | CHARACTER | DIGIMON BEATBREAK - デジモンビートブレイク",
-      "snippet": "天馬家の両親 | CHARACTER | DIGIMON BEATBREAK - デジモンビートブレイク&nbsp;&nbsp;東映アニメーション",
-      "source": "東映アニメーション",
-      "source_badge": "일본뉴스",
-      "category": "figure",
-      "category_name": "피규어/굿즈",
-      "link": "https://news.google.com/rss/articles/CBMieEFVX3lxTE42SUNrZ3VKWDNSV3JCeWdrdzdRS2pveGstcVJMeGw5ZzREMVI2TENNSklxTmhBRkF1Sko5aUdjU2JaMHRQREQ0Wnh1dzFxN0VINHBmNEg0emRVbndld2ZubjZxSXRLSkxubHJLNVN6c2ktZk5SN0dONw?oc=5",
-      "image": null,
-      "timestamp": 1790872938,
-      "created_at": "2026-10-02 01:42"
-    },
-    {
-      "id": "2cd7ee70c921c152fd9b36bf8c06d381",
-      "title": "[일본뉴스] 天馬家の両親 | CHARACTER | DIGIMON BEATBREAK - デジモンビートブレイク",
-      "snippet": "天馬家の両親 | CHARACTER | DIGIMON BEATBREAK - デジモンビートブレイク&nbsp;&nbsp;東映アニメーション",
-      "source": "東映アニメーション",
-      "source_badge": "일본뉴스",
-      "category": "figure",
-      "category_name": "피규어/굿즈",
-      "link": "https://news.google.com/rss/articles/CBMid0FVX3lxTE1lWHliXzV4YlloeWdPVF9EbEZJaFhIYnR2Q0VfcFNUdEFxbzRSNlo4bE9CZHlGQ0FpLTFQcE5hb3gxcXVIMG81TWc0RlJETjJhX0RTNDNDaHJEQUJ5Y0RfME02SUtUUVNGNFJ6eHhHeFhmenRHQkNB?oc=5",
-      "image": null,
-      "timestamp": 1790872938,
-      "created_at": "2026-10-02 01:42"
+      "created_at": "2026-10-02 05:44",
+      "title_orig": "Digimon World 1 Remaster HD Part 1 Showcase"
     },
     {
       "id": "2237924032746e34d32789d322a11a25",
@@ -1338,10 +1467,40 @@
       "category_name": "신작/공식속보",
       "link": "https://digimon.net/topic/detail.php?id=2092",
       "image": null,
-      "timestamp": 1790866800,
+      "timestamp": 1790899200,
       "created_at": "2026-10-02 00:00",
       "title_orig": "第157回デジ民投票　結果発表！",
       "title_ja": "第157回デジ民投票　結果発表！"
+    },
+    {
+      "id": "8d342a6b773b02995d2579e0a8c66321",
+      "title": "[일본뉴스] 텐마 가의 부모 | CHARACTER | DIGIMON BEATBREAK - 디지몬 비트브레이크",
+      "snippet": "天馬家の両親 | CHARACTER | DIGIMON BEATBREAK - デジモンビートブレイク&nbsp;&nbsp;東映アニメーション",
+      "source": "東映アニメーション",
+      "source_badge": "일본뉴스",
+      "category": "figure",
+      "category_name": "피규어/굿즈",
+      "link": "https://news.google.com/rss/articles/CBMieEFVX3lxTE42SUNrZ3VKWDNSV3JCeWdrdzdRS2pveGstcVJMeGw5ZzREMVI2TENNSklxTmhBRkF1Sko5aUdjU2JaMHRQREQ0Wnh1dzFxN0VINHBmNEg0emRVbndld2ZubjZxSXRLSkxubHJLNVN6c2ktZk5SN0dONw?oc=5",
+      "image": null,
+      "timestamp": 1790872938,
+      "created_at": "2026-10-02 01:42",
+      "title_orig": "天馬家の両親 | CHARACTER | DIGIMON BEATBREAK - デジモンビートブレイク",
+      "title_ja": "天馬家の両親 | CHARACTER | DIGIMON BEATBREAK - デジモンビートブレイク"
+    },
+    {
+      "id": "2cd7ee70c921c152fd9b36bf8c06d381",
+      "title": "[일본뉴스] 텐마 가의 부모 | CHARACTER | DIGIMON BEATBREAK - 디지몬 비트브레이크",
+      "snippet": "天馬家の両親 | CHARACTER | DIGIMON BEATBREAK - デジモンビートブレイク&nbsp;&nbsp;東映アニメーション",
+      "source": "東映アニメーション",
+      "source_badge": "일본뉴스",
+      "category": "figure",
+      "category_name": "피규어/굿즈",
+      "link": "https://news.google.com/rss/articles/CBMid0FVX3lxTE1lWHliXzV4YlloeWdPVF9EbEZJaFhIYnR2Q0VfcFNUdEFxbzRSNlo4bE9CZHlGQ0FpLTFQcE5hb3gxcXVIMG81TWc0RlJETjJhX0RTNDNDaHJEQUJ5Y0RfME02SUtUUVNGNFJ6eHhHeFhmenRHQkNB?oc=5",
+      "image": null,
+      "timestamp": 1790872938,
+      "created_at": "2026-10-01 16:42",
+      "title_orig": "天馬家の両親 | CHARACTER | DIGIMON BEATBREAK - デジモンビートブレイク",
+      "title_ja": "天馬家の両親 | CHARACTER | DIGIMON BEATBREAK - デジモンビートブレイク"
     },
     {
       "id": "baba50e7e725eb8a709baaa1454d985a",
@@ -1354,7 +1513,7 @@
       "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxPaEZBd1YwTUxrbFJlUzhKQm13LUV1ZFRHTFBuV0RmcWhSUlVsOGVQSmVibTM5MjRybWFpcnNFLVBxVHNsTWkwYzFSTjAxTm9qeHZBQXRKUkJwRGU5MEwxY2VNTk85QnBESmtfZ3Q5LXQzX3cxVDN0UXpFd1ZFUUtlc0JHV2JfQlQwY2REVGtydlRYeElRWlE2dUtGYw?oc=5",
       "image": null,
       "timestamp": 1790838000,
-      "created_at": "2026-10-01 16:00"
+      "created_at": "2026-10-01 07:00"
     },
     {
       "id": "86199b10fb1203472214eee34093fc23",
@@ -1367,11 +1526,11 @@
       "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE5XdXVrNnlteThtWXdvWkRhTWRqY214NXI1b3I5d01sZzZPNTlsNTVvSl9Pdm11bTlPSTg3cThNVnJTaEJqSHFsLWRRaFdNN1hndVltekJEcHE2SEVuN3dyQk5xZ20?oc=5",
       "image": null,
       "timestamp": 1790838000,
-      "created_at": "2026-10-01 16:00"
+      "created_at": "2026-10-01 07:00"
     },
     {
       "id": "9ae80f7b3a21f9b730976f81e7939fce",
-      "title": "[인스타] 【周邊】 📌韓國（Korea） #デジモンアドベンチャー #DigimonAdventure #Digimon #Adventure #數碼寶貝 #數碼寶貝大冒險 #デジモン #八神太一 #石田ヤマト #泉光子郎 #武之内空 #城戸丈 #太刀川ミミ #太刀川美美 #高石タケル #高石岳 #高石武 #八神ヒカリ #八神光 #八神",
+      "title": "[인스타] 【굿즈】 📌한국(Korea) #디지몬어드벤처 #DigimonAdventure #Digimon #Adventure #디지몬 #디지몬어드벤처 #디지몬 #야가미 타이치(신태일) #이시다 야마토(매튜) #이즈미 코시로(한솔) #타케노우치 소라(한소라) #키도 죠(정석) #타치카와 미미(미나) #타치카와 미미(미나) #타카이시 타케루(리키) #타카이시 타케루(리키) #타카이시 타케루(리키) #야가미 히카리(나리) #야가미 히카리(나리) #야가미",
       "snippet": "인스타그램 디지몬 관련 공개 게시물입니다.",
       "source": "Instagram",
       "source_badge": "인스타그램",
@@ -1380,11 +1539,13 @@
       "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE1NUWx4b3N4SVdsZDVkdFVEMl9EUHRQNFR1a3R3MVFGdzd6V29NSkYxSTNUX0t1V0N4MEFpdVVtbnB0Vm5ldExUbm5aZF85V3hsT1E?oc=5",
       "image": null,
       "timestamp": 1790838000,
-      "created_at": "2026-10-01 16:00"
+      "created_at": "2026-10-01 07:00",
+      "title_orig": "【周邊】 📌韓國（Korea） #デジモンアドベンチャー #DigimonAdventure #Digimon #Adventure #數碼寶貝 #數碼寶貝大冒險 #デジモン #八神太一 #石田ヤマト #泉光子郎 #武之内空 #城戸丈 #太刀川ミミ #太刀川美美 #高石タケル #高石岳 #高石武 #八神ヒカリ #八神光 #八神",
+      "title_ja": "【周邊】 📌韓國（Korea） #デジモンアドベンチャー #DigimonAdventure #Digimon #Adventure #數碼寶貝 #數碼寶貝大冒險 #デジモン #八神太一 #石田ヤマト #泉光子郎 #武之内空 #城戸丈 #太刀川ミミ #太刀川美美 #高石タケル #高石岳 #高石武 #八神ヒカリ #八神光 #八神"
     },
     {
       "id": "e0ef259b3c2b73a00cbd0970eac86ef7",
-      "title": "[일본뉴스] デジタルモンスターカードゲーム アクリルチャームコレクション｜デジモンのガチャガチャ 発売日・価格・設置場所",
+      "title": "[일본뉴스] 디지털 몬스터 카드게임 아크릴 참 컬렉션 | 디지몬 캡슐토이(가챠) 발매일·가격·설치 장소",
       "snippet": "デジタルモンスターカードゲーム アクリルチャームコレクション｜デジモンのガチャガチャ 発売日・価格・設置場所&nbsp;&nbsp;キャラグー",
       "source": "キャラグー",
       "source_badge": "일본뉴스",
@@ -1393,7 +1554,9 @@
       "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTFBvVzMtX09KRXRyYUJkOERYbHhJSUE5Z3ZqT25RaV93UHRLRFQ1NDZSb2R2d1VVUzZveng3VDZINEVIaWQxcUR0cFIyWDFWelNoNkhKdm1uaw?oc=5",
       "image": null,
       "timestamp": 1790838000,
-      "created_at": "2026-10-01 16:00"
+      "created_at": "2026-10-01 07:00",
+      "title_orig": "デジタルモンスターカードゲーム アクリルチャームコレクション｜デジモンのガチャガチャ 発売日・価格・設置場所",
+      "title_ja": "デジタルモンスターカードゲーム アクリルチャームコレクション｜デジモンのガチャガチャ 発売日・価格・設置場所"
     },
     {
       "id": "1c82d09be81cca6506ba51b58da3c01a",
@@ -1405,7 +1568,7 @@
       "category_name": "일반/뉴스",
       "link": "https://digimon.net/topic/detail.php?id=2090",
       "image": null,
-      "timestamp": 1790694000,
+      "timestamp": 1790726400,
       "created_at": "2026-09-30 00:00",
       "title_orig": "『デジモンエッグズ』連載開始記念 みなと歩先生スペシャルインタビュー",
       "title_ja": "『デジモンエッグズ』連載開始記念 みなと歩先生スペシャルインタビュー"
@@ -1420,7 +1583,7 @@
       "category_name": "피규어/굿즈",
       "link": "https://digimon.net/topic/detail.php?id=2091",
       "image": null,
-      "timestamp": 1790694000,
+      "timestamp": 1790726400,
       "created_at": "2026-09-30 00:00",
       "title_orig": "放送１０周年「デジモンユニバース アプリモンスターズ」全52話 YouTube期間限定公開決定！！",
       "title_ja": "放送１０周年「デジモンユニバース アプリモンスターズ」全52話 YouTube期間限定公開決定！！"
@@ -1435,14 +1598,14 @@
       "category_name": "일반/뉴스",
       "link": "https://digimon.net/topic/detail.php?id=2093",
       "image": null,
-      "timestamp": 1790694000,
+      "timestamp": 1790726400,
       "created_at": "2026-09-30 00:00",
       "title_orig": "【放送開始5周年】「デジモンゴーストゲーム」BD-BOX下巻　本日発売！！",
       "title_ja": "【放送開始5周年】「デジモンゴーストゲーム」BD-BOX下巻　本日発売！！"
     },
     {
       "id": "6a19b341063ea891705621bb1b305f12",
-      "title": "[해외뉴스] GAMES REVIEW: Crow Country, Digimon Story: Time Stranger, and Yoshi and the Mysterious Book",
+      "title": "[해외뉴스] 게임 리뷰: 크로우 컨트리, 디지몬 스토리: 타임 스트레인저, 요시와 신비한 책",
       "snippet": "GAMES REVIEW: Crow Country, Digimon Story: Time Stranger, and Yoshi and the Mysterious Book&nbsp;&nbsp;Startup Daily",
       "source": "Startup Daily",
       "source_badge": "해외뉴스",
@@ -1451,7 +1614,8 @@
       "link": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxNNG5mRkRKTTRQUHhIbkFoSV9fZmlJQmhmWjI5ODBkOUlXREY4cTlWRkNMbjRpMDlFa1FjX0RUZmd4OEQ1NUNDUTEwNWROSkNTVDZDaGZzcUw5RzdlQTlDT1laSHNvSk9PeE9maVVBLVZEN1RtaV9SWXljTnNKRmVVZDgyMVNQYldOdzg4MXRDZ2g2YWxwUzY1WG5jaWMyRDhWdmpBU2MzZTBQZnNWWTAtUkY5b0g3dDFGN3dlUGdNS216YWZjYkdMbXV6QTM5MUVGUWc?oc=5",
       "image": null,
       "timestamp": 1790647980,
-      "created_at": "2026-09-29 11:13"
+      "created_at": "2026-09-29 11:13",
+      "title_orig": "GAMES REVIEW: Crow Country, Digimon Story: Time Stranger, and Yoshi and the Mysterious Book"
     },
     {
       "id": "4eb8ea46bcdb0c0c1ba0dbeb97f1956d",
@@ -1463,14 +1627,14 @@
       "category_name": "일반/뉴스",
       "link": "https://digimon.net/topic/detail.php?id=2084",
       "image": null,
-      "timestamp": 1790607600,
+      "timestamp": 1790640000,
       "created_at": "2026-09-29 00:00",
       "title_orig": "デジモン29周年【デジモン＆ニク】テーマ企画 第3弾",
       "title_ja": "デジモン29周年【デジモン＆ニク】テーマ企画 第3弾"
     },
     {
       "id": "0817dd3be73308b255656fe6f9913e7c",
-      "title": "[해외뉴스] Color Digimon Beatbreak Edition Virtual Pets Arrive in March",
+      "title": "[해외뉴스] 컬러 디지몬 비트브레이크 에디션 버추얼 펫 3월 출시",
       "snippet": "Color Digimon Beatbreak Edition Virtual Pets Arrive in March&nbsp;&nbsp;Siliconera",
       "source": "Siliconera",
       "source_badge": "해외뉴스",
@@ -1479,11 +1643,12 @@
       "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPSkp6YzVYRG1CemFCcENicFA4MXZfUG5kdkxIT3BTRkVVTlp0ZnpaNFZfSlktb3l4ZlFGVzJ6ZGl4TklRdWdaNE9vclVhZE5FdUhzRHVUcmxPeWVlTkJHQnBRTGdUbEdIVXlQNGgxa3ZPdDRZNVZ6WWhzN25kU2MwTmpFcFpxSlBXemxZbXd4RUtGZw?oc=5",
       "image": null,
       "timestamp": 1790578800,
-      "created_at": "2026-09-28 16:00"
+      "created_at": "2026-09-28 07:00",
+      "title_orig": "Color Digimon Beatbreak Edition Virtual Pets Arrive in March"
     },
     {
       "id": "3afbb5152166937f0071508aede8d6ab",
-      "title": "[일본뉴스] 『デジモンビートブレイク』最終回記念、「デジタルモンスターCOLOR」特別仕様が登場 - 専用ケースも同時発売",
+      "title": "[일본뉴스] 『디지몬 비트브레이크』 최종회 기념, 「디지털 몬스터 COLOR」 특별 사양 등장 - 전용 케이스도 동시 발매",
       "snippet": "『デジモンビートブレイク』最終回記念、「デジタルモンスターCOLOR」特別仕様が登場 - 専用ケースも同時発売&nbsp;&nbsp;マイナビニュース",
       "source": "マイナビニュース",
       "source_badge": "일본뉴스",
@@ -1492,11 +1657,13 @@
       "link": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE5UdEVTNkl6b1cwM2hTN0k5UWlqdmRQVkJIR1dEZ2N4REdqTk1fRjF6dzlvN0ZnLXlFTUhwUXQ2T0V0elc1anVRWlItamdZeWZ6UWVNaWtjTDFhMVND?oc=5",
       "image": null,
       "timestamp": 1790578800,
-      "created_at": "2026-09-28 16:00"
+      "created_at": "2026-09-28 07:00",
+      "title_orig": "『デジモンビートブレイク』最終回記念、「デジタルモンスターCOLOR」特別仕様が登場 - 専用ケースも同時発売",
+      "title_ja": "『デジモンビートブレイク』最終回記念、「デジタルモンスターCOLOR」特別仕様が登場 - 専用ケースも同時発売"
     },
     {
       "id": "f7c6eabe7f855295130e6900a10c62c2",
-      "title": "[일본뉴스] TVアニメ『DIGIMON BEATBREAK』最終回放送記念！ 劇中で活躍したデジモンを収録した 「デジタルモンスターCOLOR」が登場！",
+      "title": "[일본뉴스] TV 애니메이션 『DIGIMON BEATBREAK』 최종회 방송 기념! 극 중에서 활약한 디지몬을 수록한 「디지털 몬스터 COLOR」가 등장!",
       "snippet": "TVアニメ『DIGIMON BEATBREAK』最終回放送記念！ 劇中で活躍したデジモンを収録した 「デジタルモンスターCOLOR」が登場！&nbsp;&nbsp;アットプレス",
       "source": "アットプレス",
       "source_badge": "일본뉴스",
@@ -1505,11 +1672,13 @@
       "link": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE5hWDFjMFFGeTJwTkZBcVJMdWFDTEl3czU2MEZ2dkRnbzljdC00TUlhVU83MlZlZTZqQXp6RWI4SVdKY243YWJ0LTNnUWhMQQ?oc=5",
       "image": null,
       "timestamp": 1790492400,
-      "created_at": "2026-09-27 16:00"
+      "created_at": "2026-09-27 07:00",
+      "title_orig": "TVアニメ『DIGIMON BEATBREAK』最終回放送記念！ 劇中で活躍したデジモンを収録した 「デジタルモンスターCOLOR」が登場！",
+      "title_ja": "TVアニメ『DIGIMON BEATBREAK』最終回放送記念！ 劇中で活躍したデジモンを収録した 「デジタルモンスターCOLOR」が登場！"
     },
     {
       "id": "08d18b7ef72948e01f144d9847e7d0db",
-      "title": "[하비뉴스] 『DIGIMON BEATBREAK』最終回を記念した「デジタルモンスターCOLOR」が登場！アニメ新デジモンを含む約30体が育成可能、バトル時には「e-パルス」を連打で高めることで攻撃力が変化！",
+      "title": "[하비뉴스] 『DIGIMON BEATBREAK』 최종회를 기념한 「디지털 몬스터 COLOR」가 등장! 애니메이션 신규 디지몬을 포함한 약 30마리를 육성 가능, 배틀 시에는 「e-펄스」를 연타로 끌어올려 공격력이 변화!",
       "snippet": "『DIGIMON BEATBREAK』最終回を記念した「デジタルモンスターCOLOR」が登場！アニメ新デジモンを含む約30体が育成可能、バトル時には「e-パルス」を連打で高めることで攻撃力が変化！&nbsp;&nbsp;電撃ホビーウェブ",
       "source": "전격하비",
       "source_badge": "하비뉴스",
@@ -1518,11 +1687,13 @@
       "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTFBOczRVLVZCZUM0NFpJOUFXTXRlUG5OcmNaWVFmaHBpUURoOUhmcTAwNGYtTWgwV3Z6RERQTHAtbXdhUmtMZDhGWXV3ZElweDhr?oc=5",
       "image": null,
       "timestamp": 1790492400,
-      "created_at": "2026-09-27 16:00"
+      "created_at": "2026-09-27 07:00",
+      "title_orig": "『DIGIMON BEATBREAK』最終回を記念した「デジタルモンスターCOLOR」が登場！アニメ新デジモンを含む約30体が育成可能、バトル時には「e-パルス」を連打で高めることで攻撃力が変化！",
+      "title_ja": "『DIGIMON BEATBREAK』最終回を記念した「デジタルモンスターCOLOR」が登場！アニメ新デジモンを含む約30体が育成可能、バトル時には「e-パルス」を連打で高めることで攻撃力が変化！"
     },
     {
       "id": "6dec38d595d960eea2af3ed0489d25cb",
-      "title": "[일본뉴스] DIGIMON BEATBREAK：最終回放送記念 「デジタルモンスターCOLOR」登場",
+      "title": "[일본뉴스] DIGIMON BEATBREAK: 최종회 방송 기념 「디지털 몬스터 COLOR」 등장",
       "snippet": "DIGIMON BEATBREAK：最終回放送記念 「デジタルモンスターCOLOR」登場&nbsp;&nbsp;MANTANWEB",
       "source": "MANTANWEB",
       "source_badge": "일본뉴스",
@@ -1531,11 +1702,13 @@
       "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTE01Rm5rMjMwMmFhanlQWTNKM1NDanFNdC1DbEhyWUgxZUF0Si1XOTBPRmRhT1FuTmMtV1UxMWo2MkJzbDVfU2JRLXZwVlVIWjNhQWVKNmFURVJlMS0yVktwUkJTZnZKdDVoNTVr?oc=5",
       "image": null,
       "timestamp": 1790492400,
-      "created_at": "2026-09-27 16:00"
+      "created_at": "2026-09-27 07:00",
+      "title_orig": "DIGIMON BEATBREAK：最終回放送記念 「デジタルモンスターCOLOR」登場",
+      "title_ja": "DIGIMON BEATBREAK：最終回放送記念 「デジタルモンスターCOLOR」登場"
     },
     {
       "id": "10dbfd08e2e1260cf5479157845b39ad",
-      "title": "[하비뉴스] Hobby Shop] | Digimon Adventure Acrylic Block Hikari Yagami & Tailmon(Pre-order)",
+      "title": "[하비뉴스] 하비 샵] | 디지몬 어드벤처 아크릴 블록 야가미 히카리(나리) & 테일몬(예약 판매)",
       "snippet": "Hobby Shop] | Digimon Adventure Acrylic Block Hikari Yagami & Tailmon(Pre-order)&nbsp;&nbsp;AmiAmi",
       "source": "AmiAmi",
       "source_badge": "하비뉴스",
@@ -1544,11 +1717,12 @@
       "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE1oRVlJWngyaEpGeGxTeUNWdmc3Wjl2dURIcEQwN0NORl9LdXZKMV9IRlpWcTMwTjUzbWx3dHNvNXNWNnplWUlxV3VvNF9FdzRMTUNZU3hod3huLWcyRDUxZE41OU1RZw?oc=5",
       "image": null,
       "timestamp": 1790488676,
-      "created_at": "2026-09-27 14:57"
+      "created_at": "2026-09-27 05:57",
+      "title_orig": "Hobby Shop] | Digimon Adventure Acrylic Block Hikari Yagami & Tailmon(Pre-order)"
     },
     {
       "id": "acb9c900bdb082702c744adba4ed41ac",
-      "title": "[일본뉴스] DIGIMON BEATBREAK＞最終回放送記念 「デジタルモンスターCOLOR」登場 (MANTANWEB)",
+      "title": "[일본뉴스] DIGIMON BEATBREAK＞최종회 방송 기념 「디지털 몬스터 COLOR」 등장 (MANTANWEB)",
       "snippet": "DIGIMON BEATBREAK＞最終回放送記念 「デジタルモンスターCOLOR」登場 (MANTANWEB)&nbsp;&nbsp;Yahoo!ニュース",
       "source": "Yahoo!ニュース",
       "source_badge": "일본뉴스",
@@ -1557,11 +1731,13 @@
       "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNX0NOMXhCZ0hOay0tUFgzSGZZc2l5MnlMY1dnTEtENGhSYlMxWmdFVDVkcVFEM1FTT1NSRUJyb2pnd0JFdXRTTDNHR29nZzFFT2ViVDl6d0t5VFNaZk4wY3lKMndtQnhEQUt3MW9PekFyMnIxbnlUNm5zUUtxcldGZzJqNkJYRVhpamhtTTF3?oc=5",
       "image": null,
       "timestamp": 1790472616,
-      "created_at": "2026-09-27 10:30"
+      "created_at": "2026-09-27 01:30",
+      "title_orig": "DIGIMON BEATBREAK＞最終回放送記念 「デジタルモンスターCOLOR」登場 (MANTANWEB)",
+      "title_ja": "DIGIMON BEATBREAK＞最終回放送記念 「デジタルモンスターCOLOR」登場 (MANTANWEB)"
     },
     {
       "id": "eaa3ef88ae0e1633b29dfb9d84dbe259",
-      "title": "[일본뉴스] キュートモン | CHARACTER | DIGIMON BEATBREAK - デジモンビートブレイク",
+      "title": "[일본뉴스] 큐트몬 | CHARACTER | DIGIMON BEATBREAK - 디지몬 비트브레이크",
       "snippet": "キュートモン | CHARACTER | DIGIMON BEATBREAK - デジモンビートブレイク&nbsp;&nbsp;東映アニメーション",
       "source": "東映アニメーション",
       "source_badge": "일본뉴스",
@@ -1570,11 +1746,13 @@
       "link": "https://news.google.com/rss/articles/CBMiggFBVV95cUxNU2xESkdSSVl0ak1OY29sTE1rZUtKZkpWcTh4OE16YjRDdm9sc0pYOVF4NGJNYk1SUlUxRlV4Tk54eFNkYTFlWE13VF9pazdhQzNMUGxrZzVORGRYa2Nqdi1iWlpaSkhUcWZITHFJcUo2a3ZLVjdhWE9LSElvMV9CVHp3?oc=5",
       "image": null,
       "timestamp": 1790470776,
-      "created_at": "2026-09-27 09:59"
+      "created_at": "2026-09-27 00:59",
+      "title_orig": "キュートモン | CHARACTER | DIGIMON BEATBREAK - デジモンビートブレイク",
+      "title_ja": "キュートモン | CHARACTER | DIGIMON BEATBREAK - デジモンビートブレイク"
     },
     {
       "id": "9279124d5f42e002d1596a59077d8c3b",
-      "title": "[일본뉴스] メタルグレイモン | CHARACTER | DIGIMON BEATBREAK - デジモンビートブレイク",
+      "title": "[일본뉴스] 메탈그레이몬 | CHARACTER | DIGIMON BEATBREAK - 디지몬 비트브레이크",
       "snippet": "メタルグレイモン | CHARACTER | DIGIMON BEATBREAK - デジモンビートブレイク&nbsp;&nbsp;東映アニメーション",
       "source": "東映アニメーション",
       "source_badge": "일본뉴스",
@@ -1583,11 +1761,13 @@
       "link": "https://news.google.com/rss/articles/CBMiggFBVV95cUxPbjA2N1BVSXY2UlUwNGhiR3hXTE5qVmxuZzctVzNNUzhvUklxOFVZcUZkOXRHN0hYOG5JTV9adkE2NlY4ZmtrSEJzbERYOW1CZkRGamVPbjYwUlZPa2hkeF9zUGpSVkFoX0tWc0VfT2NVWXY1U0pTai1yQUR1d0hxS0x3?oc=5",
       "image": null,
       "timestamp": 1790470775,
-      "created_at": "2026-09-27 09:59"
+      "created_at": "2026-09-27 09:59",
+      "title_orig": "メタルグレイモン | CHARACTER | DIGIMON BEATBREAK - デジモンビートブレイク",
+      "title_ja": "メタルグレイモン | CHARACTER | DIGIMON BEATBREAK - デジモンビートブレイク"
     },
     {
       "id": "89708e11d18a30347b5e25f2aef9996c",
-      "title": "[일본뉴스] メタルグレイモン | CHARACTER | DIGIMON BEATBREAK - デジモンビートブレイク",
+      "title": "[일본뉴스] 메탈그레이몬 | CHARACTER | DIGIMON BEATBREAK - 디지몬 비트브레이크",
       "snippet": "メタルグレイモン | CHARACTER | DIGIMON BEATBREAK - デジモンビートブレイク&nbsp;&nbsp;東映アニメーション",
       "source": "東映アニメーション",
       "source_badge": "일본뉴스",
@@ -1596,20 +1776,9 @@
       "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNWVoyc0lSZzZwS0hFNnRONDFad09FQ0J1Rkx2blJ4cE1icGVOaEFScnBqWVZYVW9HanhMdUVFMWdtS0JBYkdCSENQUzAySEFRNEp0TFlWcjV1X3BHbWNSNjhmM1k5dUdyNnYwMTBnQU5XbHg4aWRPR0JsSzRzem5UeA?oc=5",
       "image": null,
       "timestamp": 1790470775,
-      "created_at": "2026-09-27 09:59"
-    },
-    {
-      "id": "fbfa93a1776f0685ac53cece85b8af12",
-      "title": "[하비뉴스] デジモンアドベンチャー アクリルブロック 石田ヤマト＆ガブモン[キャラバン]《１２月予約》",
-      "snippet": "デジモンアドベンチャー アクリルブロック 石田ヤマト＆ガブモン[キャラバン]《１２月予約》&nbsp;&nbsp;あみあみ",
-      "source": "아미아미",
-      "source_badge": "하비뉴스",
-      "category": "figure",
-      "category_name": "피규어/굿즈",
-      "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTFA2RUZtNTF6U0FvemJfb2hhUDZmeXVJdWRiSlpyRGFkVjR6ZXNBN09iRWNpRkQ5Q01mQzhCc2k2VHhJT2wtS0FxclRDc0t0VzJsQU8zbVVGQ3FzQ2lLaTRFaEZSdlBtUW5nNHljZQ?oc=5",
-      "image": null,
-      "timestamp": 1790435144,
-      "created_at": "2026-09-27 00:05"
+      "created_at": "2026-09-27 00:59",
+      "title_orig": "メタルグレイモン | CHARACTER | DIGIMON BEATBREAK - デジモンビートブレイク",
+      "title_ja": "メタルグレイモン | CHARACTER | DIGIMON BEATBREAK - デジモンビートブレイク"
     },
     {
       "id": "0bcb274d1b4f3c78ac287a3013465533",
@@ -1621,7 +1790,7 @@
       "category_name": "피규어/굿즈",
       "link": "https://digimon.net/topic/detail.php?id=2087",
       "image": null,
-      "timestamp": 1790434800,
+      "timestamp": 1790467200,
       "created_at": "2026-09-27 00:00",
       "title_orig": "「DIGIMON BEATBREAK」Blu-ray企画進行中！",
       "title_ja": "「DIGIMON BEATBREAK」Blu-ray企画進行中！"
@@ -1636,7 +1805,7 @@
       "category_name": "피규어/굿즈",
       "link": "https://digimon.net/topic/detail.php?id=2088",
       "image": null,
-      "timestamp": 1790434800,
+      "timestamp": 1790467200,
       "created_at": "2026-09-27 00:00",
       "title_orig": "デジタルモンスターCOLOR DIGIMON BEATBREAK EDITION 予約開始",
       "title_ja": "デジタルモンスターCOLOR DIGIMON BEATBREAK EDITION 予約開始"
@@ -1651,7 +1820,7 @@
       "category_name": "일반/뉴스",
       "link": "https://digimon.net/topic/detail.php?id=2089",
       "image": null,
-      "timestamp": 1790434800,
+      "timestamp": 1790467200,
       "created_at": "2026-09-27 00:00",
       "title_orig": "デジモンケース イレモンCOLOR 予約開始",
       "title_ja": "デジモンケース イレモンCOLOR 予約開始"
@@ -1666,7 +1835,7 @@
       "category_name": "일반/뉴스",
       "link": "https://digimon.net/topic/detail.php?id=2086",
       "image": null,
-      "timestamp": 1790434800,
+      "timestamp": 1790467200,
       "created_at": "2026-09-27 00:00",
       "title_orig": "デジモン図鑑に、新たにヴォルブモンを追加！さらにアトラタスモン、アルバタスモンのデジモン図鑑を更新！",
       "title_ja": "デジモン図鑑に、新たにヴォルブモンを追加！さらにアトラタスモン、アルバタスモンのデジモン図鑑を更新！"
@@ -1681,12 +1850,27 @@
       "category_name": "게임/공식애니",
       "link": "https://bbs.ruliweb.com/family/211/board/300015/read/2436073?search_type=subject&search_key=%EB%94%94%EC%A7%80%EB%AA%AC",
       "image": null,
-      "timestamp": 1790434800,
+      "timestamp": 1790467200,
       "created_at": "2026-09-27 00:00"
     },
     {
+      "id": "fbfa93a1776f0685ac53cece85b8af12",
+      "title": "[하비뉴스] 디지몬 어드벤처 아크릴 블록 이시다 야마토(매튜) & 가브몬 [캐러반] 《12월 예약》",
+      "snippet": "デジモンアドベンチャー アクリルブロック 石田ヤマト＆ガブモン[キャラバン]《１２月予約》&nbsp;&nbsp;あみあみ",
+      "source": "아미아미",
+      "source_badge": "하비뉴스",
+      "category": "figure",
+      "category_name": "피규어/굿즈",
+      "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTFA2RUZtNTF6U0FvemJfb2hhUDZmeXVJdWRiSlpyRGFkVjR6ZXNBN09iRWNpRkQ5Q01mQzhCc2k2VHhJT2wtS0FxclRDc0t0VzJsQU8zbVVGQ3FzQ2lLaTRFaEZSdlBtUW5nNHljZQ?oc=5",
+      "image": null,
+      "timestamp": 1790435144,
+      "created_at": "2026-09-26 15:05",
+      "title_orig": "デジモンアドベンチャー アクリルブロック 石田ヤマト＆ガブモン[キャラバン]《１２月予約》",
+      "title_ja": "デジモンアドベンチャー アクリルブロック 石田ヤマト＆ガブモン[キャラバン]《１２月予約》"
+    },
+    {
       "id": "635c7be91c8f75e353dda40fa6f7e25e",
-      "title": "[하비뉴스] Hobby Shop] | Digimon Adventure Pair Acrylic Stand Yamato Ishida & Gabumon(Pre-order)",
+      "title": "[하비뉴스] 하비 샵] | 디지몬 어드벤처 페어 아크릴 스탠드 이시다 야마토(매튜) & 가브몬(예약 판매)",
       "snippet": "Hobby Shop] | Digimon Adventure Pair Acrylic Stand Yamato Ishida & Gabumon(Pre-order)&nbsp;&nbsp;AmiAmi",
       "source": "AmiAmi",
       "source_badge": "하비뉴스",
@@ -1695,11 +1879,12 @@
       "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTFA1Yzc0RFNUR2pXdUF5WnFCNFVuR0tsNkJyU2xqbWtTWmJWZ01xak5EelNXeDE3X0N6aW1uZnp6bThUZW15SEVkdGszRWRWTkVBRDRhV0VoajBmTHh5SXo5djZlOTJrZw?oc=5",
       "image": null,
       "timestamp": 1790427275,
-      "created_at": "2026-09-26 21:54"
+      "created_at": "2026-09-26 12:54",
+      "title_orig": "Hobby Shop] | Digimon Adventure Pair Acrylic Stand Yamato Ishida & Gabumon(Pre-order)"
     },
     {
       "id": "9a368b9ba1bd6ed4ddd576898731a288",
-      "title": "[디지카] My Gundam Decks | Egman Deck Builder",
+      "title": "[디지카] 나의 건담 덱 | Egman 덱 빌더",
       "snippet": "My Gundam Decks | Egman Deck Builder&nbsp;&nbsp;Egman Deck Builder",
       "source": "Egman Events",
       "source_badge": "디지카",
@@ -1708,7 +1893,8 @@
       "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE8tVEtxZ2l3STZpN3ZRN3ZoQ1AwRkN3WG10RWFjOU1RcTlDZllUMmdCNzh6QXY3Mlo2S083UXpsUlZaMWVQbkMzdldwQzd5bHBwYmEwalh4cFdEeUpheTlGRHctOA?oc=5",
       "image": null,
       "timestamp": 1790373206,
-      "created_at": "2026-09-26 06:53"
+      "created_at": "2026-09-25 21:53",
+      "title_orig": "My Gundam Decks | Egman Deck Builder"
     },
     {
       "id": "b74a947906936d97e46a8ec74f369112",
@@ -1721,7 +1907,7 @@
       "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE9LQWlWZGhkUEVUa0VOaXIwTkVtRF9hLVAxNlFsWk1rbEppREE1ekdvTUxHNUVRVFJ0eG9LTDdoVkhrWTZRaDhORy11OE1rbDl3bUNGenhB?oc=5",
       "image": null,
       "timestamp": 1790146800,
-      "created_at": "2026-09-23 16:00"
+      "created_at": "2026-09-23 07:00"
     },
     {
       "id": "c9e35e11fd3068c3d095ccb1430c71cf",
@@ -1746,14 +1932,14 @@
       "category_name": "일반/뉴스",
       "link": "https://digimon.net/topic/detail.php?id=2083",
       "image": null,
-      "timestamp": 1790089200,
+      "timestamp": 1790121600,
       "created_at": "2026-09-23 00:00",
       "title_orig": "第158回デジ民投票スタート",
       "title_ja": "第158回デジ民投票スタート"
     },
     {
       "id": "6a1c40604513cde450af98321c5ae41c",
-      "title": "[애니뉴스] DIGIMON BEATBREAK Anime Teases Final Episode with New Visual",
+      "title": "[애니뉴스] 애니메이션 디지몬 비트브레이크, 신규 비주얼로 최종회 예고",
       "snippet": "DIGIMON BEATBREAK Anime Teases Final Episode with New Visual&nbsp;&nbsp;Crunchyroll",
       "source": "Crunchyroll News",
       "source_badge": "애니뉴스",
@@ -1762,7 +1948,8 @@
       "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPQWkweThjT1RhVm9yWndZMUt0WXNaRzRyMEc5T0s0YVBlVldtOGt2bWN5RUx6c2IteU9ta0RzOHB6VVh6THNDUHpJVzNKWEhGendXdjJINE8yS0NfcVNKdGNqQ2czM1J0LU5WVF9uT2xuaFFTa0FUdERsWXhsMHpvVzZ0aEZpaTdVTGhwb3pIc1V3UzRBNEhnS19n?oc=5",
       "image": null,
       "timestamp": 1789974000,
-      "created_at": "2026-09-21 16:00"
+      "created_at": "2026-09-21 07:00",
+      "title_orig": "DIGIMON BEATBREAK Anime Teases Final Episode with New Visual"
     },
     {
       "id": "a091b3c89af8cc9175d5e72eb98c2a09",
@@ -1774,14 +1961,14 @@
       "category_name": "일반/뉴스",
       "link": "https://digimon.net/topic/detail.php?id=2069",
       "image": null,
-      "timestamp": 1789830000,
+      "timestamp": 1789862400,
       "created_at": "2026-09-20 00:00",
       "title_orig": "デジモン図鑑に、新たにノスフェラモン、アルティオモン を追加！",
       "title_ja": "デジモン図鑑に、新たにノスフェラモン、アルティオモン を追加！"
     },
     {
       "id": "d4a2cc78cf4687414bdd64becd84482a",
-      "title": "[하비뉴스] プラキット「デジモンギャザリング」第1弾！『デジモンアドベンチャー』と『デジモンビートブレイク』からクローズドボックス仕様で全7種がラインナップ!!",
+      "title": "[하비뉴스] 프라모델 키트 「디지몬 개더링」 제1탄! 『디지몬 어드벤처』와 『디지몬 비트브레이크』에서 블라인드 박스 사양으로 총 7종 라인업!!",
       "snippet": "プラキット「デジモンギャザリング」第1弾！『デジモンアドベンチャー』と『デジモンビートブレイク』からクローズドボックス仕様で全7種がラインナップ!!&nbsp;&nbsp;電撃ホビーウェブ",
       "source": "전격하비",
       "source_badge": "하비뉴스",
@@ -1790,11 +1977,13 @@
       "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTFBpdks2WGhaRGt1Qkw3cEFyYzdHcUhfcGNPUS1KYkFNd3pWRWgzMEt3bTJHeDBWVnRBR0k4NWsySmRianJJSHpCSVZOQ1BybVdS?oc=5",
       "image": null,
       "timestamp": 1789801200,
-      "created_at": "2026-09-19 16:00"
+      "created_at": "2026-09-19 07:00",
+      "title_orig": "プラキット「デジモンギャザリング」第1弾！『デジモンアドベンチャー』と『デジモンビートブレイク』からクローズドボックス仕様で全7種がラインナップ!!",
+      "title_ja": "プラキット「デジモンギャザリング」第1弾！『デジモンアドベンチャー』と『デジモンビートブレイク』からクローズドボックス仕様で全7種がラインナップ!!"
     },
     {
       "id": "d8412af5fc64640f73729cedc08444d6",
-      "title": "[하비뉴스] 『デジモンフロンティア』より、魅力が増幅された“Amplified”プラモデルシリーズに「マグナガルルモン」が登場！別売りの「カイゼルグレイモン」と合体して「スサノオモン」降臨!!",
+      "title": "[하비뉴스] 『디지몬 프론티어』에서 매력이 증폭된 “Amplified” 프라모델 시리즈에 「매그너가루몬」 등장! 별매인 「카이젤그레이몬」과 합체하여 「스사노오몬」 강림!!",
       "snippet": "『デジモンフロンティア』より、魅力が増幅された“Amplified”プラモデルシリーズに「マグナガルルモン」が登場！別売りの「カイゼルグレイモン」と合体して「スサノオモン」降臨!!&nbsp;&nbsp;電撃ホビーウェブ",
       "source": "전격하비",
       "source_badge": "하비뉴스",
@@ -1803,11 +1992,13 @@
       "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTFBkbnJxUnRISF9LRHhEXzBvYzA3eU9zaHJyU2NwWHJ5eC1ZT2dvbVdTME5VcDY2SENJbFFla0pUUkFkdThfc2dfUXBKaUxQQkdl?oc=5",
       "image": null,
       "timestamp": 1789801200,
-      "created_at": "2026-09-19 16:00"
+      "created_at": "2026-09-19 07:00",
+      "title_orig": "『デジモンフロンティア』より、魅力が増幅された“Amplified”プラモデルシリーズに「マグナガルルモン」が登場！別売りの「カイゼルグレイモン」と合体して「スサノオモン」降臨!!",
+      "title_ja": "『デジモンフロンティア』より、魅力が増幅された“Amplified”プラモデルシリーズに「マグナガルルモン」が登場！別売りの「カイゼルグレイモン」と合体して「スサノオモン」降臨!!"
     },
     {
       "id": "9a3fcb2b2a304762337e930718bb7fe7",
-      "title": "[하비뉴스] TVアニメ『デジモンフロンティア』よりプラモデル「Figure-rise Standard Amplified マグナガルルモン」本日発売！",
+      "title": "[하비뉴스] TV 애니메이션 『디지몬 프론티어』의 프라모델 「Figure-rise Standard Amplified 매그너가루몬」 오늘 발매!",
       "snippet": "TVアニメ『デジモンフロンティア』よりプラモデル「Figure-rise Standard Amplified マグナガルルモン」本日発売！&nbsp;&nbsp;hobby Watch",
       "source": "하비워치",
       "source_badge": "하비뉴스",
@@ -1816,7 +2007,9 @@
       "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE5XNGJPWVhZQk93b29YRnhibkhkb240WXFtZml0QS1yRnV2cXY3YWxNWTlPbVdobWloRlZUTXJnU1E5S2ZNdzh3N0t1WWxuUDFBU2pRaUxnQVAtMnB0b1ZXdVFEbzJHUGc?oc=5",
       "image": null,
       "timestamp": 1789801200,
-      "created_at": "2026-09-19 16:00"
+      "created_at": "2026-09-19 07:00",
+      "title_orig": "TVアニメ『デジモンフロンティア』よりプラモデル「Figure-rise Standard Amplified マグナガルルモン」本日発売！",
+      "title_ja": "TVアニメ『デジモンフロンティア』よりプラモデル「Figure-rise Standard Amplified マグナガルルモン」本日発売！"
     },
     {
       "id": "d98a464ead6f5793557296dace0aa990",
@@ -1842,11 +2035,11 @@
       "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE1zZTZMUWdYYUZ2Uy1ZY3JoaFRTamZKTDBFT1dUODRvNGZjMUdSLVFxR3k4VWtpdnA0SDI2S0pSYUh3SS1FODNOXy1qRUZSVmg3elE?oc=5",
       "image": null,
       "timestamp": 1789628400,
-      "created_at": "2026-09-17 16:00"
+      "created_at": "2026-09-17 07:00"
     },
     {
       "id": "0ce5d437eaeaf1987f847400b713c396",
-      "title": "[해외뉴스] Digimon Adventure",
+      "title": "[해외뉴스] 디지몬 어드벤처",
       "snippet": "Digimon Adventure&nbsp;&nbsp;IGN Africa",
       "source": "IGN Africa",
       "source_badge": "해외뉴스",
@@ -1855,7 +2048,8 @@
       "link": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE52SE5CejdzODVHVHBNWXNMSC1NWXNmSWdzdGVHZ0pxQmszTzM0cDJIT1A3VzIwT2lRN3BmWGYyaFdESE5abVF3QVkyTzJTR2s?oc=5",
       "image": null,
       "timestamp": 1789573135,
-      "created_at": "2026-09-17 00:38"
+      "created_at": "2026-09-16 15:38",
+      "title_orig": "Digimon Adventure"
     },
     {
       "id": "91d95f16c1719a273d5ac935509af22f",
@@ -1868,7 +2062,7 @@
       "link": "https://news.google.com/rss/articles/CBMiYkFVX3lxTFBYVmtWM0RsQjlWSEI4QnUzQzVvS2NRYVg0QW1SRmRiRDNfLXI1d3l2UXhkRlJudGZjeTdtblhjcThGS2gxX2xaZWkwVmI1eW9OT2F2QVE4OS05enM2MGlLTW53?oc=5",
       "image": null,
       "timestamp": 1789542000,
-      "created_at": "2026-09-16 16:00"
+      "created_at": "2026-09-16 07:00"
     },
     {
       "id": "8743a59417975f6a4c593f7beca5c0ef",
@@ -1895,7 +2089,7 @@
       "category_name": "피규어/굿즈",
       "link": "https://bbs.ruliweb.com/family/242/board/300017/read/2434796?search_type=subject&search_key=%EB%94%94%EC%A7%80%EB%AA%AC",
       "image": null,
-      "timestamp": 1789484400,
+      "timestamp": 1789516800,
       "created_at": "2026-09-16 00:00"
     },
     {
@@ -1908,7 +2102,7 @@
       "category_name": "게임/공식애니",
       "link": "https://bbs.ruliweb.com/news/board/1001/read/2362620?search_type=subject&search_key=%EB%94%94%EC%A7%80%EB%AA%AC",
       "image": null,
-      "timestamp": 1789398000,
+      "timestamp": 1789430400,
       "created_at": "2026-09-15 00:00"
     },
     {
@@ -1922,7 +2116,7 @@
       "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFBWN1RtVk04RVMxc1FkN2F0TldwNVViNURXdzZTVFBGNTRZM1JUMWZTaHJmbUgxNEVJYjZpckNsZHpNODQxSjJfaUNlY252TEphMWc?oc=5",
       "image": null,
       "timestamp": 1789369200,
-      "created_at": "2026-09-14 16:00"
+      "created_at": "2026-09-14 07:00"
     },
     {
       "id": "f3ae1fd1d47a253a807a61abae989f9b",
@@ -1934,7 +2128,7 @@
       "category_name": "피규어/굿즈",
       "link": "https://bbs.ruliweb.com/family/242/board/300017/read/2434642?search_type=subject&search_key=%EB%94%94%EC%A7%80%EB%AA%AC",
       "image": null,
-      "timestamp": 1789311600,
+      "timestamp": 1789344000,
       "created_at": "2026-09-14 00:00"
     },
     {
@@ -1952,7 +2146,7 @@
     },
     {
       "id": "35d506be91c7652b42ed0acf6669ac3f",
-      "title": "[일본뉴스] スナモン | CHARACTER | DIGIMON BEATBREAK - デジモンビートブレイク",
+      "title": "[일본뉴스] 스나몬 | CHARACTER | DIGIMON BEATBREAK - 디지몬 비트브레이크",
       "snippet": "スナモン | CHARACTER | DIGIMON BEATBREAK - デジモンビートブレイク&nbsp;&nbsp;東映アニメーション",
       "source": "東映アニメーション",
       "source_badge": "일본뉴스",
@@ -1961,7 +2155,9 @@
       "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxOM3Jwd1c0QzhrS2lQMzFtX0RGOWx6RFBjNnlaVTVhYXhpcW9Kdlpha2xzUkJnckxDRGp5RV85SmgyWHpXem9teWZoa05Ucy1vNkdLcnc0TXg4WExiNDkxcWtPMkNqZUVqSE1oSmRxelYyT3ZNd09iM2Y1U2hYeGdQLQ?oc=5",
       "image": null,
       "timestamp": 1789270629,
-      "created_at": "2026-09-13 12:37"
+      "created_at": "2026-09-13 12:37",
+      "title_orig": "スナモン | CHARACTER | DIGIMON BEATBREAK - デジモンビートブレイク",
+      "title_ja": "スナモン | CHARACTER | DIGIMON BEATBREAK - デジモンビートブレイク"
     },
     {
       "id": "e0ffbc3c5b06c5c10f33de0ab684fa22",
@@ -1987,7 +2183,7 @@
       "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTE9GNkZHYWFRdWQtZktwNUlTbnJBakxYVUxuYVo4YlZqLXp1eFVxXzJIX2FtNC1BM1RELWxWc1RiRzltVG96SXhvc2trTllqZ001Q21JOWNuLVY3c1BsZHFVakVPemtvbldyejg4OVA3Z1c?oc=5",
       "image": null,
       "timestamp": 1789023600,
-      "created_at": "2026-09-10 16:00"
+      "created_at": "2026-09-10 07:00"
     },
     {
       "id": "672c475800705e73950e1dd60568bbb7",
@@ -2000,7 +2196,7 @@
       "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFB3TGhYOXNJcVRveFdfVUZtR1VNNUxXNFhGT2lybjJoWnk4MmZmOUVaWDc3Q1FvM09vOUFEb2VhMmFjcm1RbXZmVVlPWGEzcVl6SVE?oc=5",
       "image": null,
       "timestamp": 1789023600,
-      "created_at": "2026-09-10 16:00"
+      "created_at": "2026-09-10 07:00"
     },
     {
       "id": "3db89d9657ce5bbc0eed6f6d4962d4c7",
@@ -2012,7 +2208,7 @@
       "category_name": "게임/공식애니",
       "link": "https://bbs.ruliweb.com/news/board/1001/read/2362110?search_type=subject&search_key=%EB%94%94%EC%A7%80%EB%AA%AC",
       "image": null,
-      "timestamp": 1788966000,
+      "timestamp": 1788998400,
       "created_at": "2026-09-10 00:00"
     },
     {
@@ -2025,7 +2221,7 @@
       "category_name": "게임/공식애니",
       "link": "https://bbs.ruliweb.com/news/board/1001/read/2362017?search_type=subject&search_key=%EB%94%94%EC%A7%80%EB%AA%AC",
       "image": null,
-      "timestamp": 1788966000,
+      "timestamp": 1788998400,
       "created_at": "2026-09-10 00:00"
     },
     {
@@ -2052,7 +2248,7 @@
       "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE4zaHBoN1Vxa2pWN0ZtclN5NFZaNmVzU0pzRDBhd1NIZ2dUTGI2Q0dDVGdJVWhaYndNd1c0YVdBeVExTzFGRmxnX1ZkWjk1bGtXNFE?oc=5",
       "image": null,
       "timestamp": 1788937200,
-      "created_at": "2026-09-09 16:00"
+      "created_at": "2026-09-09 07:00"
     },
     {
       "id": "d8d066dc4ef0d5f228e04ebaea48457f",
@@ -2082,7 +2278,7 @@
     },
     {
       "id": "cf955660d7c510439db5dcd11382e303",
-      "title": "[일본뉴스] 西野センカ | CHARACTER | DIGIMON BEATBREAK - デジモンビートブレイク",
+      "title": "[일본뉴스] 니시노 센카 | CHARACTER | DIGIMON BEATBREAK - 디지몬 비트브레이크",
       "snippet": "西野センカ | CHARACTER | DIGIMON BEATBREAK - デジモンビートブレイク&nbsp;&nbsp;東映アニメーション",
       "source": "東映アニメーション",
       "source_badge": "일본뉴스",
@@ -2091,11 +2287,13 @@
       "link": "https://news.google.com/rss/articles/CBMid0FVX3lxTFBxV1hPb0VfeHg2M3pIbmJxcmR3N3d2MjZEb0tJbFZrSS1CTHg3LTFwXzl0LWVaWUlVUC1GNzBpMUlua2ZIVnd6VXl4cUZLQXdMN0JCalIwbUpGRllvdlNrNWRlV0NteUlyU05sR2xDOVFUYUZ6YkJB?oc=5",
       "image": null,
       "timestamp": 1788665079,
-      "created_at": "2026-09-06 12:24"
+      "created_at": "2026-09-06 03:24",
+      "title_orig": "西野センカ | CHARACTER | DIGIMON BEATBREAK - デジモンビートブレイク",
+      "title_ja": "西野センカ | CHARACTER | DIGIMON BEATBREAK - デジモンビートブレイク"
     },
     {
       "id": "1090d592380b35b4549ae18aed5cd945",
-      "title": "[일본뉴스] 天馬タスク | CHARACTER | DIGIMON BEATBREAK - デジモンビートブレイク",
+      "title": "[일본뉴스] 텐마 타스크 | CHARACTER | DIGIMON BEATBREAK - 디지몬 비트브레이크",
       "snippet": "天馬タスク | CHARACTER | DIGIMON BEATBREAK - デジモンビートブレイク&nbsp;&nbsp;東映アニメーション",
       "source": "東映アニメーション",
       "source_badge": "일본뉴스",
@@ -2104,11 +2302,13 @@
       "link": "https://news.google.com/rss/articles/CBMid0FVX3lxTE5KcXF0Y204TW0tclNXT0RNVnRZX3ZaMU1tQk5BR3BlU05EN3RnaTZMX083YjY3ZUc0WnBCNlM2dlpJbXdsSkxEWHkzYl9MQXBmci16LXlnM2JMR2VDR0pyT3pndkNLa0Q0REVrc0d4MGJFLWhCdnVj?oc=5",
       "image": null,
       "timestamp": 1788664888,
-      "created_at": "2026-09-06 12:21"
+      "created_at": "2026-09-06 03:21",
+      "title_orig": "天馬タスク | CHARACTER | DIGIMON BEATBREAK - デジモンビートブレイク",
+      "title_ja": "天馬タスク | CHARACTER | DIGIMON BEATBREAK - デジモンビートブレイク"
     },
     {
       "id": "d9877bdf42b43ad54df97fcf5b5e0c78",
-      "title": "[일본뉴스] ブラキモン | CHARACTER | DIGIMON BEATBREAK - デジモンビートブレイク",
+      "title": "[일본뉴스] 브라키몬 | CHARACTER | DIGIMON BEATBREAK - 디지몬 비트브레이크",
       "snippet": "ブラキモン | CHARACTER | DIGIMON BEATBREAK - デジモンビートブレイク&nbsp;&nbsp;東映アニメーション",
       "source": "東映アニメーション",
       "source_badge": "일본뉴스",
@@ -2117,7 +2317,9 @@
       "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNVVVFZUpLcmlzVDRhUHp6RnZlbk02cTgyd1lfSTh5WXppd2xvY25TWC1CVjJQRW5IZkxPVm5wQWpFTmNxczZabkVxZFhLVWtGM2E0bEp2bkg0aTV0ejl3YU1meVF6Z25WZXlyX1RWMVhCN1k1eUdWR2hOa2VSbWpVeA?oc=5",
       "image": null,
       "timestamp": 1788656256,
-      "created_at": "2026-09-06 09:57"
+      "created_at": "2026-09-06 00:57",
+      "title_orig": "ブラキモン | CHARACTER | DIGIMON BEATBREAK - デジモンビートブレイク",
+      "title_ja": "ブラキモン | CHARACTER | DIGIMON BEATBREAK - デジモンビートブレイク"
     },
     {
       "id": "e947e091b81a008d84726ea04c719f91",
@@ -2155,7 +2357,7 @@
       "category_name": "게임/공식애니",
       "link": "https://bbs.ruliweb.com/news/board/1001/read/2361533?search_type=subject&search_key=%EB%94%94%EC%A7%80%EB%AA%AC",
       "image": null,
-      "timestamp": 1788447600,
+      "timestamp": 1788480000,
       "created_at": "2026-09-04 00:00"
     },
     {
@@ -2168,7 +2370,7 @@
       "category_name": "게임/공식애니",
       "link": "https://bbs.ruliweb.com/news/board/1003/read/2354489?search_type=subject&search_key=%EB%94%94%EC%A7%80%EB%AA%AC",
       "image": null,
-      "timestamp": 1788447600,
+      "timestamp": 1788480000,
       "created_at": "2026-09-04 00:00"
     },
     {
@@ -2182,11 +2384,11 @@
       "link": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE1sWkZ4WFVjbmNEVGYxbXNOTFowMFdTNTlKamdWcG1kWXpFVFMzZGZyVVJWUDV4N1dCa3E1NDZzQ1dGMXAycU44RE02V1VvMDhVd3JXVEhtLVVkNFNq?oc=5",
       "image": null,
       "timestamp": 1788418800,
-      "created_at": "2026-09-03 16:00"
+      "created_at": "2026-09-03 07:00"
     },
     {
       "id": "5a0fc64ad0b613f157352ab0499be9dc",
-      "title": "[해외뉴스] Legends Begin Anew in Digimon Story Time Stranger: A Hero's Eternal Legacy Expansion",
+      "title": "[해외뉴스] 디지몬 스토리: 타임 스트레인저 - 영웅의 영원한 유산 확장팩에서 전설이 새롭게 시작된다",
       "snippet": "Legends Begin Anew in Digimon Story Time Stranger: A Hero's Eternal Legacy Expansion&nbsp;&nbsp;Bandai Namco Entertainme",
       "source": "Bandai Namco Entertainment America",
       "source_badge": "해외뉴스",
@@ -2195,11 +2397,12 @@
       "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPVXp5eDFCMXpwQS1zaVZybjJDcm1xcnVLbmp1N2hRMDNJTTdzeFdiR2pXbUVOM0FFS24zaVdYMUo5VWVEb1ZtOXF2NElGN1JESkFqWkNzeEtrMjFQT0p0TDdZTFlwVkRiUlIxSWVpNkFJM3JReUctMndCbUZoNG02ajRlLVJjZWhScGpwSUNZWkFxVk1YdUMyUGZYQjg?oc=5",
       "image": null,
       "timestamp": 1788418800,
-      "created_at": "2026-09-03 16:00"
+      "created_at": "2026-09-03 07:00",
+      "title_orig": "Legends Begin Anew in Digimon Story Time Stranger: A Hero's Eternal Legacy Expansion"
     },
     {
       "id": "530ec64473a064db28ca6af9d6846b4d",
-      "title": "[해외뉴스] Legends begin anew in DIGIMON STORY: TIME STRANGER’S new expansion",
+      "title": "[해외뉴스] 디지몬 스토리: 타임 스트레인저의 신규 확장팩에서 전설이 새롭게 시작된다",
       "snippet": "Legends begin anew in DIGIMON STORY: TIME STRANGER’S new expansion&nbsp;&nbsp;Bandai Namco Europe",
       "source": "Bandai Namco Europe",
       "source_badge": "해외뉴스",
@@ -2208,7 +2411,8 @@
       "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOaFJxMU0xNlJmMGpRRTdiQk1waUpBd0x4dlNOM19BSkhuZ3VKY1pNZ2dCQ0twVnp1OV9jenVJSHdSNzV4U1ltN2pibnA4QzItc3FIckpaenFEMW1zQ1c4eWlfbmRPWHBSQzNwU3hmcGRXXy1wN3FQUF9EUGUzOE10MnVmejR5OG4wRFdZbDVsU3kwMzc3akFfOHJZemE1Q25NYWM2akd3?oc=5",
       "image": null,
       "timestamp": 1788418800,
-      "created_at": "2026-09-03 16:00"
+      "created_at": "2026-09-03 07:00",
+      "title_orig": "Legends begin anew in DIGIMON STORY: TIME STRANGER’S new expansion"
     },
     {
       "id": "1de5502de8dc363220bde806aff1e5db",
@@ -2220,7 +2424,7 @@
       "category_name": "게임/공식애니",
       "link": "https://bbs.ruliweb.com/news/board/1001/read/2361462?search_type=subject&search_key=%EB%94%94%EC%A7%80%EB%AA%AC",
       "image": null,
-      "timestamp": 1788361200,
+      "timestamp": 1788393600,
       "created_at": "2026-09-03 00:00"
     },
     {
@@ -2234,7 +2438,7 @@
       "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE9fUFR0eXRhcWJuZ3Axb1pKRV83R1RUS28xaHllRGxfSlQybmtzUFNmZGczeGNOS2tvVVgzWjJTZlVVX0dfRjc3cGVEVG4xV2szRnc?oc=5",
       "image": null,
       "timestamp": 1788246000,
-      "created_at": "2026-09-01 16:00"
+      "created_at": "2026-09-01 07:00"
     },
     {
       "id": "87d862d54c90c43c16d299a891293007",
@@ -2247,11 +2451,11 @@
       "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE42ODFMX3luZU0tLXhFWHRwSmlaSlpmeFoxU0FXa2t0NHItWGFIX1B2TVZveVdVZVBqMTE4UDF4UlIwMGd4U1A4cGdZdWx4eEgyY1ZsbGRSMV9CMEHSAWBBVV95cUxNY3BxREFzLUwzQVRVRlYzdDhJUWZsSFdqYkVqQ2MycHJZRFBrdFZPQzdFYjhpMFcwTlBjSVBTZHVpalNfNlNqNVY2TGJmcUlYa0dWbnhsT1o2aGpua0ZQNFg?oc=5",
       "image": null,
       "timestamp": 1788159600,
-      "created_at": "2026-08-31 16:00"
+      "created_at": "2026-08-31 07:00"
     },
     {
       "id": "05bcbdba446c749fd72360a8a614f581",
-      "title": "[인스타] 【周邊】 期間：9/24（四）～10/13（二） 地點：AK PLAZA 弘大 4樓 📌韓國(Korea) #デジモンアドベンチャー #DigimonAdventure #Digimon #Adventure #數碼寶貝 #數碼寶貝大冒險 #デジモン #八神太一 #石田ヤマト #泉光子郎 #武之内空 #城戸丈 #太刀川ミミ #太刀川美美 #",
+      "title": "[인스타] 【굿즈】 기간: 9/24(목)~10/13(화) 장소: AK PLAZA 홍대 4층 📌한국(Korea) #디지몬 어드벤처 #DigimonAdventure #Digimon #Adventure #디지몬 #디지몬 어드벤처 #디지몬 #야가미 타이치(신태일) #이시다 야마토(매튜) #이즈미 코시로(한솔) #타케노우치 소라(한소라) #키도 죠(정석) #타치카와 미미(미나) #타치카와 미미(미나) #",
       "snippet": "인스타그램 디지몬 관련 공개 게시물입니다.",
       "source": "Instagram",
       "source_badge": "인스타그램",
@@ -2260,7 +2464,9 @@
       "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE1TeFA3TGt6VUptLUluU0E3dnpWOHR5OXE3Mm9sUU1kLVJnYkFyalJCb3hIb1dEMDI2dENDQXhONEJ0QWFtbGhuY0ZxN2RoODhfbGc?oc=5",
       "image": null,
       "timestamp": 1788159600,
-      "created_at": "2026-08-31 16:00"
+      "created_at": "2026-08-31 07:00",
+      "title_orig": "【周邊】 期間：9/24（四）～10/13（二） 地點：AK PLAZA 弘大 4樓 📌韓國(Korea) #デジモンアドベンチャー #DigimonAdventure #Digimon #Adventure #數碼寶貝 #數碼寶貝大冒險 #デジモン #八神太一 #石田ヤマト #泉光子郎 #武之内空 #城戸丈 #太刀川ミミ #太刀川美美 #",
+      "title_ja": "【周邊】 期間：9/24（四）～10/13（二） 地點：AK PLAZA 弘大 4樓 📌韓國(Korea) #デジモンアドベンチャー #DigimonAdventure #Digimon #Adventure #數碼寶貝 #數碼寶貝大冒險 #デジモン #八神太一 #石田ヤマト #泉光子郎 #武之内空 #城戸丈 #太刀川ミミ #太刀川美美 #"
     },
     {
       "id": "c81b510402e42424898121e775be8b9b",
@@ -2272,12 +2478,12 @@
       "category_name": "게임/공식애니",
       "link": "https://bbs.ruliweb.com/family/211/board/300015/read/2433394?search_type=subject&search_key=%EB%94%94%EC%A7%80%EB%AA%AC",
       "image": null,
-      "timestamp": 1788102000,
+      "timestamp": 1788134400,
       "created_at": "2026-08-31 00:00"
     },
     {
       "id": "15724c77408cf7c6cb38079726e18eb8",
-      "title": "[일본뉴스] 【デジモン】デジヴァイス型台座の新プライズ登場！ 第1弾パタモンのあどけない表情が可愛いすぎ",
+      "title": "[일본뉴스] 【디지몬】 디지바이스형 받침대의 새로운 프라이즈 등장! 제1탄 파닥몬의 천진난만한 표정이 너무 귀여워",
       "snippet": "【デジモン】デジヴァイス型台座の新プライズ登場！ 第1弾パタモンのあどけない表情が可愛いすぎ&nbsp;&nbsp;電撃オンライン",
       "source": "電撃オンライン",
       "source_badge": "일본뉴스",
@@ -2286,7 +2492,9 @@
       "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1keGl2NVJ6ZGVXM09XZTkxSndyRmNVaGtTMDctM2JwVEs2aEl5eDY2ZndUdWo0WjR6OGw4VHpla0cxZHV4N2VqZUFvTHJyTU5BenlsY2Z2Nk51Zw?oc=5",
       "image": null,
       "timestamp": 1788073200,
-      "created_at": "2026-08-30 16:00"
+      "created_at": "2026-08-30 07:00",
+      "title_orig": "【デジモン】デジヴァイス型台座の新プライズ登場！ 第1弾パタモンのあどけない表情が可愛いすぎ",
+      "title_ja": "【デジモン】デジヴァイス型台座の新プライズ登場！ 第1弾パタモンのあどけない表情が可愛いすぎ"
     },
     {
       "id": "4928fc3400fb214cfa3d417cf3c7f276",
@@ -2299,7 +2507,7 @@
       "link": "https://news.google.com/rss/articles/CBMib0FVX3lxTFBUWl9pY1BiZ2tDcDFQT1RQMnFhYjl3b2VISzVTNXFkandZSzFJb3ExTXJ1SkFDNmkxSXQ5LXNkczV3UVBsbm9aLWNva2cwU3YtWDBJY0U1TTNvc0s3ZEdOdWtoTjVyMXdoR2hVLVRIYw?oc=5",
       "image": null,
       "timestamp": 1788073200,
-      "created_at": "2026-08-30 16:00"
+      "created_at": "2026-08-30 07:00"
     },
     {
       "id": "493c8fda6d95287378a99b3e3db23939",
@@ -2342,11 +2550,11 @@
       "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFAxcEpMckpfMU9kaVE3ZmZpQVZmSUJYU2l4ZGRMUlEwbzFWSElEWjZFWjFjZzU3cktSRGREYzZrZjQ5aGhjZEM0TDMzdm50cWhwbGc?oc=5",
       "image": null,
       "timestamp": 1787727600,
-      "created_at": "2026-08-26 16:00"
+      "created_at": "2026-08-26 07:00"
     },
     {
       "id": "5e04b6dab7d73313fae246533d3a76a8",
-      "title": "[일본뉴스] ゴグマモン | CHARACTER | DIGIMON BEATBREAK - デジモンビートブレイク",
+      "title": "[일본뉴스] 고그마몬 | CHARACTER | DIGIMON BEATBREAK - 디지몬 비트브레이크",
       "snippet": "ゴグマモン | CHARACTER | DIGIMON BEATBREAK - デジモンビートブレイク&nbsp;&nbsp;東映アニメーション",
       "source": "東映アニメーション",
       "source_badge": "일본뉴스",
@@ -2355,7 +2563,9 @@
       "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxOdklJVFVBOTJOUmY2bzQ4WHlEMnhtNVVsLVpqMU8yZXJ4dmJVZl9YbnMyaGhaclFRMlk4blMyQ0h2N2NrdUlLN0dpdkVZZDNKak1nNkZyN0VMNTk4NVc4aS1LWlVxOTctNFBmallQUnVsTDBCcW01bkRtcEM0SVN2NQ?oc=5",
       "image": null,
       "timestamp": 1787445505,
-      "created_at": "2026-08-23 09:38"
+      "created_at": "2026-08-23 00:38",
+      "title_orig": "ゴグマモン | CHARACTER | DIGIMON BEATBREAK - デジモンビートブレイク",
+      "title_ja": "ゴグマモン | CHARACTER | DIGIMON BEATBREAK - デジモンビートブレイク"
     },
     {
       "id": "6254dfb562464be91d9ed3e759519700",
@@ -2368,11 +2578,11 @@
       "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFBhTmh6SXhpWW5LTHFlQmpiTF9UeWtlejk1aWdhYU05cE1hOHNwdHVyY1hyZy1PZWJLZjJHdWE4SGJURFZReS1sLTBDaDFyNl9PQ0VzWjBB?oc=5",
       "image": null,
       "timestamp": 1787295600,
-      "created_at": "2026-08-21 16:00"
+      "created_at": "2026-08-21 07:00"
     },
     {
       "id": "5fb3a1b82825e8387ec2558ad237e893",
-      "title": "[인스타] ¡Nuevos fondos de pantalla de Digimon Adventure! Con motivo del estreno de Digimon Adventure y nuestro juego de guerra en Corea del Sur, se han preparado nuevos wallpapers para móvil. 16 de septiembre en Megabox, Corea del Sur. #Digimon #Digim",
+      "title": "[인스타] 새로운 디지몬 어드벤처 배경화면! 한국에서의 디지몬 어드벤처와 우리들의 워 게임! 개봉을 기념하여, 새로운 모바일용 배경화면이 준비되었습니다. 9월 16일 한국 메가박스. #Digimon #Digim",
       "snippet": "인스타그램 디지몬 관련 공개 게시물입니다.",
       "source": "Instagram",
       "source_badge": "인스타그램",
@@ -2381,7 +2591,8 @@
       "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFBnaDl1UkE4bkowVEtmNkZOUTIyVXdaS3paUDlFeHowM3RKZ3ZUUWlWS19rX0JHems1clUwOHFYTFliaUJDNmJwWjhVOUJrYkVhdkE?oc=5",
       "image": null,
       "timestamp": 1787209200,
-      "created_at": "2026-08-20 16:00"
+      "created_at": "2026-08-20 07:00",
+      "title_orig": "¡Nuevos fondos de pantalla de Digimon Adventure! Con motivo del estreno de Digimon Adventure y nuestro juego de guerra en Corea del Sur, se han preparado nuevos wallpapers para móvil. 16 de septiembre en Megabox, Corea del Sur. #Digimon #Digim"
     },
     {
       "id": "beccc3dd590c70cadac95eb1fcb4d462",
@@ -2393,7 +2604,7 @@
       "category_name": "게임/공식애니",
       "link": "https://bbs.ruliweb.com/family/211/board/300015/read/2432127?search_type=subject&search_key=%EB%94%94%EC%A7%80%EB%AA%AC",
       "image": null,
-      "timestamp": 1787151600,
+      "timestamp": 1787184000,
       "created_at": "2026-08-20 00:00"
     },
     {
@@ -2406,12 +2617,12 @@
       "category_name": "게임/공식애니",
       "link": "https://bbs.ruliweb.com/family/211/board/300015/read/2432016?search_type=subject&search_key=%EB%94%94%EC%A7%80%EB%AA%AC",
       "image": null,
-      "timestamp": 1787065200,
+      "timestamp": 1787097600,
       "created_at": "2026-08-19 00:00"
     },
     {
       "id": "00c5ff9a910bf7d1fe413d9cb50c0340",
-      "title": "[해외뉴스] G.E.M. Series Digimon Adventure Garurumon & Yamato Ishida Figure Returns with Re-release",
+      "title": "[해외뉴스] G.E.M. 시리즈 디지몬 어드벤처 가루몬 & 이시다 야마토(매튜) 피규어 재판으로 귀환",
       "snippet": "G.E.M. Series Digimon Adventure Garurumon & Yamato Ishida Figure Returns with Re-release&nbsp;&nbsp;haveagood-holiday.co",
       "source": "haveagood-holiday.com",
       "source_badge": "해외뉴스",
@@ -2420,11 +2631,12 @@
       "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOTkEzd1FkdmF3T0E2N01VcmRCTHFvTlM4b1BxZENPbVRnYWdWeXNTZTYxZDktc1hPU2djYmpLNWZZMnBROXlfZ3NGa05Memh2Y1BUUTJfa2xoVWlROU5TY0IwZ1BCaFVKbzdqR0F3TWE5RHdVWEdFYV92M0s4dThXSXEtZUVCRFI2YVoybEl2Yi0yRFdhczVYSTctT2NJVXRRcjFLeFVPd25kMkFlZEtRbVNldWVzQQ?oc=5",
       "image": null,
       "timestamp": 1787036400,
-      "created_at": "2026-08-18 16:00"
+      "created_at": "2026-08-18 07:00",
+      "title_orig": "G.E.M. Series Digimon Adventure Garurumon & Yamato Ishida Figure Returns with Re-release"
     },
     {
       "id": "36e3ab128471667e8decf0be27c8c539",
-      "title": "[해외뉴스] Digimon Adventure arrives in AFK Journey for a limited crossover event",
+      "title": "[해외뉴스] 디지몬 어드벤처, AFK 새로운 여정에 기간 한정 콜라보레이션 이벤트로 강림",
       "snippet": "Digimon Adventure arrives in AFK Journey for a limited crossover event&nbsp;&nbsp;GamesBeat",
       "source": "GamesBeat",
       "source_badge": "해외뉴스",
@@ -2433,11 +2645,12 @@
       "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPYnR5c3ZlZDBrS1dmLXB5TlZwTDVhNFY3R2RPSndPYUlMZnBua0Vqb2M2cTJPbXlvLTN3UEpmMXg2cHpTTFd5VjBQWEt0N3IwLUNkbkRVUUszalhZWjR0ZEN5TE1SSzZOQ1UzdGFYUmlhZzEwcW5PQll2enlubDZyQWtmTndFdVpRTWlISTFnSE5qTENwR3l6YQ?oc=5",
       "image": null,
       "timestamp": 1786431600,
-      "created_at": "2026-08-11 16:00"
+      "created_at": "2026-08-11 07:00",
+      "title_orig": "Digimon Adventure arrives in AFK Journey for a limited crossover event"
     },
     {
       "id": "19c90730c743e459495609e1f1373348",
-      "title": "[해외뉴스] AFK Journey x Digimon Adventure - Official Collaboration Trailer",
+      "title": "[해외뉴스] AFK 새로운 여정 x 디지몬 어드벤처 - 공식 콜라보레이션 트레일러",
       "snippet": "AFK Journey x Digimon Adventure - Official Collaboration Trailer&nbsp;&nbsp;IGN Africa",
       "source": "IGN Africa",
       "source_badge": "해외뉴스",
@@ -2446,11 +2659,12 @@
       "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNcVMtdVJQR3paUV9yb3JvSURlblVyTUoyamVEckpoc0NuSmEwOTlGa2kzUFJlUlhkZFJMZjZlMTkwSEhudGxOcXdHcUNsWTFTaHhVQjdmai1VMXJ4UUtkTm1MQUJDcTd3OTd6eVhMRkRCZFNZT0R5blNVd0d1cGMwWHlKVkl6czlRWGd6QUlHLUJ0UFlyWHdQbkNBVEtNcl92WHFWQ1JuY0t6QQ?oc=5",
       "image": null,
       "timestamp": 1786431600,
-      "created_at": "2026-08-11 16:00"
+      "created_at": "2026-08-11 07:00",
+      "title_orig": "AFK Journey x Digimon Adventure - Official Collaboration Trailer"
     },
     {
       "id": "752dc36bb77d027262d05bfea4f21e0a",
-      "title": "[해외뉴스] Digimon Story: Time Stranger contributed to highest ever Digimon IP annual profits, surpassing the 2000s anime, according to Bandai Namco",
+      "title": "[해외뉴스] 반다이 남코에 따르면, 디지몬 스토리: 타임 스트레인저가 2000년대 애니메이션을 뛰어넘으며 디지몬 IP 사상 역대 최고 연간 수익에 기여했다",
       "snippet": "Digimon Story: Time Stranger contributed to highest ever Digimon IP annual profits, surpassing the 2000s anime, accordin",
       "source": "AUTOMATON",
       "source_badge": "해외뉴스",
@@ -2459,7 +2673,8 @@
       "link": "https://news.google.com/rss/articles/CBMigAJBVV95cUxOd2xwXzhJd01Pa1kxcVcwcENtZnFOZHRtODRleDBvdThwckdCcUlieFJiOXFlM3F3a0pUUkpmMU5RcnJxYzdBTEVzU1h4N0huaXF3dEJjZm1jZEM3RzZMNmZUODk1TUgtSlQzZmNYLW96R1ViMjZ1VjdJQmJCaW1BNDJSSlE4dFFId25oOGFadWlZb2w0amRLWFpiZ3dNVlZMRVJ3SUlNUjVKT1R5bnFldGpTbUR1ZUV5bHVZRnpBU2pNdlBmYUw5VjFrMlVJRDRQbi05VS1jZ0pfR3pYRmV0ZDU1MFpWME1LTzRfVWZCNTRpcUlQVnpuOXAxNElUOXJD?oc=5",
       "image": null,
       "timestamp": 1786345200,
-      "created_at": "2026-08-10 16:00"
+      "created_at": "2026-08-10 07:00",
+      "title_orig": "Digimon Story: Time Stranger contributed to highest ever Digimon IP annual profits, surpassing the 2000s anime, according to Bandai Namco"
     },
     {
       "id": "595d5382ba8e447aab6fc88f64ec1691",
@@ -2471,7 +2686,7 @@
       "category_name": "게임/공식애니",
       "link": "https://bbs.ruliweb.com/family/211/board/300015/read/2431322?search_type=subject&search_key=%EB%94%94%EC%A7%80%EB%AA%AC",
       "image": null,
-      "timestamp": 1786287600,
+      "timestamp": 1786320000,
       "created_at": "2026-08-10 00:00"
     },
     {
@@ -2510,7 +2725,7 @@
       "category_name": "게임/공식애니",
       "link": "https://bbs.ruliweb.com/news/board/1001/read/2359576?search_type=subject&search_key=%EB%94%94%EC%A7%80%EB%AA%AC",
       "image": null,
-      "timestamp": 1786114800,
+      "timestamp": 1786147200,
       "created_at": "2026-08-08 00:00"
     },
     {
@@ -2523,7 +2738,7 @@
       "category_name": "게임/공식애니",
       "link": "https://bbs.ruliweb.com/news/board/1001/read/2359534?search_type=subject&search_key=%EB%94%94%EC%A7%80%EB%AA%AC",
       "image": null,
-      "timestamp": 1786028400,
+      "timestamp": 1786060800,
       "created_at": "2026-08-07 00:00"
     },
     {
@@ -2537,11 +2752,11 @@
       "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE9MaXdWU1B6d2hwSzFiVmFfY3UyaFIxSWhBaTBBam5ERlZtWThIZEZVOUwxb1h4b3NGT08tZ2pTd1h3ME5OXzVsd1RfOXpVWVludXc?oc=5",
       "image": null,
       "timestamp": 1785913200,
-      "created_at": "2026-08-05 16:00"
+      "created_at": "2026-08-05 07:00"
     },
     {
       "id": "972b045e4598084773175c820bbfe91e",
-      "title": "[해외뉴스] New Digimon Anime Confirmed for 2027 Debut | Outlook Respawn",
+      "title": "[해외뉴스] 신작 디지몬 애니메이션 2027년 첫 방영 확정 | Outlook Respawn",
       "snippet": "New Digimon Anime Confirmed for 2027 Debut | Outlook Respawn&nbsp;&nbsp;Outlook Respawn",
       "source": "Outlook Respawn",
       "source_badge": "해외뉴스",
@@ -2550,11 +2765,12 @@
       "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxOVkhoTk5fMG9aMGZBWlRYQTRjWmFBbFZiM3FnQ2xyVWdINEMzTS10TFdTdGRCVXVSQ1ZHbGVMcUZYNEc1cEQ2UE1vQzF0Qy1nd2hmb3BtVXFqdHM1M2xWbGFsQUVvMEhnZWlSU0ZXMzRWOHNHcFlVNVRuSmpTTDk3QmNJdHF1LXdDQjVkc2c4d2V3Y0JVaHg3VEktemV1YWQ2RE9MR3RRNNIBtAFBVV95cUxNQzBOZ0d6bjFfS3ZBdzFJTXRmU0FGcEMzMGhzYTFaR2RodE84MUFUUXVIU2FELWQteXNrSTNzemdGTl9WTE5kTjh4UGVkRy11QURBdlVNY3V6NnZBampCRFg2cVBWZHdDSjdHcF9jeERpbnZKYnhNajc5M0dDTVhtYnBVZThKazdwbWJjT3Y4eExPVTBWWER6QndFMXF6N0JJX1YzUUdrVUZPdEJlZk5MWEFGa1k?oc=5",
       "image": null,
       "timestamp": 1785826800,
-      "created_at": "2026-08-04 16:00"
+      "created_at": "2026-08-04 07:00",
+      "title_orig": "New Digimon Anime Confirmed for 2027 Debut | Outlook Respawn"
     },
     {
       "id": "f2434fbf61229611707d07ae95daa10e",
-      "title": "[애니뉴스] REVIEW: DIGIMON BEATBREAK Episodes 25-37 Anime Series Review",
+      "title": "[애니뉴스] 리뷰: DIGIMON BEATBREAK(디지몬 비트브레이크) 25-37화 애니메이션 시리즈 리뷰",
       "snippet": "REVIEW: DIGIMON BEATBREAK Episodes 25-37 Anime Series Review&nbsp;&nbsp;Anime News Network",
       "source": "Anime News Network",
       "source_badge": "애니뉴스",
@@ -2563,11 +2779,12 @@
       "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTE9ET3ZCNkpXSVBTZlFSSFU1TkF1WlhNUUs1Z2d0WWE3UmZ5VGUyZFVER09zVVIwcldtY285Qnhad2x0MnNUTXRCVjFJNDlwVWgxQmxGTDhBNGhDUmtZa3puX2pocGl2T08wNER2Qy0wenBxT1haX1E?oc=5",
       "image": null,
       "timestamp": 1785826800,
-      "created_at": "2026-08-04 16:00"
+      "created_at": "2026-08-04 07:00",
+      "title_orig": "REVIEW: DIGIMON BEATBREAK Episodes 25-37 Anime Series Review"
     },
     {
       "id": "fd2b4fcba98db25730a70f5d3625f5d3",
-      "title": "[해외뉴스] AFK Journey x Digimon Adventure - Official Crossover Trailer",
+      "title": "[해외뉴스] AFK 새로운 여정 x 디지몬 어드벤처 - 공식 크로스오버 트레일러",
       "snippet": "AFK Journey x Digimon Adventure - Official Crossover Trailer&nbsp;&nbsp;IGN Africa",
       "source": "IGN Africa",
       "source_badge": "해외뉴스",
@@ -2576,11 +2793,12 @@
       "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQVHhRNE1OWHFobllXOGt2WjdNLXhFb1Jiczg4cjY5YmF4MGwwOVQ1N3l2amtoMlEwbFd1bW01RW9BUzJiVzI4NnZMTTc5T3RTd1NvV0tXZnBCOEFRRTg4cjFsR25MYTRGOGJzUktwUFFsRmNHMkN5SkMyMWNaNGJiVGw2OW11d0NabVMwamZLZEVlNWxyQjhtajVlZFY?oc=5",
       "image": null,
       "timestamp": 1785740400,
-      "created_at": "2026-08-03 16:00"
+      "created_at": "2026-08-03 07:00",
+      "title_orig": "AFK Journey x Digimon Adventure - Official Crossover Trailer"
     },
     {
       "id": "dabf4d0d606ffc7e152cd3e2e6685a91",
-      "title": "[해외뉴스] Digimon Franchise Reveals Poll Winners for Best Episodes of 1st 4 Digimon Anime Series",
+      "title": "[해외뉴스] 디지몬 프랜차이즈, 초기 디지몬 애니메이션 4개 시리즈 최고 에피소드 투표 결과 공개",
       "snippet": "Digimon Franchise Reveals Poll Winners for Best Episodes of 1st 4 Digimon Anime Series&nbsp;&nbsp;Anime News Network",
       "source": "Anime News Network",
       "source_badge": "해외뉴스",
@@ -2589,11 +2807,12 @@
       "link": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxQZDFBaTlOX0NLVldsMVVIYVFVZHlXa1dhZ2VFOVlveVoyVGF4MXJGUGJEUlZoWUNUdGdLbEV2X3BvenlDdm9ZMkpzemRmNDhyWU9NbDUtRXhMT3FBSEczSmtFMTlMV1RaeHR3Tm9nTk5LYzJxZkRoenVIRWh5VWZJRnBiN2dzYkduU2x1LTZBQzAwX2s2dXZPWDhXNHlaelBlQ1o1M2tmbUdaU0o2SjVCdkhlRUlkYTJNWWNWQ0pSUzBCNnRfQVVTLXpDYWVkeGwyWFVGak5BTVpNYW85Ym1aRg?oc=5",
       "image": null,
       "timestamp": 1785740400,
-      "created_at": "2026-08-03 16:00"
+      "created_at": "2026-08-03 07:00",
+      "title_orig": "Digimon Franchise Reveals Poll Winners for Best Episodes of 1st 4 Digimon Anime Series"
     },
     {
       "id": "8b7bcb31f27341d29a51bbd4a85c9975",
-      "title": "[해외뉴스] New Digimon Anime Project to Air in 2027",
+      "title": "[해외뉴스] 신작 디지몬 애니메이션 프로젝트 2027년 방영 예정",
       "snippet": "New Digimon Anime Project to Air in 2027&nbsp;&nbsp;Anime News Network",
       "source": "Anime News Network",
       "source_badge": "해외뉴스",
@@ -2602,11 +2821,12 @@
       "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxPajdIRGw2bTZuNnZ0Nm9aN084Zk03V2tYNVN6VVVxMG5nR05xRHBUR0FWUThqeklWTURtVmFMUlZucFE5WXozUFpIMVlNMTRhQ3NwRWE5RlF2MmFJak1tOWQ4QzQ0WlhPZEVsZnlGZmFocDRhd1djcGkzdDk3dl80LXFQc2txWE9rN21SMmFseW1hMjVxbDBaQXdsdEVBQQ?oc=5",
       "image": null,
       "timestamp": 1785567600,
-      "created_at": "2026-08-01 16:00"
+      "created_at": "2026-08-01 07:00",
+      "title_orig": "New Digimon Anime Project to Air in 2027"
     },
     {
       "id": "4a25198ff8cfb49827ffe7101838670a",
-      "title": "[해외뉴스] New Digimon Anime Project Announced for 2027",
+      "title": "[해외뉴스] 2027년 신작 디지몬 애니메이션 프로젝트 발표",
       "snippet": "New Digimon Anime Project Announced for 2027&nbsp;&nbsp;Crunchyroll",
       "source": "Crunchyroll",
       "source_badge": "해외뉴스",
@@ -2615,7 +2835,8 @@
       "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPNXBYWGNrZk1wTXVuQXpKenVLTklLd2ZKcnhoY2p2ei1JQTdwQkdzUjc4d3NvQUkyN3hJdzZQMTFKdEdQSlhmc3BQMjd4bFNadUxNMGU1bFZwWWVNMXlKTTNFRW1saEtPbzNyODZPZi1ZdXdsdE5USGhHNUdvcHZhQU02VnZVRjlhZFJGVndKR3BndFJPeW9Jdg?oc=5",
       "image": null,
       "timestamp": 1785567600,
-      "created_at": "2026-08-01 16:00"
+      "created_at": "2026-08-01 07:00",
+      "title_orig": "New Digimon Anime Project Announced for 2027"
     },
     {
       "id": "4297cf749daa183e98ab556037214099",
@@ -2641,7 +2862,7 @@
       "link": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE5xMVU3NDl5Q2NHV2dqWlpDTGl5WFVUYWhiTFZaTEtZT3JJUV9HOTV3anFfYkd5cDFBdUdYTTlaYlFEdEZvYTRaYVNJLXNZbXhFc0lENFBHZURvWG15?oc=5",
       "image": null,
       "timestamp": 1785481200,
-      "created_at": "2026-07-31 16:00"
+      "created_at": "2026-07-31 07:00"
     },
     {
       "id": "ee398fdd8e60f2aa3f3db391c3e35d63",
@@ -2654,7 +2875,7 @@
       "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE1oeERZSl9hbWVqdU9mNnk2NVhZU3VnLWVmdl84RlBqVE1BOFhoMFFMSkp2WUNDem94cTZzNHB3QTVvVnZxNmFOci00S0dWNW5ZSkE?oc=5",
       "image": null,
       "timestamp": 1785394800,
-      "created_at": "2026-07-30 16:00"
+      "created_at": "2026-07-30 07:00"
     },
     {
       "id": "59e44e1ab0e70d4a132cbabeb7f89a67",
@@ -2667,7 +2888,7 @@
       "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE02dUlHeHY0Skk2Sk1JVHFhRE5LcUdlMDFhSkhSWjhSUkllYXR1V3VuSG1VRnNWbEV3aFdodlFrSDZ2T3BNTzRnb1VZc1UtR29kaVE?oc=5",
       "image": null,
       "timestamp": 1785222000,
-      "created_at": "2026-07-28 16:00"
+      "created_at": "2026-07-28 07:00"
     },
     {
       "id": "7c6c7c87dee61e11e878e33ceb595bab",
@@ -2679,12 +2900,12 @@
       "category_name": "게임/공식애니",
       "link": "https://bbs.ruliweb.com/family/242/board/300017/read/2430030?search_type=subject&search_key=%EB%94%94%EC%A7%80%EB%AA%AC",
       "image": null,
-      "timestamp": 1785164400,
+      "timestamp": 1785196800,
       "created_at": "2026-07-28 00:00"
     },
     {
       "id": "fb479e985580c258bafa38c92d850ed1",
-      "title": "[해외뉴스] Digimon Story: Time Stranger (Nintendo Switch 2) Review",
+      "title": "[해외뉴스] 디지몬 스토리: 타임 스트레인저 (Nintendo Switch 2) 리뷰",
       "snippet": "Digimon Story: Time Stranger (Nintendo Switch 2) Review&nbsp;&nbsp;PCMag Middle East",
       "source": "PCMag Middle East",
       "source_badge": "해외뉴스",
@@ -2693,11 +2914,12 @@
       "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQS0FGQ0Qwek9ud012UVY2M3J4ZS1aVFkwRGtvNHJaY3B3WUYwNEVuamRRS1NBa09MWDBRVVZlcnlpSS1Qcmg2N3JzSGlmWXhQalAtZFFabk45NHVZZUJtNzUtM0tEOU1JRDRDWXYtVGNzenY1b3R4eFVrRzZJdVhXaEF0Wkg5VXdhN3pXVXFQR2l0Vnc?oc=5",
       "image": null,
       "timestamp": 1784876400,
-      "created_at": "2026-07-24 16:00"
+      "created_at": "2026-07-24 07:00",
+      "title_orig": "Digimon Story: Time Stranger (Nintendo Switch 2) Review"
     },
     {
       "id": "80736f9253ab4e3afa59df12aa1e59e1",
-      "title": "[디지카] Digimon Tournament Results | Egman Deck Builder",
+      "title": "[디지카] 디지몬 토너먼트 결과 | Egman Deck Builder",
       "snippet": "Digimon Tournament Results | Egman Deck Builder&nbsp;&nbsp;Egman Deck Builder",
       "source": "Egman Events",
       "source_badge": "디지카",
@@ -2706,11 +2928,12 @@
       "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE5GSXhvQ0hOcW5MQTM1YlM1S1YtdTJHRkNuNExCckhHNlRQLWFMWHUzU1dyUjBfZnlaX29QQmZXbk5WUFpoejhPUWJBVTRKM1A0blpXQlVDZ3pPNzFzYUlnUDFfMnV1QQ?oc=5",
       "image": null,
       "timestamp": 1784820310,
-      "created_at": "2026-07-24 00:25"
+      "created_at": "2026-07-23 15:25",
+      "title_orig": "Digimon Tournament Results | Egman Deck Builder"
     },
     {
       "id": "c9fbc29f2ce2641731ee0212872f36c2",
-      "title": "[해외뉴스] Digimon Tamers Anime Celebrates 25 Years With New Illustration",
+      "title": "[해외뉴스] 디지몬 테이머즈 애니메이션 25주년을 신규 일러스트로 기념",
       "snippet": "Digimon Tamers Anime Celebrates 25 Years With New Illustration&nbsp;&nbsp;Crunchyroll",
       "source": "Crunchyroll",
       "source_badge": "해외뉴스",
@@ -2719,7 +2942,8 @@
       "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxNNDFpSkh2UW51bm1xVFdQZnVvcmdzWVc0TEU1b2tWUDFZbTczUUlzWlBRaTlfRzNtTEpNTGk3bW41ZThDOVdpLUdpem5jSG85ZDlmeHNvXzljM1BzMFdaWVdNVDNYYmVCNzBxRzRhWE1VaS02NkRQMUFPNUdPRUpEb0Q4SVlsVVpIMms5SVNlNU01aHZ0YnZHNHBB?oc=5",
       "image": null,
       "timestamp": 1784790000,
-      "created_at": "2026-07-23 16:00"
+      "created_at": "2026-07-23 07:00",
+      "title_orig": "Digimon Tamers Anime Celebrates 25 Years With New Illustration"
     },
     {
       "id": "be09fe0225d543d691e2594772819f30",
@@ -2732,7 +2956,7 @@
       "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE05TzdVeEQ1WGU2WTl3LXZ1Y3lSSUg4aVl1Z0tuRHdNOHRmT2F6QktzdXRjRHNMdlluenZUU1JWbHhkbm0tRkoyb0RoejFTS2VNLUN5dHpB?oc=5",
       "image": null,
       "timestamp": 1784629375,
-      "created_at": "2026-07-21 19:22"
+      "created_at": "2026-07-21 10:22"
     },
     {
       "id": "66350e21ab011fc23d14a5dfa4875be3",
@@ -2745,11 +2969,11 @@
       "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE93YXdReWpLOHpyZDdUcTlNRGFWaHA3RnNqTnBZMTlrOVlJT2FPckQyLVVxUVFGRjZuckY3cFNrYzgyQ05STVVFRlNNYkM3T05wUXNRZC1n?oc=5",
       "image": null,
       "timestamp": 1784617200,
-      "created_at": "2026-07-21 16:00"
+      "created_at": "2026-07-21 07:00"
     },
     {
       "id": "3a1cf40dc7a2cdcac256e7d772f3196a",
-      "title": "[해외뉴스] Poll: Box Art Brawl - Duel: Digimon World 4 (GameCube)",
+      "title": "[해외뉴스] 투표: 박스 아트 브롤 - 듀얼: 디지몬 월드 4 (게임큐브)",
       "snippet": "Poll: Box Art Brawl - Duel: Digimon World 4 (GameCube)&nbsp;&nbsp;Nintendo Life",
       "source": "Nintendo Life",
       "source_badge": "해외뉴스",
@@ -2758,7 +2982,8 @@
       "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxOV2J5MWY1WVdCZEdqX0ZUX0c3U1lyYVRrdlRrMmhHVFVsWFZZaC1zMWZnOGFSamQyX3lOdzlZbzJUdUtpWTNVVUlMTGlKb2NFdFBJdnp0bFJ1NUtKT01oNmxQbjZoRkJNRzRRcEZqWHU2S0RBLXZ5dXlhbk91S0wzeXI5R2NSYmMwcElzVlRIZw?oc=5",
       "image": null,
       "timestamp": 1784444400,
-      "created_at": "2026-07-19 16:00"
+      "created_at": "2026-07-19 07:00",
+      "title_orig": "Poll: Box Art Brawl - Duel: Digimon World 4 (GameCube)"
     }
   ]
 }
