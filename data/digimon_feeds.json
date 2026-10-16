@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-10-16 01:04:43",
-  "total_count": 101,
+  "last_updated": "2026-10-16 02:13:33",
+  "total_count": 102,
   "retention_days": 90,
   "feeds": [
     {
@@ -13,9 +13,22 @@
       "category_name": "피규어/굿즈",
       "link": "https://digimon.net/product/detail.php?item_type=1&id=956",
       "image": null,
-      "timestamp": 1792112645,
-      "created_at": "2026-10-16 01:04",
+      "timestamp": 1792116807,
+      "created_at": "2026-10-16 02:13",
       "title_ja": "デジタルモンスター WORLDMAKING ACRYLIC STAND ブースターver.5"
+    },
+    {
+      "id": "23f153c3a71ea6fe9f3c4ff0f04ce797",
+      "title": "[r/digimon] Lalamon and certain digivice issues.",
+      "snippet": "Just a little fun comic I made with my Patreon client. I hope you enjoy it.  &#32; submitted by &#32;  /u/Various_",
+      "source": "Reddit digimon",
+      "source_badge": "레딧",
+      "category": "sns",
+      "category_name": "SNS/해외",
+      "link": "https://www.reddit.com/r/digimon/comments/1x72l0z/lalamon_and_certain_digivice_issues/",
+      "image": "https://preview.redd.it/fld0lqy08qvh1.png?width=140&height=114&auto=webp&s=c839623f76db7338b257ea1279c6a74999097c9a",
+      "timestamp": 1792111752,
+      "created_at": "2026-10-16 00:49"
     },
     {
       "id": "76b76972fc0a32667c20f620f68c9b50",
