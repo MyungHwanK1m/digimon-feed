@@ -678,7 +678,7 @@
     // PWA Service Worker (Blue Card v6 with auto-update)
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
-        navigator.serviceWorker.register('sw.js?v=14').then((reg) => {
+        navigator.serviceWorker.register('sw.js?v=15').then((reg) => {
           reg.update();
         }).catch(console.error);
 
@@ -1271,6 +1271,7 @@
       const names = [...new Set([
         raw,
         raw.replace(/\s+/g, ''),
+        raw.replace('X-Antibody', 'X Antibody'),
         stripped,
         stripped.replace(/\s+/g, ''),
         alias
@@ -1282,7 +1283,7 @@
         cards = [];
         for (const n of names) {
           try {
-            const res = await fetch(`https://digimoncard.io/api-public/search.php?n=${encodeURIComponent(n)}`);
+            const res = await fetch(`https://digimoncard.io/api-public/search?n=${encodeURIComponent(n)}`);
             if (!res.ok) continue;
             const data = await res.json();
             if (!Array.isArray(data)) continue;
@@ -1296,8 +1297,11 @@
       const box = document.getElementById('dex-tcg');
       if (!stillShowing(d)) return;
       const btnTcg = document.getElementById('dex-btn-mode-tcg');
-      if (btnTcg && cards.length) {
+      if (btnTcg && (cards.length || d.tcg_image)) {
         btnTcg.classList.remove('hidden');
+        if (dexViewerMode !== 'tcg') {
+          btnTcg.className = 'touch-press px-3 py-1 rounded-xl text-xs font-black transition bg-white/80 dark:bg-slate-900 text-slate-600 dark:text-slate-400 border border-blue-200 dark:border-blue-900/60';
+        }
       }
       if (!box || !cards.length) return;
       box.classList.remove('hidden');
@@ -1323,7 +1327,7 @@
       const modes = ['official'];
       if (d.dot_image) modes.push('dot');
       const tcgCards = dexExtraCache['tcg:' + d.no];
-      if (tcgCards && tcgCards.length) modes.push('tcg');
+      if (d.tcg_image || (tcgCards && tcgCards.length)) modes.push('tcg');
       return modes;
     }
 
@@ -1366,8 +1370,9 @@
         }
       }
       const tcgCards = dexExtraCache['tcg:' + d.no] || [];
+      const hasTcg = d.tcg_image || tcgCards.length;
       if (btnTcg) {
-        if (tcgCards.length) {
+        if (hasTcg) {
           btnTcg.classList.remove('hidden');
           btnTcg.className = (mode === 'tcg' ? activeBtn + 'bg-purple-600' : inactiveBtn);
         } else {
@@ -1384,16 +1389,29 @@
         img.src = d.dot_image;
         if (badgeIcon) badgeIcon.textContent = '👾';
         if (badgeText) badgeText.textContent = 'LCD 도트 (V-Pet)';
-      } else if (mode === 'tcg' && tcgCards.length) {
-        const card = (dexViewerTcgId && tcgCards.find(c => c.id === dexViewerTcgId)) || tcgCards[0];
-        dexViewerTcgId = card.id;
-        const cardUrl = `https://images.digimoncard.io/images/cards/${encodeURIComponent(card.id)}.jpg`;
+      } else if (mode === 'tcg' && hasTcg) {
+        let cardUrl = d.tcg_image || '';
+        let cardLabel = 'TCG 카드';
+        if (specificCardId && tcgCards.length) {
+          const card = tcgCards.find(c => c.id === specificCardId) || tcgCards[0];
+          dexViewerTcgId = card.id;
+          cardUrl = `https://images.digimoncard.io/images/cards/${encodeURIComponent(card.id)}.jpg`;
+          cardLabel = `TCG 카드 (${card.id})`;
+        } else if (tcgCards.length) {
+          const card = (dexViewerTcgId && tcgCards.find(c => c.id === dexViewerTcgId)) || tcgCards[0];
+          dexViewerTcgId = card.id;
+          cardUrl = `https://images.digimoncard.io/images/cards/${encodeURIComponent(card.id)}.jpg`;
+          cardLabel = `TCG 카드 (${card.id})`;
+        } else if (d.tcg_image) {
+          const m = d.tcg_image.match(/\/cards\/([^/.]+)\.jpg/);
+          cardLabel = m ? `TCG 카드 (${m[1]})` : 'TCG 카드';
+        }
         frame.className = 'bg-gradient-to-b from-purple-50 to-slate-100 dark:from-[#130924] dark:to-[#090514] w-full h-64 sm:h-80 rounded-2xl flex items-center justify-center p-4 border border-purple-200/60 dark:border-purple-900/60 shadow-inner relative overflow-hidden cursor-pointer select-none group touch-press transition-all duration-300';
         img.className = 'max-w-full max-h-full object-contain filter drop-shadow-xl group-hover:scale-105 transition duration-300 select-none';
         img.style.imageRendering = 'auto';
         img.src = cardUrl;
         if (badgeIcon) badgeIcon.textContent = '🃏';
-        if (badgeText) badgeText.textContent = `TCG 카드 (${card.id})`;
+        if (badgeText) badgeText.textContent = cardLabel;
       } else {
         dexViewerMode = 'official';
         frame.className = 'bg-gradient-to-b from-blue-50 to-slate-100 dark:from-[#08122c] dark:to-[#050b1a] w-full h-64 sm:h-80 rounded-2xl flex items-center justify-center p-4 border border-blue-200/60 dark:border-blue-900/60 shadow-inner relative overflow-hidden cursor-pointer select-none group touch-press transition-all duration-300';
@@ -1474,7 +1492,7 @@
                 <button 
                   id="dex-btn-mode-tcg" 
                   onclick="setDexViewerMode('tcg')" 
-                  class="touch-press px-3 py-1 rounded-xl text-xs font-black transition ${(dexExtraCache['tcg:' + d.no] && dexExtraCache['tcg:' + d.no].length) ? 'bg-white/80 dark:bg-slate-900 text-slate-600 dark:text-slate-400 border border-blue-200 dark:border-blue-900/60' : 'hidden'}"
+                  class="touch-press px-3 py-1 rounded-xl text-xs font-black transition ${(d.tcg_image || (dexExtraCache['tcg:' + d.no] && dexExtraCache['tcg:' + d.no].length)) ? 'bg-white/80 dark:bg-slate-900 text-slate-600 dark:text-slate-400 border border-blue-200 dark:border-blue-900/60' : 'hidden'}"
                 >
                   🃏 TCG 카드
                 </button>
