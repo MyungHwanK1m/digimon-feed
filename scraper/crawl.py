@@ -706,25 +706,26 @@ def crawl_tcg_portals():
     return items
 
 def crawl_wikimon_updates():
-    """위키몬(Wikimon) 최신 문서 및 소식 업데이트 수집 (로그인 필요 없는 공개 본문 페이지로 정규화)"""
+    """위키몬(Wikimon) 신규 등록 문서(New Pages) 전용 수집 (오타 수정 제외, 100% 공개 본문 링크)"""
     items = []
-    url = "https://wikimon.net/api.php?action=feedrecentchanges&feedformat=rss&namespace=0"
+    url = "https://wikimon.net/api.php?action=query&list=recentchanges&rctype=new&rcnamespace=0&rclimit=15&format=json"
     try:
         res = requests.get(url, headers={"User-Agent": "Mozilla/5.0 (DigimonTracker/1.0)"}, timeout=10)
         if res.status_code == 200:
-            feed = feedparser.parse(res.text)
-            for entry in feed.entries[:10]:
-                title = entry.title
-                # 로그인 필요한 diff= 주소 대신 100% 공개되는 문서 본문 링크로 정규화
-                clean_name = title.strip().replace(' ', '_')
+            data = res.json()
+            rcs = data.get("query", {}).get("recentchanges", [])
+            for rc in rcs:
+                raw_title = rc.get("title", "").strip()
+                if not raw_title:
+                    continue
+                # 로그인 필요한 diff= 대신 100% 공개되는 문서 본문 링크로 생성
+                clean_name = raw_title.replace(" ", "_")
                 clean_link = f"https://wikimon.net/{requests.utils.quote(clean_name)}"
-                published = getattr(entry, "published", "")
-                summary = re.sub(r'<[^>]+>', '', getattr(entry, "summary", ""))[:120].strip()
-                ts = parse_to_timestamp(published)
+                ts = parse_to_timestamp(rc.get("timestamp", ""))
                 items.append({
                     "id": get_hash_id(clean_link),
-                    "title": f"[위키몬] {title.strip()}",
-                    "snippet": summary or "Wikimon 디지몬 백과사전 최신 문서 업데이트입니다.",
+                    "title": f"[위키몬 신규] {raw_title}",
+                    "snippet": f"Wikimon에 새로 등록된 공식 신규 문서 ({raw_title})입니다.",
                     "source": "Wikimon",
                     "source_badge": "위키몬",
                     "category": "general",
@@ -735,7 +736,7 @@ def crawl_wikimon_updates():
                     "created_at": format_display_date(ts)
                 })
     except Exception as e:
-        print(f"[Error] Wikimon RSS crawling failed: {e}")
+        print(f"[Error] Wikimon API crawling failed: {e}")
     return items
 
 def crawl_premium_bandai_hobby():
@@ -892,20 +893,23 @@ def crawl_official_products():
             res = requests.get(url, headers={"User-Agent": "Mozilla/5.0 (digimon-feed fan project)"}, timeout=20)
             res.raise_for_status()
             for c in list(_official_cards(res.text))[:8]:
-                link = requests.compat.urljoin(url, c["link"])
+                raw_link = requests.compat.urljoin(url, c["link"])
+                # item_type=1 은 p-bandai.jp 로 302 강제 리다이렉트되어 해외 접속 시 차단됨
+                # 차단당하지 않는 디지몬웹 해당 카테고리 공식 목록 페이지로 안전 연결 (방안 A)
+                safe_link = url if "item_type=1" in raw_link else raw_link
                 release = _official_date(c["release"])
                 # 발매 예정 상품은 미래 날짜라 지금 시각으로 맞춤 (발매일은 요약에 표시)
                 ts = min(parse_to_timestamp(release), now_ts) if release else now_ts
                 info = " · ".join(x for x in [f"발매 {release}" if release else c["release"], c["price"]] if x)
                 items.append({
-                    "id": get_hash_id(link),
+                    "id": get_hash_id(f"{raw_link}_{c['title']}"),
                     "title": f"[공식 상품] {c['title']}",
                     "snippet": info or "디지몬 공식 사이트 상품 정보",
                     "source": "digimon.net",
                     "source_badge": "디지몬웹",
                     "category": cat,
                     "category_name": cat_name,
-                    "link": link,
+                    "link": safe_link,
                     "image": None,
                     "timestamp": ts,
                     "created_at": format_display_date(ts),
@@ -1072,11 +1076,14 @@ def main():
         if is_spam(item):
             continue
 
-        # 위키몬 링크 정규화 (diff -> 문서 본문)
+        # 디지몬웹 프반 302 리다이렉트 상품 링크 안전 처리 (방안 A)
+        if item.get("source_badge") == "디지몬웹" and "item_type=1" in item.get("link", ""):
+            item["link"] = "https://digimon.net/product/goods/"
+
+        # 위키몬: 신규 등록 문서([위키몬 신규])만 유지하고 과거 일반 수정글은 제외
         if item.get("source_badge") == "위키몬":
-            raw_t = re.sub(r"^\s*\[위키몬\]\s*", "", item.get("title_orig") or item.get("title", "")).strip()
-            item["link"] = f"https://wikimon.net/{requests.utils.quote(raw_t.replace(' ', '_'))}"
-            item["id"] = get_hash_id(item["link"])
+            if not item.get("title", "").startswith("[위키몬 신규]"):
+                continue
 
         if "timestamp" not in item:
             item["timestamp"] = parse_to_timestamp(item.get("created_at", ""))

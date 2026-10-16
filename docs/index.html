@@ -535,7 +535,7 @@
           ? 'bg-blue-600/15 text-blue-700 dark:text-blue-300 border-blue-600/40'
           : item.source_badge === '디지카'
           ? 'bg-indigo-500/15 text-indigo-600 dark:text-indigo-400 border-indigo-500/40'
-          : item.source_badge === '위키몬'
+          : (item.source_badge === '위키몬' || item.source_badge === '위키몬 신규')
           ? 'bg-teal-500/15 text-teal-600 dark:text-teal-400 border-teal-500/40'
           : (item.source_badge === '하비뉴스' || item.source_badge === '프반/하비')
           ? 'bg-amber-600/15 text-amber-700 dark:text-amber-300 border-amber-600/40'
@@ -690,7 +690,7 @@
     // PWA Service Worker (Blue Card v6 with auto-update)
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
-        navigator.serviceWorker.register('sw.js?v=17').then((reg) => {
+        navigator.serviceWorker.register('sw.js?v=18').then((reg) => {
           reg.update();
         }).catch(console.error);
 

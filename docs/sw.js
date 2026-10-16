@@ -1,5 +1,5 @@
-// DIGI-FEED v17 (refined sources: removed reddit & p-bandai, clean wikimon & instagram)
-const CACHE_NAME = 'digi-feed-v17';
+// DIGI-FEED v18 (safe official goods links & wikimon new pages)
+const CACHE_NAME = 'digi-feed-v18';
 const ASSETS = [
   './',
   './index.html',
