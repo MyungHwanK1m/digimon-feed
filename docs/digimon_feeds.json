@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-10-16 02:13:33",
-  "total_count": 102,
+  "last_updated": "2026-10-16 07:40:33",
+  "total_count": 103,
   "retention_days": 90,
   "feeds": [
     {
@@ -13,9 +13,35 @@
       "category_name": "피규어/굿즈",
       "link": "https://digimon.net/product/detail.php?item_type=1&id=956",
       "image": null,
-      "timestamp": 1792116807,
-      "created_at": "2026-10-16 02:13",
+      "timestamp": 1792136428,
+      "created_at": "2026-10-16 07:40",
       "title_ja": "デジタルモンスター WORLDMAKING ACRYLIC STAND ブースターver.5"
+    },
+    {
+      "id": "76b76972fc0a32667c20f620f68c9b50",
+      "title": "[인스타] 프롬푸딩 | AI 매거진 (@prom.pudding)",
+      "snippet": "인스타그램 디지몬 관련 공개 게시물입니다.",
+      "source": "Instagram",
+      "source_badge": "인스타그램",
+      "category": "sns",
+      "category_name": "SNS/해외",
+      "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE1zT0RzcFJBbS1HVWQ4Nnc2eXR3UHhnRWd5dzd3cElHUGhTb1pseTBuVzdEMm04dEdxdkYzT0VoZTRCM2tmcmtjY0NmN0hyYUR2?oc=5",
+      "image": null,
+      "timestamp": 1792133465,
+      "created_at": "2026-10-16 06:51"
+    },
+    {
+      "id": "8fbbb7a08255faaf40197df27e0d2be2",
+      "title": "[r/digimon] I genuinely love These two card arts lmao",
+      "snippet": "&#32; submitted by &#32;  /u/Plane_Swordfish7715   [link] &#32; [comments]",
+      "source": "Reddit digimon",
+      "source_badge": "레딧",
+      "category": "sns",
+      "category_name": "SNS/해외",
+      "link": "https://www.reddit.com/r/digimon/comments/1x78bfj/i_genuinely_love_these_two_card_arts_lmao/",
+      "image": "https://preview.redd.it/6euebck9rrvh1.png?width=140&height=140&crop=1:1,smart&auto=webp&s=282835a73476b6084a7b7298765db18483b84540",
+      "timestamp": 1792130328,
+      "created_at": "2026-10-16 05:58"
     },
     {
       "id": "23f153c3a71ea6fe9f3c4ff0f04ce797",
@@ -29,19 +55,6 @@
       "image": "https://preview.redd.it/fld0lqy08qvh1.png?width=140&height=114&auto=webp&s=c839623f76db7338b257ea1279c6a74999097c9a",
       "timestamp": 1792111752,
       "created_at": "2026-10-16 00:49"
-    },
-    {
-      "id": "76b76972fc0a32667c20f620f68c9b50",
-      "title": "[인스타] 프롬푸딩 | AI 매거진 (@prom.pudding)",
-      "snippet": "인스타그램 디지몬 관련 공개 게시물입니다.",
-      "source": "Instagram",
-      "source_badge": "인스타그램",
-      "category": "sns",
-      "category_name": "SNS/해외",
-      "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE1zT0RzcFJBbS1HVWQ4Nnc2eXR3UHhnRWd5dzd3cElHUGhTb1pseTBuVzdEMm04dEdxdkYzT0VoZTRCM2tmcmtjY0NmN0hyYUR2?oc=5",
-      "image": null,
-      "timestamp": 1792107965,
-      "created_at": "2026-10-15 23:46"
     },
     {
       "id": "14ef19440966ecfa7062e7bd96eb40cc",
