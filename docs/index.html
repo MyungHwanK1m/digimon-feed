@@ -256,7 +256,7 @@
           </label>
         </div>
 
-        <div id="dex-list" class="grid grid-cols-1 sm:grid-cols-2 gap-2"></div>
+        <div id="dex-list" class="grid grid-cols-2 sm:grid-cols-3 gap-1.5 sm:gap-2.5"></div>
         <button id="dex-more-btn" onclick="showMoreDex()" class="hidden w-full touch-press py-2.5 rounded-xl text-xs font-bold text-blue-600 dark:text-blue-400 bg-white/80 dark:bg-[#070e22]/80 border border-blue-200 dark:border-blue-900/60">더 보기</button>
 
         <!-- 공식 설정 자료 (링크만) -->
@@ -872,12 +872,12 @@
       }
       const next = items.slice(dexState.shown, dexState.shown + DEX_PAGE);
       box.insertAdjacentHTML('beforeend', next.map(d => `
-        <div onclick="openDexDetail(${jsArg(d.no)})" class="touch-press cursor-pointer p-2.5 rounded-xl bg-white/95 dark:bg-[#070e22]/95 border border-blue-200/80 dark:border-blue-900/60 hover:border-[#004ce8] flex items-center gap-3 transition">
-          ${dexThumb(d, 'w-11 h-11')}
+        <div onclick="openDexDetail(${jsArg(d.no)})" class="touch-press cursor-pointer p-2 sm:p-2.5 rounded-xl bg-white/95 dark:bg-[#070e22]/95 border border-blue-200/80 dark:border-blue-900/60 hover:border-[#004ce8] flex items-center gap-2 sm:gap-2.5 transition">
+          ${dexThumb(d, 'w-9 h-9 sm:w-11 sm:h-11')}
           <div class="min-w-0 flex-1">
-            <p class="text-[10px] font-bold font-mono ${d.official ? 'text-blue-600 dark:text-blue-400' : 'text-slate-400'}">${escapeHtml(dexNoLabel(d))}</p>
-            <p class="text-sm font-black text-slate-900 dark:text-slate-100 leading-tight break-keep">${escapeHtml(d.name)}${d.name_dub ? ` <span class="text-[11px] font-bold text-slate-400">(${escapeHtml(d.name_dub)})</span>` : ''}</p>
-            <p class="text-[10px] text-slate-400 truncate">${escapeHtml(d.level)}${d.type ? ' · ' + escapeHtml(d.type) : ''}${d.app ? ' · ' + escapeHtml(d.app) : ''}</p>
+            <p class="text-[9.5px] sm:text-[10px] font-bold font-mono ${d.official ? 'text-blue-600 dark:text-blue-400' : 'text-slate-400'}">${escapeHtml(dexNoLabel(d))}</p>
+            <p class="text-xs sm:text-sm font-black text-slate-900 dark:text-slate-100 leading-tight break-keep truncate">${escapeHtml(d.name)}${d.name_dub ? ` <span class="text-[10px] sm:text-[11px] font-bold text-slate-400">(${escapeHtml(d.name_dub)})</span>` : ''}</p>
+            <p class="text-[9px] sm:text-[10px] text-slate-400 truncate">${escapeHtml(d.level)}${d.type ? ' · ' + escapeHtml(d.type) : ''}${d.app ? ' · ' + escapeHtml(d.app) : ''}</p>
           </div>
         </div>
       `).join(''));
@@ -1093,24 +1093,30 @@
       return `
         <div class="min-w-0 space-y-1.5">
           <p class="text-[11px] font-black text-slate-500 dark:text-slate-400">${title} <span class="font-medium text-slate-400">${list.length}</span></p>
-          ${list.length ? shown.map((r, i) => {
-            const t = dexByNo[r.n];
-            const wid = `evo-w-${side}-${i}`;
-            const partners = (r.p || []).map(n => dexByNo[n]).filter(Boolean);
-            return `
-              <div class="rounded-xl bg-slate-50 dark:bg-slate-900/80 border border-blue-200/60 dark:border-blue-900/60 p-1.5">
-                <div onclick="openDexDetail(${jsArg(t.no)})" class="touch-press cursor-pointer flex items-center gap-1.5 min-w-0">
-                  ${dexThumb(t, 'w-7 h-7')}
-                  <span class="text-[11px] sm:text-xs font-bold text-slate-800 dark:text-slate-200 leading-tight break-keep min-w-0">${escapeHtml(t.name)}</span>
-                </div>
-                <button onclick="toggleEvoWorks('${wid}')" class="mt-1 text-[11px] leading-none tracking-tight" title="출처 보기">${r.c.map(c => EVO_ICON[c] || '').join('')}${partners.length ? ' <span class="text-[9px] font-bold text-amber-600 dark:text-amber-400">＋' + partners.length + '</span>' : ''}</button>
-                <div id="${wid}" class="hidden mt-1 space-y-0.5 text-[9.5px] leading-snug text-slate-500 dark:text-slate-400">
-                  ${partners.length ? `<p class="text-amber-600 dark:text-amber-400 font-bold">함께: ${partners.map(p => escapeHtml(p.name)).join(', ')}</p>` : ''}
-                  ${r.x ? `<p class="italic">${escapeHtml(r.x)}</p>` : ''}
-                  ${r.w.map(w => `<p>· ${escapeHtml(w)}</p>`).join('')}
-                </div>
-              </div>`;
-          }).join('') : '<p class="text-[10px] text-slate-400">없음</p>'}
+          ${list.length ? `
+            <div class="grid grid-cols-3 sm:grid-cols-1 gap-1.5">
+              ${shown.map((r, i) => {
+                const t = dexByNo[r.n];
+                const wid = `evo-w-${side}-${i}`;
+                const partners = (r.p || []).map(n => dexByNo[n]).filter(Boolean);
+                return `
+                  <div class="rounded-xl bg-slate-50 dark:bg-slate-900/80 border border-blue-200/60 dark:border-blue-900/60 p-1.5 min-w-0">
+                    <div onclick="openDexDetail(${jsArg(t.no)})" class="touch-press cursor-pointer flex items-center gap-1.5 min-w-0">
+                      ${dexThumb(t, 'w-6 h-6 sm:w-7 sm:h-7')}
+                      <span class="text-[10.5px] sm:text-xs font-bold text-slate-800 dark:text-slate-200 leading-tight break-keep truncate min-w-0" title="${escapeHtml(t.name)}">${escapeHtml(t.name)}</span>
+                    </div>
+                    <button onclick="toggleEvoWorks('${wid}')" class="mt-1 text-[10px] leading-none tracking-tight text-slate-400 flex items-center gap-0.5 flex-wrap" title="출처 보기">
+                      <span>${r.c.map(c => EVO_ICON[c] || '').join('')}</span>
+                      ${partners.length ? '<span class="text-[8.5px] font-bold text-amber-600 dark:text-amber-400">＋' + partners.length + '</span>' : ''}
+                    </button>
+                    <div id="${wid}" class="hidden mt-1 space-y-0.5 text-[9px] leading-snug text-slate-500 dark:text-slate-400">
+                      ${partners.length ? `<p class="text-amber-600 dark:text-amber-400 font-bold truncate">함께: ${partners.map(p => escapeHtml(p.name)).join(', ')}</p>` : ''}
+                      ${r.x ? `<p class="italic">${escapeHtml(r.x)}</p>` : ''}
+                      ${r.w.map(w => `<p>· ${escapeHtml(w)}</p>`).join('')}
+                    </div>
+                  </div>`;
+              }).join('')}
+            </div>` : '<p class="text-[10px] text-slate-400">없음</p>'}
           ${list.length > shown.length ? `<button onclick="showMoreEvo('${side}')" class="w-full text-[10px] font-bold text-blue-600 dark:text-blue-400 py-1">더보기 (+${list.length - shown.length})</button>` : ''}
         </div>`;
     }
@@ -1143,9 +1149,11 @@
           ${renderEvoColumn('진화 전', 'f', evo.f)}
           <div class="min-w-0 space-y-1.5">
             <p class="text-[11px] font-black text-slate-500 dark:text-slate-400">현재${variants.length > 1 ? ' · 아종' : ''}</p>
-            ${variants.map(v => v.no === d.no ? `
-              <div class="rounded-xl bg-blue-600 text-white p-1.5 flex items-center gap-1.5 min-w-0">${dexThumb(v, 'w-7 h-7')}<span class="text-[11px] sm:text-xs font-black leading-tight break-keep min-w-0">★ ${escapeHtml(v.name)}</span></div>` : `
-              <div onclick="openDexDetail(${jsArg(v.no)})" class="touch-press cursor-pointer rounded-xl bg-blue-50 dark:bg-blue-950/50 border border-blue-200/60 dark:border-blue-900/60 p-1.5 flex items-center gap-1.5 min-w-0">${dexThumb(v, 'w-7 h-7')}<span class="text-[11px] sm:text-xs font-bold text-slate-700 dark:text-slate-300 leading-tight break-keep min-w-0">${escapeHtml(v.name)}</span></div>`).join('')}
+            <div class="grid grid-cols-3 sm:grid-cols-1 gap-1.5">
+              ${variants.map(v => v.no === d.no ? `
+                <div class="rounded-xl bg-blue-600 text-white p-1.5 flex items-center gap-1.5 min-w-0">${dexThumb(v, 'w-6 h-6 sm:w-7 sm:h-7')}<span class="text-[10.5px] sm:text-xs font-black leading-tight break-keep truncate min-w-0" title="${escapeHtml(v.name)}">★ ${escapeHtml(v.name)}</span></div>` : `
+                <div onclick="openDexDetail(${jsArg(v.no)})" class="touch-press cursor-pointer rounded-xl bg-blue-50 dark:bg-blue-950/50 border border-blue-200/60 dark:border-blue-900/60 p-1.5 flex items-center gap-1.5 min-w-0">${dexThumb(v, 'w-6 h-6 sm:w-7 sm:h-7')}<span class="text-[10.5px] sm:text-xs font-bold text-slate-700 dark:text-slate-300 leading-tight break-keep truncate min-w-0" title="${escapeHtml(v.name)}">${escapeHtml(v.name)}</span></div>`).join('')}
+            </div>
           </div>
           ${renderEvoColumn('진화 후', 't', evo.t)}
         </div>
