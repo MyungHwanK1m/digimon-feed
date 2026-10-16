@@ -74,7 +74,9 @@ SPAM_KEYWORDS = [
 ]
 
 BLOCKED_SOURCES = [
-    "calgary", "roughnecks", "spinkr", "casino", "slot", "toto", "bet"
+    "calgary", "roughnecks", "spinkr", "casino", "slot", "toto", "bet",
+    "p-bandai.jp", "p-bandai.com", "premium bandai", "프리미엄 반다이",
+    "prom.pudding", "jawasjunkyard", "reddit.com", "reddit"
 ]
 
 TRUSTED_NEWS_SOURCES = [
@@ -83,22 +85,22 @@ TRUSTED_NEWS_SOURCES = [
     "경향신문", "한겨레", "조선일보", "중앙일보", "동아일보", "뉴시스", "뉴스1",
     "스포츠조선", "스포츠서울", "데일리스포츠", "게임포커스", "게임샷", "게임톡",
     "스마트pc사랑", "반다이", "youtube", "유튜브", "포모스", "경향게임스",
-    "디지몬", "haveagood-holiday", "x.com", "twitter", "트위터", "reddit", "레딧", "toei", "토에이",
-    "digimoncard", "wikimon", "p-bandai", "bandai", "dengeki", "hobby.watch", "impress",
+    "디지몬", "haveagood-holiday", "x.com", "twitter", "트위터", "toei", "토에이",
+    "digimoncard", "wikimon", "bandai", "dengeki", "hobby.watch", "impress",
     "animenewsnetwork", "crunchyroll", "ign", "kotaku", "siliconera", "famitsu", "4gamer", "gamebiz",
     "oricon", "natalie", "mantan-web", "daewon", "대원"
 ]
 
 def is_spam(item: dict) -> bool:
-    """불법 도박/스팸 사이트 및 이상한 출처 판별"""
+    """불법 도박/스팸 사이트, 차단 사이트(레딧, 프반), 무관 인스타 판별"""
     title = (item.get("title") or "").lower()
     snippet = (item.get("snippet") or "").lower()
     source = (item.get("source") or "").lower()
     link = (item.get("link") or "").lower()
     sbadge = item.get("source_badge") or ""
 
-    # 1. 차단 소스 / 도메인 체크
-    if any(b in source or b in link for b in BLOCKED_SOURCES) or "market/board" in link or "board/1020" in link:
+    # 1. 차단 소스 / 도메인 / 뱃지 체크 (레딧, 프리미엄 반다이 직접 링크 차단)
+    if sbadge == "레딧" or any(b in source or b in link for b in BLOCKED_SOURCES) or "market/board" in link or "board/1020" in link:
         return True
 
     # 2. 스팸 키워드 포함 여부 체크
@@ -112,11 +114,18 @@ def is_spam(item: dict) -> bool:
         if not matched_trusted:
             return True
 
-    # 4. 글로벌/해외/일본 뉴스 관련성 검증 (디지몬 관련어 필수 포함)
-    if sbadge in ["해외뉴스", "일본뉴스", "프반/하비", "애니뉴스"]:
+    # 4. 글로벌/해외/일본 뉴스, 하비, 인스타그램 디지몬 키워드 엄격 검증
+    if sbadge in ["해외뉴스", "일본뉴스", "프반/하비", "하비뉴스", "애니뉴스", "인스타그램"]:
         full = f"{title} {snippet} {link}".lower()
-        digi_kws = ["디지몬", "digimon", "デジモン", "디지바이스", "digivice", "デジヴァイス", "vpet", "v-pet", "vital", "바이탈", "seekers", "liberator"]
+        digi_kws = ["디지몬", "digimon", "デジモン", "디지바이스", "digivice", "デジヴァイス", "vpet", "v-pet", "아구몬", "agumon", "vital", "바이탈", "seekers", "liberator"]
         if not any(k in full for k in digi_kws):
+            return True
+
+    # 5. 인스타그램은 디지몬 키워드가 제목/본문에 직접 있어야 하며 프로필 페이지는 제외
+    if sbadge == "인스타그램":
+        if any(b in link or b in title for b in ["prom.pudding", "jawasjunkyard"]):
+            return True
+        if not any(k in title for k in ["디지몬", "digimon", "デジモン", "디지바이스", "아구몬"]):
             return True
 
     return False
@@ -516,19 +525,18 @@ def crawl_twitter_digimon():
     return items
 
 def crawl_instagram_digimon():
-    """인스타그램은 비로그인 직접 접근이 막혀 있어 구글뉴스 RSS site: 검색으로 공개 해시태그/게시물 수집"""
+    """인스타그램은 비로그인 직접 접근이 막혀 있어 구글뉴스 RSS site: 검색으로 공개 디지몬 게시물(/p/, /reel/)만 수집"""
     items = []
     queries = [
         'site:instagram.com/p/ "#디지몬"',
         'site:instagram.com/p/ "#digimon"',
         'site:instagram.com/p/ "#デジモン"',
-        'site:instagram.com "#디지몬"',
-        'site:instagram.com "#digimon"',
-        'site:instagram.com "#デジモン"',
         'site:instagram.com/p/ "디지몬"',
         'site:instagram.com/p/ "digimon"',
+        'site:instagram.com/reel/ "디지몬"',
     ]
     seen = set()
+    digi_check = ["디지몬", "digimon", "デジモン", "디지바이스", "아구몬", "테이머즈", "v-pet"]
     for q in queries:
         feed_url = f"https://news.google.com/rss/search?q={requests.utils.quote(q)}&hl=ko&gl=KR&ceid=KR:ko"
         try:
@@ -541,6 +549,9 @@ def crawl_instagram_digimon():
                 title = re.sub(r"\s*[-•|]\s*Instagram.*$", "", entry.title).strip()
                 title = re.sub(r"^[•·\s]+", "", title).strip()
                 if not title:
+                    continue
+                # 제목/본문에 디지몬 관련 단어가 명시되지 않은 일반 계정/글은 즉시 배제
+                if not any(k in title.lower() for k in digi_check):
                     continue
                 published = getattr(entry, "published", "")
                 ts = parse_to_timestamp(published)
@@ -695,7 +706,7 @@ def crawl_tcg_portals():
     return items
 
 def crawl_wikimon_updates():
-    """위키몬(Wikimon) 최신 문서 및 소식 업데이트 수집"""
+    """위키몬(Wikimon) 최신 문서 및 소식 업데이트 수집 (로그인 필요 없는 공개 본문 페이지로 정규화)"""
     items = []
     url = "https://wikimon.net/api.php?action=feedrecentchanges&feedformat=rss&namespace=0"
     try:
@@ -704,19 +715,21 @@ def crawl_wikimon_updates():
             feed = feedparser.parse(res.text)
             for entry in feed.entries[:10]:
                 title = entry.title
-                link = entry.link
+                # 로그인 필요한 diff= 주소 대신 100% 공개되는 문서 본문 링크로 정규화
+                clean_name = title.strip().replace(' ', '_')
+                clean_link = f"https://wikimon.net/{requests.utils.quote(clean_name)}"
                 published = getattr(entry, "published", "")
                 summary = re.sub(r'<[^>]+>', '', getattr(entry, "summary", ""))[:120].strip()
                 ts = parse_to_timestamp(published)
                 items.append({
-                    "id": get_hash_id(link),
+                    "id": get_hash_id(clean_link),
                     "title": f"[위키몬] {title.strip()}",
                     "snippet": summary or "Wikimon 디지몬 백과사전 최신 문서 업데이트입니다.",
                     "source": "Wikimon",
                     "source_badge": "위키몬",
                     "category": "general",
                     "category_name": "도감/위키",
-                    "link": link,
+                    "link": clean_link,
                     "image": None,
                     "timestamp": ts,
                     "created_at": format_display_date(ts)
@@ -726,13 +739,11 @@ def crawl_wikimon_updates():
     return items
 
 def crawl_premium_bandai_hobby():
-    """프리미엄 반다이 및 주요 하비 웹진 수집"""
+    """하비 전문 매체 수집 (IP 차단 없는 전격하비, 하비워치만 수집)"""
     items = []
     queries = [
-        ('site:p-bandai.jp ("デジモン" OR "デジヴァイス")', '프리미엄 반다이', '프반/하비', 'figure'),
-        ('site:p-bandai.com ("Digimon" OR "Digivice")', 'Premium Bandai US', '프반/하비', 'figure'),
-        ('site:hobby.dengeki.com "デジモン"', '전격하비', '프반/하비', 'figure'),
-        ('site:hobby.watch.impress.co.jp "デジモン"', '하비워치', '프반/하비', 'figure'),
+        ('site:hobby.dengeki.com "デジモン"', '전격하비', '하비뉴스', 'figure'),
+        ('site:hobby.watch.impress.co.jp "デジモン"', '하비워치', '하비뉴스', 'figure'),
     ]
     seen = set()
     for q, sname, badge, def_cat in queries:
@@ -1023,25 +1034,22 @@ def main():
     print("9. Crawling Wikimon Updates...")
     all_new_items.extend(crawl_wikimon_updates())
 
-    print("10. Crawling Reddit...")
-    all_new_items.extend(crawl_reddit_digimon())
-
-    print("11. Crawling YouTube...")
+    print("10. Crawling YouTube...")
     all_new_items.extend(crawl_youtube_digimon())
 
-    print("12. Crawling Twitter (X)...")
+    print("11. Crawling Twitter (X)...")
     all_new_items.extend(crawl_twitter_digimon())
 
-    print("13. Crawling Instagram (via Google News)...")
+    print("12. Crawling Instagram (via Google News)...")
     all_new_items.extend(crawl_instagram_digimon())
 
-    print("14. Crawling Premium Bandai & Hobby Media...")
+    print("13. Crawling Hobby Media...")
     all_new_items.extend(crawl_premium_bandai_hobby())
 
-    print("15. Crawling Global Anime News...")
+    print("14. Crawling Global Anime News...")
     all_new_items.extend(crawl_global_anime_news())
 
-    print("16. Crawling official site news & products (digimon.net)...")
+    print("15. Crawling official site news & products (digimon.net)...")
     all_new_items.extend(crawl_official_topics())
     all_new_items.extend(crawl_official_products())
 
@@ -1057,8 +1065,19 @@ def main():
         except Exception as e:
             print(f"[Warning] Failed to read existing feeds: {e}")
 
-    # 기존 데이터 timestamp 및 카테고리 보정 (정규화)
+    # 기존 데이터 timestamp 및 카테고리 보정 (정규화 및 불필요 소스 즉시 숙청)
+    valid_existing = []
     for item in existing_items:
+        # 차단 소스 (레딧, 프반, 무관 인스타 등) 즉시 탈락
+        if is_spam(item):
+            continue
+
+        # 위키몬 링크 정규화 (diff -> 문서 본문)
+        if item.get("source_badge") == "위키몬":
+            raw_t = re.sub(r"^\s*\[위키몬\]\s*", "", item.get("title_orig") or item.get("title", "")).strip()
+            item["link"] = f"https://wikimon.net/{requests.utils.quote(raw_t.replace(' ', '_'))}"
+            item["id"] = get_hash_id(item["link"])
+
         if "timestamp" not in item:
             item["timestamp"] = parse_to_timestamp(item.get("created_at", ""))
             item["created_at"] = format_display_date(item["timestamp"])
@@ -1067,15 +1086,16 @@ def main():
         if isinstance(item.get("category"), (list, tuple)):
             item["category"] = item["category"][0]
         
-        # 카테고리 최신 규칙에 따라 재분류 (노래 커버곡 -> SNS, 굿즈/쿠지/프론티어 -> 피규어/굿즈 등)
+        # 카테고리 최신 규칙에 따라 재분류
         title = item.get("title", "")
         sbadge = item.get("source_badge", "")
         new_cat, new_name = classify_category(title, item.get("category", "general"), sbadge)
         item["category"] = new_cat
         item["category_name"] = new_name
+        valid_existing.append(item)
 
     # ID 기준 중복 제거 및 최신 데이터 우선 병합
-    feed_map = {item["id"]: item for item in existing_items if not is_spam(item)}
+    feed_map = {item["id"]: item for item in valid_existing if not is_spam(item)}
     for item in all_new_items:
         if not is_spam(item):
             # 새로 수집된 아이템도 category 정규화

@@ -1,5 +1,5 @@
-// DIGI-FEED v16 (expanded global feeds & multilingual sources)
-const CACHE_NAME = 'digi-feed-v16';
+// DIGI-FEED v17 (refined sources: removed reddit & p-bandai, clean wikimon & instagram)
+const CACHE_NAME = 'digi-feed-v17';
 const ASSETS = [
   './',
   './index.html',
