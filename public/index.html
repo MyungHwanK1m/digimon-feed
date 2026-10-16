@@ -668,7 +668,7 @@
     // PWA Service Worker (Blue Card v6 with auto-update)
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
-        navigator.serviceWorker.register('sw.js?v=13').then((reg) => {
+        navigator.serviceWorker.register('sw.js?v=14').then((reg) => {
           reg.update();
         }).catch(console.error);
 
@@ -1200,15 +1200,15 @@
 
             <div class="space-y-3 pt-1">
               <h3 class="flex items-baseline gap-2">
-                <span class="text-sm font-black text-slate-900 dark:text-white">🔗 진화</span>
-                <span class="text-[10px] font-bold tracking-widest text-blue-600/70 dark:text-blue-400/70 font-mono">EVOLUTION</span>
-                <span class="ml-auto text-[10px] font-medium text-slate-400">공식 도감 기준</span>
+                <span class="text-sm font-black text-slate-900 dark:text-white">🔗 ${(evo.prior || []).length || (evo.next || []).length ? '진화 · 관련' : '관련'}</span>
+                <span class="text-[10px] font-bold tracking-widest text-blue-600/70 dark:text-blue-400/70 font-mono">RELATED</span>
               </h3>
               ${hasEvo ? `
                 ${renderDexChips('진화 전', evo.prior)}
                 ${renderDexChips('진화 후', evo.next)}
                 ${renderDexChips(d.kind === 'appmon' ? '관련 아프몬' : '관련 디지몬', evo.related)}
-              ` : `<p class="text-xs text-slate-400">${d.official ? '공식 도감에 등록된 진화·관련 디지몬이 없습니다.' : '공식 도감 진화 정보가 없는 디지몬입니다.'}</p>`}
+                ${(evo.related || []).length ? `<p class="text-[10px] text-slate-400">공식 도감의 '관련된 디지몬'입니다. 진화 관계와는 다를 수 있습니다.</p>` : ''}
+              ` : `<p class="text-xs text-slate-400">${d.official ? '공식 도감에 등록된 관련 디지몬이 없습니다.' : '공식 도감 정보가 없는 디지몬입니다.'}</p>`}
             </div>
           </div>
         </article>

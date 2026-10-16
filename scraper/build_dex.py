@@ -12,8 +12,8 @@
 
 규칙
   - 번호: 공식 도감은 data/official/numbers.json 번호 그대로, 공식에 없는 Digi-API 디지몬은 EX-0001 부터 (Digi-API id 순)
-  - 진화: 공식 "관련된 디지몬" 중 단계가 바로 하나 아래면 진화 전, 하나 위면 진화 후, 나머지는 관련 디지몬
-          (A가 B를 진화 후로 가리키면 B의 진화 전에도 A를 넣어 양방향을 맞춤)
+  - 관련 디지몬: 공식 "관련된 디지몬" 목록 그대로. 진화 관계가 아니므로 진화 전/후로 추측하지 않음
+  - 진화 전/후: 출처가 확실한 진화 데이터(data/game_evolutions.json)가 있을 때만
 """
 import difflib
 import json
@@ -170,34 +170,23 @@ def main():
         entries.append(e)
         ex_no += 1
 
-    # 3) 진화: 공식 관련 디지몬을 단계로 분류 + 양방향 보정
-    prior, nxt, rel = {}, {}, {}
-    for e in entries:
-        for rd in e.pop("_related", []) or []:
-            t = by_dir.get(rd)
-            if not t:
-                continue
-            r1, r2 = LEVEL_RANK.get(e["level"]), LEVEL_RANK.get(t["level"])
-            if r1 and r2 and r2 == r1 - 1:
-                prior.setdefault(e["no"], set()).add(t["no"]); nxt.setdefault(t["no"], set()).add(e["no"])
-            elif r1 and r2 and r2 == r1 + 1:
-                nxt.setdefault(e["no"], set()).add(t["no"]); prior.setdefault(t["no"], set()).add(e["no"])
-            else:
-                rel.setdefault(e["no"], set()).add(t["no"]); rel.setdefault(t["no"], set()).add(e["no"])
-    # 게임 진화 (나중에 data/game_evolutions.json 이 생기면 반영): {"<no>": {"prior": [...], "next": [...], "source": "..."}}
-    game = load(GAME_EVO_FILE, {})
+    # 3) 관련 디지몬: 공식 "관련된 디지몬" 목록을 그대로 (공식 페이지 순서)
+    #    ※ 이 목록은 진화 관계가 아님 (예: 밀레니엄몬 ↔ 피라니몬). 단계로 진화 전/후를 추측하지 않음
+    #    진화 전/후는 출처가 확실한 데이터(data/game_evolutions.json 등)가 있을 때만 채움
+    game = load(GAME_EVO_FILE, {})  # {"<no>": {"prior": [...], "next": [...], "source": "..."}}
     for e in entries:
         no = e["no"]
         evo = {}
-        if prior.get(no):
-            evo["prior"] = sorted(prior[no])
-        if nxt.get(no):
-            evo["next"] = sorted(nxt[no])
-        related = sorted(rel.get(no, set()) - prior.get(no, set()) - nxt.get(no, set()))
+        related = list(dict.fromkeys(by_dir[rd]["no"] for rd in e.pop("_related", []) or [] if rd in by_dir and by_dir[rd]["no"] != no))
         if related:
             evo["related"] = related
         if no in game:
-            evo["game"] = game[no]
+            g = game[no]
+            for k in ("prior", "next"):
+                if g.get(k):
+                    evo[k] = g[k]
+            if g.get("source"):
+                evo["source"] = g["source"]
         if evo:
             e["evolution"] = evo
 
