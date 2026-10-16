@@ -1115,6 +1115,11 @@
         </div>`;
     }
 
+    function wikimonPageName(d) {
+      const raw = d.api_name === 'Hackmon' ? 'Huckmon' : (d.api_name || d.name_en || '');
+      return raw.replace(/^([^(]*[^\s(])\((.+)\)$/, '$1: $2').replace(/ /g, '_');
+    }
+
     function renderDexEvolution(d, evo) {
       const box = document.getElementById('dex-evo');
       if (!box) return;
@@ -1123,7 +1128,7 @@
         <h3 class="flex items-baseline gap-2">
           <span class="text-sm font-black text-slate-900 dark:text-white">🧬 진화</span>
           <span class="text-[10px] font-bold tracking-widest text-blue-600/70 dark:text-blue-400/70 font-mono">EVOLUTION</span>
-          <a href="https://wikimon.net/${encodeURIComponent((d.api_name || '').replace(/ /g, '_'))}" target="_blank" rel="noopener" class="ml-auto text-[10px] font-medium text-slate-400 underline">출처: Wikimon</a>
+          <a href="https://wikimon.net/${encodeURIComponent(wikimonPageName(d))}" target="_blank" rel="noopener" class="ml-auto text-[10px] font-medium text-slate-400 underline">출처: Wikimon</a>
         </h3>`;
       if (!evo) {
         box.innerHTML = head + '<p class="text-xs text-slate-400">진화 정보가 없습니다.</p>';
@@ -1134,7 +1139,7 @@
         <button onclick="setEvoFilter('${k}')" class="shrink-0 px-2.5 py-1 rounded-full text-[11px] font-bold border transition ${dexState.evoFilter === k ? 'bg-blue-600 text-white border-blue-600' : 'bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-300 border-slate-200 dark:border-slate-700'}">${icon} ${label}</button>`).join('');
       box.innerHTML = head + `
         <div class="flex gap-1.5 overflow-x-auto no-scrollbar pb-0.5">${chips}</div>
-        <div class="grid grid-cols-3 gap-1.5 sm:gap-3 items-start">
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5 sm:gap-3 items-start">
           ${renderEvoColumn('진화 전', 'f', evo.f)}
           <div class="min-w-0 space-y-1.5">
             <p class="text-[11px] font-black text-slate-500 dark:text-slate-400">현재${variants.length > 1 ? ' · 아종' : ''}</p>
@@ -1236,10 +1241,34 @@
       });
     }
 
+    const TCG_EN_ALIASES = {
+      omegamon: 'Omnimon', dukemon: 'Gallantmon', tailmon: 'Gatomon', vamdemon: 'Myotismon',
+      piyomon: 'Biyomon', plotmon: 'Salamon', diablomon: 'Diaboromon', mugendramon: 'Machinedramon',
+      pinochimon: 'Puppetmon', piemon: 'Piedmon', hououmon: 'Phoenixmon',
+      heraklekabuterimon: 'HerculesKabuterimon', atlurkabuterimon: 'MegaKabuterimon',
+      holyangemon: 'MagnaAngemon', ofanimon: 'Ophanimon', beelzebumon: 'Beelzemon',
+      lordknightmon: 'Crusadermon', duftmon: 'Leopardmon', sleipmon: 'Kentaurosmon',
+      craniummon: 'Craniamon', ulforcevdramon: 'UlforceVeedramon', vdramon: 'Veedramon',
+      aerovdramon: 'AeroVeedramon', vmon: 'Veemon', xvmon: 'ExVeemon',
+      fladramon: 'Flamedramon', lighdramon: 'Raidramon', armadimon: 'Armadillomon',
+      dukemoncrimsonmode: 'Gallantmon Crimson Mode', omegamonmercifulmode: 'Omnimon Merciful Mode',
+      beelzebumonblastmode: 'Beelzemon Blast Mode'
+    };
+
     async function loadDexTcg(d) {
-      const names = [...new Set([d.api_name, d.api_name && d.api_name.replace(/\s*\(.*?\)\s*/g, ' ').trim()].filter(Boolean))];
+      const raw = d.api_name || d.name_en || '';
+      const stripped = raw.replace(/\s*\(.*?\)\s*/g, ' ').trim();
+      const normKey = raw.toLowerCase().replace(/[^a-z0-9]/g, '');
+      const alias = TCG_EN_ALIASES[normKey] || TCG_EN_ALIASES[stripped.toLowerCase().replace(/[^a-z0-9]/g, '')];
+      const names = [...new Set([
+        raw,
+        raw.replace(/\s+/g, ''),
+        stripped,
+        stripped.replace(/\s+/g, ''),
+        alias
+      ].filter(Boolean))];
       if (!names.length) return;
-      const key = 'tcg:' + names[0];
+      const key = 'tcg:' + d.no;
       let cards = dexExtraCache[key];
       if (!cards) {
         cards = [];

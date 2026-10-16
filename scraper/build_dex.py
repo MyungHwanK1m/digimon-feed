@@ -93,19 +93,38 @@ def write_wikimon_evolutions(entries):
             continue
         item = {}
         for key, short in (("from", "f"), ("to", "t")):
-            rows = []
+            by_no = {}
             for it in w.get(key, []):
                 no = no_by_name.get(it["t"])
                 if not no or no == e["no"]:
                     continue
-                cats = sorted({c for c, _ in it.get("src", [])}, key=CAT_ORDER.index)
-                row = {"n": no, "c": cats or ["other"], "w": list(dict.fromkeys(n for _, n in it.get("src", [])))}
+                cats = [c for c, _ in it.get("src", [])]
+                works = [n for _, n in it.get("src", [])]
                 partners = [no_by_name[p] for p in it.get("with", []) if p in no_by_name]
-                if partners:
-                    row["p"] = partners
-                if it.get("cond"):
-                    row["x"] = it["cond"]
+                cond = it.get("cond")
+                if no not in by_no:
+                    by_no[no] = {"n": no, "_c": set(cats), "w": list(dict.fromkeys(works)), "p": list(dict.fromkeys(partners)), "x": cond}
+                else:
+                    cur = by_no[no]
+                    cur["_c"].update(cats)
+                    for wn in works:
+                        if wn not in cur["w"]:
+                            cur["w"].append(wn)
+                    for pn in partners:
+                        if pn not in cur["p"]:
+                            cur["p"].append(pn)
+                    if cond and not cur.get("x"):
+                        cur["x"] = cond
+            rows = []
+            for r in by_no.values():
+                cats_sorted = sorted(r.pop("_c"), key=CAT_ORDER.index)
+                row = {"n": r["n"], "c": cats_sorted or ["other"], "w": r["w"]}
+                if r["p"]:
+                    row["p"] = r["p"]
+                if r.get("x"):
+                    row["x"] = r["x"]
                 rows.append(row)
+            rows.sort(key=lambda r: (-len(r["w"]), "anime" not in r["c"]))
             if rows:
                 item[short] = rows
         if item:

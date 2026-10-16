@@ -40,11 +40,13 @@ CAT_RULES = [
              r"Digimon Medal|Card Arena|Card Battle|Digimon Fortune|Digimon Frontier: |Next Order|Cyber Sleuth|Hacker'?s Memory|"
              r"Time Stranger|Re:Digitize|Digimon Adventure \(PSP\)|Digimon Universe|Appli Monsters \(game\)|Digimon Seekers|"
              r"Super Xros Wars|Lost Evolution|Digital Card|Digimon Tamers: |Digimon Neo|Battle Chronicle|"
-             r"Digimon Generations|Digimon Alysion|Digimon Con|Digimon Life|Digimon Ranch|DigiTama Hatch|Digimon Fight"),
+             r"Digimon Generations|Digimon Alysion|Digimon Con|Digimon Life|Digimon Ranch|DigiTama Hatch|Digimon Fight|"
+             r"Digimon Championship|Source Code|Digimon RPG|Digimon Super Rumble|Digimon All-Star"),
     ("device", r"Pendulum|Digital Monster|Digivice|Vital Bracelet|Vital Hero|\bD-3\b|D-Ark|D-Power|D-Scanner|D-Tector|Digimon Mini|"
                r"Data Link|Xros Loader|\bBurst\b|\biC\b|\bTwin\b|Fusion Loader|\bVer\.|\bCOLOR\b|Dim Card|Digimon Pocket|"
-               r"Appmon Drive|Accelerator|\bVital\b"),
-    ("tcg", r"Card Game|\(DCG\)|Hyper Colosseum|Battle Terminal|Digimon Collectors Card"),
+               r"Appmon Drive|Accelerator|\bVital\b|Digimon Twin|Digimon Accel"),
+    ("tcg", r"Card Game|\(DCG\)|Hyper Colosseum|Battle Terminal|Digimon Collectors Card|Battle-spirits|DCGMakeLink|"
+            r"^(?:Bo|St|Sp|Ta|Vj|Dw|Da|DM|Dα|BT\d*|EX\d*|ST\d*|RB\d*|LM)-?\d"),
     ("anime", r"Digimon Adventure|Digimon Tamers|Digimon Frontier|Digimon Savers|Digimon Data Squad|Digimon Xros Wars|Digimon Fusion|"
               r"Digimon Universe: Appli|Appmon|Ghost Game|Last Evolution|Our War Game|Movie|Hurricane|Runaway Locomotive|"
               r"Battle of Adventurers|Revenge of Diaboromon|Ultimate Power|tri\.|Digimon Beatbreak|kizuna", re.I),
@@ -55,12 +57,38 @@ CAT_RE = [(c, re.compile(p, re.I)) for c, p, *_ in CAT_RULES]
 ANIME_CODES = {
     "DA": "Digimon Adventure", "DA:": "Digimon Adventure: (2020)", "DA02": "Digimon Adventure 02", "D02": "Digimon Adventure 02",
     "DT": "Digimon Tamers", "DF": "Digimon Frontier", "DS": "Digimon Savers", "DSav": "Digimon Savers",
-    "DX": "Digimon Xros Wars", "DXW": "Digimon Xros Wars", "DXH": "Digimon Xros Wars Hunters", "DU": "Digimon Universe: Appli Monsters",
-    "DGG": "Digimon Ghost Game", "tri": "Digimon Adventure tri.", "DAt": "Digimon Adventure tri.", "DBB": "Digimon Beatbreak",
+    "DX": "Digimon Xros Wars", "DXW": "Digimon Xros Wars", "XW": "Digimon Xros Wars", "DXH": "Digimon Xros Wars Hunters",
+    "DU": "Digimon Universe: Appli Monsters", "DGG": "Digimon Ghost Game", "GG": "Digimon Ghost Game",
+    "tri": "Digimon Adventure tri.", "DAt": "Digimon Adventure tri.", "DBB": "Digimon Beatbreak", "DB": "Digimon Beatbreak",
+    "ZT": "Digimon Adventure: (2020)",
 }
 
 LINK = re.compile(r"\[\[([^\]|#]+)(?:#[^\]|]*)?(?:\|[^\]]*)?\]\]")
 SKIP_TARGET = re.compile(r"Colors and Levels|Attributes and Levels|Levels#|^Any |DigiXros|Jogress$|Evolution$", re.I)
+STRIP_CHARS = re.compile(r"[\u200b-\u200f\ufeff]")
+XROS_PLUS = re.compile(
+    r"\s+\((Starmons|Revolmon|Cyberdramon|Skull Knightmon|Golemon|Cyber Launcher|Jet Sparrow|Dorulu Cannon|Skull Greymon|Star Sword)\)$"
+)
+
+
+def clean_str(s):
+    return STRIP_CHARS.sub("", s or "").strip()
+
+
+def wikimon_query_title(api_name):
+    """Digi-API 영문명을 Wikimon 문서 제목 형식으로 변환"""
+    if api_name == "Hackmon":
+        return "Huckmon"
+    if api_name == "Great King Sukamon":
+        return "Great King Scumon"
+    s = XROS_PLUS.sub(r" + \1", api_name)
+    return re.sub(r"^([^(]*[^\s(])\((.+)\)$", r"\1: \2", s)
+
+
+def norm_target(name):
+    s = clean_str(name).lower()
+    s = s.replace("scumon", "sukamon").replace("huckmon", "hackmon")
+    return re.sub(r"[^a-z0-9]", "", s)
 
 
 def section(text, name):
@@ -113,29 +141,39 @@ def sources_from(templates, refs, named, ref_defs, stats):
     out = []
 
     def add(cat, name):
-        name = re.sub(r"''+", "", name).strip()
+        name = clean_str(re.sub(r"''+", "", name))
         if name and (cat, name) not in out:
             out.append((cat, name))
 
     def from_text(t):
-        links = [l.strip() for l in LINK.findall(t)]
+        links = [clean_str(l) for l in LINK.findall(t)]
         if links:
             for l in links:
                 add(classify(l), l)
         else:
-            plain = re.sub(r"<[^>]+>|\{\{[^}]*\}\}|\[https?://\S+\s*([^\]]*)\]", r"\1", t).strip()
+            plain = clean_str(re.sub(r"<[^>]+>|\{\{[^}]*\}\}|\[https?://\S+\s*([^\]]*)\]", r"\1", t))
             if plain:
                 add(classify(plain), plain[:80])
 
-    for t in templates:
+    all_templates = list(templates)
+    for n in named:
+        if n in ref_defs:
+            r_body, r_tpls, _, _ = split_templates(ref_defs[n])
+            all_templates.extend(r_tpls)
+            if r_body.strip():
+                refs.append(r_body)
+        else:
+            stats["unresolved_ref"] += 1
+
+    for t in all_templates:
         inner = t[2:-2]
         parts = [p.strip() for p in inner.split("|")]
         name = parts[0].lower()
         stats["template:" + name] += 1
         if name == "ref":
             from_text(inner[4:])
-        elif name == "rfc":
-            add("tcg", "Digimon Card Game" if "DCG" in inner else "Digimon Card Game (1999)")
+        elif name in ("rfc", "dcgmakelink"):
+            add("tcg", "Digimon Card Game" if ("DCG" in inner or name == "dcgmakelink") else "Digimon Card Game (1999)")
         elif name == "rfe":
             code = parts[1] if len(parts) > 1 else ""
             stats["anime_code:" + code] += 1
@@ -149,15 +187,10 @@ def sources_from(templates, refs, named, ref_defs, stats):
             from_text(inner)
     for r in refs:
         from_text(r)
-    for n in named:
-        if n in ref_defs:
-            from_text(ref_defs[n])
-        else:
-            stats["unresolved_ref"] += 1
     return out
 
 
-def parse_list(text, titles, ref_defs, stats):
+def parse_list(text, by_norm, ref_defs, stats):
     items = []
     for raw in text.split("\n"):
         line = raw.strip()
@@ -165,17 +198,22 @@ def parse_list(text, titles, ref_defs, stats):
             continue
         line = line.lstrip("*").strip()
         body, templates, refs, named = split_templates(line)
-        links = [l.strip() for l in LINK.findall(body)]
+        links = [clean_str(l) for l in LINK.findall(body)]
         if not links:
             continue
-        target = links[0]
-        if SKIP_TARGET.search(target) or target not in titles:
+        raw_target = links[0]
+        target = by_norm.get(norm_target(raw_target))
+        if SKIP_TARGET.search(raw_target) or not target:
             stats["skipped_target"] += 1
             continue
-        partners = [l for l in links[1:] if l in titles and l != target]
-        cond = re.sub(r"\s+", " ", LINK.sub(lambda m: m.group(1), body)).strip()
+        partners = []
+        for l in links[1:]:
+            p = by_norm.get(norm_target(l))
+            if p and p != target and p not in partners:
+                partners.append(p)
+        cond = re.sub(r"\s+", " ", LINK.sub(lambda m: clean_str(m.group(1)), body)).strip()
         cond = re.sub(r"'''?", "", cond)
-        cond = cond[len(target):].strip() if cond.startswith(target) else cond
+        cond = cond[len(raw_target):].strip() if cond.lower().startswith(raw_target.lower()) else cond
         src = sources_from(templates, refs, named, ref_defs, stats)
         if not src:
             stats["no_source"] += 1
@@ -191,18 +229,23 @@ def parse_list(text, titles, ref_defs, stats):
     return items
 
 
-def fetch_batch(session, titles):
+def fetch_batch(session, titles, delay=DELAY):
     params = {"action": "query", "prop": "revisions", "rvprop": "content", "rvslots": "main",
-              "titles": "|".join(titles), "format": "json", "formatversion": "2", "redirects": "1"}
+              "titles": "|".join(titles), "format": "json", "formatversion": "2", "redirects": "1", "maxlag": "5"}
     for attempt in range(4):
         try:
-            r = session.get(API, params=params, timeout=90)
+            r = session.get(API, params=params, timeout=60)
             if r.status_code == 200:
-                return r.json()
-            print(f"  HTTP {r.status_code}: {r.text[:200]}", flush=True)
+                data = r.json()
+                if "error" in data and data["error"].get("code") == "maxlag":
+                    print(f"  서버 바쁨(maxlag) — {delay}초 대기", flush=True)
+                else:
+                    return data
+            else:
+                print(f"  HTTP {r.status_code}: {r.text[:200]}", flush=True)
         except Exception as e:
             print(f"  오류: {e}", flush=True)
-        time.sleep(DELAY * (attempt + 1))
+        time.sleep(delay * (attempt + 1))
     return None
 
 
@@ -225,47 +268,83 @@ def save(out, stats, missing):
 
 def main():
     max_req = int(sys.argv[sys.argv.index("--max-requests") + 1]) if "--max-requests" in sys.argv else 10 ** 6
+    delay = float(sys.argv[sys.argv.index("--delay") + 1]) if "--delay" in sys.argv else DELAY
+    batch_size = int(sys.argv[sys.argv.index("--batch") + 1]) if "--batch" in sys.argv else BATCH
     refresh = "--refresh" in sys.argv
     dex = json.load(open(DEX_FILE, encoding="utf-8"))["digimons"]
     all_titles = sorted({e["api_name"] for e in dex if e.get("api_name")})
-    title_set = set(all_titles)
+    by_norm = {norm_target(t): t for t in all_titles}
     out = {} if refresh or not os.path.exists(OUT_FILE) else json.load(open(OUT_FILE, encoding="utf-8")).get("digimons", {})
     titles = [t for t in all_titles if t not in out]  # 이어받기: 아직 없는 것만 (전체 갱신은 --refresh)
     print(f"대상 {len(titles)}종 (보유 {len(out)}종)", flush=True)
     session = requests.Session()
     session.headers["User-Agent"] = UA
-    stats, missing, started = collections.Counter(), [], time.time()
-    for n, i in enumerate(range(0, len(titles), BATCH)):
+    stats, missing, deferred_titles, started = collections.Counter(), [], [], time.time()
+    for n, i in enumerate(range(0, len(titles), batch_size)):
         if n >= max_req or time.time() - started > TIME_BUDGET:
             print("요청 수·시간 한도 — 여기까지 저장", flush=True)
             break
         if n:
-            time.sleep(DELAY)
-        chunk = titles[i:i + BATCH]
-        data = fetch_batch(session, chunk)
+            time.sleep(delay)
+        chunk = titles[i:i + batch_size]
+        q_to_api = {wikimon_query_title(t): t for t in chunk}
+        data = fetch_batch(session, list(q_to_api.keys()), delay=delay)
         if not data:
             print(f"  묶음 {n + 1} 실패 — 건너뜀", flush=True)
             continue
         q = data.get("query", {})
-        back = {}
+        back = dict(q_to_api)
         for m in (q.get("normalized") or []) + (q.get("redirects") or []):
-            back[m["to"]] = back.get(m["from"], m["from"])
+            src = back.get(m["from"], m["from"])
+            back[m["to"]] = src
         for page in q.get("pages", []):
-            title = back.get(page["title"], page["title"])
+            raw_title = page["title"]
+            title = back.get(raw_title) or by_norm.get(norm_target(raw_title)) or raw_title
             if page.get("missing"):
                 missing.append(title)
                 continue
-            if not page.get("revisions"):  # 응답 크기 한도로 잘린 문서 → 다음 실행에서 다시
+            if not page.get("revisions"):  # 응답 크기 한도로 잘린 문서
                 stats["deferred"] += 1
+                deferred_titles.append(title)
                 continue
             text = page["revisions"][0]["slots"]["main"]["content"]
             ref_defs = dict(re.findall(r"<ref\s+name\s*=\s*\"?([^\">/]+?)\"?\s*>(.*?)</ref>", text, re.S))
             out[title] = {
-                "from": parse_list(section(text, "Evolves From"), title_set, ref_defs, stats),
-                "to": parse_list(section(text, "Evolves To"), title_set, ref_defs, stats),
+                "from": parse_list(section(text, "Evolves From"), by_norm, ref_defs, stats),
+                "to": parse_list(section(text, "Evolves To"), by_norm, ref_defs, stats),
             }
-        print(f"  묶음 {n + 1}/{(len(titles) + BATCH - 1) // BATCH}: 누적 {len(out)}종", flush=True)
+        print(f"  묶음 {n + 1}/{(len(titles) + batch_size - 1) // batch_size}: 누적 {len(out)}종", flush=True)
         save(out, stats, missing)  # 묶음마다 저장 (중간에 끊겨도 이어받기)
+
+    # 응답 크기 한도로 잘린 문서(deferred)가 있으면 소량 묶음(10개씩)으로 이어서 수집
+    for i in range(0, len(deferred_titles), 10):
+        if time.time() - started > TIME_BUDGET:
+            break
+        time.sleep(delay)
+        chunk = [t for t in deferred_titles[i:i + 10] if t not in out]
+        if not chunk:
+            continue
+        q_to_api = {wikimon_query_title(t): t for t in chunk}
+        data = fetch_batch(session, list(q_to_api.keys()), delay=delay)
+        if not data:
+            continue
+        q = data.get("query", {})
+        back = dict(q_to_api)
+        for m in (q.get("normalized") or []) + (q.get("redirects") or []):
+            back[m["to"]] = back.get(m["from"], m["from"])
+        for page in q.get("pages", []):
+            raw_title = page["title"]
+            title = back.get(raw_title) or by_norm.get(norm_target(raw_title)) or raw_title
+            if page.get("missing") or not page.get("revisions"):
+                continue
+            text = page["revisions"][0]["slots"]["main"]["content"]
+            ref_defs = dict(re.findall(r"<ref\s+name\s*=\s*\"?([^\">/]+?)\"?\s*>(.*?)</ref>", text, re.S))
+            out[title] = {
+                "from": parse_list(section(text, "Evolves From"), by_norm, ref_defs, stats),
+                "to": parse_list(section(text, "Evolves To"), by_norm, ref_defs, stats),
+            }
+        save(out, stats, missing)
+
     save(out, stats, missing)
     print(f"저장: {OUT_FILE} ({len(out)}종), 찾지 못함 {len(missing)}", flush=True)
 
