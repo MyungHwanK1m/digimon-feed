@@ -1,0 +1,48 @@
+name: Collect Wikimon Evolutions
+
+# Wikimon 진화 목록(출처 포함) 수집 — api.php, 50문서씩, 요청 간 60초 (robots.txt Crawl-delay)
+on:
+  push:  # (임시) 브랜치에서 첫 수집
+    branches: [claude/tender-davinci-dcqvn9]
+    paths: [scraper/collect_wikimon.py, .github/workflows/collect-wikimon.yml]
+  workflow_dispatch:
+    inputs:
+      max_requests:
+        description: '최대 요청 수 (비우면 전체 약 30회)'
+        type: string
+        default: ''
+  schedule:
+    - cron: '37 2 * * 3'  # 매주 수요일
+
+permissions:
+  contents: write
+
+concurrency:
+  group: collect-wikimon
+  cancel-in-progress: false
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install -r scraper/requirements.txt
+      - name: Collect evolutions
+        run: python scraper/collect_wikimon.py ${{ inputs.max_requests && format('--max-requests {0}', inputs.max_requests) || '' }}
+      - name: Rebuild dex data
+        run: python scraper/build_dex.py
+      - name: Commit if changed
+        run: |
+          git config --global user.name "DigiBot"
+          git config --global user.email "digibot@users.noreply.github.com"
+          git add data/wikimon public/data docs/data
+          if git diff --staged --quiet; then
+            echo "No changes."
+          else
+            git commit -m "chore(dex): Wikimon evolutions [skip ci]"
+            git pull --rebase origin "${GITHUB_REF_NAME}" && git push
+          fi
