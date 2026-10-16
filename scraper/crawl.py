@@ -638,8 +638,12 @@ TITLE_CACHE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "da
 JA_RE = re.compile(r"[\u3040-\u30ff\u4e00-\u9fff]")
 
 
+NAMES_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "data", "translations", "names.json")
+
+
 def translate_official_titles(items):
     """공식 사이트(일본어) 항목 제목을 Gemini로 한국어 번역. 원제는 title_ja 에 보관, 번역 결과는 캐시해서 같은 제목은 다시 요청하지 않음.
+    인물 이름은 data/translations/names.json 기준 '원작 이름(더빙 이름)'으로 표기.
     GEMINI_API_KEY 가 없거나 실패하면 원문 그대로 둠."""
     try:
         import gemini
@@ -650,23 +654,46 @@ def translate_official_titles(items):
     if os.path.exists(TITLE_CACHE):
         with open(TITLE_CACHE, encoding="utf-8") as f:
             cache = json.load(f)
+    names = {}
+    if os.path.exists(NAMES_FILE):
+        with open(NAMES_FILE, encoding="utf-8") as f:
+            names = {k: v for k, v in json.load(f).items() if not k.startswith("_")}
+
+    def names_in(text):
+        return {ja: ko for ja, ko in names.items() if ja in text}
+
+    def names_ok(ja_text, ko_text):
+        return all(ko in ko_text for ko in names_in(ja_text).values())
+
     targets = []
     for item in items:
-        if item.get("source_badge") != "디지몬웹" or item.get("title_ja"):
+        if item.get("source_badge") != "디지몬웹":
             continue
         m = re.match(r"(\[[^\]]+\]\s*)?(.*)", item.get("title", ""), re.S)
         prefix, body = m.group(1) or "", m.group(2).strip()
+        body = item.get("title_ja") or body  # 이미 번역된 항목도 원제 기준으로 다시 맞춤 (이름 표기가 바뀌면 반영)
         if JA_RE.search(body):
             targets.append((item, prefix, body))
-    missing = list(dict.fromkeys(b for _, _, b in targets if b not in cache))
+    # 캐시가 없거나, 인물 이름 표기가 규칙과 다르면 다시 번역
+    missing = list(dict.fromkeys(b for _, _, b in targets if b not in cache or not names_ok(b, cache[b])))
     if missing and gemini.available():
         try:
             for i in range(0, len(missing), 40):
                 chunk = missing[i:i + 40]
-                out = gemini.translate_map({str(n): t for n, t in enumerate(chunk)})
+                gl = {}
+                for t in chunk:
+                    gl.update(names_in(t))
+                out = gemini.translate_map({str(n): t for n, t in enumerate(chunk)}, gl)
                 for n, t in enumerate(chunk):
-                    if out.get(str(n)):
-                        cache[t] = out[str(n)]
+                    ko = out.get(str(n))
+                    if not ko:
+                        continue
+                    # 모델이 괄호 더빙명을 빠뜨리면 원작 이름 뒤에 붙여 맞춤
+                    for full in names_in(t).values():
+                        base = full.split("(")[0]
+                        if full not in ko and base in ko:
+                            ko = ko.replace(base, full, 1)
+                    cache[t] = ko
         except Exception as e:
             print(f"[Warning] Official title translation stopped: {e}")
         os.makedirs(os.path.dirname(TITLE_CACHE), exist_ok=True)

@@ -66,5 +66,5 @@ Digi-API  ──(generate_digidex.py)──> public/data/digimon_all_index.json 
 - `scraper/translate_dex.py`: Digi-API 영어 프로필·필살기를 Gemini로 번역 → `public|docs/data/dex_ko/<api_id//100>.json` (앱은 필요한 조각만 받음), 원장 `data/translations/dex_ko.json`
 - 공식 한국어 이름을 용어집으로 넣어 이름 표기를 통일 (예: WarGreymon → 워그레이몬)
 - 워크플로 `translate-dex.yml`: 매일 04:41 UTC, 안 된 것만 번역. 무료 등급 한도에 걸리면 저장 후 다음 날 이어서
-- 피드: 공식 사이트(일본어) 제목도 `crawl.py`에서 Gemini 번역, 원제는 `title_ja`, 캐시 `data/translations/feed_titles.json`
+- 피드: 공식 사이트(일본어) 제목도 `crawl.py`에서 Gemini 번역, 원제는 `title_ja`, 캐시 `data/translations/feed_titles.json`. 인물 이름은 `data/translations/names.json` 기준 "원작 이름(더빙 이름)"
 - 필요: 저장소 Settings → Secrets and variables → Actions 에 `GEMINI_API_KEY` (선택: Variables 에 `GEMINI_MODEL`). 키가 없으면 번역 단계만 건너뜀
