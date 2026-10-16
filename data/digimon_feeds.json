@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-10-15 23:26:10",
+  "last_updated": "2026-10-16 01:04:43",
   "total_count": 101,
   "retention_days": 90,
   "feeds": [
@@ -13,9 +13,22 @@
       "category_name": "피규어/굿즈",
       "link": "https://digimon.net/product/detail.php?item_type=1&id=956",
       "image": null,
-      "timestamp": 1792106764,
-      "created_at": "2026-10-15 23:26",
+      "timestamp": 1792112645,
+      "created_at": "2026-10-16 01:04",
       "title_ja": "デジタルモンスター WORLDMAKING ACRYLIC STAND ブースターver.5"
+    },
+    {
+      "id": "76b76972fc0a32667c20f620f68c9b50",
+      "title": "[인스타] 프롬푸딩 | AI 매거진 (@prom.pudding)",
+      "snippet": "인스타그램 디지몬 관련 공개 게시물입니다.",
+      "source": "Instagram",
+      "source_badge": "인스타그램",
+      "category": "sns",
+      "category_name": "SNS/해외",
+      "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE1zT0RzcFJBbS1HVWQ4Nnc2eXR3UHhnRWd5dzd3cElHUGhTb1pseTBuVzdEMm04dEdxdkYzT0VoZTRCM2tmcmtjY0NmN0hyYUR2?oc=5",
+      "image": null,
+      "timestamp": 1792107965,
+      "created_at": "2026-10-15 23:46"
     },
     {
       "id": "14ef19440966ecfa7062e7bd96eb40cc",
@@ -29,19 +42,6 @@
       "image": "https://preview.redd.it/udbg8dtegpvh1.jpeg?width=640&crop=smart&auto=webp&s=26d88f52671c16142512cf07136d4a1caf8b7f95",
       "timestamp": 1792102361,
       "created_at": "2026-10-15 22:12"
-    },
-    {
-      "id": "76b76972fc0a32667c20f620f68c9b50",
-      "title": "[인스타] 프롬푸딩 | AI 매거진 (@prom.pudding)",
-      "snippet": "인스타그램 디지몬 관련 공개 게시물입니다.",
-      "source": "Instagram",
-      "source_badge": "인스타그램",
-      "category": "sns",
-      "category_name": "SNS/해외",
-      "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE1zT0RzcFJBbS1HVWQ4Nnc2eXR3UHhnRWd5dzd3cElHUGhTb1pseTBuVzdEMm04dEdxdkYzT0VoZTRCM2tmcmtjY0NmN0hyYUR2?oc=5",
-      "image": null,
-      "timestamp": 1792094826,
-      "created_at": "2026-10-15 20:07"
     },
     {
       "id": "f3391c47bffd1d3a3eabc0d52b78ebaf",
@@ -205,7 +205,7 @@
     },
     {
       "id": "0c6af6a832076964c7c803737df7eb82",
-      "title": "[공식 상품] G.E.M. 시리즈 디지몬 어드벤처 가루몬 & 이시다 야마토 【재판】",
+      "title": "[공식 상품] G.E.M. 시리즈 디지몬 어드벤처 가루몬＆이시다 야마토(매튜)【재판】",
       "snippet": "2026年12月下旬発売予定 · 17,600円(税込)",
       "source": "digimon.net",
       "source_badge": "디지몬웹",
@@ -289,7 +289,7 @@
     },
     {
       "id": "172c07c682aefc0a7b68ba2e9ef0605b",
-      "title": "[공식 상품] G.E.M. 시리즈 디지몬 어드벤처 그레이몬 & 야가미 타이치 【재판】",
+      "title": "[공식 상품] G.E.M. 시리즈 디지몬 어드벤처 그레이몬＆야가미 타이치(신태일)【재판】",
       "snippet": "2026年11月下旬発売予定 · 17,600円(税込)",
       "source": "digimon.net",
       "source_badge": "디지몬웹",
