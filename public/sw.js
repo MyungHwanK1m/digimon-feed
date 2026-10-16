@@ -1,5 +1,5 @@
 // DIGI-FEED v12 (appmon dex, official feed, history navigation)
-const CACHE_NAME = 'digi-feed-v13';
+const CACHE_NAME = 'digi-feed-v14';
 const ASSETS = [
   './',
   './index.html',
