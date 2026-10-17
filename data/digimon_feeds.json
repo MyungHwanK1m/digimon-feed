@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-10-17 17:41:49",
+  "last_updated": "2026-10-17 19:51:10",
   "total_count": 239,
   "retention_days": 90,
   "feeds": [
@@ -13,8 +13,8 @@
       "category_name": "피규어/굿즈",
       "link": "https://digimon.net/product/others/",
       "image": null,
-      "timestamp": 1792258669,
-      "created_at": "2026-10-17 17:37",
+      "timestamp": 1792266659,
+      "created_at": "2026-10-17 19:50",
       "title_orig": "デジタルモンスター WORLDMAKING ACRYLIC STAND ブースターver.5",
       "title_ja": "デジタルモンスター WORLDMAKING ACRYLIC STAND ブースターver.5"
     },
@@ -62,6 +62,21 @@
       "created_at": "2026-10-17 08:32",
       "title_orig": "デジタルモンスター DIGIMON ORIGINAL NEW WAVE 3 DIGIMON CAMOUFLAGE[バンダイ]《１１月予約》",
       "title_ja": "デジタルモンスター DIGIMON ORIGINAL NEW WAVE 3 DIGIMON CAMOUFLAGE[バンダイ]《１１月予約》"
+    },
+    {
+      "id": "7aaea59e5fd7d0c786cfa5edce8a1ef9",
+      "title": "[일본뉴스] 2026년 12월 개최 「디지몬 콘서트」의 티켓 판매 정보 공개! 총 38개 캐릭터가 “정장” 차림으로 대집결한 키 비주얼도 해금",
+      "snippet": "2026年12月開催「デジモンコンサート」のチケット販売情報が公開！ 総勢38キャラクターが“正装”姿で大集結したキービジュアルも解禁&nbsp;&nbsp;eeo",
+      "source": "eeo",
+      "source_badge": "일본뉴스",
+      "category": "game",
+      "category_name": "신작/공식속보",
+      "link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE80Q25weGJ0ellxNFJnbVkxSEpJRE1HSnBzWWhnM080SDV0MDVCamRoUmsteFBnZkF5RENLTFNsNkdvLWZncVBMai1DT1ZuVkh5OVE0TA?oc=5",
+      "image": null,
+      "timestamp": 1792211092,
+      "created_at": "2026-10-17 04:24",
+      "title_orig": "2026年12月開催「デジモンコンサート」のチケット販売情報が公開！ 総勢38キャラクターが“正装”姿で大集結したキービジュアルも解禁",
+      "title_ja": "2026年12月開催「デジモンコンサート」のチケット販売情報が公開！ 総勢38キャラクターが“正装”姿で大集結したキービジュアルも解禁"
     },
     {
       "id": "d8e8f038d60d1a02eafd9dc3189bcc95",
@@ -827,21 +842,6 @@
       "created_at": "2026-10-15 09:49",
       "title_orig": "【デジモンUP】初心者向け序盤の効率的な進め方",
       "title_ja": "【デジモンUP】初心者向け序盤の効率的な進め方"
-    },
-    {
-      "id": "7aaea59e5fd7d0c786cfa5edce8a1ef9",
-      "title": "[일본뉴스] 2026년 12월 개최 「디지몬 콘서트」의 티켓 판매 정보 공개! 총 38개 캐릭터가 “정장” 차림으로 대집결한 키 비주얼도 해금",
-      "snippet": "2026年12月開催「デジモンコンサート」のチケット販売情報が公開！ 総勢38キャラクターが“正装”姿で大集結したキービジュアルも解禁&nbsp;&nbsp;eeo",
-      "source": "eeo",
-      "source_badge": "일본뉴스",
-      "category": "game",
-      "category_name": "신작/공식속보",
-      "link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE80Q25weGJ0ellxNFJnbVkxSEpJRE1HSnBzWWhnM080SDV0MDVCamRoUmsteFBnZkF5RENLTFNsNkdvLWZncVBMai1DT1ZuVkh5OVE0TA?oc=5",
-      "image": null,
-      "timestamp": 1792055067,
-      "created_at": "2026-10-15 09:04",
-      "title_orig": "2026年12月開催「デジモンコンサート」のチケット販売情報が公開！ 総勢38キャラクターが“正装”姿で大集結したキービジュアルも解禁",
-      "title_ja": "2026年12月開催「デジモンコンサート」のチケット販売情報が公開！ 総勢38キャラクターが“正装”姿で大集結したキービジュアルも解禁"
     },
     {
       "id": "5358cd3c4f310fe2ff771ed0865ba17b",
