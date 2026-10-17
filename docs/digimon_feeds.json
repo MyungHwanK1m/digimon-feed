@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-10-17 21:52:32",
-  "total_count": 241,
+  "last_updated": "2026-10-17 23:38:25",
+  "total_count": 242,
   "retention_days": 90,
   "feeds": [
     {
@@ -13,8 +13,8 @@
       "category_name": "피규어/굿즈",
       "link": "https://digimon.net/product/others/",
       "image": null,
-      "timestamp": 1792273935,
-      "created_at": "2026-10-17 21:52",
+      "timestamp": 1792280291,
+      "created_at": "2026-10-17 23:38",
       "title_orig": "デジタルモンスター WORLDMAKING ACRYLIC STAND ブースターver.5",
       "title_ja": "デジタルモンスター WORLDMAKING ACRYLIC STAND ブースターver.5"
     },
@@ -154,8 +154,8 @@
       "snippet": "『デジモンアリシオン』事前登録が数週間以内に開始予定。新デジモン＆キャラ、オリジナルカードにも注目集まる新作オンラインカードゲーム&nbsp;&nbsp;ファミ通.com",
       "source": "ファミ通.com",
       "source_badge": "일본뉴스",
-      "category": "card",
-      "category_name": "신작 카드(TCG)",
+      "category": "game",
+      "category_name": "신작/공식속보",
       "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTFBlOWF0bnNVN08xbk9GTWtHdWNVckRtVlpjU2dPYUVISFlSbGlBejZCN3ZuRWVyRy1HcFF6azFoVG5BU19abHlOUzMzbzI4XzBZUjgzcEo2dw?oc=5",
       "image": null,
       "timestamp": 1792145760,
@@ -554,6 +554,19 @@
       "timestamp": 1792099122,
       "created_at": "2026-10-16 06:18",
       "title_orig": "BT27-035 (DCG)"
+    },
+    {
+      "id": "ab1aaf1703a44e1746dca723dcb2180d",
+      "title": "[네이버] 디지몬 마스터즈 온라인",
+      "snippet": "디지몬 마스터즈 온라인&nbsp;&nbsp;NAVER",
+      "source": "네이버 게임",
+      "source_badge": "네이버",
+      "category": "game",
+      "category_name": "게임/공식애니",
+      "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTE4yWjA1YW9wR3htR21GWXpqUG9aZTgwcWZjUEY1S3NvVXVTQU1mcXN2NFlNS3lFSnZXbm1lMk9pM3NiOG85MXhFOUFmQ0IySFg3aUZWclA3MHMtUzRwMkg3MWluRTNfcGo1N2d3?oc=5",
+      "image": null,
+      "timestamp": 1792098961,
+      "created_at": "2026-10-15 21:16"
     },
     {
       "id": "e2523d5bf5cedaeab4cd831add27c50e",
@@ -2036,7 +2049,7 @@
       "source": "Comic Book Resources",
       "source_badge": "해외뉴스",
       "category": "figure",
-      "category_name": "일반/뉴스",
+      "category_name": "피규어/굿즈",
       "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFAyNVVIOXQxZE9HWWpzTVJSNjVXdzQyaGNneUlfeDBZcHpqQ3lMOFo4MnZrbHhOVDFtNDBoZmo1TlZ3MUJEb202MkdLRzAtNmsybloxQkNGZW53MFZ6TG1abGxKT3RhV00?oc=5",
       "image": null,
       "timestamp": 1790578800,
@@ -2951,8 +2964,8 @@
       "snippet": "第1弾はパタモンとエンジェモンがラインナップ！『デジモンアドベンチャー』のプライズフィギュアシリーズ「デジヴァイスタンド！」が新登場！&nbsp;&nbsp;電撃ホビーウェブ",
       "source": "電撃ホビーウェブ",
       "source_badge": "일본뉴스",
-      "category": "general",
-      "category_name": "일반/뉴스",
+      "category": "figure",
+      "category_name": "피규어/굿즈",
       "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE5GdGJ6aXptVUt4QU13Q2dINlZQUXZPdlF6eGNZUTNaXzVOX19uak5hX0RMRV96SEdzUUE0czVjYTFvUHQzZTNoQURwZFZpM1hx?oc=5",
       "image": null,
       "timestamp": 1787468400,
