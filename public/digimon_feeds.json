@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-10-17 14:39:27",
-  "total_count": 237,
+  "last_updated": "2026-10-17 17:41:49",
+  "total_count": 239,
   "retention_days": 90,
   "feeds": [
     {
@@ -13,10 +13,25 @@
       "category_name": "피규어/굿즈",
       "link": "https://digimon.net/product/others/",
       "image": null,
-      "timestamp": 1792247937,
-      "created_at": "2026-10-17 14:38",
+      "timestamp": 1792258669,
+      "created_at": "2026-10-17 17:37",
       "title_orig": "デジタルモンスター WORLDMAKING ACRYLIC STAND ブースターver.5",
       "title_ja": "デジタルモンスター WORLDMAKING ACRYLIC STAND ブースターver.5"
+    },
+    {
+      "id": "fb7e095f06f066242e1d1839faff2658",
+      "title": "[일본뉴스] 【디지몬 카드 개봉 #01】",
+      "snippet": "【デジモンカード開封 #01】&nbsp;&nbsp;YouTube",
+      "source": "YouTube",
+      "source_badge": "일본뉴스",
+      "category": "general",
+      "category_name": "일반/뉴스",
+      "link": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBfa2UzWWRqSjd0NHREY1UyR0x1amotak85b2ZQUFJCYS1idEt6bnhvbDNvemRQZzN4dVc4NHBJcjlsT010LWdIbDRJZ0p2TGIyeGhkeG92NkR5YW5l?oc=5",
+      "image": null,
+      "timestamp": 1792243628,
+      "created_at": "2026-10-17 13:27",
+      "title_orig": "【デジモンカード開封 #01】",
+      "title_ja": "【デジモンカード開封 #01】"
     },
     {
       "id": "c19357dcab7cc23f30ac0689cec1d250",
@@ -84,7 +99,7 @@
       "source": "GoNintendo",
       "source_badge": "해외뉴스",
       "category": "game",
-      "category_name": "신작/공식속보",
+      "category_name": "일반/뉴스",
       "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOYzRUZWJMSk5DZlFYbV85SmFvdjBjaDM2YXk0RldMTW9wNHM4aFlxZ3duT0U1YjdXOFJDM0x0cGhaWnp5ZTVQMXE4eThxcW5MaFFjZFNuUnRhd2pvUkxDRzNLV2xYdmV5MGwyRnRkbGhhQy1URnlnc0NjN0llV3ZYNnpXaE1NS3Bldkxmd2QwdTQ3d2x4dVd1T0tHV1ZVUk9pelA2TTZBc05OdDFMYUxFTkRrSmpIVzhWdXFZ?oc=5",
       "image": null,
       "timestamp": 1792167974,
@@ -1050,6 +1065,19 @@
       "created_at": "2026-10-15 07:33",
       "title_orig": "東宝大怪獣シリーズ メタルガルルモン：”G”侵食モード",
       "title_ja": "東宝大怪獣シリーズ メタルガルルモン：”G”侵食モード"
+    },
+    {
+      "id": "1a5810d98de300448a9cb2c80d4c70e0",
+      "title": "[인스타] 🎴 YouTube 신규 영상 공개! \"귀여우면 좋은 카드 아닌가요?\" 디지몬은 좋아하지만 카드 게임은 처음인 소윤 MC 🆚 월드 챔피언 최주연 선수! 게임은 몰라도 뽑기 운이라면 챔피언도 이길 수 있다?! 📦 「해커스 슬럼버」 1박스를 걸고 펼쳐지는 팩 개봉 대결 마지막 팩에서",
+      "snippet": "인스타그램 디지몬 관련 공개 게시물입니다.",
+      "source": "Instagram",
+      "source_badge": "인스타그램",
+      "category": "figure",
+      "category_name": "피규어/굿즈",
+      "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE1Dd1N1Nk9oTHJCX053b1BCcmJWY3J5Njl1Tk1iMzN0WUR0REFwTTNBRDBZMDk5TkhfbEh6bWVwQThLbFBDTmRFa0pzMGZkSzdqMWc?oc=5",
+      "image": null,
+      "timestamp": 1792044497,
+      "created_at": "2026-10-15 06:08"
     },
     {
       "id": "5bfe76c597b53c75fe05794512013463",
