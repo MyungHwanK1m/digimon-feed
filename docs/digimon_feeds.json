@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-10-17 11:51:26",
-  "total_count": 234,
+  "last_updated": "2026-10-17 14:39:27",
+  "total_count": 237,
   "retention_days": 90,
   "feeds": [
     {
@@ -13,8 +13,8 @@
       "category_name": "피규어/굿즈",
       "link": "https://digimon.net/product/others/",
       "image": null,
-      "timestamp": 1792237867,
-      "created_at": "2026-10-17 11:51",
+      "timestamp": 1792247937,
+      "created_at": "2026-10-17 14:38",
       "title_orig": "デジタルモンスター WORLDMAKING ACRYLIC STAND ブースターver.5",
       "title_ja": "デジタルモンスター WORLDMAKING ACRYLIC STAND ブースターver.5"
     },
@@ -32,6 +32,21 @@
       "created_at": "2026-10-17 09:00",
       "title_orig": "電波塔に住むデジモン【デジモンタイムストレンジャー】#１４",
       "title_ja": "電波塔に住むデジモン【デジモンタイムストレンジャー】#１４"
+    },
+    {
+      "id": "2eb7e1b587f9bc7d382f6f9288c03985",
+      "title": "[하비뉴스] 디지털 몬스터 DIGIMON ORIGINAL NEW WAVE 3 DIGIMON CAMOUFLAGE [반다이] 《11월 예약》",
+      "snippet": "デジタルモンスター DIGIMON ORIGINAL NEW WAVE 3 DIGIMON CAMOUFLAGE[バンダイ]《１１月予約》&nbsp;&nbsp;あみあみ",
+      "source": "아미아미",
+      "source_badge": "하비뉴스",
+      "category": "figure",
+      "category_name": "피규어/굿즈",
+      "link": "https://news.google.com/rss/articles/CBMic0FVX3lxTE5mQmQ5c2RvUWFLWlo0MlJPRC1FWlpMc1RrazRmTVFHNGNndFlfM0QtMUlIb01SLWxoa1ZQRlhqNGI2V2s2R2w5OTlTNGNxVDFDRmM5M21NSkNUQlZBeHZVdC0xYVJJckI1M3NRSXFPVXE2bTA?oc=5",
+      "image": null,
+      "timestamp": 1792225957,
+      "created_at": "2026-10-17 08:32",
+      "title_orig": "デジタルモンスター DIGIMON ORIGINAL NEW WAVE 3 DIGIMON CAMOUFLAGE[バンダイ]《１１月予約》",
+      "title_ja": "デジタルモンスター DIGIMON ORIGINAL NEW WAVE 3 DIGIMON CAMOUFLAGE[バンダイ]《１１月予約》"
     },
     {
       "id": "d8e8f038d60d1a02eafd9dc3189bcc95",
@@ -114,8 +129,8 @@
       "category_name": "일반/뉴스",
       "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOcDBIVnNBa2EyVkF0dWs2WExLU0NxMzc5eWJjR1JfcWo3TGRROEl4am1CNUF5Wno3bWZJQ1JRekIxYWF2c2dkTTlXQXJRM2MtZnFkTlFYM1ZmSTlSbmtFMmNQbWRJM2JDMzF0TDdLd2I2Qno4eVFubk1HT21QcDZUTk9oZzZVU0lWempBam1VbVJJR0ZGU1AydQ?oc=5",
       "image": null,
-      "timestamp": 1792151159,
-      "created_at": "2026-10-16 11:45",
+      "timestamp": 1792152016,
+      "created_at": "2026-10-16 12:00",
       "title_orig": "Digimon Alysion Set to Open Pre-Registration in the Coming Weeks"
     },
     {
@@ -829,6 +844,34 @@
       "title_ja": "デジモンシリーズの歴史を\"音楽\"でつなぐスペシャルコンサート「DIGIMON CONCERT ～2026 Anniversary & BEATBREAK～」キービジュアル＆詳細情報解禁！"
     },
     {
+      "id": "5bc8451911ef54b0e3bcad805b7bf976",
+      "title": "[일본뉴스] 애니메이션 「디지몬」 시리즈의 음악 이벤트, 키 비주얼에 작품을 뛰어넘은 38 캐릭터 집결",
+      "snippet": "アニメ「デジモン」シリーズの音楽イベント、キービジュアルに作品超えた38キャラ集結&nbsp;&nbsp;ナタリー",
+      "source": "ナタリー",
+      "source_badge": "일본뉴스",
+      "category": "general",
+      "category_name": "일반/뉴스",
+      "link": "https://news.google.com/rss/articles/CBMiTEFVX3lxTFBTQW9MUWNjMUI1ODBhdmJnZFd3a2VtSmU3VWtMb0tRX3lFYS11SnJKSWl6MDFVUDhYTEpOeGFlUXd3Y1JYT0k2THR0NGY?oc=5",
+      "image": null,
+      "timestamp": 1792054800,
+      "created_at": "2026-10-15 09:00",
+      "title_orig": "アニメ「デジモン」シリーズの音楽イベント、キービジュアルに作品超えた38キャラ集結",
+      "title_ja": "アニメ「デジモン」シリーズの音楽イベント、キービジュアルに作品超えた38キャラ集結"
+    },
+    {
+      "id": "14a88d9e5b67d7bddfe590b2ad6ed20d",
+      "title": "[네이버] (도와주세요 ㅠㅠ)무한산 플레이중인 디지몬 이별 불가 : 디지몬 소울체이서 시즌4",
+      "snippet": "(도와주세요 ㅠㅠ)무한산 플레이중인 디지몬 이별 불가 : 디지몬 소울체이서 시즌4&nbsp;&nbsp;네이버 게임",
+      "source": "네이버 게임",
+      "source_badge": "네이버",
+      "category": "game",
+      "category_name": "게임/공식애니",
+      "link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQUUFaaFRVMnIwckRTR1ZxbVpfSFd1Nnl0MnFsTHFxa19xak5kU25GamotdkxBcTNCQkFwRG03c1FCbExYN0toSEl3dV9KcG80MWl0TUU3X0JBZUlfX3hCeTRlUlM1MHlHM0FrUmpVcklqSjREb3ZtUzFEZklTd1FPUU9UWjY?oc=5",
+      "image": null,
+      "timestamp": 1792051473,
+      "created_at": "2026-10-15 08:04"
+    },
+    {
       "id": "6d1e19590cc7d1d1033b094d3b0cc08e",
       "title": "[공식 상품] DIGIMON 다이컷 스티커 세트 (자판기)",
       "snippet": "2026年03月中旬発売 · 200円(税込)",
@@ -1007,19 +1050,6 @@
       "created_at": "2026-10-15 07:33",
       "title_orig": "東宝大怪獣シリーズ メタルガルルモン：”G”侵食モード",
       "title_ja": "東宝大怪獣シリーズ メタルガルルモン：”G”侵食モード"
-    },
-    {
-      "id": "14a88d9e5b67d7bddfe590b2ad6ed20d",
-      "title": "[네이버] (도와주세요 ㅠㅠ)무한산 플레이중인 디지몬 이별 불가 : 디지몬 소울체이서 시즌4",
-      "snippet": "(도와주세요 ㅠㅠ)무한산 플레이중인 디지몬 이별 불가 : 디지몬 소울체이서 시즌4&nbsp;&nbsp;네이버 게임",
-      "source": "네이버 게임",
-      "source_badge": "네이버",
-      "category": "game",
-      "category_name": "게임/공식애니",
-      "link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQUUFaaFRVMnIwckRTR1ZxbVpfSFd1Nnl0MnFsTHFxa19xak5kU25GamotdkxBcTNCQkFwRG03c1FCbExYN0toSEl3dV9KcG80MWl0TUU3X0JBZUlfX3hCeTRlUlM1MHlHM0FrUmpVcklqSjREb3ZtUzFEZklTd1FPUU9UWjY?oc=5",
-      "image": null,
-      "timestamp": 1792049147,
-      "created_at": "2026-10-15 07:25"
     },
     {
       "id": "5bfe76c597b53c75fe05794512013463",
@@ -1288,6 +1318,19 @@
       "created_at": "2026-10-13 10:15",
       "title_orig": "「デジモン」新作一番くじに迫力フィギュア多数！デュークモンやサクヤモン、ベルゼブモンを「魂豪示像」で立体化",
       "title_ja": "「デジモン」新作一番くじに迫力フィギュア多数！デュークモンやサクヤモン、ベルゼブモンを「魂豪示像」で立体化"
+    },
+    {
+      "id": "b72c4e242f6cebac93a72f709788ed67",
+      "title": "[인스타] 📢 특징 포함 여부 취급 안내가 업데이트되었습니다 특징 「조」/「새」/「병아리」/「수」/「짐승」/「용」/「룡」을 포함하는 효과의 판정과 관련해, 한글 표기에서 같은 글자가 들어 있어도 해당 한자를 포함하지 않는 특징을 안내드립니다. 📌 자세한 내용은 디지몬 카드게임 홈페이",
+      "snippet": "인스타그램 디지몬 관련 공개 게시물입니다.",
+      "source": "Instagram",
+      "source_badge": "인스타그램",
+      "category": "card",
+      "category_name": "카드게임(TCG)",
+      "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE5MdjBpd3B0MWRuNUpqUzZiRnRqUTFPdGlaclphdnZpTW5LOHpZTVVYa3VHU2RLS0JfOUhBSXlVeGxjdmFkbEg4YUlaSVhhdlNXdXc?oc=5",
+      "image": null,
+      "timestamp": 1791859839,
+      "created_at": "2026-10-13 02:50"
     },
     {
       "id": "c2e18c08cc8afe89866a8715926b0395",
