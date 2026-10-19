@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-10-18 22:03:21",
-  "total_count": 265,
+  "last_updated": "2026-10-19 00:36:53",
+  "total_count": 267,
   "retention_days": 90,
   "feeds": [
     {
@@ -13,8 +13,8 @@
       "category_name": "피규어/굿즈",
       "link": "https://digimon.net/product/others/",
       "image": null,
-      "timestamp": 1792360990,
-      "created_at": "2026-10-18 22:03",
+      "timestamp": 1792370202,
+      "created_at": "2026-10-19 00:36",
       "title_orig": "デジタルモンスター WORLDMAKING ACRYLIC STAND ブースターver.5",
       "title_ja": "デジタルモンスター WORLDMAKING ACRYLIC STAND ブースターver.5"
     },
@@ -283,8 +283,8 @@
     {
       "id": "229693f3f67620aec484ba728dfae4aa",
       "title": "[일본뉴스] 『디지몬 알리시온』 사전 등록이 수 주 이내에 시작될 예정. 신규 디지몬 & 캐릭터, 오리지널 카드에도 주목이 쏠리는 신작 온라인 카드 게임",
-      "snippet": "『デジモンアリシオン』事前登録が数週間以内に開始予定。新デジモン＆キャラ、オリジナルカードにも注目集まる新作オンラインカードゲーム&nbsp;&nbsp;ファミ通.com",
-      "source": "ファミ通.com",
+      "snippet": "『デジモンアリシオン』事前登録が数週間以内に開始予定。新デジモン＆キャラ、オリジナルカードにも注目集まる新作オンラインカードゲーム&nbsp;&nbsp;ファミ通",
+      "source": "ファミ通",
       "source_badge": "일본뉴스",
       "category": "game",
       "category_name": "신작/공식속보",
@@ -2505,6 +2505,19 @@
       "title_orig": "My Gundam Decks | Egman Deck Builder"
     },
     {
+      "id": "5f9a600de67406bab373a5fc50677907",
+      "title": "[인스타] 오늘 오픈! 홍대에 디지몬 굿즈 총집합🔥 디지몬, 다마고치, 프리큐어, 아이엠스타!까지 최애 캐릭터들이 모인 가 홍대에 오픈했어요! 그 중 디지몬은 말랑 인형 키링부터 가트몬 허그 키링, 디지바이스 파우치, 디지바이스 쉐이커 키링, 랜덤 캔뱃지 등 다양한 굿즈가 판매",
+      "snippet": "인스타그램 디지몬 관련 공개 게시물입니다.",
+      "source": "Instagram",
+      "source_badge": "인스타그램",
+      "category": "figure",
+      "category_name": "피규어/굿즈",
+      "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE54MVN0aVJNT19lb3NkMFR5RkxpaVM3aFpnNUw1NzQ3MUhDbS1WRmpKOUFHZDE5dm8zUHlFdHFqaHZvOE5fM2NjdDFCd2hVaF81SWlXcjJn?oc=5",
+      "image": null,
+      "timestamp": 1790233200,
+      "created_at": "2026-09-24 07:00"
+    },
+    {
       "id": "b74a947906936d97e46a8ec74f369112",
       "title": "[인스타] 디지몬, 다마고치, 프리큐어 등등! 홍대에 열린 반다이남코 굿즈 축제 [Bandai Namco Merch Festival in Seoul] 다양한 캐릭터와 콜라보를 이어온 홍대 리밋션이 디지몬과 다마고치를 중심으로 한 굿즈 축제를 열었다. ‘다모여 페스타’란 이름으로 열리는 이 축제는 디지",
       "snippet": "인스타그램 디지몬 관련 공개 게시물입니다.",
@@ -3243,6 +3256,19 @@
       "created_at": "2026-08-23 07:00",
       "title_orig": "第1弾はパタモンとエンジェモンがラインナップ！『デジモンアドベンチャー』のプライズフィギュアシリーズ「デジヴァイスタンド！」が新登場！",
       "title_ja": "第1弾はパタモンとエンジェモンがラインナップ！『デジモンアドベンチャー』のプライズフィギュアシリーズ「デジヴァイスタンド！」が新登場！"
+    },
+    {
+      "id": "9967d9b7b191375a8cc02481d9618f43",
+      "title": "[디지몬 어드벤처 : 운명적 만남 & 우리들의 워 게임!] 더블에디션 최초 개봉 기념 스페셜 예고편",
+      "snippet": "[디지몬 어드벤처 : 운명적 만남 & 우리들의 워 게임!] 더블에디션 최초 개봉 기념 스페셜 예고편&nbsp;&nbsp;YouTube",
+      "source": "YouTube",
+      "source_badge": "뉴스",
+      "category": "game",
+      "category_name": "게임/공식애니",
+      "link": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBMZFBLamozcENGbHQ4NjlvNnhvb3VSdUUyTEhtNTFSQUZPRFFvSUFqdVVCWXhGU3lCajR4TXM0Qnh5Rmx2MVpBUkpIaW5MSFVheTUtdm14Wmc4TmJG?oc=5",
+      "image": null,
+      "timestamp": 1787468400,
+      "created_at": "2026-08-23 07:00"
     },
     {
       "id": "5e04b6dab7d73313fae246533d3a76a8",
