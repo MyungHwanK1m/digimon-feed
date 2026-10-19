@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-10-19 00:36:53",
+  "last_updated": "2026-10-19 05:29:25",
   "total_count": 267,
   "retention_days": 90,
   "feeds": [
@@ -13,8 +13,8 @@
       "category_name": "피규어/굿즈",
       "link": "https://digimon.net/product/others/",
       "image": null,
-      "timestamp": 1792370202,
-      "created_at": "2026-10-19 00:36",
+      "timestamp": 1792387753,
+      "created_at": "2026-10-19 05:29",
       "title_orig": "デジタルモンスター WORLDMAKING ACRYLIC STAND ブースターver.5",
       "title_ja": "デジタルモンスター WORLDMAKING ACRYLIC STAND ブースターver.5"
     },
@@ -1941,6 +1941,19 @@
       "title_orig": "Deck Information"
     },
     {
+      "id": "3134efa850179c1d90446cdf3248738f",
+      "title": "[인스타] ★최신 카드 소개★ 10월 16일 발매 예정인 『금강계만다라』의 최신 카드를 소개합니다. 오늘 공개할 카드는 「구미호몬」입니다. https://digimoncard.co.kr/ #디지몬카드게임 #디지몬 #デジカ #DigimonCardGame",
+      "snippet": "인스타그램 디지몬 관련 공개 게시물입니다.",
+      "source": "Instagram",
+      "source_badge": "인스타그램",
+      "category": "figure",
+      "category_name": "피규어/굿즈",
+      "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE1fZkhXUTlhdDY3RWJGdlJiRXhSYUhTTVZLSlc2S0ZkT1VSajZIVkZHcUdNZlhYSkc5SzJwN3N0aFc3WEpOY0x4dDEwcllPR1pCY3c?oc=5",
+      "image": null,
+      "timestamp": 1791183600,
+      "created_at": "2026-10-05 07:00"
+    },
+    {
       "id": "8775e49451b58ae67d756234b773145a",
       "title": "[루리웹] 디지몬 우리가 선택한 베스트 어드벤처 OP 공개",
       "snippet": "루리웹 애니정보 디지몬 최신 소식입니다.",
@@ -2110,21 +2123,6 @@
       "created_at": "2026-10-01 07:00",
       "title_orig": "【周邊】 📌韓國（Korea） #デジモンアドベンチャー #DigimonAdventure #Digimon #Adventure #數碼寶貝 #數碼寶貝大冒險 #デジモン #八神太一 #石田ヤマト #泉光子郎 #武之内空 #城戸丈 #太刀川ミミ #太刀川美美 #高石タケル #高石岳 #高石武 #八神ヒカリ #八神光 #八神",
       "title_ja": "【周邊】 📌韓國（Korea） #デジモンアドベンチャー #DigimonAdventure #Digimon #Adventure #數碼寶貝 #數碼寶貝大冒險 #デジモン #八神太一 #石田ヤマト #泉光子郎 #武之内空 #城戸丈 #太刀川ミミ #太刀川美美 #高石タケル #高石岳 #高石武 #八神ヒカリ #八神光 #八神"
-    },
-    {
-      "id": "e0ef259b3c2b73a00cbd0970eac86ef7",
-      "title": "[일본뉴스] 디지털 몬스터 카드게임 아크릴 참 컬렉션 | 디지몬 캡슐토이(가챠) 발매일·가격·설치 장소",
-      "snippet": "デジタルモンスターカードゲーム アクリルチャームコレクション｜デジモンのガチャガチャ 発売日・価格・設置場所&nbsp;&nbsp;キャラグー",
-      "source": "キャラグー",
-      "source_badge": "일본뉴스",
-      "category": "general",
-      "category_name": "일반/뉴스",
-      "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTFBvVzMtX09KRXRyYUJkOERYbHhJSUE5Z3ZqT25RaV93UHRLRFQ1NDZSb2R2d1VVUzZveng3VDZINEVIaWQxcUR0cFIyWDFWelNoNkhKdm1uaw?oc=5",
-      "image": null,
-      "timestamp": 1790838000,
-      "created_at": "2026-10-01 07:00",
-      "title_orig": "デジタルモンスターカードゲーム アクリルチャームコレクション｜デジモンのガチャガチャ 発売日・価格・設置場所",
-      "title_ja": "デジタルモンスターカードゲーム アクリルチャームコレクション｜デジモンのガチャガチャ 発売日・価格・設置場所"
     },
     {
       "id": "cb83da67434740622ea57729350909fc",
@@ -2877,8 +2875,8 @@
       "snippet": "인스타그램 디지몬 관련 공개 게시물입니다.",
       "source": "Instagram",
       "source_badge": "인스타그램",
-      "category": "figure",
-      "category_name": "피규어/굿즈",
+      "category": "sns",
+      "category_name": "SNS/해외",
       "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFBpTURsTnM1WmlJYW1tOHBjOXJOU09CckFwQU9YMm9fZ1FrN3VoX1hlMHc1dXZINzNkVmZFY1JuNjhVNWp6STFYZ1JGeHBIc0d4Y1E?oc=5",
       "image": null,
       "timestamp": 1788937200,
@@ -3341,8 +3339,8 @@
     {
       "id": "00c5ff9a910bf7d1fe413d9cb50c0340",
       "title": "[해외뉴스] G.E.M. 시리즈 디지몬 어드벤처 가루몬 & 이시다 야마토(매튜) 피규어 재판으로 귀환",
-      "snippet": "G.E.M. Series Digimon Adventure Garurumon & Yamato Ishida Figure Returns with Re-release&nbsp;&nbsp;haveagood-holiday.co",
-      "source": "haveagood-holiday.com",
+      "snippet": "G.E.M. Series Digimon Adventure Garurumon & Yamato Ishida Figure Returns with Re-release&nbsp;&nbsp;www.haveagood-holida",
+      "source": "www.haveagood-holiday.com",
       "source_badge": "해외뉴스",
       "category": "figure",
       "category_name": "피규어/굿즈",
