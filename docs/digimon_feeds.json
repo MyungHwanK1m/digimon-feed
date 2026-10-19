@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-10-19 11:33:59",
-  "total_count": 266,
+  "last_updated": "2026-10-19 17:57:34",
+  "total_count": 267,
   "retention_days": 90,
   "feeds": [
     {
@@ -13,8 +13,8 @@
       "category_name": "피규어/굿즈",
       "link": "https://digimon.net/product/others/",
       "image": null,
-      "timestamp": 1792409618,
-      "created_at": "2026-10-19 11:33",
+      "timestamp": 1792432641,
+      "created_at": "2026-10-19 17:57",
       "title_orig": "デジタルモンスター WORLDMAKING ACRYLIC STAND ブースターver.5",
       "title_ja": "デジタルモンスター WORLDMAKING ACRYLIC STAND ブースターver.5"
     },
@@ -1036,8 +1036,8 @@
       "snippet": "プレスリリース：デジモンシリーズの歴史を\"音楽\"でつなぐスペシャルコンサート「DIGIMON CONCERT ～2026 Anniversary & BEATBREAK～」キービジュアル＆詳細情報解禁！（PR TIMES）&nbsp;&nb",
       "source": "毎日新聞",
       "source_badge": "일본뉴스",
-      "category": "game",
-      "category_name": "신작/공식속보",
+      "category": "sns",
+      "category_name": "SNS/영상",
       "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTFBBRWl6ZTQ5UVNoamJidVk1VVJ1eUN5R1hSRWlsZVprTkRFeVZhOXJfakY4THNHUW8tTl9sbUxreml3Q3U1akdqcm1JQm9kZzh6T3p2bWdDRnlXbzBfVUk5VG5JY3lMMDRw?oc=5",
       "image": null,
       "timestamp": 1792056187,
@@ -1066,8 +1066,8 @@
       "snippet": "デジモンシリーズの歴史を\"音楽\"でつなぐスペシャルコンサート「DIGIMON CONCERT ～2026 Anniversary & BEATBREAK～」キービジュアル＆詳細情報解禁！&nbsp;&nbsp;PR TIMES",
       "source": "PR TIMES",
       "source_badge": "일본뉴스",
-      "category": "sns",
-      "category_name": "SNS/영상",
+      "category": "game",
+      "category_name": "신작/공식속보",
       "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTFBEaDRWcnNkbEFKb2pUNVRJZkNjci1uLUk0Y1RyV0NGZlA4V1QzQW1xTVY2R2ZILVp5Y3N1S1BYU2FTLVBkMjI0dE93SHdUSEZ6SVc4Q2J2ZzYxbVREeFVBWXFIXzFqbXJLZkE?oc=5",
       "image": null,
       "timestamp": 1792054802,
@@ -1089,6 +1089,19 @@
       "created_at": "2026-10-15 09:00",
       "title_orig": "アニメ「デジモン」シリーズの音楽イベント、キービジュアルに作品超えた38キャラ集結",
       "title_ja": "アニメ「デジモン」シリーズの音楽イベント、キービジュアルに作品超えた38キャラ集結"
+    },
+    {
+      "id": "14a88d9e5b67d7bddfe590b2ad6ed20d",
+      "title": "[네이버] (도와주세요 ㅠㅠ)무한산 플레이중인 디지몬 이별 불가 : 디지몬 소울체이서 시즌4",
+      "snippet": "(도와주세요 ㅠㅠ)무한산 플레이중인 디지몬 이별 불가 : 디지몬 소울체이서 시즌4&nbsp;&nbsp;네이버 게임",
+      "source": "네이버 게임",
+      "source_badge": "네이버",
+      "category": "game",
+      "category_name": "게임/공식애니",
+      "link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQUUFaaFRVMnIwckRTR1ZxbVpfSFd1Nnl0MnFsTHFxa19xak5kU25GamotdkxBcTNCQkFwRG03c1FCbExYN0toSEl3dV9KcG80MWl0TUU3X0JBZUlfX3hCeTRlUlM1MHlHM0FrUmpVcklqSjREb3ZtUzFEZklTd1FPUU9UWjY?oc=5",
+      "image": null,
+      "timestamp": 1792051473,
+      "created_at": "2026-10-15 08:04"
     },
     {
       "id": "6d1e19590cc7d1d1033b094d3b0cc08e",
@@ -1269,19 +1282,6 @@
       "created_at": "2026-10-15 07:33",
       "title_orig": "東宝大怪獣シリーズ メタルガルルモン：”G”侵食モード",
       "title_ja": "東宝大怪獣シリーズ メタルガルルモン：”G”侵食モード"
-    },
-    {
-      "id": "14a88d9e5b67d7bddfe590b2ad6ed20d",
-      "title": "[네이버] (도와주세요 ㅠㅠ)무한산 플레이중인 디지몬 이별 불가 : 디지몬 소울체이서 시즌4",
-      "snippet": "(도와주세요 ㅠㅠ)무한산 플레이중인 디지몬 이별 불가 : 디지몬 소울체이서 시즌4&nbsp;&nbsp;네이버 게임",
-      "source": "네이버 게임",
-      "source_badge": "네이버",
-      "category": "game",
-      "category_name": "게임/공식애니",
-      "link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQUUFaaFRVMnIwckRTR1ZxbVpfSFd1Nnl0MnFsTHFxa19xak5kU25GamotdkxBcTNCQkFwRG03c1FCbExYN0toSEl3dV9KcG80MWl0TUU3X0JBZUlfX3hCeTRlUlM1MHlHM0FrUmpVcklqSjREb3ZtUzFEZklTd1FPUU9UWjY?oc=5",
-      "image": null,
-      "timestamp": 1792049147,
-      "created_at": "2026-10-15 07:25"
     },
     {
       "id": "9a5d7829f224d4c8a667207cb373b562",
@@ -3583,6 +3583,19 @@
       "timestamp": 1785740400,
       "created_at": "2026-08-03 07:00",
       "title_orig": "Digimon Franchise Reveals Poll Winners for Best Episodes of 1st 4 Digimon Anime Series"
+    },
+    {
+      "id": "ece24eddd854a3808040593a1835b697",
+      "title": "[인스타] 돌아온 추억의 디지몬, 극장 개봉 🍿 그 시절 우리는 모두 선택받은 아이들이었다 🥹 이 극장에서 개봉됩니다. 해당 작품은 1999년 개봉한 첫 번째 극장판과 2000년 개봉한 두 번째 극장판의 이야기를 하나로 묶은 영화인데요. 러닝타임은 총 60분으로 선택 받은 아이들의",
+      "snippet": "인스타그램 디지몬 관련 공개 게시물입니다.",
+      "source": "Instagram",
+      "source_badge": "인스타그램",
+      "category": "game",
+      "category_name": "게임/공식애니",
+      "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE83c3lTWTN0MDcxYS1Bb21MZldjeWdPeTFta05nOVcyQXNfTmhSdndlS2dWTHdCSkFIMkhpVXFmM1lKa0pTWnNlajB1anNNclFVc3c?oc=5",
+      "image": null,
+      "timestamp": 1785654000,
+      "created_at": "2026-08-02 07:00"
     },
     {
       "id": "8b7bcb31f27341d29a51bbd4a85c9975",
