@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-10-21 00:32:21",
-  "total_count": 265,
+  "last_updated": "2026-10-21 04:46:25",
+  "total_count": 267,
   "retention_days": 90,
   "feeds": [
     {
@@ -1703,6 +1703,19 @@
       "title_orig": "DIGIMON STORY TIME STRANGER’s demo is now available on Nintendo Switch and Nintendo Switch 2!"
     },
     {
+      "id": "56b122e0ba8fff0be7152b3e6a7767a1",
+      "title": "[인스타] ★최신 카드 소개★ 10월 16일 발매 예정인 『금강계만다라』의 최신 카드를 소개합니다. 오늘 공개할 카드는 「은세나」입니다. https://digimoncard.co.kr/ #디지몬카드게임 #디지몬 #デジカ #DigimonCardGame",
+      "snippet": "인스타그램 디지몬 관련 공개 게시물입니다.",
+      "source": "Instagram",
+      "source_badge": "인스타그램",
+      "category": "figure",
+      "category_name": "피규어/굿즈",
+      "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE5KTWx4dW9RV05tZE9ndjJXVmJMU3c1d0sxTW5fNlVtSXN6SEs4ZTQxLXlLTERGVnc3MEw4bUZmWWlieHBDdVNUeWFrd21oVVQ3c0E?oc=5",
+      "image": null,
+      "timestamp": 1791270000,
+      "created_at": "2026-10-06 16:00"
+    },
+    {
       "id": "caee68680c74e0c5b7947b58e64e4f8b",
       "title": "[해외뉴스] 지난 10년간의 디지몬 애니메이션 시리즈 순위, 최악부터 최고까지",
       "snippet": "Every Digimon Anime Series of the Last 10 Years, Ranked Worst to Best IMDb",
@@ -1742,6 +1755,21 @@
       "image": null,
       "timestamp": 1791183600,
       "created_at": "2026-10-05 16:00"
+    },
+    {
+      "id": "9d3c3d31e6adc6a0bd4ac7f5189c620b",
+      "title": "[일본뉴스] 애니메이션 『디지몬』 걸작선 『우리가 선택한 베스트 어드벤처』 오늘(10/4) 아침 9시부터 방송. 시리즈 초기 4개 작품에서 인기 에피소드를 엄선",
+      "snippet": "アニメ『デジモン』傑作選『僕らが選んだベストアドベンチャー』本日（10/4）朝9時より放送。シリーズ初期4作品から人気エピソードを厳選 ファミ通",
+      "source": "ファミ通",
+      "source_badge": "일본뉴스",
+      "category": "general",
+      "category_name": "일반/뉴스",
+      "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE1DblhuazV4X2VQQ3hpeC1uSjBDS3luc1A3ZnhMdkxnVkhsWi14VWVBWXUwLTdiZG1jalFEVmFUcXlocFZiNHhuWndLWU1VOUNBSUZ0UzRBbw?oc=5",
+      "image": null,
+      "timestamp": 1791097200,
+      "created_at": "2026-10-04 16:00",
+      "title_orig": "アニメ『デジモン』傑作選『僕らが選んだベストアドベンチャー』本日（10/4）朝9時より放送。シリーズ初期4作品から人気エピソードを厳選",
+      "title_ja": "アニメ『デジモン』傑作選『僕らが選んだベストアドベンチャー』本日（10/4）朝9時より放送。シリーズ初期4作品から人気エピソードを厳選"
     },
     {
       "id": "aa22c386ef098b07deb8520a3d7d4bdc",
@@ -3569,7 +3597,7 @@
     },
     {
       "id": "b26050e3212d6cf67d75863741532b72",
-      "title": "[공식 상품] デジモンストーリー タイムストレンジャー（Nintendo Switch™ 2 / Nintendo Switch™ 版）",
+      "title": "[공식 상품] 디지몬 스토리 타임 스트레인저(Nintendo Switch™ 2 / Nintendo Switch™ 판)",
       "snippet": "발매 2026-07-09 · パッケージ通常版 7,200円（税抜き）他各種アリ",
       "source": "digimon.net",
       "source_badge": "디지몬웹",
@@ -3578,11 +3606,13 @@
       "link": "https://digimon.net/product/game/",
       "image": null,
       "timestamp": 1783522800,
-      "created_at": "2026-07-09 00:00"
+      "created_at": "2026-07-09 00:00",
+      "title_orig": "デジモンストーリー タイムストレンジャー（Nintendo Switch™ 2 / Nintendo Switch™ 版）",
+      "title_ja": "デジモンストーリー タイムストレンジャー（Nintendo Switch™ 2 / Nintendo Switch™ 版）"
     },
     {
       "id": "70cca4d17c118972ea3abb73716d58c0",
-      "title": "[공식 상품] デジモンカードゲーム オフィシャルカードスリーブ03",
+      "title": "[공식 상품] 디지몬 카드 게임 오피셜 카드 슬리브 03",
       "snippet": "발매 2026-07-04 · 880円(税込)",
       "source": "digimon.net",
       "source_badge": "디지몬웹",
@@ -3591,11 +3621,13 @@
       "link": "https://digimon.net/product/detail.php?item_type=0&jan_cd=4582769982835000",
       "image": null,
       "timestamp": 1783090800,
-      "created_at": "2026-07-04 00:00"
+      "created_at": "2026-07-04 00:00",
+      "title_orig": "デジモンカードゲーム オフィシャルカードスリーブ03",
+      "title_ja": "デジモンカードゲーム オフィシャルカードスリーブ03"
     },
     {
       "id": "733e355aedb4e9b7f2d02324a1965037",
-      "title": "[공식 상품] デジモンカードゲーム エクストラブースターDIGITAL WORLD SHAMBALA 【EX-12】",
+      "title": "[공식 상품] 디지몬 카드 게임 엑스트라 부스터 DIGITAL WORLD SHAMBALA 【EX-12】",
       "snippet": "발매 2026-07-04 · 220円(税込)",
       "source": "digimon.net",
       "source_badge": "디지몬웹",
@@ -3604,11 +3636,13 @@
       "link": "https://digimon.net/product/detail.php?item_type=0&jan_cd=4582769982033000",
       "image": null,
       "timestamp": 1783090800,
-      "created_at": "2026-07-04 00:00"
+      "created_at": "2026-07-04 00:00",
+      "title_orig": "デジモンカードゲーム エクストラブースターDIGITAL WORLD SHAMBALA 【EX-12】",
+      "title_ja": "デジモンカードゲーム エクストラブースターDIGITAL WORLD SHAMBALA 【EX-12】"
     },
     {
       "id": "4f78df197777cdbfd745c220c803bc82",
-      "title": "[공식 상품] デジモンカードゲーム ブースターパック DUAL REVOLUTION【BT-25】",
+      "title": "[공식 상품] 디지몬 카드 게임 부스터 팩 DUAL REVOLUTION【BT-25】",
       "snippet": "발매 2026-05-16 · 220円(税込)",
       "source": "digimon.net",
       "source_badge": "디지몬웹",
@@ -3617,11 +3651,13 @@
       "link": "https://digimon.net/product/detail.php?item_type=0&jan_cd=4582769982019000",
       "image": null,
       "timestamp": 1778857200,
-      "created_at": "2026-05-16 00:00"
+      "created_at": "2026-05-16 00:00",
+      "title_orig": "デジモンカードゲーム ブースターパック DUAL REVOLUTION【BT-25】",
+      "title_ja": "デジモンカードゲーム ブースターパック DUAL REVOLUTION【BT-25】"
     },
     {
       "id": "c23e3664171eb348e460c4673ed34270",
-      "title": "[공식 상품] デジモンカードゲーム スタートデッキ　DIGIMON BEATBREAK【ST-23】",
+      "title": "[공식 상품] 디지몬 카드 게임 스타트 덱 DIGIMON BEATBREAK【ST-23】",
       "snippet": "발매 2026-05-16 · 1,650円(税込)",
       "source": "digimon.net",
       "source_badge": "디지몬웹",
@@ -3630,11 +3666,13 @@
       "link": "https://digimon.net/product/detail.php?item_type=0&jan_cd=4582769982002000",
       "image": null,
       "timestamp": 1778857200,
-      "created_at": "2026-05-16 00:00"
+      "created_at": "2026-05-16 00:00",
+      "title_orig": "デジモンカードゲーム スタートデッキ　DIGIMON BEATBREAK【ST-23】",
+      "title_ja": "デジモンカードゲーム スタートデッキ　DIGIMON BEATBREAK【ST-23】"
     },
     {
       "id": "b835094dc03f76b12ba3091f3b591ed1",
-      "title": "[공식 상품] デジモンカードゲーム スタートデッキ DIGIMON SAVERS【ST-24】",
+      "title": "[공식 상품] 디지몬 카드 게임 스타트 덱 DIGIMON SAVERS【ST-24】",
       "snippet": "발매 2026-05-16 · 1,650円(税込)",
       "source": "digimon.net",
       "source_badge": "디지몬웹",
@@ -3643,11 +3681,13 @@
       "link": "https://digimon.net/product/detail.php?item_type=0&jan_cd=4582769966286000",
       "image": null,
       "timestamp": 1778857200,
-      "created_at": "2026-05-16 00:00"
+      "created_at": "2026-05-16 00:00",
+      "title_orig": "デジモンカードゲーム スタートデッキ DIGIMON SAVERS【ST-24】",
+      "title_ja": "デジモンカードゲーム スタートデッキ DIGIMON SAVERS【ST-24】"
     },
     {
       "id": "fc3f05f89adb6ff58b7d090a53f44a85",
-      "title": "[공식 상품] デジモンストーリー タイムストレンジャー",
+      "title": "[공식 상품] 디지몬 스토리 타임 스트레인저",
       "snippet": "발매 2025-10-02 · パッケージ通常版 8,100円（税抜き）他各種アリ",
       "source": "digimon.net",
       "source_badge": "디지몬웹",
@@ -3656,11 +3696,13 @@
       "link": "https://digimon.net/product/game/",
       "image": null,
       "timestamp": 1759330800,
-      "created_at": "2025-10-02 00:00"
+      "created_at": "2025-10-02 00:00",
+      "title_orig": "デジモンストーリー タイムストレンジャー",
+      "title_ja": "デジモンストーリー タイムストレンジャー"
     },
     {
       "id": "25060114ac9b620beb425c6698c660fe",
-      "title": "[공식 상품] デジモンサヴァイブ",
+      "title": "[공식 상품] 디지몬 서바이브",
       "snippet": "발매 2022-07-28 · 6,980円（税抜き）",
       "source": "digimon.net",
       "source_badge": "디지몬웹",
@@ -3669,11 +3711,13 @@
       "link": "https://digimon.net/product/game/",
       "image": null,
       "timestamp": 1658934000,
-      "created_at": "2022-07-28 00:00"
+      "created_at": "2022-07-28 00:00",
+      "title_orig": "デジモンサヴァイブ",
+      "title_ja": "デジモンサヴァイブ"
     },
     {
       "id": "5637b9a86dbc26604c2dce18753093c7",
-      "title": "[공식 상품] デジモンストーリー サイバースルゥース ハッカーズメモリー",
+      "title": "[공식 상품] 디지몬 스토리 사이버 슬루스 해커스 메모리",
       "snippet": "발매 2017-12-14 · 6,270円（税込）～",
       "source": "digimon.net",
       "source_badge": "디지몬웹",
@@ -3682,11 +3726,13 @@
       "link": "https://digimon.net/product/game/",
       "image": null,
       "timestamp": 1513177200,
-      "created_at": "2017-12-14 00:00"
+      "created_at": "2017-12-14 00:00",
+      "title_orig": "デジモンストーリー サイバースルゥース ハッカーズメモリー",
+      "title_ja": "デジモンストーリー サイバースルゥース ハッカーズメモリー"
     },
     {
       "id": "58513114803b217fa297031c8c28bb56",
-      "title": "[공식 상품] デジモンストーリー サイバースルゥース",
+      "title": "[공식 상품] 디지몬 스토리 사이버 슬루스",
       "snippet": "발매 2015-03-12 · 3,080円（税込）～",
       "source": "digimon.net",
       "source_badge": "디지몬웹",
@@ -3695,11 +3741,13 @@
       "link": "https://digimon.net/product/game/",
       "image": null,
       "timestamp": 1426086000,
-      "created_at": "2015-03-12 00:00"
+      "created_at": "2015-03-12 00:00",
+      "title_orig": "デジモンストーリー サイバースルゥース",
+      "title_ja": "デジモンストーリー サイバースルゥース"
     },
     {
       "id": "b1f06b9e163275ca1ec2a68dd0b10210",
-      "title": "[공식 상품] デジモンワールド　リ:デジタイズ デコード",
+      "title": "[공식 상품] 디지몬 월드 리:디지타이즈 디코드",
       "snippet": "발매 2013-06-27 · 5,480円（税込）",
       "source": "digimon.net",
       "source_badge": "디지몬웹",
@@ -3708,11 +3756,13 @@
       "link": "https://digimon.net/product/game/",
       "image": null,
       "timestamp": 1372258800,
-      "created_at": "2013-06-27 00:00"
+      "created_at": "2013-06-27 00:00",
+      "title_orig": "デジモンワールド　リ:デジタイズ デコード",
+      "title_ja": "デジモンワールド　リ:デジタイズ デコード"
     },
     {
       "id": "79464127834dd30aa20aeb13b1b51e2f",
-      "title": "[공식 상품] デジモンアドベンチャー",
+      "title": "[공식 상품] 디지몬 어드벤처",
       "snippet": "발매 2013-01-17 · パッケージ版：6,578円(税込) ダウンロード版：2,016円(税込)",
       "source": "digimon.net",
       "source_badge": "디지몬웹",
@@ -3721,7 +3771,9 @@
       "link": "https://digimon.net/product/game/",
       "image": null,
       "timestamp": 1358348400,
-      "created_at": "2013-01-17 00:00"
+      "created_at": "2013-01-17 00:00",
+      "title_orig": "デジモンアドベンチャー",
+      "title_ja": "デジモンアドベンチャー"
     }
   ]
 }
