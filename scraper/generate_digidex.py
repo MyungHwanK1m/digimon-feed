@@ -1,10 +1,27 @@
-import json
+"""Digi-API 전체 디지몬 인덱스 생성 → public|docs/data/digimon_all_index.json
+
+  - 목록은 페이지를 끝까지 따라가며 받음 (pageable.totalElements 와 개수 확인)
+  - 받은 수가 0이거나 기존 인덱스보다 크게 줄면(90% 미만) 저장하지 않고 실패 코드로 종료
+    (빈 인덱스가 저장되면 build_dex.py 가 도감 그림·연결을 통째로 잃음)
+
+사용: python scraper/generate_digidex.py               # 목록 + 상세(단계) 수집
+      python scraper/generate_digidex.py --no-levels   # 목록만 (단계는 기존 인덱스 값 유지)
+      python scraper/generate_digidex.py --offline     # 네트워크 없이 기존 인덱스로 한글명만 다시 생성
+"""
 import os
 import re
 import sys
 import time
 
 import requests
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from jsonio import load_json, write_json  # noqa: E402
+
+API_LIST = "https://digi-api.com/api/v1/digimon"
+PAGE_SIZE = 200
+MIN_KEEP_RATIO = 0.9  # 기존 인덱스 대비 이 비율 미만이면 일시 오류로 보고 저장하지 않음
+INDEX_FILES = ["docs/data/digimon_all_index.json", "public/data/digimon_all_index.json"]
 
 # 주요 한국어 더빙명 <-> 일본 원칭(가타카나 음차) 매핑 테이블 (기본형 기준)
 KO_JA_NAME_MAP = {
@@ -294,33 +311,70 @@ def translate_digimon_name(raw_name: str):
     return final_ko, final_ja, list(dict.fromkeys(aliases))
 
 
-def fetch_detail(session, digi_id):
-    url = f"https://digi-api.com/api/v1/digimon/{digi_id}"
-    for attempt in range(3):
+def get_json(session, url, params=None, tries=4):
+    """200 응답의 JSON만 돌려줌. 실패하면 None"""
+    for attempt in range(tries):
         try:
-            return session.get(url, timeout=20).json()
-        except Exception:
-            time.sleep(1 + attempt * 2)
+            r = session.get(url, params=params, timeout=30)
+            if r.status_code == 200:
+                return r.json()
+            if r.status_code == 404:
+                return None
+            print(f"  HTTP {r.status_code}: {r.url}")
+        except Exception as e:  # 네트워크 오류·JSON 아님
+            print(f"  오류 {e}: {url}")
+        if attempt < tries - 1:
+            time.sleep(2 + attempt * 3)
     return None
 
 
+def fetch_detail(session, digi_id):
+    return get_json(session, f"{API_LIST}/{digi_id}", tries=3)
+
+
+def fetch_all_list(session):
+    """목록 전체 (페이지를 끝까지 따라감). 중간 페이지가 실패하면 중단"""
+    items, seen, page, total = [], set(), 0, None
+    while True:
+        data = get_json(session, API_LIST, params={"page": page, "pageSize": PAGE_SIZE})
+        if not isinstance(data, dict):
+            raise SystemExit(f"Digi-API 목록 {page}페이지 요청 실패 — 저장하지 않고 중단")
+        content = data.get("content") or []
+        pageable = data.get("pageable") or {}
+        total = pageable.get("totalElements", total)
+        for item in content:
+            if item.get("id") is not None and item.get("name") and item["id"] not in seen:
+                seen.add(item["id"])
+                items.append(item)
+        # nextPage 를 우선 따름. Digi-API 의 totalPages 는 개수가 아니라 마지막 페이지 번호 (0~7 페이지인데 7)
+        total_pages = pageable.get("totalPages")
+        if "nextPage" in pageable:
+            last = not pageable["nextPage"]
+        else:
+            last = total_pages is not None and page >= total_pages
+        page += 1
+        if not content or last or page > 500:
+            break
+        time.sleep(0.2)
+    if total is not None and len(items) < total:
+        raise SystemExit(f"Digi-API 목록이 덜 받아졌습니다 ({len(items)}/{total}) — 저장하지 않고 중단")
+    return items
 
 
 def write_index(master_list):
-    os.makedirs("docs/data", exist_ok=True)
-    os.makedirs("public/data", exist_ok=True)
-    for target in ["docs/data/digimon_all_index.json", "public/data/digimon_all_index.json"]:
-        with open(target, "w", encoding="utf-8") as f:
-            json.dump({"total": len(master_list), "digimons": master_list}, f, ensure_ascii=False, indent=2)
+    for target in INDEX_FILES:
+        write_json(target, {"total": len(master_list), "digimons": master_list}, indent=2)
         print(f"Saved master index to {target}")
 
 
+def check_count(new_count, old_count):
+    if new_count == 0 or (old_count and new_count < old_count * MIN_KEEP_RATIO):
+        print(f"::error::인덱스가 비었거나 크게 줄었습니다 (기존 {old_count} → {new_count}) — 저장하지 않음")
+        sys.exit(1)
+
+
 def load_existing_index():
-    path = "public/data/digimon_all_index.json"
-    if not os.path.exists(path):
-        return {}
-    with open(path, encoding="utf-8") as f:
-        return {d["id"]: d for d in json.load(f).get("digimons", [])}
+    return {d["id"]: d for d in load_json("public/data/digimon_all_index.json", {}).get("digimons", [])}
 
 
 def build_entry(digi_id, raw_name, image, level):
@@ -345,6 +399,7 @@ def retranslate_offline():
         build_entry(d["id"], d["name"], d.get("image"), d.get("level"))
         for d in sorted(existing.values(), key=lambda x: x["id"])
     ]
+    check_count(len(master_list), len(existing))
     write_index(master_list)
 
 
@@ -352,26 +407,34 @@ def fetch_and_build_all_index(with_levels=True):
     print("Fetching all Digimon from Digi-API...")
     session = requests.Session()
     session.headers.update({"User-Agent": "Mozilla/5.0"})
-    url = "https://digi-api.com/api/v1/digimon?pageSize=1500"
-    items = session.get(url, timeout=30).json().get("content", [])
+    items = fetch_all_list(session)
     print(f"Total fetched from Digi-API: {len(items)}")
 
     existing = load_existing_index()
-    master_list = []
+    check_count(len(items), len(existing))
+    master_list, fail_streak = [], 0
     for i, item in enumerate(items):
         digi_id = item["id"]
         level = existing.get(digi_id, {}).get("level")
         if with_levels:
             detail = fetch_detail(session, digi_id)
-            if detail:
+            if isinstance(detail, dict):
+                fail_streak = 0
                 levels = detail.get("levels") or []
-                level = levels[0]["level"] if levels else level
+                level = (levels[0] or {}).get("level") or level if levels else level
+            else:
+                fail_streak += 1
+                if fail_streak >= 20:
+                    # 서버 장애로 상세가 계속 실패하면 1,500번 재시도로 몇 시간 끌지 않고 남은 것은 기존 단계 유지
+                    print("  상세 요청이 연달아 실패 — 남은 디지몬은 기존 단계 값 유지")
+                    with_levels = False
             time.sleep(0.05)
         master_list.append(build_entry(digi_id, item["name"], item.get("image"), level))
         if (i + 1) % 100 == 0:
             print(f"  {i + 1}/{len(items)}")
 
     print(f"Built master index with {len(master_list)} entries.")
+    master_list.sort(key=lambda x: x["id"])
     write_index(master_list)
 
 
