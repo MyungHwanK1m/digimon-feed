@@ -6,7 +6,13 @@
 
 translate_map({"키": "원문", ...}, glossary={"Agumon": "아구몬"}) → {"키": "한국어"}
   - 여러 문장을 한 번에 JSON으로 주고받아 요청 수를 줄임 (무료 등급은 분당·일일 요청 수 제한이 있음)
-  - 일일 한도에 걸리면 QuotaExceeded 를 던짐 → 호출하는 쪽에서 지금까지 결과를 저장하고 멈추면 다음 실행 때 이어서 진행
+  - 한 번 호출에 쓰는 시간은 max_seconds(기본 CALL_BUDGET)를 넘지 않음
+  - 예외
+      QuotaExceeded  모든 후보 모델이 일일 한도 → 지금까지 결과를 저장하고 멈추면 다음 실행 때 이어서 진행
+      Busy           혼잡·응답 없음으로 재시도/시간 한도 초과 → 잠시 후 다시 시도하면 됨
+      BadResponse    이 묶음 자체가 번역 불가(안전 차단, 해석 불가 응답, 잘못된 요청) → 같은 요청을 반복해도 소용없음.
+                     이 묶음만 건너뛰면 됨 (RuntimeError 하위 클래스)
+      AuthError      키가 잘못됐거나 권한 없음 → 전체 중단 (RuntimeError 하위 클래스)
 """
 import json
 import os
@@ -16,7 +22,11 @@ import time
 import requests
 
 API = "https://generativelanguage.googleapis.com/v1beta"
-MIN_INTERVAL = 6.5  # 무료 등급 분당 요청 제한(약 10회)에 맞춘 간격(초)
+MIN_INTERVAL = 6.5     # 무료 등급 분당 요청 제한(약 10회)에 맞춘 간격(초)
+MAX_RETRIES = 6        # translate_map 한 번의 최대 요청 횟수
+CALL_BUDGET = 600      # translate_map 한 번에 쓰는 최대 시간(초) — 최악의 경우에도 이 시간 안에 끝남
+REQUEST_TIMEOUT = 180  # 요청 하나의 최대 대기(초)
+MAX_SLEEP = 60         # 분당 한도·혼잡 때 한 번에 쉬는 최대 시간(초)
 
 _last_call = 0.0
 
@@ -27,6 +37,14 @@ class QuotaExceeded(Exception):
 
 class Busy(Exception):
     """모든 모델이 혼잡하거나 응답 없음 — 잠시 후 다시 시도하면 됨"""
+
+
+class BadResponse(RuntimeError):
+    """이 요청(묶음) 자체를 처리할 수 없음 — 안전 차단, 해석 불가 응답, 잘못된 요청(HTTP 400 등)"""
+
+
+class AuthError(RuntimeError):
+    """API 키가 잘못됐거나 권한 없음 — 다른 묶음도 모두 실패하므로 중단"""
 
 
 def available():
@@ -68,15 +86,20 @@ def _candidates():
 
 
 TERMS_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "data", "translations", "terms.json")
+_terms = None
 
 
 def load_terms():
-    """고정 용어집 (data/translations/terms.json, '_'로 시작하는 키는 메모)"""
-    try:
-        with open(TERMS_FILE, encoding="utf-8") as f:
-            return {k: v for k, v in json.load(f).items() if not k.startswith("_")}
-    except (OSError, ValueError):
-        return {}
+    """고정 용어집 (data/translations/terms.json, '_'로 시작하는 키는 메모). 실행 중 한 번만 읽음"""
+    global _terms
+    if _terms is None:
+        try:
+            with open(TERMS_FILE, encoding="utf-8") as f:
+                data = json.load(f)
+            _terms = {k: v for k, v in data.items() if not k.startswith("_")} if isinstance(data, dict) else {}
+        except (OSError, ValueError):
+            _terms = {}
+    return dict(_terms)
 
 
 PROMPT = """너는 디지몬 공식 도감 번역가다. 아래 JSON의 각 값을 한국어로 번역해라. 원작 고증이 최우선이다.
@@ -93,8 +116,40 @@ PROMPT = """너는 디지몬 공식 도감 번역가다. 아래 JSON의 각 값�
 번역할 JSON:
 {payload}"""
 
+# 이 값이면 같은 요청을 다시 보내도 결과가 같음 → 바로 BadResponse
+_BLOCK_FINISH = {"SAFETY", "PROHIBITED_CONTENT", "BLOCKLIST", "SPII", "RECITATION", "IMAGE_SAFETY"}
 
-def translate_map(texts, glossary=None, retries=12):
+
+def _sleep(seconds, deadline):
+    """deadline 을 넘지 않는 만큼만 쉼"""
+    seconds = min(seconds, deadline - time.time())
+    if seconds > 0:
+        time.sleep(seconds)
+
+
+def _quota_info(r):
+    """429 응답 → (일일 한도인지, 서버가 권하는 대기 초)
+    일일 한도는 QuotaFailure 의 quotaId/quotaMetric 에 'PerDay' 가 있을 때만으로 판단
+    (무료 등급은 분당 한도도 quotaMetric 이 '...free_tier_requests' 라서 그 문자열로는 구분할 수 없음)"""
+    daily, delay = False, None
+    try:
+        details = (r.json().get("error") or {}).get("details") or []
+        for d in details:
+            kind = str(d.get("@type", ""))
+            if kind.endswith("QuotaFailure"):
+                for v in d.get("violations") or []:
+                    if "PerDay" in f"{v.get('quotaId', '')} {v.get('quotaMetric', '')}":
+                        daily = True
+            elif kind.endswith("RetryInfo"):
+                m = re.match(r"([\d.]+)s", str(d.get("retryDelay", "")))
+                if m:
+                    delay = float(m.group(1))
+    except (ValueError, AttributeError, TypeError):
+        daily = "PerDay" in r.text  # JSON 이 아니면 본문 문자열로만 판단
+    return daily, delay
+
+
+def translate_map(texts, glossary=None, retries=MAX_RETRIES, max_seconds=CALL_BUDGET):
     global _last_call
     texts = {k: v for k, v in texts.items() if v and v.strip()}
     if not texts:
@@ -110,51 +165,81 @@ def translate_map(texts, glossary=None, retries=12):
         "contents": [{"parts": [{"text": PROMPT.format(glossary=gl, payload=json.dumps(texts, ensure_ascii=False))}]}],
         "generationConfig": {"temperature": 0.2, "responseMimeType": "application/json"},
     }
+    deadline = time.time() + max_seconds
     busy = {}
+    parse_failures = 0
     for attempt in range(retries):
         models = _candidates()
         if not models:
             raise QuotaExceeded("모든 모델이 오늘 한도에 도달")
         # 이번 요청에서 두 번 이상 혼잡했던 모델은 건너뜀 (다 혼잡하면 그중 덜 실패한 모델)
         model = min(models, key=lambda m: (busy.get(m, 0) >= 2, models.index(m)))
-        wait = _last_call + MIN_INTERVAL - time.time()
-        if wait > 0:
-            time.sleep(wait)
+        _sleep(_last_call + MIN_INTERVAL - time.time(), deadline)
+        remaining = deadline - time.time()
+        if remaining < 10:
+            break
         _last_call = time.time()
         try:
-            r = requests.post(f"{API}/models/{model}:generateContent", headers=_headers(), json=body, timeout=300)
+            r = requests.post(f"{API}/models/{model}:generateContent", headers=_headers(), json=body,
+                              timeout=min(REQUEST_TIMEOUT, remaining))
         except Exception as e:
             print(f"  [gemini] {model} 요청 오류: {e}")
             busy[model] = busy.get(model, 0) + 1
             continue
         if r.status_code == 429:
-            msg = r.text
-            if "PerDay" in msg or "per day" in msg.lower() or "free_tier_requests" in msg:
+            daily, delay = _quota_info(r)
+            if daily:
                 # 무료 등급 일일 한도는 모델마다 따로 → 다음 모델로
                 _exhausted.add(model)
                 print(f"  [gemini] {model} 오늘 한도 도달 → 다른 모델")
                 continue
-            print(f"  [gemini] {model} 분당 한도 — 잠시 대기")
-            time.sleep(30 * (attempt + 1))
+            pause = min(MAX_SLEEP, delay if delay else 15 * (attempt + 1))
+            print(f"  [gemini] {model} 분당 한도 - {pause:.0f}초 대기")
+            _sleep(pause, deadline)
             continue
         if r.status_code >= 500:
             busy[model] = busy.get(model, 0) + 1
             print(f"  [gemini] {model} 혼잡(HTTP {r.status_code})")
             if all(busy.get(m, 0) >= 2 for m in models):
-                time.sleep(20)
+                _sleep(20, deadline)
             continue
         if r.status_code == 404:
             _exhausted.add(model)
             print(f"  [gemini] {model} 사용 불가 → 다른 모델")
             continue
+        if r.status_code in (401, 403) or (r.status_code == 400 and ("API_KEY" in r.text or "API key" in r.text)):
+            raise AuthError(f"Gemini HTTP {r.status_code}: {r.text[:300]}")
         if r.status_code != 200:
-            raise RuntimeError(f"Gemini HTTP {r.status_code}: {r.text[:300]}")
+            # 400 등 요청 자체의 문제 → 같은 요청을 반복해도 실패
+            raise BadResponse(f"Gemini HTTP {r.status_code}: {r.text[:300]}")
+
         try:
-            raw = r.json()["candidates"][0]["content"]["parts"][0]["text"]
+            data = r.json()
+        except ValueError:
+            data = None
+        if not isinstance(data, dict):
+            data = {}
+        block = (data.get("promptFeedback") or {}).get("blockReason")
+        cands = data.get("candidates") or []
+        if block or not cands:
+            raise BadResponse(f"응답 후보 없음 (blockReason={block}): {r.text[:300]}")
+        cand = cands[0] if isinstance(cands[0], dict) else {}
+        finish = cand.get("finishReason")
+        if finish in _BLOCK_FINISH:
+            raise BadResponse(f"생성 중단 (finishReason={finish})")
+        parts = (cand.get("content") or {}).get("parts") or []
+        raw = "".join(p.get("text", "") for p in parts if isinstance(p, dict))
+        try:
             raw = re.sub(r"^```(?:json)?|```$", "", raw.strip()).strip()
             out = json.loads(raw)
-        except Exception as e:
-            print(f"  [gemini] 응답 해석 실패({e}): {r.text[:300]}")
+            if not isinstance(out, dict):
+                raise ValueError("JSON 객체가 아님")
+        except ValueError as e:
+            parse_failures += 1
+            print(f"  [gemini] 응답 해석 실패({e}, finishReason={finish}): {raw[:200]}")
+            # 잘린 응답(MAX_TOKENS)이거나 두 번째 실패면 이 묶음은 포기 (같은 요청 반복은 한도만 낭비)
+            if finish == "MAX_TOKENS" or parse_failures >= 2:
+                raise BadResponse(f"응답 해석 실패: {e}")
             continue
-        return {k: str(out[k]).strip() for k in texts if isinstance(out, dict) and out.get(k)}
-    raise Busy("재시도 한도 초과 (모델 혼잡 또는 응답 없음)")
+        return {k: str(out[k]).strip() for k in texts if out.get(k)}
+    raise Busy("재시도·시간 한도 초과 (모델 혼잡 또는 응답 없음)")
