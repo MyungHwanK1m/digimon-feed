@@ -34,7 +34,7 @@ OUT_FILE = os.path.join(OUT_DIR, "evolutions.json")
 REPORT_FILE = os.path.join(OUT_DIR, "report.md")
 DELAY = 60  # robots.txt Crawl-delay
 BATCH = 50
-UA = "digimon-feed (non-commercial fan dex; https://github.com/MyungHwanK1m/digimon-feed)"
+UA = "digimon-feed (non-commercial fan dex; https://github.com/aud9855/digimon-feed)"
 
 # 출처 분류 규칙 (작품명 → 분류). 위에서부터 먼저 맞는 것
 CAT_RULES = [
