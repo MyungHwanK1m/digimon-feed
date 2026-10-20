@@ -2,7 +2,7 @@
 <html lang="ko" class="dark">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>DIGI-FEED | 디지몬 소식·도감</title>
   
   <!-- PWA Meta & Security Policies -->
@@ -48,8 +48,15 @@
       padding-top: var(--sat);
       padding-bottom: var(--sab);
       -webkit-tap-highlight-color: transparent;
+    }
+    /* 텍스트 선택은 허용하고, 버튼처럼 누르는 요소만 선택 방지 */
+    button, [role="button"] {
       user-select: none;
       -webkit-user-select: none;
+    }
+    /* 설치 배너가 떠 있을 때 '맨 위로' 버튼이 가려지지 않도록 위로 올림 */
+    body.pwa-banner-open #scroll-top-btn {
+      bottom: calc(7.5rem + var(--sab));
     }
     .no-scrollbar::-webkit-scrollbar { display: none; }
     /* 브라우저 기본 검색 지우기(X) 버튼 숨김: 직접 만든 ✕ 버튼과 중복 */
@@ -112,7 +119,7 @@
 
   <!-- D-Ark Slash Header (블루 카드 테마) -->
   <header class="sticky top-0 z-40 bg-white/90 dark:bg-[#050b1a]/90 backdrop-blur-lg border-b border-blue-500/20 dark:border-blue-500/30 px-4 h-14 flex items-center justify-between shadow-sm">
-    <div onclick="goHome()" class="flex items-center gap-3 cursor-pointer select-none group touch-press" title="홈으로 이동 (초기화)">
+    <div onclick="goHome()" role="button" tabindex="0" aria-label="홈으로 이동 (초기화)" class="flex items-center gap-3 cursor-pointer select-none group touch-press" title="홈으로 이동 (초기화)">
       <!-- Tamers Blue Card Realistic Emblem -->
       <div class="w-7 h-10 rounded-md bg-[#004ce8] border border-blue-300 shadow-md shadow-blue-600/40 flex items-center justify-center relative overflow-hidden shrink-0 group-hover:scale-105 transition">
         <!-- Magnetic Stripe (Left) -->
@@ -142,10 +149,10 @@
 
     <!-- Quick Actions (Theme & Slash Refresh) -->
     <div class="flex items-center gap-2">
-      <button id="theme-btn" onclick="toggleTheme()" class="touch-press p-2 rounded-xl text-blue-700 dark:text-blue-300 hover:text-blue-900 dark:hover:text-white bg-blue-50 dark:bg-blue-950/60 border border-blue-200 dark:border-blue-800/80 transition" title="테마 변경">
+      <button id="theme-btn" onclick="toggleTheme()" aria-label="테마 변경" class="touch-press p-2 rounded-xl text-blue-700 dark:text-blue-300 hover:text-blue-900 dark:hover:text-white bg-blue-50 dark:bg-blue-950/60 border border-blue-200 dark:border-blue-800/80 transition" title="테마 변경">
         <span id="theme-icon">🌙</span>
       </button>
-      <button onclick="fetchFeeds(true)" class="touch-press flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-[#004ce8] hover:bg-blue-600 text-white font-extrabold text-xs shadow-md shadow-blue-600/30 transition">
+      <button onclick="fetchFeeds(true)" aria-label="피드 새로고침" class="touch-press flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-[#004ce8] hover:bg-blue-600 text-white font-extrabold text-xs shadow-md shadow-blue-600/30 transition">
         <svg id="refresh-icon" class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
         <span>슬래시</span>
       </button>
@@ -181,7 +188,7 @@
           placeholder="디지몬, 피규어, 카드, 굿즈 검색..." 
           class="w-full pl-10 pr-9 py-2.5 text-sm rounded-2xl bg-white/90 dark:bg-[#070e22]/90 border border-blue-200 dark:border-blue-900/60 focus:outline-none focus:border-[#004ce8] dark:focus:border-blue-400 text-slate-900 dark:text-slate-100 placeholder:text-slate-400 dark:placeholder:text-slate-500 transition shadow-sm backdrop-blur"
         />
-        <button id="clear-search-btn" onclick="clearSearch()" class="hidden absolute right-3 top-1/2 -translate-y-1/2 text-blue-500 hover:text-blue-700 p-1 text-xs">✕</button>
+        <button id="clear-search-btn" onclick="clearSearch()" aria-label="검색어 지우기" class="hidden absolute right-3 top-1/2 -translate-y-1/2 text-blue-500 hover:text-blue-700 p-1 text-xs">✕</button>
       </div>
 
       <!-- Filter Bar: Site/Platform Chips (Intuitive Site Filters) -->
@@ -248,7 +255,7 @@
             placeholder="이름·영문·번호로 검색 (예: 아구몬, Agumon, 66)"
             class="w-full pl-10 pr-9 py-2.5 text-sm rounded-2xl bg-white/90 dark:bg-[#070e22]/90 border border-blue-200 dark:border-blue-900/60 focus:outline-none focus:border-[#004ce8] dark:focus:border-blue-400 text-slate-900 dark:text-slate-100 placeholder:text-slate-400 dark:placeholder:text-slate-500 transition shadow-sm backdrop-blur"
           />
-          <button id="dex-clear-search-btn" onclick="clearDexSearch()" class="hidden absolute right-3 top-1/2 -translate-y-1/2 text-blue-500 hover:text-blue-700 p-1 text-xs">✕</button>
+          <button id="dex-clear-search-btn" onclick="clearDexSearch()" aria-label="도감 검색어 지우기" class="hidden absolute right-3 top-1/2 -translate-y-1/2 text-blue-500 hover:text-blue-700 p-1 text-xs">✕</button>
         </div>
 
         <div id="dex-level-chips" class="flex items-center gap-1.5 overflow-x-auto pb-1 no-scrollbar"></div>
@@ -319,7 +326,7 @@
   </footer>
 
   <!-- Floating Scroll-To-Top Button (Blue Card Sphere) -->
-  <button id="scroll-top-btn" onclick="scrollToTop()" class="hidden fixed bottom-6 right-5 w-11 h-11 rounded-full bg-[#004ce8] text-white shadow-xl shadow-blue-600/40 border border-blue-300/40 flex items-center justify-center transition active:scale-95 z-30">
+  <button id="scroll-top-btn" onclick="scrollToTop()" aria-label="맨 위로 이동" class="hidden fixed bottom-6 right-5 w-11 h-11 rounded-full bg-[#004ce8] text-white shadow-xl shadow-blue-600/40 border border-blue-300/40 flex items-center justify-center transition active:scale-95 z-30">
     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 10l7-7m0 0l7 7m-7-7v18"/></svg>
   </button>
 
@@ -334,16 +341,47 @@
     </div>
     <div class="flex items-center gap-1.5 shrink-0">
       <button onclick="installPwa()" class="px-3.5 py-1.5 bg-yellow-400 text-slate-950 font-black text-xs rounded-xl shadow-sm">설치</button>
-      <button onclick="dismissPwaBanner()" class="p-1.5 text-blue-200 hover:text-white">✕</button>
+      <button onclick="dismissPwaBanner()" aria-label="설치 배너 닫기" class="p-1.5 text-blue-200 hover:text-white">✕</button>
     </div>
   </div>
 
   <script>
+    // localStorage 안전 래퍼: 저장소가 막혀 있거나(쿠키 차단 등) 용량이 꽉 차도 앱이 멈추지 않도록
+    function lsGet(key, fallback = null) {
+      try {
+        const v = localStorage.getItem(key);
+        return v === null ? fallback : v;
+      } catch (_) {
+        return fallback;
+      }
+    }
+    function lsSet(key, value) {
+      try {
+        localStorage.setItem(key, value);
+        return true;
+      } catch (_) {
+        return false;
+      }
+    }
+    const storageAvailable = (() => {
+      try {
+        localStorage.setItem('__digi_probe', '1');
+        localStorage.removeItem('__digi_probe');
+        return true;
+      } catch (_) {
+        return false;
+      }
+    })();
+
+    const PERIOD_OPTIONS = [7, 14, 30, 90];
     let feeds = [];
+    let feedsLoaded = false;
+    let feedLoadError = false;
     let currentCategory = 'all';
     let searchQuery = '';
     let showOnlyBookmarks = false;
-    let selectedPeriodDays = parseInt(localStorage.getItem('digi_period') || '30', 10);
+    let selectedPeriodDays = parseInt(lsGet('digi_period', '30'), 10);
+    if (!PERIOD_OPTIONS.includes(selectedPeriodDays)) selectedPeriodDays = 30;
     let deferredPrompt = null;
 
     // HTML/속성 이스케이프 (스크랩한 제목·외부 API 텍스트가 그대로 HTML로 실행되지 않도록)
@@ -365,7 +403,7 @@
 
     // Theme Management
     function initTheme() {
-      const savedTheme = localStorage.getItem('digi_theme') || 'dark';
+      const savedTheme = lsGet('digi_theme', 'dark');
       applyTheme(savedTheme);
     }
 
@@ -379,13 +417,13 @@
         html.classList.remove('dark');
         if (icon) icon.textContent = '☀️';
       }
-      localStorage.setItem('digi_theme', theme);
+      lsSet('digi_theme', theme);
     }
 
+    // 카드 색상은 dark: 클래스로만 바뀌므로 목록을 다시 그릴 필요 없음
     function toggleTheme() {
       const isDark = document.documentElement.classList.contains('dark');
       applyTheme(isDark ? 'light' : 'dark');
-      renderCards();
     }
 
     // Relative Time Formatter
@@ -412,35 +450,83 @@
         .trim();
     }
 
-    // Bookmarks LocalStorage
+    // Bookmarks (스크랩)
+    // 카드에 필요한 필드를 복사해 저장 → 피드에서 지워진 뒤(90일 경과)에도 스크랩이 남음
+    // 저장 형식: [{ id, title, ... }]. 예전 형식(id 문자열 배열)도 읽고, 피드를 받은 뒤 내용을 채움
+    const BOOKMARK_KEY = 'digi_bookmarks';
+    const BOOKMARK_FIELDS = ['id', 'title', 'snippet', 'source', 'source_badge', 'category', 'category_name', 'link', 'image', 'timestamp', 'created_at'];
+    let bookmarksMem = null; // 저장소가 막혀 있거나 저장에 실패해도 이번 세션 동안은 유지
+
+    function snapshotItem(item) {
+      const o = {};
+      BOOKMARK_FIELDS.forEach(k => {
+        if (item[k] !== undefined && item[k] !== null) o[k] = item[k];
+      });
+      return o;
+    }
+
     function getBookmarks() {
+      if (bookmarksMem) return bookmarksMem;
+      let raw = [];
       try {
-        return JSON.parse(localStorage.getItem('digi_bookmarks') || '[]');
-      } catch (e) {
-        return [];
-      }
+        raw = JSON.parse(lsGet(BOOKMARK_KEY, '[]'));
+      } catch (_) {}
+      if (!Array.isArray(raw)) raw = [];
+      const seen = new Set();
+      bookmarksMem = raw
+        .map(b => (typeof b === 'string' ? { id: b } : b))
+        .filter(b => b && b.id && !seen.has(b.id) && seen.add(b.id));
+      return bookmarksMem;
     }
 
     function saveBookmarks(bks) {
-      localStorage.setItem('digi_bookmarks', JSON.stringify(bks));
+      bookmarksMem = bks;
+      lsSet(BOOKMARK_KEY, JSON.stringify(bks)); // 실패(용량 초과 등)해도 화면 갱신은 계속
+    }
+
+    // 예전 id만 저장된 스크랩: 현재 피드에 있으면 내용을 채우고, 피드에도 없으면(이미 삭제된 글) 정리
+    function migrateBookmarks() {
+      const bks = getBookmarks();
+      if (!bks.some(b => !b.title)) return;
+      const byId = new Map(feeds.map(f => [f.id, f]));
+      const next = [];
+      bks.forEach(b => {
+        if (b.title) next.push(b);
+        else if (byId.has(b.id)) next.push(snapshotItem(byId.get(b.id)));
+      });
+      saveBookmarks(next);
     }
 
     function toggleBookmark(id, event) {
-      if (event) event.stopPropagation();
-      let bks = getBookmarks();
-      if (bks.includes(id)) {
-        bks = bks.filter(x => x !== id);
-      } else {
-        bks.push(id);
+      if (event) {
+        event.stopPropagation();
+        event.preventDefault();
       }
-      saveBookmarks(bks);
+      const bks = getBookmarks();
+      let next;
+      if (bks.some(b => b.id === id)) {
+        next = bks.filter(b => b.id !== id);
+      } else {
+        const live = feeds.find(f => f.id === id);
+        if (!live) return;
+        next = [...bks, snapshotItem(live)];
+      }
+      saveBookmarks(next);
       renderCards();
     }
+
+    // 다른 탭에서 스크랩을 바꾸면 반영
+    window.addEventListener('storage', (e) => {
+      if (e.key === BOOKMARK_KEY) {
+        bookmarksMem = null;
+        renderCards();
+      }
+    });
 
     // Period Filter
     function setPeriod(days) {
       selectedPeriodDays = days;
-      localStorage.setItem('digi_period', days);
+      lsSet('digi_period', String(days));
       updatePeriodButtons();
       renderCards();
     }
@@ -462,17 +548,26 @@
       if (icon) icon.classList.add('animate-spin');
 
       try {
-        const res = await fetch(`digimon_feeds.json?t=${Date.now()}`);
+        // cache: 'no-cache' → 브라우저가 ETag로 재검증(바뀌지 않았으면 304, 전체 재다운로드 없음)
+        const res = await fetch('digimon_feeds.json', { cache: 'no-cache' });
         if (!res.ok) throw new Error("Feeds load error");
         const data = await res.json();
-        
+
         feeds = (data.feeds || []).sort((a, b) => (b.timestamp || 0) - (a.timestamp || 0));
+        feedsLoaded = true;
+        feedLoadError = false;
+        migrateBookmarks();
 
         document.getElementById('last-updated-text').textContent = `최근 갱신: ${data.last_updated || '방금 전'}`;
         renderCards();
       } catch (err) {
         console.error(err);
         document.getElementById('last-updated-text').textContent = "피드 로드 실패 (슬래시를 눌러보세요)";
+        if (!feedsLoaded) {
+          // 처음 로드 실패: 스켈레톤 대신 오류 + 다시 시도 버튼 (이미 받은 피드가 있으면 그대로 둠)
+          feedLoadError = true;
+          renderCards();
+        }
       } finally {
         if (icon) setTimeout(() => icon.classList.remove('animate-spin'), 400);
       }
@@ -482,11 +577,37 @@
     function renderCards() {
       const container = document.getElementById('cards-container');
       const bks = getBookmarks();
+      const bkIds = new Set(bks.map(b => b.id));
       const nowTs = Math.floor(Date.now() / 1000);
       const periodSeconds = selectedPeriodDays * 86400;
 
-      const filtered = feeds.filter(item => {
-        if (item.timestamp && (nowTs - item.timestamp > periodSeconds)) {
+      if (!feedsLoaded && feedLoadError && !showOnlyBookmarks) {
+        document.getElementById('item-count-text').textContent = '0 ENTRIES';
+        container.innerHTML = `
+          <div class="py-16 text-center text-slate-500 bg-white/80 dark:bg-[#070e22]/80 backdrop-blur rounded-2xl border border-blue-200 dark:border-blue-900/60 p-6 shadow-sm">
+            <div class="text-4xl mb-2">⚠️</div>
+            <p class="font-extrabold text-sm text-slate-800 dark:text-slate-200">피드를 불러오지 못했습니다.</p>
+            <p class="text-xs mt-1 text-slate-500">네트워크 연결을 확인한 뒤 다시 시도해 주세요.</p>
+            <button onclick="fetchFeeds(true)" class="touch-press mt-4 px-4 py-2 rounded-xl bg-[#004ce8] text-white text-xs font-black shadow-md shadow-blue-600/30">다시 시도</button>
+          </div>
+        `;
+        return;
+      }
+      if (!feedsLoaded && !showOnlyBookmarks) return; // 첫 로드 중에는 스켈레톤 유지
+
+      // 스크랩 보기: 현재 피드 항목(최신 내용 우선) + 피드에서 사라진 스크랩 사본을 합쳐서 표시
+      let source = feeds;
+      if (showOnlyBookmarks) {
+        const liveIds = new Set(feeds.map(f => f.id));
+        const stored = bks.filter(b => b.title && !liveIds.has(b.id));
+        source = feeds.filter(f => bkIds.has(f.id)).concat(stored)
+          .sort((a, b) => (b.timestamp || 0) - (a.timestamp || 0));
+      }
+      const q = searchQuery.toLowerCase();
+
+      const filtered = source.filter(item => {
+        // 스크랩 보기에서는 보관 기간 제한을 적용하지 않음
+        if (!showOnlyBookmarks && item.timestamp && (nowTs - item.timestamp > periodSeconds)) {
           return false;
         }
 
@@ -520,14 +641,11 @@
           matchesCat = cat === currentCategory;
         }
 
-        const matchesSearch = !searchQuery || 
-                              item.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
-                              (item.snippet && item.snippet.toLowerCase().includes(searchQuery.toLowerCase()));
+        const matchesSearch = !q ||
+                              String(item.title || '').toLowerCase().includes(q) ||
+                              (item.snippet && String(item.snippet).toLowerCase().includes(q));
 
-        const isBked = bks.includes(item.id);
-        const matchesBk = !showOnlyBookmarks || isBked;
-
-        return matchesCat && matchesSearch && matchesBk;
+        return matchesCat && matchesSearch;
       });
 
       document.getElementById('item-count-text').textContent = `${filtered.length} ENTRIES`;
@@ -536,15 +654,15 @@
         container.innerHTML = `
           <div class="py-16 text-center text-slate-500 bg-white/80 dark:bg-[#070e22]/80 backdrop-blur rounded-2xl border border-blue-200 dark:border-blue-900/60 p-6 shadow-sm">
             <div class="text-4xl mb-2">🃏</div>
-            <p class="font-extrabold text-sm text-slate-800 dark:text-slate-200">데이터가 없습니다.</p>
-            <p class="text-xs mt-1 text-slate-500">기간을 더 늘려보거나 다른 탭을 눌러보세요.</p>
+            <p class="font-extrabold text-sm text-slate-800 dark:text-slate-200">${showOnlyBookmarks ? '스크랩한 글이 없습니다.' : '데이터가 없습니다.'}</p>
+            <p class="text-xs mt-1 text-slate-500">${showOnlyBookmarks ? '카드의 ☆ 버튼을 눌러 스크랩해 보세요.' : '기간을 더 늘려보거나 다른 탭을 눌러보세요.'}</p>
           </div>
         `;
         return;
       }
 
       container.innerHTML = filtered.map(item => {
-        const isBked = bks.includes(item.id);
+        const isBked = bkIds.has(item.id);
         const relativeTime = formatRelativeTime(item.timestamp, item.created_at);
         const displayTitle = escapeHtml(cleanTitle(item.title));
         const link = safeUrl(item.link);
@@ -584,9 +702,8 @@
           : 'bg-amber-500/15 text-amber-600 dark:text-amber-400 border-amber-500/40';
 
         return `
-          <article 
-            onclick="${link ? `window.open(${jsArg(link)}, '_blank', 'noopener,noreferrer')` : ''}" 
-            class="blue-card-item touch-press cursor-pointer bg-white/95 dark:bg-[#070e22]/95 border-2 border-blue-200/90 dark:border-blue-900/70 hover:border-[#004ce8] dark:hover:border-blue-400 rounded-2xl p-4 sm:p-5 shadow-sm relative overflow-hidden flex flex-col justify-between group"
+          <article
+            class="blue-card-item touch-press ${link ? 'cursor-pointer' : ''} bg-white/95 dark:bg-[#070e22]/95 border-2 border-blue-200/90 dark:border-blue-900/70 hover:border-[#004ce8] dark:hover:border-blue-400 rounded-2xl p-4 sm:p-5 shadow-sm relative overflow-hidden flex flex-col justify-between group"
           >
             <!-- Blue Card Signature: Left Magnetic Stripe -->
             <div class="absolute left-0 top-0 bottom-0 w-2 sm:w-2.5 bg-slate-800 dark:bg-slate-700 border-r border-slate-900/80"></div>
@@ -603,23 +720,28 @@
                   <span class="text-blue-400/40">·</span>
                   <span class="text-xs font-bold text-[#004ce8] dark:text-blue-400 font-mono">${escapeHtml(relativeTime)}</span>
                 </div>
-                <button 
-                  onclick="toggleBookmark(${jsArg(item.id)}, event)" 
-                  class="touch-press p-2 -mr-2 text-xl text-slate-300 dark:text-slate-600 hover:text-amber-400 active:scale-125 transition z-10"
-                  title="스크랩 저장"
+                <button
+                  onclick="toggleBookmark(${jsArg(item.id)}, event)"
+                  class="relative touch-press p-2 -mr-2 text-xl text-slate-300 dark:text-slate-600 hover:text-amber-400 active:scale-125 transition z-10"
+                  title="${isBked ? '스크랩 해제' : '스크랩 저장'}"
+                  aria-label="${isBked ? '스크랩 해제' : '스크랩 저장'}"
+                  aria-pressed="${isBked ? 'true' : 'false'}"
                 >
                   ${isBked ? '<span class="text-amber-400">★</span>' : '☆'}
                 </button>
               </div>
 
               <!-- Big Bold Title -->
+              <!-- 제목 링크가 카드 전체를 덮는 방식(after:inset-0): 키보드 Tab·스크린리더·길게 눌러 새 탭 열기 지원 -->
               <h2 class="font-black text-[16px] sm:text-[18px] leading-snug text-slate-900 dark:text-slate-100 group-hover:text-[#004ce8] dark:group-hover:text-blue-400 transition tracking-tight my-1.5">
-                ${displayTitle}
+                ${link
+                  ? `<a href="${escapeHtml(link)}" target="_blank" rel="noopener noreferrer" class="focus:outline-none after:content-[''] after:absolute after:inset-0 after:rounded-2xl focus-visible:after:ring-4 focus-visible:after:ring-blue-500/70">${displayTitle}</a>`
+                  : displayTitle}
               </h2>
 
               <!-- 16:9 Full-Width Media Image -->
               ${safeUrl(item.image) ? `
-                <div class="w-full aspect-video sm:aspect-[21/9] rounded-xl overflow-hidden bg-slate-100 dark:bg-slate-900 my-2.5 border border-blue-200/50 dark:border-blue-900/50 relative shadow-inner">
+                <div class="w-full aspect-video sm:aspect-[21/9] rounded-xl overflow-hidden bg-slate-100 dark:bg-slate-900 my-2.5 border border-blue-200/50 dark:border-blue-900/50 relative shadow-inner pointer-events-none">
                   <img src="${escapeHtml(safeUrl(item.image))}" alt="${displayTitle}" referrerpolicy="no-referrer" onerror="this.closest('.aspect-video')?.remove()" class="w-full h-full object-cover group-hover:scale-[1.02] transition duration-300" loading="lazy" />
                 </div>
               ` : ''}
@@ -634,8 +756,8 @@
               <!-- Card Footer: Category & Slash Link -->
               <div class="mt-3.5 pt-2.5 border-t border-blue-100 dark:border-blue-900/40 flex items-center justify-between text-xs text-slate-400 font-mono">
                 <span class="text-slate-400 text-[11px]">CATEGORY: <strong class="text-slate-700 dark:text-slate-300 font-bold font-sans">${escapeHtml(item.category_name || '일반')}</strong></span>
-                <span class="font-black text-[#004ce8] dark:text-blue-400 flex items-center gap-1 group-hover:translate-x-1 transition font-sans text-xs">
-                  슬래시 원문보기
+                <span class="font-black text-[#004ce8] dark:text-blue-400 flex items-center gap-1 group-hover:translate-x-1 transition font-sans text-xs pointer-events-none" aria-hidden="true">
+                  ${link ? '슬래시 원문보기' : '원문 링크 없음'}
                   <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg>
                 </span>
               </div>
@@ -657,7 +779,9 @@
       renderCards();
     }
 
-    function handleSearch(val) {
+    // 입력할 때마다 전체 목록을 다시 그리지 않도록 150ms 디바운스 (지우기·홈은 즉시 반영)
+    let feedSearchTimer = null;
+    function handleSearch(val, immediate = false) {
       searchQuery = val.trim();
       const clearBtn = document.getElementById('clear-search-btn');
       if (searchQuery) {
@@ -665,13 +789,15 @@
       } else {
         clearBtn.classList.add('hidden');
       }
-      renderCards();
+      clearTimeout(feedSearchTimer);
+      if (immediate) renderCards();
+      else feedSearchTimer = setTimeout(renderCards, 150);
     }
 
     function clearSearch() {
       const input = document.getElementById('search-input');
       input.value = '';
-      handleSearch('');
+      handleSearch('', true);
       input.focus();
     }
 
@@ -682,7 +808,7 @@
       const input = document.getElementById('search-input');
       if (input) {
         input.value = '';
-        handleSearch('');
+        handleSearch('', true);
       }
       if (showOnlyBookmarks) {
         toggleBookmarkFilter();
@@ -693,6 +819,7 @@
     function toggleBookmarkFilter() {
       showOnlyBookmarks = !showOnlyBookmarks;
       const btn = document.getElementById('bookmark-filter-btn');
+      btn.setAttribute('aria-pressed', showOnlyBookmarks ? 'true' : 'false');
       if (showOnlyBookmarks) {
         btn.className = "cat-chip touch-press px-3.5 py-2 rounded-xl transition bg-amber-400 text-slate-950 font-black shrink-0 flex items-center gap-1 ml-auto shadow-md shadow-amber-400/30 border border-amber-300";
         btn.innerHTML = "<span>★ 스크랩됨</span>";
@@ -717,28 +844,45 @@
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
-    // PWA Service Worker (Blue Card v6 with auto-update)
+    // role="button" 요소(카드형 div 등)도 키보드 Enter/Space로 누를 수 있게
+    document.addEventListener('keydown', (e) => {
+      if (e.key !== 'Enter' && e.key !== ' ') return;
+      const el = e.target;
+      if (!(el instanceof HTMLElement) || el.tagName === 'BUTTON' || el.tagName === 'A') return;
+      if (el.getAttribute('role') !== 'button') return;
+      e.preventDefault();
+      el.click();
+    });
+
+    // PWA Service Worker (auto-update)
     if ('serviceWorker' in navigator) {
+      // 처음 방문(아직 컨트롤러 없음)에는 SW가 페이지를 넘겨받아도 새로고침하지 않음.
+      // 이미 SW가 있던 상태에서 새 버전으로 바뀔 때만 한 번 새로고침.
+      const hadController = !!navigator.serviceWorker.controller;
       window.addEventListener('load', () => {
-        navigator.serviceWorker.register('sw.js?v=18').then((reg) => {
+        navigator.serviceWorker.register('sw.js?v=20').then((reg) => {
           reg.update();
         }).catch(console.error);
 
         let refreshing = false;
         navigator.serviceWorker.addEventListener('controllerchange', () => {
-          if (!refreshing) {
-            refreshing = true;
-            window.location.reload();
-          }
+          if (!hadController || refreshing) return;
+          refreshing = true;
+          window.location.reload();
         });
       });
     }
 
-    // PWA Install Prompt
+    // PWA Install Prompt (닫으면 30일 동안 다시 띄우지 않음)
+    const PWA_DISMISS_KEY = 'digi_pwa_dismissed_at';
+    const PWA_DISMISS_MS = 30 * 86400 * 1000;
     window.addEventListener('beforeinstallprompt', (e) => {
       e.preventDefault();
       deferredPrompt = e;
+      const dismissedAt = parseInt(lsGet(PWA_DISMISS_KEY, '0'), 10) || 0;
+      if (Date.now() - dismissedAt < PWA_DISMISS_MS) return;
       document.getElementById('pwa-banner').classList.remove('hidden');
+      document.body.classList.add('pwa-banner-open');
     });
 
     function installPwa() {
@@ -746,13 +890,19 @@
         deferredPrompt.prompt();
         deferredPrompt.userChoice.then(() => {
           deferredPrompt = null;
-          dismissPwaBanner();
+          hidePwaBanner();
         });
       }
     }
 
-    function dismissPwaBanner() {
+    function hidePwaBanner() {
       document.getElementById('pwa-banner').classList.add('hidden');
+      document.body.classList.remove('pwa-banner-open');
+    }
+
+    function dismissPwaBanner() {
+      lsSet(PWA_DISMISS_KEY, String(Date.now()));
+      hidePwaBanner();
     }
 
     // ==========================================
@@ -780,9 +930,9 @@
       return m[1] ? { view: 'dex', no: decodeURIComponent(m[1]) } : { view: 'dex' };
     }
 
-    function goTo(hash) {
+    function goTo(hash, extraState) {
       if (location.hash !== hash && !(hash === '' && !location.hash)) {
-        history.pushState({ digifeed: true }, '', hash || (location.pathname + location.search));
+        history.pushState({ digifeed: true, ...(extraState || {}) }, '', hash || (location.pathname + location.search));
       }
     }
 
@@ -825,9 +975,16 @@
       if (view === 'dex' && dexLoaded && !dexState.shown) renderDexList(true);
     }
 
+    let dexLoadError = false;
+    let dexLoading = false;
     async function loadDigidex() {
+      if (dexLoading) return;
+      dexLoading = true;
+      dexLoadError = false;
+      renderDexLoadState();
       try {
-        const res = await fetch(`data/dex.json?t=${Date.now()}`);
+        // cache: 'no-cache' → ETag 재검증만 하고, 바뀌지 않았으면 780KB를 다시 받지 않음
+        const res = await fetch('data/dex.json', { cache: 'no-cache' });
         if (!res.ok) throw new Error('dex load error');
         const data = await res.json();
         dexList = data.digimons || [];
@@ -836,11 +993,33 @@
         renderDexKindTabs();
         dexLoaded = true;
         renderDexLevelChips();
+        dexState.shown = 0;
         applyRoute(routeFromHash());
       } catch (err) {
         console.error('Failed to load dex', err);
-        const t = document.getElementById('dex-count-text');
-        if (t) t.textContent = '도감 데이터를 불러오지 못했습니다';
+        dexLoadError = true;
+        renderDexLoadState();
+      } finally {
+        dexLoading = false;
+      }
+    }
+
+    // 도감 데이터를 아직 못 받았을 때 목록 자리에 로딩/오류(+다시 시도) 표시
+    function renderDexLoadState() {
+      if (dexLoaded) return;
+      const box = document.getElementById('dex-list');
+      const t = document.getElementById('dex-count-text');
+      document.getElementById('dex-more-btn').classList.add('hidden');
+      if (dexLoadError) {
+        if (t) t.textContent = 'LOAD FAILED';
+        if (box) box.innerHTML = `
+          <div class="col-span-full py-12 text-center space-y-3">
+            <p class="text-xs text-slate-500">도감 데이터를 불러오지 못했습니다. 네트워크 연결을 확인해 주세요.</p>
+            <button onclick="loadDigidex()" class="touch-press px-4 py-2 rounded-xl bg-[#004ce8] text-white text-xs font-black shadow-md shadow-blue-600/30">다시 시도</button>
+          </div>`;
+      } else {
+        if (t) t.textContent = 'LOADING…';
+        if (box) box.innerHTML = '<div class="col-span-full py-12 text-center text-xs text-slate-400 animate-pulse">도감 데이터를 불러오는 중…</div>';
       }
     }
 
@@ -907,6 +1086,10 @@
     function renderDexList(reset) {
       const box = document.getElementById('dex-list');
       if (!box) return;
+      if (!dexLoaded) {
+        renderDexLoadState(); // 로딩 중/실패 안내를 '조건에 맞는 디지몬이 없습니다'로 덮어쓰지 않음
+        return;
+      }
       const items = currentDexSource().filter(dexMatches);
       if (reset) {
         dexState.shown = 0;
@@ -914,7 +1097,7 @@
       }
       const next = items.slice(dexState.shown, dexState.shown + DEX_PAGE);
       box.insertAdjacentHTML('beforeend', next.map(d => `
-        <div onclick="openDexDetail(${jsArg(d.no)})" class="touch-press cursor-pointer p-2 sm:p-2.5 rounded-xl bg-white/95 dark:bg-[#070e22]/95 border border-blue-200/80 dark:border-blue-900/60 hover:border-[#004ce8] flex items-center gap-2 sm:gap-2.5 transition">
+        <div onclick="openDexDetail(${jsArg(d.no)})" role="button" tabindex="0" class="touch-press cursor-pointer p-2 sm:p-2.5 rounded-xl bg-white/95 dark:bg-[#070e22]/95 border border-blue-200/80 dark:border-blue-900/60 hover:border-[#004ce8] flex items-center gap-2 sm:gap-2.5 transition">
           ${dexThumb(d, 'w-9 h-9 sm:w-11 sm:h-11')}
           <div class="min-w-0 flex-1">
             <p class="text-[9.5px] sm:text-[10px] font-bold font-mono ${d.official ? 'text-blue-600 dark:text-blue-400' : 'text-slate-400'}">${escapeHtml(dexNoLabel(d))}</p>
@@ -959,14 +1142,20 @@
 
     function openDexDetail(no) {
       if (!dexByNo[no]) return;
+      const fromList = dexState.selected === null && location.hash === '#dex';
       if (dexState.selected === null) dexState.listScroll = window.scrollY; // 목록으로 돌아올 때 위치 복원
-      goTo(`#dex/${encodeURIComponent(no)}`);
+      goTo(`#dex/${encodeURIComponent(no)}`, { fromList });
       showDexDetail(no);
     }
 
     function showDexDetail(no) {
       const d = dexByNo[no];
       if (!d) return;
+      // 다른 디지몬으로 넘어가면 진화 출처 필터를 '전체'로 초기화 (이전 필터 때문에 목록이 빈 것처럼 보이지 않도록)
+      if (dexState.selected !== no) {
+        dexState.evoFilter = 'all';
+        dexState.evoMore = {};
+      }
       dexState.selected = no;
       dexViewerMode = 'official';
       dexViewerTcgId = null;
@@ -978,10 +1167,15 @@
       window.scrollTo({ top: 0 });
     }
 
-    // "← 목록으로": 상세 화면을 닫고 확정적으로 도감 목록(#dex) 화면으로 복귀
+    // "← 목록으로": 목록에서 들어온 상세면 history.back() (뒤로가기 시 상세가 다시 열리지 않도록),
+    // 그 외(바로 들어온 주소, 관련 디지몬에서 이동 등)는 현재 기록을 목록(#dex)으로 교체
     function closeDexDetail() {
+      if (history.state && history.state.fromList && location.hash.startsWith('#dex/')) {
+        history.back(); // popstate → applyRoute → showDexList
+        return;
+      }
       if (location.hash !== '#dex') {
-        goTo('#dex');
+        history.replaceState({ digifeed: true }, '', '#dex');
       }
       showDexList();
     }
@@ -1003,7 +1197,7 @@
           <p class="text-[11px] font-bold text-slate-500 dark:text-slate-400">${title} <span class="text-slate-400 font-medium">${list.length}</span></p>
           <div class="grid grid-cols-2 sm:grid-cols-3 gap-1.5 sm:gap-2">
             ${list.map(t => `
-              <div onclick="openDexDetail(${jsArg(t.no)})" class="touch-press cursor-pointer min-w-0 p-2 rounded-xl bg-slate-50 dark:bg-slate-900/80 hover:bg-blue-50 dark:hover:bg-blue-950 border border-blue-200/60 dark:border-blue-900/60 flex items-center gap-2 transition">
+              <div onclick="openDexDetail(${jsArg(t.no)})" role="button" tabindex="0" class="touch-press cursor-pointer min-w-0 p-2 rounded-xl bg-slate-50 dark:bg-slate-900/80 hover:bg-blue-50 dark:hover:bg-blue-950 border border-blue-200/60 dark:border-blue-900/60 flex items-center gap-2 transition">
                 ${dexThumb(t, 'w-8 h-8')}
                 <div class="min-w-0">
                   <span class="text-xs font-bold text-slate-800 dark:text-slate-200 block leading-tight break-keep">${escapeHtml(t.name)}</span>
@@ -1024,13 +1218,17 @@
     // 결과는 휴대폰(localStorage)에 저장해 같은 문장은 다시 요청하지 않음.
     const TR_STORE = 'digi_tr_v1';
     let translationCache = {};
-    try { translationCache = JSON.parse(localStorage.getItem(TR_STORE) || '{}'); } catch (_) {}
+    try { translationCache = JSON.parse(lsGet(TR_STORE, '{}')) || {}; } catch (_) {}
     function saveTranslations() {
-      try {
-        const keys = Object.keys(translationCache);
-        if (keys.length > 800) keys.slice(0, keys.length - 800).forEach(k => delete translationCache[k]);
-        localStorage.setItem(TR_STORE, JSON.stringify(translationCache));
-      } catch (_) {}
+      if (!storageAvailable) return; // 저장소가 막혀 있으면 메모리 캐시만 사용
+      const keys = Object.keys(translationCache);
+      if (keys.length > 800) keys.slice(0, keys.length - 800).forEach(k => delete translationCache[k]);
+      if (!lsSet(TR_STORE, JSON.stringify(translationCache))) {
+        // 용량 초과: 오래된 절반을 버리고 한 번 더 시도 (스크랩 등 다른 저장 공간을 잠식하지 않도록)
+        const rest = Object.keys(translationCache);
+        rest.slice(0, Math.ceil(rest.length / 2)).forEach(k => delete translationCache[k]);
+        lsSet(TR_STORE, JSON.stringify(translationCache));
+      }
     }
 
     async function translateWithMyMemory(text) {
@@ -1144,11 +1342,11 @@
                 const partners = (r.p || []).map(n => dexByNo[n]).filter(Boolean);
                 return `
                   <div class="rounded-xl bg-slate-50 dark:bg-slate-900/80 border border-blue-200/60 dark:border-blue-900/60 p-1.5 min-w-0">
-                    <div onclick="openDexDetail(${jsArg(t.no)})" class="touch-press cursor-pointer flex items-center gap-1.5 min-w-0">
+                    <div onclick="openDexDetail(${jsArg(t.no)})" role="button" tabindex="0" class="touch-press cursor-pointer flex items-center gap-1.5 min-w-0">
                       ${dexThumb(t, 'w-6 h-6 sm:w-7 sm:h-7')}
                       <span class="text-[10.5px] sm:text-xs font-bold text-slate-800 dark:text-slate-200 leading-tight break-keep truncate min-w-0" title="${escapeHtml(t.name)}">${escapeHtml(t.name)}</span>
                     </div>
-                    <button onclick="toggleEvoWorks('${wid}')" class="mt-1 text-[10px] leading-none tracking-tight text-slate-400 flex items-center gap-0.5 flex-wrap" title="출처 보기">
+                    <button onclick="toggleEvoWorks('${wid}')" aria-label="${escapeHtml(t.name)} 진화 출처 보기" aria-controls="${wid}" class="mt-1 text-[10px] leading-none tracking-tight text-slate-400 flex items-center gap-0.5 flex-wrap" title="출처 보기">
                       <span>${r.c.map(c => EVO_ICON[c] || '').join('')}</span>
                       ${partners.length ? '<span class="text-[8.5px] font-bold text-amber-600 dark:text-amber-400">＋' + partners.length + '</span>' : ''}
                     </button>
@@ -1183,9 +1381,11 @@
         box.innerHTML = head + '<p class="text-xs text-slate-400">진화 정보가 없습니다.</p>';
         return;
       }
-      const cats = new Set([...(evo.f || []), ...(evo.t || [])].flatMap(r => r.c));
+      const cats = new Set([...(evo.f || []), ...(evo.t || [])].flatMap(r => r.c || []));
+      // 선택된 출처가 이 디지몬에 없으면 '전체'로 되돌림 (활성 칩 없이 빈 목록만 보이는 상황 방지)
+      if (dexState.evoFilter !== 'all' && !cats.has(dexState.evoFilter)) dexState.evoFilter = 'all';
       const chips = EVO_CATS.filter(([k]) => k === 'all' || cats.has(k)).map(([k, label, icon]) => `
-        <button onclick="setEvoFilter('${k}')" class="shrink-0 px-2.5 py-1 rounded-full text-[11px] font-bold border transition ${dexState.evoFilter === k ? 'bg-blue-600 text-white border-blue-600' : 'bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-300 border-slate-200 dark:border-slate-700'}">${icon} ${label}</button>`).join('');
+        <button onclick="setEvoFilter('${k}')" aria-pressed="${dexState.evoFilter === k ? 'true' : 'false'}" class="shrink-0 px-2.5 py-1 rounded-full text-[11px] font-bold border transition ${dexState.evoFilter === k ? 'bg-blue-600 text-white border-blue-600' : 'bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-300 border-slate-200 dark:border-slate-700'}">${icon} ${label}</button>`).join('');
       box.innerHTML = head + `
         <div class="flex gap-1.5 overflow-x-auto no-scrollbar pb-0.5">${chips}</div>
         <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5 sm:gap-3 items-start">
@@ -1195,7 +1395,7 @@
             <div class="grid grid-cols-3 sm:grid-cols-1 gap-1.5">
               ${variants.map(v => v.no === d.no ? `
                 <div class="rounded-xl bg-blue-600 text-white p-1.5 flex items-center gap-1.5 min-w-0">${dexThumb(v, 'w-6 h-6 sm:w-7 sm:h-7')}<span class="text-[10.5px] sm:text-xs font-black leading-tight break-keep truncate min-w-0" title="${escapeHtml(v.name)}">★ ${escapeHtml(v.name)}</span></div>` : `
-                <div onclick="openDexDetail(${jsArg(v.no)})" class="touch-press cursor-pointer rounded-xl bg-blue-50 dark:bg-blue-950/50 border border-blue-200/60 dark:border-blue-900/60 p-1.5 flex items-center gap-1.5 min-w-0">${dexThumb(v, 'w-6 h-6 sm:w-7 sm:h-7')}<span class="text-[10.5px] sm:text-xs font-bold text-slate-700 dark:text-slate-300 leading-tight break-keep truncate min-w-0" title="${escapeHtml(v.name)}">${escapeHtml(v.name)}</span></div>`).join('')}
+                <div onclick="openDexDetail(${jsArg(v.no)})" role="button" tabindex="0" class="touch-press cursor-pointer rounded-xl bg-blue-50 dark:bg-blue-950/50 border border-blue-200/60 dark:border-blue-900/60 p-1.5 flex items-center gap-1.5 min-w-0">${dexThumb(v, 'w-6 h-6 sm:w-7 sm:h-7')}<span class="text-[10.5px] sm:text-xs font-bold text-slate-700 dark:text-slate-300 leading-tight break-keep truncate min-w-0" title="${escapeHtml(v.name)}">${escapeHtml(v.name)}</span></div>`).join('')}
             </div>
           </div>
           ${renderEvoColumn('진화 후', 't', evo.t)}
@@ -1408,7 +1608,7 @@
             const url = `https://images.digimoncard.io/images/cards/${encodeURIComponent(c.id)}.jpg`;
             const rk = normRarity(c.rarity);
             const rinfo = TCG_RARITY_INFO[rk] || TCG_RARITY_INFO['C'];
-            return `<div onclick="setDexViewerMode('tcg', '${escapeHtml(c.id)}'); document.getElementById('dex-img-viewer').scrollIntoView({ behavior: 'smooth', block: 'nearest' });" class="shrink-0 touch-press cursor-pointer group">
+            return `<div onclick="setDexViewerMode('tcg', ${jsArg(c.id)}); document.getElementById('dex-img-viewer').scrollIntoView({ behavior: 'smooth', block: 'nearest' });" role="button" tabindex="0" aria-label="TCG 카드 ${escapeHtml(c.id)} 보기" class="shrink-0 touch-press cursor-pointer group">
               <div class="relative overflow-hidden rounded-lg">
                 <img src="${escapeHtml(url)}" alt="${escapeHtml(c.id)}" loading="lazy" referrerpolicy="no-referrer" class="h-36 sm:h-44 rounded-lg border border-blue-200/60 dark:border-blue-900/60 shadow-sm group-hover:scale-105 group-hover:border-purple-500 transition duration-200" onerror="this.closest('.group').remove()">
                 <span class="absolute top-1 right-1 px-1 py-0.5 rounded text-[8.5px] font-black border shadow-xs ${rinfo.bg}">${rinfo.icon ? rinfo.icon + ' ' : ''}${rinfo.label}</span>
@@ -1418,6 +1618,38 @@
           }).join('')}
         </div>
       `;
+    }
+
+    const tcgInflight = {};
+
+    // 반환: { cards, ok } — ok=false면 네트워크/서버 오류가 있어 '카드 없음'이 확실하지 않음
+    async function searchTcgCards(names) {
+      let failed = false;
+      for (const n of names) {
+        try {
+          const res = await fetch(`https://digimoncard.io/api-public/search?n=${encodeURIComponent(n)}`);
+          if (!res.ok) {
+            if (res.status >= 500 || res.status === 429) failed = true;
+            continue;
+          }
+          const data = await res.json();
+          if (!Array.isArray(data)) continue; // 검색 결과 없음
+          const want = n.toLowerCase().replace(/[^a-z0-9]/g, '');
+          const cards = data.filter(c => c.id && String(c.name || '').toLowerCase().replace(/[^a-z0-9]/g, '') === want);
+          if (cards.length) {
+            // Sort cards by rarity order: SEC -> SR -> P -> R -> U -> C
+            cards.sort((a, b) => {
+              const oa = (TCG_RARITY_INFO[normRarity(a.rarity)] || {}).order || 99;
+              const ob = (TCG_RARITY_INFO[normRarity(b.rarity)] || {}).order || 99;
+              return oa - ob;
+            });
+            return { cards, ok: true };
+          }
+        } catch (_) {
+          failed = true;
+        }
+      }
+      return { cards: [], ok: !failed };
     }
 
     async function loadDexTcg(d) {
@@ -1437,27 +1669,14 @@
       const key = 'tcg:' + d.no;
       let cards = dexExtraCache[key];
       if (!cards) {
-        cards = [];
-        for (const n of names) {
-          try {
-            const res = await fetch(`https://digimoncard.io/api-public/search?n=${encodeURIComponent(n)}`);
-            if (!res.ok) continue;
-            const data = await res.json();
-            if (!Array.isArray(data)) continue;
-            const want = n.toLowerCase().replace(/[^a-z0-9]/g, '');
-            cards = data.filter(c => c.id && String(c.name || '').toLowerCase().replace(/[^a-z0-9]/g, '') === want);
-            if (cards.length) break;
-          } catch (_) {}
+        // 같은 디지몬을 빠르게 오가도 검색 요청은 한 번만 (진행 중인 요청 공유)
+        if (!tcgInflight[key]) {
+          tcgInflight[key] = searchTcgCards(names).finally(() => { delete tcgInflight[key]; });
         }
-        // Sort cards by rarity order: SEC -> SR -> P -> R -> U -> C
-        cards.sort((a, b) => {
-          const ra = normRarity(a.rarity);
-          const rb = normRarity(b.rarity);
-          const oa = (TCG_RARITY_INFO[ra] || {}).order || 99;
-          const ob = (TCG_RARITY_INFO[rb] || {}).order || 99;
-          return oa - ob;
-        });
-        dexExtraCache[key] = cards;
+        const result = await tcgInflight[key];
+        cards = result.cards;
+        // 네트워크 오류로 못 찾은 경우는 캐시하지 않음 → 다음에 다시 시도
+        if (result.ok || cards.length) dexExtraCache[key] = cards;
       }
       if (!stillShowing(d)) return;
       const btnTcg = document.getElementById('dex-btn-mode-tcg');
@@ -1623,6 +1842,9 @@
               <div 
                 id="dex-img-frame" 
                 onclick="cycleDexViewerMode()"
+                role="button"
+                tabindex="0"
+                aria-label="일러스트/도트/TCG 이미지 전환"
                 class="bg-gradient-to-b from-blue-50 to-slate-100 dark:from-[#08122c] dark:to-[#050b1a] w-full h-64 sm:h-80 rounded-2xl flex items-center justify-center p-4 border border-blue-200/60 dark:border-blue-900/60 shadow-inner relative overflow-hidden cursor-pointer select-none group touch-press transition-all duration-300"
                 title="클릭하여 일러스트/도트/TCG 전환"
               >
