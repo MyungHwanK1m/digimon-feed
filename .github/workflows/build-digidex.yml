@@ -12,6 +12,7 @@ permissions:
 jobs:
   build-index:
     runs-on: ubuntu-latest
+    timeout-minutes: 30
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
@@ -19,7 +20,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.10'
+          python-version: '3.11'
 
       - name: Install dependencies
         run: |
@@ -36,7 +37,7 @@ jobs:
         run: |
           git config --global user.name "DigiBot"
           git config --global user.email "digibot@users.noreply.github.com"
-          git add docs/data/digimon_all_index.json public/data/digimon_all_index.json public/data/dex.json docs/data/dex.json data/official/match_report.md
+          git add docs/data/digimon_all_index.json public/data/digimon_all_index.json public/data/dex.json docs/data/dex.json public/data/evo docs/data/evo data/official/match_report.md data/official/ex_numbers.json
           if git diff --staged --quiet; then
             echo "No changes in digidex index."
           else

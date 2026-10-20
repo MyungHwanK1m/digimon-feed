@@ -29,14 +29,22 @@ jobs:
           python-version: '3.11'
       - run: pip install -r scraper/requirements.txt
       - name: Collect evolutions
-        run: python scraper/collect_wikimon.py ${{ inputs.max_requests && format('--max-requests {0}', inputs.max_requests) || '' }}
+        env:
+          MAX_REQUESTS: ${{ inputs.max_requests }}
+        run: |
+          if [ -n "$MAX_REQUESTS" ]; then
+            case "$MAX_REQUESTS" in *[!0-9]*) echo "max_requests must be a number"; exit 1 ;; esac
+            python scraper/collect_wikimon.py --max-requests "$MAX_REQUESTS"
+          else
+            python scraper/collect_wikimon.py
+          fi
       - name: Rebuild dex data
         run: python scraper/build_dex.py
       - name: Commit if changed
         run: |
           git config --global user.name "DigiBot"
           git config --global user.email "digibot@users.noreply.github.com"
-          git add data/wikimon public/data docs/data
+          git add data/wikimon public/data docs/data data/official/match_report.md data/official/ex_numbers.json
           if git diff --staged --quiet; then
             echo "No changes."
           else

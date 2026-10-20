@@ -21,10 +21,18 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
-          python-version: '3.10'
+          python-version: '3.11'
       - run: pip install -r scraper/requirements.txt
       - name: Collect official reference (basic info only)
-        run: python scraper/collect_official.py ${{ inputs.mode == 'list-only' && '--list-only' || inputs.mode == 'appmon-only' && '--appmon-only' || '' }}
+        env:
+          MODE: ${{ inputs.mode }}
+        run: |
+          case "$MODE" in
+            list-only) python scraper/collect_official.py --list-only ;;
+            appmon-only) python scraper/collect_official.py --appmon-only ;;
+            ''|full) python scraper/collect_official.py ;;
+            *) echo "Unknown mode: $MODE"; exit 1 ;;
+          esac
       - name: Rebuild dex data
         run: python scraper/build_dex.py
 
@@ -32,7 +40,7 @@ jobs:
         run: |
           git config --global user.name "DigiBot"
           git config --global user.email "digibot@users.noreply.github.com"
-          git add data/official public/data/dex.json docs/data/dex.json
+          git add data/official public/data/dex.json docs/data/dex.json public/data/evo docs/data/evo
           if git diff --staged --quiet; then
             echo "No changes."
           else

@@ -37,7 +37,16 @@ jobs:
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GEMINI_MODEL: ${{ vars.GEMINI_MODEL }}
-        run: python scraper/translate_dex.py ${{ inputs.recheck && '--recheck' || '' }} ${{ inputs.max && format('--max {0}', inputs.max) || '' }}
+          RECHECK: ${{ inputs.recheck }}
+          MAX: ${{ inputs.max }}
+        run: |
+          args=()
+          if [ "$RECHECK" = "true" ]; then args+=(--recheck); fi
+          if [ -n "$MAX" ]; then
+            case "$MAX" in *[!0-9]*) echo "max must be a number"; exit 1 ;; esac
+            args+=(--max "$MAX")
+          fi
+          python scraper/translate_dex.py "${args[@]}"
       - name: Commit if changed
         run: |
           git config --global user.name "DigiBot"
