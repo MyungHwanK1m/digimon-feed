@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-10-21 04:46:25",
-  "total_count": 267,
+  "last_updated": "2026-10-21 07:50:50",
+  "total_count": 269,
   "retention_days": 90,
   "feeds": [
     {
@@ -1882,6 +1882,21 @@
       "created_at": "2026-10-02 16:00"
     },
     {
+      "id": "26ec5e95772123a0b6f3622d71603fbf",
+      "title": "[일본뉴스] 『디지몬 스토리 타임 스트레인저』 1주년. “과거와 미래”, “인간 세계와 이세계”를 무대로 시리즈 최다인 450체 이상의 디지몬이 등장【오늘은 무슨 날?】",
+      "snippet": "『デジモンストーリー タイムストレンジャー』1周年。“過去と未来”、“人間世界と異世界”を舞台にシリーズ最多の450体以上のデジモンが登場【今日は何の日？】 ファミ通",
+      "source": "ファミ通",
+      "source_badge": "일본뉴스",
+      "category": "general",
+      "category_name": "일반/뉴스",
+      "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE1TU0JadUdoYU1ld1NrRXZqLV80cmt5bXF0bFB3cGo3TG5KOFNPNl9nSXFmOU41a3VXR2dqTm5aeENJczlMUnN5cGJIYzFTVnJvcllnbUVpQQ?oc=5",
+      "image": null,
+      "timestamp": 1790924400,
+      "created_at": "2026-10-02 16:00",
+      "title_orig": "『デジモンストーリー タイムストレンジャー』1周年。“過去と未来”、“人間世界と異世界”を舞台にシリーズ最多の450体以上のデジモンが登場【今日は何の日？】",
+      "title_ja": "『デジモンストーリー タイムストレンジャー』1周年。“過去と未来”、“人間世界と異世界”を舞台にシリーズ最多の450体以上のデジモンが登場【今日は何の日？】"
+    },
+    {
       "id": "bcc921907b294ccfa3123ad02969db2a",
       "title": "[해외뉴스] 디지몬 월드 1 리마스터 HD 파트 1 쇼케이스",
       "snippet": "Digimon World 1 Remaster HD Part 1 Showcase YouTube",
@@ -2021,6 +2036,20 @@
       "created_at": "2026-09-30 00:00",
       "title_orig": "【放送開始5周年】「デジモンゴーストゲーム」BD-BOX下巻　本日発売！！",
       "title_ja": "【放送開始5周年】「デジモンゴーストゲーム」BD-BOX下巻　本日発売！！"
+    },
+    {
+      "id": "b33dfb5dd623425b68d3322c70f101a4",
+      "title": "[해외뉴스] 망가 플러스, 10월 2일 만화 『디지몬 에그스』 추가",
+      "snippet": "Manga Plus Adds Digimon Eggs Manga on October 2 Anime News Network",
+      "source": "Anime News Network",
+      "source_badge": "해외뉴스",
+      "category": "general",
+      "category_name": "일반/뉴스",
+      "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxOY24tRi13LVJ0cW5POU55cWQtekw0SGVOaGRrUTYyUTJhZVFqRXViX0FqaV9keWVfZDRtMDJxN3FpQ2ZSYzZ1ZjMtMTlaaWR5TVdiRmc3UXpCYlJpRy05bEg5TFdaZXIzb21uN19yMklndUd6MmxlWVZkLVY0djBwdHZQODM2YVhxQ2JuaF9jQ25NWnRBRVI0dS1mUE5fNEdmcXFfR3J6NA?oc=5",
+      "image": null,
+      "timestamp": 1790665200,
+      "created_at": "2026-09-29 16:00",
+      "title_orig": "Manga Plus Adds Digimon Eggs Manga on October 2"
     },
     {
       "id": "6a19b341063ea891705621bb1b305f12",
@@ -3316,7 +3345,7 @@
       "snippet": "Digimon Story: Time Stranger Review - Nintendo Switch 2 Cubed3",
       "source": "Cubed3",
       "source_badge": "해외뉴스",
-      "category": "game",
+      "category": "general",
       "category_name": "일반/뉴스",
       "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxQbklnMTN5Q3pOTjBhdTE0SEtGQ0t3NkNsRlNsS1JVTjloQ1JSaVZyZGZ0SVVtY0FGZkdyckR5MU9RcDNyNVZiVzVIR01qazdZTWhYUEdVSUpFaWd6NWpkZjZVckVVZjRCRExTbV9tVDY1MW9yckh5QkNtREgwN29Ic0JpVHRJNk5QeGc?oc=5",
       "image": null,
