@@ -136,7 +136,8 @@
     "name_en": "Water Shot",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "5": {
   "hash": "9e46bb4ca7b0",
@@ -360,7 +361,8 @@
     "name_en": "Buster Dive",
     "desc": "공중으로 뛰어올라 적에게 몸통 박치기를 한다."
    }
-  ]
+  ],
+  "complete": true
  },
  "18": {
   "hash": "e47b9e475897",
@@ -427,7 +429,8 @@
     "name_en": "Megaton Punch",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "20": {
   "hash": "4e1406abf7f3",
@@ -458,7 +461,8 @@
     "name_en": "Metal Claw",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "21": {
   "hash": "2fd7362ab511",
@@ -746,7 +750,8 @@
     "name_en": "Water Wave",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "32": {
   "hash": "2a064082a426",
@@ -854,7 +859,8 @@
     "name_en": "Great Horn Attack",
     "desc": "위로 뛰어올라 뿔로 찌른다."
    }
-  ]
+  ],
+  "complete": true
  },
  "35": {
   "hash": "e021234c7099",
@@ -937,7 +943,8 @@
     "name_en": "Grasp Hang",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "38": {
   "hash": "d48ca9fa6073",
@@ -1098,7 +1105,8 @@
     "name_en": "Energy Ray",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "44": {
   "hash": "3574b640f2fd",
@@ -1129,7 +1137,8 @@
     "name_en": "Feather Shoot",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "45": {
   "hash": "fb258d8b5657",
@@ -1165,7 +1174,8 @@
     "name_en": "Water Wave",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "46": {
   "hash": "0d31e03d60c7",
@@ -1181,7 +1191,8 @@
     "name_en": "Strength Arm",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "47": {
   "hash": "7ed9d9df6362",
@@ -1202,7 +1213,8 @@
     "name_en": "Thousand Whip",
     "desc": "무한한 촉수로 상대를 채찍질한다."
    }
-  ]
+  ],
+  "complete": true
  },
  "48": {
   "hash": "0da2369f241a",
@@ -1333,7 +1345,8 @@
     "name_en": "Water Wave",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "54": {
   "hash": "73825388755e",
@@ -1437,7 +1450,8 @@
     "name_en": "Poison Sting",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "58": {
   "hash": "0c526c9e106c"
@@ -1461,7 +1475,8 @@
     "name_en": "Water Shot",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "60": {
   "hash": "821ebacfeae1",
@@ -1497,7 +1512,8 @@
     "name_en": "Jūga-maru",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "61": {
   "hash": "70428f6021cf",
@@ -1606,7 +1622,8 @@
     "name_en": "Warning Laser",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "65": {
   "hash": "e82d35af50ca",
@@ -1824,7 +1841,8 @@
     "name_en": "Bone Strike",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "73": {
   "hash": "5cc70fb09360",
@@ -1896,7 +1914,8 @@
     "name_en": "Powerful Punch",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "75": {
   "hash": "ecdcb323c056",
@@ -1938,7 +1957,8 @@
     "name_en": "Deadly Shade",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "77": {
   "hash": "543e81828ba9",
@@ -1985,7 +2005,8 @@
     "name_en": "Bone Strike",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "79": {
   "hash": "0667ad30a5d2",
@@ -2021,7 +2042,8 @@
     "name_en": "Water Shot",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "80": {
   "hash": "131d53470921",
@@ -2042,7 +2064,8 @@
     "name_en": "Doku no Awa",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "81": {
   "hash": "3e14e0eb0007",
@@ -2259,7 +2282,8 @@
     "name_en": "Fumitsuke",
     "desc": "발로 짓밟는다."
    }
-  ]
+  ],
+  "complete": true
  },
  "88": {
   "hash": "47c89e0ce703",
@@ -2280,7 +2304,8 @@
     "name_en": "Grand Dash",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "89": {
   "hash": "28683451f504",
@@ -2306,7 +2331,8 @@
     "name_en": "Knock Buster",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "90": {
   "hash": "cdc68637c1a6",
@@ -2394,7 +2420,8 @@
     "name_en": "Holy Shoot",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "93": {
   "hash": "b00e67c1035c",
@@ -2503,7 +2530,8 @@
     "name_en": "Hammer Head",
     "desc": "빛나는 망치를 위로 던져 올린다."
    }
-  ]
+  ],
+  "complete": true
  },
  "97": {
   "hash": "9b4405c28988",
@@ -2514,7 +2542,8 @@
     "name_en": "Doku no Awa",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "98": {
   "hash": "0d34ddfaa3da",
@@ -2660,7 +2689,8 @@
     "name_en": "Kuuki no Awa",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "104": {
   "hash": "6f2fcdfa4846",
@@ -2707,7 +2737,8 @@
     "name_en": "Scar Nail",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "106": {
   "hash": "d7a2c26a752a",
@@ -2733,7 +2764,8 @@
     "name_en": "Water Wave",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "107": {
   "hash": "618642815b29",
@@ -2785,7 +2817,8 @@
     "name_en": "Unchi Slider",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "109": {
   "hash": "6d44960a96e3",
@@ -2806,7 +2839,8 @@
     "name_en": "Water Shot",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "110": {
   "hash": "2802886c1dde",
@@ -2842,7 +2876,8 @@
     "name_en": "Water Wave",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "111": {
   "hash": "cc2ee7dde0f2",
@@ -2868,7 +2903,8 @@
     "name_en": "Booby Pit",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "112": {
   "hash": "a98a197e3a8b",
@@ -2904,7 +2940,8 @@
     "name_en": "Water Wave",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "113": {
   "hash": "f6f632ff966a",
@@ -2925,7 +2962,8 @@
     "name_en": "Squire Dome",
     "desc": "돔, 파도, 소용돌이, 물줄기 형태의 물로 적을 공격한다."
    }
-  ]
+  ],
+  "complete": true
  },
  "114": {
   "hash": "c93a383a5087",
@@ -2977,7 +3015,8 @@
     "name_en": "Water Shot",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "116": {
   "hash": "304cb2bd354d",
@@ -2998,7 +3037,8 @@
     "name_en": "Mega Blaster",
     "desc": "적에게 전기를 발사한다."
    }
-  ]
+  ],
+  "complete": true
  },
  "117": {
   "hash": "76f93fb4e75f",
@@ -3211,7 +3251,8 @@
     "name_en": "Northern Lights",
     "desc": "차가운 공기의 돌풍을 내쉰다."
    }
-  ]
+  ],
+  "complete": true
  },
  "125": {
   "hash": "9aad742bfccd",
@@ -3232,7 +3273,8 @@
     "name_en": "Fried Charge",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "126": {
   "hash": "6d79e385cafa",
@@ -3294,7 +3336,8 @@
     "name_en": "Shadow Slash",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "128": {
   "hash": "63e63e7a41e7",
@@ -3397,7 +3440,8 @@
     "name_en": "Blast Shot",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "131": {
   "hash": "a828af8c0885",
@@ -3553,7 +3597,8 @@
     "name_en": "Holy Shoot",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "137": {
   "hash": "f307c5956c9f",
@@ -3658,7 +3703,8 @@
     "name_en": "Battle Tomahawk",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "142": {
   "hash": "1e5776325cd5",
@@ -3821,7 +3867,8 @@
     "name_en": "Ear Bursting",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "150": {
   "hash": "9c9bd73a56ce",
@@ -3957,7 +4004,8 @@
     "name_en": "Dazzling Eye",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "156": {
   "hash": "c5399954c5aa",
@@ -4019,7 +4067,8 @@
     "name_en": "Poison Sting",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "158": {
   "hash": "44cd58314418",
@@ -4165,7 +4214,8 @@
     "name_en": "Poison Stinger",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "164": {
   "hash": "3a1c95a84ce6",
@@ -4191,7 +4241,8 @@
     "name_en": "Bone Strike",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "165": {
   "hash": "07388935d304",
@@ -4403,7 +4454,8 @@
     "name_en": "Heavy Attack",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "172": {
   "hash": "1f5fb7acf10d",
@@ -4507,7 +4559,8 @@
     "name_en": "Kuchibashi Attack",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "176": {
   "hash": "b828f70bdac4",
@@ -4538,7 +4591,8 @@
     "name_en": "Giga Destroyer",
     "desc": "가슴 일부분의 해치에서 미사일을 발사한다."
    }
-  ]
+  ],
+  "complete": true
  },
  "177": {
   "hash": "ac88b9a85ca2",
@@ -4585,7 +4639,8 @@
     "name_en": "Petit Thunder",
     "desc": "날개로 증폭시킨 정전기를 발사한다."
    }
-  ]
+  ],
+  "complete": true
  },
  "179": {
   "hash": "13c53a126298",
@@ -4606,7 +4661,8 @@
     "name_en": "Drain Slash",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "180": {
   "hash": "0c88834cecd5",
@@ -4716,7 +4772,8 @@
     "name_en": "Reflection Wave",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "185": {
   "hash": "87be4a5ec487",
@@ -4799,7 +4856,8 @@
     "name_en": "Grand Charge",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "188": {
   "hash": "05427a1f630c",
@@ -4815,7 +4873,8 @@
     "name_en": "Skull Hammer",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "189": {
   "hash": "0e440cc489b0",
@@ -4841,7 +4900,8 @@
     "name_en": "Shadow Slash",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "190": {
   "hash": "8c33f25921b9",
@@ -4929,7 +4989,8 @@
     "name_en": "Metal Shot",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "193": {
   "hash": "62ebec0c464a",
@@ -4986,7 +5047,8 @@
     "name_en": "Powerful Punch",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "195": {
   "hash": "eb5e892f4934",
@@ -5058,7 +5120,8 @@
     "name_en": "Kikai Attack",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "197": {
   "hash": "9f9aebb3798f",
@@ -5089,7 +5152,8 @@
     "name_en": "Heavy Attack",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "198": {
   "hash": "0b0d728de789",
@@ -5254,7 +5318,8 @@
     "name_en": "Dramon Tackle",
     "desc": "앞으로 달려가 상대를 향해 돌진한다."
    }
-  ]
+  ],
+  "complete": true
  },
  "203": {
   "hash": "616f6676ab78",
@@ -5576,7 +5641,8 @@
     "name_en": "Kuchibashi Attack",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "215": {
   "hash": "43572f9b48ed",
@@ -5597,7 +5663,8 @@
     "name_en": "Kaendan",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "216": {
   "hash": "9ab8d5c9c27b",
@@ -5649,7 +5716,8 @@
     "name_en": "Apollo Tornado",
     "desc": "홀리 로드에 불을 붙인 뒤 회전하여 상대에게 부딪친다."
    }
-  ]
+  ],
+  "complete": true
  },
  "218": {
   "hash": "c56b8ff18ca8",
@@ -5716,7 +5784,8 @@
     "name_en": "Uso",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "220": {
   "hash": "a393aa58d0c5",
@@ -5747,7 +5816,8 @@
     "name_en": "Scar Nail",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "221": {
   "hash": "5c5d0f7e0f17",
@@ -5809,7 +5879,8 @@
     "name_en": "Holy Shoot",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "223": {
   "hash": "cde1558c2cdd",
@@ -5887,7 +5958,8 @@
     "name_en": "Awa",
     "desc": "입에서 거품을 뿜어낸다."
    }
-  ]
+  ],
+  "complete": true
  },
  "226": {
   "hash": "9c0e4940bc50",
@@ -5923,7 +5995,8 @@
     "name_en": "Sunshine Beam",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "227": {
   "hash": "73b122fa41d6",
@@ -6228,7 +6301,8 @@
     "name_en": "Goburi Rush",
     "desc": "앞으로 돌진해 몽둥이로 적을 난타한다."
    }
-  ]
+  ],
+  "complete": true
  },
  "237": {
   "hash": "649509515c84",
@@ -6270,7 +6344,8 @@
     "name_en": "Powerful Punch",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "239": {
   "hash": "caa4000eda3b",
@@ -6322,7 +6397,8 @@
     "name_en": "Net Worm",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "241": {
   "hash": "93b866992798",
@@ -6369,7 +6445,8 @@
     "name_en": "Red Alert",
     "desc": "자폭하여 거대한 폭발을 일으킨다."
    }
-  ]
+  ],
+  "complete": true
  },
  "243": {
   "hash": "dda144213bf7",
@@ -6441,7 +6518,8 @@
     "name_en": "Kikai Attack",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "245": {
   "hash": "29e8b297c1d0",
@@ -6483,7 +6561,8 @@
     "name_en": "Bone Strike",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "247": {
   "hash": "79cd2f7fd30f",
@@ -6674,7 +6753,8 @@
     "name_en": "Shadow Slash",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "253": {
   "hash": "3b9b5ac5b3bb",
@@ -6736,7 +6816,8 @@
     "name_en": "Sun Heal Light",
     "desc": "빛으로 아들을 치유한다."
    }
-  ]
+  ],
+  "complete": true
  },
  "255": {
   "hash": "4be6c56e719c",
@@ -6767,7 +6848,8 @@
     "name_en": "Bone Strike",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "256": {
   "hash": "c33da9135776",
@@ -6829,7 +6911,8 @@
     "name_en": "Nume Tai Atari",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "258": {
   "hash": "3eedbb5c3a25",
@@ -6850,7 +6933,8 @@
     "name_en": "Dark Spirits Super Deluxe",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "259": {
   "hash": "e5beba536d56",
@@ -6871,7 +6955,8 @@
     "name_en": "Blast Shot",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "260": {
   "hash": "5513d2bf8c38",
@@ -6902,7 +6987,8 @@
     "name_en": "Checkmate Seven",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "261": {
   "hash": "0c526c9e106c"
@@ -6936,7 +7022,8 @@
     "name_en": "Inazuma Giri",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "263": {
   "hash": "6907b5944828",
@@ -7176,7 +7263,8 @@
     "name_en": "Kyokurin'o",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "273": {
   "hash": "f0892f4a3b12",
@@ -7207,7 +7295,8 @@
     "name_en": "Storming Knives",
     "desc": "가슴에서 폭발성의 탄환을 연사한다."
    }
-  ]
+  ],
+  "complete": true
  },
  "274": {
   "hash": "4fc42b3cb56e",
@@ -7259,7 +7348,8 @@
     "name_en": "Carrot Bakudan",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "276": {
   "hash": "74a8e6e2c162",
@@ -7347,7 +7437,8 @@
     "name_en": "Dangan Attack",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "279": {
   "hash": "ee67ea21f2e3",
@@ -7373,7 +7464,8 @@
     "name_en": "Powerful Punch",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "280": {
   "hash": "450770a4ca08",
@@ -7431,7 +7523,8 @@
     "name_en": "Heat Eye",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "283": {
   "hash": "c725340a514c",
@@ -7617,7 +7710,8 @@
     "name_en": "Fossil Wave",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "294": {
   "hash": "1342eb407483",
@@ -7712,7 +7806,8 @@
     "name_en": "Sargasso Drag",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "299": {
   "hash": "d8804280437d",
@@ -7749,7 +7844,8 @@
     "name_en": "Irritant Buzz",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "301": {
   "hash": "b3f5c1e16da4",
@@ -7786,7 +7882,8 @@
     "name_en": "Planet Destroyer",
     "desc": "오른손의 총에서 축적된 모든 힘을 해제하며, 행성 하나를 단숨에 파괴할 수 있다고 전해진다."
    }
-  ]
+  ],
+  "complete": true
  },
  "303": {
   "hash": "15e8887c73a8",
@@ -7823,7 +7920,8 @@
     "name_en": "Tusk Missile",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "305": {
   "hash": "17e1de988560",
@@ -7870,7 +7968,8 @@
     "name_en": "Ambushed Dagger",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "307": {
   "hash": "83c7fe2646f4",
@@ -7954,7 +8053,8 @@
     "name_en": "Golden Smog",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "311": {
   "hash": "b3b9c5357e2b",
@@ -8043,7 +8143,8 @@
     "name_en": "Wild Nail Rush",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "315": {
   "hash": "003124857302",
@@ -8083,12 +8184,13 @@
  },
  "316": {
   "hash": "4248c6eba181",
-  "profile": "\"기적의 디지멘탈\"의 힘으로 진화한 아머체 사이보그형 디지몬. 크롬 데지조이드로 만든 갑옷을 걸친 이 드래곤은 나이트몬의 하부 조직이며, 나이트몬을 등에 태운 채 전장을 누빈다. 거구의 나이트몬이 타고 있는 것에서 예상할 수 있듯이 메일드라몬 역시 유례없는 크기여서 힘과 체력 모두 언급할 가치가 있다. 그야말로 \"움직이는 요새\"이다. 필살기는 거대한 체구로 상대를 짓누르는 (아이언 프레스).",
+  "complete": true,
+  "profile": "「기적의 디지멘탈」의 힘으로 진화한 아머체의 사이보그형 디지몬. 크롬 데지조이드제 갑옷을 두른 이 드래곤은 나이트몬의 종자이며, 나이트몬을 등에 태우고 전장을 내달린다. 거구인 나이트몬이 타는 만큼 메일드라몬 또한 파격적인 거구를 자랑하며, 파워와 체력 모두 특기할 만하다. 그야말로 「움직이는 요새」다. 필살기는 거구를 살려 상대를 깔아뭉개는 『아이언 프레스』이다.",
   "skills": [
    {
     "name": "아이언 프레스",
     "name_en": "Iron Press",
-    "desc": "거대한 체구로 상대를 짓누른다."
+    "desc": "거대한 몸집으로 상대를 짓누른다."
    },
    {
     "name": "테일 랜스",
@@ -8098,7 +8200,7 @@
    {
     "name": "라이트닝 스피어",
     "name_en": "Lightning Spear",
-    "desc": ""
+    "desc": "번개의 창을 던진다."
    }
   ]
  },
@@ -8142,7 +8244,8 @@
     "name_en": "Torpedo Ray",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "319": {
   "hash": "c0fa13653748",
@@ -8174,7 +8277,8 @@
     "name_en": "Earth Needle",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "321": {
   "hash": "191cb249ce42",
@@ -8299,7 +8403,8 @@
     "name_en": "Gauss Powder",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "326": {
   "hash": "174d95c60852",
@@ -8367,7 +8472,8 @@
     "name_en": "Mystery Orb",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "329": {
   "hash": "dbeb8b903f2e",
@@ -8419,7 +8525,8 @@
     "name_en": "Infrared Eye",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "331": {
   "hash": "346ac00ce228",
@@ -8507,7 +8614,8 @@
     "name_en": "Shine Hole",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "334": {
   "hash": "d707568bac64",
@@ -8606,7 +8714,8 @@
     "name_en": "Hydro Jet",
     "desc": "등 뒤에서 물줄기를 발사한다."
    }
-  ]
+  ],
+  "complete": true
  },
  "338": {
   "hash": "f528e33bae48",
@@ -8653,7 +8762,8 @@
     "name_en": "White Marie",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "340": {
   "hash": "ed57ec42e6dd",
@@ -8664,7 +8774,8 @@
     "name_en": "Techno Ball",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "341": {
   "hash": "a72c42fa83f9",
@@ -8747,7 +8858,8 @@
     "name_en": "Togetoge Paralyze",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "344": {
   "hash": "0bd58c04b5e6",
@@ -8778,7 +8890,8 @@
     "name_en": "Kikai Attack",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "345": {
   "hash": "86390b328777",
@@ -8924,7 +9037,8 @@
     "name_en": "Hawk Inferno",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "351": {
   "hash": "0683d38c3471",
@@ -8997,7 +9111,8 @@
     "name_en": "Heavy Attack",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "354": {
   "hash": "1ef7064580cc",
@@ -9049,7 +9164,8 @@
     "name_en": "Poison Storm",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "356": {
   "hash": "d6ba3f449ac3",
@@ -9106,7 +9222,8 @@
     "name_en": "Souryūha",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "358": {
   "hash": "3b265e688f03",
@@ -9200,7 +9317,8 @@
     "name_en": "[N 3]",
     "desc": "날개에서 위쪽을 향해 화염탄을 연사한다."
    }
-  ]
+  ],
+  "complete": true
  },
  "362": {
   "hash": "77f60866869e",
@@ -9216,7 +9334,8 @@
     "name_en": "Strelitzia",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "363": {
   "hash": "5e81aa0024db",
@@ -9268,7 +9387,8 @@
     "name_en": "Tut Ankh Lyl",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "365": {
   "hash": "1b834b2cc6ea",
@@ -9284,7 +9404,8 @@
     "name_en": "Sky Jacker",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "366": {
   "hash": "4ea8d7e03006",
@@ -9305,7 +9426,8 @@
     "name_en": "Cactus Bat",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "367": {
   "hash": "f9105f33f6b1",
@@ -9348,7 +9470,8 @@
     "name_en": "Purple Rain",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "370": {
   "hash": "eb9a6147c285",
@@ -9390,7 +9513,8 @@
     "name_en": "Love and Fire",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "372": {
   "hash": "f52fab87724a",
@@ -9406,7 +9530,8 @@
     "name_en": "Love and Fire",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "373": {
   "hash": "282507314ce3",
@@ -9438,7 +9563,8 @@
     "name_en": "Raijin-no-Mai",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "375": {
   "hash": "962283b64fbb",
@@ -9486,7 +9612,8 @@
     "name_en": "Split Blade",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "378": {
   "hash": "216d07edeffe",
@@ -9502,7 +9629,8 @@
     "name_en": "Quadruple Storm",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "379": {
   "hash": "2a12537f1e4d",
@@ -9518,7 +9646,8 @@
     "name_en": "Meteor Gallop",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "380": {
   "hash": "7c731474dea3",
@@ -9550,7 +9679,8 @@
     "name_en": "Dragon Drop",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "382": {
   "hash": "de9f2fd17e4e",
@@ -9566,7 +9696,8 @@
     "name_en": "Status Busy",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "383": {
   "hash": "5f95c12c30cd",
@@ -9582,7 +9713,8 @@
     "name_en": "Charming Dancin'",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "384": {
   "hash": "ea5db0d8d763",
@@ -9697,7 +9829,8 @@
     "name_en": "Silence of Lambs",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "389": {
   "hash": "c5990611929f",
@@ -9801,7 +9934,8 @@
     "name_en": "Nova Slash",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "393": {
   "hash": "6c34b6997f9b",
@@ -9817,7 +9951,8 @@
     "name_en": "Milky Erode",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "394": {
   "hash": "992b8f772d93",
@@ -9838,7 +9973,8 @@
     "name_en": "Cutter Shoot",
     "desc": "손을 휘둘러 공기의 날을 상대에게 날린다."
    }
-  ]
+  ],
+  "complete": true
  },
  "395": {
   "hash": "37ecc6b1c6a6",
@@ -9900,7 +10036,8 @@
     "name_en": "Great Horn Attack",
     "desc": "위로 뛰어올라 뿔로 찌른다."
    }
-  ]
+  ],
+  "complete": true
  },
  "397": {
   "hash": "4fbf49310925",
@@ -9963,7 +10100,8 @@
     "name_en": "Kuchibashi Attack",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "400": {
   "hash": "77c24f7fa592",
@@ -10010,7 +10148,8 @@
     "name_en": "Red Sun",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "402": {
   "hash": "5df570c04687",
@@ -10021,7 +10160,8 @@
     "name_en": "Holy Dream",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "403": {
   "hash": "dfca0eb44371",
@@ -10162,7 +10302,8 @@
     "name_en": "Red Earth Gallop",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "409": {
   "hash": "ab7e35ef9154",
@@ -10188,7 +10329,8 @@
     "name_en": "Feather Sonic",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "410": {
   "hash": "032bc2d60693",
@@ -10657,7 +10799,8 @@
     "name_en": "Culumon no Negai",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "432": {
   "hash": "7c88afb62b45",
@@ -10981,7 +11124,8 @@
     "name_en": "Eden's Air",
     "desc": "무지개빛 빛을 발하는 여러 개의 광륜을 생성하여 자신과 아군의 에너지를 회복한다."
    }
-  ]
+  ],
+  "complete": true
  },
  "446": {
   "hash": "abd908f90427",
@@ -11222,7 +11366,8 @@
     "name_en": "Endless Trance",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "460": {
   "hash": "e136b036246e",
@@ -11238,7 +11383,8 @@
     "name_en": "Petit Nightmare",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "461": {
   "hash": "51107ab25a41",
@@ -11458,7 +11604,8 @@
     "name_en": "Energy Ray",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "471": {
   "hash": "48f815c6c68c",
@@ -11474,7 +11621,8 @@
     "name_en": "Púyaváha",
     "desc": "보초에서 강력한 번개를 발사한다."
    }
-  ]
+  ],
+  "complete": true
  },
  "472": {
   "hash": "f6a2d0315333",
@@ -11532,7 +11680,8 @@
     "name_en": "Shishi Senpūkyaku",
     "desc": "발차기 연격."
    }
-  ]
+  ],
+  "complete": true
  },
  "475": {
   "hash": "efe61079ee40",
@@ -11838,7 +11987,8 @@
     "name_en": "Bǎo Chǔ",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "489": {
   "hash": "fcca9ab949e3",
@@ -12361,7 +12511,8 @@
     "name_en": "Megaton Drop",
     "desc": "위력적인 드롭 킥."
    }
-  ]
+  ],
+  "complete": true
  },
  "517": {
   "hash": "d5b73ba11376",
@@ -12450,7 +12601,8 @@
     "name_en": "Ruby Eye",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "521": {
   "hash": "8ccc4fa91834",
@@ -12662,7 +12814,8 @@
     "name_en": "Baptême d'Amour",
     "desc": "가느다란 검인 라 퓌셀을 이용한 화려한 검술."
    }
-  ]
+  ],
+  "complete": true
  },
  "540": {
   "hash": "6ea3ea696e53",
@@ -12709,7 +12862,8 @@
     "name_en": "Dino Slash",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "542": {
   "hash": "c869f7bff40b",
@@ -12806,7 +12960,8 @@
     "name_en": "Hot Cutlets",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "547": {
   "hash": "a5abb32460c8",
@@ -12858,7 +13013,8 @@
     "name_en": "Snipe Steal",
     "desc": "상대의 아이템을 훔친다."
    }
-  ]
+  ],
+  "complete": true
  },
  "549": {
   "hash": "c753af917f0b",
@@ -12900,7 +13056,8 @@
     "name_en": "Flame Toss",
     "desc": "작은 불덩이를 던진다."
    }
-  ]
+  ],
+  "complete": true
  },
  "551": {
   "hash": "6fcd323d74c7",
@@ -13425,7 +13582,8 @@
     "name_en": "Kyū Break Spark",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "580": {
   "hash": "608d014d8af3",
@@ -13441,7 +13599,8 @@
     "name_en": "Kyū Break Spark",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "581": {
   "hash": "608d014d8af3",
@@ -13457,7 +13616,8 @@
     "name_en": "Kyū Break Spark",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "582": {
   "hash": "608d014d8af3",
@@ -13473,7 +13633,8 @@
     "name_en": "Kyū Break Spark",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "583": {
   "hash": "608d014d8af3",
@@ -13489,7 +13650,8 @@
     "name_en": "Kyū Break Spark",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "584": {
   "hash": "608d014d8af3",
@@ -13505,7 +13667,8 @@
     "name_en": "Kyū Break Spark",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "585": {
   "hash": "608d014d8af3",
@@ -13521,7 +13684,8 @@
     "name_en": "Kyū Break Spark",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "586": {
   "hash": "0b084d9faf3d",
@@ -13537,7 +13701,8 @@
     "name_en": "Kyū Brake Spark",
     "desc": "적의 코앞에서 급제동하여 뜨거운 불꽃을 튀긴다."
    }
-  ]
+  ],
+  "complete": true
  },
  "587": {
   "hash": "0c526c9e106c"
@@ -13728,7 +13893,8 @@
     "name_en": "Paint Splash",
     "desc": "입에서 먹물을 뱉어낸다."
    }
-  ]
+  ],
+  "complete": true
  },
  "596": {
   "hash": "9b5042eaee0b",
@@ -14012,37 +14178,38 @@
  },
  "611": {
   "hash": "33ea33effc1e",
-  "profile": "전설의 십투사 중 하나의 힘을 품은, 빛의 힘을 지닌 디지몬. 광통신 넷상에서 발견되어서인지 초고속 이동이 가능하며, 탄막을 빠져나가 적에게 접근하여 날카롭게 갈아낸 발톱과 송곳니로 헛손질 없이 악으로 간주한 자들을 찢어발긴다. 북유럽 신화의 라그나로크에서 전쟁의 신 티르와 함께 싸우는 가름의 이름을 칭하는 것에 어울리는 올바른 마음을 가졌기에, 악을 향한 증오심이 남다른 수준이다. 조금이라도 악한 마음을 품은 자에게는 절대 복종하지 않지만, 일단 충성을 맹세한 상대는 결코 배신하지 않는다. 필살기는 초고속으로 돌진해 등에 장착된 윙 블레이드로 상대을 갈라버리는 '스피드 스타'와, 입을 통해 빛 에너지를 흡수한 뒤 임계점에 도달했을 때 내뿜는 '솔라 레이저'이다.",
+  "complete": true,
+  "profile": "전설의 십투사의 힘을 이어받아 빛의 능력을 지닌 디지몬. 광통신 네트워크상에서 발견되었기 때문인지 극히 높은 속도로 이동할 수 있어, 적의 탄환을 뚫고 접근한 뒤 날카로운 발톱과 송곳니로 자신이 악이라 간주한 자를 단숨에 찢어발긴다. 북유럽 신화에서 라그나로크 때 군신 튀르와 싸운 가름의 이름에 걸맞은 정의로운 마음을 지녀 악을 증오하는 마음은 남들보다 강하다. 조금이라도 사악한 마음을 품은 자에게는 결코 복종하지 않지만, 한 번 충성을 맹세한 상대는 결코 배신하지 않는다. 필살기는 초고속으로 돌진해 등의 윙 블레이드로 적을 토막 내는 『스피드 스타』와, 입으로 빛 에너지를 흡수한 뒤 임계점에서 토해내는 『솔라 레이저』이다.",
   "skills": [
    {
     "name": "스피드 스타",
     "name_en": "Speed Star",
-    "desc": "초고속으로 돌진하여 등에 있는 윙 블레이드로 상대방을 난참한다."
+    "desc": "초고속으로 돌진해 윙 블레이드로 상대를 토막 낸다."
    },
    {
     "name": "솔라 레이저",
     "name_en": "Solar Laser",
-    "desc": "입으로 빛 에너지를 흡수한 뒤, 임계점에서 레이저를 발사한다."
+    "desc": "입으로 빛 에너지를 흡수한 뒤 임계점에서 레이저 빔을 뿜어낸다."
    },
    {
-    "name": "클링에 빈트라트",
+    "name": "클링게 빈트라트",
     "name_en": "Klinge Windrad",
     "desc": "공중으로 회전하며 온몸의 칼날로 상대를 벤다."
    },
    {
     "name": "밀리탄트 앙그리프",
     "name_en": "Militant Angriff",
-    "desc": "활강하며 윙 블레이드와 꼬리로 공격한다."
+    "desc": "활공하며 윙 블레이드와 꼬리를 사용해 공격한다."
    },
    {
     "name": "리히트 토르페도",
     "name_en": "Licht Torpedo",
-    "desc": "빛을 휘감은 채 상대에게 돌진한다."
+    "desc": "빛을 휘감고 상대에게 돌진한다."
    },
    {
-    "name": "공중에서 몸을 회전해 윙 블레이드로 공격한다.",
+    "name": "클링게 비르벨빈트",
     "name_en": "Klinge Wirbelwind",
-    "desc": ""
+    "desc": "몸을 회전시키며 공중에서 윙 블레이드로 공격한다."
    }
   ]
  },
@@ -14134,7 +14301,8 @@
     "name_en": "Heavy Attack",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "617": {
   "hash": "0c526c9e106c"
@@ -14153,7 +14321,8 @@
     "name_en": "Sonic Voice",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "619": {
   "hash": "96e8dcc521c2",
@@ -14174,7 +14343,8 @@
     "name_en": "Metal Shot",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "620": {
   "hash": "913dedda984d",
@@ -14358,7 +14528,8 @@
     "name_en": "Hyper Bulldozer",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "629": {
   "hash": "0c526c9e106c"
@@ -14424,7 +14595,8 @@
     "name_en": "Shadow Slash",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "633": {
   "hash": "669997d634b2",
@@ -14518,7 +14690,8 @@
     "name_en": "Ouryūken",
     "desc": "왕룡검으로 공격한다."
    }
-  ]
+  ],
+  "complete": true
  },
  "637": {
   "hash": "41c54747ab0e",
@@ -15057,7 +15230,8 @@
     "name_en": "Heavy Crunch",
     "desc": "상대를 짓누르고 집게로 삣어 쥔다."
    }
-  ]
+  ],
+  "complete": true
  },
  "666": {
   "hash": "000ca67dcdf5",
@@ -15073,7 +15247,8 @@
     "name_en": "Jūga-maru",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "667": {
   "hash": "9d06aaa0b718",
@@ -15210,7 +15385,8 @@
     "name_en": "Torpedo Ray",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "674": {
   "hash": "bf14685c25fa",
@@ -15563,7 +15739,8 @@
     "name_en": "Giant Crush Bone",
     "desc": "두개골의 거대한 뿔을 고속으로 회전시키며 돌진하여 적을 산산조각 낸다."
    }
-  ]
+  ],
+  "complete": true
  },
  "692": {
   "hash": "12e5df6a4b82",
@@ -15679,7 +15856,8 @@
     "name_en": "Knock Buster",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "698": {
   "hash": "f10f289a68ee",
@@ -15937,7 +16115,8 @@
     "name_en": "Doku no Awa",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "711": {
   "hash": "a5be5270aa5a",
@@ -15969,7 +16148,8 @@
     "name_en": "Dino Slash",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "713": {
   "hash": "616c2ad45188",
@@ -15995,7 +16175,8 @@
     "name_en": "Split Burst",
     "desc": "머리를 휘둘러 주둥이의 검으로 적을 두 동강 낸다."
    }
-  ]
+  ],
+  "complete": true
  },
  "714": {
   "hash": "c26c5018025b",
@@ -16143,7 +16324,8 @@
     "name_en": "Booby Pit",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "722": {
   "hash": "4bc486ff8cee",
@@ -16164,7 +16346,8 @@
     "name_en": "Devil Bashing",
     "desc": "발톱이 달린 촉수로 연속 공격을 가한다."
    }
-  ]
+  ],
+  "complete": true
  },
  "723": {
   "hash": "3e6ce26ce268",
@@ -16317,7 +16500,8 @@
     "name_en": "Great Antler",
     "desc": "힘센 뿔로 적에게 박치기를 한다."
    }
-  ]
+  ],
+  "complete": true
  },
  "731": {
   "hash": "d45709533f65",
@@ -16401,7 +16585,8 @@
     "name_en": "Apocalypse",
     "desc": "하늘에서 떨어지는 에너지 볼트를 소환하여 빛의 폭발을 일으키거나, 입에서 전격을 뿜어 적을 공격한다."
    }
-  ]
+  ],
+  "complete": true
  },
  "735": {
   "hash": "29b9d7884cf9",
@@ -16438,7 +16623,8 @@
     "name_en": "Crunch Arm",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "737": {
   "hash": "aa1062181c22",
@@ -16620,7 +16806,8 @@
     "name_en": "Thunder Bomber",
     "desc": "몸에 전기를 두르고 상대를 향해 돌격한다."
    }
-  ]
+  ],
+  "complete": true
  },
  "747": {
   "hash": "35d495c79063",
@@ -16718,7 +16905,8 @@
     "name_en": "Burn Bancho Punch",
     "desc": "불타오르는 영혼을 실은 펀치를 날린다."
    }
-  ]
+  ],
+  "complete": true
  },
  "753": {
   "hash": "21f0052f2406",
@@ -16839,7 +17027,8 @@
     "name_en": "Heaven's Arrow",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "759": {
   "hash": "300afbfb491b",
@@ -16876,7 +17065,8 @@
     "name_en": "God Bless",
     "desc": "아발론을 사용하여 3초 이내의 모든 방향의 공격으로부터 보호한다."
    }
-  ]
+  ],
+  "complete": true
  },
  "761": {
   "hash": "b535ea3d43c2",
@@ -16923,7 +17113,8 @@
     "name_en": "Blast Shot",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "763": {
   "hash": "ce713eb4f336",
@@ -17182,7 +17373,8 @@
     "name_en": "Múspellsheimr",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "777": {
   "hash": "c158ba2a099a",
@@ -17437,7 +17629,8 @@
     "name_en": "Drain Slash",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "792": {
   "hash": "3d5ad0ee2f6d",
@@ -17484,7 +17677,8 @@
     "name_en": "Black Requiem",
     "desc": "하복부의 입을 열어 어둠의 에너지를 뿜어내거나, 어디선가 들려오는 엄숙한 목소리로 들은 자가 머지않아 죽음에 이르는 진혼곡을 부른다."
    }
-  ]
+  ],
+  "complete": true
  },
  "794": {
   "hash": "0c526c9e106c"
@@ -17723,7 +17917,8 @@
     "name_en": "Kyū Break Spark",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "806": {
   "hash": "29f8dc2a316c",
@@ -17739,7 +17934,8 @@
     "name_en": "Fossil Wave",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "807": {
   "hash": "ffec599ef9fa",
@@ -17893,7 +18089,8 @@
     "name_en": "Chouteisoku Ichimonjigiri",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "816": {
   "hash": "b6247a52cf54",
@@ -17935,7 +18132,8 @@
     "name_en": "Water Shot",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "818": {
   "hash": "3f1038bf0869",
@@ -18343,7 +18541,8 @@
     "name_en": "Sunshine Bazooka",
     "desc": "하나의 씨앗을 엄청난 위력으로 발사한다."
    }
-  ]
+  ],
+  "complete": true
  },
  "834": {
   "hash": "fb99a3a8e95d",
@@ -18378,7 +18577,8 @@
     "name_en": "Kyū Break Spark",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "837": {
   "hash": "6e95758905ed",
@@ -18663,7 +18863,8 @@
     "name_en": "Hime no Wagamama",
     "desc": "상대를 곤란하게 만든다."
    }
-  ]
+  ],
+  "complete": true
  },
  "847": {
   "hash": "e5222aa2e059",
@@ -19003,7 +19204,8 @@
     "name_en": "XT Hacking",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "860": {
   "hash": "8adfe70c00e5",
@@ -19160,7 +19362,8 @@
     "name_en": "Holy Shoot",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "867": {
   "hash": "4d8786e5dde8",
@@ -19352,22 +19555,23 @@
  },
  "880": {
   "hash": "b3cf7c3e5cf0",
-  "profile": "\"드라몬\"이라는 이름을 지닌 디지몬은 디지코어 내에 항상 드래곤 팩터 데이터가 존재하며, 그 데이터의 비율이 높을수록 신체의 형태가 드래곤 계열에 가까워진다. 하지만 코어드라몬(청)의 드래곤 팩터 데이터는 100%에 도달하여 틀림없는 순혈 드래곤 디지몬이다. 푸른 피부의 코어드라몬은 아주 고도가 높은 산악 지역에서만 채굴되는 \"블루 디아만테\"라는 희귀 보석을 다량 섭취한 드라코몬의 진화형이라고 전해지며, 발달한 날개로 고속 비행을 하여 험준한 산악 지대에서 살아간다. 필살기는 푸르게 빛나는 작열하는 숨결을 내뿜는 (블루 플레어 브레스)와 강력한 꼬리로 상대에게 뼈아픈 일격을 가하는 (스트라이크 봄버). \"블루 플레어 브레스\"는 디지몬 신체 표면을 덮은 텍스처 데이터를 분해하는 데 효과적이어서 이 숨결을 맞은 디지몬은 노출된 디지코어에 공격을 받기 쉬워진다. 드라코몬과 마찬가지로 \"역린\"이라 불리는 비늘이 있으며, 그곳을 건드리면 분노가 극에 달해 이성을 잃고 머리의 뿔을 강하게 빛낸 후 입에서 발사하는 확산 레이저 빔인 \"G 슈루넨-II\"를 무차별적으로 난사한다.",
+  "complete": true,
+  "profile": "이름에 「드라몬」이 붙는 디지몬은 디지코어에 반드시 드래곤 계통의 인자 데이터를 지니고 있으며, 그 인자 데이터의 비율이 높을수록 몸의 형태도 드래곤형에 가까워지는데, 코어드라몬의 드래곤 인자 데이터는 100%에 달하므로 의심할 여지 없는 순혈 드래곤 디지몬이다. 푸른 피부를 지닌 코어드라몬은 표고가 매우 높은 산악 지대에서만 채굴되는 「블루 디아만테」라는 희귀 보석을 대량 섭취한 드라코몬이 진화한 모습이라고 하며, 험준한 산악 지대에서 살아남기 위해 발달한 날개로 고속 비행을 할 수 있다. 필살기는 푸르게 빛나는 작열의 숨결을 토해내는 『블루 플레어 브레스』와, 강인한 꼬리로 적에게 통렬한 일격을 날리는 『스트라이크 봄버』이다. 『블루 플레어 브레스』는 디지몬의 신체 표면을 덮는 텍스처 데이터를 분해하는 효과가 있어, 이 브레스를 맞은 디지몬은 노출된 디지코어에 공격을 받기 쉬워진다. 또한 드라코몬과 마찬가지로 「역린」이라 불리는 비늘이 있어 그곳을 건드리면 분노로 이성을 잃고, 머리의 뿔을 강렬하게 빛낸 뒤 입에서 분기 레이저 빔을 난사하는 『지 슈루넨 II』를 발동한다.",
   "skills": [
    {
     "name": "블루 플레어 브레스",
     "name_en": "Blue Flare Breath",
-    "desc": "사파이어빛의 작열하는 화염을 뿜어낸다. 디지몬 대상의 텍스처 맵을 \"태워\" 와이어프레임과 디지코어까지 노출시킬 수 있다."
+    "desc": "타오르는 사파이어빛 불꽃을 내뿜는다. 대상 디지몬의 텍스처 맵을 불태워 와이어프레임과 디지코어까지 드러나게 만들 수 있다."
    },
    {
-    "name": "G Shurunen-II",
+    "name": "지 슈루넨 II",
     "name_en": "G Shurunen-II",
-    "desc": ""
+    "desc": "「역린」을 건드려 분노로 날뛰는 상태. 코어드라몬이 레이저 열선 브레스로 난동을 부린다."
    },
    {
     "name": "스트라이크 봄버",
     "name_en": "Strike Bomber",
-    "desc": "꼬리를 휘둘러 대상을 때려 부신다."
+    "desc": "꼬리를 휘둘러 대상을 분쇄한다."
    }
   ]
  },
@@ -19416,7 +19620,8 @@
     "name_en": "Holy Shoot",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "883": {
   "hash": "2494cca96ef2",
@@ -19499,7 +19704,8 @@
     "name_en": "Omega Rainbow Force",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "890": {
   "hash": "f8826b959dca",
@@ -19510,7 +19716,8 @@
     "name_en": "Omega Rainbow Flare",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "891": {
   "hash": "f03db59e5ada",
@@ -19552,7 +19759,8 @@
     "name_en": "Leopard Mode",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "893": {
   "hash": "2afaef2b9b1d",
@@ -19903,7 +20111,8 @@
     "name_en": "Dramon Breaker",
     "desc": "거대한 분쇄검 \"드라몬 브레이커\"를 휘둘러 상대를 가루로 만드는 영웅적인 검술을 구사한다."
    }
-  ]
+  ],
+  "complete": true
  },
  "909": {
   "hash": "a2dedf737998",
@@ -19997,22 +20206,23 @@
  },
  "914": {
   "hash": "b1e3a5bd645c",
+  "complete": true,
   "profile": "",
   "skills": [
    {
     "name": "크로노 디스트럭션",
     "name_en": "Chrono Destruction",
-    "desc": "모든 데이터를 부식시키는 에너지를 방사한다."
+    "desc": "모든 데이터를 부식시키는 에너지를 방출한다."
    },
    {
     "name": "콜 버드",
     "name_en": "Call Bird",
-    "desc": "새를 소환해 상대를 할퀸다."
+    "desc": "새를 소환해 적을 할퀴게 한다."
    },
    {
-    "name": "잠자리를 소환해 상대를 감전시킨다.",
+    "name": "콜 얀마",
     "name_en": "Call Yanma",
-    "desc": ""
+    "desc": "잠자리를 소환해 적을 감전시킨다."
    }
   ]
  },
@@ -20090,7 +20300,8 @@
     "name_en": "Kamiuchi",
     "desc": "다신편에서 번개처럼 강력하고 빠른 일격을 날리며, 특히 성기사형(※원문: Holy-species) 디지몬에게 매우 효과적이다."
    }
-  ]
+  ],
+  "complete": true
  },
  "919": {
   "hash": "afe31a65c5cd",
@@ -20121,7 +20332,8 @@
     "name_en": "Choujigen Storm",
     "desc": "디지털 월드의 어느 곳이든 차원의 폭풍을 발생시키고 그 안으로 오른팔을 뻗어 상대를 공격한다."
    }
-  ]
+  ],
+  "complete": true
  },
  "920": {
   "hash": "cd61068c8e28",
@@ -20195,7 +20407,8 @@
     "name_en": "Berenjena SDX",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "925": {
   "hash": "7f8f7a4f2cb6",
@@ -20242,7 +20455,8 @@
     "name_en": "Final Zubagon Punch",
     "desc": "주먹으로 지면을 강타해 대지를 두 쪽으로 가른다."
    }
-  ]
+  ],
+  "complete": true
  },
  "927": {
   "hash": "49cfc3cfe05c",
@@ -20328,7 +20542,8 @@
     "name_en": "Petit Sugar Plum",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "933": {
   "hash": "0e2ebe9b19f7",
@@ -20344,7 +20559,8 @@
     "name_en": "Kompeitō Hammer",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "934": {
   "hash": "f88f68faa247",
@@ -20375,7 +20591,8 @@
     "name_en": "Ultrasonic Wave",
     "desc": "고열을 발생시킬 수 있는 초음파 노래를 부른다."
    }
-  ]
+  ],
+  "complete": true
  },
  "935": {
   "hash": "0c8b05e2ddf4",
@@ -20401,7 +20618,8 @@
     "name_en": "Eraser Claw",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "936": {
   "hash": "c0d5b533c348",
@@ -20515,7 +20733,8 @@
     "name_en": "Cyber Blader",
     "desc": "랜스를 손에 쥐고 회전하는 꼬리에 올라타 상대를 산산조각 낸다."
    }
-  ]
+  ],
+  "complete": true
  },
  "940": {
   "hash": "00cf88ccdf58",
@@ -20557,7 +20776,8 @@
     "name_en": "Kiwame Daiko",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "942": {
   "hash": "d95333aa04ce",
@@ -20573,7 +20793,8 @@
     "name_en": "Rowdy Drummer",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "943": {
   "hash": "cb0168bc7af5",
@@ -20681,22 +20902,23 @@
  },
  "951": {
   "hash": "faedad9a1663",
-  "profile": "랩터형의 비행 디지몬. 하늘에서 전투 상황을 정찰하며, 일격이탈 전법을 사용하여 상대에게 정확한 양의 데미지를 입히는 공중 지원 공격이 특기이다. 움직임은 번개같이 빠르고 시력은 매처럼 날카롭다. 특히 상대에게 은밀하게 접근한 뒤 공중 폭격을 가하는 '나이트 호크'는 메일버드라몬의 특성을 최대한 살린 전법이다. 입에서 초고에너지 플라즈마탄을 상대에게 영거리에서 발사하는 '플라즈마 캐논' 또한 상대를 절멸시킬 수 있을 정도로 강력하기 때문에, 근접 전투 능력만 지닌 디지몬들에 비해서 종합적인 전투력은 훨씬 더 뛰어나다.\n항상 하늘에서 전투 상황을 분석하고 그에 맞춰 행동하기 때문에 성격은 냉정하고 치밀하며, 판단 내리기에 능숙하다.",
+  "complete": true,
+  "profile": "맹금형의 비행 디지몬. 상공에서 전황을 정찰하며, 치고 빠지는 전법으로 적에게 확실한 피해를 주는 공중 지원 폭격을 특기로 삼는다. 그 움직임은 번개처럼 빠르고 시력은 매처럼 날카롭다. 특히 은밀하게 적에게 접근하여 공중 폭격을 가하는 『나이트호크』는 메일버드라몬의 특성을 최대한 살린 전법이다. 또한 입에서 초고에너지 플라스마 탄을 쏘아 영거리에서 상대를 저격하는 『플라스마 캐논』도 상대를 섬멸하기에 충분한 위력을 지니고 있어, 근접 전투 능력만 가진 디지몬보다 종합적인 전투력이 훨씬 뛰어나다. 언제나 상공에서 전황을 분석하며 행동하기 때문에 성격은 냉정하고 계산적이며 뛰어난 판단력을 지니고 있다.",
   "skills": [
    {
-    "name": "플라즈마 캐논",
+    "name": "플라스마 캐논",
     "name_en": "Plasma Cannon",
-    "desc": "입에서 초고에너지 플라즈마탄을 상대에게 영거리에서 발사한다."
+    "desc": "입에서 초고에너지 플라스마 탄을 쏘아 영거리에서 상대를 저격한다."
    },
    {
-    "name": "트라이덴트 테일",
+    "name": "트라이던트 테일",
     "name_en": "Trident Tail",
     "desc": "꼬리로 상대를 공격한다."
    },
    {
-    "name": "나이트 호크",
+    "name": "나이트호크",
     "name_en": "Nighthawk",
-    "desc": ""
+    "desc": "적에게 은밀히 접근하여 공중 폭격을 가하거나 가슴의 포구에서 폭발성 빔을 발사한다."
    }
   ]
  },
@@ -20723,7 +20945,8 @@
     "name_en": "Mega Blast Scissor",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "955": {
   "hash": "e5aa2d6aeed4",
@@ -20817,7 +21040,8 @@
     "name_en": "Konohagakure",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "959": {
   "hash": "e1f1b3d0ce1e",
@@ -20868,7 +21092,8 @@
     "name_en": "Dokudokubari",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "963": {
   "hash": "790b9654b44b",
@@ -20889,7 +21114,8 @@
     "name_en": "Breast-eye Wave",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "964": {
   "hash": "1e1fdb774bdf",
@@ -20924,7 +21150,8 @@
     "name_en": "Aurora Blazer",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "967": {
   "hash": "7eb80290c3f0",
@@ -20950,7 +21177,8 @@
     "name_en": "Zanahoria",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "968": {
   "hash": "42bb6741d5ae",
@@ -20971,7 +21199,8 @@
     "name_en": "Rock 'n' Rolling",
     "desc": "회전하며 적에게 몸통박치기를 한다."
    }
-  ]
+  ],
+  "complete": true
  },
  "969": {
   "hash": "ec9990c6f63a",
@@ -21021,7 +21250,8 @@
     "name_en": "Hoshiwari",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "972": {
   "hash": "a6e07bff747b",
@@ -21037,7 +21267,8 @@
     "name_en": "Death March",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "973": {
   "hash": "629e620b1a93",
@@ -21085,7 +21316,8 @@
     "name_en": "Sugar Plum",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "976": {
   "hash": "ec9990c6f63a",
@@ -21165,7 +21397,8 @@
     "name_en": "Hagakure",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "982": {
   "hash": "17aafbd24f4f",
@@ -21238,7 +21471,8 @@
     "name_en": "Break Rocker",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "985": {
   "hash": "0c526c9e106c"
@@ -21288,7 +21522,8 @@
     "name_en": "Buddy Blaster",
     "desc": "두 디지몬의 우정의 힘을 동기화하여 감정의 힘을 에너지로 변환해 뿔에서 발사한다."
    }
-  ]
+  ],
+  "complete": true
  },
  "988": {
   "hash": "ec9990c6f63a",
@@ -21335,7 +21570,8 @@
     "name_en": "Buddy Blaster",
     "desc": "두 디지몬의 우정의 힘을 동기화하여 감정적 힘을 에너지로 변환한 뒤 뿔에서 발사한다."
    }
-  ]
+  ],
+  "complete": true
  },
  "990": {
   "hash": "8fc774eb7caf",
@@ -21366,7 +21602,8 @@
     "name_en": "Buddy Blaster",
     "desc": "두 디지몬의 우정의 힘을 동기화하여 감정의 힘을 에너지로 변환해 뿔에서 발사한다."
    }
-  ]
+  ],
+  "complete": true
  },
  "991": {
   "hash": "3e962647a11d",
@@ -21402,7 +21639,8 @@
     "name_en": "Three Victorize Max Power",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "992": {
   "hash": "14043f9a1145",
@@ -21454,7 +21692,8 @@
     "name_en": "Burning Star Crusher",
     "desc": "일격에 어떤 상대든 두 쪽으로 베어버린다."
    }
-  ]
+  ],
+  "complete": true
  },
  "994": {
   "hash": "3554c034f056",
@@ -21577,7 +21816,8 @@
     "name_en": "Rockin' Magnum",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "1000": {
   "hash": "510795f897bb",
@@ -21593,7 +21833,8 @@
     "name_en": "Full Star Blade",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "1001": {
   "hash": "c709f3fba3b5",
@@ -21705,7 +21946,8 @@
     "name_en": "Horn Strike Force",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "1009": {
   "hash": "0c526c9e106c"
@@ -21738,7 +21980,8 @@
     "name_en": "Hiken Piyopiyo Giri",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "1013": {
   "hash": "0c526c9e106c"
@@ -21964,7 +22207,8 @@
     "name_en": "Pirate's Punisher",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "1029": {
   "hash": "ddfc7c32def9",
@@ -22051,7 +22295,8 @@
     "name_en": "??",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "1038": {
   "hash": "8142328c677f",
@@ -22206,7 +22451,8 @@
     "name_en": "Comet Launcher",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "1049": {
   "hash": "0c526c9e106c"
@@ -22273,7 +22519,8 @@
     "name_en": "Madness Merry-go-round DX",
     "desc": "올림피아 카이와 메둘리아로 눈으로 좇을 수 없을 정도로 빠른 회전 베기를 구사하며 토네이도를 일으켜, 닿은 상대의 팔다리를 순식간에 찢어발긴다."
    }
-  ]
+  ],
+  "complete": true
  },
  "1055": {
   "hash": "0c526c9e106c"
@@ -22297,7 +22544,8 @@
     "name_en": "Majūryoku Jubakujin",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "1057": {
   "hash": "5a1102f126e0",
@@ -22323,7 +22571,8 @@
     "name_en": "Guilty Claw",
     "desc": "기가 핸드의 발톱으로 공격하거나, 발톱으로 진공파를 만들어낸다."
    }
-  ]
+  ],
+  "complete": true
  },
  "1058": {
   "hash": "84849f99ce33",
@@ -22334,7 +22583,8 @@
     "name_en": "Giga Cardiac Raid",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "1059": {
   "hash": "0c526c9e106c"
@@ -22737,7 +22987,8 @@
     "name_en": "Burning Hammer",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "1084": {
   "hash": "b43732b9c788",
@@ -22846,7 +23097,8 @@
     "name_en": "Gold Bowling",
     "desc": "모아둔 자금을 던져서 공격한다."
    }
-  ]
+  ],
+  "complete": true
  },
  "1088": {
   "hash": "0c526c9e106c"
@@ -22884,7 +23136,8 @@
     "name_en": "Giga Tempest",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "1092": {
   "hash": "43aba6c27b7d",
@@ -22953,7 +23206,8 @@
     "name_en": "Grand Heat Storm",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "1096": {
   "hash": "4d0bfd519565",
@@ -23111,7 +23365,8 @@
     "name_en": "Brilliance Dagger",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "1105": {
   "hash": "86f61dc5f33c",
@@ -23132,7 +23387,8 @@
     "name_en": "Victory Spear",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "1106": {
   "hash": "644dc0fc59e1",
@@ -23153,7 +23409,8 @@
     "name_en": "Space Chakram",
     "desc": "고리 모양의 진공 블레이드를 발사하여 상대를 산산조각 낸다."
    }
-  ]
+  ],
+  "complete": true
  },
  "1107": {
   "hash": "6ee82afd1736",
@@ -23374,7 +23631,8 @@
     "name_en": "Tiger Typhoon",
     "desc": "모든 것을 삼킨다."
    }
-  ]
+  ],
+  "complete": true
  },
  "1119": {
   "hash": "0c526c9e106c"
@@ -23398,7 +23656,8 @@
     "name_en": "Gravity Bang",
     "desc": "디지털 월드의 중력을 자신 혹은 고정된 에너지의 물체 형태로 집중시킨 다음, 그 에너지를 전부 폭발시킨다."
    }
-  ]
+  ],
+  "complete": true
  },
  "1121": {
   "hash": "53af71d0751b",
@@ -23414,7 +23673,8 @@
     "name_en": "High Gravity Pressure",
     "desc": "상대방을 양손으로 감싸 압박한다."
    }
-  ]
+  ],
+  "complete": true
  },
  "1122": {
   "hash": "c984b2f300f5",
@@ -23644,7 +23904,8 @@
     "name_en": "Prism Garrett",
     "desc": "정령 같은 분신을 만들어내어 일제히 상대를 베어낸다."
    }
-  ]
+  ],
+  "complete": true
  },
  "1133": {
   "hash": "45e45a3e5f80",
@@ -23680,7 +23941,8 @@
     "name_en": "Prism Garrett",
     "desc": "자신과 닮은 영기(靈氣)의 분신을 만들어내어 일제히 상대를 베어낸다."
    }
-  ]
+  ],
+  "complete": true
  },
  "1134": {
   "hash": "0c526c9e106c"
@@ -23739,7 +24001,8 @@
     "name_en": "Prism Maverick",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "1140": {
   "hash": "0c526c9e106c"
@@ -23811,7 +24074,8 @@
     "name_en": "Rock Damashī Arrow",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "1149": {
   "hash": "35fb2e340788",
@@ -23865,7 +24129,8 @@
     "name_en": "Akumu no Awa",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "1153": {
   "hash": "3055c7c2f537",
@@ -23912,7 +24177,8 @@
     "name_en": "Cross Barbée",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "1155": {
   "hash": "56ee2f69d571",
@@ -23943,7 +24209,8 @@
     "name_en": "Tekken Seisai",
     "desc": "간쿠몬과 히누카무이가 연달아 주먹을 날린다."
    }
-  ]
+  ],
+  "complete": true
  },
  "1156": {
   "hash": "d0f81a4d97d1",
@@ -24127,7 +24394,8 @@
     "name_en": "Rizoma de Loto",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "1165": {
   "hash": "56a5aff1159c",
@@ -24211,7 +24479,8 @@
     "name_en": "Happy Bullet Showering",
     "desc": "공중으로 날아올라 다리와 손가락의 총에서 실탄과 플라즈마탄을 상대에게 퍼붓는다."
    }
-  ]
+  ],
+  "complete": true
  },
  "1169": {
   "hash": "7d62d67fd141",
@@ -24316,7 +24585,8 @@
     "name_en": "Grand Sister Cruz (Satoru)",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "1174": {
   "hash": "7456308a31a3",
@@ -24337,7 +24607,8 @@
     "name_en": "Grand Sister Cruz (Satoru)",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "1175": {
   "hash": "d83b9613de86",
@@ -24484,7 +24755,8 @@
     "name_en": "Ougon Batto",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "1182": {
   "hash": "a23266f42eee",
@@ -24851,7 +25123,8 @@
     "name_en": "Geki: Hyougetsuga",
     "desc": "귀수 언월도를 얼음으로 무수한 형태로 변화시켜 적에게 던진다."
    }
-  ]
+  ],
+  "complete": true
  },
  "1203": {
   "hash": "a90eb65be994",
@@ -25030,7 +25303,8 @@
     "name_en": "20 Scratch",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "1215": {
   "hash": "33b161e9430e",
@@ -25078,7 +25352,8 @@
     "name_en": "Sakkuri",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "1218": {
   "hash": "d174b03165d6",
@@ -25089,7 +25364,8 @@
     "name_en": "Sakusaku",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "1219": {
   "hash": "39e46c6f4a0c",
@@ -25136,7 +25412,8 @@
     "name_en": "Tohho (Satoru)",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "1221": {
   "hash": "ece3be861ef8",
@@ -25256,7 +25533,8 @@
     "name_en": "Grand Gríðr",
     "desc": "양팔의 칼날을 빼내어 토마호크처럼 던진다."
    }
-  ]
+  ],
+  "complete": true
  },
  "1229": {
   "hash": "b9bd30cf3676",
@@ -25454,17 +25732,18 @@
  },
  "1238": {
   "hash": "feba4254b0c0",
-  "profile": "필몬 중에서도 가시털을 극한까지 단련한 극히 일부만이 이 완전체 디지몬으로 진화할 수 있다. 전신을 덮은 털은 레드 데지조이드에 필적하는 경도를 자랑하며, 몸을 위험으로부터 지키는 방패이자 비할 데 없는 공격력을 자랑하는 무기가 된다. 양손에 쥔 \"허리케인 너클\"은 자신이 빠진 털을 초고밀도로 압축해서 만든 자랑스러운 무기이다. 라이벌로 여기는 워가루몬과 마주할 날을 꿈꾸며 매일 성실하게 수련을 거듭한다. 필살기는 고속으로 회전하며 돌진해 곤두선 가시털과 허리케인 너클로 상대를 산산조각 내는 (기가 크림슨 다이브)와, 전신에서 붉고 드릴 모양의 창을 솟아나게 해 다수의 적을 단숨에 몰살하는 (버밀리온 볼텍스)이다.",
+  "complete": true,
+  "profile": "필몬 중에서도 바늘털을 극한까지 단련한 극소수만이 진화할 수 있는 완전체 디지몬. 전신을 뒤덮은 털은 경도 면에서 레드 데지조이드에 필적한다고 전해지며, 몸을 위험으로부터 보호하는 방패이자 비할 데 없는 공격력을 자랑하는 무기가 된다. 양손에 쥔 『허리케인 너클』은 스스로 빠진 털을 초고밀도로 압축하여 만들어낸 자랑스러운 무기다. 호적수로 여기는 워가루몬과 대치할 날을 꿈꾸며 매일 단련에 힘쓰고 있다. 필살기는 고속으로 드릴 회전하며 돌진해 곤두세운 바늘털과 허리케인 너클로 상대를 산산조각 내는 『기가 크림슨 다이브』와, 온몸에서 붉은 드릴 형태의 가시창을 돌출시켜 다수의 적을 한 번에 섬멸하는 『버밀리온 보텍스』이다.",
   "skills": [
    {
-    "name": "버밀리온 볼텍스",
+    "name": "버밀리온 보텍스",
     "name_en": "Vermilion Vortex",
-    "desc": "전신에서 붉고 드릴 모양의 창을 솟아나게 해 다수의 적을 단숨에 몰살한다."
+    "desc": "온몸에서 붉은 드릴 형태의 가시창을 돌출시켜 단숨에 다수의 적을 섬멸한다."
    },
    {
     "name": "기가 크림슨 다이브",
     "name_en": "Giga Crimson Dive",
-    "desc": ""
+    "desc": "고속으로 회전하며 돌진해 바늘털로 공격한다."
    }
   ]
  },
@@ -25594,7 +25873,8 @@
     "name_en": "Rocket Messer",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "1247": {
   "hash": "a61356b3c78d",
@@ -26171,7 +26451,8 @@
     "name_en": "Atlantic Dam",
     "desc": "적의 체내에 엄청난 양의 호박 수프를 부어 폭발시킨다. 호박 수프로 불길을 진화하기도 한다."
    }
-  ]
+  ],
+  "complete": true
  },
  "1274": {
   "hash": "d24e5c328b40",
@@ -26229,7 +26510,8 @@
     "name_en": "Demon's Crystal",
     "desc": "적이 죽을 때까지 괴롭히는 소환 기술."
    }
-  ]
+  ],
+  "complete": true
  },
  "1277": {
   "hash": "63c507e33b6a",
@@ -27186,17 +27468,18 @@
  },
  "1332": {
   "hash": "59bfde543498",
-  "profile": "먹고 자는 것에서만 삶의 즐거움을 찾게 된 퍼핏형 디지몬. 힘든 운동을 극도로 싫어한 나머지 디지몬으로서의 전투 본능마저 지워버렸으며, 아무도 다가올 수 없도록 나뭇가지 위 같은 높은 곳에서 살게 되었다. 두 팔 모두 나뭇가지를 붙잡는 데 자주 쓰이기 때문에, 길고 잘 발달한 혀를 제3의 팔처럼 능숙하게 사용할 수 있다.\n적이 다가오면 자신의 똥을 던져 (응가 던지기) 쫓아낸다. 마비 독을 분비하는 혀로 핥는 근접 기술 (패럴라이즈 릭)도 가지고 있지만, 사용할 기회는 거의 없다.",
+  "complete": true,
+  "profile": "먹고 자는 것에서만 삶의 낙을 찾게 된 퍼펫형 디지몬. 격렬한 운동을 싫어하여 디지몬으로서의 투쟁 본능마저 사라져 버렸으며, 누구도 다가오지 못하도록 나무 위 같은 높은 곳에서 살게 되었다. 양팔은 나뭇가지를 붙잡는 데 쓰이는 일이 많기 때문에 길고 발달한 혀를 능숙하게 제3의 팔처럼 사용할 수도 있다. 적이 다가오면 자신의 똥을 던져(똥 던지기) 쫓아낸다. 마비독을 분비하는 혀로 핥는(패럴라이즈 릭) 근접 기술도 지니고 있지만, 이를 쓸 기회는 거의 없다.",
   "skills": [
    {
-    "name": "응가 던지기",
+    "name": "똥 던지기",
     "name_en": "Unchi Nage",
-    "desc": "적을 향해 자신의 배설물을 던진다."
+    "desc": "자신의 배설물을 적을 향해 던진다."
    },
    {
     "name": "패럴라이즈 릭",
     "name_en": "Paralyze Lick",
-    "desc": ""
+    "desc": "마비독을 분비하는 혀로 핥는다."
    }
   ]
  },
@@ -27864,7 +28147,8 @@
     "name_en": "Breaclaw",
     "desc": "왼손에 에너지를 축적하고 발톱 공격을 날린다."
    }
-  ]
+  ],
+  "complete": true
  },
  "1373": {
   "hash": "cbc47c828da1",
@@ -28064,7 +28348,8 @@
     "name_en": "Albion",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "1383": {
   "hash": "f54c0781f1b7",
@@ -28573,7 +28858,8 @@
     "name_en": "Yūgen",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "1412": {
   "hash": "553fc6d412d5",
@@ -29211,7 +29497,8 @@
     "name_en": "Cháoshuǐ Yǒng Dòng",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "1445": {
   "hash": "fd2af1c5e98e",
@@ -29380,7 +29667,8 @@
     "name_en": "Qīng Yuán Miào Dào",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "1454": {
   "hash": "17405b36d5e3",
@@ -29433,7 +29721,8 @@
     "name_en": "Píshāméntiān",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "1457": {
   "hash": "753532e49491",
@@ -29539,7 +29828,8 @@
     "name_en": "Qīng Lián Zhuó Shuǐ",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "1463": {
   "hash": "5b98d0cdd40a",
@@ -29665,7 +29955,8 @@
     "name_en": "Hányuè Zhàorén",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "1469": {
   "hash": "935b49091754",
@@ -29839,7 +30130,8 @@
     "name_en": "Bā Jiǔ Xuán Gōng",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  },
  "1478": {
   "hash": "24ed5252acc2",
@@ -30022,6 +30314,7 @@
     "name_en": "Huà Lián",
     "desc": ""
    }
-  ]
+  ],
+  "complete": true
  }
 }
