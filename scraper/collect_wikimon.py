@@ -232,6 +232,15 @@ def parse_list(text, by_norm, ref_defs, stats):
     return items
 
 
+class Blocked(Exception):
+    """Cloudflare 봇 확인 페이지 — 재시도해도 풀리지 않음 (GitHub Actions 서버 IP 등)"""
+
+
+def is_cloudflare_challenge(r):
+    return r.status_code in (403, 503) and (
+        r.headers.get("cf-mitigated") == "challenge" or "<title>Just a moment...</title>" in r.text[:2000])
+
+
 def fetch_batch(session, titles, delay=DELAY):
     params = {"action": "query", "prop": "revisions", "rvprop": "content", "rvslots": "main",
               "titles": "|".join(titles), "format": "json", "formatversion": "2", "redirects": "1", "maxlag": "5"}
@@ -239,6 +248,8 @@ def fetch_batch(session, titles, delay=DELAY):
     for attempt in range(tries):
         try:
             r = session.get(API, params=params, timeout=60)
+            if is_cloudflare_challenge(r):
+                raise Blocked(f"HTTP {r.status_code} Cloudflare 확인 페이지")
             if r.status_code == 200:
                 data = r.json()
                 if "error" in data and data["error"].get("code") == "maxlag":
@@ -247,6 +258,8 @@ def fetch_batch(session, titles, delay=DELAY):
                     return data
             else:
                 print(f"  HTTP {r.status_code}: {r.text[:200]}", flush=True)
+        except Blocked:
+            raise
         except Exception as e:
             print(f"  오류: {e}", flush=True)
         if attempt < tries - 1:
@@ -315,6 +328,20 @@ def main():
     session = requests.Session()
     session.headers["User-Agent"] = UA
     stats, missing, deferred_titles, started = collections.Counter(), [], [], time.time()
+    try:
+        collect(session, titles, batch_size, max_req, delay, by_norm, out, stats, missing, deferred_titles, started)
+    except Blocked as e:
+        # 재시도해도 소용없으므로 바로 멈춤 (받은 것까지는 이미 저장됨). Actions 에서는 경고로 표시
+        print(f"::warning::Wikimon 이 요청을 막았습니다 ({e}) — 수집을 멈춥니다. 로컬 PC에서 실행해 주세요.", flush=True)
+    if not stats["batches_ok"]:
+        print("새로 받은 문서 없음 — 파일을 다시 쓰지 않음", flush=True)  # 날짜만 바뀐 커밋 방지
+        return
+
+    save(out, stats, missing)
+    print(f"저장: {OUT_FILE} ({len(out)}종), 찾지 못함 {len(missing)}", flush=True)
+
+
+def collect(session, titles, batch_size, max_req, delay, by_norm, out, stats, missing, deferred_titles, started):
     total_batches = (len(titles) + batch_size - 1) // batch_size
     for n, i in enumerate(range(0, len(titles), batch_size)):
         if n >= max_req or time.time() - started > TIME_BUDGET:
@@ -329,6 +356,7 @@ def main():
             print(f"  묶음 {n + 1} 실패 — 건너뜀", flush=True)
             continue
         process_pages(data, q_to_api, by_norm, out, stats, missing, deferred_titles)
+        stats["batches_ok"] += 1
         print(f"  묶음 {n + 1}/{total_batches}: 누적 {len(out)}종", flush=True)
         save(out, stats, missing)  # 묶음마다 저장 (중간에 끊겨도 이어받기)
 
@@ -343,10 +371,8 @@ def main():
         if not data:
             continue
         process_pages(data, q_to_api, by_norm, out, stats)
+        stats["batches_ok"] += 1
         save(out, stats, missing)
-
-    save(out, stats, missing)
-    print(f"저장: {OUT_FILE} ({len(out)}종), 찾지 못함 {len(missing)}", flush=True)
 
 
 if __name__ == "__main__":
