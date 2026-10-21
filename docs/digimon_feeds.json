@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-10-21 10:08:55",
-  "total_count": 271,
+  "last_updated": "2026-10-21 15:56:11",
+  "total_count": 272,
   "retention_days": 90,
   "feeds": [
     {
@@ -16,6 +16,21 @@
       "timestamp": 1792529782,
       "created_at": "2026-10-21 05:56",
       "title_orig": "Digimon Announces New Anime for 2027 as Franchise Begins 30th Anniversary Celebration"
+    },
+    {
+      "id": "1a617673d84f081af2e42fbca6021710",
+      "title": "[공식] 제158회 디지민 투표 결과 발표!",
+      "snippet": "디지몬 공식 사이트 ニュース",
+      "source": "digimon.net",
+      "source_badge": "디지몬웹",
+      "category": "game",
+      "category_name": "신작/공식속보",
+      "link": "https://digimon.net/topic/detail.php?id=2098",
+      "image": null,
+      "timestamp": 1792508400,
+      "created_at": "2026-10-21 00:00",
+      "title_orig": "第158回デジ民投票　結果発表！",
+      "title_ja": "第158回デジ民投票　結果発表！"
     },
     {
       "id": "0ee8b501393a4d5e9e76550b2db69ec1",
