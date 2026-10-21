@@ -1,20 +1,212 @@
 # Wikimon 수집 보고
 
-- 문서 1488종, 찾지 못한 제목 0개
-- 진화 항목: 출처 없음 6, 건너뛴 대상(카드게임 묶음 등) 28, 해석 못한 이름 참조 0
+- 문서 1488종, 찾지 못한 제목 1개
+- 진화 항목: 출처 없음 118, 건너뛴 대상(카드게임 묶음 등) 8938, 해석 못한 이름 참조 16
 
 ## 찾지 못한 제목
 
-
+Xros Up Ballistamon (Revolmon)
 
 ## 템플릿·애니 코드
 
-- template:rfc: 92
-- template:ref: 45
-- template:rfe: 12
-- anime_code:XW: 12
-- template:note: 9
+- template:ref: 20426
+- template:rfc: 17491
+- template:rfe: 1181
+- template:note: 658
+- anime_code:XW: 607
+- template:wikia: 366
+- template:dd: 345
+- template:refd: 317
+- anime_code:DA:: 140
+- anime_code:DF: 81
+- anime_code:DS: 81
+- anime_code:GG: 72
+- anime_code:DA: 66
+- anime_code:ZT: 53
+- anime_code:DB: 44
+- anime_code:DT: 37
+- template:w: 25
+- template:url: 19
+- template:url2: 17
+- template:eqo: 4
+- template:eq: 4
+- template:dcghl: 3
+- template:dcgmakelink: 3
+- template:dcg: 1
 
 ## 분류 안 된 출처(기타)
 
-- D-Gather: 1
+- Digimon Dictionary: 345
+- Digimon Reference Book: 317
+- Digimon UP: 158
+- Digimon Chronicle X: 37
+- D-Cyber Ultimate: 33
+- D-Cyber Version 2.0: 28
+- C'mon Digimon: 18
+- Digimon ReCollection: 17
+- Digimon Liberator (Web Novel): 16
+- Digimon Circle: 16
+- Digimon Liberator: 15
+- Leomon: 14
+- url2|https://digimoncard.com/digimon_liberator/jp/character/|Digimon Liberator:: 13
+- War Greymon: 13
+- Togemon: 12
+- Metal Garurumon: 11
+- Digimon Encounter: 10
+- :File:Shoutmon X7 SM dxw digimon latest big picture2.jpg: 10
+- Digimon Paradox: 10
+- Nyalra × Kaeru DX Sloppy Otaku Talk DX: 9
+- V-18: 8
+- Digimon Liberator - Episode 24 (Part 2): 8
+- Numemon: 8
+- w|Mothra#Rebirth of Mothra trilogy|Mothra Leo: 7
+- D-Cyber - Chapter 14: 6
+- Digivolving Spirits Series: 6
+- V Jump: 6
+- D-Cyber Version 1.0: 6
+- Digimon Series Memorial Book: 6
+- Digimon Profile #001: Digi-Report : Agumon Types: 5
+- w|Baragon: 5
+- Bx-79: 5
+- Battle 21: 5
+- Digimon Get Back: 4
+- List of Books: 4
+- Digimon Chronicle - Chapter 4: 4
+- ばにら👽 (@D716E). "【お仕事情報】「一周年記念アドベンチャーパック」にて「パルモン」「トゲモン」「リリモン」を担当させていただきました。仲良し2人の: 4
+- Battle 18: 4
+- D-Cyber - Chapter 06: 4
+- Saikyo Jump January 2023 Issue: 4
+- :File:Digimon series memorial book silphymon.jpg: 4
+- V-30: 4
+- Digimon Project 2021 - Episode 4: 4
+- Digimon Liberator - Episode 07 (Part 1): 4
+- V-20: 4
+- Ryo's Story!: 4
+- Digimon Liberator - Episode 22 (Part 2): 4
+- V-21: 4
+- D-Cyber - Chapter 07: 4
+- V-50: 4
+- V-15: 4
+- Digimon Liberator - Episode 08 (Part 1): 4
+- Sx-40: 4
+- D-Cyber - Chapter 11: 4
+- D-Spirit: 4
+- Digimon Liberator - Episode 21 (Part 2): 4
+- Geo Greymon: 4
+- EQ|Omega Blade: 4
+- "ナゾのデジモン(成長期)". しゃべってキャラ ミュージアム. Date unknown.: 4
+- w|Mechagodzilla#Shōwa period (1974-1975)|Mechagodzilla (1974): 4
+- SPα-009: 4
+- Sx-51: 4
+- M01: 3
+- XWM21: 3
+- This Agnimon is known in the game as Extra Agnimon (EXアグニモン EX Aguni: 3
+- Digivolving Series: 3
+- Bx-83: 3
+- w|King Ghidorah#Heisei era (1991–1998)|King Ghidorah (1991): 3
+- w|Gigan#Millennium era (2004)|Gigan (2004): 3
+- w|Mechagodzilla#Shōwa period (1974–1975)|Mechagodzilla (1974): 3
+- V-55: 3
+- Growmon: 3
+- This is an oversight in the PS5 and Xbox versions of the game, as the Steam vers: 3
+- Bx-78: 3
+- EQO|Omega Blade: 3
+- Goburimon: 3
+- This Wolfmon is known in the game as Extra Wolfmon (EXヴォルフモン EX Voru: 3
+- SPα-008: 3
+- Sx-93: 3
+- V-Tamer New Courage: 2
+- V-31: 2
+- V-27: 2
+- V-38: 2
+- V-53: 2
+- Battle 13: 2
+- Pulse-06: 2
+- Digimon Project 2021: 2
+- Battle 06: 2
+- Digimon Park: 2
+- D-Cyber - Chapter 02: 2
+- D-Cyber - Chapter 01: 2
+- Pulse-25: 2
+- V-Jump Magazine: 2
+- Chaos Dukemon: 2
+- This Guilmon is known as Extra Guilmon, a fiercer special version.: 2
+- Bx-6s: 2
+- Durandamon's Profile (V-Jump May 2017 Issue): 2
+- DEBUG.10: 2
+- Bx-121: 2
+- Battle 09: 2
+- Bx-59: 2
+- Digimon Chronicle - Chapter 2: 2
+- Digimon Profile: "Knight Digimon": 2
+- Sx-11: 2
+- D-Gather: 2
+- V-29: 2
+- DEBUG.26: 2
+- D-Cyber - Chapter 08: 2
+- SPα-007: 2
+- Sx-92: 2
+- デジモンウェブ公式 (@digimonweb_net). "#メリークリスマス 皆でジュレイモンを飾りつけして、綺麗なクリスマスツリーになりました 大きなクリス: 2
+- Digimon Bilievers: 2
+- DMJ-003: 2
+- 1-009: 2
+- Sx-12: 2
+- Digimon Profile #15: The Three Archangels and the Kernel: 2
+- 1-092: 2
+- 1-093: 2
+- Battle 11: 2
+- Pulse-22: 2
+- Pulse-21: 2
+- Battle 20: 2
+- Digimon ReCollection - Episode 4: 2
+- Digimon Battle: 2
+- Bx-46: 2
+- Bx-94: 2
+- Battle 12: 2
+- V-57: 2
+- url2|http://digimon.net/cat-digimon-dictionary/06-ha/hiandromon/index.html|Hi An: 1
+- Bx-161: 1
+- DCG|BT20|083: 1
+- dcghl|t=End of Your Turn: 1
+- dcghl|t=When Played: 1
+- Omekamon: 1
+- Omegamon (X-Antibody): 1
+- Dar-2: 1
+- Re-34: 1
+- D4-53: 1
+- 4-036 (DCDAPM): 1
+- Gabumon: 1
+- Cα-055: 1
+- Bx-136: 1
+- M03: 1
+- V-44: 1
+- HK-1: 1
+- Dar-1: 1
+- Battle_21: 1
+- Bx-90: 1
+- can turn any Lv.5 Digimon into a Lv.5 Scumon.: 1
+- Sx-18: 1
+- 1-110: 1
+- Mantaraymon (X-Antibody)'s Profile (Digimon Reference Book): 1
+- DR-1: 1
+- Sx-61: 1
+- SPα-002: 1
+- Bx-123: 1
+- Sx-98: 1
+- Shine Greymon: 1
+- Mirage Gaogamon: 1
+- Bx-97: 1
+- Bx-95: 1
+- Omega Shoutmon: 1
+- 1-076: 1
+- Digimon ReCollection - Episode 3: 1
+- Battle 15: 1
+- Gyukimon: 1
+- Sx-58: 1
+- EQO|Omega Blade|l=Imperialdramon: Paladin Mode: 1
+- Bx-82: 1
+- Sx-17: 1
+- Digimon Paradox - Episode 1: 1
+- Digimon Next: 1
+- SPα-005: 1
+- Sx-13: 1
