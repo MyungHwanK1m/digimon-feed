@@ -1,8 +1,22 @@
 {
-  "last_updated": "2026-10-21 07:50:50",
-  "total_count": 269,
+  "last_updated": "2026-10-21 10:08:55",
+  "total_count": 271,
   "retention_days": 90,
   "feeds": [
+    {
+      "id": "6469b00fa65895e27bedbb41500bc49c",
+      "title": "[해외뉴스] 디지몬, 프랜차이즈 30주년 기념 개시와 함께 2027년 신작 애니메이션 발표",
+      "snippet": "Digimon Announces New Anime for 2027 as Franchise Begins 30th Anniversary Celebration IMDb",
+      "source": "IMDb",
+      "source_badge": "해외뉴스",
+      "category": "game",
+      "category_name": "신작/공식속보",
+      "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE8zUEliNnlFM2VKVHBoOUlabGNmSklqZ0c3dmU0aEhWMmwwU3RSaG5hejRUT28yRGJaeFdpRFVDUW96aWFvQVc1UlRxczM5NXN4bGc?oc=5",
+      "image": null,
+      "timestamp": 1792529782,
+      "created_at": "2026-10-21 05:56",
+      "title_orig": "Digimon Announces New Anime for 2027 as Franchise Begins 30th Anniversary Celebration"
+    },
     {
       "id": "0ee8b501393a4d5e9e76550b2db69ec1",
       "title": "[공식 상품] 디지털 몬스터 WORLDMAKING 아크릴 스탠드 부스터 ver.5",
@@ -45,6 +59,21 @@
       "image": null,
       "timestamp": 1792464360,
       "created_at": "2026-10-20 11:46",
+      "title_orig": "デジモンシリーズの3作品目『デジモンテイマーズ』受注生産グッズが、10月20 日（火）より「クリフストア」にて予約受付開始！",
+      "title_ja": "デジモンシリーズの3作品目『デジモンテイマーズ』受注生産グッズが、10月20 日（火）より「クリフストア」にて予約受付開始！"
+    },
+    {
+      "id": "6e58e05fdc2138b956c75e0f6a4b9d33",
+      "title": "[일본뉴스] 디지몬 시리즈의 3번째 작품 『디지몬 테이머즈』 수주 생산 굿즈가 10월 20일(화)부터 「크리프 스토어」에서 예약 접수 시작!",
+      "snippet": "デジモンシリーズの3作品目『デジモンテイマーズ』受注生産グッズが、10月20 日（火）より「クリフストア」にて予約受付開始！ 時事ドットコム",
+      "source": "時事ドットコム",
+      "source_badge": "일본뉴스",
+      "category": "general",
+      "category_name": "일반/뉴스",
+      "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTE9DLV8tdDdOWTZaY1owNGtnQk4yVzJjX0JYaTVHX0pXNy14VGFFLVBLNVhYSXppdnZ5SjdweWpQcTJiRVhONTlkTi1YQXE0UkZrQ3RLdmxGN2h0Ry05Vldvb29Qa0NlSEZZVzc0?oc=5",
+      "image": null,
+      "timestamp": 1792464300,
+      "created_at": "2026-10-20 11:45",
       "title_orig": "デジモンシリーズの3作品目『デジモンテイマーズ』受注生産グッズが、10月20 日（火）より「クリフストア」にて予約受付開始！",
       "title_ja": "デジモンシリーズの3作品目『デジモンテイマーズ』受注生産グッズが、10月20 日（火）より「クリフストア」にて予約受付開始！"
     },
