@@ -1,8 +1,98 @@
 {
-  "last_updated": "2026-10-21 15:56:11",
-  "total_count": 272,
+  "last_updated": "2026-10-21 21:35:04",
+  "total_count": 284,
   "retention_days": 90,
   "feeds": [
+    {
+      "id": "877a13b6348e4786e9c7d7be6dfa9a4f",
+      "title": "[일본뉴스] 『디지몬 스토리 타임 스트레인저』가 세일에 첫 등장! 반남 세일 개최 중, PS판은 최대 84% 할인에 『철권 8』 등도 할인",
+      "snippet": "『デジモンストーリー タイムストレンジャー』がセールに初登場！バンナムのセールが開催中、PS版は最大84%オフで『鉄拳8』なども割引 インサイド",
+      "source": "インサイド",
+      "source_badge": "일본뉴스",
+      "category": "general",
+      "category_name": "일반/뉴스",
+      "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTE1DeVUyTzdlZ1h0Wm84cW9uTmNvdXlVajNtRnBwSDBCUHlOZ19aRHU1bnFXVTdBTnFKZEtTQXkyVVBwODF6aWowSm1RNzdpcEFQb01YS1hrclJZOHBMRjZXaWJ1S0ltQzR2Unc?oc=5",
+      "image": null,
+      "timestamp": 1792584903,
+      "created_at": "2026-10-21 21:15",
+      "title_orig": "『デジモンストーリー タイムストレンジャー』がセールに初登場！バンナムのセールが開催中、PS版は最大84%オフで『鉄拳8』なども割引",
+      "title_ja": "『デジモンストーリー タイムストレンジャー』がセールに初登場！バンナムのセールが開催中、PS版は最大84%オフで『鉄拳8』なども割引"
+    },
+    {
+      "id": "370b965b59dc86e769055e05a67ef8fc",
+      "title": "[일본뉴스] 『디지몬 스토리 타임 스트레인저』 Switch2판이 25% 할인으로 첫 세일. 『테일즈 오브 어라이즈』, 『모두의 골프 월드』 등 DL 소프트가 최대 84% 할인",
+      "snippet": "『デジモンストーリー タイムストレンジャー』Switch2版が25％オフで初セール。『テイルズ オブ アライズ』『みんゴルワールド』などDLソフトが最大84％オフ ファミ通",
+      "source": "ファミ通",
+      "source_badge": "일본뉴스",
+      "category": "general",
+      "category_name": "일반/뉴스",
+      "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTFBlZ2lyY1Q4RkU5TzdPaHFOMEk0dENNc2JxOFo1QVB2dkh6bG9fdW5UaE9FWjk0OExfM1NqS3o1VG5LbVlyNGVWM0FiYVIyN2t4RHgyd3JkSQ?oc=5",
+      "image": null,
+      "timestamp": 1792578000,
+      "created_at": "2026-10-21 19:20",
+      "title_orig": "『デジモンストーリー タイムストレンジャー』Switch2版が25％オフで初セール。『テイルズ オブ アライズ』『みんゴルワールド』などDLソフトが最大84％オフ",
+      "title_ja": "『デジモンストーリー タイムストレンジャー』Switch2版が25％オフで初セール。『テイルズ オブ アライズ』『みんゴルワールド』などDLソフトが最大84％オフ"
+    },
+    {
+      "id": "0f0b0a0039dc9ce5a3186f892f66af96",
+      "title": "[일본뉴스] 반다이 남코 엔터테인먼트, 다운로드판 세일 개최! 닌텐도 e숍에 『디지몬 스토리 타임 스트레인저』 첫 등장",
+      "snippet": "バンダイナムコENT、ダウンロード版のセールを開催！ニンテンドーeショップで『デジモンストーリー タイムストレンジャー』が初登場 gamebiz【ゲームビズ】",
+      "source": "gamebiz【ゲームビズ】",
+      "source_badge": "일본뉴스",
+      "category": "general",
+      "category_name": "일반/뉴스",
+      "link": "https://news.google.com/rss/articles/CBMiREFVX3lxTE1sNWFfa3hYZldaNm8xNUVxY0RxTkd4X1M3SlR2VEtQR0VxTVlVbXVWRFJTX0trQUEtY29PWkpEMVhDSlY4?oc=5",
+      "image": null,
+      "timestamp": 1792570500,
+      "created_at": "2026-10-21 17:15",
+      "title_orig": "バンダイナムコENT、ダウンロード版のセールを開催！ニンテンドーeショップで『デジモンストーリー タイムストレンジャー』が初登場",
+      "title_ja": "バンダイナムコENT、ダウンロード版のセールを開催！ニンテンドーeショップで『デジモンストーリー タイムストレンジャー』が初登場"
+    },
+    {
+      "id": "ad2b4583eb9ef77b5690b2310ddc231d",
+      "title": "[일본뉴스] 【최대 84% 할인】 『디지몬 스토리』와 『테일즈』가 특가. 반남 DL판 세일 개최",
+      "snippet": "【最大84％OFF】『デジモンストーリー』や『テイルズ』がお買い得。バンナムDL版セール開催 電撃オンライン",
+      "source": "電撃オンライン",
+      "source_badge": "일본뉴스",
+      "category": "general",
+      "category_name": "일반/뉴스",
+      "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9uNHZ4ZTFTQWhRQnRlVHE0VndPT1NFa3hvUGRFMEhQSHMwNkVWX0hTNTMxTXlmMzNXdnVkaHFxNUZzTW9VdXpqQzZEWDB6OS1zT1dOMDB0SGtnZw?oc=5",
+      "image": null,
+      "timestamp": 1792565400,
+      "created_at": "2026-10-21 15:50",
+      "title_orig": "【最大84％OFF】『デジモンストーリー』や『テイルズ』がお買い得。バンナムDL版セール開催",
+      "title_ja": "【最大84％OFF】『デジモンストーリー』や『テイルズ』がお買い得。バンナムDL版セール開催"
+    },
+    {
+      "id": "6a7fc69d3c4671d33f52a1c3a03e453e",
+      "title": "[일본뉴스] 【디지몬 UP】 개최 중인 가샤(가챠) 정보 정리",
+      "snippet": "【デジモンUP】開催中のガシャ(ガチャ)情報まとめ GameWith",
+      "source": "GameWith",
+      "source_badge": "일본뉴스",
+      "category": "general",
+      "category_name": "일반/뉴스",
+      "link": "https://news.google.com/rss/articles/CBMiTEFVX3lxTFBQMU9WRFVqRlRId3hPVWRRd1BPaVU4U3NqZkFZQmo5a3ZDaTgzWWNpOHdqRWV1d1BYUkw4U054TUVCd1dmdExxc1BHckg?oc=5",
+      "image": null,
+      "timestamp": 1792563805,
+      "created_at": "2026-10-21 15:23",
+      "title_orig": "【デジモンUP】開催中のガシャ(ガチャ)情報まとめ",
+      "title_ja": "【デジモンUP】開催中のガシャ(ガチャ)情報まとめ"
+    },
+    {
+      "id": "96a42f2ce8a8027a4ddc662d570d0577",
+      "title": "[일본뉴스] 다운로드판 게임이 최대 84% 할인되는 세일 개최 중! 『디지몬 스토리 타임 스트레인저』가 닌텐도 e숍에 첫 등장!",
+      "snippet": "ダウンロード版ゲームが最大84％OFFとなるセールが開催中！『デジモンストーリー タイムストレンジャー』がニンテンドーeショップに初登場！ PR TIMES",
+      "source": "PR TIMES",
+      "source_badge": "일본뉴스",
+      "category": "general",
+      "category_name": "일반/뉴스",
+      "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTE42Y0NVQUxHUFFMU25iTWNLZEpScVpNX2xDNEkzVXBIak1sbTk5OE1CZEdFLUNGUmRyT3dzWFB1NEhjdE9aSUxfYzMydkVEcEkxYlVZdWpsLWRpSGFHY1NINmNOYnc0UnpKUEE?oc=5",
+      "image": null,
+      "timestamp": 1792558802,
+      "created_at": "2026-10-21 14:00",
+      "title_orig": "ダウンロード版ゲームが最大84％OFFとなるセールが開催中！『デジモンストーリー タイムストレンジャー』がニンテンドーeショップに初登場！",
+      "title_ja": "ダウンロード版ゲームが最大84％OFFとなるセールが開催中！『デジモンストーリー タイムストレンジャー』がニンテンドーeショップに初登場！"
+    },
     {
       "id": "6469b00fa65895e27bedbb41500bc49c",
       "title": "[해외뉴스] 디지몬, 프랜차이즈 30주년 기념 개시와 함께 2027년 신작 애니메이션 발표",
@@ -136,6 +226,21 @@
       "created_at": "2026-10-19 12:29",
       "title_orig": "【デジモンUP】食事のやり方とレベル上げ | おすすめ食事効果",
       "title_ja": "【デジモンUP】食事のやり方とレベル上げ | おすすめ食事効果"
+    },
+    {
+      "id": "b25b33ae493c821646bbee11389f4cfb",
+      "title": "[일본뉴스] 【디지몬 UP】 반격 타입 추천 빌드",
+      "snippet": "【デジモンUP】反撃タイプのおすすめビルド GameWith",
+      "source": "GameWith",
+      "source_badge": "일본뉴스",
+      "category": "general",
+      "category_name": "일반/뉴스",
+      "link": "https://news.google.com/rss/articles/CBMiTEFVX3lxTE1Oc0txYjBGQ2IxUVpLWDdoOW1nYURZSFpiTG9LWER0NGp5X3BJSEtUQjBLdnB4OU9CcDVSWVVkUEZfWlNlX2JQcjZLN0c?oc=5",
+      "image": null,
+      "timestamp": 1792378896,
+      "created_at": "2026-10-19 12:01",
+      "title_orig": "【デジモンUP】反撃タイプのおすすめビルド",
+      "title_ja": "【デジモンUP】反撃タイプのおすすめビルド"
     },
     {
       "id": "6e59dee8c07d3186b03c22bc9ff7f1e7",
@@ -935,19 +1040,19 @@
       "title_ja": "【デジモンUP】デジヴァイスの使い方 | フォルム変更"
     },
     {
-      "id": "6a7fc69d3c4671d33f52a1c3a03e453e",
-      "title": "[일본뉴스] 【디지몬 UP】 개최 중인 가샤(가챠) 정보 정리",
-      "snippet": "【デジモンUP】開催中のガシャ(ガチャ)情報まとめ GameWith",
+      "id": "33ee6e821bd5a334e563c24c50dc6bce",
+      "title": "[일본뉴스] 【디지몬 UP】 전력 올리는 법 | 육성 요소 정리",
+      "snippet": "【デジモンUP】戦力の上げ方 | 育成要素まとめ GameWith",
       "source": "GameWith",
       "source_badge": "일본뉴스",
-      "category": "figure",
+      "category": "general",
       "category_name": "일반/뉴스",
-      "link": "https://news.google.com/rss/articles/CBMiTEFVX3lxTFBQMU9WRFVqRlRId3hPVWRRd1BPaVU4U3NqZkFZQmo5a3ZDaTgzWWNpOHdqRWV1d1BYUkw4U054TUVCd1dmdExxc1BHckg?oc=5",
+      "link": "https://news.google.com/rss/articles/CBMiTEFVX3lxTE9xaWx5RjNZd3JNMmdwQmZNV21scVJiVExvWnNZMFNKOWZnU1ktakNIbU9XbmdkRnBxLTVianRUS3BOQjg1ZnAxOWhWYlg?oc=5",
       "image": null,
-      "timestamp": 1792057796,
+      "timestamp": 1792057784,
       "created_at": "2026-10-15 18:49",
-      "title_orig": "【デジモンUP】開催中のガシャ(ガチャ)情報まとめ",
-      "title_ja": "【デジモンUP】開催中のガシャ(ガチャ)情報まとめ"
+      "title_orig": "【デジモンUP】戦力の上げ方 | 育成要素まとめ",
+      "title_ja": "【デジモンUP】戦力の上げ方 | 育成要素まとめ"
     },
     {
       "id": "5e13c54699a4ca612e8caf9f782052de",
@@ -1472,6 +1577,19 @@
       "image": null,
       "timestamp": 1791859839,
       "created_at": "2026-10-13 11:50"
+    },
+    {
+      "id": "5cf01acf959906bd58559141f20774df",
+      "title": "[네이버] 디지몬 마스터즈 온라인",
+      "snippet": "디지몬 마스터즈 온라인 NAVER",
+      "source": "네이버 게임",
+      "source_badge": "네이버",
+      "category": "game",
+      "category_name": "게임/공식애니",
+      "link": "https://news.google.com/rss/articles/CBMidEFVX3lxTE1xSURIbmY0VFZNRlMwdnJjVTh4NW81dXF5ZXp1SWNqZG1YaEF5ZTJOSzRyZ2FMNzByT1NTbTNPd2pHNjExOUxHd0hhdGJLLVFQNjR2YUVMN3BoYUVTelk4Yzh3bXQ5WkwxXzVkRElaOE10X0lj?oc=5",
+      "image": null,
+      "timestamp": 1791856980,
+      "created_at": "2026-10-13 11:03"
     },
     {
       "id": "554ae7fc7acc742e594eaa64b4603314",
@@ -2011,6 +2129,19 @@
       "created_at": "2026-10-01 16:00"
     },
     {
+      "id": "aae49a6bc1445b862c06c3afb850771e",
+      "title": "[인스타] 메가박스 디지몬 극장판 보러 디덕들이랑 모였어요!! 각자 최애 포토티켓도 뽑아서 떼샷도 찍구요 영화 다 보구난 뒤 최애인형 떼샷!! 점심은 디덕들 사이에 소문타고있는 코시로항님 직장 톤테키야코우!! 맛있게 먹엇어요. 그리고 파티룸에 가서 디덕들끼리 퀴즈랑 게임",
+      "snippet": "인스타그램 디지몬 관련 공개 게시물입니다.",
+      "source": "Instagram",
+      "source_badge": "인스타그램",
+      "category": "figure",
+      "category_name": "피규어/굿즈",
+      "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE1wQm5LYnVBVlVHVzBxVnduZTNseVB0MThoU2J2bjFMZ212QWJhdWR1TkRLSHZVSy1LUF84bGQtT1A3ak9LQlp3LUxLNVRkTjZfTUE?oc=5",
+      "image": null,
+      "timestamp": 1790838000,
+      "created_at": "2026-10-01 16:00"
+    },
+    {
       "id": "cb83da67434740622ea57729350909fc",
       "title": "[인스타] 선물받은 자수 비니와 쿠키 🧵🪡🍪 메탈에테몬 티랑 같이 조합해서 써야겠다 !🩶 금손 @mazinga_31 님 ✨ 커스텀 쿠키는 @winnies.patisserie ✨ . . . #디지몬 #digimon #デジモン #otaku #키덜트",
       "snippet": "인스타그램 디지몬 관련 공개 게시물입니다.",
@@ -2125,12 +2256,25 @@
       "title_ja": "デジモン29周年【デジモン＆ニク】テーマ企画 第3弾"
     },
     {
+      "id": "39e19590541742a3ac1c3dd5a0a11729",
+      "title": "[인스타] 운명적 만남🫧 디지몬 너무 좋아해서 극장판 재개봉 보고 왔어요 극장판 작화 너무 좋고 아기 나리 태일 ㄱㅇㅇ,, #디지몬어드벤처 #운명적만남 #오일파스텔 #digimon #oilpastelart",
+      "snippet": "인스타그램 디지몬 관련 공개 게시물입니다.",
+      "source": "Instagram",
+      "source_badge": "인스타그램",
+      "category": "game",
+      "category_name": "게임/공식애니",
+      "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE9WWGVoUkM5RkhVYTRtSlM2OG92ckZuLXVMMG5STXB2VTk5OUM3c29fWlR1c3JFLXVGVzFyc1lfM3d0d2tNLWo2bElPRlRNNEJfMnc?oc=5",
+      "image": null,
+      "timestamp": 1790585317,
+      "created_at": "2026-09-28 17:48"
+    },
+    {
       "id": "0817dd3be73308b255656fe6f9913e7c",
       "title": "[해외뉴스] 컬러 디지몬 비트브레이크 에디션 버추얼 펫 3월 출시",
       "snippet": "Color Digimon Beatbreak Edition Virtual Pets Arrive in March Siliconera",
       "source": "Siliconera",
       "source_badge": "해외뉴스",
-      "category": "figure",
+      "category": "general",
       "category_name": "일반/뉴스",
       "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPSkp6YzVYRG1CemFCcENicFA4MXZfUG5kdkxIT3BTRkVVTlp0ZnpaNFZfSlktb3l4ZlFGVzJ6ZGl4TklRdWdaNE9vclVhZE5FdUhzRHVUcmxPeWVlTkJHQnBRTGdUbEdIVXlQNGgxa3ZPdDRZNVZ6WWhzN25kU2MwTmpFcFpxSlBXemxZbXd4RUtGZw?oc=5",
       "image": null,
@@ -2390,8 +2534,8 @@
     },
     {
       "id": "9a368b9ba1bd6ed4ddd576898731a288",
-      "title": "[디지카] 나의 건담 덱 | Egman 덱 빌더",
-      "snippet": "My Gundam Decks | Egman Deck Builder Egman Deck Builder",
+      "title": "[디지카] 내 건담 덱",
+      "snippet": "My Gundam Decks Egman Deck Builder",
       "source": "Egman Events",
       "source_badge": "디지카",
       "category": "card",
@@ -2400,7 +2544,7 @@
       "image": null,
       "timestamp": 1790373206,
       "created_at": "2026-09-26 06:53",
-      "title_orig": "My Gundam Decks | Egman Deck Builder"
+      "title_orig": "My Gundam Decks"
     },
     {
       "id": "5f9a600de67406bab373a5fc50677907",
@@ -2471,12 +2615,12 @@
     },
     {
       "id": "6a1c40604513cde450af98321c5ae41c",
-      "title": "[애니뉴스] 애니메이션 디지몬 비트브레이크, 신규 비주얼로 최종회 예고",
+      "title": "[해외뉴스] 애니메이션 디지몬 비트브레이크, 신규 비주얼로 최종회 예고",
       "snippet": "DIGIMON BEATBREAK Anime Teases Final Episode with New Visual Crunchyroll",
-      "source": "Crunchyroll News",
-      "source_badge": "애니뉴스",
-      "category": "game",
-      "category_name": "게임/공식애니",
+      "source": "Crunchyroll",
+      "source_badge": "해외뉴스",
+      "category": "general",
+      "category_name": "일반/뉴스",
       "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPQWkweThjT1RhVm9yWndZMUt0WXNaRzRyMEc5T0s0YVBlVldtOGt2bWN5RUx6c2IteU9ta0RzOHB6VVh6THNDUHpJVzNKWEhGendXdjJINE8yS0NfcVNKdGNqQ2czM1J0LU5WVF9uT2xuaFFTa0FUdERsWXhsMHpvVzZ0aEZpaTdVTGhwb3pIc1V3UzRBNEhnS19n?oc=5",
       "image": null,
       "timestamp": 1789974000,
@@ -2649,6 +2793,21 @@
       "image": null,
       "timestamp": 1789484400,
       "created_at": "2026-09-16 00:00"
+    },
+    {
+      "id": "b8305b5f5febab84b6412d788983b7b1",
+      "title": "[일본뉴스] 반프레스토 경품 「디지몬 DIGIVICE STAND! 아구몬」 디지바이스형 받침대의 제2탄 상품 이미지 공개!",
+      "snippet": "BANPRESTOプライズ「デジモン DIGIVICE STAND！アグモン」デジヴァイス型台座の第2弾商品画像公開！ 玩具人 TOY PEOPLE",
+      "source": "玩具人 TOY PEOPLE",
+      "source_badge": "일본뉴스",
+      "category": "general",
+      "category_name": "일반/뉴스",
+      "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE1IcHlNbjhZdHhJSWc0bzNJbXdJQ2RIR2wxT0hwYmdPRXh3WVAyXzNwSk9TNlk3UnYta0FHUC1VbzRFOEdLdHRMa0d6UWZqLVUw?oc=5",
+      "image": null,
+      "timestamp": 1789455600,
+      "created_at": "2026-09-15 16:00",
+      "title_orig": "BANPRESTOプライズ「デジモン DIGIVICE STAND！アグモン」デジヴァイス型台座の第2弾商品画像公開！",
+      "title_ja": "BANPRESTOプライズ「デジモン DIGIVICE STAND！アグモン」デジヴァイス型台座の第2弾商品画像公開！"
     },
     {
       "id": "0eda12f77cb754be90f43e1d82c167fe",
@@ -3250,6 +3409,20 @@
       "created_at": "2026-08-20 00:00"
     },
     {
+      "id": "087b432e8c688c8ac490b4afba5f676e",
+      "title": "[해외뉴스] 반프레스토, 신작 디지몬 DIGIVICE STAND! 엔젤몬 경품 피규어 공개! 상징적인 디지바이스 받침대가 특징",
+      "snippet": "BANPRESTO Unveils New Digimon DIGIVICE STAND! Angemon Prize Figure, Featuring an Iconic Digivice Base 玩具人 TOY PEOPLE",
+      "source": "玩具人 TOY PEOPLE",
+      "source_badge": "해외뉴스",
+      "category": "game",
+      "category_name": "신작/공식속보",
+      "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE5aUDFvMnI0ei1WM2pEcFBlYTRrcVpCUjNDMXZYbXFwX25XY21INlhqeG9EbHZwYWh3OEJ0YU1jYmlyQm9xVzQ2TllwSW9ab0VU?oc=5",
+      "image": null,
+      "timestamp": 1787122800,
+      "created_at": "2026-08-19 16:00",
+      "title_orig": "BANPRESTO Unveils New Digimon DIGIVICE STAND! Angemon Prize Figure, Featuring an Iconic Digivice Base"
+    },
+    {
       "id": "e84138a969f0b0a45e08469d1e39fe06",
       "title": "[루리웹] [디지몬 어드벤처 : 운명적 만남 & 우리들의 워 게임!] 스페셜 예고편...",
       "snippet": "루리웹 애니정보 디지몬 최신 소식입니다.",
@@ -3288,6 +3461,19 @@
       "image": null,
       "timestamp": 1787036400,
       "created_at": "2026-08-18 16:00"
+    },
+    {
+      "id": "5b7c717f31a99a684bb3ba0072a62457",
+      "title": "[인스타] '디지몬 어드벤처'가 더블 에디션으로 찾아온다💗 그 시절 함께한 우리들~ 모두 소환이야! 9월 16일 컴몬! #메가박스 단독 개봉",
+      "snippet": "인스타그램 디지몬 관련 공개 게시물입니다.",
+      "source": "Instagram",
+      "source_badge": "인스타그램",
+      "category": "game",
+      "category_name": "게임/공식애니",
+      "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE8xWHNTLUJ0Wlo4cmlaRlVhN2EtdlB1dEs1U09NNHlaVVczWnRKeHZfTkZLaHdrR3JpSnJyVGxZNXR1TVI5UVp4TG1SQ3g0Q1E3Vlp4bkpB?oc=5",
+      "image": null,
+      "timestamp": 1786950000,
+      "created_at": "2026-08-17 16:00"
     },
     {
       "id": "36e3ab128471667e8decf0be27c8c539",
@@ -3642,8 +3828,8 @@
     },
     {
       "id": "80736f9253ab4e3afa59df12aa1e59e1",
-      "title": "[디지카] 디지몬 토너먼트 결과 | Egman Deck Builder",
-      "snippet": "Digimon Tournament Results | Egman Deck Builder Egman Deck Builder",
+      "title": "[디지카] 디지몬 토너먼트 결과",
+      "snippet": "Digimon Tournament Results Egman Deck Builder",
       "source": "Egman Events",
       "source_badge": "디지카",
       "category": "card",
@@ -3652,21 +3838,7 @@
       "image": null,
       "timestamp": 1784820310,
       "created_at": "2026-07-24 00:25",
-      "title_orig": "Digimon Tournament Results | Egman Deck Builder"
-    },
-    {
-      "id": "c9fbc29f2ce2641731ee0212872f36c2",
-      "title": "[해외뉴스] 디지몬 테이머즈 애니메이션 25주년을 신규 일러스트로 기념",
-      "snippet": "Digimon Tamers Anime Celebrates 25 Years With New Illustration Crunchyroll",
-      "source": "Crunchyroll",
-      "source_badge": "해외뉴스",
-      "category": "general",
-      "category_name": "일반/뉴스",
-      "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxNNDFpSkh2UW51bm1xVFdQZnVvcmdzWVc0TEU1b2tWUDFZbTczUUlzWlBRaTlfRzNtTEpNTGk3bW41ZThDOVdpLUdpem5jSG85ZDlmeHNvXzljM1BzMFdaWVdNVDNYYmVCNzBxRzRhWE1VaS02NkRQMUFPNUdPRUpEb0Q4SVlsVVpIMms5SVNlNU01aHZ0YnZHNHBB?oc=5",
-      "image": null,
-      "timestamp": 1784790000,
-      "created_at": "2026-07-23 16:00",
-      "title_orig": "Digimon Tamers Anime Celebrates 25 Years With New Illustration"
+      "title_orig": "Digimon Tournament Results"
     },
     {
       "id": "b26050e3212d6cf67d75863741532b72",
