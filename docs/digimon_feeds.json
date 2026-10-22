@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-10-23 04:41:13",
-  "total_count": 307,
+  "last_updated": "2026-10-23 07:53:16",
+  "total_count": 315,
   "retention_days": 90,
   "feeds": [
     {
@@ -15,6 +15,21 @@
       "image": null,
       "timestamp": 1792675204,
       "created_at": "2026-10-22 22:20"
+    },
+    {
+      "id": "a18848c42ce8f1006454356732a4bb6e",
+      "title": "[일본뉴스] 【기간 한정 공개】 디지몬 유니버스 어플리 몬스터즈 제4화 「가장한 너를 잘 먹겠습니다! 카메라몬의 핼러윈 스캔들!」",
+      "snippet": "【期間限定公開】デジモンユニバース アプリモンスターズ 第4話「仮装のキミをうぃただきます！キャメラモンのハロウィンスキャンダル！」 YouTube",
+      "source": "YouTube",
+      "source_badge": "일본뉴스",
+      "category": "general",
+      "category_name": "일반/뉴스",
+      "link": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE01NWpJMDNmNVdJbDl0VkRwWERVaWpvTG5VWHhRRDBKSG12bWR6WVVNejJsTktHbUhoS3FkN1VqUUJCcm1Hem9pRUUxdm1oaVhjRG1sTndUVTJfRnk3?oc=5",
+      "image": null,
+      "timestamp": 1792663200,
+      "created_at": "2026-10-22 19:00",
+      "title_orig": "【期間限定公開】デジモンユニバース アプリモンスターズ 第4話「仮装のキミをうぃただきます！キャメラモンのハロウィンスキャンダル！」",
+      "title_ja": "【期間限定公開】デジモンユニバース アプリモンスターズ 第4話「仮装のキミをうぃただきます！キャメラモンのハロウィンスキャンダル！」"
     },
     {
       "id": "aa4e8d20a34ce1e6abc405aa1221bbf7",
@@ -286,8 +301,8 @@
     {
       "id": "0f0b0a0039dc9ce5a3186f892f66af96",
       "title": "[일본뉴스] 반다이 남코 엔터테인먼트, 다운로드판 세일 개최! 닌텐도 e숍에 『디지몬 스토리 타임 스트레인저』 첫 등장",
-      "snippet": "バンダイナムコENT、ダウンロード版のセールを開催！ニンテンドーeショップで『デジモンストーリー タイムストレンジャー』が初登場 gamebiz【ゲームビズ】",
-      "source": "gamebiz【ゲームビズ】",
+      "snippet": "バンダイナムコENT、ダウンロード版のセールを開催！ニンテンドーeショップで『デジモンストーリー タイムストレンジャー』が初登場 gamebiz",
+      "source": "gamebiz",
       "source_badge": "일본뉴스",
       "category": "general",
       "category_name": "일반/뉴스",
@@ -371,6 +386,19 @@
       "created_at": "2026-10-21 00:00",
       "title_orig": "第158回デジ民投票　結果発表！",
       "title_ja": "第158回デジ民投票　結果発表！"
+    },
+    {
+      "id": "f7f910757f97ab5127cca68a3129879e",
+      "title": "[인스타] 👍 #도쿄 #오다이바 #とうきょう#tokyo #デジモン",
+      "snippet": "인스타그램 디지몬 관련 공개 게시물입니다.",
+      "source": "Instagram",
+      "source_badge": "인스타그램",
+      "category": "sns",
+      "category_name": "SNS/해외",
+      "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE9OU3hZZ2tDc0VRaUswNmxfNURVV19yeHdCZjRLUDFPWjhrbzFtN1ZpQjFxcHFSYUF3bDBieHFVTVJtbEhndlAyWFFNb2xGVXdwUFE?oc=5",
+      "image": null,
+      "timestamp": 1792507242,
+      "created_at": "2026-10-20 23:40"
     },
     {
       "id": "0ee8b501393a4d5e9e76550b2db69ec1",
@@ -463,6 +491,21 @@
       "title_ja": "デジモンシリーズの3作品目『デジモンテイマーズ』受注生産グッズが、10月20 日（火）より「クリフストア」にて予約受付開始！"
     },
     {
+      "id": "c4f77fed18259f044da9ffa0b9f4bc28",
+      "title": "[일본뉴스] 디지몬 시리즈의 3번째 작품 『디지몬 테이머즈』 수주 생산 굿즈가 10월 20일(화)부터 「크리프 스토어」에서 예약 접수 시작!",
+      "snippet": "デジモンシリーズの3作品目『デジモンテイマーズ』受注生産グッズが、10月20 日（火）より「クリフストア」にて予約受付開始！ Infoseek",
+      "source": "Infoseek",
+      "source_badge": "일본뉴스",
+      "category": "general",
+      "category_name": "일반/뉴스",
+      "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE9teTM4WUVtRDYwVlJNU0lkczJXWXR0emdsR0l3NWNNaWVZekp1WExyeHc2aXppZmY0bGY2eHRTbmt5OWIxbTJ1TlktOWpObF9RbUwxcDlmZVFnalFzYWZtVzJUTlFVaW9tcGsyeHRNZVRKQQ?oc=5",
+      "image": null,
+      "timestamp": 1792458000,
+      "created_at": "2026-10-20 10:00",
+      "title_orig": "デジモンシリーズの3作品目『デジモンテイマーズ』受注生産グッズが、10月20 日（火）より「クリフストア」にて予約受付開始！",
+      "title_ja": "デジモンシリーズの3作品目『デジモンテイマーズ』受注生産グッズが、10月20 日（火）より「クリフストア」にて予約受付開始！"
+    },
+    {
       "id": "6836e0850f10917e4446719f81d40cd3",
       "title": "[일본뉴스] 2026.10.23(금) 신상품 발매! 디지몬 테이머즈 『아크릴 카드』, 『푹신푹신 얼굴 캔뱃지』 등의 굿즈가 등장!",
       "snippet": "2026.10.23(金)新商品発売！デジモンテイマーズ 『アクリルカード』、『ふわふわお顔缶バッジ』などのグッズが登場！ 東映アニメーション",
@@ -476,6 +519,19 @@
       "created_at": "2026-10-19 23:35",
       "title_orig": "2026.10.23(金)新商品発売！デジモンテイマーズ 『アクリルカード』、『ふわふわお顔缶バッジ』などのグッズが登場！",
       "title_ja": "2026.10.23(金)新商品発売！デジモンテイマーズ 『アクリルカード』、『ふわふわお顔缶バッジ』などのグッズが登場！"
+    },
+    {
+      "id": "14322e37c625e95a6a2da2e4ee728905",
+      "title": "[인스타] 시크릿 공개된거 보니까 너무 탐나는데요..? #디지몬 #digimon #デジモン #toptoy #인형",
+      "snippet": "인스타그램 디지몬 관련 공개 게시물입니다.",
+      "source": "Instagram",
+      "source_badge": "인스타그램",
+      "category": "figure",
+      "category_name": "피규어/굿즈",
+      "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE14M0hnZk56Zy1WanR2Z2ZXM29PRTY4dVpUNXRtc1hoUktmazR0b2dJd2MtXy11dkJEYUNiR19lMkxGRG5ieUlRRGt2VUFtUlQyRnc?oc=5",
+      "image": null,
+      "timestamp": 1792418175,
+      "created_at": "2026-10-19 22:56"
     },
     {
       "id": "0753442eca4b621da99ba7916867d521",
@@ -1378,6 +1434,21 @@
       "title_ja": "＜デジモン＞「DIGIMON CONCERT」ビジュアル公開 総勢38キャラクターが正装で集結！ 宮崎歩＆谷本貴義出演"
     },
     {
+      "id": "51cf2940af489cc9db6de116d8bf63b1",
+      "title": "[일본뉴스] 애니메이션 「디지몬」 시리즈의 음악 이벤트, 키 비주얼에 작품을 뛰어넘은 38 캐릭터 집결 (코믹 나탈리)",
+      "snippet": "アニメ「デジモン」シリーズの音楽イベント、キービジュアルに作品超えた38キャラ集結（コミックナタリー） Yahoo!ニュース",
+      "source": "Yahoo!ニュース",
+      "source_badge": "일본뉴스",
+      "category": "general",
+      "category_name": "일반/뉴스",
+      "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTFB3dHZ5TW83TXRQMXpjNWRsSFlmd0swdTFtcmt6LWMyT1pJOTZvT2U0OXZSSzF4UlMtcFVwYVc1bmdfSFFUSGVsWHY5SU9aTFZRX09nczlFb1BWSFpTaUJIVGlneWo1emZrUDhObXFGeUhzQkNUT3V5eGNENWZQaVU?oc=5",
+      "image": null,
+      "timestamp": 1792054836,
+      "created_at": "2026-10-15 18:00",
+      "title_orig": "アニメ「デジモン」シリーズの音楽イベント、キービジュアルに作品超えた38キャラ集結（コミックナタリー）",
+      "title_ja": "アニメ「デジモン」シリーズの音楽イベント、キービジュアルに作品超えた38キャラ集結（コミックナタリー）"
+    },
+    {
       "id": "5358cd3c4f310fe2ff771ed0865ba17b",
       "title": "[일본뉴스] 디지몬 시리즈의 역사를 \"음악\"으로 잇는 스페셜 콘서트 「DIGIMON CONCERT ～2026 Anniversary & BEATBREAK～」 키 비주얼 & 상세 정보 해금!",
       "snippet": "デジモンシリーズの歴史を\"音楽\"でつなぐスペシャルコンサート「DIGIMON CONCERT ～2026 Anniversary & BEATBREAK～」キービジュアル＆詳細情報解禁！ PR TIMES",
@@ -2253,6 +2324,20 @@
       "created_at": "2026-10-04 00:00"
     },
     {
+      "id": "0edebca8d56a387a370a01cc0ea21a12",
+      "title": "[해외뉴스] 애니메이션 디지몬 최고의 궁극체 진화 순위 10선",
+      "snippet": "10 Best Digimon Mega Evolutions in the Anime, Ranked Comic Book Resources",
+      "source": "Comic Book Resources",
+      "source_badge": "해외뉴스",
+      "category": "general",
+      "category_name": "일반/뉴스",
+      "link": "https://news.google.com/rss/articles/CBMib0FVX3lxTFA0RGFoN0VLLWpXdndXdE5oNEUyVjVLRlVUVm9BMURNektPejY4M2hrWThpMmJfQUFyVEIwWkQ0UVhYT20tZ2NCaEt2WHpneHc2RjYtUzlQbTE1UHpzNU1TMk1XdlJZMHp6Wi11ajd5bw?oc=5",
+      "image": null,
+      "timestamp": 1791010800,
+      "created_at": "2026-10-03 16:00",
+      "title_orig": "10 Best Digimon Mega Evolutions in the Anime, Ranked"
+    },
+    {
       "id": "c0368887e957b5adde01e483ab2e312e",
       "title": "[공식 상품] 디지몬 카드 게임 엑스트라 부스터 CHIVALROUS XIII 【EX-13】",
       "snippet": "발매 2026-10-03 · 240円(税込)",
@@ -2882,6 +2967,19 @@
       "timestamp": 1790427275,
       "created_at": "2026-09-26 21:54",
       "title_orig": "Hobby Shop] | Digimon Adventure Pair Acrylic Stand Yamato Ishida & Gabumon(Pre-order)"
+    },
+    {
+      "id": "2f1072e4a7a49d0c3fc6b49dfc2ae26f",
+      "title": "[인스타] 디지몬 비트브레이크 최종화 D-1 특별 일러스트 공개 #디지몬 #デジモン #digimon",
+      "snippet": "인스타그램 디지몬 관련 공개 게시물입니다.",
+      "source": "Instagram",
+      "source_badge": "인스타그램",
+      "category": "game",
+      "category_name": "게임/공식애니",
+      "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE51WjNsRjRaS1o3TC00ZzdFQXRTSjJGQ1kxQ0ZpaG9YZG55Z1FEOVlYNmlGRVR3ekR0NHRqWUNrTHIxZFF5T1VSLUVvZ2NzM2tRT2c?oc=5",
+      "image": null,
+      "timestamp": 1790416633,
+      "created_at": "2026-09-26 18:57"
     },
     {
       "id": "9a368b9ba1bd6ed4ddd576898731a288",
@@ -4031,6 +4129,19 @@
       "created_at": "2026-08-08 16:00",
       "title_orig": "「デジモン」ファン投票企画の上位エピソードが「僕らが選んだベストアドベンチャー」として10月から放送決定",
       "title_ja": "「デジモン」ファン投票企画の上位エピソードが「僕らが選んだベストアドベンチャー」として10月から放送決定"
+    },
+    {
+      "id": "866ac798447f032395e62b9a49b830a9",
+      "title": "[인스타] 디지타마 저금통••💖 을 지키는 저주받은 가트몬 . . . #디지몬 #digimon #デジモン #デジモンアドベンチャー #디지몬굿즈",
+      "snippet": "인스타그램 디지몬 관련 공개 게시물입니다.",
+      "source": "Instagram",
+      "source_badge": "인스타그램",
+      "category": "figure",
+      "category_name": "피규어/굿즈",
+      "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFBnXzdOZ1hWVXprdGVhZ3JOQ1BSaHFOODNtdS1KYWVWVWxlZWpvbEVmbW90enI2NmNmdFZ1QkNEZC0xZVNWWmlhOTJYd0Viemc5Umc?oc=5",
+      "image": null,
+      "timestamp": 1786172400,
+      "created_at": "2026-08-08 16:00"
     },
     {
       "id": "fb48ef0bdc83ff728e77289160c89a43",
