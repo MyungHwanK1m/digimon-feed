@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-10-22 06:04:48",
-  "total_count": 274,
+  "last_updated": "2026-10-22 09:20:25",
+  "total_count": 280,
   "retention_days": 90,
   "feeds": [
     {
@@ -136,6 +136,21 @@
       "created_at": "2026-10-20 19:38",
       "title_orig": "デジタルモンスター WORLDMAKING ACRYLIC STAND ブースターver.5",
       "title_ja": "デジタルモンスター WORLDMAKING ACRYLIC STAND ブースターver.5"
+    },
+    {
+      "id": "815f1a92428676bba61341120f3d3d0f",
+      "title": "[일본뉴스] 디지털 몬스터 어드벤처 25주년 피규어 소라 디지털 몬스터 25주년 기념 디지몬 어드벤처 중국 한정 기념 비주얼 디자인 디지몬 어드벤처 02』 25주년을 기념하여 컬러 액정을 탑재한 「D-3",
+      "snippet": "デジタルモンスター アドベンチャー 25周年 フィギュア ソラ デジタルモンスター 25周年記念 デジモンアドベンチャー 中国限定 記念ビジュアル柄 デジモンアドベンチャー02』25周年を記念してカラー液晶搭載の「D-3 www.mtv-h",
+      "source": "www.mtv-handball.com",
+      "source_badge": "일본뉴스",
+      "category": "game",
+      "category_name": "신작/공식속보",
+      "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTE9yZVYyNlAyYkt5Wk53OW9KY211cHl2SVpzN0ozeDhFTDZua1h1TzRFUmxPRnc1RXVpVWpFSHBEZ2JnamV4MERWS2NSdmF1MFpUMkZ5VjRvQUFUeENsb3NfWVZpeWFQeVhJMTRJanBjbFU?oc=5",
+      "image": null,
+      "timestamp": 1792491635,
+      "created_at": "2026-10-20 19:20",
+      "title_orig": "デジタルモンスター アドベンチャー 25周年 フィギュア ソラ デジタルモンスター 25周年記念 デジモンアドベンチャー 中国限定 記念ビジュアル柄 デジモンアドベンチャー02』25周年を記念してカラー液晶搭載の「D-3",
+      "title_ja": "デジタルモンスター アドベンチャー 25周年 フィギュア ソラ デジタルモンスター 25周年記念 デジモンアドベンチャー 中国限定 記念ビジュアル柄 デジモンアドベンチャー02』25周年を記念してカラー液晶搭載の「D-3"
     },
     {
       "id": "40b10f68829ddd056bc4c9527c5c0125",
@@ -1918,6 +1933,20 @@
       "created_at": "2026-10-05 16:00"
     },
     {
+      "id": "a8b5bad80c09dfbf09c1dfd94ee39aab",
+      "title": "[디지카] 덱 정보",
+      "snippet": "Deck Information digimon card meta",
+      "source": "Digimon Meta",
+      "source_badge": "디지카",
+      "category": "card",
+      "category_name": "카드게임(TCG)",
+      "link": "https://news.google.com/rss/articles/CBMi8gNBVV95cUxQZmJ4dm1IZHBXUlk0Y3FUWElOOVBGNnNJTVJSdnAwWVNkc2s0MDJuby0wZHUwb3Jsb1M5eTFGcU9oSElBYzVhZ2xZelQxYjJBeHBIZGFqRDJnNUJPU2hUVWlNQW9VNDZqLVJ3emhUUDk3VEpqYXNKd29tSUttQXhQQVg0UmtyMU5GTFl3Snh1VDg2Mk03cHNXZ2d0WDRrLXBuV2RPenloYlhzejVQUFB1NGZFMUR4UWFlRGNmYUdoVHU4MXNyUFNtYnFqak1yU1VfaDdvYlF2YXZGNmlMQTExM25zVnFTNEtxWW05MzJHYS11TUJwd3hjQ1JBLWhERVR3cFg1RmhCQzdJbjZYMmpWd2h2WWhsVVBTRkhvOHRQaEZxVVVVVlEzMENiSkV6a3BUcW1RSVZGZkNoS0cxTGVWSVJWYjRmZmw1T3JTbW9qcVFsamdfNWZoUGwxcThLZFhtUWlMY2gxUjFSdVZQMFVfSFhHU1dnWFR5aVNoYzNLUnZEZ3o4QnNsMFdHZkUwTC12UlhQcW15SXFLeURydHpMSDRfTHdQQXpZR19iOU9wU0hxMnE1MVBla1ctQUhPMHY1ZVNodVNveExXYTNOVEVDOFpTRnNtRkxSbHhPbWpuVlg0QXlfVFRTN2NMOXFHMGpHQVE?oc=5",
+      "image": null,
+      "timestamp": 1791183600,
+      "created_at": "2026-10-05 16:00",
+      "title_orig": "Deck Information"
+    },
+    {
       "id": "9d3c3d31e6adc6a0bd4ac7f5189c620b",
       "title": "[일본뉴스] 애니메이션 『디지몬』 걸작선 『우리가 선택한 베스트 어드벤처』 오늘(10/4) 아침 9시부터 방송. 시리즈 초기 4개 작품에서 인기 에피소드를 엄선",
       "snippet": "アニメ『デジモン』傑作選『僕らが選んだベストアドベンチャー』本日（10/4）朝9時より放送。シリーズ初期4作品から人気エピソードを厳選 ファミ通",
@@ -2056,6 +2085,21 @@
       "created_at": "2026-10-02 16:00",
       "title_orig": "『デジモンストーリー タイムストレンジャー』1周年。“過去と未来”、“人間世界と異世界”を舞台にシリーズ最多の450体以上のデジモンが登場【今日は何の日？】",
       "title_ja": "『デジモンストーリー タイムストレンジャー』1周年。“過去と未来”、“人間世界と異世界”を舞台にシリーズ最多の450体以上のデジモンが登場【今日は何の日？】"
+    },
+    {
+      "id": "ac8be1565eed72204d0caaad1bd64ad7",
+      "title": "[일본뉴스] 『디지몬 스토리 타임 스트레인저』 1주년. “과거와 미래”, “인간 세계와 이세계”를 무대로 시리즈 최다 450체 이상의 디지몬이 등장【오늘은 무슨 날?】(패미통.com)",
+      "snippet": "『デジモンストーリー タイムストレンジャー』1周年。“過去と未来”、“人間世界と異世界”を舞台にシリーズ最多の450体以上のデジモンが登場【今日は何の日？】（ファミ通.com） Yahoo!ニュース",
+      "source": "Yahoo!ニュース",
+      "source_badge": "일본뉴스",
+      "category": "general",
+      "category_name": "일반/뉴스",
+      "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTFBIZlB6Y3dmREY4LXVpUUR0ZlJXaFdrYm9fMDg0YV9VcWVZWXNHMFVEUTNONl9vSG1LSUJDSElPRnZUbTh6YnBCNVpxeVRqYkFpbVRDWFZSZ1ZVeHdWRV9xaFdVM185eVp1bmxBaDc5MEo5M0V0Q1BlWXZWZmtwNDQ?oc=5",
+      "image": null,
+      "timestamp": 1790924400,
+      "created_at": "2026-10-02 16:00",
+      "title_orig": "『デジモンストーリー タイムストレンジャー』1周年。“過去と未来”、“人間世界と異世界”を舞台にシリーズ最多の450体以上のデジモンが登場【今日は何の日？】（ファミ通.com）",
+      "title_ja": "『デジモンストーリー タイムストレンジャー』1周年。“過去と未来”、“人間世界と異世界”を舞台にシリーズ最多の450体以上のデジモンが登場【今日は何の日？】（ファミ通.com）"
     },
     {
       "id": "bcc921907b294ccfa3123ad02969db2a",
@@ -2213,12 +2257,12 @@
     },
     {
       "id": "b33dfb5dd623425b68d3322c70f101a4",
-      "title": "[애니뉴스] 망가 플러스, 10월 2일 만화 『디지몬 에그스』 추가",
+      "title": "[해외뉴스] 망가 플러스, 10월 2일 만화 『디지몬 에그스』 추가",
       "snippet": "Manga Plus Adds Digimon Eggs Manga on October 2 Anime News Network",
       "source": "Anime News Network",
-      "source_badge": "애니뉴스",
-      "category": "game",
-      "category_name": "게임/공식애니",
+      "source_badge": "해외뉴스",
+      "category": "general",
+      "category_name": "일반/뉴스",
       "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxOY24tRi13LVJ0cW5POU55cWQtekw0SGVOaGRrUTYyUTJhZVFqRXViX0FqaV9keWVfZDRtMDJxN3FpQ2ZSYzZ1ZjMtMTlaaWR5TVdiRmc3UXpCYlJpRy05bEg5TFdaZXIzb21uN19yMklndUd6MmxlWVZkLVY0djBwdHZQODM2YVhxQ2JuaF9jQ25NWnRBRVI0dS1mUE5fNEdmcXFfR3J6NA?oc=5",
       "image": null,
       "timestamp": 1790665200,
@@ -2384,6 +2428,21 @@
       "created_at": "2026-09-27 16:00",
       "title_orig": "【アニメデジモン】ファン投票上位エピソードのリマスター放送、10月4日9時からスタート。最初は『デジモンアドベンチャー』1話から（投票9位）",
       "title_ja": "【アニメデジモン】ファン投票上位エピソードのリマスター放送、10月4日9時からスタート。最初は『デジモンアドベンチャー』1話から（投票9位）"
+    },
+    {
+      "id": "b5cba3e880ec13360ff574189a800e11",
+      "title": "[일본뉴스] TV 애니메이션 『DIGIMON BEATBREAK』 최종회 방송 기념! 극 중에서 활약한 디지몬을 수록한 「디지털 몬스터 COLOR」가 등장!",
+      "snippet": "TVアニメ『DIGIMON BEATBREAK』最終回放送記念！ 劇中で活躍したデジモンを収録した 「デジタルモンスターCOLOR」が登場！ Newscast.jp",
+      "source": "Newscast.jp",
+      "source_badge": "일본뉴스",
+      "category": "general",
+      "category_name": "일반/뉴스",
+      "link": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE5pMUtkNmVsQ3B6RGdwTm9FdzNOcHlRbXotMWZ3UnFvdWppRjhXZG1ZTlAxMFFDYlFtTUdTR1ZITVRUZ0U5YmJJTWE4bW1UemM?oc=5",
+      "image": null,
+      "timestamp": 1790492400,
+      "created_at": "2026-09-27 16:00",
+      "title_orig": "TVアニメ『DIGIMON BEATBREAK』最終回放送記念！ 劇中で活躍したデジモンを収録した 「デジタルモンスターCOLOR」が登場！",
+      "title_ja": "TVアニメ『DIGIMON BEATBREAK』最終回放送記念！ 劇中で活躍したデジモンを収録した 「デジタルモンスターCOLOR」が登場！"
     },
     {
       "id": "10dbfd08e2e1260cf5479157845b39ad",
@@ -2557,6 +2616,20 @@
       "image": null,
       "timestamp": 1790233200,
       "created_at": "2026-09-24 16:00"
+    },
+    {
+      "id": "5d2a82cd1330a2bb6570f307044b036e",
+      "title": "[해외뉴스] 애니메이션 역사상 가장 강한 디지몬 10선 순위",
+      "snippet": "10 Strongest Digimon in Anime History, Ranked Comic Book Resources",
+      "source": "Comic Book Resources",
+      "source_badge": "해외뉴스",
+      "category": "general",
+      "category_name": "일반/뉴스",
+      "link": "https://news.google.com/rss/articles/CBMib0FVX3lxTE8zSGlUN3lWSG80dGJ1ajcwQWExZWVOWWdsbmlKQTMtVDJpNm9DSVo3Z293TzFjWmpMU3VQSndTb21JbktMZThWdWNUMkdSMk9HVDZEaEpQaW1ZWnNBR0g0R3pveGVGeFNteUZHUS1KQQ?oc=5",
+      "image": null,
+      "timestamp": 1790233200,
+      "created_at": "2026-09-24 16:00",
+      "title_orig": "10 Strongest Digimon in Anime History, Ranked"
     },
     {
       "id": "b74a947906936d97e46a8ec74f369112",
@@ -3057,7 +3130,7 @@
       "snippet": "「神対応感謝」の声も、復刻デジヴァイスの通信不具合になぜアダプター配布で応じたのか shiritomo",
       "source": "shiritomo",
       "source_badge": "일본뉴스",
-      "category": "figure",
+      "category": "general",
       "category_name": "일반/뉴스",
       "link": "https://news.google.com/rss/articles/CBMiR0FVX3lxTE94emNQVGhfU2NMaDBJbUstZFFZQTNmSG00Qjdsc1NvR2JxZ0kxSWVKX3VxQWw3dmp6a0lWRkVWOVRWVmEwLWFF?oc=5",
       "image": null,
@@ -3367,7 +3440,7 @@
     },
     {
       "id": "96b295f957e4a6513b752217ca63a3fc",
-      "title": "[일본뉴스] プヨモン | CHARACTER | DIGIMON BEATBREAK - デジモンビートブレイク",
+      "title": "[일본뉴스] 푸요몬 | CHARACTER | DIGIMON BEATBREAK - 디지몬 비트브레이크",
       "snippet": "プヨモン | CHARACTER | DIGIMON BEATBREAK - デジモンビートブレイク 東映アニメーション",
       "source": "東映アニメーション",
       "source_badge": "일본뉴스",
@@ -3376,7 +3449,9 @@
       "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxPZ0NPU2tiZHJhQU1ZMVZDQzkzM2FsVjRmdFVuYS1lTnU1aHNZYlNBUlVTRElOVmcwZnNFLS1MaXlnQ2t0RGREbGdFU3FUaF9hMnd1aktnalFmN2g0LXBIUHlwOVlucnhYRFhVYXM2SFBNOUQ2R2V2NDJFaFpJa2ZyTg?oc=5",
       "image": null,
       "timestamp": 1787446475,
-      "created_at": "2026-08-23 09:54"
+      "created_at": "2026-08-23 09:54",
+      "title_orig": "プヨモン | CHARACTER | DIGIMON BEATBREAK - デジモンビートブレイク",
+      "title_ja": "プヨモン | CHARACTER | DIGIMON BEATBREAK - デジモンビートブレイク"
     },
     {
       "id": "5e04b6dab7d73313fae246533d3a76a8",
@@ -3635,6 +3710,21 @@
       "created_at": "2026-08-05 16:00"
     },
     {
+      "id": "be7de6a2119ec2a2a51841ef5f6db741",
+      "title": "[일본뉴스] <디지몬> 「울트라맨」 컬래버 특별 디자인의 「디지털 몬스터 COLOR」 울트라맨, 울트라 괴수를 육성",
+      "snippet": "＜デジモン＞「ウルトラマン」コラボ 特別デザインの「デジタルモンスターCOLOR」 ウルトラマン、ウルトラ怪獣を育成 Yahoo!ニュース",
+      "source": "Yahoo!ニュース",
+      "source_badge": "일본뉴스",
+      "category": "general",
+      "category_name": "일반/뉴스",
+      "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxOcmp4bGk1dDFmcy1EU1AyTTlhaVRfM0tFWlh0STVNUW1UQzNkRWpGdUt1cWZtZEI1TGVScFlpTVFFeTFZbEd2TGIwaWZqdlFEVWkxMUw3YUZSRWdxeVFPQkt0cWxfQzk3MFVNRzhSb2FPNXp3QUhoQmVrSnlsbFV4MkdwRmhRaU9TOWlpZDFB?oc=5",
+      "image": null,
+      "timestamp": 1785913200,
+      "created_at": "2026-08-05 16:00",
+      "title_orig": "＜デジモン＞「ウルトラマン」コラボ 特別デザインの「デジタルモンスターCOLOR」 ウルトラマン、ウルトラ怪獣を育成",
+      "title_ja": "＜デジモン＞「ウルトラマン」コラボ 特別デザインの「デジタルモンスターCOLOR」 ウルトラマン、ウルトラ怪獣を育成"
+    },
+    {
       "id": "972b045e4598084773175c820bbfe91e",
       "title": "[해외뉴스] 신작 디지몬 애니메이션 2027년 첫 방영 확정 | Outlook Respawn",
       "snippet": "New Digimon Anime Confirmed for 2027 Debut | Outlook Respawn Outlook Respawn",
@@ -3744,10 +3834,10 @@
     },
     {
       "id": "8b7bcb31f27341d29a51bbd4a85c9975",
-      "title": "[애니뉴스] 신작 디지몬 애니메이션 프로젝트 2027년 방영 예정",
+      "title": "[해외뉴스] 신작 디지몬 애니메이션 프로젝트 2027년 방영 예정",
       "snippet": "New Digimon Anime Project to Air in 2027 Anime News Network",
       "source": "Anime News Network",
-      "source_badge": "애니뉴스",
+      "source_badge": "해외뉴스",
       "category": "game",
       "category_name": "신작/공식속보",
       "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxPajdIRGw2bTZuNnZ0Nm9aN084Zk03V2tYNVN6VVVxMG5nR05xRHBUR0FWUThqeklWTURtVmFMUlZucFE5WXozUFpIMVlNMTRhQ3NwRWE5RlF2MmFJak1tOWQ4QzQ0WlhPZEVsZnlGZmFocDRhd1djcGkzdDk3dl80LXFQc2txWE9rN21SMmFseW1hMjVxbDBaQXdsdEVBQQ?oc=5",
