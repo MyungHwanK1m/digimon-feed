@@ -1,8 +1,21 @@
 {
-  "last_updated": "2026-10-22 14:37:34",
-  "total_count": 286,
+  "last_updated": "2026-10-22 19:54:39",
+  "total_count": 296,
   "retention_days": 90,
   "feeds": [
+    {
+      "id": "a45d4aa8b0c75c1a3552ca856729cba9",
+      "title": "[해외뉴스] A Fan Remake of Digimon World For PlayStation 1 Is On Its Way",
+      "snippet": "A Fan Remake of Digimon World For PlayStation 1 Is On Its Way Retro Dodo",
+      "source": "Retro Dodo",
+      "source_badge": "해외뉴스",
+      "category": "general",
+      "category_name": "일반/뉴스",
+      "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQMFlHSG5iNm1yTXlQS2UyaW9peHcwUmV3NWE4MG56QlNwazItOTRCZEFpeXRWdXVmdWpJRnNpc1JkRmVVQ0RCdjF0MnB2YkdyX3pQaW9CUVRMczlHUFBhZWhKdG95dGRZSkh3VTZtbUtCaHBQLTRnMUp2Q282bFcxVHJPdkxHTDQ1NzNvNA?oc=5",
+      "image": null,
+      "timestamp": 1792660923,
+      "created_at": "2026-10-22 18:22"
+    },
     {
       "id": "6657d7b9c218273272f43416a442cd23",
       "title": "[일본뉴스] 최대 84% OFF! 반다이 남코의 DL판 게임 세일, 『디지몬 스토리 타임 스트레인저』가 닌텐도 e숍에 첫 등장 10월 21일부터",
@@ -34,6 +47,19 @@
       "title_ja": "PHP騒動『サマーウォーズ』『デジモン』連想で話題 細田守作品の世界と同じく大混乱「オメガモン頑張って!」"
     },
     {
+      "id": "10fbd85a35bb305dcefd2a10b277ad12",
+      "title": "[일본뉴스] 【デジモンUP】ウォーグレイモン(SP Ver.)は引くべき？",
+      "snippet": "【デジモンUP】ウォーグレイモン(SP Ver.)は引くべき？ GameWith",
+      "source": "GameWith",
+      "source_badge": "일본뉴스",
+      "category": "general",
+      "category_name": "일반/뉴스",
+      "link": "https://news.google.com/rss/articles/CBMiTEFVX3lxTE8xcXZjR05yd0pQM3BjWGhPbkpGSUx2Rmo0M2RpWXRPUFExMEVscGZiSl80eXEwVm95QzByYW5feXhUb1p5ZU5maEd0UWs?oc=5",
+      "image": null,
+      "timestamp": 1792631928,
+      "created_at": "2026-10-22 10:18"
+    },
+    {
       "id": "877a13b6348e4786e9c7d7be6dfa9a4f",
       "title": "[일본뉴스] 『디지몬 스토리 타임 스트레인저』가 세일에 첫 등장! 반남 세일 개최 중, PS판은 최대 84% 할인에 『철권 8』 등도 할인",
       "snippet": "『デジモンストーリー タイムストレンジャー』がセールに初登場！バンナムのセールが開催中、PS版は最大84%オフで『鉄拳8』なども割引 インサイド",
@@ -47,6 +73,19 @@
       "created_at": "2026-10-21 21:15",
       "title_orig": "『デジモンストーリー タイムストレンジャー』がセールに初登場！バンナムのセールが開催中、PS版は最大84%オフで『鉄拳8』なども割引",
       "title_ja": "『デジモンストーリー タイムストレンジャー』がセールに初登場！バンナムのセールが開催中、PS版は最大84%オフで『鉄拳8』なども割引"
+    },
+    {
+      "id": "35709b5d2e0a8638dad8f0a405c859d4",
+      "title": "[일본뉴스] 『デジモンストーリー タイムストレンジャー』がセールに初登場！バンナムのセールが開催中、PS版は最大84％オフで『鉄拳8』なども割引 (インサイド)",
+      "snippet": "『デジモンストーリー タイムストレンジャー』がセールに初登場！バンナムのセールが開催中、PS版は最大84％オフで『鉄拳8』なども割引 (インサイド) Yahoo!ニュース",
+      "source": "Yahoo!ニュース",
+      "source_badge": "일본뉴스",
+      "category": "general",
+      "category_name": "일반/뉴스",
+      "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQTjFOMXExbHY1aTY0V2MzakVjYno4NjI5d3h1NG1uUm5ic21pQVE5NmlzSy1hS1N4eEM0bFJ3N2RHNXpFOEJSNGNEOFVLZDI4VHExclJRc1ZHRHlvRlRvZXVvX0NMaWowMUR6NWxyUTdWY3ByazhhNGRHQnhCVnhpUVVXWF9mcE9uSlJiLTV3?oc=5",
+      "image": null,
+      "timestamp": 1792584903,
+      "created_at": "2026-10-21 21:15"
     },
     {
       "id": "370b965b59dc86e769055e05a67ef8fc",
@@ -457,6 +496,19 @@
       "image": null,
       "timestamp": 1792158398,
       "created_at": "2026-10-16 22:46"
+    },
+    {
+      "id": "c7c8490ae93779f9fe5e3649740838a2",
+      "title": "[하비뉴스] デジモンアドベンチャー キラキラ缶バッジ 和モダンVer. A 8個入りBOX[KADOKAWA]《０１月予約》",
+      "snippet": "デジモンアドベンチャー キラキラ缶バッジ 和モダンVer. A 8個入りBOX[KADOKAWA]《０１月予約》 あみあみ",
+      "source": "아미아미",
+      "source_badge": "하비뉴스",
+      "category": "figure",
+      "category_name": "피규어/굿즈",
+      "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE12UVlrQWtFUlpVSWx1Ymk0Skg2N1ItRWVucjRESDFIelhiWGppNzJFUVdxLU5LLW50NGtNVzRSZlJqOUFtNzVENm1ZbnBVTVFoeEMyWW82ZmhYTXc4V0xSX0dSZm9mQzJWR2NQNw?oc=5",
+      "image": null,
+      "timestamp": 1792154981,
+      "created_at": "2026-10-16 21:49"
     },
     {
       "id": "dfccebde6dc8aca5a0d2a8914f7fecd2",
@@ -1924,6 +1976,19 @@
       "title_orig": "Digimon World Re:Digitize: Decode [Taiga] Part 15 Tsukaimon joins the City!"
     },
     {
+      "id": "8b11a4af5b48545479e50db9c685ea7a",
+      "title": "[일본뉴스] 『デジモン』ダウンロード版ゲームが最大約50%オフに。バンダイナムコエンターテインメントが秋のセールを開催中。PS5『タイムストレンジャー』は20%オフ、スイッチは『ハッカーズメモリー』が46％オフ",
+      "snippet": "『デジモン』ダウンロード版ゲームが最大約50%オフに。バンダイナムコエンターテインメントが秋のセールを開催中。PS5『タイムストレンジャー』は20%オフ、スイッチは『ハッカーズメモリー』が46％オフ 電ファミニコゲーマー",
+      "source": "電ファミニコゲーマー",
+      "source_badge": "일본뉴스",
+      "category": "general",
+      "category_name": "일반/뉴스",
+      "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9tUmR3bHFUelJTQmFTcEFBTnpEV3RKVTc2SjQzVkFadDZBUTExdUNxU1oxVlhtei02S01zdTA3aHVfUmdMOUIyME1relVCSzE2N3NoRU9wTXcyUQ?oc=5",
+      "image": null,
+      "timestamp": 1791356400,
+      "created_at": "2026-10-07 16:00"
+    },
+    {
       "id": "ba091baf0b45ce64835d5801715996e8",
       "title": "[해외뉴스] 『디지몬 스토리: 타임 스트레인저』의 체험판을 지금 닌텐도 스위치 및 닌텐도 스위치 2에서 플레이할 수 있습니다!",
       "snippet": "DIGIMON STORY TIME STRANGER’s demo is now available on Nintendo Switch and Nintendo Switch 2! Bandai Namco Eu",
@@ -2230,6 +2295,19 @@
       "created_at": "2026-10-01 16:00"
     },
     {
+      "id": "8a8d8e3f5ec70506050d03ebbfcc88e9",
+      "title": "[인스타] 3주차 현장 특전 공개!👾 우리의 시작이었던 〈운명적 만남〉 그리고 전설의 〈우리들의 워 게임!〉까지! 소장 욕구🔥 A3 한글로고 포스터로 다시 만나요! 10/3(토)부터 선착순 증정! 진행 극장 확인하고 예매 GO #디지몬 #디지몬어드벤처 #디지몬어드벤처극장판",
+      "snippet": "인스타그램 디지몬 관련 공개 게시물입니다.",
+      "source": "Instagram",
+      "source_badge": "인스타그램",
+      "category": "game",
+      "category_name": "게임/공식애니",
+      "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE9ldGl3UHpCYl9tNHRnNnRBR2JabEpXMWhSVjJoQ1NGa182V211TlZhRVFMd0RTOGRsTXhSLXNza3Bsd0VUOS1idXVxSlFtbEpteEE?oc=5",
+      "image": null,
+      "timestamp": 1790838000,
+      "created_at": "2026-10-01 16:00"
+    },
+    {
       "id": "cb83da67434740622ea57729350909fc",
       "title": "[인스타] 선물받은 자수 비니와 쿠키 🧵🪡🍪 메탈에테몬 티랑 같이 조합해서 써야겠다 !🩶 금손 @mazinga_31 님 ✨ 커스텀 쿠키는 @winnies.patisserie ✨ . . . #디지몬 #digimon #デジモン #otaku #키덜트",
       "snippet": "인스타그램 디지몬 관련 공개 게시물입니다.",
@@ -2313,6 +2391,19 @@
       "timestamp": 1790665200,
       "created_at": "2026-09-29 16:00",
       "title_orig": "Manga Plus Adds Digimon Eggs Manga on October 2"
+    },
+    {
+      "id": "4c03c7ed2b4c46049e4796b48b919976",
+      "title": "[일본뉴스] 『デジモン』「僕らが選んだベストアドベンチャー」メインPV＆放送情報解禁",
+      "snippet": "『デジモン』「僕らが選んだベストアドベンチャー」メインPV＆放送情報解禁 アニメイトタイムズ",
+      "source": "アニメイトタイムズ",
+      "source_badge": "일본뉴스",
+      "category": "game",
+      "category_name": "신작/공식속보",
+      "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTE80ZVdZRWVQZ0szd3E3Mlo5RTh4OUxKNk01d1pkRXBvQXpOQTRRaTE4X21sUFNtenFNZXliR1JobG1TQ3J4d280QUxrSF9ZWk1MS1EwWjdrbkxiT3dqdEFENXplWFhkZXNWcFlZ?oc=5",
+      "image": null,
+      "timestamp": 1790665200,
+      "created_at": "2026-09-29 16:00"
     },
     {
       "id": "6a19b341063ea891705621bb1b305f12",
@@ -3046,6 +3137,19 @@
       "created_at": "2026-09-10 16:00"
     },
     {
+      "id": "06f2736a32da77ae0721684e52945b4a",
+      "title": "[해외뉴스] See Digital Monsters in Eggs With Digimon Mega Egg Figures",
+      "snippet": "See Digital Monsters in Eggs With Digimon Mega Egg Figures Siliconera",
+      "source": "Siliconera",
+      "source_badge": "해외뉴스",
+      "category": "general",
+      "category_name": "일반/뉴스",
+      "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNVndnWWUtVmcxOFA5QzdRTXpPY0IzWk1EWHdpYmlwLTU1dWJUZk95Q2o5TWtnemx4V2VmTHQ1Q2ZMVVc4ZTZ1ZTFoZ3ZHU1JJWWY3WlFmdnd4Qm9IeEJibHNzb184ajZTZFJsdjZXZDZpUnNjM0xKWU43TkNiTmM2ZXRmLVNEU2w2MWMwT3psTQ?oc=5",
+      "image": null,
+      "timestamp": 1789023600,
+      "created_at": "2026-09-10 16:00"
+    },
+    {
       "id": "00c559d339a7962a0ca8bce22f335ac4",
       "title": "[루리웹] 디지몬 게임 공식 어카운트. 게시물 기재 오류 사과",
       "snippet": "루리웹 콘솔뉴스 디지몬 최신 소식입니다.",
@@ -3636,6 +3740,19 @@
       "created_at": "2026-08-18 16:00"
     },
     {
+      "id": "870fcc18f2b4c9191cdb20e0929e679d",
+      "title": "릴리스 게임즈 'AFK: 새로운 여정', '디지몬 어드벤처' 협업 개막…콘텐츠 확장 박차",
+      "snippet": "릴리스 게임즈 'AFK: 새로운 여정', '디지몬 어드벤처' 협업 개막…콘텐츠 확장 박차 지디넷코리아",
+      "source": "지디넷코리아",
+      "source_badge": "뉴스",
+      "category": "game",
+      "category_name": "게임/공식애니",
+      "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE9UT09FVVBxbE1zb0hKS0JlbVFSaHJSVzdPQm4zRUU1cUlERW9BVVp3VnhpQ0dVMWRjcHd6T0Z3ODdMNjNQTmpKcTRBamVidXA3cU1MWTJn?oc=5",
+      "image": null,
+      "timestamp": 1787036400,
+      "created_at": "2026-08-18 16:00"
+    },
+    {
       "id": "5b7c717f31a99a684bb3ba0072a62457",
       "title": "[인스타] '디지몬 어드벤처'가 더블 에디션으로 찾아온다💗 그 시절 함께한 우리들~ 모두 소환이야! 9월 16일 컴몬! #메가박스 단독 개봉",
       "snippet": "인스타그램 디지몬 관련 공개 게시물입니다.",
@@ -3730,6 +3847,19 @@
       "created_at": "2026-08-09 16:00"
     },
     {
+      "id": "1959ac801e3bbdb501e9ed881e67f8f7",
+      "title": "[일본뉴스] 「デジモン」ファン投票企画の上位エピソードが「僕らが選んだベストアドベンチャー」として10月から放送決定",
+      "snippet": "「デジモン」ファン投票企画の上位エピソードが「僕らが選んだベストアドベンチャー」として10月から放送決定 アニメハック",
+      "source": "アニメハック",
+      "source_badge": "일본뉴스",
+      "category": "general",
+      "category_name": "일반/뉴스",
+      "link": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE91UXB0a0h0aW1zZm50LVJ5dWljSFViVDJnbU5uektMX2k4RzdZMmhZWmpIWmx5bXYzTEZRZkxpQTZzQ212N1dHRjNHSQ?oc=5",
+      "image": null,
+      "timestamp": 1786172400,
+      "created_at": "2026-08-08 16:00"
+    },
+    {
       "id": "fb48ef0bdc83ff728e77289160c89a43",
       "title": "[루리웹] 디지몬 스토리 타임 스트레인저 애니매직_de \"2025 최고의 J-게임\"...",
       "snippet": "루리웹 콘솔뉴스 디지몬 최신 소식입니다.",
@@ -3768,6 +3898,19 @@
       "image": null,
       "timestamp": 1786028400,
       "created_at": "2026-08-07 00:00"
+    },
+    {
+      "id": "6b507d92363288d1b2f84bf8da5e576e",
+      "title": "[일본뉴스] バンダイナムコ『デジモン』IP、過去最高益を達成！ ゲーム＆カードが絶好調で2000年代アニメ全盛期超え！",
+      "snippet": "バンダイナムコ『デジモン』IP、過去最高益を達成！ ゲーム＆カードが絶好調で2000年代アニメ全盛期超え！ 玩具人 TOY PEOPLE",
+      "source": "玩具人 TOY PEOPLE",
+      "source_badge": "일본뉴스",
+      "category": "general",
+      "category_name": "일반/뉴스",
+      "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE5sR1pfY1Y1ck1EV0ppVk1BMVF2Rm4ySnRTYlpnTUpLbEpkTGdyRmJnTGREbXFZb3dnYnI4eXNKZ25xUkhodm9FeUdIVG5pXzJG?oc=5",
+      "image": null,
+      "timestamp": 1785999600,
+      "created_at": "2026-08-06 16:00"
     },
     {
       "id": "fa6c89721a420ec93691864d6b1e9c8c",
@@ -4025,20 +4168,6 @@
       "image": null,
       "timestamp": 1785164400,
       "created_at": "2026-07-28 00:00"
-    },
-    {
-      "id": "fb479e985580c258bafa38c92d850ed1",
-      "title": "[해외뉴스] 디지몬 스토리: 타임 스트레인저 (Nintendo Switch 2) 리뷰",
-      "snippet": "Digimon Story: Time Stranger (Nintendo Switch 2) Review PCMag Middle East",
-      "source": "PCMag Middle East",
-      "source_badge": "해외뉴스",
-      "category": "general",
-      "category_name": "일반/뉴스",
-      "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQS0FGQ0Qwek9ud012UVY2M3J4ZS1aVFkwRGtvNHJaY3B3WUYwNEVuamRRS1NBa09MWDBRVVZlcnlpSS1Qcmg2N3JzSGlmWXhQalAtZFFabk45NHVZZUJtNzUtM0tEOU1JRDRDWXYtVGNzenY1b3R4eFVrRzZJdVhXaEF0Wkg5VXdhN3pXVXFQR2l0Vnc?oc=5",
-      "image": null,
-      "timestamp": 1784876400,
-      "created_at": "2026-07-24 16:00",
-      "title_orig": "Digimon Story: Time Stranger (Nintendo Switch 2) Review"
     }
   ]
 }
