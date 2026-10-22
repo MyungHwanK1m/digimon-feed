@@ -1,11 +1,24 @@
 {
-  "last_updated": "2026-10-23 00:45:18",
-  "total_count": 301,
+  "last_updated": "2026-10-23 04:41:13",
+  "total_count": 307,
   "retention_days": 90,
   "feeds": [
     {
+      "id": "0a5b3e0e961663ff1d9f4f41541012cd",
+      "title": "[인스타] 포켓몬·디지몬·다마고치 등 인기 일본 IP 굿즈부터 강화도 핫플 ‘강화호미’까지! 용산 신상 팝업 오픈! 🧡 먹고 싶은 것부터 갖고 싶은 굿즈까지! 다양한 취향과 즐거움을 한자리에서 만날 수 있는 팝업스토어 ‘MIXMILL POP-UP STORE’ 포켓몬, 디지몬, 다마고치, 약사의 혼",
+      "snippet": "인스타그램 디지몬 관련 공개 게시물입니다.",
+      "source": "Instagram",
+      "source_badge": "인스타그램",
+      "category": "figure",
+      "category_name": "피규어/굿즈",
+      "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE41Y28yenJzLUlKdlV4Q1lYZmpIWmZXZTNvS2RNcmw4UmVXSGxtdlAzazNobmVGVUM1SnRsblhRRjJkSGV4T2lwUjM2U0R3N2M0dmRoZ0Fn?oc=5",
+      "image": null,
+      "timestamp": 1792675204,
+      "created_at": "2026-10-22 22:20"
+    },
+    {
       "id": "aa4e8d20a34ce1e6abc405aa1221bbf7",
-      "title": "[일본뉴스] 【デジモンUP】テイマーランクの上げ方とメリット",
+      "title": "[일본뉴스] 【디지몬 UP】 테이머 랭크 올리는 법과 장점",
       "snippet": "【デジモンUP】テイマーランクの上げ方とメリット GameWith",
       "source": "GameWith",
       "source_badge": "일본뉴스",
@@ -14,11 +27,13 @@
       "link": "https://news.google.com/rss/articles/CBMiTEFVX3lxTE5CV0d4WE5ZUGZzcFVLS3FSNHhWNW9rV0VzUjJZUHh3UlVCWEhNMHF0T2duR214VFBLakZIU1hELXU1V0hzMUdiQl8xRjg?oc=5",
       "image": null,
       "timestamp": 1792662287,
-      "created_at": "2026-10-22 18:44"
+      "created_at": "2026-10-22 18:44",
+      "title_orig": "【デジモンUP】テイマーランクの上げ方とメリット",
+      "title_ja": "【デジモンUP】テイマーランクの上げ方とメリット"
     },
     {
       "id": "b14fd2325d22a2921858f579c20d0b52",
-      "title": "[일본뉴스] 【デジモンUP】アポロモン(SP Ver.)の評価と性能",
+      "title": "[일본뉴스] 【디지몬 UP】 아폴로몬(SP Ver.)의 평가와 성능",
       "snippet": "【デジモンUP】アポロモン(SP Ver.)の評価と性能 GameWith",
       "source": "GameWith",
       "source_badge": "일본뉴스",
@@ -27,11 +42,13 @@
       "link": "https://news.google.com/rss/articles/CBMiTEFVX3lxTFBtWDJGYldFZXQ4eWRMSG9uVV8yUC1EZDZuenNRLS1keW0yQTBLcHNSUXo1azZGN0xpejkyQ01nZk1rVm5mUzMwMHhmSnE?oc=5",
       "image": null,
       "timestamp": 1792662051,
-      "created_at": "2026-10-22 18:40"
+      "created_at": "2026-10-22 18:40",
+      "title_orig": "【デジモンUP】アポロモン(SP Ver.)の評価と性能",
+      "title_ja": "【デジモンUP】アポロモン(SP Ver.)の評価と性能"
     },
     {
       "id": "840b0490902e7c3cfee0d14d65e95de6",
-      "title": "[일본뉴스] 【デジモンUP】ヨウコモンの評価と性能",
+      "title": "[일본뉴스] 【디지몬 UP】 요우코몬의 평가와 성능",
       "snippet": "【デジモンUP】ヨウコモンの評価と性能 GameWith",
       "source": "GameWith",
       "source_badge": "일본뉴스",
@@ -40,7 +57,9 @@
       "link": "https://news.google.com/rss/articles/CBMiTEFVX3lxTFBqWnhYNHpVMUoxU3hjMmpfeHZFdjRSWWEwXzZlNDN5SlpjU05lZ254Y3hWVDJrZi16SDluSERLc1NFLUczUWxmR3YyUGE?oc=5",
       "image": null,
       "timestamp": 1792661952,
-      "created_at": "2026-10-22 18:39"
+      "created_at": "2026-10-22 18:39",
+      "title_orig": "【デジモンUP】ヨウコモンの評価と性能",
+      "title_ja": "【デジモンUP】ヨウコモンの評価と性能"
     },
     {
       "id": "905796d954c453aa7ba2cb6fb22f6d77",
@@ -58,8 +77,23 @@
       "title_ja": "【デジモンUP】ニャロモンの性能と進化"
     },
     {
+      "id": "c3e4e2215ba1c5284b1bc95f8a782c50",
+      "title": "[일본뉴스] 【디지몬 UP】 듀크몬의 성능과 진화",
+      "snippet": "【デジモンUP】デュークモンの性能と進化 GameWith",
+      "source": "GameWith",
+      "source_badge": "일본뉴스",
+      "category": "general",
+      "category_name": "일반/뉴스",
+      "link": "https://news.google.com/rss/articles/CBMiTEFVX3lxTFB2MHJTNnhEVmhqa3A4cm9wbHAtcUhiRTR0Njdidk5QbF9tQktxa0NPU3c4SGF1V29xSDRPZERKN3VwXzFYZkVucTBpMmc?oc=5",
+      "image": null,
+      "timestamp": 1792661782,
+      "created_at": "2026-10-22 18:36",
+      "title_orig": "【デジモンUP】デュークモンの性能と進化",
+      "title_ja": "【デジモンUP】デュークモンの性能と進化"
+    },
+    {
       "id": "a45d4aa8b0c75c1a3552ca856729cba9",
-      "title": "[해외뉴스] A Fan Remake of Digimon World For PlayStation 1 Is On Its Way",
+      "title": "[해외뉴스] PlayStation 1용 디지몬 월드의 팬 리메이크작 공개 예정",
       "snippet": "A Fan Remake of Digimon World For PlayStation 1 Is On Its Way Retro Dodo",
       "source": "Retro Dodo",
       "source_badge": "해외뉴스",
@@ -68,7 +102,21 @@
       "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQMFlHSG5iNm1yTXlQS2UyaW9peHcwUmV3NWE4MG56QlNwazItOTRCZEFpeXRWdXVmdWpJRnNpc1JkRmVVQ0RCdjF0MnB2YkdyX3pQaW9CUVRMczlHUFBhZWhKdG95dGRZSkh3VTZtbUtCaHBQLTRnMUp2Q282bFcxVHJPdkxHTDQ1NzNvNA?oc=5",
       "image": null,
       "timestamp": 1792660923,
-      "created_at": "2026-10-22 18:22"
+      "created_at": "2026-10-22 18:22",
+      "title_orig": "A Fan Remake of Digimon World For PlayStation 1 Is On Its Way"
+    },
+    {
+      "id": "abb06f0982ca01976c3a9b7b319feb13",
+      "title": "[인스타] 우리 내일... 같이...! (등산 가자) 그래 그리 쉽지는 않겠지~~ #디지몬 #KPLUS",
+      "snippet": "인스타그램 디지몬 관련 공개 게시물입니다.",
+      "source": "Instagram",
+      "source_badge": "인스타그램",
+      "category": "sns",
+      "category_name": "SNS/해외",
+      "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE1wQk1LdmRrTFE4ZlpBWXFEYTJZcnRDc18wQmRsMnZ5NHk4ODlaWTZkRi1OY0R3VmxNNTI1SHpVOS1tdFRVZkF1LXFUVjVIMmtnaFhiRTZ3?oc=5",
+      "image": null,
+      "timestamp": 1792645836,
+      "created_at": "2026-10-22 14:10"
     },
     {
       "id": "6657d7b9c218273272f43416a442cd23",
@@ -84,6 +132,21 @@
       "created_at": "2026-10-22 12:59",
       "title_orig": "最大84％OFF！ バンダイナムコのDL版ゲームセール、『デジモンストーリー タイムストレンジャー』がニンテンドーeショップに初登場 10月21日から",
       "title_ja": "最大84％OFF！ バンダイナムコのDL版ゲームセール、『デジモンストーリー タイムストレンジャー』がニンテンドーeショップに初登場 10月21日から"
+    },
+    {
+      "id": "f91b1530599d1e5c7e0c18e993ef1851",
+      "title": "[일본뉴스] PHP 소동 『썸머 워즈』 『디지몬』 연상으로 화제, 호소다 마모루 작품의 세계와 마찬가지로 대혼란 \"오메가몬 힘내라!\" (오리콘)",
+      "snippet": "PHP騒動『サマーウォーズ』『デジモン』連想で話題 細田守作品の世界と同じく大混乱「オメガモン頑張って！」 (オリコン) Yahoo!ニュース",
+      "source": "Yahoo!ニュース",
+      "source_badge": "일본뉴스",
+      "category": "general",
+      "category_name": "일반/뉴스",
+      "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPclpVSUg4RXZtWEUtUVNpLU1HQl9WVUdQNms4TDh4VXg5OXFoRlVodlJRLUNwY0V3dUgwbWwwcDdwWG8wTlluV211eldlUExUcDlaTUY5NGJEZDFnUjNPT1FvTE44cnIxel91WG90RzA5enY2dU5HU05RRXlvTTJHaTRXMW5nUnhhTDVlaGRB?oc=5",
+      "image": null,
+      "timestamp": 1792641203,
+      "created_at": "2026-10-22 12:53",
+      "title_orig": "PHP騒動『サマーウォーズ』『デジモン』連想で話題 細田守作品の世界と同じく大混乱「オメガモン頑張って！」 (オリコン)",
+      "title_ja": "PHP騒動『サマーウォーズ』『デジモン』連想で話題 細田守作品の世界と同じく大混乱「オメガモン頑張って！」 (オリコン)"
     },
     {
       "id": "27daaa3f46cf217aa05365114a9b26aa",
@@ -102,7 +165,7 @@
     },
     {
       "id": "720f015acf164f8349a34cebf47e12e1",
-      "title": "[일본뉴스] 画像・写真 | PHP騒動『サマーウォーズ』『デジモン』連想で話題 細田守作品の世界と同じく大混乱「オメガモン頑張って！」 2枚目",
+      "title": "[일본뉴스] 이미지·사진 | PHP 소동 『썸머 워즈』 『디지몬』 연상으로 화제, 호소다 마모루 작품의 세계와 마찬가지로 대혼란 \"오메가몬 힘내라!\" 2장째",
       "snippet": "画像・写真 | PHP騒動『サマーウォーズ』『デジモン』連想で話題 細田守作品の世界と同じく大混乱「オメガモン頑張って！」 2枚目 オリコンニュース",
       "source": "オリコンニュース",
       "source_badge": "일본뉴스",
@@ -111,7 +174,24 @@
       "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTFAydmZSMU1Gam00VG96a2dzeWtubkFRRnlURDd0SDZoRndlVFI2b3JnTmJ5TnRKT3YweVB1Z2xuNkRETjlxTXZkZVRwakxUV2t3MUVXYmVEVGxGQnpwWlNxX2VrVlM?oc=5",
       "image": null,
       "timestamp": 1792641180,
-      "created_at": "2026-10-22 12:53"
+      "created_at": "2026-10-22 12:53",
+      "title_orig": "画像・写真 | PHP騒動『サマーウォーズ』『デジモン』連想で話題 細田守作品の世界と同じく大混乱「オメガモン頑張って！」 2枚目",
+      "title_ja": "画像・写真 | PHP騒動『サマーウォーズ』『デジモン』連想で話題 細田守作品の世界と同じく大混乱「オメガモン頑張って！」 2枚目"
+    },
+    {
+      "id": "c7757a3de2619342e2a0ea759496b69d",
+      "title": "[일본뉴스] 【디지몬 UP】 시련의 유적 진행 방법과 보상",
+      "snippet": "【デジモンUP】試練の遺跡の進め方と報酬 GameWith",
+      "source": "GameWith",
+      "source_badge": "일본뉴스",
+      "category": "general",
+      "category_name": "일반/뉴스",
+      "link": "https://news.google.com/rss/articles/CBMiTEFVX3lxTFAyUGFaZ1k2NzRrbld5UlVrQ2tydTVFTTdLSWpfc1l3dzNFeFVnQzU0VzBDa3NvbmdzaFYxak5qcno0dFpucXlab3hKX0s?oc=5",
+      "image": null,
+      "timestamp": 1792638731,
+      "created_at": "2026-10-22 12:12",
+      "title_orig": "【デジモンUP】試練の遺跡の進め方と報酬",
+      "title_ja": "【デジモンUP】試練の遺跡の進め方と報酬"
     },
     {
       "id": "45973b027f5a6c099608a42f106a1a45",
@@ -130,7 +210,7 @@
     },
     {
       "id": "10fbd85a35bb305dcefd2a10b277ad12",
-      "title": "[일본뉴스] 【デジモンUP】ウォーグレイモン(SP Ver.)は引くべき？",
+      "title": "[일본뉴스] 【디지몬 UP】 워그레이몬(SP Ver.)은 뽑아야 할까?",
       "snippet": "【デジモンUP】ウォーグレイモン(SP Ver.)は引くべき？ GameWith",
       "source": "GameWith",
       "source_badge": "일본뉴스",
@@ -139,7 +219,9 @@
       "link": "https://news.google.com/rss/articles/CBMiTEFVX3lxTE8xcXZjR05yd0pQM3BjWGhPbkpGSUx2Rmo0M2RpWXRPUFExMEVscGZiSl80eXEwVm95QzByYW5feXhUb1p5ZU5maEd0UWs?oc=5",
       "image": null,
       "timestamp": 1792631928,
-      "created_at": "2026-10-22 10:18"
+      "created_at": "2026-10-22 10:18",
+      "title_orig": "【デジモンUP】ウォーグレイモン(SP Ver.)は引くべき？",
+      "title_ja": "【デジモンUP】ウォーグレイモン(SP Ver.)は引くべき？"
     },
     {
       "id": "877a13b6348e4786e9c7d7be6dfa9a4f",
@@ -158,7 +240,7 @@
     },
     {
       "id": "35709b5d2e0a8638dad8f0a405c859d4",
-      "title": "[일본뉴스] 『デジモンストーリー タイムストレンジャー』がセールに初登場！バンナムのセールが開催中、PS版は最大84％オフで『鉄拳8』なども割引 (インサイド)",
+      "title": "[일본뉴스] 『디지몬 스토리 타임 스트레인저』가 세일에 첫 등장! 반남 세일 개최 중, PS판은 최대 84% 할인으로 『철권 8』 등도 할인 (인사이드)",
       "snippet": "『デジモンストーリー タイムストレンジャー』がセールに初登場！バンナムのセールが開催中、PS版は最大84％オフで『鉄拳8』なども割引 (インサイド) Yahoo!ニュース",
       "source": "Yahoo!ニュース",
       "source_badge": "일본뉴스",
@@ -167,11 +249,13 @@
       "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQTjFOMXExbHY1aTY0V2MzakVjYno4NjI5d3h1NG1uUm5ic21pQVE5NmlzSy1hS1N4eEM0bFJ3N2RHNXpFOEJSNGNEOFVLZDI4VHExclJRc1ZHRHlvRlRvZXVvX0NMaWowMUR6NWxyUTdWY3ByazhhNGRHQnhCVnhpUVVXWF9mcE9uSlJiLTV3?oc=5",
       "image": null,
       "timestamp": 1792584903,
-      "created_at": "2026-10-21 21:15"
+      "created_at": "2026-10-21 21:15",
+      "title_orig": "『デジモンストーリー タイムストレンジャー』がセールに初登場！バンナムのセールが開催中、PS版は最大84％オフで『鉄拳8』なども割引 (インサイド)",
+      "title_ja": "『デジモンストーリー タイムストレンジャー』がセールに初登場！バンナムのセールが開催中、PS版は最大84％オフで『鉄拳8』なども割引 (インサイド)"
     },
     {
       "id": "9556fe1e5dc1c18538422596d94705f9",
-      "title": "[하비뉴스] デジモンアドベンチャー アクリルスタンド 和モダンVer. 高石タケル＆パタモン[KADOKAWA]《０１月予約》",
+      "title": "[하비뉴스] 디지몬 어드벤처 아크릴 스탠드 일본풍 모던 Ver. 타카이시 타케루(리키)&파타몬[KADOKAWA]《01월 예약》",
       "snippet": "デジモンアドベンチャー アクリルスタンド 和モダンVer. 高石タケル＆パタモン[KADOKAWA]《０１月予約》 あみあみ",
       "source": "아미아미",
       "source_badge": "하비뉴스",
@@ -180,7 +264,9 @@
       "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE9lNEFnV2kzbmpTb1NEeVFQTTBiQlFzQUJWMHBVNEozLVItVDh6NHA2UmJuRUJhSkdEUUdnd1hnZl9Sa1ZtTmZiY3FwdWpCZ3lpazhPazJROUJhSk84TkF1aEpIaXJMSVI1UTJTVw?oc=5",
       "image": null,
       "timestamp": 1792581908,
-      "created_at": "2026-10-21 20:25"
+      "created_at": "2026-10-21 20:25",
+      "title_orig": "デジモンアドベンチャー アクリルスタンド 和モダンVer. 高石タケル＆パタモン[KADOKAWA]《０１月予約》",
+      "title_ja": "デジモンアドベンチャー アクリルスタンド 和モダンVer. 高石タケル＆パタモン[KADOKAWA]《０１月予約》"
     },
     {
       "id": "370b965b59dc86e769055e05a67ef8fc",
@@ -594,7 +680,7 @@
     },
     {
       "id": "c7c8490ae93779f9fe5e3649740838a2",
-      "title": "[하비뉴스] デジモンアドベンチャー キラキラ缶バッジ 和モダンVer. A 8個入りBOX[KADOKAWA]《０１月予約》",
+      "title": "[하비뉴스] 디지몬 어드벤처 반짝반짝 캔뱃지 일본풍 모던 Ver. A 8개들이 BOX[KADOKAWA]《01월 예약》",
       "snippet": "デジモンアドベンチャー キラキラ缶バッジ 和モダンVer. A 8個入りBOX[KADOKAWA]《０１月予約》 あみあみ",
       "source": "아미아미",
       "source_badge": "하비뉴스",
@@ -603,7 +689,9 @@
       "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE12UVlrQWtFUlpVSWx1Ymk0Skg2N1ItRWVucjRESDFIelhiWGppNzJFUVdxLU5LLW50NGtNVzRSZlJqOUFtNzVENm1ZbnBVTVFoeEMyWW82ZmhYTXc4V0xSX0dSZm9mQzJWR2NQNw?oc=5",
       "image": null,
       "timestamp": 1792154981,
-      "created_at": "2026-10-16 21:49"
+      "created_at": "2026-10-16 21:49",
+      "title_orig": "デジモンアドベンチャー キラキラ缶バッジ 和モダンVer. A 8個入りBOX[KADOKAWA]《０１月予約》",
+      "title_ja": "デジモンアドベンチャー キラキラ缶バッジ 和モダンVer. A 8個入りBOX[KADOKAWA]《０１月予約》"
     },
     {
       "id": "dfccebde6dc8aca5a0d2a8914f7fecd2",
@@ -2042,7 +2130,7 @@
     },
     {
       "id": "8b11a4af5b48545479e50db9c685ea7a",
-      "title": "[일본뉴스] 『デジモン』ダウンロード版ゲームが最大約50%オフに。バンダイナムコエンターテインメントが秋のセールを開催中。PS5『タイムストレンジャー』は20%オフ、スイッチは『ハッカーズメモリー』が46％オフ",
+      "title": "[일본뉴스] 『디지몬』 다운로드판 게임이 최대 약 50% 할인. 반다이 남코 엔터테인먼트 가을 세일 개최 중. PS5 『타임 스트레인저』는 20% 할인, 스위치는 『해커스 메모리』가 46% 할인",
       "snippet": "『デジモン』ダウンロード版ゲームが最大約50%オフに。バンダイナムコエンターテインメントが秋のセールを開催中。PS5『タイムストレンジャー』は20%オフ、スイッチは『ハッカーズメモリー』が46％オフ 電ファミニコゲーマー",
       "source": "電ファミニコゲーマー",
       "source_badge": "일본뉴스",
@@ -2051,7 +2139,9 @@
       "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9tUmR3bHFUelJTQmFTcEFBTnpEV3RKVTc2SjQzVkFadDZBUTExdUNxU1oxVlhtei02S01zdTA3aHVfUmdMOUIyME1relVCSzE2N3NoRU9wTXcyUQ?oc=5",
       "image": null,
       "timestamp": 1791356400,
-      "created_at": "2026-10-07 16:00"
+      "created_at": "2026-10-07 16:00",
+      "title_orig": "『デジモン』ダウンロード版ゲームが最大約50%オフに。バンダイナムコエンターテインメントが秋のセールを開催中。PS5『タイムストレンジャー』は20%オフ、スイッチは『ハッカーズメモリー』が46％オフ",
+      "title_ja": "『デジモン』ダウンロード版ゲームが最大約50%オフに。バンダイナムコエンターテインメントが秋のセールを開催中。PS5『タイムストレンジャー』は20%オフ、スイッチは『ハッカーズメモリー』が46％オフ"
     },
     {
       "id": "ba091baf0b45ce64835d5801715996e8",
@@ -2459,7 +2549,7 @@
     },
     {
       "id": "4c03c7ed2b4c46049e4796b48b919976",
-      "title": "[일본뉴스] 『デジモン』「僕らが選んだベストアドベンチャー」メインPV＆放送情報解禁",
+      "title": "[일본뉴스] 『디지몬』 「우리가 고른 베스트 어드벤처」 메인 PV & 방송 정보 공개",
       "snippet": "『デジモン』「僕らが選んだベストアドベンチャー」メインPV＆放送情報解禁 アニメイトタイムズ",
       "source": "アニメイトタイムズ",
       "source_badge": "일본뉴스",
@@ -2468,7 +2558,9 @@
       "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTE80ZVdZRWVQZ0szd3E3Mlo5RTh4OUxKNk01d1pkRXBvQXpOQTRRaTE4X21sUFNtenFNZXliR1JobG1TQ3J4d280QUxrSF9ZWk1MS1EwWjdrbkxiT3dqdEFENXplWFhkZXNWcFlZ?oc=5",
       "image": null,
       "timestamp": 1790665200,
-      "created_at": "2026-09-29 16:00"
+      "created_at": "2026-09-29 16:00",
+      "title_orig": "『デジモン』「僕らが選んだベストアドベンチャー」メインPV＆放送情報解禁",
+      "title_ja": "『デジモン』「僕らが選んだベストアドベンチャー」メインPV＆放送情報解禁"
     },
     {
       "id": "6a19b341063ea891705621bb1b305f12",
@@ -3203,7 +3295,7 @@
     },
     {
       "id": "06f2736a32da77ae0721684e52945b4a",
-      "title": "[해외뉴스] See Digital Monsters in Eggs With Digimon Mega Egg Figures",
+      "title": "[해외뉴스] 디지몬 궁극체 에그 피규어로 알 속의 디지털 몬스터들을 만나보자",
       "snippet": "See Digital Monsters in Eggs With Digimon Mega Egg Figures Siliconera",
       "source": "Siliconera",
       "source_badge": "해외뉴스",
@@ -3212,7 +3304,8 @@
       "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNVndnWWUtVmcxOFA5QzdRTXpPY0IzWk1EWHdpYmlwLTU1dWJUZk95Q2o5TWtnemx4V2VmTHQ1Q2ZMVVc4ZTZ1ZTFoZ3ZHU1JJWWY3WlFmdnd4Qm9IeEJibHNzb184ajZTZFJsdjZXZDZpUnNjM0xKWU43TkNiTmM2ZXRmLVNEU2w2MWMwT3psTQ?oc=5",
       "image": null,
       "timestamp": 1789023600,
-      "created_at": "2026-09-10 16:00"
+      "created_at": "2026-09-10 16:00",
+      "title_orig": "See Digital Monsters in Eggs With Digimon Mega Egg Figures"
     },
     {
       "id": "00c559d339a7962a0ca8bce22f335ac4",
@@ -3509,6 +3602,19 @@
       "category": "figure",
       "category_name": "피규어/굿즈",
       "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE9fUFR0eXRhcWJuZ3Axb1pKRV83R1RUS28xaHllRGxfSlQybmtzUFNmZGczeGNOS2tvVVgzWjJTZlVVX0dfRjc3cGVEVG4xV2szRnc?oc=5",
+      "image": null,
+      "timestamp": 1788246000,
+      "created_at": "2026-09-01 16:00"
+    },
+    {
+      "id": "d0183514e24af65ae1668e9762daf311",
+      "title": "[인스타] #더숲 #디지몬어드벤처 #디지몬어드벤처극장판 선택받은 아이들 모두 잘 지내고 있니? 우리 곧 다시 만나🙌 9월 16일 - 더숲 아트시네마 - Coming Soon🦋",
+      "snippet": "인스타그램 디지몬 관련 공개 게시물입니다.",
+      "source": "Instagram",
+      "source_badge": "인스타그램",
+      "category": "game",
+      "category_name": "게임/공식애니",
+      "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFA3cUFWcXZpZ1JUcTBSVWlxRFFDUDJjTXFaN0hQZEF2eFlZdXlmSWJpX0NERFFLVkVhckw0X2NuR2w2UHpVdGtTbjZwM25NZzdRaVE?oc=5",
       "image": null,
       "timestamp": 1788246000,
       "created_at": "2026-09-01 16:00"
@@ -3913,7 +4019,7 @@
     },
     {
       "id": "1959ac801e3bbdb501e9ed881e67f8f7",
-      "title": "[일본뉴스] 「デジモン」ファン投票企画の上位エピソードが「僕らが選んだベストアドベンチャー」として10月から放送決定",
+      "title": "[일본뉴스] 「디지몬」 팬 투표 기획의 상위 에피소드가 「우리가 고른 베스트 어드벤처」로서 10월부터 방송 결정",
       "snippet": "「デジモン」ファン投票企画の上位エピソードが「僕らが選んだベストアドベンチャー」として10月から放送決定 アニメハック",
       "source": "アニメハック",
       "source_badge": "일본뉴스",
@@ -3922,7 +4028,9 @@
       "link": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE91UXB0a0h0aW1zZm50LVJ5dWljSFViVDJnbU5uektMX2k4RzdZMmhZWmpIWmx5bXYzTEZRZkxpQTZzQ212N1dHRjNHSQ?oc=5",
       "image": null,
       "timestamp": 1786172400,
-      "created_at": "2026-08-08 16:00"
+      "created_at": "2026-08-08 16:00",
+      "title_orig": "「デジモン」ファン投票企画の上位エピソードが「僕らが選んだベストアドベンチャー」として10月から放送決定",
+      "title_ja": "「デジモン」ファン投票企画の上位エピソードが「僕らが選んだベストアドベンチャー」として10月から放送決定"
     },
     {
       "id": "fb48ef0bdc83ff728e77289160c89a43",
@@ -3966,7 +4074,7 @@
     },
     {
       "id": "6b507d92363288d1b2f84bf8da5e576e",
-      "title": "[일본뉴스] バンダイナムコ『デジモン』IP、過去最高益を達成！ ゲーム＆カードが絶好調で2000年代アニメ全盛期超え！",
+      "title": "[일본뉴스] 반다이 남코 『디지몬』 IP, 역대 최고 수익 달성! 게임&카드의 대흥행으로 2000년대 애니메이션 전성기 넘어서!",
       "snippet": "バンダイナムコ『デジモン』IP、過去最高益を達成！ ゲーム＆カードが絶好調で2000年代アニメ全盛期超え！ 玩具人 TOY PEOPLE",
       "source": "玩具人 TOY PEOPLE",
       "source_badge": "일본뉴스",
@@ -3975,7 +4083,9 @@
       "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE5sR1pfY1Y1ck1EV0ppVk1BMVF2Rm4ySnRTYlpnTUpLbEpkTGdyRmJnTGREbXFZb3dnYnI4eXNKZ25xUkhodm9FeUdIVG5pXzJG?oc=5",
       "image": null,
       "timestamp": 1785999600,
-      "created_at": "2026-08-06 16:00"
+      "created_at": "2026-08-06 16:00",
+      "title_orig": "バンダイナムコ『デジモン』IP、過去最高益を達成！ ゲーム＆カードが絶好調で2000年代アニメ全盛期超え！",
+      "title_ja": "バンダイナムコ『デジモン』IP、過去最高益を達成！ ゲーム＆カードが絶好調で2000年代アニメ全盛期超え！"
     },
     {
       "id": "fa6c89721a420ec93691864d6b1e9c8c",
