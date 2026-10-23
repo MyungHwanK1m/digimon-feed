@@ -1,8 +1,23 @@
 {
-  "last_updated": "2026-10-23 10:08:45",
-  "total_count": 316,
+  "last_updated": "2026-10-23 15:45:15",
+  "total_count": 319,
   "retention_days": 90,
   "feeds": [
+    {
+      "id": "d5efb0ef38f24776a13dfb01d60e70fa",
+      "title": "[일본뉴스] PHP 소동에 『디지몬』 공식, 센스 있는 코멘트 위기에 맞서는 엔지니어 응원&감사 \"디지털 월드의 최전선에서 우리의 일상을 지키기 위해\" (오리콘)",
+      "snippet": "PHP騒動で『デジモン』公式、粋なコメント 危機に立ち向かうエンジニア応援＆感謝「デジタルワールドの最前線で私たちの日常を守るために」（オリコン） Yahoo!ニュース",
+      "source": "Yahoo!ニュース",
+      "source_badge": "일본뉴스",
+      "category": "general",
+      "category_name": "일반/뉴스",
+      "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE5wSEYxX0FsV184ZmtVZ3dBeTF3VEZSWWdVZHpQTjZhODF2XzNaUmc1ZHBYT3F1ZzhOWW1zZUwyTWZjNGcyTDl5c1pQcl9VcGdwYkUxSmpjVHpqR2p6MUJFalFHQUhSNDRZa0paYVZGZDdfelgwY0pFcEdYUXFyakk?oc=5",
+      "image": null,
+      "timestamp": 1792722000,
+      "created_at": "2026-10-23 11:20",
+      "title_orig": "PHP騒動で『デジモン』公式、粋なコメント 危機に立ち向かうエンジニア応援＆感謝「デジタルワールドの最前線で私たちの日常を守るために」（オリコン）",
+      "title_ja": "PHP騒動で『デジモン』公式、粋なコメント 危機に立ち向かうエンジニア応援＆感謝「デジタルワールドの最前線で私たちの日常を守るために」（オリコン）"
+    },
     {
       "id": "0a5b3e0e961663ff1d9f4f41541012cd",
       "title": "[인스타] 포켓몬·디지몬·다마고치 등 인기 일본 IP 굿즈부터 강화도 핫플 ‘강화호미’까지! 용산 신상 팝업 오픈! 🧡 먹고 싶은 것부터 갖고 싶은 굿즈까지! 다양한 취향과 즐거움을 한자리에서 만날 수 있는 팝업스토어 ‘MIXMILL POP-UP STORE’ 포켓몬, 디지몬, 다마고치, 약사의 혼",
@@ -30,6 +45,21 @@
       "created_at": "2026-10-22 19:00",
       "title_orig": "【期間限定公開】デジモンユニバース アプリモンスターズ 第4話「仮装のキミをうぃただきます！キャメラモンのハロウィンスキャンダル！」",
       "title_ja": "【期間限定公開】デジモンユニバース アプリモンスターズ 第4話「仮装のキミをうぃただきます！キャメラモンのハロウィンスキャンダル！」"
+    },
+    {
+      "id": "7406a719d810c06b0b0c3263da5c898b",
+      "title": "[일본뉴스] 【디지몬 UP】 캠프 워즈의 규칙과 진행 방법",
+      "snippet": "【デジモンUP】キャンプウォーズのルールと進め方 GameWith",
+      "source": "GameWith",
+      "source_badge": "일본뉴스",
+      "category": "general",
+      "category_name": "일반/뉴스",
+      "link": "https://news.google.com/rss/articles/CBMiTEFVX3lxTE1xZ3FBVDFzUHhyMlFaOC1vMTVYbkhNTkJBQThya3RPWUFnSUgwWHE5c0FYeENCN3ljU3BJODZVOWdHVG1ETUg0MzFnNW8?oc=5",
+      "image": null,
+      "timestamp": 1792662390,
+      "created_at": "2026-10-22 18:46",
+      "title_orig": "【デジモンUP】キャンプウォーズのルールと進め方",
+      "title_ja": "【デジモンUP】キャンプウォーズのルールと進め方"
     },
     {
       "id": "aa4e8d20a34ce1e6abc405aa1221bbf7",
@@ -297,6 +327,21 @@
       "created_at": "2026-10-22 10:18",
       "title_orig": "【デジモンUP】ウォーグレイモン(SP Ver.)は引くべき？",
       "title_ja": "【デジモンUP】ウォーグレイモン(SP Ver.)は引くべき？"
+    },
+    {
+      "id": "cd40ff9dc74d7f725bf8dedff5f4019f",
+      "title": "[일본뉴스] 【디지몬 UP】 야가미 타이치(신태일)&아구몬은 뽑아야 할까?",
+      "snippet": "【デジモンUP】八神太一＆アグモンは引くべき？ GameWith",
+      "source": "GameWith",
+      "source_badge": "일본뉴스",
+      "category": "general",
+      "category_name": "일반/뉴스",
+      "link": "https://news.google.com/rss/articles/CBMiTEFVX3lxTE1oRElzSnVuQXJpTWNmYjRFSkRfdUlaOG91dFltSlNqdHMwUlRrbmJUUHQzUWtlM0s2TjlFUmRJNHJRRnhBSE5oSVlKY3k?oc=5",
+      "image": null,
+      "timestamp": 1792631908,
+      "created_at": "2026-10-22 10:18",
+      "title_orig": "【デジモンUP】八神太一＆アグモンは引くべき？",
+      "title_ja": "【デジモンUP】八神太一＆アグモンは引くべき？"
     },
     {
       "id": "877a13b6348e4786e9c7d7be6dfa9a4f",
@@ -1943,19 +1988,6 @@
       "created_at": "2026-10-13 11:50"
     },
     {
-      "id": "5cf01acf959906bd58559141f20774df",
-      "title": "[네이버] 디지몬 마스터즈 온라인",
-      "snippet": "디지몬 마스터즈 온라인 NAVER",
-      "source": "네이버 게임",
-      "source_badge": "네이버",
-      "category": "game",
-      "category_name": "게임/공식애니",
-      "link": "https://news.google.com/rss/articles/CBMidEFVX3lxTE1xSURIbmY0VFZNRlMwdnJjVTh4NW81dXF5ZXp1SWNqZG1YaEF5ZTJOSzRyZ2FMNzByT1NTbTNPd2pHNjExOUxHd0hhdGJLLVFQNjR2YUVMN3BoYUVTelk4Yzh3bXQ5WkwxXzVkRElaOE10X0lj?oc=5",
-      "image": null,
-      "timestamp": 1791856980,
-      "created_at": "2026-10-13 11:03"
-    },
-    {
       "id": "554ae7fc7acc742e594eaa64b4603314",
       "title": "[반프레스토] 이치방쿠지 디지몬 시리즈 매트릭스 에볼루션",
       "snippet": "루리웹 피규어/프라모델/굿즈 정보 게시판 소식입니다.",
@@ -3511,6 +3543,19 @@
       "image": null,
       "timestamp": 1788764400,
       "created_at": "2026-09-07 16:00"
+    },
+    {
+      "id": "793cd5a2706c6ea14cfe429c28846b4f",
+      "title": "[트윗] ✨우리의 모든 최애가 모이다! ─ 다 모여 FESTA! 행사 기간 동안 구매 금액과 상품에 따라 특별한 구매 특전도 만나보세요! 【 구매 특전1️⃣ 띠부 스티커 】 ▪️구매 금액 1만 원 당 띠부 스티커 1매 증정! ▪️매주 새로운 특전으로 만나보세요. ✔️1주차 | 9/24(목) ~ 9/30(수) - X",
+      "snippet": "X(트위터) 디지몬 공식/굿즈 속보 트윗입니다.",
+      "source": "X(트위터)",
+      "source_badge": "X(트위터)",
+      "category": "sns",
+      "category_name": "SNS/해외",
+      "link": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE1pNzhuQ1ZIblIzWU03ektwQlBDNkVEVDNyNENwWDlzU18wYndsQlRiSS04djJTQWVuOXNxSnNaVXpZQVIxVW9FY1hQeW9jQXlKa2FBQ1RyOU1NdXRGbmc?oc=5",
+      "image": null,
+      "timestamp": 1788678000,
+      "created_at": "2026-09-06 16:00"
     },
     {
       "id": "3864c8d4a766cd74695c022252557990",
