@@ -1,8 +1,22 @@
 {
-  "last_updated": "2026-10-23 21:18:47",
-  "total_count": 325,
+  "last_updated": "2026-10-24 02:38:04",
+  "total_count": 329,
   "retention_days": 90,
   "feeds": [
+    {
+      "id": "a45d4aa8b0c75c1a3552ca856729cba9",
+      "title": "[해외뉴스] PlayStation 1용 디지몬 월드의 팬 리메이크작 공개 예정",
+      "snippet": "A Fan Remake of Digimon World For PlayStation 1 Is On Its Way Retro Dodo",
+      "source": "Retro Dodo",
+      "source_badge": "해외뉴스",
+      "category": "general",
+      "category_name": "일반/뉴스",
+      "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQMFlHSG5iNm1yTXlQS2UyaW9peHcwUmV3NWE4MG56QlNwazItOTRCZEFpeXRWdXVmdWpJRnNpc1JkRmVVQ0RCdjF0MnB2YkdyX3pQaW9CUVRMczlHUFBhZWhKdG95dGRZSkh3VTZtbUtCaHBQLTRnMUp2Q282bFcxVHJPdkxHTDQ1NzNvNA?oc=5",
+      "image": null,
+      "timestamp": 1792768345,
+      "created_at": "2026-10-24 00:12",
+      "title_orig": "A Fan Remake of Digimon World For PlayStation 1 Is On Its Way"
+    },
     {
       "id": "7dac85421356ed4331bb101597f0f9a6",
       "title": "[해외뉴스] 디지몬 알리시온, 수 주 내 사전 등록 개시 예정",
@@ -16,20 +30,6 @@
       "timestamp": 1792757583,
       "created_at": "2026-10-23 21:13",
       "title_orig": "Digimon Alysion Set to Open Pre-Registration in the Coming Weeks"
-    },
-    {
-      "id": "a45d4aa8b0c75c1a3552ca856729cba9",
-      "title": "[해외뉴스] PlayStation 1용 디지몬 월드의 팬 리메이크작 공개 예정",
-      "snippet": "A Fan Remake of Digimon World For PlayStation 1 Is On Its Way Retro Dodo",
-      "source": "Retro Dodo",
-      "source_badge": "해외뉴스",
-      "category": "general",
-      "category_name": "일반/뉴스",
-      "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQMFlHSG5iNm1yTXlQS2UyaW9peHcwUmV3NWE4MG56QlNwazItOTRCZEFpeXRWdXVmdWpJRnNpc1JkRmVVQ0RCdjF0MnB2YkdyX3pQaW9CUVRMczlHUFBhZWhKdG95dGRZSkh3VTZtbUtCaHBQLTRnMUp2Q282bFcxVHJPdkxHTDQ1NzNvNA?oc=5",
-      "image": null,
-      "timestamp": 1792746568,
-      "created_at": "2026-10-23 18:09",
-      "title_orig": "A Fan Remake of Digimon World For PlayStation 1 Is On Its Way"
     },
     {
       "id": "9f3cc39110292e0501c99fc1d89d228e",
@@ -92,6 +92,21 @@
       "title_ja": "PHP騒動で『デジモン』公式、粋なコメント 危機に立ち向かうエンジニア応援&感謝「デジタルワールドの最前線で私たちの日常を守るために」"
     },
     {
+      "id": "a0082c79a504ccdff839bd42f5f5f86f",
+      "title": "[일본뉴스] 이미지·사진 | PHP 소동 속 『디지몬』 공식의 센스 있는 코멘트, 위기에 맞서는 엔지니어 응원 & 감사 \"디지털 월드의 최전선에서 우리의 일상을 지키기 위해\" 3번째 사진",
+      "snippet": "画像・写真 | PHP騒動で『デジモン』公式、粋なコメント 危機に立ち向かうエンジニア応援＆感謝「デジタルワールドの最前線で私たちの日常を守るために」 3枚目 オリコンニュース",
+      "source": "オリコンニュース",
+      "source_badge": "일본뉴스",
+      "category": "general",
+      "category_name": "일반/뉴스",
+      "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE4wandMb2l2UzNlN3E1RE5fV0ltZlJtODF1eXdoLXhSRFNtVDF3elBVVVNBZzhjdS0yUW9vNWVnSmxUUEt5YVBFRzdwN2s0OGpxNXpSQkJ2cXNXZw?oc=5",
+      "image": null,
+      "timestamp": 1792722000,
+      "created_at": "2026-10-23 11:20",
+      "title_orig": "画像・写真 | PHP騒動で『デジモン』公式、粋なコメント 危機に立ち向かうエンジニア応援＆感謝「デジタルワールドの最前線で私たちの日常を守るために」 3枚目",
+      "title_ja": "画像・写真 | PHP騒動で『デジモン』公式、粋なコメント 危機に立ち向かうエンジニア応援＆感謝「デジタルワールドの最前線で私たちの日常を守るために」 3枚目"
+    },
+    {
       "id": "0a5b3e0e961663ff1d9f4f41541012cd",
       "title": "[인스타] 포켓몬·디지몬·다마고치 등 인기 일본 IP 굿즈부터 강화도 핫플 ‘강화호미’까지! 용산 신상 팝업 오픈! 🧡 먹고 싶은 것부터 갖고 싶은 굿즈까지! 다양한 취향과 즐거움을 한자리에서 만날 수 있는 팝업스토어 ‘MIXMILL POP-UP STORE’ 포켓몬, 디지몬, 다마고치, 약사의 혼",
       "snippet": "인스타그램 디지몬 관련 공개 게시물입니다.",
@@ -103,6 +118,19 @@
       "image": null,
       "timestamp": 1792675204,
       "created_at": "2026-10-22 22:20"
+    },
+    {
+      "id": "38a9f1ca2c6c07d178666ea232f9b1e5",
+      "title": "[트윗] 디지몬 어드벤처 공식 굿즈 판매 시작! - 반다이 미니미니 치비 마스코트 누이 - 탑토이 소프누이 도키도키굿즈에서 확인 가능합니다. - X",
+      "snippet": "X(트위터) 디지몬 공식/굿즈 속보 트윗입니다.",
+      "source": "X(트위터)",
+      "source_badge": "X(트위터)",
+      "category": "figure",
+      "category_name": "피규어/굿즈",
+      "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTFBaM29tS202NEZ1ZTJqZmxWQWk3NEhrWF9qMjBRaWxlRHppQW5sUGI2eU9nZ0VVUmwxS1FLdUUxOVp4RWFfSk13MkdjNlI3a3l5dGppVGhFMDZ5QUYtbDhxLUk3MjdjZw?oc=5",
+      "image": null,
+      "timestamp": 1792668143,
+      "created_at": "2026-10-22 20:22"
     },
     {
       "id": "a18848c42ce8f1006454356732a4bb6e",
@@ -253,6 +281,21 @@
       "created_at": "2026-10-22 18:36",
       "title_orig": "【デジモンUP】ニャロモンの性能と進化",
       "title_ja": "【デジモンUP】ニャロモンの性能と進化"
+    },
+    {
+      "id": "3181f48d61870eb23a987226cd787ad5",
+      "title": "[일본뉴스] 【디지몬 UP】 웜몬의 평가와 성능",
+      "snippet": "【デジモンUP】ワームモンの評価と性能 GameWith",
+      "source": "GameWith",
+      "source_badge": "일본뉴스",
+      "category": "general",
+      "category_name": "일반/뉴스",
+      "link": "https://news.google.com/rss/articles/CBMiTEFVX3lxTE9KTm1HZTIwZGlWdk9RVjVlYTZwdnZrbHNGZnRvUHRybjA2OE13czVydzhVNjl6NkJpSDJJQ2lTWnZ2aFphbVJoMnlxclo?oc=5",
+      "image": null,
+      "timestamp": 1792661794,
+      "created_at": "2026-10-22 18:36",
+      "title_orig": "【デジモンUP】ワームモンの評価と性能",
+      "title_ja": "【デジモンUP】ワームモンの評価と性能"
     },
     {
       "id": "c3e4e2215ba1c5284b1bc95f8a782c50",
@@ -769,21 +812,6 @@
       "created_at": "2026-10-19 12:01",
       "title_orig": "【デジモンUP】反撃タイプのおすすめビルド",
       "title_ja": "【デジモンUP】反撃タイプのおすすめビルド"
-    },
-    {
-      "id": "3181f48d61870eb23a987226cd787ad5",
-      "title": "[일본뉴스] 【디지몬 UP】 웜몬의 평가와 성능",
-      "snippet": "【デジモンUP】ワームモンの評価と性能 GameWith",
-      "source": "GameWith",
-      "source_badge": "일본뉴스",
-      "category": "general",
-      "category_name": "일반/뉴스",
-      "link": "https://news.google.com/rss/articles/CBMiTEFVX3lxTE9KTm1HZTIwZGlWdk9RVjVlYTZwdnZrbHNGZnRvUHRybjA2OE13czVydzhVNjl6NkJpSDJJQ2lTWnZ2aFphbVJoMnlxclo?oc=5",
-      "image": null,
-      "timestamp": 1792374665,
-      "created_at": "2026-10-19 10:51",
-      "title_orig": "【デジモンUP】ワームモンの評価と性能",
-      "title_ja": "【デジモンUP】ワームモンの評価と性能"
     },
     {
       "id": "ae8dd4fe5d5910440afa1b6552346c03",
@@ -2707,6 +2735,20 @@
       "created_at": "2026-09-30 16:00"
     },
     {
+      "id": "c34bf231d62e85a2773838022a865360",
+      "title": "[해외뉴스] [32] 디지몬 월드 - 새로운 시작",
+      "snippet": "[32] Digimon World - New bobingings YouTube",
+      "source": "YouTube",
+      "source_badge": "해외뉴스",
+      "category": "general",
+      "category_name": "일반/뉴스",
+      "link": "https://news.google.com/rss/articles/CBMiQkFVX3lxTE5wQklTYXpGZjI4Sl9BalF2aGJOektjUVpVUGJSQUdYYkdmWjhpTmNmdEFOQU43OFVRS2x4MFNVTlVxUQ?oc=5",
+      "image": null,
+      "timestamp": 1790751600,
+      "created_at": "2026-09-30 16:00",
+      "title_orig": "[32] Digimon World - New bobingings"
+    },
+    {
       "id": "1c82d09be81cca6506ba51b58da3c01a",
       "title": "[공식] 『디지몬 에그즈』 연재 시작 기념 미나토 아유무 선생님 스페셜 인터뷰",
       "snippet": "디지몬 공식 사이트 ニュース",
@@ -3974,6 +4016,19 @@
       "created_at": "2026-08-29 00:00",
       "title_orig": "デジモンカードゲーム ブースターパック TIMELESS BONDS【BT-26】",
       "title_ja": "デジモンカードゲーム ブースターパック TIMELESS BONDS【BT-26】"
+    },
+    {
+      "id": "b86420c209c218541acc8f470dedb21c",
+      "title": "[영상] [🎵우륵으로 연결되다] 디지몬어드벤처 오프닝",
+      "snippet": "YouTube 최신 디지몬 공식/인기 영상입니다.",
+      "source": "YouTube",
+      "source_badge": "유튜브",
+      "category": "sns",
+      "category_name": "SNS/영상",
+      "link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTFBTZS1ibk40d1dQaGtWMGpyQjhUaVhraWNMVG8xa2RJR21PenQ2U0ZJX2hjaWo4SWZlYWhEemw2WXpVM3lOQkxRTkUtOFFqdVBYRm1zeg?oc=5",
+      "image": null,
+      "timestamp": 1787913905,
+      "created_at": "2026-08-28 19:45"
     },
     {
       "id": "29e456f9a29ad7e3895dbf049f18b737",
