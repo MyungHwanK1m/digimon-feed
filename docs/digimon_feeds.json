@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-10-23 07:53:16",
-  "total_count": 315,
+  "last_updated": "2026-10-23 10:08:45",
+  "total_count": 316,
   "retention_days": 90,
   "feeds": [
     {
@@ -47,6 +47,21 @@
       "title_ja": "【デジモンUP】テイマーランクの上げ方とメリット"
     },
     {
+      "id": "33ee6e821bd5a334e563c24c50dc6bce",
+      "title": "[일본뉴스] 【디지몬 UP】 전력 올리는 법 | 육성 요소 정리",
+      "snippet": "【デジモンUP】戦力の上げ方 | 育成要素まとめ GameWith",
+      "source": "GameWith",
+      "source_badge": "일본뉴스",
+      "category": "general",
+      "category_name": "일반/뉴스",
+      "link": "https://news.google.com/rss/articles/CBMiTEFVX3lxTE9xaWx5RjNZd3JNMmdwQmZNV21scVJiVExvWnNZMFNKOWZnU1ktakNIbU9XbmdkRnBxLTVianRUS3BOQjg1ZnAxOWhWYlg?oc=5",
+      "image": null,
+      "timestamp": 1792662263,
+      "created_at": "2026-10-22 18:44",
+      "title_orig": "【デジモンUP】戦力の上げ方 | 育成要素まとめ",
+      "title_ja": "【デジモンUP】戦力の上げ方 | 育成要素まとめ"
+    },
+    {
       "id": "b14fd2325d22a2921858f579c20d0b52",
       "title": "[일본뉴스] 【디지몬 UP】 아폴로몬(SP Ver.)의 평가와 성능",
       "snippet": "【デジモンUP】アポロモン(SP Ver.)の評価と性能 GameWith",
@@ -62,6 +77,21 @@
       "title_ja": "【デジモンUP】アポロモン(SP Ver.)の評価と性能"
     },
     {
+      "id": "c6c7593b3e8ab3871230d97581c56d3a",
+      "title": "[일본뉴스] 【디지몬 UP】 파워드라몬(SP Ver.)의 평가와 성능",
+      "snippet": "【デジモンUP】ムゲンドラモン(SP Ver.)の評価と性能 GameWith",
+      "source": "GameWith",
+      "source_badge": "일본뉴스",
+      "category": "general",
+      "category_name": "일반/뉴스",
+      "link": "https://news.google.com/rss/articles/CBMiTEFVX3lxTE1scXpJWUxkbzRFUWdOWFVxRW9USWNuY1lRMGFTdWtQRHViTDllZkNKX2t1akxab20zcUl5d1c5dHZ1VWFMc29PX1VsNm4?oc=5",
+      "image": null,
+      "timestamp": 1792662051,
+      "created_at": "2026-10-22 18:40",
+      "title_orig": "【デジモンUP】ムゲンドラモン(SP Ver.)の評価と性能",
+      "title_ja": "【デジモンUP】ムゲンドラモン(SP Ver.)の評価と性能"
+    },
+    {
       "id": "840b0490902e7c3cfee0d14d65e95de6",
       "title": "[일본뉴스] 【디지몬 UP】 요우코몬의 평가와 성능",
       "snippet": "【デジモンUP】ヨウコモンの評価と性能 GameWith",
@@ -75,6 +105,21 @@
       "created_at": "2026-10-22 18:39",
       "title_orig": "【デジモンUP】ヨウコモンの評価と性能",
       "title_ja": "【デジモンUP】ヨウコモンの評価と性能"
+    },
+    {
+      "id": "6e59dee8c07d3186b03c22bc9ff7f1e7",
+      "title": "[일본뉴스] 【디지몬 UP】 아구몬의 평가와 성능",
+      "snippet": "【デジモンUP】アグモンの評価と性能 GameWith",
+      "source": "GameWith",
+      "source_badge": "일본뉴스",
+      "category": "general",
+      "category_name": "일반/뉴스",
+      "link": "https://news.google.com/rss/articles/CBMiTEFVX3lxTE5qbklWWENRWm03ZXVxWTNpVFlPWEpnRUdxZVBoMW54Q3p3T3FlaFhzenlkZ2oxYU9QLVR2Rmx1ZFR2VV9wMXh3U2pDMnA?oc=5",
+      "image": null,
+      "timestamp": 1792661823,
+      "created_at": "2026-10-22 18:37",
+      "title_orig": "【デジモンUP】アグモンの評価と性能",
+      "title_ja": "【デジモンUP】アグモンの評価と性能"
     },
     {
       "id": "905796d954c453aa7ba2cb6fb22f6d77",
@@ -132,6 +177,21 @@
       "image": null,
       "timestamp": 1792645836,
       "created_at": "2026-10-22 14:10"
+    },
+    {
+      "id": "0669d4ee48427a876e899e44a963db30",
+      "title": "[일본뉴스] PHP 소동 『썸머 워즈』 『디지몬』 연상되어 화제, 호소다 마모루 작품의 세계와 마찬가지로 대혼란 \"오메가몬 힘내라!\"",
+      "snippet": "PHP騒動『サマーウォーズ』『デジモン』連想で話題 細田守作品の世界と同じく大混乱「オメガモン頑張って！」 山陽新聞デジタル｜さんデジ",
+      "source": "山陽新聞デジタル｜さんデジ",
+      "source_badge": "일본뉴스",
+      "category": "general",
+      "category_name": "일반/뉴스",
+      "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTFB4QmpzNDVEaF9qZmswTENiQ2JiRGFncmRnTzNkMnJGX0gwMWJPdGNsYmJGU3ZxaDVFNHY4OW9Qb2lrWDZxNEs4TmU1VlVubDZhYTRiZ0ZKaDFOV0FKcV95alVGZnhFUVJPX0Q4ZA?oc=5",
+      "image": null,
+      "timestamp": 1792644337,
+      "created_at": "2026-10-22 13:45",
+      "title_orig": "PHP騒動『サマーウォーズ』『デジモン』連想で話題 細田守作品の世界と同じく大混乱「オメガモン頑張って！」",
+      "title_ja": "PHP騒動『サマーウォーズ』『デジモン』連想で話題 細田守作品の世界と同じく大混乱「オメガモン頑張って！」"
     },
     {
       "id": "6657d7b9c218273272f43416a442cd23",
@@ -577,21 +637,6 @@
       "created_at": "2026-10-19 12:01",
       "title_orig": "【デジモンUP】反撃タイプのおすすめビルド",
       "title_ja": "【デジモンUP】反撃タイプのおすすめビルド"
-    },
-    {
-      "id": "6e59dee8c07d3186b03c22bc9ff7f1e7",
-      "title": "[일본뉴스] 【디지몬 UP】 아구몬의 평가와 성능",
-      "snippet": "【デジモンUP】アグモンの評価と性能 GameWith",
-      "source": "GameWith",
-      "source_badge": "일본뉴스",
-      "category": "general",
-      "category_name": "일반/뉴스",
-      "link": "https://news.google.com/rss/articles/CBMiTEFVX3lxTE5qbklWWENRWm03ZXVxWTNpVFlPWEpnRUdxZVBoMW54Q3p3T3FlaFhzenlkZ2oxYU9QLVR2Rmx1ZFR2VV9wMXh3U2pDMnA?oc=5",
-      "image": null,
-      "timestamp": 1792374694,
-      "created_at": "2026-10-19 10:51",
-      "title_orig": "【デジモンUP】アグモンの評価と性能",
-      "title_ja": "【デジモンUP】アグモンの評価と性能"
     },
     {
       "id": "3181f48d61870eb23a987226cd787ad5",
@@ -1374,21 +1419,6 @@
       "title_ja": "【デジモンUP】デジヴァイスの使い方 | フォルム変更"
     },
     {
-      "id": "33ee6e821bd5a334e563c24c50dc6bce",
-      "title": "[일본뉴스] 【디지몬 UP】 전력 올리는 법 | 육성 요소 정리",
-      "snippet": "【デジモンUP】戦力の上げ方 | 育成要素まとめ GameWith",
-      "source": "GameWith",
-      "source_badge": "일본뉴스",
-      "category": "general",
-      "category_name": "일반/뉴스",
-      "link": "https://news.google.com/rss/articles/CBMiTEFVX3lxTE9xaWx5RjNZd3JNMmdwQmZNV21scVJiVExvWnNZMFNKOWZnU1ktakNIbU9XbmdkRnBxLTVianRUS3BOQjg1ZnAxOWhWYlg?oc=5",
-      "image": null,
-      "timestamp": 1792057784,
-      "created_at": "2026-10-15 18:49",
-      "title_orig": "【デジモンUP】戦力の上げ方 | 育成要素まとめ",
-      "title_ja": "【デジモンUP】戦力の上げ方 | 育成要素まとめ"
-    },
-    {
       "id": "5e13c54699a4ca612e8caf9f782052de",
       "title": "[일본뉴스] 【디지몬 UP】 초보자를 위한 초반 효율적인 진행 방법",
       "snippet": "【デジモンUP】初心者向け序盤の効率的な進め方 GameWith",
@@ -1812,21 +1842,6 @@
       "created_at": "2026-10-14 18:32"
     },
     {
-      "id": "c6c7593b3e8ab3871230d97581c56d3a",
-      "title": "[일본뉴스] 【디지몬 UP】 파워드라몬(SP Ver.)의 평가와 성능",
-      "snippet": "【デジモンUP】ムゲンドラモン(SP Ver.)の評価と性能 GameWith",
-      "source": "GameWith",
-      "source_badge": "일본뉴스",
-      "category": "general",
-      "category_name": "일반/뉴스",
-      "link": "https://news.google.com/rss/articles/CBMiTEFVX3lxTE1scXpJWUxkbzRFUWdOWFVxRW9USWNuY1lRMGFTdWtQRHViTDllZkNKX2t1akxab20zcUl5d1c5dHZ1VWFMc29PX1VsNm4?oc=5",
-      "image": null,
-      "timestamp": 1791966019,
-      "created_at": "2026-10-14 17:20",
-      "title_orig": "【デジモンUP】ムゲンドラモン(SP Ver.)の評価と性能",
-      "title_ja": "【デジモンUP】ムゲンドラモン(SP Ver.)の評価と性能"
-    },
-    {
       "id": "fbccec4e03f43b4a4cf8942255877a65",
       "title": "[트윗] [🎬] 포켓몬 vs 디지몬 https://t.co/yncmt3Kq4E #ATEEZ #에이티즈 #9트쫑 - X",
       "snippet": "X(트위터) 디지몬 공식/굿즈 속보 트윗입니다.",
@@ -1849,8 +1864,8 @@
       "category_name": "피규어/굿즈",
       "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE9HVExTUENrOHpGQTFBVEx1aVRDdkZ0dkl4YjBMeEtkb053N0tLaE5JVW1JRi1SeHJTNUc3REVBbS1CaFNDZE1kMDl5dG5UYlAt?oc=5",
       "image": null,
-      "timestamp": 1791960300,
-      "created_at": "2026-10-14 15:45",
+      "timestamp": 1791961200,
+      "created_at": "2026-10-14 16:00",
       "title_orig": "デュークモン、サクヤモン、ベルゼブモンのフィギュアをラインナップ！「一番くじ 「デジモン」シリーズ -Matrix Evolution-」が2027年3月24日発売予定",
       "title_ja": "デュークモン、サクヤモン、ベルゼブモンのフィギュアをラインナップ！「一番くじ 「デジモン」シリーズ -Matrix Evolution-」が2027年3月24日発売予定"
     },
