@@ -1,22 +1,8 @@
 {
-  "last_updated": "2026-10-24 02:38:04",
-  "total_count": 329,
+  "last_updated": "2026-10-24 05:50:09",
+  "total_count": 330,
   "retention_days": 90,
   "feeds": [
-    {
-      "id": "a45d4aa8b0c75c1a3552ca856729cba9",
-      "title": "[해외뉴스] PlayStation 1용 디지몬 월드의 팬 리메이크작 공개 예정",
-      "snippet": "A Fan Remake of Digimon World For PlayStation 1 Is On Its Way Retro Dodo",
-      "source": "Retro Dodo",
-      "source_badge": "해외뉴스",
-      "category": "general",
-      "category_name": "일반/뉴스",
-      "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQMFlHSG5iNm1yTXlQS2UyaW9peHcwUmV3NWE4MG56QlNwazItOTRCZEFpeXRWdXVmdWpJRnNpc1JkRmVVQ0RCdjF0MnB2YkdyX3pQaW9CUVRMczlHUFBhZWhKdG95dGRZSkh3VTZtbUtCaHBQLTRnMUp2Q282bFcxVHJPdkxHTDQ1NzNvNA?oc=5",
-      "image": null,
-      "timestamp": 1792768345,
-      "created_at": "2026-10-24 00:12",
-      "title_orig": "A Fan Remake of Digimon World For PlayStation 1 Is On Its Way"
-    },
     {
       "id": "7dac85421356ed4331bb101597f0f9a6",
       "title": "[해외뉴스] 디지몬 알리시온, 수 주 내 사전 등록 개시 예정",
@@ -27,9 +13,23 @@
       "category_name": "일반/뉴스",
       "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOcDBIVnNBa2EyVkF0dWs2WExLU0NxMzc5eWJjR1JfcWo3TGRROEl4am1CNUF5Wno3bWZJQ1JRekIxYWF2c2dkTTlXQXJRM2MtZnFkTlFYM1ZmSTlSbmtFMmNQbWRJM2JDMzF0TDdLd2I2Qno4eVFubk1HT21QcDZUTk9oZzZVU0lWempBam1VbVJJR0ZGU1AydQ?oc=5",
       "image": null,
-      "timestamp": 1792757583,
-      "created_at": "2026-10-23 21:13",
+      "timestamp": 1792786160,
+      "created_at": "2026-10-24 05:09",
       "title_orig": "Digimon Alysion Set to Open Pre-Registration in the Coming Weeks"
+    },
+    {
+      "id": "a45d4aa8b0c75c1a3552ca856729cba9",
+      "title": "[해외뉴스] PlayStation 1용 디지몬 월드의 팬 리메이크작 공개 예정",
+      "snippet": "A Fan Remake of Digimon World For PlayStation 1 Is On Its Way Retro Dodo",
+      "source": "Retro Dodo",
+      "source_badge": "해외뉴스",
+      "category": "general",
+      "category_name": "일반/뉴스",
+      "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQMFlHSG5iNm1yTXlQS2UyaW9peHcwUmV3NWE4MG56QlNwazItOTRCZEFpeXRWdXVmdWpJRnNpc1JkRmVVQ0RCdjF0MnB2YkdyX3pQaW9CUVRMczlHUFBhZWhKdG95dGRZSkh3VTZtbUtCaHBQLTRnMUp2Q282bFcxVHJPdkxHTDQ1NzNvNA?oc=5",
+      "image": null,
+      "timestamp": 1792779071,
+      "created_at": "2026-10-24 03:11",
+      "title_orig": "A Fan Remake of Digimon World For PlayStation 1 Is On Its Way"
     },
     {
       "id": "9f3cc39110292e0501c99fc1d89d228e",
@@ -4547,6 +4547,20 @@
       "image": null,
       "timestamp": 1785654000,
       "created_at": "2026-08-02 16:00"
+    },
+    {
+      "id": "77438bebf0071b29b056cfdbf5ed37c3",
+      "title": "[해외뉴스] 릴리스 게임즈, 8월 18일 시작되는 'AFK: 새로운 여정' x '디지몬 어드벤처' 콜라보레이션 발표",
+      "snippet": "Lilith Games Announces 'AFK Journey' x 'Digimon Adventure' Collaboration Starting August 18 Inven Global",
+      "source": "Inven Global",
+      "source_badge": "해외뉴스",
+      "category": "general",
+      "category_name": "일반/뉴스",
+      "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPNFdOVUJqUFNvOWJZLTlqdHJKUUVhTE9ZR1R2Sm1fQUN6Tm9oemVObHpDbGo2UnhCUU84RWVxYnB6Y2JtNndyRmtncGxDdE1YZ1dJLWh2M2d5a1N4REhlLUdYZENzdGlZU0RoQXNMMEpnTUhnLWp6ZEtENTdBTjN4dWpTemFIVklFQXhrSWp6QUx4cTcxb1MwVzBndTlqNWJ6T01CREExLS1ONl9xdFAzNDlDWGo1X2h4ZUFjY0VuZVlHS29RTENQSUVB?oc=5",
+      "image": null,
+      "timestamp": 1785654000,
+      "created_at": "2026-08-02 16:00",
+      "title_orig": "Lilith Games Announces 'AFK Journey' x 'Digimon Adventure' Collaboration Starting August 18"
     },
     {
       "id": "8b7bcb31f27341d29a51bbd4a85c9975",
