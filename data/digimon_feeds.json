@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-10-24 11:31:25",
-  "total_count": 330,
+  "last_updated": "2026-10-24 16:47:16",
+  "total_count": 341,
   "retention_days": 90,
   "feeds": [
     {
@@ -13,9 +13,66 @@
       "category_name": "일반/뉴스",
       "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQMFlHSG5iNm1yTXlQS2UyaW9peHcwUmV3NWE4MG56QlNwazItOTRCZEFpeXRWdXVmdWpJRnNpc1JkRmVVQ0RCdjF0MnB2YkdyX3pQaW9CUVRMczlHUFBhZWhKdG95dGRZSkh3VTZtbUtCaHBQLTRnMUp2Q282bFcxVHJPdkxHTDQ1NzNvNA?oc=5",
       "image": null,
-      "timestamp": 1792801232,
-      "created_at": "2026-10-24 09:20",
+      "timestamp": 1792822791,
+      "created_at": "2026-10-24 15:19",
       "title_orig": "A Fan Remake of Digimon World For PlayStation 1 Is On Its Way"
+    },
+    {
+      "id": "e5952f0ec14a06b5937fae042b2be1f7",
+      "title": "[트윗] 네무 (@na_mu_ne) on X - X",
+      "snippet": "X(트위터) 디지몬 공식/굿즈 속보 트윗입니다.",
+      "source": "X(트위터)",
+      "source_badge": "X(트위터)",
+      "category": "sns",
+      "category_name": "SNS/해외",
+      "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE80RHJTVGhhTWZMYlZidXJUaWRtRnlEZlp4ZlAwbllNckR1NkFmZXpSV3g5aFUtc2RKWVhvZGVqc1o4OWRhNnlON25IMkdWQzlnbW5lUWtWNGVkZnY2SjdMWTMzNG5aY1RP?oc=5",
+      "image": null,
+      "timestamp": 1792822032,
+      "created_at": "2026-10-24 15:07"
+    },
+    {
+      "id": "00fab211122a066d5ecbfb38e579938f",
+      "title": "[일본뉴스] 재희(NCT WISH)의 인생을 바꾼 애니메이션 「디지몬 어드벤처」",
+      "snippet": "ジェヒ（NCT WISH）の人生を変えたアニメ「デジモンアドベンチャー」 ナタリー",
+      "source": "ナタリー",
+      "source_badge": "일본뉴스",
+      "category": "general",
+      "category_name": "일반/뉴스",
+      "link": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE9LLWRDck15Z2NGWDgwdk1JcUtPMjVCUjdtUEx5UnRXSEdQSXhVSFNuUm9RcFNRRlFya05HZXE0SkdWajIyc0xObzVZcU96a2c?oc=5",
+      "image": null,
+      "timestamp": 1792821600,
+      "created_at": "2026-10-24 15:00",
+      "title_orig": "ジェヒ（NCT WISH）の人生を変えたアニメ「デジモンアドベンチャー」",
+      "title_ja": "ジェヒ（NCT WISH）の人生を変えたアニメ「デジモンアドベンチャー」"
+    },
+    {
+      "id": "c5de744b7a75ddb1d862ebe658b3cfb2",
+      "title": "[일본뉴스] 「디지몬 스토리 타임 스트레인저」 Switch 2/Switch 버전 첫 세일! 「테일즈 오브 어라이즈 Beyond the Dawn Edition」 등도 할인",
+      "snippet": "「デジモンストーリー タイムストレンジャー」Switch 2/Switch版が初セール！「テイルズ オブ アライズ Beyond the Dawn Edition」などもお得に Gamer",
+      "source": "Gamer",
+      "source_badge": "일본뉴스",
+      "category": "general",
+      "category_name": "일반/뉴스",
+      "link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE5LblVNalVfclItQV9GX19JcDNpUXE4VkZWZWM0Zzh4UXB5NkdUQ2lqRXJ0d1NsVUExR2szb0NNaUNuQk1yLWNXajZrTWlMT3JCWUZ6Wg?oc=5",
+      "image": null,
+      "timestamp": 1792819800,
+      "created_at": "2026-10-24 14:30",
+      "title_orig": "「デジモンストーリー タイムストレンジャー」Switch 2/Switch版が初セール！「テイルズ オブ アライズ Beyond the Dawn Edition」などもお得に",
+      "title_ja": "「デジモンストーリー タイムストレンジャー」Switch 2/Switch版が初セール！「テイルズ オブ アライズ Beyond the Dawn Edition」などもお得に"
+    },
+    {
+      "id": "30ac509452bb9d9bd06bc2e2dddff2d1",
+      "title": "[해외뉴스] 가장 강력한 디지몬 궁극체 진화 순위 TOP 10",
+      "snippet": "10 Most Powerful Digimon Mega Evolutions, Ranked Comic Book Resources",
+      "source": "Comic Book Resources",
+      "source_badge": "해외뉴스",
+      "category": "general",
+      "category_name": "일반/뉴스",
+      "link": "https://news.google.com/rss/articles/CBMic0FVX3lxTE5paFM4S1F3UVRjS3pKbGh1bUdiU2xpc0Z2SHk3TER5cmM3U0V5dG5sSVFRSklCNmtrMzVMM2QzbU1wcHk4eXFiaDJOZU5PUExzNWY1ZENmWXJmTkowaHhjTUxFc2c1aVR3YjJiQlFpcW13bDA?oc=5",
+      "image": null,
+      "timestamp": 1792809900,
+      "created_at": "2026-10-24 11:45",
+      "title_orig": "10 Most Powerful Digimon Mega Evolutions, Ranked"
     },
     {
       "id": "7dac85421356ed4331bb101597f0f9a6",
@@ -27,9 +84,24 @@
       "category_name": "일반/뉴스",
       "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOcDBIVnNBa2EyVkF0dWs2WExLU0NxMzc5eWJjR1JfcWo3TGRROEl4am1CNUF5Wno3bWZJQ1JRekIxYWF2c2dkTTlXQXJRM2MtZnFkTlFYM1ZmSTlSbmtFMmNQbWRJM2JDMzF0TDdLd2I2Qno4eVFubk1HT21QcDZUTk9oZzZVU0lWempBam1VbVJJR0ZGU1AydQ?oc=5",
       "image": null,
-      "timestamp": 1792786160,
-      "created_at": "2026-10-24 05:09",
+      "timestamp": 1792800946,
+      "created_at": "2026-10-24 09:15",
       "title_orig": "Digimon Alysion Set to Open Pre-Registration in the Coming Weeks"
+    },
+    {
+      "id": "ae9900be4927bb345b5be9d18b616687",
+      "title": "[일본뉴스] 『디지몬』 10월부터 명에피소드 재방송, 팬 투표로 선정된 4개 작품의 이야기 「우리가 선택한 베스트 어드벤처」",
+      "snippet": "『デジモン』10月から名エピソード再放送 ファン投票で選ばれた4作品の物語「僕らが選んだベストアドベンチャー」 山陽新聞",
+      "source": "山陽新聞",
+      "source_badge": "일본뉴스",
+      "category": "general",
+      "category_name": "일반/뉴스",
+      "link": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE56ZktqenUtYmJ4b0RHLUdhMThMTVYzSE5QdlFxQll2ZnlKZV9DaGtreUEwU1U5TUZ5SGdyX3N2UGczVktHMU1abktnTjNZTXUtR3pNODdMblZSVjVN?oc=5",
+      "image": null,
+      "timestamp": 1792794554,
+      "created_at": "2026-10-24 07:29",
+      "title_orig": "『デジモン』10月から名エピソード再放送 ファン投票で選ばれた4作品の物語「僕らが選んだベストアドベンチャー」",
+      "title_ja": "『デジモン』10月から名エピソード再放送 ファン投票で選ばれた4作品の物語「僕らが選んだベストアドベンチャー」"
     },
     {
       "id": "9f3cc39110292e0501c99fc1d89d228e",
@@ -148,6 +220,21 @@
       "title_ja": "【期間限定公開】デジモンユニバース アプリモンスターズ 第4話「仮装のキミをうぃただきます！キャメラモンのハロウィンスキャンダル！」"
     },
     {
+      "id": "4389bcf0e8a6384e9b13af945e003a95",
+      "title": "[일본뉴스] 【디지몬 UP】 다크 에어리어 진행 방법과 주의점",
+      "snippet": "【デジモンUP】ダークエリアの進め方と注意点 GameWith",
+      "source": "GameWith",
+      "source_badge": "일본뉴스",
+      "category": "general",
+      "category_name": "일반/뉴스",
+      "link": "https://news.google.com/rss/articles/CBMiTEFVX3lxTE01dzAyOUxoYVNWaHJFVmNHYVJrVlVxamlhQ3h4aFVnSHVzUnloQkFwaWZhcnFGLWVLWV9RR1VZeXZjYThINnlCaHhYV0I?oc=5",
+      "image": null,
+      "timestamp": 1792662414,
+      "created_at": "2026-10-22 18:46",
+      "title_orig": "【デジモンUP】ダークエリアの進め方と注意点",
+      "title_ja": "【デジモンUP】ダークエリアの進め方と注意点"
+    },
+    {
       "id": "7406a719d810c06b0b0c3263da5c898b",
       "title": "[일본뉴스] 【디지몬 UP】 캠프 워즈의 규칙과 진행 방법",
       "snippet": "【デジモンUP】キャンプウォーズのルールと進め方 GameWith",
@@ -161,6 +248,21 @@
       "created_at": "2026-10-22 18:46",
       "title_orig": "【デジモンUP】キャンプウォーズのルールと進め方",
       "title_ja": "【デジモンUP】キャンプウォーズのルールと進め方"
+    },
+    {
+      "id": "6e71a096408a0c1baaa4ab7ee35c6cc4",
+      "title": "[일본뉴스] 【디지몬 UP】 크리티컬 타입 추천 빌드",
+      "snippet": "【デジモンUP】クリティカルタイプのおすすめビルド GameWith",
+      "source": "GameWith",
+      "source_badge": "일본뉴스",
+      "category": "general",
+      "category_name": "일반/뉴스",
+      "link": "https://news.google.com/rss/articles/CBMiTEFVX3lxTE9fNXJCSkFkVTBuUkd4MF94T19OR2hKeDctelpQUmpvZW1QYUoweVczSjU2ZG5qNHZnR19jeHdKbE40RzNRMDU3RWprUWE?oc=5",
+      "image": null,
+      "timestamp": 1792662379,
+      "created_at": "2026-10-22 18:46",
+      "title_orig": "【デジモンUP】クリティカルタイプのおすすめビルド",
+      "title_ja": "【デジモンUP】クリティカルタイプのおすすめビルド"
     },
     {
       "id": "2151914b6c1143e573e0e7bb5134d0cc",
@@ -206,6 +308,21 @@
       "created_at": "2026-10-22 18:44",
       "title_orig": "【デジモンUP】戦力の上げ方 | 育成要素まとめ",
       "title_ja": "【デジモンUP】戦力の上げ方 | 育成要素まとめ"
+    },
+    {
+      "id": "7717e8ee2bc9a1c805786d3a897fa332",
+      "title": "[일본뉴스] 【디지몬 UP】 소울 웨이브의 평가와 성능",
+      "snippet": "【デジモンUP】ソウルウェーブの評価と性能 GameWith",
+      "source": "GameWith",
+      "source_badge": "일본뉴스",
+      "category": "general",
+      "category_name": "일반/뉴스",
+      "link": "https://news.google.com/rss/articles/CBMiTEFVX3lxTFBqR3J6OHZyZWN5bjdYYy1zcmJrN1RrWlhaMV9jU2NuUTRoUVUzclhuTnRMbDRaMl83b1VIaF9Pb3dLZUMyZ0VsVVA3dGw?oc=5",
+      "image": null,
+      "timestamp": 1792662062,
+      "created_at": "2026-10-22 18:41",
+      "title_orig": "【デジモンUP】ソウルウェーブの評価と性能",
+      "title_ja": "【デジモンUP】ソウルウェーブの評価と性能"
     },
     {
       "id": "b14fd2325d22a2921858f579c20d0b52",
@@ -2016,6 +2133,19 @@
       "title_ja": "デュークモン、サクヤモン、ベルゼブモンのフィギュアをラインナップ！「一番くじ 「デジモン」シリーズ -Matrix Evolution-」が2027年3月24日発売予定"
     },
     {
+      "id": "dbf7c8988780d37b8ca0462dadb4a803",
+      "title": "[인스타] 이 장면 보고 안 운 사람 손…🥲 그때는 몰랐는데 다시 보니까 더 울컥하네요. 다른 친구들 디지몬이 다 진화할 동안 파닥몬 혼자만 진화를 못 해서 리키도 은근히 속상해했잖아요. 그런데 그 첫 진화가 하필 리키가 진짜 위험할 때, 리키를 지키려는 마음 하나로 터진 거라",
+      "snippet": "인스타그램 디지몬 관련 공개 게시물입니다.",
+      "source": "Instagram",
+      "source_badge": "인스타그램",
+      "category": "sns",
+      "category_name": "SNS/해외",
+      "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE9hVmE5NmE5M0psXzN5S0JGTlBrTDFLaFZfMHVacFV1TzdCWU9zWFhJZTRMbTZBd3d5RWRJbVZUQUFRUmxFMGFRREJwV1RpbHhTRHc?oc=5",
+      "image": null,
+      "timestamp": 1791961200,
+      "created_at": "2026-10-14 16:00"
+    },
+    {
       "id": "21c9fed7a072662079adae6d94e89dcb",
       "title": "[공식] 제159회 디지민 투표 스타트",
       "snippet": "디지몬 공식 사이트 ニュース",
@@ -3800,6 +3930,20 @@
       "created_at": "2026-09-04 11:13"
     },
     {
+      "id": "530ec64473a064db28ca6af9d6846b4d",
+      "title": "[해외뉴스] 디지몬 스토리: 타임 스트레인저의 신규 확장팩에서 전설이 새롭게 시작된다",
+      "snippet": "Legends begin anew in DIGIMON STORY: TIME STRANGER’S new expansion Bandai Namco Europe",
+      "source": "Bandai Namco Europe",
+      "source_badge": "해외뉴스",
+      "category": "general",
+      "category_name": "일반/뉴스",
+      "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOaFJxMU0xNlJmMGpRRTdiQk1waUpBd0x4dlNOM19BSkhuZ3VKY1pNZ2dCQ0twVnp1OV9jenVJSHdSNzV4U1ltN2pibnA4QzItc3FIckpaenFEMW1zQ1c4eWlfbmRPWHBSQzNwU3hmcGRXXy1wN3FQUF9EUGUzOE10MnVmejR5OG4wRFdZbDVsU3kwMzc3akFfOHJZemE1Q25NYWM2akd3?oc=5",
+      "image": null,
+      "timestamp": 1788448784,
+      "created_at": "2026-09-04 00:19",
+      "title_orig": "Legends begin anew in DIGIMON STORY: TIME STRANGER’S new expansion"
+    },
+    {
       "id": "f66704732ed4e4dadd298cbb3b45ea92",
       "title": "[루리웹] 반남코, 디지몬 스토리 타임 스트레인저 영웅의 유지 한국어판 발매 안내 ...",
       "snippet": "루리웹 콘솔뉴스 디지몬 최신 소식입니다.",
@@ -3851,20 +3995,6 @@
       "timestamp": 1788418800,
       "created_at": "2026-09-03 16:00",
       "title_orig": "Legends Begin Anew in Digimon Story Time Stranger: A Hero's Eternal Legacy Expansion"
-    },
-    {
-      "id": "530ec64473a064db28ca6af9d6846b4d",
-      "title": "[해외뉴스] 디지몬 스토리: 타임 스트레인저의 신규 확장팩에서 전설이 새롭게 시작된다",
-      "snippet": "Legends begin anew in DIGIMON STORY: TIME STRANGER’S new expansion Bandai Namco Europe",
-      "source": "Bandai Namco Europe",
-      "source_badge": "해외뉴스",
-      "category": "general",
-      "category_name": "일반/뉴스",
-      "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOaFJxMU0xNlJmMGpRRTdiQk1waUpBd0x4dlNOM19BSkhuZ3VKY1pNZ2dCQ0twVnp1OV9jenVJSHdSNzV4U1ltN2pibnA4QzItc3FIckpaenFEMW1zQ1c4eWlfbmRPWHBSQzNwU3hmcGRXXy1wN3FQUF9EUGUzOE10MnVmejR5OG4wRFdZbDVsU3kwMzc3akFfOHJZemE1Q25NYWM2akd3?oc=5",
-      "image": null,
-      "timestamp": 1788418800,
-      "created_at": "2026-09-03 16:00",
-      "title_orig": "Legends begin anew in DIGIMON STORY: TIME STRANGER’S new expansion"
     },
     {
       "id": "ef8328aa9e93271c631ff34e4f186eb1",
@@ -4001,6 +4131,19 @@
       "created_at": "2026-08-29 09:00",
       "title_orig": "デジモンカードゲーム ブースターパック TIMELESS BONDS【BT-26】",
       "title_ja": "デジモンカードゲーム ブースターパック TIMELESS BONDS【BT-26】"
+    },
+    {
+      "id": "d6f450f6bab2bac1940b6ca6c507266d",
+      "title": "[인스타] 파닥몬 팬아트 #fanart #디지몬 #イラスト #デジモン #그림연습",
+      "snippet": "인스타그램 디지몬 관련 공개 게시물입니다.",
+      "source": "Instagram",
+      "source_badge": "인스타그램",
+      "category": "sns",
+      "category_name": "SNS/해외",
+      "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE9xSE12MC1RYW00VHctdEpKY3l6RkFDT2VPakhtM3hUT0xWT0FHT09TZXZiR19NcGlwaG55bmo3TmhfcFFySGlPaFIzMjdobFBienc?oc=5",
+      "image": null,
+      "timestamp": 1787931515,
+      "created_at": "2026-08-29 00:38"
     },
     {
       "id": "93cfb36216af4fc9dd9fc863dc0b10d3",
@@ -4561,6 +4704,19 @@
       "timestamp": 1785654000,
       "created_at": "2026-08-02 16:00",
       "title_orig": "Lilith Games Announces 'AFK Journey' x 'Digimon Adventure' Collaboration Starting August 18"
+    },
+    {
+      "id": "537aa7b4a8d29fd1f785a38e013d13ce",
+      "title": "[인스타] 아~~~~ 더워요 더워🌱 #여름 #디지몬 #digimon #팔몬",
+      "snippet": "인스타그램 디지몬 관련 공개 게시물입니다.",
+      "source": "Instagram",
+      "source_badge": "인스타그램",
+      "category": "sns",
+      "category_name": "SNS/해외",
+      "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFBWLUhLTXVpS1FqOTNLNzdTOHVLbHpDd3pva3VoQkR6U1h0dUJWVnMzTDBPQ2tqZjNJb3lNVEV4X3BKbjBiRVdfWnd6MUdrVTVEeGc?oc=5",
+      "image": null,
+      "timestamp": 1785654000,
+      "created_at": "2026-08-02 16:00"
     },
     {
       "id": "8b7bcb31f27341d29a51bbd4a85c9975",
