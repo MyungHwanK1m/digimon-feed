@@ -1,22 +1,8 @@
 {
-  "last_updated": "2026-10-24 16:47:16",
-  "total_count": 341,
+  "last_updated": "2026-10-24 21:20:53",
+  "total_count": 344,
   "retention_days": 90,
   "feeds": [
-    {
-      "id": "a45d4aa8b0c75c1a3552ca856729cba9",
-      "title": "[해외뉴스] PlayStation 1용 디지몬 월드의 팬 리메이크작 공개 예정",
-      "snippet": "A Fan Remake of Digimon World For PlayStation 1 Is On Its Way Retro Dodo",
-      "source": "Retro Dodo",
-      "source_badge": "해외뉴스",
-      "category": "general",
-      "category_name": "일반/뉴스",
-      "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQMFlHSG5iNm1yTXlQS2UyaW9peHcwUmV3NWE4MG56QlNwazItOTRCZEFpeXRWdXVmdWpJRnNpc1JkRmVVQ0RCdjF0MnB2YkdyX3pQaW9CUVRMczlHUFBhZWhKdG95dGRZSkh3VTZtbUtCaHBQLTRnMUp2Q282bFcxVHJPdkxHTDQ1NzNvNA?oc=5",
-      "image": null,
-      "timestamp": 1792822791,
-      "created_at": "2026-10-24 15:19",
-      "title_orig": "A Fan Remake of Digimon World For PlayStation 1 Is On Its Way"
-    },
     {
       "id": "e5952f0ec14a06b5937fae042b2be1f7",
       "title": "[트윗] 네무 (@na_mu_ne) on X - X",
@@ -59,6 +45,21 @@
       "created_at": "2026-10-24 14:30",
       "title_orig": "「デジモンストーリー タイムストレンジャー」Switch 2/Switch版が初セール！「テイルズ オブ アライズ Beyond the Dawn Edition」などもお得に",
       "title_ja": "「デジモンストーリー タイムストレンジャー」Switch 2/Switch版が初セール！「テイルズ オブ アライズ Beyond the Dawn Edition」などもお得に"
+    },
+    {
+      "id": "7011ea8c057d0f66abc3f7a8f1d6e390",
+      "title": "[일본뉴스] Butter-Fly (디지몬 어드벤처 OP) / 인스트루멘털 밴드 커버 (기타, 트롬본, 베이스, 드럼)",
+      "snippet": "Butter-Fly (デジモンアドベンチャーOP) / Instrumental Band Cover (Guitar, Trombone, Bass, Drums) YouTube",
+      "source": "YouTube",
+      "source_badge": "일본뉴스",
+      "category": "sns",
+      "category_name": "SNS/영상",
+      "link": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE1IdV9zV3MycklQdVk2SmRtOWhrWXZlcTRtOGxMakRubHFnOE9RVzAwZXAwNUVKX0FkWWd4TGY3LXhuVWpnNUNzd05HdkpfYnlDYVRHR0ludHJVdEFG?oc=5",
+      "image": null,
+      "timestamp": 1792810579,
+      "created_at": "2026-10-24 11:56",
+      "title_orig": "Butter-Fly (デジモンアドベンチャーOP) / Instrumental Band Cover (Guitar, Trombone, Bass, Drums)",
+      "title_ja": "Butter-Fly (デジモンアドベンチャーOP) / Instrumental Band Cover (Guitar, Trombone, Bass, Drums)"
     },
     {
       "id": "30ac509452bb9d9bd06bc2e2dddff2d1",
@@ -443,6 +444,20 @@
       "created_at": "2026-10-22 18:36",
       "title_orig": "【デジモンUP】デュークモンの性能と進化",
       "title_ja": "【デジモンUP】デュークモンの性能と進化"
+    },
+    {
+      "id": "a45d4aa8b0c75c1a3552ca856729cba9",
+      "title": "[해외뉴스] PlayStation 1용 디지몬 월드의 팬 리메이크작 공개 예정",
+      "snippet": "A Fan Remake of Digimon World For PlayStation 1 Is On Its Way Retro Dodo",
+      "source": "Retro Dodo",
+      "source_badge": "해외뉴스",
+      "category": "general",
+      "category_name": "일반/뉴스",
+      "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQMFlHSG5iNm1yTXlQS2UyaW9peHcwUmV3NWE4MG56QlNwazItOTRCZEFpeXRWdXVmdWpJRnNpc1JkRmVVQ0RCdjF0MnB2YkdyX3pQaW9CUVRMczlHUFBhZWhKdG95dGRZSkh3VTZtbUtCaHBQLTRnMUp2Q282bFcxVHJPdkxHTDQ1NzNvNA?oc=5",
+      "image": null,
+      "timestamp": 1792660923,
+      "created_at": "2026-10-22 18:22",
+      "title_orig": "A Fan Remake of Digimon World For PlayStation 1 Is On Its Way"
     },
     {
       "id": "abb06f0982ca01976c3a9b7b319feb13",
@@ -2506,6 +2521,20 @@
       "title_ja": "『デジモン』ダウンロード版ゲームが最大約50%オフに。バンダイナムコエンターテインメントが秋のセールを開催中。PS5『タイムストレンジャー』は20%オフ、スイッチは『ハッカーズメモリー』が46％オフ"
     },
     {
+      "id": "f10e470bf10d222b0cb04323c0d65b48",
+      "title": "[해외뉴스] 디지몬 UP | 반다이 남코 엔터테인먼트 공식 웹사이트",
+      "snippet": "DIGIMON UP | Bandai Namco Entertainment Official Website デジモンUP",
+      "source": "デジモンUP",
+      "source_badge": "해외뉴스",
+      "category": "general",
+      "category_name": "일반/뉴스",
+      "link": "https://news.google.com/rss/articles/CBMiT0FVX3lxTFBUYVVSazE5LWpNR1ZTSUlDak9ESmk2bTRmQjd4am5nbTBzdUI2LURCSEh2R1FWZ1hzVE1jeWNwUjl4SmtPOFI0eUF1ODdsamM?oc=5",
+      "image": null,
+      "timestamp": 1791356400,
+      "created_at": "2026-10-07 16:00",
+      "title_orig": "DIGIMON UP | Bandai Namco Entertainment Official Website"
+    },
+    {
       "id": "ba091baf0b45ce64835d5801715996e8",
       "title": "[해외뉴스] 『디지몬 스토리: 타임 스트레인저』의 체험판을 지금 닌텐도 스위치 및 닌텐도 스위치 2에서 플레이할 수 있습니다!",
       "snippet": "DIGIMON STORY TIME STRANGER’s demo is now available on Nintendo Switch and Nintendo Switch 2! Bandai Namco Eu",
@@ -3709,6 +3738,19 @@
       "timestamp": 1789023600,
       "created_at": "2026-09-10 16:00",
       "title_orig": "See Digital Monsters in Eggs With Digimon Mega Egg Figures"
+    },
+    {
+      "id": "d7f4c6ca1de07ffb0a5c4a91b17a5fb4",
+      "title": "[인스타] . 【 🔔 메가하우스 9월 신제품 예약 개시 ! 】 🗓️ 27년 5월 발매 📌 디지몬 어드벤처 #デジモンアドベンチャー🐣 ✔️ 메가에그 피규어 굿나잇 디지코레 🛍️ 예약 : 프로필 하단 스토어 링크를 참조 해주세요! ✨ 판매 구성 안내 ・박스 ・단품 #메가하우스공식몰 #디지몬어드벤처",
+      "snippet": "인스타그램 디지몬 관련 공개 게시물입니다.",
+      "source": "Instagram",
+      "source_badge": "인스타그램",
+      "category": "figure",
+      "category_name": "피규어/굿즈",
+      "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE1TWEFtUjlRSDZRMFhpTTg4dDBJMmR1ZG02ZUxxRDFaUWFVa2Q0N0hKeU5BcWdkM0xna1hhaURVS3c3d0Nhejh2UW9rTnBfSDZzSFE?oc=5",
+      "image": null,
+      "timestamp": 1789023600,
+      "created_at": "2026-09-10 16:00"
     },
     {
       "id": "00c559d339a7962a0ca8bce22f335ac4",
